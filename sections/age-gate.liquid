@@ -1,0 +1,29 @@
+{% assign section_name = 'age-gate' %}
+{% assign section_id = section_name | append: '--' | append: section.id %}
+
+<div class="{{ section_name }}__main">
+
+
+
+</div>
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Age Gate",
+    "tag": "section",
+    "class": "section section--age-gate",
+    "settings": [
+      {
+        "content": "Content",
+        "type": "header"
+      }
+    ],
+	  "blocks": []
+  }
+{% endschema %}

@@ -1,0 +1,143 @@
+{% assign section_name = 'hype-builder' %}
+{% assign section_id = section_name | append: '--' | append: section.id %}
+
+{% assign aos_delay = 300 %}
+{% assign aos_id = section_id | append: '--aos' %}
+{% assign cta = false %}
+{% assign cta_link = section.settings.cta_link | default: '' %}
+{% assign cta_title = section.settings.cta_title | default: '' %}
+{% assign curved_arrow_enable = section.settings.curved_arrow_enable | default: false %}
+{% assign heading = section.settings.heading | default: '' %}
+{% assign height = section.settings.height | default: 'auto' %}
+{% assign heading_highlight = section.settings.heading_highlight | default: false %}
+{% assign image = section.settings.image | default: false %}
+{% assign message = section.settings.message | default: false %}
+{% assign parallax = section.settings.parallax | default: false %}
+{% assign text_theme = section.settings.text_theme | default: 'light' %}
+{% assign title = section.settings.title | default: false %}
+
+{% if section.settings.anchor_id != blank %}
+  {% assign section_id = section.settings.anchor_id %}
+{% endif %}
+
+{% if cta_link != blank and cta_title != blank %}
+  {% assign cta = true %}
+{% endif %}
+
+<div class="{{ section_name }}" id="{{ section_id }}" data-section-height="{{ height }}" data-text-theme="{{ text_theme }}">
+  <div class="{{ section_name }}__main" id="{{ aos_id }}">
+    {% render 'bs-container', state: 'open' %}
+      <h1>Landing Page</h1>
+    {% render 'bs-container', state: 'closed' %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hype Builder",
+  "tag": "section",
+  "class": "section section--hype-builder",
+  "settings": [
+    {
+      "content": "Content",
+      "type": "header"
+    },
+    {
+      "label": "Text Theme",
+      "type": "select",
+      "options": [
+        { "value": "light", "label": "Light" },
+        { "value": "dark", "label": "Dark" }
+      ],
+      "default": "light",
+      "id": "text_theme"
+    },
+    {
+      "label": "Title",
+      "type": "text",
+      "id": "title"
+    },
+    {
+      "label": "Heading",
+      "type": "richtext",
+      "id": "heading"
+    },
+    {
+      "label": "Heading Highlight",
+      "type": "select",
+      "options": [
+        { "value": "standard", "label": "Standard" },
+        { "value": "stroke", "label": "Stroke" },
+        { "value": "circle", "label": "Circle" }
+      ],
+      "default": "standard",
+      "id": "heading_highlight"
+    },
+    {
+      "label": "Message",
+      "type": "richtext",
+      "id": "message"
+    },
+    {
+      "content": "Call to Action",
+      "type": "paragraph"
+    },
+    {
+      "label": "Title",
+      "type": "text",
+      "id": "cta_title"
+    },
+    {
+      "label": "Link",
+      "type": "url",
+      "id": "cta_link"
+    },
+    {
+      "content": "Media",
+      "type": "header"
+    },
+    {
+      "label": "Image",
+      "type": "image_picker",
+      "id": "image"
+    },
+    {
+      "label": "Parallax",
+      "type": "checkbox",
+      "id": "parallax",
+      "default": false
+    },
+    {
+      "content": "Settings",
+      "type": "header"
+    },
+    {
+      "label": "Anchor ID",
+      "info": "Optionally include a unique ID so that sections within the page can be linked to. Anchor IDs must be all lowercase, unique and replaced empty spaces with hyphens. For example: my-great-section-anchor",
+      "type": "text",
+      "id": "anchor_id"
+    },
+    {
+      "label": "Height",
+      "type": "select",
+      "options": [
+        { "value": "large", "label": "Large" },
+        { "value": "auto", "label": "Auto" }
+      ],
+      "default": "auto",
+      "id": "height"
+    },
+    {
+      "label": "Enable Curved Arrow",
+      "type": "checkbox",
+      "default": false,
+      "id": "curved_arrow_enable"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hype Builder"
+    }
+  ]
+}
+{% endschema %}
