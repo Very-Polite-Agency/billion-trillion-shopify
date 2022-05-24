@@ -69,8 +69,8 @@
 
   <body class="{% render 'theme--classes' %}">
 
+    {% section 'mobile-menu' %}
     {% section 'announcements' %}
-
     {% section 'header' %}
 
     <main class="{% render 'theme--classes' %} content-for-layout focus-none" role="main" tabindex="-1">
@@ -78,6 +78,7 @@
     </main>
 
     {% section 'footer' %}
+    {% section 'age-gate' %}
 
     {% comment %}
       ## Do we need this

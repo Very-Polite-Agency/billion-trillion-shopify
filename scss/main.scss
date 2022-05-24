@@ -113,34 +113,39 @@
 //////////////////////////////////////////////////////////
 
 @import '../node_modules/bootstrap/scss/bootstrap';
-@import '../node_modules/@glidejs/glide/dist/css/glide.core.min';
-// @import '../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';
 @import '../node_modules/aos/dist/aos';
 
 //////////////////////////////////////////////////////////
-////  Component
+////  Components
 //////////////////////////////////////////////////////////
 
+@import './components/aos.scss';
 @import './components/body-copy.scss';
 @import './components/button.scss';
-@import './components/card.scss';
-@import './components/collapsible.scss';
+@import './components/caption.scss';
 @import './components/field.scss';
-@import './components/fifty-fifty-feature.scss';
-@import './components/form.scss';
-@import './components/full-width-feature.scss';
-@import './components/glide.scss';
 @import './components/heading.scss';
 @import './components/input.scss';
 @import './components/label.scss';
 @import './components/lazyload.scss';
 @import './components/link.scss';
-@import './components/navigation.scss';
-@import './components/pagination.scss';
-@import './components/section.scss';
 @import './components/select.scss';
 @import './components/textarea.scss';
 @import './components/title.scss';
+
+//////////////////////////////////////////////////////////
+////  Layouts
+//////////////////////////////////////////////////////////
+
+@import './components/card.scss';
+@import './components/collapsible.scss';
+@import './components/fifty-fifty-feature.scss';
+@import './components/form.scss';
+@import './components/full-width-feature.scss';
+@import './components/glide.scss';
+@import './components/navigation.scss';
+@import './components/pagination.scss';
+@import './components/section.scss';
 
 //////////////////////////////////////////////////////////
 ////  Theme
@@ -150,9 +155,13 @@
 @import './theme/article.scss';
 @import './theme/blog.scss';
 @import './theme/body.scss';
+@import './theme/cart.scss';
 @import './theme/collection.scss';
+@import './theme/container.scss';
 @import './theme/fonts.scss';
 @import './theme/footer.scss';
 @import './theme/header.scss';
+@import './theme/main.scss';
+@import './theme/mobile-menu.scss';
 @import './theme/page.scss';
 @import './theme/product.scss';

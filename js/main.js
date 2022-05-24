@@ -1,6 +1,4 @@
 // @codekit-prepend quiet "../node_modules/validator/validator.min.js";
-// @codekit-prepend quiet "../node_modules/axios/dist/axios.min.js";
-// @codekit-prepend quiet "../node_modules/@glidejs/glide/dist/glide.min.js";
 // @codekit-prepend quiet "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 
 // @codekit-prepend "./modules/_credits.js";
@@ -27,7 +25,7 @@ let mobileMenu = new MobileMenu();
 let scrolling = new Scrolling();
 let sizing = new Sizing();
 
-Theme.init([
+[
   forms,
   gliders,
   instagramFeed,
@@ -35,7 +33,7 @@ Theme.init([
   scrolling,
   sizing,
   credits,
-]);
+].forEach(( module ) => { module.init(); });
 
 AOS.init({
   offset: 150,                // offset (in px) from the original trigger point
