@@ -113,6 +113,48 @@
       "sC" : 3,
       "tS" : 1
     },
+    "\/assets\/NotSorrySerif-Bold.eot" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/NotSorrySerif-Bold.eot",
+      "oF" : 0
+    },
+    "\/assets\/NotSorrySerif-Bold.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/NotSorrySerif-Bold.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/NotSorrySerif-Bold.ttf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/NotSorrySerif-Bold.ttf",
+      "oF" : 0
+    },
+    "\/assets\/NotSorrySerif-Bold.woff" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/NotSorrySerif-Bold.woff",
+      "oF" : 0
+    },
+    "\/assets\/NotSorrySerif-Bold.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/NotSorrySerif-Bold.woff2",
+      "oF" : 0
+    },
     "\/assets\/password-modal.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -178,6 +220,48 @@
       "oF" : 0,
       "sC" : 3,
       "tS" : 1
+    },
+    "\/assets\/SorrySans-BoldExtended.eot" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/SorrySans-BoldExtended.eot",
+      "oF" : 0
+    },
+    "\/assets\/SorrySans-BoldExtended.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/SorrySans-BoldExtended.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/SorrySans-BoldExtended.ttf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/SorrySans-BoldExtended.ttf",
+      "oF" : 0
+    },
+    "\/assets\/SorrySans-BoldExtended.woff" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/SorrySans-BoldExtended.woff",
+      "oF" : 0
+    },
+    "\/assets\/SorrySans-BoldExtended.woff2" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/SorrySans-BoldExtended.woff2",
+      "oF" : 0
     },
     "\/assets\/theme-editor.js" : {
       "bF" : 0,

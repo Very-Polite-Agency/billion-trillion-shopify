@@ -35,6 +35,14 @@
     margin-bottom: 0;
   }
 
+  &--age-gate {
+    @extend .body-copy;
+  }
+
+  &--age-gate {
+
+  }
+
   @include breakpoint(sm) {} // min width sm
 
   @include breakpoint(md) {} // min width md
