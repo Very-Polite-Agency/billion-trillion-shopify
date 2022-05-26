@@ -86,6 +86,7 @@
 
   // ---------------------------------------- Colours
   --theme-colour-black: #{ hexToRGB( map-get( $theme-colours, 'black' ) ) };
+  --theme-colour-orange: #{ hexToRGB( map-get( $theme-colours, 'orange' ) ) };
   --theme-colour-white: #{ hexToRGB( map-get( $theme-colours, 'white' ) ) };
 
   // ---------------------------------------- Container
