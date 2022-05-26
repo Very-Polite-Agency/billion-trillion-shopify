@@ -70,7 +70,7 @@
   <body class="{% render 'theme--classes' %}">
 
     {% section 'mobile-menu' %}
-    {% section 'announcements' %}
+    {% section 'age-gate' %}
     {% section 'header' %}
 
     <main class="{% render 'theme--classes' %} content-for-layout focus-none" role="main" tabindex="-1">
@@ -78,14 +78,6 @@
     </main>
 
     {% section 'footer' %}
-    {% section 'age-gate' %}
-
-    {% comment %}
-      ## Do we need this
-      {%- if settings.predictive_search_enabled -%}
-        <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-      {%- endif -%}
-    {% endcomment %}
 
     <script src="{{ 'main.min.js' | asset_url }}" defer></script>
 

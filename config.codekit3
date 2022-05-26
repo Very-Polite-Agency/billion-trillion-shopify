@@ -1366,14 +1366,6 @@
       "oAP" : "\/sections\/age-gate.liquid",
       "oF" : 0
     },
-    "\/sections\/announcements.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/sections\/announcements.liquid",
-      "oF" : 0
-    },
     "\/sections\/apps.liquid" : {
       "cB" : 0,
       "ft" : 8192,
