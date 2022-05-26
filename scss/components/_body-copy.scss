@@ -40,7 +40,10 @@
   }
 
   &--age-gate {
-
+    font-family: var(--theme-font-family--sans-serif--primary);
+    font-size: 20px;
+    line-height: 1;
+    text-transform: uppercase;
   }
 
   @include breakpoint(sm) {} // min width sm
