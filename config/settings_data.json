@@ -13,7 +13,7 @@
         "settings": {
           "message": "<p>Are you over 21?<\/p>",
           "success_message": "<p>Welcome to the Pleasuredome<\/p>",
-          "timeout_milliseconds": "3665",
+          "timeout_milliseconds": "250",
           "days_saved": "32",
           "redirect_url": ""
         }
