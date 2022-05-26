@@ -11,7 +11,7 @@
       "age-gate": {
         "type": "age-gate",
         "settings": {
-          "message": "<p>Are you of <\/p><p>legal drinking <\/p><p>age?<\/p>",
+          "message": "<p>Are you of <br\/>legal drinking <br\/>age?<\/p>",
           "success_message": "<p>Welcome to the Pleasuredome<\/p>",
           "timeout_milliseconds": "250",
           "days_saved": "32",
