@@ -41,14 +41,26 @@
 
   &--age-gate {
     font-family: var(--theme-font-family--sans-serif--primary);
-    font-size: 20px;
-    line-height: 1;
+    font-size: 22px;
+    line-height: 1.23;
     text-transform: uppercase;
   }
 
-  @include breakpoint(sm) {} // min width sm
+  @include breakpoint(sm) {
 
-  @include breakpoint(md) {} // min width md
+    &--age-gate {
+      font-size: 23px;
+    }
+
+  } // min width sm
+
+  @include breakpoint(md) {
+
+    &--age-gate {
+      font-size: 23px;
+    }
+
+  } // min width md
 
   @include breakpoint(lg) {} // min width lg
 
