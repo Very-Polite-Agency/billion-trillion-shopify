@@ -1,10 +1,28 @@
 {% assign section_name = 'age-gate' %}
 {% assign section_id = section_name | append: '--' | append: section.id %}
 
-<div class="{{ section_name }}__main">
+{% assign days_saved = section.settings.days_saved | default: 90 %}
+{% assign timeout_milliseconds = section.settings.timeout_milliseconds | default: 3000 %}
+{% assign message = section.settings.message | default: 'Are you of Age?!' %}
+{% assign redirect_url = section.settings.redirect_url | default: 'https://www.pbs.org' %}
+{% assign message = section.settings.success_message | default: 'Welcome to the Pleasuredome' %}
 
+<div class='{{ section_name }} modal modal--{{ section_name }} micromodal-slide' id='modal--{{ section_name }}' aria-hidden='true' data-days-saved='{{ days_saved }}' data-timeout-milliseconds='{{ timeout_milliseconds }}' data-redirect-url='{{ redirect_url }}'>
+  <div class='modal__overlay' tabindex='-1'>
+    <div class='modal__container' role='dialog' aria-modal='true'>
 
+      <div class='modal__content'>
+        <div class='modal__message message'>
+          {{ message }}
+        </div>
+        <div class='modal__actions'>
+          <button class='modal__button button--secondary' type='button' data-of-age='yes'>Yes</button>
+          <button class='modal__button button--primary'type='button' data-of-age='no'>No</button>
+        </div>
+      </div>
 
+    </div>
+  </div>
 </div>
 
 {% stylesheet %}
@@ -22,6 +40,41 @@
       {
         "content": "Content",
         "type": "header"
+      },
+      {
+  		  "label": "Message",
+        "type": "richtext",
+        "default": "<p>Are you over 21?</p>",
+        "id": "message"
+      },
+      {
+        "label": "Success Message",
+        "type": "richtext",
+        "default": "<p>Welcome to the Pleasuredome</p>",
+        "id": "success_message"
+      },
+      {
+        "content": "Settings",
+        "type": "header"
+      },
+      {
+  		  "label": "Timeout (in milliseconds)",
+  		  "info": "Time before the Age Gate shows",
+        "type": "text",
+        "default": "3000",
+        "id": "timeout_milliseconds"
+      },
+      {
+  		  "label": "Days Saved",
+        "info": "Number of days before user is re-prompted for age verification",
+        "type": "text",
+        "default": "30",
+        "id": "days_saved"
+      },
+      {
+        "label": "Redirect URL",
+        "type": "url",
+        "id": "redirect_url"
       }
     ],
 	  "blocks": []
