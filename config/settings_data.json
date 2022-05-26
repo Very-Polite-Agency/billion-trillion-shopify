@@ -1,4 +1,42 @@
 {
   "current": {
+    "sections": {
+      "mobile-menu": {
+        "type": "mobile-menu",
+        "settings": {
+          "menu_shopping": "",
+          "menu_main": ""
+        }
+      },
+      "age-gate": {
+        "type": "age-gate",
+        "settings": {
+          "message": "<p>Are you over 21?<\/p>",
+          "success_message": "<p>Welcome to the Pleasuredome<\/p>",
+          "timeout_milliseconds": "3665",
+          "days_saved": "32",
+          "redirect_url": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "menu_main": ""
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "phone": "",
+          "email": "",
+          "menu_main": "",
+          "menu_extra": "",
+          "menu_policies": ""
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   }
 }
