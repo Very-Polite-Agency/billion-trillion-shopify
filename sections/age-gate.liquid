@@ -15,14 +15,18 @@
       <div class='modal__overlay' tabindex='-1'>
         <div class='modal__container' role='dialog' aria-modal='true'>
 
-          <div class='modal__content'>
-            <div class='modal__message message'>
-              {{ message }}
-            </div>
-            <div class='modal__actions'>
-              <button class='modal__button button--secondary' type='button' data-of-age='yes'>Yes</button>
-              <button class='modal__button button--primary'type='button' data-of-age='no'>No</button>
-            </div>
+          <div class='modal__main'>
+            {% render 'bs-container', state: 'open', col: 'col-12 col-lg-6 offset-lg-3' %}
+              <div class='modal__content'>
+                <div class='modal__message message'>
+                  {{ message }}
+                </div>
+                <div class='modal__actions'>
+                  <button class='modal__button button--secondary' type='button' data-of-age='yes'>Yes</button>
+                  <button class='modal__button button--primary'type='button' data-of-age='no'>No</button>
+                </div>
+              </div>
+            {% render 'bs-container', state: 'closed' %}
           </div>
 
         </div>

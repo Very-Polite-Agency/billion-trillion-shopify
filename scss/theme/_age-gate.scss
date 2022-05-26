@@ -1,9 +1,24 @@
 .age-gate {
 
   .modal {
+    &__container {
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      max-height: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__main {
+
+    }
     &__overlay {
       background: rgba(var(--theme-colour-orange), 0.9);
     }
+
   }
 
   @include breakpoint(sm) {} // min width sm
