@@ -4,7 +4,7 @@
 
 const Modals = (() => {
 
-  let debug = false;
+  let debug = true;
   let info = { name : 'Modals', version : '2.5' };
 
   //////////////////////////////////////////////////////////
@@ -65,8 +65,10 @@ const Modals = (() => {
   //////////////////////////////////////////////////////////
 
   const init = () => {
+    if ( debug ) console.log( `${info.name}.init() v.${info.version} Started` );
     onClickOpenModal();
     onClickCloseModal();
+    if ( debug ) console.log( `${info.name}.init() Finished` );
   };
 
   //////////////////////////////////////////////////////////

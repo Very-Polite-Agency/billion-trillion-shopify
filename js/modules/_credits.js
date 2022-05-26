@@ -4,7 +4,7 @@
 
 const Credits = (() => {
 
-  const info = { company : 'studio D', tagline : '"Redefining Design"',  version : '2.0' };
+  const info = { company : 'Billion Trillion', tagline : '"Welcome to the Good Time Galaxy"',  version : '1.0' };
 
   //////////////////////////////////////////////////////////
   ////  Initialize

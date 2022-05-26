@@ -2,28 +2,36 @@
 {% assign section_id = section_name | append: '--' | append: section.id %}
 
 {% assign days_saved = section.settings.days_saved | default: 90 %}
+{% assign enable = section.settings.enable | default: 90 %}
 {% assign timeout_milliseconds = section.settings.timeout_milliseconds | default: 3000 %}
 {% assign message = section.settings.message | default: 'Are you of Age?!' %}
 {% assign redirect_url = section.settings.redirect_url | default: 'https://www.pbs.org' %}
 {% assign message = section.settings.success_message | default: 'Welcome to the Pleasuredome' %}
 
-<div class='{{ section_name }} modal modal--{{ section_name }} micromodal-slide' id='modal--{{ section_name }}' aria-hidden='true' data-days-saved='{{ days_saved }}' data-timeout-milliseconds='{{ timeout_milliseconds }}' data-redirect-url='{{ redirect_url }}'>
-  <div class='modal__overlay' tabindex='-1'>
-    <div class='modal__container' role='dialog' aria-modal='true'>
 
-      <div class='modal__content'>
-        <div class='modal__message message'>
-          {{ message }}
-        </div>
-        <div class='modal__actions'>
-          <button class='modal__button button--secondary' type='button' data-of-age='yes'>Yes</button>
-          <button class='modal__button button--primary'type='button' data-of-age='no'>No</button>
+{% if enable %}
+  <div class="{{ section_name }}" id="{{ section_id }}">
+    <div class='modal modal--{{ section_name }} micromodal-slide' id='modal--{{ section_name }}' aria-hidden='true' data-days-saved='{{ days_saved }}' data-timeout-milliseconds='{{ timeout_milliseconds }}' data-redirect-url='{{ redirect_url }}'>
+      <div class='modal__overlay' tabindex='-1'>
+        <div class='modal__container' role='dialog' aria-modal='true'>
+
+          <div class='modal__content'>
+            <div class='modal__message message'>
+              {{ message }}
+            </div>
+            <div class='modal__actions'>
+              <button class='modal__button button--secondary' type='button' data-of-age='yes'>Yes</button>
+              <button class='modal__button button--primary'type='button' data-of-age='no'>No</button>
+            </div>
+          </div>
+
         </div>
       </div>
-
     </div>
   </div>
-</div>
+{% else %}
+  <!-- Modal Disabled through the Shopify Customizer -->
+{% endif %}
 
 {% stylesheet %}
 {% endstylesheet %}
@@ -56,6 +64,12 @@
       {
         "content": "Settings",
         "type": "header"
+      },
+      {
+  		  "label": "Enable Age Gate",
+        "type": "checkbox",
+        "default": true,
+        "id": "enable"
       },
       {
   		  "label": "Timeout (in milliseconds)",

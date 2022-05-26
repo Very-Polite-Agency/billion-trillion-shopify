@@ -4,7 +4,7 @@
 
 const AgeGate = (() => {
 
-  let debug = false;
+  let debug = true;
 	let info = { name : 'AgeGate', version : '1.0' };
 
   let tools = new Tools();
@@ -22,7 +22,7 @@ const AgeGate = (() => {
     }
   };
   let cookie = {
-  	name: 'shaketown-brewing-co--age-gate',
+  	name: 'billion-trillion--age-gate',
   	value: 'of-age',
     expires: function() {
       return parseInt( document.getElementById( modal.id ).getAttribute( 'data-cookie-expires' ) ) || 60;
@@ -38,19 +38,30 @@ const AgeGate = (() => {
   };
 
   //////////////////////////////////////////////////////////
-	////  Gate keeper
+	////  Show Modal
+	//////////////////////////////////////////////////////////
+
+  const showModal = () => {
+    let showAgeGate = tools.cookieExists( cookie.name, cookie.value ) ? false : true;
+    if ( showAgeGate && modalExists( modal.id ) ) {
+      modals.toggleModalVisibility( modal.id, 'show', modal.timeout() );
+    }
+  };
+
+  //////////////////////////////////////////////////////////
+	////  (Age) Gate keeper
 	//////////////////////////////////////////////////////////
 
   const gateKeeper = () => {
 
-    document.querySelectorAll( '#' + modal.id + ' .button' ).forEach( button => {
-      button.addEventListener( 'click', ( event ) => {
+    ( document.querySelectorAll( '#' + modal.id + ' .button' ) || [] ).forEach( button => {
+      button.addEventListener( 'click', event => {
 
-        let choice = button.getAttribute( 'data-choice' );
+        let choice = button.dataset.ofAge || '';
         let ofAge = {
           'yes': function() {
             tools.setCookie( cookie.name, cookie.value, cookie.expires() );
-            modals.toggleModalVisibility( modal.id, 'close', 0 );
+            modals.toggleModalVisibility( modal.id, 'close' );
           },
           'no': function() {
             document.location.replace( modal.redirectURL() );
@@ -70,11 +81,10 @@ const AgeGate = (() => {
 	//////////////////////////////////////////////////////////
 
 	const init = () => {
-    let showAgeGate = !tools.checkCookie( 'shaketown-brewing-co--age-gate', 'of-age' ) ? true : false;
-    if ( showAgeGate && modalExists( modal.id ) ) {
-      modals.toggleModalVisibility( modal.id, 'show', { closeTrigger: false, disableFocus: true }, modal.timeout() );
-    }
+    if ( debug ) console.log( `${info.name}.init() v.${info.version} Started` );
+    showModal();
     gateKeeper();
+    if ( debug ) console.log( `${info.name}.init() Finished` );
 	};
 
 	//////////////////////////////////////////////////////////
