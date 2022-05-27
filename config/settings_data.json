@@ -12,7 +12,8 @@
         "type": "age-gate",
         "settings": {
           "message": "<p>Are you of <br\/>legal drinking <br\/>age?<\/p>",
-          "success_message": "<p>Welcome to the Pleasuredome<\/p>",
+          "success_message": "<p>Welcome to the Good Time Galaxy<\/p>",
+          "enable": true,
           "timeout_milliseconds": "150",
           "days_saved": "32",
           "redirect_url": "https:\/\/www.spacejam.com\/1996\/"
