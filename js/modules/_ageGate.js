@@ -55,7 +55,7 @@ const AgeGate = (() => {
 
   const gateKeeper = () => {
 
-    ( document.querySelectorAll( '#' + modal.id + ' .button' ) || [] ).forEach( button => {
+    ( document.querySelectorAll( '#' + modal.id + ' .modal__actions button' ) || [] ).forEach( button => {
       button.addEventListener( 'click', event => {
 
         let choice = button.dataset.ofAge || '';
