@@ -109,7 +109,8 @@
     }
     &__success-message {
       transition: opacity 500ms, transform 500ms;
-      border-top: 28px solid rgba(var(--theme-colour-white), 1);
+      font-family: var(--theme-font-family--sans-serif--secondary);
+      color: rgba(var(--theme-colour-black), 1);
       background: rgba(var(--theme-colour-black), 1);
       color: rgba(var(--theme-colour-white), 1);
       position: absolute;
@@ -123,6 +124,8 @@
       align-items: center;
       opacity: 0;
       transform: translate3d( 0, 15px, 0);
+      opacity: 1;
+      transform: translate3d( 0, 0, 0);
       &.active {
         opacity: 1;
         transform: translate3d( 0, 0, 0);
