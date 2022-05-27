@@ -113,6 +113,7 @@
       color: rgba(var(--theme-colour-black), 1);
       background: rgba(var(--theme-colour-black), 1);
       color: rgba(var(--theme-colour-white), 1);
+      font-size: 40px;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -124,8 +125,6 @@
       align-items: center;
       opacity: 0;
       transform: translate3d( 0, 15px, 0);
-      opacity: 1;
-      transform: translate3d( 0, 0, 0);
       &.active {
         opacity: 1;
         transform: translate3d( 0, 0, 0);

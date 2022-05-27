@@ -68,7 +68,7 @@ const AgeGate = (() => {
               successMessage.addEventListener('transitionend', function() {
                 setTimeout(function(){
                   modals.toggleModalVisibility( modal.id, 'close' );
-                }, 1500)
+                }, 1250)
               });
               setTimeout(function(){
                 successMessage.classList.add('active');
