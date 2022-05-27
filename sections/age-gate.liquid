@@ -17,13 +17,17 @@
 
           <div class='modal__main'>
             {% render 'bs-container', state: 'open', col: 'col-12 col-lg-6 offset-lg-3' %}
-              <div class='modal__content'>
-                <div class='modal__content-header'></div>
-                <div class='modal__message message body-copy--age-gate'>
-                  <div class="modal__message-image">
-                    <img src="{{ 'BILLION--age-gate-stars.svg' | asset_url }}" />
+              <div class='modal__content-frame'>
+                <div class='modal__content'>
+                  <div class='modal__message message body-copy--age-gate'>
+                    <div class="modal__message-image">
+                      <img src="{{ 'BILLION--age-gate-stars.svg' | asset_url }}" />
+                    </div>
+                    {{ message }}
                   </div>
-                  {{ message }}
+                  <div class='modal__success-message message body-copy--age-gate' id="{{ section_name }}--success-message">
+                    {{ success_message }}
+                  </div>
                 </div>
                 <div class='modal__actions'>
                   <button class='modal__button button--age-gate no' type='button' data-of-age='no'>No</button>

@@ -1,6 +1,10 @@
 .age-gate {
 
   .modal {
+    &__message,
+    &__success-message {
+      padding: 28px;
+    }
     &__actions {
       border-top: 3px solid rgba(var(--theme-colour-black), 1);
       width: 100%;
@@ -43,44 +47,46 @@
       align-items: center;
     }
     &__content {
-      background: rgba(var(--theme-colour-white),1);
-      color: rgba(var(--theme-colour-black),1);
-      text-align: center;
+      margin: 0;
       padding: 0;
-      margin: 0 auto;
-      max-width: 350px;
       position: relative;
-      overflow: unset;
-      border: 3px rgba(var(--theme-colour-black),1) solid;
-      &-header {
-        height: 28px;
-        width: 100%;
-      }
-      // LEFT & RIGHT
-      &:before,
-      &:after {
-        background: rgba(var(--theme-colour-black),1);
+      overflow: hidden;
+      &-frame {
+        background: rgba(var(--theme-colour-white),1);
+        color: rgba(var(--theme-colour-black),1);
+        text-align: center;
+        padding: 0;
+        margin: 0 auto;
+        max-width: 350px;
+        position: relative;
+        overflow: unset;
         border: 3px rgba(var(--theme-colour-black),1) solid;
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: -1;
-      }
-      // LEFT
-      &:before {
-        left: -15px;
-        top: 3px;
-        width: 12px;
-        height: 102%;
-        transform: skewY(-45deg);
-      }
-      // BOTTOM
-      &:after {
-        bottom: -15px;
-        right: 2px;
-        width: 102%;
-        height: 12px;
-        transform: skewX(-45deg);
+        // LEFT & RIGHT
+        &:before,
+        &:after {
+          background: rgba(var(--theme-colour-black),1);
+          border: 3px rgba(var(--theme-colour-black),1) solid;
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: -1;
+        }
+        // LEFT
+        &:before {
+          left: -15px;
+          top: 3px;
+          width: 12px;
+          height: 102%;
+          transform: skewY(-45deg);
+        }
+        // BOTTOM
+        &:after {
+          bottom: -15px;
+          right: 2px;
+          width: 102%;
+          height: 12px;
+          transform: skewX(-45deg);
+        }
       }
     }
     &__main {
@@ -88,8 +94,6 @@
       height: auto;
     }
     &__message {
-      padding: 28px;
-      padding-top: 0;
       &-image {
         width: 45%;
         margin: 0 auto 20px;
@@ -102,6 +106,27 @@
     }
     &__overlay {
       background: rgba(var(--theme-colour-orange), 0.9);
+    }
+    &__success-message {
+      transition: opacity 500ms, transform 500ms;
+      border-top: 28px solid rgba(var(--theme-colour-white), 1);
+      background: rgba(var(--theme-colour-black), 1);
+      color: rgba(var(--theme-colour-white), 1);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: calc( 100% - 24px );
+      width: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: translate3d( 0, 15px, 0);
+      &.active {
+        opacity: 1;
+        transform: translate3d( 0, 0, 0);
+      }
     }
   }
 

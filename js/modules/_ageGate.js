@@ -62,8 +62,18 @@ const AgeGate = (() => {
         let ofAge = {
           'yes': function() {
             tools.setCookie( cookie.name, cookie.value, cookie.expires() );
-            alert('yes!');
-            // modals.toggleModalVisibility( modal.id, 'close' );
+            let successMessage = document.getElementById('age-gate--success-message') || false;
+            if ( successMessage ) {
+              successMessage.style.zIndex = "1";
+              successMessage.addEventListener('transitionend', function() {
+                setTimeout(function(){
+                  modals.toggleModalVisibility( modal.id, 'close' );
+                }, 250)
+              });
+              setTimeout(function(){
+                successMessage.style.classList.add('active');
+              }, 250);
+            }
           },
           'no': function() {
             document.location.replace( modal.redirectURL() );
