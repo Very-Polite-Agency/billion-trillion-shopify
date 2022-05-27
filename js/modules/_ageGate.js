@@ -62,7 +62,8 @@ const AgeGate = (() => {
         let ofAge = {
           'yes': function() {
             tools.setCookie( cookie.name, cookie.value, cookie.expires() );
-            modals.toggleModalVisibility( modal.id, 'close' );
+            alert('yes!');
+            // modals.toggleModalVisibility( modal.id, 'close' );
           },
           'no': function() {
             document.location.replace( modal.redirectURL() );

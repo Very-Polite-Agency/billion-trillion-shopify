@@ -15,10 +15,16 @@
       }
     }
     &__button {
+      font-family: var(--theme-font-family--sans-serif--secondary);
       color: rgba(var(--theme-colour-black), 1);
+      font-size: 68px;
+      padding: 18px;
+      height: auto;
+      line-height: 0.9;
       &.no {}
       &.yes {
         flex: 1;
+        border-left: 3px solid rgba(var(--theme-colour-black), 1);
       }
       &:hover {
         background: rgba(var(--theme-colour-orange), 1);
