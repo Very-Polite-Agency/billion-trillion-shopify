@@ -14,18 +14,18 @@ const AgeGate = (() => {
     id: 'modal--age-gate',
     redirectURL: function() {
       let modalID = this.id;
-      return document.getElementById( modalID ).getAttribute( 'data-modal-redirect-url' ) || 'https://pbskids.org';
+      return document.getElementById( modalID ).getAttribute( 'data-redirect-url' ) || 'https://pbskids.org';
     },
     timeout: function() {
       let modalID = this.id;
-      return document.getElementById( modalID ).getAttribute( 'data-modal-timeout' ) || 3000;
+      return document.getElementById( modalID ).getAttribute( 'data-timeout-milliseconds' ) || 3000;
     }
   };
   let cookie = {
   	name: 'billion-trillion--age-gate',
   	value: 'of-age',
     expires: function() {
-      return parseInt( document.getElementById( modal.id ).getAttribute( 'data-cookie-expires' ) ) || 60;
+      return parseInt( document.getElementById( modal.id ).getAttribute( 'data-days-saved' ) ) || 60;
     }
 	};
 
