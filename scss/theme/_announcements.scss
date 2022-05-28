@@ -1,0 +1,9 @@
+.announcements {
+
+  &__main {
+    background: rgba(var(--theme-colour-orange), 1);
+    border-bottom: 3px solid rgba(var(--theme-colour-black), 1);
+    color: rgba(var(--theme-colour-black), 1);
+  }
+
+}

@@ -1,18 +1,19 @@
 {% assign section_name = 'announcements' %}
 {% assign section_id = section_name | append: '--' | append: section.id %}
 
-{% assign announcements = section.blocks | where: 'type', 'announcement' %}
+
+{% assign items = section.blocks | where: 'type', 'announcement' | default: false %}
 {% assign enable = section.settings.enable | default: false %}
 {% assign is_carousel = false %}
 
-{% if announcements.size > 1 %}
-  {% assign is_carousel = true %}
-{% endif %}
+{% if enable and items %}
 
+  {% if items.size > 1 %}
+    {% assign is_carousel = true %}
+  {% endif %}
 
-{% if enable and announcements.size > 0 %}
   <div class="{{ section_name }}__main">
-    {% for item in announcements %}
+    {% for item in items %}
 
       {% assign title = item.title | default: '' %}
 
