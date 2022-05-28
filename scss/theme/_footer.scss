@@ -8,9 +8,37 @@
     font-family: var(--theme-font-family--sans-serif--secondary);
     font-style: normal;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1;
     text-align: center;
   }
+
+  @include breakpoint(sm) {
+
+    &__copyright {
+      font-size: 16px;
+    }
+
+  } // min width sm
+
+  @include breakpoint(md) {} // min width md
+
+  @include breakpoint(lg) {
+
+    &__copyright {
+      font-size: 18px;
+    }
+
+  } // min width lg
+
+  @include breakpoint(xl) {} // min width xl
+
+  @include breakpoint(xxl) {
+
+    &__copyright {
+      font-size: 20px;
+    }
+
+  } // min width xxl
 
 }
