@@ -1,0 +1,67 @@
+{% assign section_name = 'announcements' %}
+{% assign section_id = section_name | append: '--' | append: section.id %}
+
+{% assign announcements = section.blocks | where: 'type', 'announcement' %}
+{% assign enable = section.settings.enable | default: false %}
+{% assign is_carousel = false %}
+
+{% if announcements.size > 1 %}
+  {% assign is_carousel = true %}
+{% endif %}
+
+
+{% if enable and announcements.size > 0 %}
+  <div class="{{ section_name }}__main">
+    {% for item in announcements %}
+
+      {% assign title = item.title | default: '' %}
+
+      {% if title != blank %}
+        <div class="{{ section_name }}__main">{{ title }}</div>
+      {% endif %}
+
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Announcements",
+    "tag": "section",
+    "class": "announcements",
+    "settings": [
+      {
+  		  "label": "Enable",
+        "type": "checkbox",
+        "default": true,
+        "id": "enable"
+      },
+      {
+  		  "label": "Sticky",
+        "type": "checkbox",
+        "default": true,
+        "id": "sticky"
+      }
+    ],
+	  "blocks": [
+      {
+        "name": "Announcement",
+        "type": "announcement",
+        "limit": 3,
+        "settings": [
+          {
+            "label": "Title",
+            "type": "text",
+            "id": "title"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
