@@ -5,6 +5,7 @@
 {% assign items = section.blocks | where: 'type', 'announcement' | default: false %}
 {% assign enable = section.settings.enable | default: false %}
 {% assign is_carousel = false %}
+{% assign sticky = section.settings.sticky | default: false %}
 
 {% if enable and items %}
 
@@ -12,7 +13,7 @@
     {% assign is_carousel = true %}
   {% endif %}
 
-  <div class="{{ section_name }}__main">
+  <div class="{{ section_name }}__main{% if sticky %} sticky{% endif %}">
     {% for item in items %}
 
       {% assign title = item.title | default: '' %}
