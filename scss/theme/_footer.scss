@@ -1,0 +1,16 @@
+.footer {
+
+  background: rgba(var(--theme-colour-black), 1);
+  color: rgba(var(--theme-colour-white), 1);
+  padding: 12px 0;
+
+  &__copyright {
+    font-family: var(--theme-font-family--sans-serif--secondary);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+  }
+
+}

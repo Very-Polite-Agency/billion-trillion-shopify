@@ -3,31 +3,7 @@
 
 {% assign menu_main = section.settings.menu_main | default: false %}
 
-<div class="{{ section_name }}__main">
-
-  <div class="{{ section_name }}__brand">
-    <a href="/" target="_self" title="Home">Home</a>
-  </div>
-
-  {% if menu_main %}
-    <nav class="{{ section_name }}__main-navigation navigation navigation--main">
-      <div class="navigation__list">
-        {% for link in linklists[menu_main].links %}
-
-          {% assign nav_active = link.active | default: false %}
-          {% assign nav_title = link.title | default: '' %}
-          {% assign nav_url = link.url | default: '' %}
-
-          <div class="navigation__item">
-            <a class="navigation__link" href="{{ nav_url }}">{{ nav_title }}</a>
-          </div>
-
-        {% endfor %}
-      </div>
-    </nav>
-  {% endif %}
-
-</div>
+<div class="{{ section_name }}__main"></div>
 
 {% stylesheet %}
 {% endstylesheet %}
