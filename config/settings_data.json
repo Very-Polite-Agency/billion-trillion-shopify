@@ -29,10 +29,7 @@
         "type": "footer",
         "settings": {
           "phone": "",
-          "email": "",
-          "menu_main": "",
-          "menu_extra": "",
-          "menu_policies": ""
+          "email": ""
         }
       },
       "announcements": {
