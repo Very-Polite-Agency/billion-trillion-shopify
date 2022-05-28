@@ -7,6 +7,7 @@
 
 {% assign image = section.settings.image | default: false %}
 {% assign image_caption = section.settings.image_caption | default: '' %}
+{% assign newsletter_message = section.settings.newsletter_message | default: 'Sign-up for news and updates!' %}
 
 <div class="{{ section_name }}" id="{{ section_id }}">
   <div class="{{ section_name }}__main">
@@ -16,6 +17,9 @@
         <div class="{{ section_name }}__content">
           <div class="{{ section_name }}__brand">
             <img src="{{ 'BILLION--brand-main.svg' | asset_url }}" />
+          </div>
+          <div class="{{ section_name }}__newsletter">
+            <div class="{{ section_name }}__newsletter-message">{{ newsletter_message }}</div>
           </div>
         </div>
 
@@ -40,8 +44,14 @@
   "class": "section section--hype-builder",
   "settings": [
     {
-      "content": "Content",
+      "content": "Newsletter",
       "type": "header"
+    },
+    {
+      "label": "Message",
+      "info": "For optimal results, keep content within 100 characters.",
+      "type": "richtext",
+      "id": "newsletter_message"
     },
     {
       "content": "Media",
