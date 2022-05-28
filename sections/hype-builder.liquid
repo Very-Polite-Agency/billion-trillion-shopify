@@ -13,6 +13,12 @@
     {% render 'bs-container', state: 'open' %}
       <div class="{{ section_name }}__layout" id="{{ aos_id }}">
 
+        <div class="{{ section_name }}__content">
+          <div class="{{ section_name }}__brand">
+            <img src="{{ 'BILLION--brand-main.svg' | asset_url }}" />
+          </div>
+        </div>
+
         {% if image %}
           <div class="{{ section_name }}__image">
             {% render 'lazyload-image', image: image %}
