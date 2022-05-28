@@ -3,17 +3,8 @@
     "1653600291e275fea1": {
       "type": "hype-builder",
       "settings": {
-        "text_theme": "light",
-        "title": "",
-        "heading": "",
-        "heading_highlight": "standard",
-        "message": "",
-        "cta_title": "",
-        "cta_link": "",
-        "parallax": false,
-        "anchor_id": "",
-        "height": "auto",
-        "curved_arrow_enable": false
+        "image": "shopify:\/\/shop_images\/hype-feature-image_3x_bb570775-c735-4af6-a02a-40287b13e902.png",
+        "image_caption": ""
       }
     }
   },
