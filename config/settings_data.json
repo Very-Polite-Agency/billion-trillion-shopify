@@ -34,6 +34,24 @@
           "menu_extra": "",
           "menu_policies": ""
         }
+      },
+      "announcements": {
+        "type": "announcements",
+        "blocks": {
+          "401bbdc5-b947-4876-88f4-f9107d73dcc9": {
+            "type": "announcement",
+            "settings": {
+              "title": "Coming Soon to the Good Time Galaxy"
+            }
+          }
+        },
+        "block_order": [
+          "401bbdc5-b947-4876-88f4-f9107d73dcc9"
+        ],
+        "settings": {
+          "enable": true,
+          "sticky": false
+        }
       }
     },
     "content_for_index": [
