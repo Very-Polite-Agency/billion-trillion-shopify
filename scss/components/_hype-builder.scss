@@ -8,6 +8,27 @@
       width: 100%;
       height: auto;
     }
+    & + .hype-builder__newsletter {
+      margin-top: 28px;
+    }
+  }
+
+  &__content {
+    & + .hype-builder__image {
+      margin-top: 36px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    height: 280px;
+    width: calc( 100% + (2 * var(--bs-container-fluid-padding)));
+    img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      margin: auto;
+    }
   }
 
   &__layout {
@@ -18,11 +39,54 @@
     flex-flow: column;
   }
 
-  @include breakpoint(sm) {} // min width sm
+  &__newsletter {
+    &-message {
+      font-family: var(--theme-font-family--sans-serif--primary);
+      color: rgba(var(--theme-colour-black), 1);
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 1.15;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
 
-  @include breakpoint(md) {} // min width md
+  @include breakpoint(sm) {
+
+    &__image {
+      height: 320px;
+    }
+
+  } // min width sm
+
+  @include breakpoint(md) {
+
+    &__image {
+      height: 480px;
+    }
+
+  } // min width md
 
   @include breakpoint(lg) {
+
+    &__brand {
+      & + .hype-builder__newsletter {
+        margin-top: 32px;
+      }
+    }
+
+    &__content {
+      & + .hype-builder__image {
+        margin-top: 0;
+      }
+    }
+
+    &__image {
+      height: 390px;
+    }
 
     &__layout {
       justify-content: space-between;
@@ -32,8 +96,20 @@
 
   } // min width lg
 
-  @include breakpoint(xl) {} // min width xl
+  @include breakpoint(xl) {
 
-  @include breakpoint(xxl) {} // min width xxl
+    &__image {
+      height: 410px;
+    }
+
+  } // min width xl
+
+  @include breakpoint(xxl) {
+
+    &__image {
+      height: 430px;
+    }
+
+  } // min width xxl
 
 }
