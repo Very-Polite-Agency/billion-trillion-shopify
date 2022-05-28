@@ -29,7 +29,10 @@
         "type": "footer",
         "settings": {
           "phone": "",
-          "email": ""
+          "email": "",
+          "facebook_url": "",
+          "instagram_url": "",
+          "twitter_url": ""
         }
       },
       "announcements": {
@@ -47,7 +50,7 @@
         ],
         "settings": {
           "enable": true,
-          "sticky": true
+          "sticky": false
         }
       }
     },
