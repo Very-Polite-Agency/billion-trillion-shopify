@@ -1,0 +1,39 @@
+{% comment %}
+
+    Accepts:
+    - tags: {String} Tags Liquid object
+
+    Usage:
+    {% render 'form-newsletter-signup', tags: tags %}
+
+{% endcomment %}
+
+{% assign tags = tags | default: 'newsletter' %}
+
+{%- form 'customer', id: 'form--newsletter-signup', class: 'form form--newsletter-signup js--validate-me' -%}
+
+  <div class="form__main">
+
+    <div class="form__field field field--rude">
+      {% render 'input', classes: 'input--primary input--rude', name: 'contact[rude]', type: 'text' %}
+    </div>
+
+    <div class="form__field field field--tags">
+      {% render 'input', classes: 'input--primary input--email', required: false, name: 'contact[tags]', type: 'text', value: tags %}
+    </div>
+
+    <div class="form__field field">
+      {% render 'input', classes: 'input--primary input--email', required: true, name: 'contact[email]', type: 'email' %}
+    </div>
+
+    <button class="form__submit-button button--primary" type="submit">
+      {% render 'svg', type: 'button.submit' %}
+    </button>
+
+  </div>
+
+  <div class="form__loading">
+    <div class="form__spinner"></div>
+  </div>
+
+{%- endform -%}

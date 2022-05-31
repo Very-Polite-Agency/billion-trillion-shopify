@@ -1931,12 +1931,12 @@
       "oAP" : "\/snippets\/facets.liquid",
       "oF" : 0
     },
-    "\/snippets\/form--contact-us.liquid" : {
+    "\/snippets\/form-newsletter-signup.liquid" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/snippets\/form--contact-us.liquid",
+      "oAP" : "\/snippets\/form-newsletter-signup.liquid",
       "oF" : 0
     },
     "\/snippets\/input.liquid" : {
