@@ -72,6 +72,11 @@
 
   @include breakpoint(lg) {
 
+    &__content,
+    &__image {
+      width: 50%;
+    }
+
     &__brand {
       & + .hype-builder__newsletter {
         margin-top: 32px;
