@@ -10,6 +10,10 @@ html {
 
 body {
 
+  background-image: url('./BILLION--background-tile--light.png');
+  background-position: center center;
+  background-repeat: repeat;
+
   &.sticky-footer {
     display: flex;
     flex-direction: column;

@@ -55,6 +55,19 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/BILLION--background-tile--light.png" : {
+      "ft" : 32768,
+      "iS" : 160976,
+      "oA" : 0,
+      "oAP" : "\/assets\/BILLION--background-tile--light.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/assets\/BILLION--brand-main.svg" : {
       "ft" : 2097152,
       "miP" : 0,
