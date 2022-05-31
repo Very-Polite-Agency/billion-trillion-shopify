@@ -4,7 +4,7 @@
 
 const Scrolling = (() => {
 
-	let debug = false;
+	let debug = true;
 	let info = { name : 'Scrolling', version : '1.0' };
 
   let tools = new Tools();

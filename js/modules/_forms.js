@@ -4,7 +4,7 @@
 
 const Forms = (() => {
 
-  let debug = false;
+  let debug = true;
   let info = { name : 'Forms', version : '2.1' };
 
   let tools = new Tools();
