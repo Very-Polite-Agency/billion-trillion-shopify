@@ -2,43 +2,37 @@
 {% assign section_id = section_name | append: '--' | append: section.id %}
 
 {% assign announcements = section.blocks | where: 'type', 'announcement' | default: false %}
-{% assign enable = section.settings.enable | default: false %}
 {% assign is_carousel = false %}
-{% assign sticky = section.settings.sticky | default: false %}
 
-{% if enable and announcements %}
+<div class="{{ section_name }}__main{% if sticky %} sticky{% endif %}">
 
   {% if announcements.size > 1 %}
     {% assign is_carousel = true %}
   {% endif %}
 
-  <div class="{{ section_name }}__main{% if sticky %} sticky{% endif %}">
-
+  {% if announcements %}
     {% for block in announcements %}
       {% assign title = block.settings.title | default: '' %}
       {% if title != blank %}
         <div class="{{ section_name }}__item">{{ title }}</div>
       {% endif %}
     {% endfor %}
+  {% endif %}
 
-  </div>
+</div>
 
-  <script>
-
-    var element = document.getElementById('shopify-section-announcements') || false;
-    var enable = {{ enable | json }};
-    console.log({ element, enable });
-
-  </script>
-
-{% endif %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-console.log('help');
-{% endjavascript %}
+<script>
+  var element = document.getElementById('shopify-section-announcements') || false;
+  var settings = {
+    enable: {{ section.settings.enable | default: false | json }},
+    stickty: {{ section.settings.sticky | default: false | json }},
+  };
+  console.log({ element, settings });
+  if ( element ) {
+    if ( settings.enable ) element.classList.add('enabled');
+    if ( settings.stickty ) element.classList.add('sticky');
+  }
+</script>
 
 {% schema %}
   {

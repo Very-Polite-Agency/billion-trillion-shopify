@@ -1,17 +1,14 @@
 .announcements {
 
+  display: none;
+  border-bottom: 3px solid rgba(var(--theme-colour-black), 1);
+  background: rgba(var(--theme-colour-white), 1);
+
   &__main {
-    background: rgba(var(--theme-colour-white), 1);
-    border-bottom: 3px solid rgba(var(--theme-colour-black), 1);
     color: rgba(var(--theme-colour-black), 1);
     width: 100%;
     height: auto;
     padding: 15px 0;
-    &.sticky {
-      position: fixed;
-      top: 0;
-      left: 0;
-    }
   }
 
   &__item {
@@ -22,6 +19,19 @@
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
+  }
+
+  &.enabled {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
   }
 
   @include breakpoint(sm) {
@@ -43,7 +53,7 @@
   @include breakpoint(lg) {
 
     &__item {
-      font-size: 36px;
+      font-size: 30px;
     }
 
   } // min width lg
@@ -51,7 +61,7 @@
   @include breakpoint(xl) {
 
     &__item {
-      font-size: 42px;
+      font-size: 38px;
     }
 
   } // min width xl
@@ -59,7 +69,7 @@
   @include breakpoint(xxl) {
 
     &__item {
-      font-size: 48px;
+      font-size: 44px;
     }
 
   } // min width xxl

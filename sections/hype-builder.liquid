@@ -11,7 +11,6 @@
 
 <div class="{{ section_name }}" id="{{ section_id }}">
   <div class="{{ section_name }}__main">
-    {% render 'bs-container', state: 'open' %}
       <div class="{{ section_name }}__layout" id="{{ aos_id }}">
 
         <div class="{{ section_name }}__content">
@@ -26,35 +25,39 @@
 
         {% if image %}
           <div class="{{ section_name }}__media">
+
             <div class="{{ section_name }}__media-image">
               {% render 'lazyload-image', image: image %}
             </div>
-            {% if image_caption != blank %}
-              <div class="{{ section_name }}__media-caption body-copy--1">{{ image_caption }}</div>
-            {% endif %}
-            <div class="{{ section_name }}__media-details">
 
-              <div class="{{ section_name }}__media-details-item">
-                <div class="{{ section_name }}__media-details-value">6%</div>
-                <div class="{{ section_name }}__media-details-label">Alc/Vol</div>
-              </div>
+            <div class="{{ section_name }}__media-content">
+              {% if image_caption != blank %}
+                <div class="{{ section_name }}__media-caption body-copy--1">{{ image_caption }}</div>
+              {% endif %}
+              <div class="{{ section_name }}__media-details">
 
-              <div class="{{ section_name }}__media-details-item">
-                <div class="{{ section_name }}__media-details-value">100</div>
-                <div class="{{ section_name }}__media-details-label">Calories</div>
-              </div>
+                <div class="{{ section_name }}__media-details-item">
+                  <div class="{{ section_name }}__media-details-value">6%</div>
+                  <div class="{{ section_name }}__media-details-label">Alc/Vol</div>
+                </div>
 
-              <div class="{{ section_name }}__media-details-item">
-                <div class="{{ section_name }}__media-details-value">100%</div>
-                <div class="{{ section_name }}__media-details-label">Natural</div>
+                <div class="{{ section_name }}__media-details-item">
+                  <div class="{{ section_name }}__media-details-value">100</div>
+                  <div class="{{ section_name }}__media-details-label">Calories</div>
+                </div>
+
+                <div class="{{ section_name }}__media-details-item">
+                  <div class="{{ section_name }}__media-details-value">100%</div>
+                  <div class="{{ section_name }}__media-details-label">Natural</div>
+                </div>
               </div>
 
             </div>
+
           </div>
         {% endif %}
 
       </div>
-    {% render 'bs-container', state: 'closed' %}
   </div>
 </div>
 
@@ -62,7 +65,7 @@
 {
   "name": "Hype Builder",
   "tag": "section",
-  "class": "section section--hype-builder",
+  "class": "section section--hype-builder hype-builder",
   "settings": [
     {
       "content": "Newsletter",

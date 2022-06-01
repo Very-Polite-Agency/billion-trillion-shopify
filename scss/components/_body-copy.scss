@@ -81,7 +81,13 @@
 
   } // min width md
 
-  @include breakpoint(lg) {} // min width lg
+  @include breakpoint(lg) {
+
+    &--1 {
+      font-size: 14px;
+    }
+
+  } // min width lg
 
   @include breakpoint(xl) {} // min width xl
 
