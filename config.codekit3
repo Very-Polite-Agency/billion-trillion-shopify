@@ -1997,6 +1997,14 @@
       "oAP" : "\/sections\/text-feature.liquid",
       "oF" : 0
     },
+    "\/sections\/thank-you.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sections\/thank-you.liquid",
+      "oF" : 0
+    },
     "\/snippets\/aos-attributes.liquid" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2369,6 +2377,14 @@
       "ft" : 524288,
       "oA" : 0,
       "oAP" : "\/templates\/page.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/templates\/page.thank-you.json" : {
+      "ft" : 524288,
+      "oA" : 0,
+      "oAP" : "\/templates\/page.thank-you.json",
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
