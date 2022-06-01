@@ -1,19 +1,28 @@
 {%- assign section_name = 'thank-you' -%}
 {%- assign section_id = section_name | append: '--' | append: section.id -%}
 
+{%- assign cta_link = section.settings.cta_link | default: '' %}
 {%- assign heading = section.settings.heading | default: '' -%}
 {%- assign message = section.settings.message | default: '' -%}
 
 <div class="{{ section_name }}" id="{{ section_id }}">
+  {% render 'bs-container', state: 'open', col: 'col-12 col-lg-8 offset-lg-2' %}
 
-  {% if heading != blank %}
-    <h1>{{ heading }}</h1>
-  {% endif %}
+    {% if heading != blank %}
+      <h1 class="{{ section_name }}__heading">{{ heading }}</h1>
+    {% endif %}
 
-  {% if message != blank %}
-    <div>{{ message }}</div>
-  {% endif %}
+    {% if message != blank %}
+      <div class="{{ section_name }}__message">{{ message }}</div>
+    {% endif %}
 
+    {% if cta_link != blank %}
+       <div class="{{ section_name }}__cta">
+        <a class="{{ section_name }}__cta-link link" href="{{ cta_link }}"></a>
+       </div>
+    {% endif %}
+
+  {% render 'bs-container', state: 'closed' %}
 </div>
 
 {% schema %}
