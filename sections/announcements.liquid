@@ -23,12 +23,21 @@
 
   </div>
 
+  <script>
+
+    var element = document.getElementById('shopify-section-announcements') || false;
+    var enable = {{ enable | json }};
+    console.log({ element, enable });
+
+  </script>
+
 {% endif %}
 
 {% stylesheet %}
 {% endstylesheet %}
 
 {% javascript %}
+console.log('help');
 {% endjavascript %}
 
 {% schema %}

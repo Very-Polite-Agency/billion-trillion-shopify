@@ -1,6 +1,12 @@
 .hype-builder {
 
   .form {
+    .input--email {
+      &::placeholder {
+        color: rgba(var(--theme-colour-black), 1);
+        text-transform: uppercase;
+      }
+    }
     &__row {
       width: 100%;
       justify-content: space-between;
@@ -10,6 +16,14 @@
         margin-left: var(--bs-gutter-width);
       }
     }
+  }
+
+  &__newsletter-message,
+  &__media-caption {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 320px;
   }
 
   &__brand {
@@ -26,6 +40,9 @@
   }
 
   &__content {
+    width: 100%;
+    margin: auto;
+    max-width: 400px;
     & + .hype-builder__media {
       margin-top: 36px;
     }
@@ -51,6 +68,31 @@
     position: relative;
     width: calc( 100% + (2 * var(--bs-container-fluid-padding)));
     &-caption {}
+    &-details {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 28px;
+      &-label,
+      &-value {
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1;
+        display: block;
+      }
+      &-item {
+        margin: 0 8px;
+      }
+      &-label {
+        font-family: var(--theme-font-family--sans-serif--primary);
+        font-size: 16px;
+        margin-top: 3px;
+      }
+      &-value {
+        font-family: var(--theme-font-family--sans-serif--secondary);
+        font-size: 42px;
+      }
+    }
     &-image {
       height: 320px;
       img {

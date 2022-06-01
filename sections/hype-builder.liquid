@@ -32,6 +32,24 @@
             {% if image_caption != blank %}
               <div class="{{ section_name }}__media-caption body-copy--1">{{ image_caption }}</div>
             {% endif %}
+            <div class="{{ section_name }}__media-details">
+
+              <div class="{{ section_name }}__media-details-item">
+                <div class="{{ section_name }}__media-details-value">6%</div>
+                <div class="{{ section_name }}__media-details-label">Alc/Vol</div>
+              </div>
+
+              <div class="{{ section_name }}__media-details-item">
+                <div class="{{ section_name }}__media-details-value">100</div>
+                <div class="{{ section_name }}__media-details-label">Calories</div>
+              </div>
+
+              <div class="{{ section_name }}__media-details-item">
+                <div class="{{ section_name }}__media-details-value">100%</div>
+                <div class="{{ section_name }}__media-details-label">Natural</div>
+              </div>
+
+            </div>
           </div>
         {% endif %}
 

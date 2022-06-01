@@ -51,13 +51,17 @@
     font-family: var(--theme-font-family--sans-serif--primary);
     font-style: normal;
     font-weight: 700;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.15;
     text-align: center;
     text-transform: uppercase;
   }
 
   @include breakpoint(sm) {
+
+    &--1 {
+      font-size: 15px;
+    }
 
     &--age-gate {
       font-size: 23px;
@@ -66,6 +70,10 @@
   } // min width sm
 
   @include breakpoint(md) {
+
+    &--1 {
+      font-size: 16px;
+    }
 
     &--age-gate {
       font-size: 23px;
