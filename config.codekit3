@@ -2024,6 +2024,14 @@
       "oAP" : "\/snippets\/facets.liquid",
       "oF" : 0
     },
+    "\/snippets\/form-error.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/snippets\/form-error.liquid",
+      "oF" : 0
+    },
     "\/snippets\/form-newsletter-signup.liquid" : {
       "cB" : 0,
       "ft" : 8192,

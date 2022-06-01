@@ -1,0 +1,14 @@
+.form {
+
+  position: relative;
+  overflow: hidden;
+
+  &__row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+  }
+
+}

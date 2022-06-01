@@ -50,4 +50,26 @@
     padding: 0 28px;
   }
 
+  &--image {
+    @extend .button;
+    min-height: unset;
+    height: 40px;
+    img, svg {
+      display: block;
+      height: 100%;
+      width: auto;
+    }
+    .button__fill {
+      color: rgba(var(--theme-colour-orange), 1);
+    }
+    .button__outline {
+      color: rgba(var(--theme-colour-black), 1);
+    }
+    &:hover {
+      .button__fill {
+        color: pink;
+      }
+    }
+  }
+
 }

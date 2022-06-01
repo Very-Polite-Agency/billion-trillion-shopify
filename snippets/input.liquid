@@ -14,7 +14,7 @@
  {% assign classes = classes | append: ' required' | strip %}
 {% endif %}
 
-{% if name != blank %}
+{% if name and name != blank %}
   <input
     {% if classes != blank %}class="{{- classes -}}"{% endif %}
     type="{{- type -}}"

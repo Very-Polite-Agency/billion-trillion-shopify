@@ -1,0 +1,21 @@
+.input {
+
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  width: auto;
+  font-family: var(--theme-font-family--sans-serif--primary);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.21;
+  background: transparent;
+
+  &--primary {
+    @extend .input;
+    border-bottom: 2px solid rgba(var(--theme-colour-black), 1);
+  }
+
+}
