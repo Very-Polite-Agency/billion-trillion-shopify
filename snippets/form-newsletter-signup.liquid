@@ -10,25 +10,25 @@
 
 {% assign tags = tags | default: 'newsletter' %}
 
-{%- form 'customer', id: 'form--newsletter-signup', class: 'form form--newsletter-signup js--validate-me' -%}
+{%- form 'customer', class: 'hype-builder__newsletter-form form form--newsletter-signup js--validate-me', id: 'form--newsletter-signup'  -%}
 
   <div class="form__main">
 
-    <div class="form__row">
-      <div class="form__field field field--rude">
+    <div class="form__row form-row--rude">
+      <div class="form__field form-field--rude">
         {% render 'input', classes: 'input--primary input--rude', name: 'contact[rude]', type: 'text' %}
       </div>
-      <div class="form__field field field--tags">
+      <div class="form__field form-field--tags">
         {% render 'input', classes: 'input--primary input--tags', readonly: true, required: false, name: 'contact[tags]', type: 'text', value: tags %}
       </div>
     </div>
 
-    <div class="form__row">
-      <div class="form__field field">
+    <div class="form__row form-row">
+      <div class="form__field form-field--email">
         {% render 'input', classes: 'input--primary input--email', required: true, name: 'contact[email]', placeholder: 'Email', type: 'email' %}
         {% render 'form-error', message: 'Please enter a valid email!' %}
       </div>
-      <button class="form__submit-button button--image" type="submit">
+      <button class="form__button button--image" type="submit">
         {% render 'svg', type: 'button.submit' %}
       </button>
     </div>

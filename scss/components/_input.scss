@@ -12,10 +12,13 @@
   font-size: 14px;
   line-height: 1.21;
   background: transparent;
+  max-width: none;
 
   &--primary {
     @extend .input;
     border-bottom: 2px solid rgba(var(--theme-colour-black), 1);
+    padding: 5px 0;
+    width: 100%;
   }
 
 }

@@ -8,9 +8,6 @@
 // @codekit-prepend "./modules/_credits.js";
 // @codekit-prepend "./modules/_breakpoints.js";
 // @codekit-prepend "./modules/_forms.js";
-// @codekit-prepend "./modules/_gliders.js";
-// @codekit-prepend "./modules/_instagramFeed.js";
-// @codekit-prepend "./modules/_mobileMenu.js";
 // @codekit-prepend "./modules/_modals";
 // @codekit-prepend "./modules/_scrolling.js";
 // @codekit-prepend "./modules/_sizing.js";

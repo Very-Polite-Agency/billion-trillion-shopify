@@ -1,5 +1,17 @@
 .hype-builder {
 
+  .form {
+    &__row {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      flex-flow: row nowrap;
+      .form__button {
+        margin-left: var(--bs-gutter-width);
+      }
+    }
+  }
+
   &__brand {
     width: 100%;
     height: auto;
@@ -9,25 +21,13 @@
       height: auto;
     }
     & + .hype-builder__newsletter {
-      margin-top: 28px;
+      margin-top: 32px;
     }
   }
 
   &__content {
-    & + .hype-builder__image {
+    & + .hype-builder__media {
       margin-top: 36px;
-    }
-  }
-
-  &__image {
-    position: relative;
-    height: 280px;
-    width: calc( 100% + (2 * var(--bs-container-fluid-padding)));
-    img {
-      display: block;
-      height: 100%;
-      object-fit: cover;
-      margin: auto;
     }
   }
 
@@ -41,16 +41,24 @@
 
   &__newsletter {
     &-message {
-      font-family: var(--theme-font-family--sans-serif--primary);
-      color: rgba(var(--theme-colour-black), 1);
-      font-style: normal;
-      font-weight: 700;
-      font-size: 15px;
-      line-height: 1.15;
-      text-align: center;
-      text-transform: uppercase;
-      margin: 0 auto;
-      width: 100%;
+      & + .hype-builder__newsletter-form {
+        margin-top: 26px;
+      }
+    }
+  }
+
+  &__media {
+    position: relative;
+    width: calc( 100% + (2 * var(--bs-container-fluid-padding)));
+    &-caption {}
+    &-image {
+      height: 320px;
+      img {
+        display: block;
+        height: 100%;
+        object-fit: cover;
+        margin: auto;
+      }
     }
   }
 

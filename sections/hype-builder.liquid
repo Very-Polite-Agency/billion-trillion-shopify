@@ -6,8 +6,8 @@
 {% assign aos_increment = 250 %}
 
 {% assign image = section.settings.image | default: false %}
-{% assign image_caption = section.settings.image_caption | default: '' %}
-{% assign newsletter_message = section.settings.newsletter_message | default: 'Sign-up for news and updates!' %}
+{% assign image_caption = section.settings.image_caption | default: "There’s A Whole Lot Of Nothing Out There. Take A Sip Of Something Real." %}
+{% assign newsletter_message = section.settings.newsletter_message | default: "Sign-up for news and updates!" %}
 
 <div class="{{ section_name }}" id="{{ section_id }}">
   <div class="{{ section_name }}__main">
@@ -19,16 +19,18 @@
             <img src="{{ 'BILLION--brand-main.svg' | asset_url }}" />
           </div>
           <div class="{{ section_name }}__newsletter">
-            <div class="{{ section_name }}__newsletter-message">{{ newsletter_message }}</div>
+            <div class="{{ section_name }}__newsletter-message body-copy--1">{{ newsletter_message }}</div>
             {% render 'form-newsletter-signup' %}
           </div>
         </div>
 
         {% if image %}
-          <div class="{{ section_name }}__image">
-            {% render 'lazyload-image', image: image %}
+          <div class="{{ section_name }}__media">
+            <div class="{{ section_name }}__media-image">
+              {% render 'lazyload-image', image: image %}
+            </div>
             {% if image_caption != blank %}
-              <div class="{{ section_name }}__image-caption">{{ image_caption }}</div>
+              <div class="{{ section_name }}__media-caption body-copy--1">{{ image_caption }}</div>
             {% endif %}
           </div>
         {% endif %}

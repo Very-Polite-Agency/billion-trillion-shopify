@@ -1,0 +1,14 @@
+.form-field {
+
+  position: relative;
+
+  &.error {
+    .form-error {}
+  }
+
+  &--email {
+    @extend .form-field;
+    flex: 1;
+  }
+
+}
