@@ -5,8 +5,12 @@
   "sections": {
     "main": {
       "type": "thank-you",
-      "blocks": {},
-      "settings": {}
+      "settings": {
+        "heading": "Thank You",
+        "message": "<p>We've received <br\/>your signal<\/p>",
+        "cta_link": "\/",
+        "anchor_id": ""
+      }
     }
   }
 }
