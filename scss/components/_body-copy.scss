@@ -36,25 +36,28 @@
   }
 
   &--1,
-  &--age-gate {
+  &--age-gate,
+  &--xs {
     @extend .body-copy;
-  }
-
-  &--age-gate {
-    font-family: var(--theme-font-family--sans-serif--primary);
-    font-size: 22px;
-    line-height: 1.23;
     text-transform: uppercase;
   }
 
+  &--age-gate {
+    font-size: 22px;
+    line-height: 1.23;
+  }
+
   &--1 {
-    font-family: var(--theme-font-family--sans-serif--primary);
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.15;
     text-align: center;
-    text-transform: uppercase;
+  }
+
+  &--xs {
+    font-weight: 700;
+    font-size: 14px;
   }
 
   @include breakpoint(sm) {

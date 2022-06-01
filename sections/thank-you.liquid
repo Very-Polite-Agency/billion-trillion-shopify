@@ -9,16 +9,18 @@
   {% render 'bs-container', state: 'open', col: 'col-12 col-lg-8 offset-lg-2' %}
 
     {% if heading != blank %}
-      <h1 class="{{ section_name }}__heading">{{ heading }}</h1>
+      <h1 class="{{ section_name }}__heading heading--xxl">{{ heading }}</h1>
     {% endif %}
 
     {% if message != blank %}
-      <div class="{{ section_name }}__message">{{ message }}</div>
+      <div class="{{ section_name }}__message body-copy--xs">{{ message }}</div>
     {% endif %}
 
     {% if cta_link != blank %}
        <div class="{{ section_name }}__cta">
-        <a class="{{ section_name }}__cta-link link" href="{{ cta_link }}"></a>
+        <a class="{{ section_name }}__cta-link link" href="{{ cta_link }}">
+          <img src="{{ 'BILLION--button--take-me-home.svg' | asset_url }}" alt="Take Me Home" />
+        </a>
        </div>
     {% endif %}
 
