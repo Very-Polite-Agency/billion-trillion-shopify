@@ -1,28 +1,64 @@
 {%- assign section_name = 'thank-you' -%}
 {%- assign section_id = section_name | append: '--' | append: section.id -%}
 
+{% assign aos_id = section_id | append: '--aos' %}
+{% assign aos_delay = 250 %}
+{% assign aos_delay_increment = 250 %}
+
 {%- assign cta_link = section.settings.cta_link | default: '' %}
 {%- assign heading = section.settings.heading | default: '' -%}
 {%- assign message = section.settings.message | default: '' -%}
 
-<div class="{{ section_name }}" id="{{ section_id }}">
+<div class="{{ section_name }}__main" id="{{ section_id }}">
   {% render 'bs-container', state: 'open', col: 'col-12 col-lg-8 offset-lg-2' %}
 
-    {% if heading != blank %}
-      <h1 class="{{ section_name }}__heading heading--xxl">{{ heading }}</h1>
-    {% endif %}
+    <div class="{{ section_name }}__content" id="{{ aos_id }}">
+      {% if heading != blank %}
+        {% capture aos %}
+          {%
+            render 'aos-attributes',
+            anchor: aos_id,
+            anchor_placement: 'top-bottom',
+            delay: aos_delay,
+            transition: 'fade-down',
+          %}
+        {% endcapture %}
+        {% assign aos_delay = aos_delay | plus: aos_delay_increment %}
+        <h1 class="{{ section_name }}__heading heading--xxl" {{ aos }}>{{ heading }}</h1>
+      {% endif %}
 
-    {% if message != blank %}
-      <div class="{{ section_name }}__message body-copy--xs">{{ message }}</div>
-    {% endif %}
+      {% if message != blank %}
+        {% capture aos %}
+          {%
+            render 'aos-attributes',
+            anchor: aos_id,
+            anchor_placement: 'top-bottom',
+            delay: aos_delay,
+            transition: 'fade-down',
+          %}
+        {% endcapture %}
+        {% assign aos_delay = aos_delay | plus: aos_delay_increment %}
+        <div class="{{ section_name }}__message body-copy--xs" {{ aos }}>{{ message }}</div>
+      {% endif %}
 
-    {% if cta_link != blank %}
-       <div class="{{ section_name }}__cta">
-        <a class="{{ section_name }}__cta-link link" href="{{ cta_link }}">
-          <img src="{{ 'BILLION--button--take-me-home.svg' | asset_url }}" alt="Take Me Home" />
-        </a>
-       </div>
-    {% endif %}
+      {% if cta_link != blank %}
+        {% capture aos %}
+          {%
+            render 'aos-attributes',
+            anchor: aos_id,
+            anchor_placement: 'top-bottom',
+            delay: aos_delay,
+            transition: 'fade-down',
+          %}
+        {% endcapture %}
+        {% assign aos_delay = aos_delay | plus: aos_delay_increment %}
+        <div class="{{ section_name }}__cta" {{ aos }}>
+          <a class="{{ section_name }}__cta-link link" href="{{ cta_link }}">
+            <img src="{{ 'BILLION--button--take-me-home.svg' | asset_url }}" alt="Take Me Home" />
+          </a>
+        </div>
+      {% endif %}
+    </div>
 
   {% render 'bs-container', state: 'closed' %}
 </div>
@@ -31,7 +67,7 @@
 {
   "name": "Thank You",
   "tag": "section",
-  "class": "section section--thank-you",
+  "class": "section section--thank-you thank-you",
   "settings": [
     {
       "content": "Content",

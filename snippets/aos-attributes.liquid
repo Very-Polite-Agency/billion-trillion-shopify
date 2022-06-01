@@ -50,10 +50,10 @@
 {%- assign anchor = anchor | default: '' -%}
 {%- assign anchor_placement = anchor_placement | default: 'top-bottom' -%}
 {%- assign delay = delay | default: 0 -%}
-{%- assign duration = duration | default: 1000 -%}
+{%- assign duration = duration | default: 650 -%}
 {%- assign easing = easing | default: 'ease-in-out' -%}
-{%- assign offset = offset | default: 0 -%}
-{%- assign once = once | default: 'false' -%}
+{%- assign offset = offset | default: 175 -%}
+{%- assign once = once | default: 'true' -%}
 {%- assign transition = transition | default: 'fade-up' -%}
 
 {% comment %} ## Build Attrs ## {% endcomment %}
@@ -61,7 +61,7 @@
 {% if anchor != blank %}
   {%- assign html = html | append: ' data-aos-anchor="#' | append: anchor | append: '"' -%}
 {% endif %}
-{%- assign html = html | append: ' data-aos-anchor-placement="' | append: anchor | append: '"' -%}
+{%- assign html = html | append: ' data-aos-anchor-placement="' | append: anchor_placement | append: '"' -%}
 {%- assign html = html | append: ' data-aos-delay="' | append: delay | append: '"' -%}
 {%- assign html = html | append: ' data-aos-duration="' | append: duration | append: '"' -%}
 {%- assign html = html | append: ' data-aos-easing="' | append: easing | append: '"' -%}
