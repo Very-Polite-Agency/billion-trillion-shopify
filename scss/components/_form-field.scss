@@ -2,13 +2,13 @@
 
   position: relative;
 
-  &.error {
-    .form-error {}
-  }
-
   &--email {
     @extend .form-field;
     flex: 1;
+  }
+
+  &.error {
+    padding: 15px 0;
   }
 
 }

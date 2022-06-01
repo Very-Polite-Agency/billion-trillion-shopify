@@ -1,12 +1,22 @@
 .form-error {
+
+  font-family: var(--theme-font-family--sans-serif--primary);
   transition:
     color var(--theme-transition-duration),
     opacity var(--theme-transition-duration),
     transform var(--theme-transition-duration);
   position: absolute;
-  top: 100%;
+  top: calc(100% - 15px);
   right: 0;
-  font-size: 10px;
-  color: red;
-  opacity: 1;
+  color: rgba(var(--theme-colour-orange), 1);
+  opacity: 0;
+  transform: translate3d( -5px, 0, 0 );
+  letter-spacing: 0;
+  font-size: 12px;
+
+  .error & {
+    opacity: 1;
+    transform: translate3d( 0, 0, 0 );
+  }
+
 }

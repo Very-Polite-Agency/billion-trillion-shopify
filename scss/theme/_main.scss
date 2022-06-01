@@ -7,11 +7,7 @@ main {
 
   @include breakpoint(md) {} // min width md
 
-  @include breakpoint(lg) {
-
-    // padding-bottom: 0;
-
-  } // min width lg
+  @include breakpoint(lg) {} // min width lg
 
   @include breakpoint(xl) {} // min width xl
 

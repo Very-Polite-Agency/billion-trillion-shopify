@@ -22,7 +22,6 @@ let modules = [
   new Credits(),
   new Forms(),
   new Scrolling(),
-  new Sizing()
 ];
 
 modules.forEach( module => module.init() );

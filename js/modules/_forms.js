@@ -220,7 +220,7 @@ const Forms = (() => {
     formData.forEach((value, key) => formObject[key] = value);
     formElement.classList.add('posting');
 
-    console.log(formObject);
+    console.log( formObject );
 
     axios.post( formAction, formData )
     .then( data => {
@@ -239,7 +239,7 @@ const Forms = (() => {
           break;
         }
         default: {
-          break;
+          window.location.replace( '/pages/thank-you' );
         }
       }
     })
