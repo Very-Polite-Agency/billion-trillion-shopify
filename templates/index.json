@@ -4,6 +4,7 @@
       "type": "hype-builder",
       "settings": {
         "newsletter_message": "<p>Keep up to date, space and time with all things Billion Trillion!<\/p>",
+        "image": "shopify:\/\/shop_images\/hype-feature-image_3x_bad59201-3262-49bc-ad7e-b836f559477a.png",
         "image_caption": "There’s a whole lot of nothing out there. Take a sip of something real."
       }
     }
