@@ -33,6 +33,19 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/assets\/apple-touch-icon.png" : {
+      "ft" : 32768,
+      "iS" : 8973,
+      "oA" : 0,
+      "oAP" : "\/assets\/apple-touch-icon.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/assets\/base.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -111,6 +124,40 @@
       "oF" : 0,
       "sC" : 3,
       "tS" : 1
+    },
+    "\/assets\/favicon.ico" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/favicon.ico",
+      "oF" : 0
+    },
+    "\/assets\/featured-image-tall.png" : {
+      "ft" : 32768,
+      "iS" : 241039,
+      "oA" : 0,
+      "oAP" : "\/assets\/featured-image-tall.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/assets\/featured-image-wide.png" : {
+      "ft" : 32768,
+      "iS" : 146834,
+      "oA" : 0,
+      "oAP" : "\/assets\/featured-image-wide.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
     },
     "\/assets\/global.js" : {
       "bF" : 0,
@@ -243,6 +290,19 @@
       "sC" : 3,
       "tS" : 1
     },
+    "\/assets\/screenshot.png" : {
+      "ft" : 32768,
+      "iS" : 203621,
+      "oA" : 0,
+      "oAP" : "\/assets\/screenshot.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/assets\/share.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -306,6 +366,32 @@
       "oF" : 0,
       "sC" : 3,
       "tS" : 1
+    },
+    "\/assets\/tile-wide.png" : {
+      "ft" : 32768,
+      "iS" : 36763,
+      "oA" : 0,
+      "oAP" : "\/assets\/tile-wide.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/assets\/tile.png" : {
+      "ft" : 32768,
+      "iS" : 60929,
+      "oA" : 0,
+      "oAP" : "\/assets\/tile.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
     },
     "\/assets\/vendors.min.js" : {
       "bF" : 0,
@@ -2262,7 +2348,7 @@
     "creationDate" : 675061804.464692,
     "displayValue" : "Billion Trillion | Shopify",
     "displayValueWasSetByUser" : 1,
-    "iconImageName" : "brackets-koamaru",
+    "iconImageName" : "\/assets\/apple-touch-icon.png",
     "iconImageWasSetByUser" : 0
   },
   "projectSettings" : {
