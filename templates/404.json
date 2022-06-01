@@ -1,1 +1,16 @@
-{"order":["main"],"sections":{"main":{"settings":{},"type":"main-404"}}}
+{
+  "order": [
+    "main"
+  ],
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "settings": {
+        "heading": "404",
+        "message": "<p>We've received <br\/>your signal<\/p>",
+        "cta_link": "\/",
+        "anchor_id": ""
+      }
+    }
+  }
+}
