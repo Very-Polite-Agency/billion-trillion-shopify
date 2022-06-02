@@ -3,7 +3,7 @@
 
 {% assign aos_id = section_id | append: '--aos' %}
 {% assign aos_delay = 250 %}
-{% assign aos_increment = 250 %}
+{% assign aos_delay_increment = 250 %}
 
 {% assign image = section.settings.image | default: false %}
 {% assign image_caption = section.settings.image_caption | default: "There’s A Whole Lot Of Nothing Out There. Take A Sip Of Something Real." %}
@@ -14,27 +14,94 @@
       <div class="{{ section_name }}__layout" id="{{ aos_id }}">
 
         <div class="{{ section_name }}__content">
-          <div class="{{ section_name }}__brand">
+
+          {% capture aos %}
+            {%
+              render 'aos-attributes',
+              anchor: aos_id,
+              anchor_placement: 'top-bottom',
+              delay: aos_delay,
+              transition: 'fade-down',
+            %}
+          {% endcapture %}
+          {% assign aos_delay = aos_delay | plus: aos_delay_increment %}
+          <div class="{{ section_name }}__brand" {{ aos }}>
             <img src="{{ 'BILLION--brand-main.svg' | asset_url }}" />
           </div>
+
           <div class="{{ section_name }}__newsletter">
-            <div class="{{ section_name }}__newsletter-message body-copy--1">{{ newsletter_message }}</div>
-            {% render 'form-newsletter-signup' %}
+
+            {% capture aos %}
+              {%
+                render 'aos-attributes',
+                anchor: aos_id,
+                anchor_placement: 'top-bottom',
+                delay: aos_delay,
+                transition: 'fade-right',
+              %}
+            {% endcapture %}
+            {% assign aos_delay = aos_delay | plus: aos_delay_increment %}
+            <div class="{{ section_name }}__newsletter-message body-copy--1" {{ aos }}>{{ newsletter_message }}</div>
+
+            {% capture aos %}
+              {%
+                render 'aos-attributes',
+                anchor: aos_id,
+                anchor_placement: 'top-bottom',
+                delay: aos_delay,
+                transition: 'fade-left',
+              %}
+            {% endcapture %}
+            {% assign aos_delay = aos_delay | plus: aos_delay_increment %}
+            <div class="{{ section_name }}__newsletter-form" {{ aos }}>
+              {% render 'form-newsletter-signup' %}
+            </div>
+
           </div>
+
         </div>
 
         {% if image %}
           <div class="{{ section_name }}__media">
 
-            <div class="{{ section_name }}__media-image">
+            {% capture aos %}
+              {%
+                render 'aos-attributes',
+                anchor: aos_id,
+                anchor_placement: 'top-bottom',
+                delay: 350,
+                transition: 'fade-up',
+              %}
+            {% endcapture %}
+            <div class="{{ section_name }}__media-image" {{ aos }}>
               {% render 'lazyload-image', image: image %}
             </div>
 
             <div class="{{ section_name }}__media-content">
               {% if image_caption != blank %}
-                <div class="{{ section_name }}__media-caption body-copy--1">{{ image_caption }}</div>
+                {% capture aos %}
+                  {%
+                    render 'aos-attributes',
+                    anchor: aos_id,
+                    anchor_placement: 'top-bottom',
+                    delay: 550,
+                    transition: 'fade-left',
+                  %}
+                {% endcapture %}
+                <div class="{{ section_name }}__media-caption body-copy--1" {{ aos }}>{{ image_caption }}</div>
               {% endif %}
-              <div class="{{ section_name }}__media-details">
+
+
+              {% capture aos %}
+                {%
+                  render 'aos-attributes',
+                  anchor: aos_id,
+                  anchor_placement: 'top-bottom',
+                  delay: 550,
+                  transition: 'fade-down',
+                %}
+              {% endcapture %}
+              <div class="{{ section_name }}__media-details" {{ aos }}>
 
                 <div class="{{ section_name }}__media-details-item">
                   <div class="{{ section_name }}__media-details-value">6%</div>

@@ -238,7 +238,7 @@
   @include breakpoint(xl) {
 
     &__brand {
-      width: 80%;
+      width: 68%;
     }
 
     &__layout {
@@ -254,13 +254,23 @@
         margin-top: 12px;
       }
       &-image {
-        height: 465px;
+        height: 425px;
+      }
+    }
+
+    &__newsletter {
+      &-form {
+        width: 80%;
       }
     }
 
   } // min width xl
 
   @include breakpoint(xxl) {
+
+    &__brand {
+      width: 65%;
+    }
 
     &__layout {
       max-width: var(--bs-container-width--xxl);
@@ -275,7 +285,13 @@
         margin-top: 12px;
       }
       &-image {
-        height: 485px;
+        height: 500px;
+      }
+    }
+
+    &__newsletter {
+      &-form {
+        width: 75%;
       }
     }
 

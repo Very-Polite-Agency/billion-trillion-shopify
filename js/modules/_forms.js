@@ -218,7 +218,7 @@ const Forms = (() => {
     }
 
     formData.forEach((value, key) => formObject[key] = value);
-    formElement.classList.add('posting');
+    document.body.classList.add('form-posting');
 
     console.log( formObject );
 

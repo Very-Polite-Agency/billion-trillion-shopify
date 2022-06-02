@@ -56,6 +56,10 @@
       font-size: 30px;
     }
 
+    &__main {
+      padding: 10px 0;
+    }
+
     &.sticky {
       position: relative;
     }
@@ -65,7 +69,11 @@
   @include breakpoint(xl) {
 
     &__item {
-      font-size: 38px;
+      font-size: 32px;
+    }
+
+    &__main {
+      padding: 12px 0;
     }
 
   } // min width xl
@@ -73,7 +81,11 @@
   @include breakpoint(xxl) {
 
     &__item {
-      font-size: 44px;
+      font-size: 34px;
+    }
+
+    &__main {
+      padding: 15px 0;
     }
 
   } // min width xxl

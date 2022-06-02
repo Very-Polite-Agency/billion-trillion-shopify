@@ -65,11 +65,6 @@
     .button__outline {
       color: rgba(var(--theme-colour-black), 1);
     }
-    &:hover {
-      .button__fill {
-        color: pink;
-      }
-    }
   }
 
   @include breakpoint(sm) {
