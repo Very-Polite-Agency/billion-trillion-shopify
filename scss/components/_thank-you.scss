@@ -15,7 +15,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    margin-top: 32px;
+    margin-top: 24px;
     &-link {
       height: 44px;
       width: auto;
@@ -43,7 +43,13 @@
 
   @include breakpoint(lg) {} // min width lg
 
-  @include breakpoint(xl) {} // min width xl
+  @include breakpoint(xl) {
+
+    &__cta {
+      margin-top: 28px;
+    }
+
+  } // min width xl
 
   @include breakpoint(xxl) {} // min width xxl
 
