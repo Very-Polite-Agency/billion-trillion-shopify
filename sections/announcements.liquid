@@ -22,15 +22,16 @@
 </div>
 
 <script>
-  var element = document.getElementById('shopify-section-announcements') || false;
-  var settings = {
-    enable: {{ section.settings.enable | default: false | json }},
-    stickty: {{ section.settings.sticky | default: false | json }},
-  };
-  console.log({ element, settings });
-  if ( element ) {
-    if ( settings.enable ) element.classList.add('enabled');
-    if ( settings.stickty ) element.classList.add('sticky');
+  var announcement = {
+    element: document.getElementById('shopify-section-announcements') || false,
+    settings: {
+      enable: {{ section.settings.enable | default: false | json }},
+      stickty: {{ section.settings.sticky | default: false | json }},
+    }
+  }
+  if ( announcement.element ) {
+    if ( announcement.settings.enable ) announcement.element.classList.add('enabled');
+    if ( announcement.settings.stickty ) announcement.element.classList.add('sticky');
   }
 </script>
 

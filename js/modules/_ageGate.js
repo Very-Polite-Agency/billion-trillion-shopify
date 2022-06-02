@@ -4,7 +4,7 @@
 
 const AgeGate = (() => {
 
-  let debug = true;
+  let debug = false;
 	let info = { name : 'AgeGate', version : '1.0' };
 
   let tools = new Tools();
