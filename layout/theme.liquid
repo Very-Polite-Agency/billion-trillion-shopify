@@ -50,6 +50,7 @@
     {{ content_for_header }}
 
     {% render 'theme--css-variables' %}
+    {% render 'theme--google-analytics' %}
 
     {{ 'main.css' | asset_url | stylesheet_tag }}
 

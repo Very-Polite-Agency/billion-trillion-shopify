@@ -2279,6 +2279,14 @@
       "oAP" : "\/snippets\/theme--css-variables.liquid",
       "oF" : 0
     },
+    "\/snippets\/theme--google-analytics.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/snippets\/theme--google-analytics.liquid",
+      "oF" : 0
+    },
     "\/snippets\/theme--meta-tags.liquid" : {
       "cB" : 0,
       "ft" : 8192,
