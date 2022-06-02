@@ -43,7 +43,6 @@ const AgeGate = (() => {
 
   const showModal = () => {
     let showAgeGate = tools.cookieExists( cookie.name, cookie.value ) ? false : true;
-    showAgeGate = true;
     if ( showAgeGate && modalExists( modal.id ) ) {
       modals.toggleModalVisibility( modal.id, 'show', modal.timeout() );
     }
