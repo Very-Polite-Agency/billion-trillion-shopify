@@ -25,6 +25,8 @@
     border-bottom-color: rgba(var(--theme-colour-black), 1);
     padding: 8px 3px;
     width: 100%;
+    border-radius: 0;
+    -webkit-appearance: none;
   }
 
   .error & {
