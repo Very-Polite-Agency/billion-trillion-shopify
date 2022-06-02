@@ -196,16 +196,19 @@
         margin-top: 0;
       }
       &-details {
-        margin-top: 12px;
+        margin-top: 10px;
+        &-item {
+          margin: 0 12px;
+        }
         &-label {
-          font-size: 14px;
+          font-size: 12px;
         }
         &-value {
-          font-size: 38px;
+          font-size: 36px;
         }
       }
       &-image {
-        height: 360px;
+        height: 350px;
       }
     }
 

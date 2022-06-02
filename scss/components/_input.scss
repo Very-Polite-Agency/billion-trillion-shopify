@@ -13,12 +13,17 @@
   line-height: 1.21;
   background: transparent;
   max-width: none;
+  border-bottom: 2px solid transparent;
 
   &--primary {
     @extend .input;
-    border-bottom: 2px solid rgba(var(--theme-colour-black), 1);
+    border-bottom-color: rgba(var(--theme-colour-black), 1);
     padding: 5px 0;
     width: 100%;
+  }
+
+  .error & {
+    border-bottom-color: rgba(var(--theme-colour-orange), 1);
   }
 
 }

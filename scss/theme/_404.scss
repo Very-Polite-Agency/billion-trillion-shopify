@@ -28,6 +28,7 @@
   }
 
   &__heading {
+    font-size: 170px;
     & + .error-404__message {
       margin-top: 20px;
     }
@@ -37,14 +38,44 @@
     width: 100%;
   }
 
-  @include breakpoint(sm) {} // min width sm
+  @include breakpoint(sm) {
 
-  @include breakpoint(md) {} // min width md
+    &__heading {
+      font-size: 225px;
+    }
 
-  @include breakpoint(lg) {} // min width lg
+  } // min width sm
 
-  @include breakpoint(xl) {} // min width xl
+  @include breakpoint(md) {
 
-  @include breakpoint(xxl) {} // min width xxl
+    &__heading {
+      font-size: 260px;
+    }
+
+  } // min width md
+
+  @include breakpoint(lg) {
+
+    &__heading {
+      font-size: 290px;
+    }
+
+  } // min width lg
+
+  @include breakpoint(xl) {
+
+    &__heading {
+      font-size: 320px;
+    }
+
+  } // min width xl
+
+  @include breakpoint(xxl) {
+
+    &__heading {
+      font-size: 360px;
+    }
+
+  } // min width xxl
 
 }
