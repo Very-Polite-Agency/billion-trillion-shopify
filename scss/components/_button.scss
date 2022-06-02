@@ -65,6 +65,9 @@
     .button__outline {
       color: rgba(var(--theme-colour-black), 1);
     }
+    &:hover {
+      opacity: 0.6666;
+    }
   }
 
   @include breakpoint(sm) {

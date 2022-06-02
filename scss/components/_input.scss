@@ -1,5 +1,10 @@
 .input {
 
+  transition:
+    background var(--theme-transition-duration),
+    border var(--theme-transition-duration),
+    color var(--theme-transition-duration),
+    opacity var(--theme-transition-duration);
   border: none;
   outline: none;
   padding: 0;
@@ -18,11 +23,12 @@
   &--primary {
     @extend .input;
     border-bottom-color: rgba(var(--theme-colour-black), 1);
-    padding: 5px 0;
+    padding: 8px 3px;
     width: 100%;
   }
 
   .error & {
+    background: rgba(var(--theme-colour-orange), 0.3333);
     border-bottom-color: rgba(var(--theme-colour-orange), 1);
   }
 
