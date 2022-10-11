@@ -1,0 +1,6 @@
+{%- if location and location != blank -%}
+  <script>
+    document.location.replace('{{ location }}');
+    console.log('{{ request.path }}');
+  </script>
+{%- endif -%}

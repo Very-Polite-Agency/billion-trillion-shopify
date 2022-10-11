@@ -7,7 +7,7 @@
       "uuidString" : "EEBF07D2-E77D-4E49-A557-FB42B9E8E7C0"
     }
   ],
-  "creatorBuild" : "34365",
+  "creatorBuild" : "34434",
   "files" : {
     "\/.editorconfig" : {
       "cB" : 0,
@@ -539,6 +539,17 @@
       "sC" : 3,
       "tS" : 1
     },
+    "\/js\/modules\/_routes.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/_routes.min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 1
+    },
     "\/js\/modules\/_scrolling.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -1036,6 +1047,14 @@
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
+    },
+    "\/README.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/README.html",
+      "oF" : 0
     },
     "\/README.md" : {
       "cB" : 0,
@@ -2223,6 +2242,14 @@
       "oAP" : "\/snippets\/product-thumbnail.liquid",
       "oF" : 0
     },
+    "\/snippets\/redirect.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/snippets\/redirect.liquid",
+      "oF" : 0
+    },
     "\/snippets\/share-this 2.liquid" : {
       "cB" : 0,
       "ft" : 8192,
@@ -3190,7 +3217,8 @@
         "active" : 1
       },
       "no-fallthrough" : {
-        "active" : 1
+        "active" : 1,
+        "optionString" : "{'allowEmptyCase': false}"
       },
       "no-floating-decimal" : {
         "active" : 0
@@ -3352,7 +3380,8 @@
         "optionString" : "'event', 'fdescribe'"
       },
       "no-restricted-imports" : {
-        "active" : 0
+        "active" : 0,
+        "optionString" : ""
       },
       "no-restricted-properties" : {
         "active" : 0,
@@ -3980,6 +4009,7 @@
       "createDeclarationFile" : 0,
       "jsxMode" : 0,
       "minifierStyle" : 0,
+      "moduleDetectionType" : 0,
       "moduleResolutionType" : 0,
       "moduleType" : 2,
       "removeComments" : 0,

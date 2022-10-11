@@ -1,8 +1,12 @@
+// @codekit-prepend quiet "../node_modules/aos/dist/aos.js";
+// @codekit-prepend quiet "../node_modules/axios/dist/axios.min.js";
+// @codekit-prepend quiet "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 // @codekit-prepend quiet "../node_modules/lazysizes/lazysizes.min.js";
 // @codekit-prepend quiet "../node_modules/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js";
 // @codekit-prepend quiet "../node_modules/lazysizes/plugins/attrchange/ls.attrchange.min.js";
+// @codekit-prepend quiet "../node_modules/micromodal/dist/micromodal.min.js"
+// @codekit-prepend quiet "../node_modules/validator/validator.min.js";
 // @codekit-prepend quiet "../node_modules/webfontloader/webfontloader.js";
-
 
 window.lazySizesConfig = window.lazySizesConfig || {};
 window.lazySizesConfig.lazyClass = 'lazyload';

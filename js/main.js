@@ -1,9 +1,3 @@
-// @codekit-prepend quiet "../node_modules/aos/dist/aos.js";
-// @codekit-prepend quiet "../node_modules/axios/dist/axios.min.js";
-// @codekit-prepend quiet "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
-// @codekit-prepend quiet "../node_modules/micromodal/dist/micromodal.min.js"
-// @codekit-prepend quiet "../node_modules/validator/validator.min.js";
-
 // @codekit-prepend "./modules/_ageGate.js";
 // @codekit-prepend "./modules/_credits.js";
 // @codekit-prepend "./modules/_breakpoints.js";
