@@ -1,19 +1,30 @@
-{% assign section_name = 'hype-builder' %}
-{% assign section_id = section_name | append: '--' | append: section.id %}
+{%- liquid
 
-{% assign aos_id = section_id | append: '--aos' %}
-{% assign aos_delay = 250 %}
-{% assign aos_delay_increment = 250 %}
+  assign section_name = 'hype-builder'
+  assign section_id = section_name | append: '--' | append: section.id
 
-{% assign image = section.settings.image | default: false %}
-{% assign image_caption = section.settings.image_caption | default: "There’s A Whole Lot Of Nothing Out There. Take A Sip Of Something Real." %}
-{% assign newsletter_message = section.settings.newsletter_message | default: "Sign-up for news and updates!" %}
+  assign aos_id = section_id | append: '--aos'
+  assign aos_delay = 250
+  assign aos_delay_increment = 250
 
-<div class="{{ section_name }}" id="{{ section_id }}">
-  <div class="{{ section_name }}__main">
-      <div class="{{ section_name }}__layout" id="{{ aos_id }}">
+  assign button_link = section.settings.button_link | default: ''
+  assign button_target = '_self'
+  assign button_title = section.settings.button_title | default: ''
+  assign image = section.settings.image | default: false
+  assign image_caption = section.settings.image_caption | default: 'There’s A Whole Lot Of Nothing Out There. Take A Sip Of Something Real.'
+  assign newsletter_message = section.settings.newsletter_message | default: 'Sign-up for news and updates!'
 
-        <div class="{{ section_name }}__content">
+  if button_link contains 'http'
+    assign button_target = '_blank'
+  endif
+
+-%}
+
+<div class='{{ section_name }}' id='{{ section_id }}'>
+  <div class='{{ section_name }}__main'>
+      <div class='{{ section_name }}__layout' id='{{ aos_id }}'>
+
+        <div class='{{ section_name }}__content'>
 
           {% capture aos %}
             {%
@@ -25,11 +36,11 @@
             %}
           {% endcapture %}
           {% assign aos_delay = aos_delay | plus: aos_delay_increment %}
-          <div class="{{ section_name }}__brand" {{ aos }}>
-            <img src="{{ 'BILLION--brand-main.svg' | asset_url }}" />
+          <div class='{{ section_name }}__brand' {{ aos }}>
+            <img src='{{ 'BILLION--brand-main.svg' | asset_url }}' />
           </div>
 
-          <div class="{{ section_name }}__newsletter">
+          <div class='{{ section_name }}__newsletter'>
 
             {% capture aos %}
               {%
@@ -41,7 +52,7 @@
               %}
             {% endcapture %}
             {% assign aos_delay = aos_delay | plus: aos_delay_increment %}
-            <div class="{{ section_name }}__newsletter-message body-copy--1" {{ aos }}>{{ newsletter_message }}</div>
+            <div class='{{ section_name }}__newsletter-message body-copy--1' {{ aos }}>{{ newsletter_message }}</div>
 
             {% capture aos %}
               {%
@@ -53,7 +64,7 @@
               %}
             {% endcapture %}
             {% assign aos_delay = aos_delay | plus: aos_delay_increment %}
-            <div class="{{ section_name }}__newsletter-form" {{ aos }}>
+            <div class='{{ section_name }}__newsletter-form' {{ aos }}>
               {% render 'form-newsletter-signup' %}
             </div>
 
@@ -62,7 +73,7 @@
         </div>
 
         {% if image %}
-          <div class="{{ section_name }}__media">
+          <div class='{{ section_name }}__media'>
 
             {% capture aos %}
               {%
@@ -73,11 +84,11 @@
                 transition: 'fade-up',
               %}
             {% endcapture %}
-            <div class="{{ section_name }}__media-image" {{ aos }}>
+            <div class='{{ section_name }}__media-image' {{ aos }}>
               {% render 'lazyload-image', image: image %}
             </div>
 
-            <div class="{{ section_name }}__media-content">
+            <div class='{{ section_name }}__media-content'>
               {% if image_caption != blank %}
                 {% capture aos %}
                   {%
@@ -88,7 +99,7 @@
                     transition: 'fade-left',
                   %}
                 {% endcapture %}
-                <div class="{{ section_name }}__media-caption body-copy--1" {{ aos }}>{{ image_caption }}</div>
+                <div class='{{ section_name }}__media-caption body-copy--1' {{ aos }}>{{ image_caption }}</div>
               {% endif %}
 
 
@@ -101,23 +112,31 @@
                   transition: 'fade-down',
                 %}
               {% endcapture %}
-              <div class="{{ section_name }}__media-details" {{ aos }}>
+              <div class='{{ section_name }}__media-details' {{ aos }}>
 
-                <div class="{{ section_name }}__media-details-item">
-                  <div class="{{ section_name }}__media-details-value">6%</div>
-                  <div class="{{ section_name }}__media-details-label">Alc/Vol</div>
+                <div class='{{ section_name }}__media-details-item'>
+                  <div class='{{ section_name }}__media-details-value'>6%</div>
+                  <div class='{{ section_name }}__media-details-label'>Alc/Vol</div>
                 </div>
 
-                <div class="{{ section_name }}__media-details-item">
-                  <div class="{{ section_name }}__media-details-value">100</div>
-                  <div class="{{ section_name }}__media-details-label">Calories</div>
+                <div class='{{ section_name }}__media-details-item'>
+                  <div class='{{ section_name }}__media-details-value'>100</div>
+                  <div class='{{ section_name }}__media-details-label'>Calories</div>
                 </div>
 
-                <div class="{{ section_name }}__media-details-item">
-                  <div class="{{ section_name }}__media-details-value">100%</div>
-                  <div class="{{ section_name }}__media-details-label">Natural</div>
+                <div class='{{ section_name }}__media-details-item'>
+                  <div class='{{ section_name }}__media-details-value'>100%</div>
+                  <div class='{{ section_name }}__media-details-label'>Natural</div>
                 </div>
               </div>
+
+              {% if button_link != blank and button_title != blank %}
+                <div class='{{ section_name }}__media-cta'>
+                  <a class='{{ section_name }}__media-button' href='{{ button_link }}' target='{{ button_target }}' title='{{ button_title }}'>
+
+                  </a>
+                </div>
+              {% endif %}
 
             </div>
 
@@ -157,6 +176,20 @@
       "label": "Caption",
       "type": "text",
       "id": "image_caption"
+    },
+    {
+      "content": "Button",
+      "type": "header"
+    },
+    {
+      "label": "Title",
+      "type": "text",
+      "id": "button_title"
+    },
+    {
+      "label": "Link",
+      "type": "url",
+      "id": "button_link"
     }
   ],
   "presets": [
