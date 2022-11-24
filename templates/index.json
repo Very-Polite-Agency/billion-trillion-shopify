@@ -5,7 +5,9 @@
       "settings": {
         "newsletter_message": "<p>Keep up to date, space and time with all things Billion Trillion!<\/p>",
         "image": "shopify:\/\/shop_images\/hype-feature-image_3x_3e9c0452-2d12-4e42-b901-89fff3b51a37.png",
-        "image_caption": "There’s a whole lot of nothing out there. Take a sip of something real."
+        "image_caption": "There’s a whole lot of nothing out there. Take a sip of something real.",
+        "button_title": "",
+        "button_link": "https:\/\/www.craftco.ca\/product-category\/cocktails\/billion-trillion\/"
       }
     }
   },
