@@ -89,6 +89,7 @@
             </div>
 
             <div class='{{ section_name }}__media-content'>
+
               {% if image_caption != blank %}
                 {% capture aos %}
                   {%
@@ -103,16 +104,7 @@
               {% endif %}
 
 
-              {% capture aos %}
-                {%
-                  render 'aos-attributes',
-                  anchor: aos_id,
-                  anchor_placement: 'top-bottom',
-                  delay: 550,
-                  transition: 'fade-down',
-                %}
-              {% endcapture %}
-              <div class='{{ section_name }}__media-details' {{ aos }}>
+              <div class='{{ section_name }}__media-details'>
 
                 <div class='{{ section_name }}__media-details-item'>
                   <div class='{{ section_name }}__media-details-value'>6%</div>
@@ -130,10 +122,10 @@
                 </div>
               </div>
 
-              {% if button_link != blank and button_title != blank %}
+              {% if button_link != blank %}
                 <div class='{{ section_name }}__media-cta'>
                   <a class='{{ section_name }}__media-button' href='{{ button_link }}' target='{{ button_target }}' title='{{ button_title }}'>
-
+                    {% render 'svg', type: 'button.buy-now' %}
                   </a>
                 </div>
               {% endif %}
