@@ -20,7 +20,7 @@
 
 -%}
 
-<div class='{{ section_name }}' id='{{ section_id }}'>
+<div class='{{ section_name }} development' id='{{ section_id }}'>
   <div class='{{ section_name }}__main'>
       <div class='{{ section_name }}__layout' id='{{ aos_id }}'>
 
@@ -88,57 +88,65 @@
               {% render 'lazyload-image', image: image %}
             </div>
 
-            <div class='{{ section_name }}__media-content'>
-              {% if image_caption != blank %}
-                {% capture aos %}
-                  {%
-                    render 'aos-attributes',
-                    anchor: aos_id,
-                    anchor_placement: 'top-bottom',
-                    delay: 550,
-                    transition: 'fade-left',
-                  %}
-                {% endcapture %}
-                <div class='{{ section_name }}__media-caption body-copy--1' {{ aos }}>{{ image_caption }}</div>
-              {% endif %}
-
+            {% if image_caption != blank %}
 
               {% capture aos %}
                 {%
                   render 'aos-attributes',
                   anchor: aos_id,
                   anchor_placement: 'top-bottom',
-                  delay: 550,
-                  transition: 'fade-down',
+                  delay: 450,
+                  transition: 'fade-left',
                 %}
               {% endcapture %}
-              <div class='{{ section_name }}__media-details' {{ aos }}>
 
+              <div class='{{ section_name }}__media-caption body-copy--1' {{ aos }}>{{ image_caption }}</div>
+
+            {% endif %}
+
+            {% capture aos %}
+              {%
+                render 'aos-attributes',
+                anchor: aos_id,
+                anchor_placement: 'top-bottom',
+                delay: 550,
+                transition: 'fade-up',
+              %}
+            {% endcapture %}
+
+            <div class='{{ section_name }}__media-details' {{ aos }}>
+              <div class='{{ section_name }}__media-details-grid'>
                 <div class='{{ section_name }}__media-details-item'>
                   <div class='{{ section_name }}__media-details-value'>6%</div>
                   <div class='{{ section_name }}__media-details-label'>Alc/Vol</div>
                 </div>
-
                 <div class='{{ section_name }}__media-details-item'>
                   <div class='{{ section_name }}__media-details-value'>100</div>
                   <div class='{{ section_name }}__media-details-label'>Calories</div>
                 </div>
-
                 <div class='{{ section_name }}__media-details-item'>
                   <div class='{{ section_name }}__media-details-value'>100%</div>
                   <div class='{{ section_name }}__media-details-label'>Natural</div>
                 </div>
               </div>
-
-              {% if button_link != blank and button_title != blank %}
-                <div class='{{ section_name }}__media-cta'>
-                  <a class='{{ section_name }}__media-button' href='{{ button_link }}' target='{{ button_target }}' title='{{ button_title }}'>
-
-                  </a>
-                </div>
-              {% endif %}
-
             </div>
+
+            {% if button_link != blank %}
+              {% capture aos %}
+                {%
+                  render 'aos-attributes',
+                  anchor: aos_id,
+                  anchor_placement: 'top-bottom',
+                  delay: 650,
+                  transition: 'fade-up',
+                %}
+              {% endcapture %}
+              <div class='{{ section_name }}__media-cta' {{ aos }}>
+                <a class='{{ section_name }}__media-button button' href='{{ button_link }}' target='{{ button_target }}' title='{{ button_title }}'>
+                  {% render 'svg', type: 'button.buy-now' %}
+                </a>
+              </div>
+            {% endif %}
 
           </div>
         {% endif %}
