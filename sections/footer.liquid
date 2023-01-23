@@ -9,7 +9,11 @@
 
 <div class="{{ section_name }}" id="{{ section_id }}">
   {% render 'bs-container', container: 'container-fluid' %}
-    <div class="{{ section_name }}__copyright">&copy; {{ "now" | date: "%Y" }} {{ shop.name }}</div>
+    <div class="{{ section_name }}__main">
+      <div class="{{ section_name }}__copyright">&copy; {{ "now" | date: "%Y" }} {{ shop.name }}</div>
+      <div class="{{ section_name }}__spacer">&#183;</div>
+      <div class="{{ section_name }}__social">Follow us <a href="https://www.instagram.com/drinkbilliontrillion/" target="_blank" title="Follow us on Instagram">@drinkbilliontrillion</a></div>
+    </div>
   {% render 'bs-container', state: 'closed' %}
 </div>
 

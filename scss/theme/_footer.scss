@@ -2,43 +2,62 @@
 
   background: rgba(var(--theme-colour-black), 1);
   color: rgba(var(--theme-colour-white), 1);
-  padding: 12px 0;
+  padding: 14px 0;
 
-  &__copyright {
+  &__main {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
     font-family: var(--theme-font-family--sans-serif--secondary);
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 1;
-    text-align: center;
+    a {
+      transition: border var(--theme-transition-duration);
+      color: currentcolor;
+      border-bottom-style: solid;
+      border-bottom-color: currentcolor;
+      border-bottom-width: 2px;
+      text-decoration: none;
+      outline: none;
+      &:hover {
+        border-bottom-color: transparent;
+        text-decoration: none;
+        outline: none;
+      }
+    }
   }
 
   @include breakpoint(sm) {
 
-    &__copyright {
+    padding: 16px 0;
+
+    &__main {
       font-size: 16px;
     }
 
-  } // min width sm
-
-  @include breakpoint(md) {} // min width md
+  }
 
   @include breakpoint(lg) {
 
-    &__copyright {
+    padding: 18px 0;
+
+    &__main {
       font-size: 18px;
     }
 
-  } // min width lg
-
-  @include breakpoint(xl) {} // min width xl
+  }
 
   @include breakpoint(xxl) {
 
-    &__copyright {
+    padding: 20px 0;
+
+    &__main {
       font-size: 20px;
     }
 
-  } // min width xxl
+  }
 
 }
