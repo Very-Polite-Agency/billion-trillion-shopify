@@ -6,7 +6,7 @@
 
   &__main {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     justify-content: center;
     align-items: center;
     font-family: var(--theme-font-family--sans-serif--secondary);
@@ -36,6 +36,7 @@
 
     &__main {
       font-size: 16px;
+      gap: 10px;
     }
 
   }
@@ -46,6 +47,7 @@
 
     &__main {
       font-size: 18px;
+      gap: 12px;
     }
 
   }
@@ -56,6 +58,7 @@
 
     &__main {
       font-size: 20px;
+      gap: 14px;
     }
 
   }
