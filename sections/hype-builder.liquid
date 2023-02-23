@@ -9,7 +9,7 @@
 
   assign button_link = section.settings.button_link | default: ''
   assign button_target = '_self'
-  assign button_title = section.settings.button_title | default: ''
+  assign button_title = section.settings.button_title | default: 'Buy Now'
   assign image = section.settings.image | default: false
   assign image_caption = section.settings.image_caption | default: 'There’s A Whole Lot Of Nothing Out There. Take A Sip Of Something Real.'
   assign newsletter_message = section.settings.newsletter_message | default: 'Sign-up for news and updates!'
@@ -131,20 +131,50 @@
               </div>
             </div>
 
-            {% if button_link != blank %}
-              {% capture aos %}
-                {%
-                  render 'aos-attributes',
-                  anchor: aos_id,
-                  anchor_placement: 'top-bottom',
-                  delay: 650,
-                  transition: 'fade-up',
-                %}
-              {% endcapture %}
-              <div class='{{ section_name }}__media-cta' {{ aos }}>
-                <a class='{{ section_name }}__media-button button' href='{{ button_link }}' target='{{ button_target }}' title='{{ button_title }}'>
-                  {% render 'svg', type: 'button.buy-now' %}
-                </a>
+            {% if cta_link != blank or wholesale_link != blank %}
+
+              {%- liquid
+                assign aos_delay = 650
+                assign aos_delay_increment = 250
+              -%}
+
+              <div class='{{ section_name }}__media-cta'>
+
+                {% if cta_link != blank %}
+                  {% capture aos %}
+                    {%
+                      render 'aos-attributes',
+                      anchor: aos_id,
+                      anchor_placement: 'top-bottom',
+                      delay: aos_delay,
+                      transition: 'fade-up',
+                    %}
+                  {% endcapture %}
+                  {%- assign aos_delay = aos_delay | plus: aos_delay_increment -%}
+                  <div class='{{ section_name }}__media-cta-item' {{ aos }}>
+                    <a class='{{ section_name }}__media-button button' href='{{ cta_link }}' target='_blank' title='Buy Now'>
+                      {% render 'svg', type: 'button.buy-now' %}
+                    </a>
+                  </div>
+                {% endif %}
+
+                {% if wholesale_link != blank %}
+                  {% capture aos %}
+                    {%
+                      render 'aos-attributes',
+                      anchor: aos_id,
+                      anchor_placement: 'top-bottom',
+                      delay: aos_delay,
+                      transition: 'fade-up',
+                    %}
+                  {% endcapture %}
+                  <div class='{{ section_name }}__media-cta-item' {{ aos }}>
+                    <a class='{{ section_name }}__media-button button' href='{{ wholesale_link }}' target='_blank' title='Buy Wholesale'>
+                      {% render 'svg', type: 'button.wholesale' %}
+                    </a>
+                  </div>
+                {% endif %}
+
               </div>
             {% endif %}
 
@@ -172,7 +202,7 @@
       "id": "newsletter_message"
     },
     {
-      "content": "Media",
+      "content": "Main",
       "type": "header"
     },
     {
@@ -186,18 +216,26 @@
       "id": "image_caption"
     },
     {
-      "content": "Button",
+      "content": "Buttons",
       "type": "header"
     },
     {
-      "label": "Title",
-      "type": "text",
-      "id": "button_title"
+      "content": "Call to Action",
+      "type": "paragraph"
     },
     {
       "label": "Link",
       "type": "url",
-      "id": "button_link"
+      "id": "cta_link"
+    },
+    {
+      "content": "Wholesale",
+      "type": "paragraph"
+    },
+    {
+      "label": "Link",
+      "type": "url",
+      "id": "wholesale_link"
     }
   ],
   "presets": [
