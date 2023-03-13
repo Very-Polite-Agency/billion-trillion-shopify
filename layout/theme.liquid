@@ -2,12 +2,19 @@
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
 
+    {% render 'theme--google-analytics' %}
+
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
+
+    {%
+      render 'theme--preconnect-resources',
+        resources: 'https://cdn.shopify.com, https://v.shopify.com, https://cdn.jsdelivr.net, https://www.google-analytics.com'
+    %}
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,17 +29,13 @@
     <link href='{{ "favicon.ico" | asset_url }}' type='image/x-icon' rel='shortcut icon' />
     <link href='{{ "apple-touch-icon.png" | asset_url }}' type='image/png' rel='apple-touch-icon'>
 
-    <!-- DNS Prefetch -->
-    <link rel="dns-prefetch" href='//www.google-analytics.com'>
-
-    <!-- Preconnect -->
-    <link rel='preconnect' href='https://fonts.googleapis.com' crossorigin>
-    <link rel='preconnect' href='https://ajax.googleapis.com' crossorigin>
-    <link rel='preconnect' href='https://cdn.shopify.com' crossorigin>
-    <link rel='preconnect' href='https://v.shopify.com' crossorigin>
+    {{ content_for_header }}
 
     <!-- Preload Fonts  -->
-    {% render 'theme--preload-fonts', fonts: 'NotSorrySerif-Bold, SorrySans-BoldExtended' %}
+    {%
+      render 'theme--preload-fonts',
+        fonts: 'NotSorrySerif-Bold, SorrySans-BoldExtended'
+    %}
 
     <!-- SEO -->
     {% assign enable_seo = true %}
@@ -45,50 +48,74 @@
   		<meta name="robots" content="noindex, nofollow">
     {% endif %}
 
-    <script src="{{ 'vendors.min.js' | asset_url }}" defer="defer"></script>
-
-    {{ content_for_header }}
-
-    {% render 'theme--css-variables' %}
-    {% render 'theme--google-analytics' %}
-
-    {{ 'main.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript>{{ 'style.css' | asset_url | stylesheet_tag }}</noscript>
 
     <script>
-
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-      if (Shopify.designMode) {
-        document.documentElement.classList.add('shopify-design-mode');
-      }
-
-      var Theme = Theme || {};
-      Theme.collection = {{ collection | json }} || {};
-      Theme.product = {{ product | json }} || {};
-      Theme.routes = {
-        root: {{ routes.root_url | json }}
-      };
-
+      if ( Shopify.designMode ) document.documentElement.classList.add('shopify-design-mode');
+      window.moneyFormat = {{ shop.money_format | json }};
     </script>
+
+    {% render 'theme--external-javascript' %}
 
   </head>
 
   <body class="{% render 'theme--classes' %}">
 
-    {% section 'mobile-menu' %}
     {% section 'age-gate' %}
     {% section 'announcements' %}
+    {% section 'mobile-menu' %}
 
-    <main class="{% render 'theme--classes' %} content-for-layout focus-none" role="main" tabindex="-1">
-      {{ content_for_layout }}
+    <main class="{% render 'theme--classes' %} content-for-layout focus-none {{ request.path }}" role="main" tabindex="-1">
+      {% case request.path %}
+        {% when '/policies/privacy-policy' %}
+          {% section 'policy-privacy' %}
+        {% when '/policies/refund-policy' %}
+          {% section 'policy-refund' %}
+        {% when '/policies/shipping-policy' %}
+          {% section 'policy-shipping' %}
+        {% when '/policies/subscription-policy' %}
+          {% section 'policy-subscription' %}
+        {% when '/policies/terms-of-service' %}
+          {% section 'policy-terms-of-service' %}
+        {% else %}
+          {{ content_for_layout }}
+      {% endcase %}
     </main>
 
     {% section 'footer' %}
+    {% section 'newsletter-popup' %}
 
-    <div class="form-posting-overlay">
-      <div class="form-posting-overlay__spinner"></div>
-    </div>
+    <script>
+      var Theme = Theme || {};
+      Theme.cart = {{ cart | json }};
+      Theme.collection = {{ collection | json }} || {};
+      Theme.currency = {{ shop.currency | json }};
+      Theme.customer = {{ customer | json }} || {};
+      Theme.moneyFormat = {{ shop.money_format | json }};
+      Theme.orders = [];
+      Theme.product = {{ product | json }} || {};
+      Theme.routes = {
+        root_url: '{{ routes.root_url }}',
+        cart_url: '{{ routes.cart_url }}',
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}',
+        predictive_search_url: '{{ routes.predictive_search_url }}'
+      };
+      Theme.tools = {
+        imgURLFilter: function(src, size) {
+          return src
+            .replace(/_(pico|icon|thumb|small|compact|medium|large|grande|original|1024x1024|2048x2048|master)+\./g, '.')
+            .replace(/\.jpg|\.png|\.gif|\.jpeg/g, function(match) {
+              return '_'+size+match;
+            });
+        }
+      };
+    </script>
 
-    <script src="{{ 'main.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'main.min.js' | asset_url }}" defer></script>
 
   </body>
 </html>
