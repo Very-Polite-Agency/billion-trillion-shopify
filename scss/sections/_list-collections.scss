@@ -1,0 +1,47 @@
+@use "../utils/mixins/border" as *;
+@use "../utils/mixins/breakpoint" as *;
+
+.list-collections {
+
+  &__item {
+    & + .list-collections__item {
+      @include border-solid( var(--theme-border--width), 'black', 'top' );
+    }
+  }
+
+  @include breakpoint(sm) {}
+
+  @include breakpoint(md) {
+
+    &__item {
+      &:nth-child(odd) {
+        .card-collection {
+          &__content {
+            order: 2;
+          }
+          &__image {
+            order: 1;
+          }
+        }
+      }
+      &:nth-child(even) {
+        .card-collection {
+          &__content {
+            order: 1;
+          }
+          &__image {
+            order: 2;
+          }
+        }
+      }
+    }
+
+  }
+
+  @include breakpoint(lg) {}
+
+  @include breakpoint(xl) {}
+
+  @include breakpoint(xxl) {}
+
+}

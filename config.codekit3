@@ -387,6 +387,30 @@
       "oAP" : "\/assets\/SorrySans-BoldExtended.woff2",
       "oF" : 0
     },
+    "\/assets\/style.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/style.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/assets\/style.legacy.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/style.legacy.css",
+      "oF" : 0,
+      "pg" : 0
+    },
     "\/assets\/theme-editor.js" : {
       "bF" : 4,
       "ft" : 64,
@@ -1097,36 +1121,6 @@
       "rFN" : 0,
       "uCM" : 0
     },
-    "\/scss\/_mixins.scss" : {
-      "aP" : 1,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/assets\/_mixins.css",
-      "oF" : 0,
-      "oS" : 3,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/scss\/_variables.scss" : {
-      "aP" : 1,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/assets\/_variables.css",
-      "oF" : 0,
-      "oS" : 3,
-      "pg" : 0,
-      "sct" : 0
-    },
     "\/scss\/components\/_aos.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1182,6 +1176,21 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/assets\/_caption.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/scss\/components\/_card-collection.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/_card-collection.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,
@@ -1577,6 +1586,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/scss\/legacy\/style.legacy.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/style.legacy.css",
+      "oF" : 1,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/scss\/sections\/_index.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1592,7 +1616,7 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/scss\/style.legacy.scss" : {
+    "\/scss\/sections\/_list-collections.scss" : {
       "aP" : 1,
       "bl" : 0,
       "co" : 0,
@@ -1600,8 +1624,8 @@
       "ec" : 1,
       "ft" : 4,
       "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/style.legacy.css",
+      "oA" : 1,
+      "oAP" : "\/assets\/_list-collections.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,
