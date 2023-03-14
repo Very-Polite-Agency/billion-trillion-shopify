@@ -29,16 +29,16 @@
   <article class="{{ snippet_classes }}" id="{{ snippet_id }}">
     {% if featured_image %}
       <div class="{{ snippet_name }}__image">
-        {% render 'lazyload-image', alt_text: title, image: featured_image %}
+        {% if url != blank %}<a href="{{ url }}" target="_self" title="{{ title }}">{% endif %}
+          {% render 'lazyload-image', alt_text: title, image: featured_image %}
+        {% if url != blank %}</a>{% endif %}
       </div>
     {% endif %}
     {% if title != blank or description != blank %}
       <div class="{{ snippet_name }}__content">
         {% if title != blank %}<strong class="{{ snippet_name }}__title">{{ title }}</strong>{% endif %}
         {% if description != blank %}<div class="{{ snippet_name }}__description">{{ description }}</strong>{% endif %}
-        {% if url != blank %}
-          <a href="{{ url }}" target="_self" title="{{ title }}">Shop Now</a>
-        {% endif %}
+        {% if url != blank %}<a href="{{ url }}" target="_self" title="{{ title }}">Shop Now</a>{% endif %}
       </div>
     {% endif %}
   </article>

@@ -75,18 +75,18 @@
       background-size: {{ background_image_size }};
     {%- else -%}
       {%- unless background == 'none' -%}
-        background: rgba(var(--theme-colour-{{ background }}), 1);
+        background: var(--theme-colour--{{ background }});
       {%- endunless -%}
     {%- endif -%}
 
     {%- if border_bottom -%}
-      border-bottom-color: rgba(var(--theme-colour-off-black), 1);
+      border-bottom-color: var(--theme-colour--black);
       border-bottom-width: var(--theme-border-width);
       border-bottom-style: solid;
     {%- endif -%}
 
     {%- if border_top -%}
-      border-top-color: rgba(var(--theme-colour-off-black), 1);
+      border-top-color: var(--theme-colour--black);
       border-top-width: var(--theme-border-width);
       border-top-style: solid;
     {%- endif -%}
@@ -94,9 +94,9 @@
     {%- if colour and colour != blank -%}
       {%- case colour -%}
         {%- when 'dark' -%}
-          color: rgba(var(--theme-colour-off-black), 1);
+          color: var(--theme-colour--black);
         {%- when 'light' -%}
-          color: rgba(var(--theme-colour-off-white), 1);
+          color: var(--theme-colour--white);
       {%- endcase -%}
     {%- endif -%}
 

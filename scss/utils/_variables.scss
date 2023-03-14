@@ -1,0 +1,140 @@
+$theme: (
+  'theme-name': 'Billion Trillion Shopify 2.0',
+  'theme-uri': 'https://weareverypolite.com',
+  'description': 'Billion Trillion Shopify 2.0 Theme',
+  'author': 'Very Polite Digital Dept.',
+  'author-uri': 'https://weareverypolite.com',
+  'version': '1.0.0',
+  'license': 'GNU General Public License v2 or later',
+  'license-uri': 'URI: https://www.gnu.org/licenses/gpl-2.0.html',
+  'tags': 'HTML5, CSS3, Responsive, Mobile Friendly',
+  'text-domain': 'billion-trillion-shopify-2',
+);
+
+// ---------------------------------------- AOS Settings
+$theme-aos-settings: (
+  'travel': 12px,
+);
+
+// ---------------------------------------- Border Settings
+$theme-border-settings: (
+  'radius': 10px,
+  'width': 3px,
+);
+
+// ---------------------------------------- Button Heights
+$theme-button-heights: (
+  'base': 40px,
+  'sm': 40px,
+  'md': 40px,
+  'lg': 44px,
+  'xl': 44px,
+  'xxl': 44px
+);
+
+// ---------------------------------------- Button Widths
+$theme-button-widths: (
+  'base': 120px,
+  'sm': 120px,
+  'md': 120px,
+  'lg': 140px,
+  'xl': 140px,
+  'xxl': 140px
+);
+
+// ---------------------------------------- Colours
+$theme-colours: (
+  'black' : #111111,
+  'grey': #E0E0E0,
+  'lemon': #FFF8C0,
+  'lime': #2B8B3B,
+  'mango': #FDC300,
+  'orange': #FE5000,
+  'strawberry': #DA8EAE,
+  'white' : #ffffff
+);
+
+// ---------------------------------------- Font Families
+$theme-font-families: (
+  'sans-serif': sans-serif,
+  'serif': serif,
+  'cursive': cursive,
+  'mono': monospace,
+);
+
+// ---------------------------------------- Font Sizes | Body Copy
+$theme-font-sizes-button: (
+  'base': 13px,
+  'sm': 14px,
+  'md': 15px,
+  'lg': 13px,
+  'xl': 14px,
+  'xxl': 15px
+);
+
+// ---------------------------------------- Font Sizes | Heading
+$theme-font-sizes-heading: (
+  'base': 26px,
+  'sm': 28px,
+  'md': 30px,
+  'lg': 32px,
+  'xl': 36px,
+  'xxl': 38px
+);
+
+// ---------------------------------------- Font Sizes | Title
+$theme-font-sizes-title: (
+  'base': 45px,
+  'sm': 52px,
+  'md': 60px,
+  'lg': 88px,
+  'xl': 108px,
+  'xxl': 118px
+);
+
+// ---------------------------------------- Header Heights
+$theme-header-heights: (
+  'base': 65px,
+  'sm': 75px,
+  'md': 85px,
+  'lg': 65px,
+  'xl': 75px,
+  'xxl': 85px
+);
+
+// ---------------------------------------- Input Heights
+$theme-input-heights: (
+  'base': 44px,
+  'sm': 46px,
+  'md': 48px,
+  'lg': 50px,
+  'xl': 52px,
+  'xxl': 54px
+);
+
+$theme-layout-settings: (
+  'gutter': 20px,
+  'container-padding': 20px,
+  'breakpoints': (
+    'base': 0,
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px,
+    'xxl': 1400px
+  ),
+  'containers': (
+    'base': 100%,
+    'sm': 540px,
+    'md': 740px,
+    'lg': 960px,
+    'xl': 1160px,
+    'xxl': 1360px
+  )
+);
+
+// ---------------------------------------- Transition Settings
+$theme-transition-settings: (
+  'duration': 280ms,
+  'opacity': 0.3333
+);

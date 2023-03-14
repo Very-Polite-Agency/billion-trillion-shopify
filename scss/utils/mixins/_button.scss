@@ -1,0 +1,57 @@
+@use 'sass:color';
+@use 'sass:map';
+
+@use '../variables' as *;
+@use "border" as *;
+@use "breakpoint" as *;
+@use "font" as *;
+@use "ui" as *;
+
+@mixin button-style( $style: 1 ) {
+
+  @if $style == 1 {
+    @include clarendon-wide(700);
+    text-transform: uppercase;
+    @each $name, $value in $theme-button-heights {
+      @if $name == 'base' {
+        height: $value;
+      } @else {
+        @include breakpoint(#{$name}) {
+          height: $value;
+        }
+      }
+    }
+  }
+
+  @if $style == 2 {
+    @include border-solid( var(--theme-border-width), 'inherit', 'bottom' );
+    @include sarina(400);
+    &:hover {
+      border-bottom-color: transparent;
+      color: currentcolor;
+    }
+  }
+
+  @if $style == 3 {
+    @include new-sprint(300);
+  }
+
+}
+
+@mixin button-colour-text( $style: 'dark' ) {
+
+  $colour: map.get( $theme-colours, 'off-black' );
+
+  @if $style == 'light' {
+    $colour: map.get( $theme-colours, 'off-white' );
+  }
+
+  $colour-hover: color.scale( $colour, $lightness: -15% );
+
+  color:  $colour;
+
+  &:hover {
+    color: $colour-hover;
+  }
+
+}
