@@ -4,7 +4,7 @@ const config = { debug: true, name: 'ageGate.js', version: '1.0' };
 const modal = {
   id: 'age-gate',
   element: () => {
-    return document.getElementById( this.id ) || false
+    return document.getElementById( 'age-gate' ) || false;
   },
   delay: () => {
     return parseInt( this.element.dataset?.delay ?? 4000 );
@@ -18,7 +18,7 @@ const cookie = {
 	name: 'billion-trillion--age-gate',
   nalue: 'of-age',
   duration: () => {
-    return parseInt( modal.element ? modal.element.dataset?.cookieDuration ?? 30 );
+    return parseInt( modal.element.dataset?.cookieDuration ?? 30 );
   },
   expired: () => {
     return Cookies.get( this.name ) ? false : true;
@@ -68,6 +68,9 @@ const showAgeGate = ( modal = false, delay = 0 ) => {
 
 const init = () => {
   if ( config.debug ) console.log(`[ ${config.name} v.${config.version} initialized ]`);
+
+  console.log( modal, cookie );
+
   if ( cookie.expired() && modal.element ) {
     modal.instance = new bootstrap.Modal ( modal.element, {} ) || false;
     showAgeGate( modal.instance, modal.delay );
@@ -79,4 +82,4 @@ const init = () => {
   if ( config.debug ) console.log(`[ ${config.name} v.${config.version} complete ]`);
 };
 
-export default { init, modal, cookie };
+export default { init };

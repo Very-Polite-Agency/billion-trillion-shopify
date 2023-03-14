@@ -5,7 +5,7 @@ import Gliders from './modules/gliders';
 import Scrolling from './modules/scrolling';
 import Tools from './modules/tools';
 
-AgeGate.init();
+// AgeGate.init();
 Credits.init();
 Forms.init();
 Gliders.init();
@@ -19,16 +19,26 @@ AOS.init({
 });
 
 window.addEventListener( 'load', function (e) {
-  Gliders.init();
+  // AgeGate.init();
   AOS.refresh();
+  Gliders.init();
+  Scrolling.init();
 });
 
 window.addEventListener( 'resize', Tools.debounce(() => {
-  // debounced resize based functions here
+  console.log('resize debounced...');
+}, 300));
+
+window.addEventListener( 'resize', Tools.throttle(() => {
+  console.log('resize throttled...');
   Scrolling.init();
 }, 300));
 
 window.addEventListener( 'scroll', Tools.debounce(() => {
-  // debounced scroll based functions here
+  console.log('scroll debounced...');
+}, 300));
+
+window.addEventListener( 'scroll', Tools.throttle(() => {
+  console.log('scroll throttled...');
   Scrolling.init();
 }, 300));

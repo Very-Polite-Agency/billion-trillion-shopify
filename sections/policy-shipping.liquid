@@ -1,0 +1,190 @@
+{%- liquid
+
+  assign section_name = 'policy'
+  assign section_classes = section_name
+  assign section_id = section_name | append: '--' | append: section.id
+  assign section_key = 'shipping_policy'
+
+  assign columns = 'col-12'
+  assign container = section.settings.container | default: 'container'
+  assign content_width =  section.settings.content_width | default: 'full'
+
+  assign policy_content = shop[section_key].body | default: ''
+  assign policy_title = shop[section_key].title | default: ''
+
+  assign text_colour = section.settings.text_colour | default: 'off-black'
+
+  case content_width
+    when 'compact'
+      assign columns = columns | append: ' col-lg-8 offset-lg-2'
+    when 'standard'
+      assign columns = columns | append: ' col-lg-10 offset-lg-1'
+  endcase
+
+  if section.settings.anchor_id != blank
+    assign section_id = section.settings.anchor_id
+  endif
+
+-%}
+
+{%- style -%}
+
+  {%
+    render 'element-styles',
+      element_background: section.settings.background,
+      element_background_image: section.settings.background_image,
+      element_id: section_id,
+      element_padding_bottom: section.settings.padding_bottom,
+      element_padding_top: section.settings.padding_top
+  %}
+
+{%- endstyle -%}
+
+<div class="{{ section_classes }}" id="{{ section_id }}">
+  {% render 'bs-container', state: 'open', col: columns, container: container %}
+    <div class="{{ section_name }}__main text-colour--{{ text_colour }}">
+      {% render 'policy-content', policy_content: policy_content, policy_title: policy_title %}
+    </div>
+  {% render 'bs-container', state: 'closed', col: columns, container: container %}
+</div>
+
+{% schema %}
+{
+  "name": "Shipping Policy",
+  "tag": "section",
+  "class": "section section--shipping-policy",
+  "settings": [
+    {
+      "content": "Content",
+      "type": "header"
+    },
+    {
+      "content": "To change or update the content for this policy, log in to the Shopify dashboard and select Settings. From the Settings panel, choose Policies from the list of sub-panel options.",
+      "type": "paragraph"
+    },
+    {
+      "content": "Settings",
+      "type": "header"
+    },
+    {
+      "content": "Content Width",
+      "type": "paragraph"
+    },
+    {
+      "label": "Content Width",
+      "type": "select",
+      "options": [
+        {
+          "label": "Full",
+          "value": "full"
+        },
+        {
+          "label": "Standard",
+          "value": "standard"
+        },
+        {
+          "label": "Compact",
+          "value": "compact"
+        }
+      ],
+      "default": "full",
+      "id": "content_width"
+    },
+    {
+      "content": "Text",
+      "type": "header"
+    },
+    {
+      "label": "Text Colour",
+      "type": "select",
+      "options": [
+        { "label": "Off-black", "value": "off-black" },
+        { "label": "Off-white", "value": "off-white" }
+      ],
+      "default": "off-black",
+      "id": "text_colour"
+    },
+    {
+      "content": "Background",
+      "type": "paragraph"
+    },
+    {
+      "label": "Background",
+      "type": "select",
+      "options": [
+        { "label": "Image", "value": "image" },
+        { "label": "None", "value": "none" },
+        { "label": "Off-black", "value": "off-black" },
+        { "label": "Off-white", "value": "off-white" },
+        { "label": "Rosa", "value": "rosa" },
+        { "label": "Rosso", "value": "rosso" }
+      ],
+      "default": "none",
+      "id": "background"
+    },
+    {
+      "label": "Background Image",
+      "type": "image_picker",
+      "id": "background_image"
+    },
+    {
+      "content": "Container",
+      "type": "paragraph"
+    },
+    {
+      "label": "Container",
+      "type": "select",
+      "options": [
+        {
+          "label": "Static",
+          "value": "container"
+        },
+        {
+          "label": "Fluid",
+          "value": "container-fluid"
+        },
+        {
+          "label": "Full Width",
+          "value": "full-width"
+        }
+      ],
+      "default": "container",
+      "id": "container"
+    },
+    {
+      "content": "Padding",
+      "type": "paragraph"
+    },
+    {
+      "label": "Top Padding",
+      "type": "range",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 36,
+      "id": "padding_top"
+    },
+    {
+      "label": "Bottom Padding",
+      "type": "range",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 36,
+      "id": "padding_bottom"
+    },
+    {
+      "content": "Anchor",
+      "type": "paragraph"
+    },
+    {
+      "label": "Anchor ID",
+      "info": "Optionally include a unique ID so that sections within the page can be linked to. Anchor IDs must be all lowercase, unique and replaced empty spaces with hyphens. For example: my-great-section-anchor",
+      "type": "text",
+      "id": "anchor_id"
+    }
+  ]
+}
+{% endschema %}
