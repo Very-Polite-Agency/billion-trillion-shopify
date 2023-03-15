@@ -4,6 +4,34 @@
 .list-collections {
 
   &__item {
+    &:nth-child(4n+1) {
+      .card-collection {
+        &__content {
+          background: var(--theme-colour--orange);
+        }
+      }
+    }
+    &:nth-child(4n+2) {
+      .card-collection {
+        &__content {
+          background: var(--theme-colour--mango);
+        }
+      }
+    }
+    &:nth-child(4n+3) {
+      .card-collection {
+        &__content {
+          background: var(--theme-colour--lemon);
+        }
+      }
+    }
+    &:nth-child(4n+4) {
+      .card-collection {
+        &__content {
+          background: var(--theme-colour--lime);
+        }
+      }
+    }
     & + .list-collections__item {
       @include border-solid( var(--theme-border--width), 'black', 'top' );
     }

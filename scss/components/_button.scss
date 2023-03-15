@@ -1,90 +1,25 @@
+@use '../utils/mixins/breakpoint' as *;
+
 .button {
 
-  transition:
-    background var(--theme-transition-duration),
-    border var(--theme-transition-duration),
-    color var(--theme-transition-duration),
-    opacity var(--theme-transition-duration);
-  outline: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  display: inline-flex;
-  width: auto;
-  justify-content: center;
-  align-items: center;
-  min-height: 46px;
-  line-height: 1;
-  text-decoration: none;
-  background: transparent;
-
-  span {
-    display: block;
-  }
-
-  svg {
-    display: block;
-    height: 100%;
-    width: auto;
-    fill: currentColor;
-  }
-
-  &__icon,
-  &__title {
-    display: block;
-  }
-
-  &__icon {
-    transition:
-      opacity var(--theme-transition-duration),
-      transform var(--theme-transition-duration);
-  }
-
-  &--age-gate {
-    @extend .button;
-  }
-
-  &--age-gate {
-    font-size: 30px;
-    text-transform: uppercase;
-    height: 52px;
-    padding: 0 28px;
-  }
-
-  &--image {
-    @extend .button;
-    min-height: unset;
-    height: 46px;
-    img, svg {
-      display: block;
-      height: 100%;
-      width: auto;
+  &--svg {
+    path {
+      transition: fill var(--theme-transition--duration);
     }
-    .button__fill {
-      color: rgba(var(--theme-colour-orange), 1);
+    .button-border {
+      fill: var(--theme-colour--black);
     }
-    .button__outline {
-      color: rgba(var(--theme-colour-black), 1);
+    .button-fill {
+      fill: var(--theme-colour--white);
     }
     &:hover {
-      opacity: 0.6666;
+      .button-fill {
+        fill: var(--theme-colour--orange);
+      }
     }
-  }
-
-  @include breakpoint(sm) {
-
-    &--image {
-      height: 50px;
+    @include breakpoint(lg) {
+      max-width: 700px;
     }
-
-  }
-
-  @include breakpoint(lg) {
-
-    &--image {
-      height: 46px;
-    }
-
   }
 
 }

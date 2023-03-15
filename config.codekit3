@@ -7,7 +7,7 @@
       "uuidString" : "EEBF07D2-E77D-4E49-A557-FB42B9E8E7C0"
     }
   ],
-  "creatorBuild" : "34448",
+  "creatorBuild" : "34472",
   "files" : {
     "\/.editorconfig" : {
       "cB" : 0,
@@ -2339,12 +2339,12 @@
       "oAP" : "\/sections\/main-collection-banner.liquid",
       "oF" : 0
     },
-    "\/sections\/main-collection-product-grid.liquid" : {
+    "\/sections\/main-collection.liquid" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/sections\/main-collection-product-grid.liquid",
+      "oAP" : "\/sections\/main-collection.liquid",
       "oF" : 0
     },
     "\/sections\/main-list-collections.liquid" : {
@@ -4509,6 +4509,7 @@
       "ENVIRONMENT:::$NODE_ENV"
     ],
     "rollupTreeshakingEnabled" : 1,
+    "rollupTreeshakingModuleSideEffects" : 1,
     "skippedFoldersString" : "log, _logs, logs, _cache, cache, .idea, \/storage\/framework\/sessions, node_modules",
     "sourceFolderName" : "source",
     "susyVersion" : 3,

@@ -26,7 +26,7 @@ https://billion-trillion.myshopify.com
 - [ ] main-cart-items.liquid
 - [ ] main-collection-banner.liquid
 - [ ] main-collection-product-grid.liquid
-- [ ] main-list-collections.liquid
+- [x] main-list-collections.liquid
 - [ ] main-page.liquid
 - [ ] main-password.liquid
 - [ ] main-product.liquid
@@ -51,7 +51,7 @@ https://billion-trillion.myshopify.com
 - [ ] collection.json
 - [ ] gift_card.liquid
 - [ ] index.json
-- [ ] list-collections.json
+- [x] list-collections.json
 - [ ] page.contact.json
 - [ ] page.json
 - [ ] page.thank-you.json

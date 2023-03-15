@@ -19,6 +19,10 @@
     assign snippet_classes = snippet_name
     assign snippet_id = snippet_name | append: '--' | append: card_item.id
 
+    assign aos_id = snippet_id
+    assign aos_delay = 250
+    assign aos_delay_increment = 250
+
     assign description = card_item.description | default: ''
     assign featured_image = card_item.featured_image | default: false
     assign title = card_item.title | default: ''
@@ -28,7 +32,13 @@
 
   <article class="{{ snippet_classes }}" id="{{ snippet_id }}">
     {% if featured_image %}
-      <div class="{{ snippet_name }}__image">
+      {%- liquid
+        capture aos_attrs
+          render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+        endcapture
+        assign aos_delay = aos_delay | plus: aos_delay_increment
+      -%}
+      <div class="{{ snippet_name }}__image" {{ aos_attrs }}>
         {% if url != blank %}<a href="{{ url }}" target="_self" title="{{ title }}">{% endif %}
           {% render 'lazyload-image', alt_text: title, image: featured_image %}
         {% if url != blank %}</a>{% endif %}
@@ -36,9 +46,38 @@
     {% endif %}
     {% if title != blank or description != blank %}
       <div class="{{ snippet_name }}__content">
-        {% if title != blank %}<strong class="{{ snippet_name }}__title">{{ title }}</strong>{% endif %}
-        {% if description != blank %}<div class="{{ snippet_name }}__description">{{ description }}</strong>{% endif %}
-        {% if url != blank %}<a href="{{ url }}" target="_self" title="{{ title }}">Shop Now</a>{% endif %}
+        {% if title != blank %}
+          {%- liquid
+            capture aos_attrs
+              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-up'
+            endcapture
+            assign aos_delay = aos_delay | plus: aos_delay_increment
+          -%}
+          <strong class="{{ snippet_name }}__title heading--primary heading--2" {{ aos_attrs }}>Shop {{ title }}</strong>
+        {% endif %}
+        {% if description != blank %}
+          {%- liquid
+            capture aos_attrs
+              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-up'
+            endcapture
+            assign aos_delay = aos_delay | plus: aos_delay_increment
+          -%}
+          <div class="{{ snippet_name }}__description" {{ aos_attrs }}>{{ description }}</strong>
+        {% endif %}
+        {% if url != blank %}
+          {%- liquid
+            capture aos_attrs
+              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-up'
+            endcapture
+            assign aos_delay = aos_delay | plus: aos_delay_increment
+          -%}
+          <div class="{{ snippet_name }}__cta" {{ aos_attrs }}>
+            <a href="{{ url }}" target="_self" title="Shop {{ title }}">
+              <div class="button--svg d-md-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
+              <div class="button--svg d-none d-md-block">{% render 'svg', type: 'button.shop-now.lg' %}</div>
+            </a>
+          </div>
+        {% endif %}
       </div>
     {% endif %}
   </article>

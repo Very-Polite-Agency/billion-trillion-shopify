@@ -76,12 +76,12 @@ $theme-font-sizes-button: (
 
 // ---------------------------------------- Font Sizes | Heading
 $theme-font-sizes-heading: (
-  'base': 26px,
-  'sm': 28px,
-  'md': 30px,
-  'lg': 32px,
-  'xl': 36px,
-  'xxl': 38px
+  'base': 36px,
+  'sm': 36px,
+  'md': 46px,
+  'lg': 52px,
+  'xl': 62px,
+  'xxl': 72px
 );
 
 // ---------------------------------------- Font Sizes | Title
@@ -115,8 +115,8 @@ $theme-input-heights: (
 );
 
 $theme-layout-settings: (
-  'gutter': 20px,
-  'container-padding': 20px,
+  'gutter': 24px,
+  'container-padding': 24px,
   'breakpoints': (
     'base': 0,
     'sm': 576px,

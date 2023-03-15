@@ -1,6 +1,6 @@
 {%- liquid
 
-  assign section_name = 'list-collections'
+  assign section_name = 'collection'
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
@@ -8,22 +8,30 @@
   assign aos_delay = 250
   assign aos_delay_increment = 250
 
+  assign container = section.settings.container | default: 'container'
+  assign products_per_page = section.settings.products_per_page | default: 12
+  assign product_image_aspect_ratio = section.settings.product_image_aspect_ratio | default: ''
   assign section_anchor_id = section.settings.anchor_id | default: ''
-
-  case section.settings.sort
-    when 'products_high' or 'products_low'
-      assign collections = collections | sort: 'all_products_count'
-    when 'date' or 'date_reversed'
-      assign collections = collections | sort: 'published_at'
-  endcase
-
-  if section.settings.sort == 'products_high' or section.settings.sort == 'date_reversed' or section.settings.sort == 'alphabetical_reversed'
-    assign collections = collections | reverse
-  endif
 
 -%}
 
 {%- style -%}
+
+  {% if product_image_aspect_ratio and product_image_aspect_ratio != blank %}
+    #{{ section_id }} .card-product__image,
+    #{{ section_id }} .card-product__image-link {
+      aspect-ratio: {{ product_image_aspect_ratio }};
+    }
+  {% endif %}
+
+  @media screen and (min-width: 992px) {
+
+    #{{ section_id }} .{{ section_name }}__grid {
+      grid-template-columns: repeat( {{ section.settings.grid_columns }}, 1fr );
+      gap: {{ section.settings.grid_gap }}px;
+    }
+
+  }
 
   {%
     render 'element-styles',
@@ -43,20 +51,31 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  <div class="{{ section_name }}__grid grid" id="{{ aos_id }}" role="list">
-    {%- for item in collections -%}
-      <div class="{{ section_name }}__item" role="listitem">
-        {% render 'card-collection', card_item: item %}
+  {% paginate collection.products by products_per_page %}
+    {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
+
+      <div class="{{ section_name }}__grid grid" id="{{ aos_id }}" role="list">
+        {%- for item in collection.products -%}
+          <div class="{{ section_name }}__item" role="listitem">
+            {% render 'card-product', card_item: item %}
+          </div>
+        {%- endfor -%}
       </div>
-    {%- endfor -%}
-  </div>
+
+      {% render 'pagination', classes: 'collection__pagination', paginate: paginate %}
+
+    {% render 'bs-container', state: 'closed', col: 'col-12', container: container %}
+  {% endpaginate %}
 </div>
 
 {% schema %}
 {
-  "name": "List Collections",
+  "name": "Collection",
   "tag": "section",
-  "class": "section section--list-collections",
+  "class": "section section--collection",
+  "templates": [
+    "collection"
+  ],
   "settings": [
     {
       "content": "Settings",
@@ -185,6 +204,28 @@
       "id": "container"
     },
     {
+      "content": "Grid",
+      "type": "header"
+    },
+    {
+      "label": "Grid Columns",
+      "type": "range",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 2,
+      "id": "grid_columns"
+    },
+    {
+      "label": "Grid Gap",
+      "type": "range",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "default": 10,
+      "id": "grid_gap"
+    },
+    {
       "content": "Padding",
       "type": "header"
     },
@@ -209,40 +250,19 @@
       "id": "padding_bottom"
     },
     {
-      "content": "Sorting",
-      "type": "header"
+      "label": "Product Image Aspect ratio",
+      "info": "Optionally include an aspect ratio for the product images for consistent user experience.",
+      "type": "text",
+      "id": "product_image_aspect_ratio"
     },
     {
-      "label": "Sort",
-      "type": "select",
-      "options": [
-        {
-          "label": "Alphabetically, A-Z",
-          "value": "alphabetical"
-        },
-        {
-          "label": "Alphabetically, Z-A",
-          "value": "alphabetical_reversed"
-        },
-        {
-          "label": "Date, new to old",
-          "value": "date_reversed"
-        },
-        {
-          "label": "Date, old to new",
-          "value": "date"
-        },
-        {
-          "label": "Product count, high to low",
-          "value": "products_high"
-        },
-        {
-          "label": "Product count, low to high",
-          "value": "products_low"
-        }
-      ],
-      "default": "alphabetical",
-      "id": "sort"
+      "label": "Products per Page",
+      "type": "range",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 12,
+      "id": "products_per_page"
     }
   ]
 }

@@ -3,7 +3,7 @@
   $color: currentcolor;
 
   @if 'inherit' != $colour {
-    $color: rgba(var(--theme-colour--#{$colour}), 1);
+    $color: var(--theme-colour--#{$colour});
   }
 
   @if $side {
