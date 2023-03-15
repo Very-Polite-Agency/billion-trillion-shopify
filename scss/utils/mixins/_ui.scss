@@ -39,11 +39,11 @@
 
 %ui-transition {
   transition:
-    background var(--theme-transition-duration),
-    border var(--theme-transition-duration),
-    color var(--theme-transition-duration),
-    opacity var(--theme-transition-duration),
-    transform var(--theme-transition-duration);
+    background var(--theme-transition--duration),
+    border var(--theme-transition--duration),
+    color var(--theme-transition--duration),
+    opacity var(--theme-transition--duration),
+    transform var(--theme-transition--duration);
 }
 
 @mixin placeholder {

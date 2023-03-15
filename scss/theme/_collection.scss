@@ -1,4 +1,12 @@
+@use '../utils/mixins/border' as *;
+
 .collection {
+
+  .card-product {
+    @include border-solid( var(--theme-border--width), 'black' );
+    border-radius: var(--theme-border--radius);
+    overflow: hidden;
+  }
 
   &__grid {
     display: grid;

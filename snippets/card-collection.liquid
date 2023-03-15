@@ -39,7 +39,7 @@
         assign aos_delay = aos_delay | plus: aos_delay_increment
       -%}
       <div class="{{ snippet_name }}__image" {{ aos_attrs }}>
-        {% if url != blank %}<a href="{{ url }}" target="_self" title="{{ title }}">{% endif %}
+        {% if url != blank %}<a class="{{ snippet_name }}__image-link link" href="{{ url }}" target="_self" title="{{ title }}">{% endif %}
           {% render 'lazyload-image', alt_text: title, image: featured_image %}
         {% if url != blank %}</a>{% endif %}
       </div>

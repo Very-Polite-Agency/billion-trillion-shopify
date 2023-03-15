@@ -1,0 +1,25 @@
+@use "../utils/mixins/border" as *;
+@use "../utils/mixins/breakpoint" as *;
+
+.card-product {
+
+  &__content {
+    @include border-solid( var(--theme-border--width), 'black', 'top' );
+    background: var(--theme-colour--lemon);
+    padding: var(--theme-layout--gutter);
+  }
+
+  &__image {
+    &-link {
+      &:hover {
+        opacity: var(--theme-transition--opacity);
+      }
+    }
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}
