@@ -6,6 +6,10 @@
      @include heading-style( 1 );
   }
 
+  &--1 {
+    @include heading-size( 1 );
+  }
+
   &--2 {
     @include heading-size( 2 );
   }
