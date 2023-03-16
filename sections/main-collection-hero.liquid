@@ -1,6 +1,6 @@
 {%- liquid
 
-  assign section_name = 'collection'
+  assign section_name = 'collection-hero'
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
@@ -8,88 +8,14 @@
   assign aos_delay = 250
   assign aos_delay_increment = 250
 
-  assign collection_sort_by = collection.sort_by | default: collection.default_sort_by
-  assign container = section.settings.container | default: 'container'
-  assign products_per_page = section.settings.products_per_page | default: 12
-  assign product_image_aspect_ratio = section.settings.product_image_aspect_ratio | default: ''
-  assign section_anchor_id = section.settings.anchor_id | default: ''
 
 -%}
 
-{%- style -%}
-
-  {% if product_image_aspect_ratio and product_image_aspect_ratio != blank %}
-    #{{ section_id }} .card-product__image,
-    #{{ section_id }} .card-product__image-link {
-      aspect-ratio: {{ product_image_aspect_ratio }};
-    }
-  {% endif %}
-
-  #{{ section_id }} .{{ section_name }}__grid {
-    gap: {{ section.settings.grid_gap }}px;
-  }
-
-  @media screen and (min-width: 992px) {
-    #{{ section_id }} .{{ section_name }}__grid {
-      grid-template-columns: repeat( {{ section.settings.grid_columns }}, 1fr );
-    }
-  }
-
-  {%
-    render 'element-styles',
-      background: section.settings.background,
-      background_image: section.settings.background_image,
-      background_image_position_desktop: section.settings.background_image_position_desktop,
-      background_image_position_mobile: section.settings.background_image_position_mobile,
-      background_image_repeat: section.settings.background_image_repeat,
-      background_image_size: section.settings.background_image_size,
-      border_bottom: section.settings.border_bottom,
-      border_top: section.settings.border_top,
-      id: section_id,
-      padding_bottom: section.settings.padding_bottom,
-      padding_top: section.settings.padding_top
-  %}
-
-{%- endstyle -%}
-
-<div class="{{ section_classes }}" id="{{ section_id }}">
-  {% paginate collection.products by products_per_page %}
-    {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
-
-      <div class="{{ section_name }}__sort-filter">
-        <label class="{{ section_name }}__sort-filter-label">Sort by</label>
-        <select class="{{ section_name }}__sort-filter-options select--1" id="sort-by">
-          {% for option in collection.sort_options %}
-            <option value="{{ option.value }}" {% if option.value == collection_sort_by %}selected="selected"{% endif %}>
-              {% render 'sort-option-name', option_value: option.value %}
-            </option>
-          {% endfor %}
-        </select>
-      </div>
-
-      <div class="{{ section_name }}__grid grid" id="{{ aos_id }}" role="list">
-        {%- for item in collection.products -%}
-          <div class="{{ section_name }}__item" role="listitem">
-            {% unless item.available %}
-              <div class="{{ section_name }}__badge">{% render 'svg', type: 'badge.sold-out' %}</div>
-            {% endunless %}
-            {% render 'card-product', card_item: item %}
-          </div>
-        {%- endfor -%}
-      </div>
-
-      {% capture snippet_classes %}{{ section_name }}__pagination pagination{% endcapture %}
-      {% render 'pagination', classes: snippet_classes, paginate: paginate %}
-
-    {% render 'bs-container', state: 'closed', col: 'col-12', container: container %}
-  {% endpaginate %}
-</div>
-
 {% schema %}
 {
-  "name": "Collection",
+  "name": "Collection Hero",
   "tag": "section",
-  "class": "section section--collection",
+  "class": "section section--collection-hero",
   "templates": [
     "collection"
   ],
@@ -221,28 +147,6 @@
       "id": "container"
     },
     {
-      "content": "Grid",
-      "type": "header"
-    },
-    {
-      "label": "Grid Columns",
-      "type": "range",
-      "min": 2,
-      "max": 4,
-      "step": 1,
-      "default": 2,
-      "id": "grid_columns"
-    },
-    {
-      "label": "Grid Gap",
-      "type": "range",
-      "min": 10,
-      "max": 50,
-      "step": 1,
-      "default": 10,
-      "id": "grid_gap"
-    },
-    {
       "content": "Padding",
       "type": "header"
     },
@@ -265,21 +169,6 @@
       "unit": "px",
       "default": 36,
       "id": "padding_bottom"
-    },
-    {
-      "label": "Product Image Aspect ratio",
-      "info": "Optionally include an aspect ratio for the product images for consistent user experience.",
-      "type": "text",
-      "id": "product_image_aspect_ratio"
-    },
-    {
-      "label": "Products per Page",
-      "type": "range",
-      "min": 1,
-      "max": 50,
-      "step": 1,
-      "default": 12,
-      "id": "products_per_page"
     }
   ]
 }

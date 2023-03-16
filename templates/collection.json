@@ -1,15 +1,11 @@
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
-      "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
+    "hero": {
+      "type": "main-collection-hero",
+      "settings": {}
     },
-    "product-grid": {
-      "type": "main-collection",
+    "products": {
+      "type": "main-collection-products",
       "settings": {
         "anchor_id": "",
         "background": "none",
@@ -30,7 +26,7 @@
     }
   },
   "order": [
-    "banner",
-    "product-grid"
+    "hero",
+    "products"
   ]
 }

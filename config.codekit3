@@ -1646,6 +1646,36 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/scss\/sections\/_collection-hero.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/_collection-hero.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/scss\/sections\/_collection-products.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/_collection-products.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/scss\/sections\/_index.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -2376,20 +2406,20 @@
       "oAP" : "\/sections\/main-cart-items.liquid",
       "oF" : 0
     },
-    "\/sections\/main-collection-banner.liquid" : {
+    "\/sections\/main-collection-hero.liquid" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/sections\/main-collection-banner.liquid",
+      "oAP" : "\/sections\/main-collection-hero.liquid",
       "oF" : 0
     },
-    "\/sections\/main-collection.liquid" : {
+    "\/sections\/main-collection-products.liquid" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/sections\/main-collection.liquid",
+      "oAP" : "\/sections\/main-collection-products.liquid",
       "oF" : 0
     },
     "\/sections\/main-list-collections.liquid" : {
