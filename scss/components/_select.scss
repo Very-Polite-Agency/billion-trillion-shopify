@@ -1,0 +1,16 @@
+@use '../utils/mixins/border' as *;
+@use '../utils/mixins/select' as *;
+@use '../utils/mixins/ui' as *;
+
+.select {
+
+  @extend %ui-base;
+  @extend %ui-input;
+
+  &--primary {
+    @include border-solid( var(--theme-border--width), 'black', 'bottom' );
+    @include select-style( 1 );
+    @extend .select;
+  }
+
+}

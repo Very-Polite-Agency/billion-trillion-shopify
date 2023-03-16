@@ -58,7 +58,7 @@
 
       <div class="{{ section_name }}__sort-filter">
         <label class="{{ section_name }}__sort-filter-label">Sort by</label>
-        <select class="{{ section_name }}__sort-filter-options select--1" id="sort-by">
+        <select class="{{ section_name }}__sort-filter-options select--primary" id="sort-by">
           {% for option in collection.sort_options %}
             <option value="{{ option.value }}" {% if option.value == collection_sort_by %}selected="selected"{% endif %}>
               {% render 'sort-option-name', option_value: option.value %}
