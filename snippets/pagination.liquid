@@ -20,15 +20,28 @@
     </div>
 
     {%- for part in paginate.parts -%}
+
+      {%- liquid
+
+        assign is_link = part.is_link | default: false
+        assign page_title = part.title
+        assign page_url = part.url
+        assign current_page_title = paginate.current_page
+        assign current_page = false
+
+        if page_title == current_page_title
+          assign current_page = true
+        endif
+
+      -%}
+
       <div class="{{ snippet_name }}__item page">
-        {%- if part.is_link -%}
-          <a class="{{ snippet_name}}__link link" href="{{ part.url }}{{ anchor }}">{{ part.title }}</a>
+        {%- if is_link -%}
+          <a class="{{ snippet_name}}__link link" href="{{ page_url }}">
+            <span class="{{ snippet_name}}__page">{{ page_title }}</span>
+          </a>
         {%- else -%}
-          {%- if part.title == paginate.current_page -%}
-            <span class="{{ snippet_name}}__item-value">{{ part.title }}</span>
-          {%- else -%}
-            <span class="{{ snippet_name}}__item-value">{{ part.title }}</span>
-          {%- endif -%}
+          <span class="{{ snippet_name}}__page{% if current_page %} current-page{% endif %}">{{ page_title }}</span>
         {%- endif -%}
       </div>
     {%- endfor -%}

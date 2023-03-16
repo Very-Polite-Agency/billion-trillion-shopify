@@ -1,0 +1,41 @@
+@use '../utils/mixins/breakpoint' as *;
+@use '../utils/mixins/font' as *;
+
+.pagination {
+
+  @include hobeaux( 700 );
+  font-size: 35px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  margin-top: 46px;
+
+  &__item {
+    color: var(--theme-colour--black);
+  }
+
+  &__link {
+    color: inherit;
+    &:hover {
+      color: var(--theme-colour--orange);
+    }
+  }
+
+  &__page {
+    color: inherit;
+    border-bottom: 2px solid transparent;
+    &.current-page {
+      color: var(--theme-colour--orange);
+      border-bottom-color: var(--theme-colour--orange);
+    }
+  }
+
+  @include breakpoint(lg) {
+    font-size: 42px;
+    gap: 30px;
+    margin-top: 80px;
+  }
+
+}
