@@ -1,53 +1,43 @@
 {%- if paginate and paginate.parts.size > 0 -%}
 
-  {% assign snippet_name = 'pagination' %}
-  {% assign snippet_classes = snippet_name %}
+  {%- liquid
 
-  {% if classes and classes != empty %}
-    {% assign snippet_classes = snippet_classes | prepend: ' ' | prepend: classes %}
-  {% endif %}
+    assign snippet_name = 'pagination'
+    assign snippet_classes = classes | default: snippet_name
+
+    assign aos_attrs = aos_attrs | default: ''
+    assign price = product.price
+    assign price_compare_at = product.compare_at_price
+
+  -%}
 
   <nav class="{{ snippet_classes }}" role="navigation" aria-label="{{ template.name | capitalize }} Pagination">
 
-    {% if col and col != blank %}
-      {% render 'bs-container', state: 'open', col: col %}
-    {% endif %}
-
-    <div class="{{ snippet_name }}__layout">
-
-      <div class="{{ snippet_name }}__item previous d-none">
-        {%- if paginate.previous -%}
-          <a href="{{ paginate.previous.url }}{{ anchor }}" class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce" aria-label="{{ 'general.pagination.previous' | t }}">
-          </a>
-        {%- endif -%}
-      </div>
-
-      {%- for part in paginate.parts -%}
-        <div class="{{ snippet_name }}__item page">
-          {%- if part.is_link -%}
-            <a href="{{ part.url }}{{ anchor }}">{{ part.title }}</a>
-          {%- else -%}
-            {%- if part.title == paginate.current_page -%}
-              <span>{{ part.title }}</span>
-            {%- else -%}
-              <span>{{ part.title }}</span>
-            {%- endif -%}
-          {%- endif -%}
-        </div>
-      {%- endfor -%}
-
-      <div class="{{ snippet_name }}__item next d-none">
-        {%- if paginate.next -%}
-          <a href="{{ paginate.next.url }}{{ anchor }}" class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce" aria-label="{{ 'general.pagination.next' | t }}" >
-          </a>
-        {%- endif -%}
-      </div>
-
+    <div class="{{ snippet_name }}__item previous d-none">
+      {%- if paginate.previous -%}
+        <a class="{{ snippet_name}}__link link" href="{{ paginate.previous.url }}{{ anchor }}">Previous</a>
+      {%- endif -%}
     </div>
 
-    {% if col and col != blank %}
-      {% render 'bs-container', state: 'closed' %}
-    {% endif %}
+    {%- for part in paginate.parts -%}
+      <div class="{{ snippet_name }}__item page">
+        {%- if part.is_link -%}
+          <a class="{{ snippet_name}}__link link" href="{{ part.url }}{{ anchor }}">{{ part.title }}</a>
+        {%- else -%}
+          {%- if part.title == paginate.current_page -%}
+            <span class="{{ snippet_name}}__item-value">{{ part.title }}</span>
+          {%- else -%}
+            <span class="{{ snippet_name}}__item-value">{{ part.title }}</span>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+
+    <div class="{{ snippet_name }}__item next d-none">
+      {%- if paginate.next -%}
+        <a class="{{ snippet_name}}__link link" href="{{ paginate.next.url }}{{ anchor }}">Next</a>
+      {%- endif -%}
+    </div>
 
   </nav>
 
