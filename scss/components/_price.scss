@@ -1,0 +1,13 @@
+.price {
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  .sale-price {
+    text-decoration: line-through;
+    opacity: var(--theme-transition--opacity);
+  }
+
+}

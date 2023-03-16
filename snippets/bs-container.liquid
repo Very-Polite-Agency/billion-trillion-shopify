@@ -1,4 +1,4 @@
-{% comment %}
+{% comment -%}
 
   Use snippet like so...
 
@@ -7,16 +7,18 @@
     state: 'open',
     col: 'col-12',
     container: 'container-fluid'
-  %}
+  -%}
 
-{% endcomment %}
+{% endcomment -%}
 
-{% assign state = state | default: 'open' %}
-{% assign container = container | default: 'container' %}
-{% assign col = col | default: 'col-12' %}
+{% assign state = state | default: 'open' -%}
+{% assign container = container | default: 'container' -%}
+{% assign col = col | default: 'col-12' -%}
 
-{%- if state == 'open' -%}
-  <div class="{{ container }}"><div class="row"><div class="{{ col }}">
-{%- else -%}
-  </div></div></div>
-{%- endif -%}
+{%- unless 'full-width' == container -%}
+  {%- if state == 'open' -%}
+    <div class="{{ container }}"><div class="row"><div class="{{ col }}">
+  {%- else -%}
+    </div></div></div>
+  {%- endif -%}
+{%- endunless  -%}

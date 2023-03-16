@@ -10,4 +10,8 @@
     @include heading-size( 2 );
   }
 
+  &--3 {
+    @include heading-size( 3 );
+  }
+
 }

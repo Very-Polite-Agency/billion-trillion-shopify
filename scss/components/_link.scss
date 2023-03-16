@@ -1,6 +1,13 @@
 @use '../utils/mixins/ui' as *;
 
 .link {
+
   @extend %ui-base;
   @extend %ui-transition;
+
+  &-disabled {
+    opacity: var(--theme-transition--opacity);
+    pointer-events: none;
+  }
+
 }

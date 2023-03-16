@@ -1,12 +1,13 @@
 @use 'sass:map';
-
 @use '../variables' as *;
 @use "border" as *;
 @use "breakpoint" as *;
 @use "font" as *;
-@use "heading" as *;
 
 @mixin body-copy-style( $style: 1 ) {
+
+  display: block;
+  color: inherit;
 
   thead, tbody, tfoot, tr, td, th {
     border-color: inherit;
@@ -95,27 +96,9 @@
   }
 
   @if $style == 1 {
-    @include new-sprint(300);
-    h1, h2, h3, h4, h5, h6 {}
-    a {
-      line-height: 1.1;
-    }
-  }
-
-  @if $style == 2 {
-    @include clarendon-wide(700);
-    h1, h2, h3, h4, h5, h6 {}
-    a {
-      line-height: 0.85;
-    }
-  }
-
-  @if $style == 3 {
-    @include sarina(400);
-    h1, h2, h3, h4, h5, h6 {}
-    a {
-      line-height: 0.85;
-    }
+    @include sorry-sans( 700 );
+    line-height: 1.214;
+    letter-spacing: 0;
   }
 
 }

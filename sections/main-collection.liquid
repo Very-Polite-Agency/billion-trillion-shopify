@@ -24,13 +24,14 @@
     }
   {% endif %}
 
-  @media screen and (min-width: 992px) {
+  #{{ section_id }} .{{ section_name }}__grid {
+    gap: {{ section.settings.grid_gap }}px;
+  }
 
+  @media screen and (min-width: 992px) {
     #{{ section_id }} .{{ section_name }}__grid {
       grid-template-columns: repeat( {{ section.settings.grid_columns }}, 1fr );
-      gap: {{ section.settings.grid_gap }}px;
     }
-
   }
 
   {%
@@ -57,6 +58,9 @@
       <div class="{{ section_name }}__grid grid" id="{{ aos_id }}" role="list">
         {%- for item in collection.products -%}
           <div class="{{ section_name }}__item" role="listitem">
+            {% unless item.available %}
+              <div class="{{ section_name }}__badge">{% render 'svg', type: 'badge.sold-out' %}</div>
+            {% endunless %}
             {% render 'card-product', card_item: item %}
           </div>
         {%- endfor -%}

@@ -1,0 +1,160 @@
+@use "../utils/mixins/border" as *;
+@use "../utils/mixins/breakpoint" as *;
+
+.card-product {
+
+  @include border-solid( var(--theme-border--width), 'black' );
+  border-radius: var(--theme-border--radius);
+  background: var(--theme-colour--lemon);
+  min-height: 100%;
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
+
+  &__content {
+    @include border-solid( var(--theme-border--width), 'black', 'top' );
+    padding: 32px 7%;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    font-size: 16px;
+    text-transform: uppercase;
+    .unavailable & {
+      background: var(--theme-colour--grey);
+    }
+  }
+
+  &__cta {
+    padding-top: 20px;
+    &-link {
+      display: block;
+      margin: 0 auto;
+      max-width: 275px;
+    }
+  }
+
+  &__image {
+    &-link {
+      &:hover {
+        opacity: var(--theme-transition--opacity);
+      }
+      .unavailable & {
+        pointer-events: none;
+      }
+    }
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__price {
+    margin-top: auto;
+    padding-top: 15px;
+  }
+
+  &__title {
+    font-size: 32px;
+    & + .card-product__description {
+      margin-top: 15px;
+    }
+  }
+
+  @include breakpoint(sm) {
+
+    &__content {
+      padding: 36px 10%;
+    }
+
+    &__cta {
+      &-link {
+        max-width: 300px;
+      }
+    }
+
+    &__title {
+      font-size: 34px;
+    }
+
+  }
+
+  @include breakpoint(md) {
+
+    &__content {
+      padding: 38px 12%;
+    }
+
+    &__cta {
+      &-link {
+        max-width: 345px;
+      }
+    }
+
+    &__title {
+      font-size: 38px;
+    }
+
+  }
+
+  @include breakpoint(lg) {
+
+    &__content {
+      padding: var(--theme-layout--gutter);
+      font-size: 14px;
+    }
+
+    &__cta {
+      &-link {
+        max-width: 175px;
+      }
+    }
+
+    &__description {
+      padding: 0;
+    }
+
+    &__title {
+      font-size: 30px;
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+    &__content {
+      font-size: 15px;
+    }
+
+    &__cta {
+      &-link {
+        max-width: 195px;
+      }
+    }
+
+    &__title {
+      font-size: 34px;
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__content {
+      font-size: 16px;
+    }
+
+    &__cta {
+      &-link {
+        max-width: 215px;
+      }
+    }
+
+    &__title {
+      font-size: 38px;
+    }
+
+  }
+
+}

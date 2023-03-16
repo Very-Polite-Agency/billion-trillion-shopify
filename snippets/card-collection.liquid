@@ -72,7 +72,7 @@
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
           <div class="{{ snippet_name }}__cta" {{ aos_attrs }}>
-            <a href="{{ url }}" target="_self" title="Shop {{ title }}">
+            <a class="{{ snippet_name }}__cta-link link" href="{{ url }}" target="_self" title="Shop {{ title }}">
               <div class="button--svg d-md-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
               <div class="button--svg d-none d-md-block">{% render 'svg', type: 'button.shop-now.lg' %}</div>
             </a>

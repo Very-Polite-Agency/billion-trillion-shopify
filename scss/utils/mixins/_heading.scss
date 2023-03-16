@@ -33,4 +33,16 @@
     }
   }
 
+  @if $size == 3 {
+    @each $name, $value in $theme-font-sizes-heading {
+      @if $name == 'base' {
+        font-size: $value * 0.85;
+      } @else {
+        @include breakpoint(#{$name}) {
+          font-size: $value * 0.85;
+        }
+      }
+    }
+  }
+
 }
