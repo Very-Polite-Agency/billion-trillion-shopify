@@ -8,6 +8,7 @@
   assign aos_delay = 250
   assign aos_delay_increment = 250
 
+  assign collection_sort_by = collection.sort_by | default: collection.default_sort_by
   assign container = section.settings.container | default: 'container'
   assign products_per_page = section.settings.products_per_page | default: 12
   assign product_image_aspect_ratio = section.settings.product_image_aspect_ratio | default: ''
@@ -54,6 +55,17 @@
 <div class="{{ section_classes }}" id="{{ section_id }}">
   {% paginate collection.products by products_per_page %}
     {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
+
+      <div class="{{ section_name }}__sort-filter">
+        <label class="{{ section_name }}__sort-filter-label">Sort by</label>
+        <select class="{{ section_name }}__sort-filter-options select--1" id="sort-by">
+          {% for option in collection.sort_options %}
+            <option value="{{ option.value }}" {% if option.value == collection_sort_by %}selected="selected"{% endif %}>
+              {% render 'sort-option-name', option_value: option.value %}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
 
       <div class="{{ section_name }}__grid grid" id="{{ aos_id }}" role="list">
         {%- for item in collection.products -%}
