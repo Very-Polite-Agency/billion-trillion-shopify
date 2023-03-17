@@ -1,8 +1,26 @@
 {
   "sections": {
-     "main": {
+    "main": {
       "type": "main-product",
-      "settings": {}
+      "settings": {
+        "anchor_id": "",
+        "background": "green",
+        "background_image_position_desktop": "center center",
+        "background_image_position_mobile": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "carousel_pagination": false,
+        "carousel_autoplay": 3000,
+        "carousel_animation_duration": 450,
+        "carousel_gap": 20,
+        "container": "container",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "product_image_aspect_ratio": "",
+        "product_image_border_enable": false
+      }
     }
   },
   "order": [
