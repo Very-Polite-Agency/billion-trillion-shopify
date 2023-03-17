@@ -1,0 +1,19 @@
+@use '../utils/mixins/border' as *;
+@use '../utils/mixins/breakpoint' as *;
+
+.product {
+
+  &__image {
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    &.with-border {
+      @include border-solid( var(--theme-border--width), 'black' );
+      border-radius: var(--theme-border--radius);
+    }
+  }
+
+}

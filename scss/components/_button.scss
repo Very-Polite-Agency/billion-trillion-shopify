@@ -1,6 +1,15 @@
 @use '../utils/mixins/breakpoint' as *;
+@use '../utils/mixins/ui' as *;
+
 
 .button {
+
+  @extend %ui-base;
+  @extend %ui-transition;
+
+  &--svg {
+    @extend .button;
+  }
 
   &--svg {
     path {
