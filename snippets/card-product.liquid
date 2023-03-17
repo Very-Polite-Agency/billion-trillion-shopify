@@ -87,6 +87,11 @@
           -%}
           {% render 'price', aos_attrs: aos_attrs, classes: snippet_classes, product: card_item %}
 
+          {%- liquid
+            capture aos_attrs
+              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-up'
+            endcapture
+          -%}
           <div class="{{ snippet_name }}__cta" {{ aos_attrs }}>
             <a class="{{ snippet_name }}__cta-link link{% unless available %}-disabled{% endunless %}" href="{{ url }}" target="_self" title="Shop {{ title }}">
               <div class="button--svg d-lg-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
