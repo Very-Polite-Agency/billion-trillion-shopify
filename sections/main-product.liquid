@@ -20,7 +20,8 @@
 
   assign product_description = product.description | default: ''
   assign product_images = product.images | default: false
-  assign product_image_aspect_ratio = section.settings.product_image_aspect_ratio | default: ''
+  assign product_image_aspect_ratio_desktop = section.settings.product_image_aspect_ratio_desktop | default: ''
+  assign product_image_aspect_ratio_mobile = section.settings.product_image_aspect_ratio_mobile | default: ''
   assign product_image_border_enable = section.settings.product_image_border_enable | default: ''
   assign product_title = product.title | default: ''
   assign product_type = product.type | default: ''
@@ -35,12 +36,21 @@
 
 {%- style -%}
 
-  {% if product_image_aspect_ratio and product_image_aspect_ratio != blank %}
+  {% if product_image_aspect_ratio_mobile and product_image_aspect_ratio_mobile != blank %}
     #{{ section_id }} .product__image,
     #{{ section_id }} .product__image-link {
       aspect-ratio: {{ product_image_aspect_ratio }};
     }
   {% endif %}
+
+  @media screen and (min-width: 992px) {
+    {% if product_image_aspect_ratio_desktop and product_image_aspect_ratio_desktop != blank %}
+      #{{ section_id }} .product__image,
+      #{{ section_id }} .product__image-link {
+        aspect-ratio: {{ product_image_aspect_ratio_desktop }};
+      }
+    {% endif %}
+  }
 
   {%
     render 'element-styles',
@@ -344,10 +354,16 @@
       "type": "header"
     },
     {
-      "label": "Product Image Aspect ratio",
-      "info": "Optionally include an aspect ratio for the product images for consistent user experience.",
+      "label": "Product Image Aspect ratio (Desktop)",
+      "info": "Optionally include an aspect ratio for the product images for consistent user experience on larger devices.",
       "type": "text",
-      "id": "product_image_aspect_ratio"
+      "id": "product_image_aspect_ratio_desktop"
+    },
+    {
+      "label": "Product Image Aspect ratio (Mobile)",
+      "info": "Optionally include an aspect ratio for the product images for consistent user experience on smaller devices.",
+      "type": "text",
+      "id": "product_image_aspect_ratio_mobile"
     },
     {
       "label": "Enable Product Image Border",

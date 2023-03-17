@@ -11,17 +11,18 @@
   assign collection_sort_by = collection.sort_by | default: collection.default_sort_by
   assign container = section.settings.container | default: 'container'
   assign products_per_page = section.settings.products_per_page | default: 12
-  assign product_image_aspect_ratio = section.settings.product_image_aspect_ratio | default: ''
+  assign product_image_aspect_ratio_desktop = section.settings.product_image_aspect_ratio_desktop | default: ''
+  assign product_image_aspect_ratio_mobile = section.settings.product_image_aspect_ratio_mobile | default: ''
   assign section_anchor_id = section.settings.anchor_id | default: ''
 
 -%}
 
 {%- style -%}
 
-  {% if product_image_aspect_ratio and product_image_aspect_ratio != blank %}
+  {% if product_image_aspect_ratio_mobile and product_image_aspect_ratio_mobile != blank %}
     #{{ section_id }} .card-product__image,
     #{{ section_id }} .card-product__image-link {
-      aspect-ratio: {{ product_image_aspect_ratio }};
+      aspect-ratio: {{ product_image_aspect_ratio_mobile }};
     }
   {% endif %}
 
@@ -30,9 +31,18 @@
   }
 
   @media screen and (min-width: 992px) {
+
+    {% if product_image_aspect_ratio_desktop and product_image_aspect_ratio_desktop != blank %}
+      #{{ section_id }} .card-product__image,
+      #{{ section_id }} .card-product__image-link {
+        aspect-ratio: {{ product_image_aspect_ratio_desktop }};
+      }
+    {% endif %}
+
     #{{ section_id }} .{{ section_name }}__grid {
       grid-template-columns: repeat( {{ section.settings.grid_columns }}, 1fr );
     }
+
   }
 
   {%
@@ -294,10 +304,16 @@
       "type": "header"
     },
     {
-      "label": "Product Image Aspect ratio",
-      "info": "Optionally include an aspect ratio for the product images for consistent user experience.",
+      "label": "Product Image Aspect ratio (Desktop)",
+      "info": "Optionally include an aspect ratio for the product images for consistent user experience on larger devices.",
       "type": "text",
-      "id": "product_image_aspect_ratio"
+      "id": "product_image_aspect_ratio_desktop"
+    },
+    {
+      "label": "Product Image Aspect ratio (Mobile)",
+      "info": "Optionally include an aspect ratio for the product images for consistent user experience on smaller devices.",
+      "type": "text",
+      "id": "product_image_aspect_ratio_mobile"
     },
     {
       "label": "Products per Page",
