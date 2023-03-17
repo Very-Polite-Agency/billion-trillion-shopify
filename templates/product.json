@@ -18,7 +18,7 @@
         "container": "container",
         "padding_top": 44,
         "padding_bottom": 88,
-        "product_image_aspect_ratio": "2\/3",
+        "product_image_aspect_ratio": "320\/300",
         "product_image_border_enable": true
       }
     }
