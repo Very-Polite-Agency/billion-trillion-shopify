@@ -2741,12 +2741,36 @@
       "oAP" : "\/snippets\/price.liquid",
       "oF" : 0
     },
+    "\/snippets\/product-actions.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/snippets\/product-actions.liquid",
+      "oF" : 0
+    },
+    "\/snippets\/product-description.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/snippets\/product-description.liquid",
+      "oF" : 0
+    },
     "\/snippets\/product-media.liquid" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/snippets\/product-media.liquid",
+      "oF" : 0
+    },
+    "\/snippets\/product-options.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/snippets\/product-options.liquid",
       "oF" : 0
     },
     "\/snippets\/product-thumbnail.liquid" : {

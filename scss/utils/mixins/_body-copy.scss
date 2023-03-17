@@ -6,6 +6,19 @@
 
 @mixin body-copy-style( $style: 1 ) {
 
+  @if $style == 1 {
+    @include sorry-sans( 700 );
+    line-height: 1.214;
+    letter-spacing: 0;
+  }
+
+  @if $style == 2 {
+    @include hobeaux( 700 );
+    line-height: 1.29;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+
   display: block;
   color: inherit;
 
@@ -93,12 +106,6 @@
 
   & > *:last-child {
     margin-bottom: 0;
-  }
-
-  @if $style == 1 {
-    @include sorry-sans( 700 );
-    line-height: 1.214;
-    letter-spacing: 0;
   }
 
 }

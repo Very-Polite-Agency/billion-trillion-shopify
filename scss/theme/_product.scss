@@ -3,6 +3,30 @@
 
 .product {
 
+  &__content {
+    &-grid {
+      @include border-solid( var(--theme-border--width), 'black' );
+      background: var(--theme-colour--black);
+      border-radius: var(--theme-border--radius);
+      overflow: hidden;
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat( 1, 1fr );
+      gap: var(--theme-border--width);
+      &-row {
+        background: var(--theme-colour--lemon);
+        padding: var(--theme-layout--gutter);
+        &:first-child {
+          background: var(--theme-colour--orange);
+        }
+      }
+    }
+  }
+
+  &__description {
+    font-size: 21px;
+  }
+
   &__image {
     overflow: hidden;
     img {
@@ -15,5 +39,27 @@
       border-radius: var(--theme-border--radius);
     }
   }
+
+  @include breakpoint(sm) {}
+
+  @include breakpoint(md) {
+
+    &__description {
+      font-size: 23px;
+    }
+
+  }
+
+  @include breakpoint(lg) {
+
+    &__description {
+      font-size: 21px;
+    }
+
+  }
+
+  @include breakpoint(xl) {}
+
+  @include breakpoint(xxl) {}
 
 }

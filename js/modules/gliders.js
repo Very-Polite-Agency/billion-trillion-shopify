@@ -126,6 +126,16 @@ const updateGlideTrackHeight = ( element = false ) => {
   }
 };
 
+const updateGliders = () => {
+
+  console.log( gliders );
+
+  for ( const id in gliders ) {
+    console.log(`${id}: ${gliders[id]}`);
+  }
+
+};
+
 const init = () => {
   if ( config.debug ) console.log(`[ ${config.name} v.${config.version} initialized ]`);
     ( document.querySelectorAll( '.js--glide' ) || [] ).forEach( element => {
@@ -138,5 +148,6 @@ export default {
   createGliderFromElement,
   getOptions,
   gliders,
-  init
+  init,
+  updateGliders
 };
