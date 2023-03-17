@@ -128,7 +128,7 @@
                 endcapture
                 assign aos_delay = aos_delay | plus: aos_delay_increment
               -%}
-              {% render 'price', aos_attrs: aos_attrs, classes: snippet_classes, product: card_item %}
+              {% render 'price', aos_attrs: aos_attrs, classes: snippet_classes, product: product %}
               {% render 'product-description', product: product %}
             </div>
 

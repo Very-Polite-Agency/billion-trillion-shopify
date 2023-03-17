@@ -40,6 +40,13 @@
     }
   }
 
+  &__main {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    gap: var(--theme-layout--gutter);
+  }
+
   @include breakpoint(sm) {}
 
   @include breakpoint(md) {
@@ -52,8 +59,22 @@
 
   @include breakpoint(lg) {
 
+    &__content {
+      flex: 1;
+    }
+
     &__description {
       font-size: 21px;
+    }
+
+    &__gallery {
+      width: 42%;
+    }
+
+    &__main {
+      flex-flow: row nowrap;
+      align-items: flex-start;
+      justify-content: space-between;
     }
 
   }
