@@ -9,17 +9,17 @@
         "background_image_position_mobile": "center center",
         "background_image_repeat": "repeat",
         "background_image_size": "cover",
-        "border_top": false,
-        "border_bottom": false,
-        "carousel_pagination": false,
+        "border_top": true,
+        "border_bottom": true,
+        "carousel_pagination": true,
         "carousel_autoplay": 3000,
         "carousel_animation_duration": 450,
         "carousel_gap": 20,
         "container": "container",
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "product_image_aspect_ratio": "",
-        "product_image_border_enable": false
+        "padding_top": 0,
+        "padding_bottom": 88,
+        "product_image_aspect_ratio": "2\/3",
+        "product_image_border_enable": true
       }
     }
   },
