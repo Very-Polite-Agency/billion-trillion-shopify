@@ -16,13 +16,6 @@
       {%- capture inverted_corner_box_content -%}
         {% render 'stepper' %}
       {%- endcapture -%}
-      {%-
-        render 'inverted-corner-box',
-        background: 'off-white',
-        border: 'off-black',
-        content: inverted_corner_box_content,
-        type: 'stepper'
-      -%}
     </div>
 
     <div class="{{ template_name }}__cta">
@@ -32,13 +25,6 @@
       {%- capture inverted_corner_box_content -%}
          <button class="{{ button_classes }}" type="submit" {% unless product_available %}disabled{% endunless %}>Add to Cart</button>
       {%- endcapture -%}
-      {%-
-        render 'inverted-corner-box',
-        background: 'off-black',
-        border: 'off-black',
-        content: inverted_corner_box_content,
-        type: 'button'
-      -%}
     </div>
 
   </div>

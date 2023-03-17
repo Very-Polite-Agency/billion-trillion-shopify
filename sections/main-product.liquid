@@ -121,7 +121,7 @@
             </div>
 
             <div class="{{ section_name }}__content-grid-row">
-              {% capture snippet_classes %}{{ snippet_name }}__price price{% endcapture %}
+              {% capture snippet_classes %}{{ section_name }}__price price{% endcapture %}
               {%- liquid
                 capture aos_attrs
                   render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'

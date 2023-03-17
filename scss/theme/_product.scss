@@ -4,6 +4,7 @@
 .product {
 
   &__content {
+    font-size: 21px;
     &-grid {
       @include border-solid( var(--theme-border--width), 'black' );
       background: var(--theme-colour--black);
@@ -21,10 +22,6 @@
         }
       }
     }
-  }
-
-  &__description {
-    font-size: 21px;
   }
 
   &__image {
@@ -47,11 +44,18 @@
     gap: var(--theme-layout--gutter);
   }
 
+  &__price {
+    font-size: 110%;
+    & + .product__description {
+      margin-top: 15px;
+    }
+  }
+
   @include breakpoint(sm) {}
 
   @include breakpoint(md) {
 
-    &__description {
+    &__content {
       font-size: 23px;
     }
 
@@ -60,11 +64,8 @@
   @include breakpoint(lg) {
 
     &__content {
-      flex: 1;
-    }
-
-    &__description {
       font-size: 21px;
+      flex: 1;
     }
 
     &__gallery {
