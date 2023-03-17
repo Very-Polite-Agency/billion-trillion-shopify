@@ -5,8 +5,8 @@
       "settings": {
         "anchor_id": "",
         "background": "green",
-        "background_image_position_desktop": "center center",
         "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
         "background_image_repeat": "repeat",
         "background_image_size": "cover",
         "border_top": true,
@@ -18,7 +18,8 @@
         "container": "container",
         "padding_top": 44,
         "padding_bottom": 88,
-        "product_image_aspect_ratio": "320\/300",
+        "product_image_aspect_ratio_mobile": "1\/1",
+        "product_image_aspect_ratio_desktop": "2.5\/3",
         "product_image_border_enable": true
       }
     }
