@@ -1,16 +1,1 @@
-{
-  "order": [
-    "main"
-  ],
-  "sections": {
-    "main": {
-      "type": "thank-you",
-      "settings": {
-        "heading": "Thank You",
-        "message": "<p>We've received <br\/>your signal<\/p>",
-        "cta_link": "\/",
-        "anchor_id": ""
-      }
-    }
-  }
-}
+{"order":["main"],"sections":{"main":{"settings":{"anchor_id":"","cta_link":"\/","heading":"Thank You","message":"<p>We've received <br\/>your signal<\/p>"},"type":"thank-you"}}}

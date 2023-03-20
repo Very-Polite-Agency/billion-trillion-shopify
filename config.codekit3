@@ -2387,6 +2387,14 @@
       "oAP" : "\/sections\/header.liquid",
       "oF" : 0
     },
+    "\/sections\/hero.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sections\/hero.liquid",
+      "oF" : 0
+    },
     "\/sections\/hype-builder.liquid" : {
       "cB" : 0,
       "ft" : 8192,
@@ -3051,6 +3059,14 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/templates\/page.about-us.json" : {
+      "ft" : 524288,
+      "oA" : 0,
+      "oAP" : "\/templates\/page.about-us.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
     "\/templates\/page.contact.json" : {
       "ft" : 524288,
       "oA" : 0,
@@ -3063,6 +3079,30 @@
       "ft" : 524288,
       "oA" : 0,
       "oAP" : "\/templates\/page.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/templates\/page.products.json" : {
+      "ft" : 524288,
+      "oA" : 0,
+      "oAP" : "\/templates\/page.products.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/templates\/page.shop.json" : {
+      "ft" : 524288,
+      "oA" : 0,
+      "oAP" : "\/templates\/page.shop.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/templates\/page.stockists.json" : {
+      "ft" : 524288,
+      "oA" : 0,
+      "oAP" : "\/templates\/page.stockists.json",
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
