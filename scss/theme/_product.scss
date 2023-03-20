@@ -109,6 +109,11 @@
 
   @include breakpoint(lg) {
 
+    &__action,
+    &__stepper {
+      padding: 15px var(--theme-layout--gutter);
+    }
+
     &__content {
       font-size: 21px;
       flex: 1;
@@ -116,6 +121,13 @@
         &-row {
           &.product-actions {
             flex-flow: row nowrap;
+          }
+          &.product-details {
+            padding-bottom: 40px;
+          }
+          &.product-options {
+            padding-top: 15px;
+            padding-bottom: 15px;
           }
         }
       }
@@ -131,8 +143,32 @@
       justify-content: space-between;
     }
 
+    &__price {
+      font-size: 170%;
+    }
+
     &__stepper {
       flex-basis: content;
+      & + .product__action {
+        @include border-solid( var(--theme-border--width), 'black', 'left' );
+        border-top: none;
+      }
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+    &__content {
+      font-size: 23px;
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__content {
+      font-size: 25px;
     }
 
   }

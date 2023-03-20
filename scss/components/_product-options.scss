@@ -9,29 +9,29 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-size: 16px;
   line-height: 1;
 
-  &-heading {
+  &__heading {
     display: none;
   }
 
-  &-input {
+  &__input {
     display: none;
     &:checked {
-      & + .product__options-value {
+      & + .product-options__value {
         background: var(--theme-colour--mango);
       }
     }
     &:disabled {
-      & + .product__options-value {
+      & + .product-options__value {
         @extend %ui-disabled;
       }
     }
   }
 
-  &-value {
+  &__value {
     @each $name, $value in $theme-radio-sizes {
       @if $name == 'base' {
         height: var(--theme-radio-size);
@@ -55,10 +55,29 @@
     }
   }
 
-  @include breakpoint(lg) {
-    justify-content: flex-start;
+  @include breakpoint(sm) {
+    gap: 12px;
+  }
+
+  @include breakpoint(md) {
     gap: 14px;
     font-size: 18px;
+  }
+
+  @include breakpoint(lg) {
+    justify-content: flex-start;
+    font-size: 24px;
+    gap: 10px;
+  }
+
+  @include breakpoint(xl) {
+    font-size: 26px;
+    gap: 11px;
+  }
+
+  @include breakpoint(xxl) {
+    font-size: 28px;
+    gap: 12px;
   }
 
 }

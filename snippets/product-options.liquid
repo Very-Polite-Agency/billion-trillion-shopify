@@ -16,13 +16,13 @@
     <div class="{{ snippet_classes }}">
 
       {% unless product_has_no_options %}
-        <strong class="{{ snippet_name }}__options-heading">Select a Size:</strong>
+        <strong class="{{ snippet_name }}__heading">Select a Size:</strong>
       {% endunless %}
 
       {% for variant in product.variants %}
-        <label class="{{ snippet_name }}__options-item">
+        <label class="{{ snippet_name }}__item">
           <input
-            class="{{ snippet_name }}__options-input"
+            class="{{ snippet_name }}__input"
             type="radio"
             name="id"
             value="{{ variant.id }}"
@@ -36,7 +36,7 @@
               {% assign product_first_variant_available = false %}
             {% endif %}
           />
-          <span class="{{ snippet_name }}__options-value">{{ variant.title }}</span>
+          <span class="{{ snippet_name }}__value">{{ variant.title }}</span>
         </label>
       {% endfor %}
 

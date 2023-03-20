@@ -25,6 +25,21 @@
 
   &__input {
     text-align: center;
+    font-size: 34px;
   }
+
+  @include breakpoint(md) {
+
+    &__input {
+      font-size: 36px;
+    }
+
+  }
+
+  @include breakpoint(lg) {}
+
+  @include breakpoint(xl) {}
+
+  @include breakpoint(xxl) {}
 
 }
