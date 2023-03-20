@@ -28,11 +28,18 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "phone": "",
-          "email": "",
-          "facebook_url": "",
-          "instagram_url": "",
-          "twitter_url": ""
+          "menu": "footer",
+          "anchor_id": "",
+          "background": "green",
+          "background_image_position_mobile": "center center",
+          "background_image_position_desktop": "center center",
+          "background_image_repeat": "repeat",
+          "background_image_size": "cover",
+          "border_top": false,
+          "border_bottom": false,
+          "container": "container-fluid",
+          "padding_top": 36,
+          "padding_bottom": 36
         }
       },
       "announcements": {

@@ -2,7 +2,8 @@
   "sections": {
     "hero": {
       "type": "hero",
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "order": [
