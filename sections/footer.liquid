@@ -1,61 +1,239 @@
-{% assign section_name = 'footer' %}
-{% assign section_id = section_name | append: '--' | append: section.id %}
+{%- liquid
 
-{% assign contact_email = section.settings.email | default: '' %}
-{% assign contact_phone = section.settings.phone | default: '' %}
-{% assign facebook_url = section.settings.facebook_url | default: '' %}
-{% assign instagram_url = section.settings.instagram_url | default: '' %}
-{% assign twitter_url = ssection.settings.twitter_url | default: '' %}
+  assign section_name = 'footer'
+  assign section_classes = section_name
+  assign section_id = section_name | append: '--' | append: section.id
 
-<div class="{{ section_name }}" id="{{ section_id }}">
-  {% render 'bs-container', container: 'container-fluid' %}
-    <div class="{{ section_name }}__main">
-      <div class="{{ section_name }}__copyright">&copy; {{ "now" | date: "%Y" }} {{ shop.name }}</div>
-      <div class="{{ section_name }}__spacer">&#183;</div>
-      <div class="{{ section_name }}__social">Follow us <a href="https://www.instagram.com/drinkbilliontrillion/" target="_blank" title="Follow us on Instagram">@drinkbilliontrillion</a></div>
-    </div>
-  {% render 'bs-container', state: 'closed' %}
+  assign aos_id = section_id | append: '--aos'
+  assign aos_delay = 250
+  assign aos_delay_increment = 250
+
+  assign container = section.settings.container | default: 'container'
+  assign menu = section.settings.menu | default: ''
+
+-%}
+
+{%- style -%}
+
+  {%
+    render 'element-styles',
+      background: section.settings.background,
+      background_image: section.settings.background_image,
+      background_image_position_desktop: section.settings.background_image_position_desktop,
+      background_image_position_mobile: section.settings.background_image_position_mobile,
+      background_image_repeat: section.settings.background_image_repeat,
+      background_image_size: section.settings.background_image_size,
+      border_bottom: section.settings.border_bottom,
+      border_top: section.settings.border_top,
+      id: section_id,
+      padding_bottom: section.settings.padding_bottom,
+      padding_top: section.settings.padding_top
+  %}
+
+{%- endstyle -%}
+
+<div class="{{ section_classes }}" id="{{ section_id }}">
+
+  <div class="{{ section_name }}__main" id="{{ aos_id }}">
+    {%- render 'bs-container', state: 'open', col: 'col-12', container: container -%}
+
+      {%- if menu and menu != blank -%}
+        <nav class="{{ section_name }}__main-navigation navigation navigation--main">
+          {%- for link in linklists[menu].links -%}
+            <div class="{{ section_name }}__main-navigation-item navigation__item">
+              {%- capture link_classes -%}{{ section_name }}__main-navigation-link navigation__link{% if link.active %} active{% endif %}{%- endcapture -%}
+              {%- render 'link', link_classes: link_classes, link_title: link.title, link_url: link.url -%}
+            </div>
+          {%- endfor -%}
+        </nav>
+      {%- endif -%}
+
+    {%- render 'bs-container', state: 'closed', col: 'col-12', container: container -%}
+  </div>
+
+  <div class="{{ section_name }}__footnote">
+    {%- render 'bs-container', state: 'open', col: 'col-12', container: container -%}
+      <div class="{{ section_name }}__footnote-content">
+        <div class="{{ section_name }}__footnote-instagram">
+          <span class="{{ section_name }}__footnote-instagram-cta">Follow Us</span>
+          <a class="{{ section_name }}__footnote-instagram-link" href="https://www.instagram.com/drinkbilliontrillion/" target="_blank" title="Follow {{ shop.name }}">@drinkbilliontrillion</a>
+        </div>
+        <div class="{{ section_name }}__footnote-legal">&copy; {{ "now" | date: "%Y" }} {{ shop.name }}</div>
+      </div>
+    {%- render 'bs-container', state: 'closed', col: 'col-12', container: container -%}
+  </div>
+
 </div>
 
-{% schema %}
-  {
-    "name": "Footer",
-    "tag": "footer",
-    "settings": [
-      {
-        "content": "Contact Info",
-        "type": "header"
-      },
-      {
-        "label": "Phone",
-        "type": "text",
-        "id": "phone"
-      },
-      {
-        "label": "Email",
-        "type": "text",
-        "id": "email"
-      },
-      {
-        "content": "Social",
-        "type": "header"
-      },
-      {
-        "label": "Facebook",
-        "type": "text",
-        "id": "facebook_url"
-      },
-       {
-        "label": "Instagram",
-        "type": "text",
-        "id": "instagram_url"
-      },
-       {
-        "label": "Twitter",
-        "type": "text",
-        "id": "twitter_url"
-      }
-    ],
-	  "blocks": []
-  }
-{% endschema %}
+{%- schema -%}
+{
+  "name": "Footer",
+  "tag": "footer",
+  "settings": [
+    {
+      "content": "Content",
+      "type": "header"
+    },
+    {
+      "content": "Navigation",
+      "type": "header"
+    },
+    {
+      "label": "Menu",
+      "type": "link_list",
+      "id": "menu"
+    },
+    {
+      "content": "Settings",
+      "type": "header"
+    },
+    {
+      "content": "Anchor",
+      "type": "header"
+    },
+    {
+      "label": "Anchor ID",
+      "info": "Optionally include a unique ID so that sections within the page can be linked to. Anchor IDs must be all lowercase, unique and replaced empty spaces with hyphens. For example: my-great-section-anchor",
+      "type": "text",
+      "id": "anchor_id"
+    },
+    {
+      "label": "Background",
+      "type": "select",
+      "options": [
+        { "label": "Image", "value": "image" },
+        { "label": "None", "value": "none" },
+        { "label": "Orange", "value": "orange" },
+        { "label": "Green", "value": "green" },
+        { "label": "Yellow", "value": "yellow" }
+      ],
+      "default": "none",
+      "id": "background"
+    },
+    {
+      "label": "Background Image",
+      "type": "image_picker",
+      "id": "background_image"
+    },
+    {
+      "label": "Background Image Position (Mobile)",
+      "type": "select",
+      "options": [
+        { "label": "Top Left", "value": "top left" },
+        { "label": "Top Center", "value": "top center" },
+        { "label": "Top Right", "value": "top right" },
+        { "label": "Center Left", "value": "center left" },
+        { "label": "Center Center", "value": "center center" },
+        { "label": "Center Right", "value": "center right" },
+        { "label": "Bottom Left", "value": "bottom left" },
+        { "label": "Bottom Center", "value": "bottom center" },
+        { "label": "Bottom Right", "value": "bottom right" }
+      ],
+      "default": "center center",
+      "id": "background_image_position_mobile"
+    },
+    {
+      "label": "Background Image Position (Desktop)",
+      "type": "select",
+      "options": [
+        { "label": "Top Left", "value": "top left" },
+        { "label": "Top Center", "value": "top center" },
+        { "label": "Top Right", "value": "top right" },
+        { "label": "Center Left", "value": "center left" },
+        { "label": "Center Center", "value": "center center" },
+        { "label": "Center Right", "value": "center right" },
+        { "label": "Bottom Left", "value": "bottom left" },
+        { "label": "Bottom Center", "value": "bottom center" },
+        { "label": "Bottom Right", "value": "bottom right" }
+      ],
+      "default": "center center",
+      "id": "background_image_position_desktop"
+    },
+    {
+      "label": "Background Image Repeat",
+      "type": "select",
+      "options": [
+        { "label": "No Repeat", "value": "no-repeat" },
+        { "label": "Repeat", "value": "repeat" }
+      ],
+      "default": "repeat",
+      "id": "background_image_repeat"
+    },
+    {
+      "label": "Background Image Size",
+      "type": "select",
+      "options": [
+        { "label": "Contain", "value": "contain" },
+        { "label": "Cover", "value": "cover" }
+      ],
+      "default": "cover",
+      "id": "background_image_size"
+    },
+    {
+      "content": "Border",
+      "type": "header"
+    },
+    {
+      "label": "Top Border",
+      "type": "checkbox",
+      "default": false,
+      "id": "border_top"
+    },
+    {
+      "label": "Bottom Border",
+      "type": "checkbox",
+      "default": false,
+      "id": "border_bottom"
+    },
+    {
+      "content": "Container",
+      "type": "header"
+    },
+    {
+      "label": "Container",
+      "type": "select",
+      "options": [
+        {
+          "label": "Static",
+          "value": "container"
+        },
+        {
+          "label": "Fluid",
+          "value": "container-fluid"
+        },
+        {
+          "label": "Full Width",
+          "value": "full-width"
+        }
+      ],
+      "default": "container",
+      "id": "container"
+    },
+    {
+      "content": "Padding",
+      "type": "header"
+    },
+    {
+      "label": "Top Padding",
+      "type": "range",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 36,
+      "id": "padding_top"
+    },
+    {
+      "label": "Bottom Padding",
+      "type": "range",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 36,
+      "id": "padding_bottom"
+    }
+  ],
+  "blocks": []
+}
+{%- endschema -%}
