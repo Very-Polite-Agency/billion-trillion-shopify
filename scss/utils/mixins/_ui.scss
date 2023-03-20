@@ -14,14 +14,12 @@
 }
 
 %ui-disabled {
-  &[disabled] {
-    cursor: no-drop;
-    opacity: 0.33;
-    &:focus,
-    &:hover {
-      background: initial;
-      color: initial;
-    }
+  opacity: var(--theme-transition--opacity);
+  cursor: no-drop;
+  &:focus,
+  &:hover {
+    background: initial;
+    color: initial;
   }
 }
 

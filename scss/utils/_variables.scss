@@ -24,12 +24,12 @@ $theme-border-settings: (
 
 // ---------------------------------------- Button Heights
 $theme-button-heights: (
-  'base': 40px,
-  'sm': 40px,
-  'md': 40px,
-  'lg': 44px,
-  'xl': 44px,
-  'xxl': 44px
+  'base': 48px,
+  'sm': 52px,
+  'md': 54px,
+  'lg': 50px,
+  'xl': 54px,
+  'xxl': 58px
 );
 
 // ---------------------------------------- Button Widths
@@ -133,6 +133,16 @@ $theme-layout-settings: (
     'xl': 1160px,
     'xxl': 1360px
   )
+);
+
+// ---------------------------------------- Radio Sizes
+$theme-radio-sizes: (
+  'base': 52px,
+  'sm': 54px,
+  'md': 56px,
+  'lg': 52px,
+  'xl': 56px,
+  'xxl': 60px
 );
 
 // ---------------------------------------- Transition Settings

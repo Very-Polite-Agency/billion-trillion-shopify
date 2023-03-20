@@ -1,6 +1,6 @@
 @use '../utils/mixins/breakpoint' as *;
 @use '../utils/mixins/ui' as *;
-
+@use '../utils/variables' as *;
 
 .button {
 
@@ -26,9 +26,20 @@
         fill: var(--theme-colour--orange);
       }
     }
-    @include breakpoint(lg) {
-      max-width: 700px;
+    @each $name, $value in $theme-button-heights {
+      @if $name == 'base' {
+        height: var(--theme-button-height);
+      } @else {
+        @include breakpoint(#{$name}) {
+          height: var(--theme-button-height--#{$name});
+        }
+      }
     }
+  }
+
+  &[disabled],
+  &.disabled {
+    @extend %ui-disabled;
   }
 
 }

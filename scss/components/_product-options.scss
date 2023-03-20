@@ -1,0 +1,64 @@
+@use '../utils/mixins/border' as *;
+@use '../utils/mixins/breakpoint' as *;
+@use '../utils/mixins/ui' as *;
+@use '../utils/variables' as *;
+
+.product-options {
+
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1;
+
+  &-heading {
+    display: none;
+  }
+
+  &-input {
+    display: none;
+    &:checked {
+      & + .product__options-value {
+        background: var(--theme-colour--mango);
+      }
+    }
+    &:disabled {
+      & + .product__options-value {
+        @extend %ui-disabled;
+      }
+    }
+  }
+
+  &-value {
+    @each $name, $value in $theme-radio-sizes {
+      @if $name == 'base' {
+        height: var(--theme-radio-size);
+        width: var(--theme-radio-size);
+      } @else {
+        @include breakpoint(#{$name}) {
+          height: var(--theme-radio-size--#{$name});
+          width: var(--theme-radio-size--#{$name});
+        }
+      }
+    }
+    @include border-solid( var(--theme-border--width), 'black' );
+    transition: background var(--theme-transition--duration);
+    border-radius: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      background: var(--theme-colour--mango);
+    }
+  }
+
+  @include breakpoint(lg) {
+    justify-content: flex-start;
+    gap: 14px;
+    font-size: 18px;
+  }
+
+}

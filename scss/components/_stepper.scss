@@ -1,0 +1,30 @@
+@use '../utils/mixins/breakpoint' as *;
+@use '../utils/variables' as *;
+
+.stepper {
+
+  display: inline-flex;
+  width: auto;
+  justify-content: center;
+  align-content: center;
+
+  &__button,
+  &__input {
+    @each $name, $value in $theme-button-heights {
+      @if $name == 'base' {
+        height: var(--theme-button-height);
+        width: var(--theme-button-height);
+      } @else {
+        @include breakpoint(#{$name}) {
+          height: var(--theme-button-height--#{$name});
+          width: var(--theme-button-height--#{$name});
+        }
+      }
+    }
+  }
+
+  &__input {
+    text-align: center;
+  }
+
+}

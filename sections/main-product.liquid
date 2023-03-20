@@ -116,11 +116,11 @@
         <div class="{{ section_name }}__content">
           <div class="{{ section_name }}__content-grid">
 
-            <div class="{{ section_name }}__content-grid-row">
+            <div class="{{ section_name }}__content-grid-row product-title">
               <strong class="{{ section_name }}__title heading--primary heading--2">{{ product_title }}</strong>
             </div>
 
-            <div class="{{ section_name }}__content-grid-row">
+            <div class="{{ section_name }}__content-grid-row product-details">
               {% capture snippet_classes %}{{ section_name }}__price price{% endcapture %}
               {%- liquid
                 capture aos_attrs
@@ -133,13 +133,22 @@
             </div>
 
             {% unless product.has_only_default_variant %}
-              <div class="{{ section_name }}__content-grid-row">
+              <div class="{{ section_name }}__content-grid-row product-options">
                 {% render 'product-options', product: product %}
               </div>
             {% endunless %}
 
-            <div class="{{ section_name }}__content-grid-row">
-              {% render 'product-actions', product: product %}
+            <div class="{{ section_name }}__content-grid-row product-actions">
+
+              {% capture snippet_classes %}{{ section_name }}__stepper stepper{% endcapture %}
+              {% render 'stepper', classes: snippet_classes %}
+
+              <div class="{{ section_name }}__action">
+                <button class="{{ section_name }}__button-add-to-cart button--svg" type="submit">
+                  {% render 'svg', type: 'button.add-to-cart' %}
+                </button>
+              </div>
+
             </div>
 
         </div>

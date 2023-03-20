@@ -1,9 +1,41 @@
 @use '../utils/mixins/border' as *;
 @use '../utils/mixins/breakpoint' as *;
+@use '../utils/mixins/font' as *;
+@use '../utils/mixins/ui' as *;
 
 .product {
 
+  &__action,
+  &__stepper {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+  }
+
+  &__action {
+    display: inline-flex;
+  }
+
+  &__button {
+    &-add-to-cart {
+      width: auto;
+      img, svg {
+        display: block;
+        height: 100%;
+        width: auto;
+      }
+      .button-fill {
+        fill: var(--theme-colour--orange);
+        &:hover {
+          fill: var(--theme-colour--mango);
+        }
+      }
+    }
+  }
+
   &__content {
+    @include hobeaux( 700 );
     font-size: 21px;
     &-grid {
       @include border-solid( var(--theme-border--width), 'black' );
@@ -17,6 +49,16 @@
       &-row {
         background: var(--theme-colour--lemon);
         padding: var(--theme-layout--gutter);
+        display: flex;
+        width: 100%;
+        flex-flow: row wrap;
+        &.product-actions {
+          padding: 0;
+        }
+        &.product-options {
+          padding-top: 12px;
+          padding-bottom: 12px;
+        }
         &:first-child {
           background: var(--theme-colour--orange);
         }
@@ -51,7 +93,11 @@
     }
   }
 
-  @include breakpoint(sm) {}
+  &__stepper {
+    & + .product__action {
+      @include border-solid( var(--theme-border--width), 'black', 'top' );
+    }
+  }
 
   @include breakpoint(md) {
 
@@ -66,6 +112,13 @@
     &__content {
       font-size: 21px;
       flex: 1;
+      &-grid {
+        &-row {
+          &.product-actions {
+            flex-flow: row nowrap;
+          }
+        }
+      }
     }
 
     &__gallery {
@@ -78,10 +131,10 @@
       justify-content: space-between;
     }
 
+    &__stepper {
+      flex-basis: content;
+    }
+
   }
-
-  @include breakpoint(xl) {}
-
-  @include breakpoint(xxl) {}
 
 }
