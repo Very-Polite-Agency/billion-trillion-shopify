@@ -1,6 +1,6 @@
 {%- if link_title and link_title != blank and link_url and link_url != blank -%}
 
-  {% comment %}
+  {%- comment -%}
       Renders a link element
 
       Accepts:
@@ -10,8 +10,8 @@
       - link_url: {String} URL of link
 
       Usage:
-      {% render 'link', link_title: 'Contact Us', link_url: '/pages/contact-us/' %}
-  {% endcomment %}
+      {%- render 'link', link_title: 'Contact Us', link_url: '/pages/contact-us/' -%}
+  {%- endcomment -%}
 
   {%- liquid
 
@@ -28,4 +28,5 @@
   -%}
 
   <a class="{{ snippet_classes }}" href="{{ link_url }}" target="{{ link_target }}" title="{{ link_title }}">{{ link_content }}</a>
-{% endif %}
+
+{%- endif -%}

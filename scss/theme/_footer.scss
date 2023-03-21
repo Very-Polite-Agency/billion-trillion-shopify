@@ -5,13 +5,18 @@
 
 .footer {
 
+  text-transform: uppercase;
+
   &__footnote {
     @include sorry-sans( 700 );
     background: var(--theme-colour--lemon);
     color: var(--theme-colour--black);
-    text-transform: uppercase;
   }
 
-  &__main {}
+  &__main {
+    @include sorry-sans( 700 );
+    background: var(--theme-colour--black);
+    color: var(--theme-colour--lemon);
+  }
 
 }
