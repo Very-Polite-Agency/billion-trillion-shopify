@@ -33,7 +33,10 @@
 <div class="{{ section_classes }}" id="{{ section_id }}">
   <div class="{{ section_name }}__grid grid" id="{{ aos_id }}" role="list">
     {%- for block in section.blocks -%}
-      <div class="{{ section_name }}__item {{ block.type }}" role="listitem">
+
+      {%- assign block_id = block.id | prepend: 'block-id--' -%}
+
+      <div class="{{ section_name }}__item {{ block.type }}" role="listitem" id="{{ block_id }}">
         {%- case block.type -%}
 
           {%- when 'content' -%}
@@ -44,7 +47,7 @@
               assign section_message = block.settings.message | default: section_message
             -%}
 
-            <div class="{{ section_name }}__content" id="{{ block_id }}">
+            <div class="{{ section_name }}__content">
 
               {%- style -%}
                 {%
@@ -55,10 +58,10 @@
               {%- endstyle -%}
 
               {% if section_heading != blank %}
-                <strong>{{ section_heading }}</strong>
+                <strong class="{{ section_name }}__heading heading--primary heading--2">{{ section_heading }}</strong>
               {% endif %}
               {% if section_message != blank %}
-                <div>{{ section_message }}</div>
+                <div class="{{ section_name }}__message body-copy--primary">{{ section_message }}</div>
               {% endif %}
 
             </div>
@@ -93,7 +96,6 @@
   "name": "Featured Product",
   "tag": "section",
   "class": "section section--featured-product",
-  "limit": 1,
   "settings": [
     {
       "content": "Content",
