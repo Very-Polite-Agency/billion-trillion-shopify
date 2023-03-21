@@ -69,8 +69,9 @@
         "26b6d891-74d6-4dda-84c3-d00b5affe165": {
           "type": "content",
           "settings": {
-            "heading": "",
-            "message": ""
+            "heading": "Custom Heading",
+            "message": "",
+            "background": "orange"
           }
         }
       },
@@ -81,17 +82,9 @@
       "settings": {
         "product": "bt-hoodie",
         "anchor_id": "",
-        "background": "none",
-        "background_image_position_mobile": "center center",
-        "background_image_position_desktop": "center center",
-        "background_image_repeat": "repeat",
-        "background_image_size": "cover",
         "border_top": false,
         "border_bottom": true,
-        "container": "container",
-        "layout": "image-left",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "layout": "image-left"
       }
     }
   },
