@@ -9,12 +9,31 @@
   grid-template-columns: repeat( 1, 1fr );
   overflow: hidden;
 
+  &__heading,
+  &__message {
+    & + .fifty-fifty__cta {
+      margin-top: min(32px, 10vw);
+    }
+  }
+
   &__content {
     text-transform: uppercase;
   }
 
+  &__cta {
+    &-link{
+      display: block;
+      width: auto;
+      max-width: 400px;
+    }
+  }
+
   &__heading {
-    font-size: 2vw;
+    font-size: min(58px, 9.5vw);
+    line-height: 1.2;
+    & + .fifty-fifty__message {
+      margin-top: min(20px, 2vw);
+    }
   }
 
   &__item {
@@ -31,7 +50,8 @@
   }
 
   &__message {
-    font-size: 1vw;
+    font-size: min(30px, 5.15vw);
+    line-height: 1.5;
   }
 
   @include breakpoint(lg) {

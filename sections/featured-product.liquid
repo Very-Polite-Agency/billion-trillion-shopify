@@ -62,7 +62,16 @@
                 <strong class="{{ section_name }}__heading fifty-fifty__heading">{{ section_heading }}</strong>
               {% endif %}
               {% if section_message != blank %}
-                <div class="{{ section_name }}__message fifty-fifty__body-copy">{{ section_message }}</div>
+                <div class="{{ section_name }}__message fifty-fifty__message">{{ section_message }}</div>
+              {% endif %}
+
+              {% if section_link != blank %}
+                <div class="{{ section_name }}__cta fifty-fifty__cta">
+                  <a class="{{ section_name }}__cta-link fifty-fifty__cta-link link" href="{{ section_link }}" target="_self" title="Shop {{ section_heading }}">
+                    <div class="button--svg d-lg-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
+                    <div class="button--svg d-none d-lg-block">{% render 'svg', type: 'button.shop-now.lg' %}</div>
+                  </a>
+                </div>
               {% endif %}
 
             </div>
@@ -76,7 +85,7 @@
 
             {% if section_image %}
               <div class="{{ section_name }}__image fifty-fifty__image">
-                {% if section_link != blank %}<a href="">{% endif %}
+                {% if section_link != blank %}<a href="{{ section_link }}" target="_self" title="{{ section_heading }}">{% endif %}
                   {% render 'lazyload-image', image: section_image %}
                   {% unless 'none' == section_badge %}
                     <div class="{{ section_name }}__image-badge">
