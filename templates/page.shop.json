@@ -70,7 +70,7 @@
           "type": "content",
           "settings": {
             "heading": "Custom Heading",
-            "message": "",
+            "message": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.<\/p>",
             "background": "orange"
           }
         }
