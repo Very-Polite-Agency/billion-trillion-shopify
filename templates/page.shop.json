@@ -86,11 +86,42 @@
         "border_bottom": true,
         "layout": "image-left"
       }
+    },
+    "56703be2-9a9c-4831-a04f-c53f74bca64d": {
+      "type": "featured-product",
+      "blocks": {
+        "b7f28b5a-781e-4cd2-bd81-c68f86f2706b": {
+          "type": "content",
+          "settings": {
+            "heading": "",
+            "message": "",
+            "background": "lime"
+          }
+        },
+        "2b61a864-6eb7-4f12-8a34-88473bd9a11d": {
+          "type": "image",
+          "settings": {
+            "badge": "none"
+          }
+        }
+      },
+      "block_order": [
+        "b7f28b5a-781e-4cd2-bd81-c68f86f2706b",
+        "2b61a864-6eb7-4f12-8a34-88473bd9a11d"
+      ],
+      "settings": {
+        "product": "bt-crewneck",
+        "anchor_id": "",
+        "border_top": false,
+        "border_bottom": false,
+        "layout": "image-right"
+      }
     }
   },
   "order": [
     "hero",
     "b9f650f4-d31f-457d-bc75-531177888a36",
-    "218f4656-4db6-4291-8774-68b0e842c91b"
+    "218f4656-4db6-4291-8774-68b0e842c91b",
+    "56703be2-9a9c-4831-a04f-c53f74bca64d"
   ]
 }
