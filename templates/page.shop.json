@@ -56,10 +56,44 @@
         "padding_top": 32,
         "padding_bottom": 32
       }
+    },
+    "218f4656-4db6-4291-8774-68b0e842c91b": {
+      "type": "featured-product",
+      "blocks": {
+        "7d404726-c0da-47bb-83ce-4795775b10e3": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "26b6d891-74d6-4dda-84c3-d00b5affe165": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "7d404726-c0da-47bb-83ce-4795775b10e3",
+        "26b6d891-74d6-4dda-84c3-d00b5affe165"
+      ],
+      "settings": {
+        "product": "bt-hoodie",
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "container": "container",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "hero",
-    "b9f650f4-d31f-457d-bc75-531177888a36"
+    "b9f650f4-d31f-457d-bc75-531177888a36",
+    "218f4656-4db6-4291-8774-68b0e842c91b"
   ]
 }
