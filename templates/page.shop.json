@@ -20,6 +20,17 @@
     },
     "b9f650f4-d31f-457d-bc75-531177888a36": {
       "type": "sub-navigation",
+      "blocks": {
+        "2b9583a8-6d4b-4d1b-9d68-3b737790c3d7": {
+          "type": "links",
+          "settings": {
+            "menu": ""
+          }
+        }
+      },
+      "block_order": [
+        "2b9583a8-6d4b-4d1b-9d68-3b737790c3d7"
+      ],
       "settings": {
         "anchor_id": "",
         "background": "mango",
