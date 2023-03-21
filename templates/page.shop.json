@@ -2,6 +2,18 @@
   "sections": {
     "hero": {
       "type": "hero",
+      "blocks": {
+        "c36d4921-4b26-412e-be4d-561624f392f4": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "c36d4921-4b26-412e-be4d-561624f392f4"
+      ],
       "settings": {
         "anchor_id": "",
         "background": "none",
