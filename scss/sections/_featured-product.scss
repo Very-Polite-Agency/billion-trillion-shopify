@@ -36,9 +36,9 @@
     position: relative;
     &-badge {
       position: absolute;
-      top: 36px;
-      right: 36px;
-      height: 95px;
+      top: 7.5vw;
+      right: 7.5vw;
+      height: 9vw;
       img, svg {
         display: block;
         height: 100%;
@@ -72,8 +72,8 @@
 
     &__image {
       &-badge {
-        top: 56px;
-        right: 56px;
+        top: 3vw;
+        right: 3vw;
         height: 125px;
       }
     }
