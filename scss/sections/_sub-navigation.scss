@@ -53,10 +53,34 @@
 
   }
 
-  @include breakpoint(lg) {}
+  @include breakpoint(lg) {
 
-  @include breakpoint(xl) {}
+    &__main {
+      &-navigation {
+        font-size: 24px;
+      }
+    }
 
-  @include breakpoint(xxl) {}
+  }
+
+  @include breakpoint(xl) {
+
+    &__main {
+      &-navigation {
+        font-size: 28px;
+      }
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__main {
+      &-navigation {
+        font-size: 32px;
+      }
+    }
+
+  }
 
 }
