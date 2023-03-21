@@ -5,8 +5,7 @@
 .featured-product {
 
   &__content,
-  &__image,
-  &__item {
+  &__image {
     width: 100%;
   }
 
@@ -15,30 +14,22 @@
     padding-bottom: calc(1.25 * var(--theme-layout--gutter));
     padding-left: var(--theme-layout--gutter);
     padding-right: var(--theme-layout--gutter);
+
   }
 
   &__grid {
     background: var(--theme-colour--black);
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(1, 1fr);
     row-gap: var(--theme-border--width);
-    overflow: hidden;
-  }
-
-  &__item {
-    display: inline-flex;
-    flex-flow: column;
-    justify-content: center;
   }
 
   &__image {
     position: relative;
+    order: 1;
     &-badge {
       position: absolute;
       top: 7.5vw;
       right: 7.5vw;
-      height: 9vw;
+      height: 95px;
       img, svg {
         display: block;
         height: 100%;
@@ -47,9 +38,25 @@
     }
   }
 
-  @include breakpoint(sm) {}
+  @include breakpoint(sm) {
 
-  @include breakpoint(md) {}
+    &__image {
+      &-badge {
+        height: 115px;
+      }
+    }
+
+  }
+
+  @include breakpoint(md) {
+
+    &__image {
+      &-badge {
+        height: 135px;
+      }
+    }
+
+  }
 
   @include breakpoint(lg) {
 
@@ -58,6 +65,7 @@
       padding-bottom: 0;
       padding-left: max(var(--theme-layout--gutter), 3.25vw);
       padding-right: max(var(--theme-layout--gutter), 3.25vw);
+      order: initial;
     }
 
     &__heading {
@@ -65,23 +73,38 @@
     }
 
     &__grid {
-      grid-template-columns: repeat(2, 1fr);
       row-gap: 0;
       column-gap: var(--theme-border--width);
     }
 
     &__image {
       &-badge {
-        top: 3vw;
-        right: 3vw;
-        height: 125px;
+        top: 4.5vw;
+        right: 4.5vw;
+        height: 110px;
       }
     }
 
   }
 
-  @include breakpoint(xl) {}
+  @include breakpoint(xl) {
 
-  @include breakpoint(xxl) {}
+     &__image {
+      &-badge {
+        height: 135px;
+      }
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__image {
+      &-badge {
+        height: 155px;
+      }
+    }
+
+  }
 
 }

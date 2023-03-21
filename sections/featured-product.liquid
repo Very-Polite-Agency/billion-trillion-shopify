@@ -16,6 +16,7 @@
   assign section_heading = section_product.title | default: ''
   assign section_image = section_product.featured_image | default: false
   assign section_message = section_product.description | default: ''
+  assign section_link = section_product.url | default: ''
 
 -%}
 
@@ -31,12 +32,12 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  <div class="{{ section_name }}__grid grid" id="{{ aos_id }}" role="list">
+  <div class="{{ section_name }}__grid fifty-fifty" id="{{ aos_id }}" role="list">
     {%- for block in section.blocks -%}
 
       {%- assign block_id = block.id | prepend: 'block-id--' -%}
 
-      <div class="{{ section_name }}__item {{ block.type }}" role="listitem" id="{{ block_id }}">
+      <div class="{{ section_name }}__item fifty-fifty__item {{ block.type }}" role="listitem" id="{{ block_id }}">
         {%- case block.type -%}
 
           {%- when 'content' -%}
@@ -47,7 +48,7 @@
               assign section_message = block.settings.message | default: section_message
             -%}
 
-            <div class="{{ section_name }}__content">
+            <div class="{{ section_name }}__content fifty-fifty__content">
 
               {%- style -%}
                 {%
@@ -58,10 +59,10 @@
               {%- endstyle -%}
 
               {% if section_heading != blank %}
-                <strong class="{{ section_name }}__heading heading--primary heading--2">{{ section_heading }}</strong>
+                <strong class="{{ section_name }}__heading fifty-fifty__heading">{{ section_heading }}</strong>
               {% endif %}
               {% if section_message != blank %}
-                <div class="{{ section_name }}__message body-copy--primary">{{ section_message }}</div>
+                <div class="{{ section_name }}__message fifty-fifty__body-copy">{{ section_message }}</div>
               {% endif %}
 
             </div>
@@ -74,14 +75,16 @@
             -%}
 
             {% if section_image %}
-              <div class="{{ section_name }}__image">
-                {% render 'lazyload-image', image: section_image %}
-                {% unless 'none' == section_badge %}
-                  <div class="{{ section_name }}__image-badge">
-                    {% capture badge_type %}badge.{{ section_badge }}{% endcapture %}
-                    {% render 'svg', type: badge_type %}
-                  </div>
-                {% endunless %}
+              <div class="{{ section_name }}__image fifty-fifty__image">
+                {% if section_link != blank %}<a href="">{% endif %}
+                  {% render 'lazyload-image', image: section_image %}
+                  {% unless 'none' == section_badge %}
+                    <div class="{{ section_name }}__image-badge">
+                      {% capture badge_type %}badge.{{ section_badge }}{% endcapture %}
+                      {% render 'svg', type: badge_type %}
+                    </div>
+                  {% endunless %}
+                {% if section_link != blank %}</a>{% endif %}
               </div>
             {% endif %}
 
@@ -139,22 +142,7 @@
       "type": "checkbox",
       "default": false,
       "id": "border_bottom"
-    },
-    {
-      "content": "Layout",
-      "type": "header"
-    },
-    {
-      "label": "Layout (Desktop)",
-      "type": "select",
-      "options": [
-        { "label": "Image Left", "value": "image-left" },
-        { "label": "Image Right", "value": "image-right" }
-      ],
-      "default": "image-left",
-      "id": "layout"
     }
-
   ],
   "blocks": [
     {
