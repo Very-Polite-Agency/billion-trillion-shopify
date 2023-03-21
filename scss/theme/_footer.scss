@@ -6,6 +6,7 @@
 .footer {
 
   text-transform: uppercase;
+  position: relative;
 
   &__footnote {
     @include sorry-sans( 700 );
@@ -22,6 +23,7 @@
     &-instagram {
       display: inline-flex;
       width: auto;
+      align-items: baseline;
       &-cta {
         display: none;
       }
@@ -45,6 +47,7 @@
     &-navigation {
       padding: var(--theme-layout--gutter) 0;
       font-size: 28px;
+      font-size: 6.5vw;
       display: inline-grid;
       gap: 18px;
       grid-template-columns: repeat( 1, 1fr );
@@ -109,7 +112,28 @@
   @include breakpoint(lg) {
 
     &__footnote {
-      display: none;
+      background: transparent;
+      color: var(--theme-colour--lemon);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      &-content {
+         padding-top: calc( 1.5 * var(--theme-layout--gutter) );
+         padding-bottom: calc( 1.5 * var(--theme-layout--gutter) );
+         justify-content: flex-end;
+         gap: 40px;
+         font-size: 14px;
+      }
+      &-instagram {
+        order: 2;
+        &-cta {
+          display: block;
+        }
+      }
+      &-legal {
+        order: 1;
+      }
     }
 
     &__main {
@@ -121,6 +145,7 @@
       }
       &-navigation {
         font-size: 18px;
+        font-size: 2.25vw;
         order: 2;
         margin-left: auto;
         text-align: right;
@@ -133,18 +158,14 @@
         width: 50%;
         padding-top: calc( 1.5 * var(--theme-layout--gutter) );
         padding-bottom: calc( 1.5 * var(--theme-layout--gutter) );
-        border: 1px solid red;
         &-media {
-          width: auto;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0;
+          width: 100%;
+          padding-left: calc( 1.5 * var(--theme-layout--gutter) );
           img, svg {
             display: block;
-            object-fit: cover;
+            object-fit: contain;
             object-position: top left;
-            width: 100%;
+            width: auto;
             height: 100%;
           }
         }
