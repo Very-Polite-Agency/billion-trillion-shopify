@@ -184,21 +184,26 @@
       "label": "Container",
       "type": "select",
       "options": [
-        {
-          "label": "Static",
-          "value": "container"
-        },
-        {
-          "label": "Fluid",
-          "value": "container-fluid"
-        },
-        {
-          "label": "Full Width",
-          "value": "full-width"
-        }
+        { "label": "Static", "value": "container" },
+        { "label": "Fluid", "value": "container-fluid" },
+        { "label": "Full Width", "value": "full-width" }
       ],
       "default": "container",
       "id": "container"
+    },
+    {
+      "content": "Layout",
+      "type": "header"
+    },
+    {
+      "label": "Layout (Desktop)",
+      "type": "select",
+      "options": [
+        { "label": "Image Left", "value": "image-left" },
+        { "label": "Image Right", "value": "image-right" }
+      ],
+      "default": "image-left",
+      "id": "layout"
     },
     {
       "content": "Padding",
@@ -230,13 +235,40 @@
       "name": "Content",
       "type": "content",
       "limit": 1,
-      "settings": []
+      "settings": [
+        {
+          "label": "Heading",
+          "type": "text",
+          "id": "heading"
+        },
+        {
+          "label": "Message",
+          "type": "richtext",
+          "id": "message"
+        }
+      ]
     },
     {
       "name": "Image",
       "type": "image",
       "limit": 1,
-      "settings": []
+      "settings": [
+        {
+          "label": "Image",
+          "type": "image_picker",
+          "id": "image"
+        },
+        {
+          "label": "Badge",
+          "type": "select",
+          "options": [
+            { "label": "Hot", "value": "hot" },
+            { "label": "None", "value": "none" }
+          ],
+          "default": "none",
+          "id": "badge"
+        }
+      ]
     }
   ],
   "presets": [
