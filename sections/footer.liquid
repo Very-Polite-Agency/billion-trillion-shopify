@@ -10,7 +10,9 @@
 
   assign container = section.settings.container | default: 'container'
   assign menu = section.settings.menu | default: ''
+  assign tagline_media_desktop = section.settings.tagline_media_desktop | default: false
   assign tagline_media_mobile = section.settings.tagline_media_mobile | default: false
+
 
 -%}
 
@@ -51,8 +53,10 @@
         <strong class="{{ section_name }}__main-tagline">
           Welcome to the Good Time Galaxy
           {% if tagline_media_mobile %}
-            has image
-            <div class="{{ section_name }}__main-tagline-media">{% render "lazyload-image", image: tagline_media_mobile %}</div>
+            <div class="{{ section_name }}__main-tagline-media d-lg-none">{% render "lazyload-image", image: tagline_media_mobile %}</div>
+          {% endif %}
+          {% if tagline_media_desktop %}
+            <div class="{{ section_name }}__main-tagline-media d-none d-lg-block">{% render "lazyload-image", image: tagline_media_desktop %}</div>
           {% endif %}
         </strong>
 

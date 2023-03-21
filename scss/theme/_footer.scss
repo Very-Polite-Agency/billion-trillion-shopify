@@ -33,7 +33,9 @@
     background: var(--theme-colour--black);
     color: var(--theme-colour--lemon);
     &-content {
-      padding: var(--theme-layout--gutter) 0;
+      display: flex;
+      width: 100%;
+      flex-flow: row wrap;
     }
     &-media {
       width: 100%;
@@ -41,6 +43,7 @@
       height: auto;
     }
     &-navigation {
+      padding: var(--theme-layout--gutter) 0;
       font-size: 28px;
       display: inline-grid;
       gap: 18px;
@@ -63,15 +66,19 @@
       font-size: 17vw;
       line-height: 1;
       position: relative;
+      font-weight: inherit;
+      display: block;
+      padding-bottom: var(--theme-layout--gutter);
       &-media {
-        width: 100%;
+        width: calc( (var(--theme-layout--gutter) * 2) + 100%);
         height: 100%;
         position: absolute;
         top: 0;
-        left: 0;
+        left: calc( (var(--theme-layout--gutter) * -1) );
         img, svg {
           display: block;
           object-fit: cover;
+          object-position: top left;
           width: 100%;
           height: 100%;
         }
@@ -99,7 +106,38 @@
 
   }
 
-  @include breakpoint(lg) {}
+  @include breakpoint(lg) {
+
+    &__footnote {
+      display: none;
+    }
+
+    &__main {
+      &-content {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      &-navigation {
+        font-size: 18px;
+        order: 2;
+        margin-left: auto;
+        text-align: right;
+        width: auto;
+        gap: 14px;
+      }
+      &-tagline {
+        font-size: 9vw;
+        order: 1;
+        width: 50%;
+        padding-top: calc( 1.5 * var(--theme-layout--gutter) );
+        padding-bottom: calc( 1.5 * var(--theme-layout--gutter) );
+        border: 1px solid red;
+      }
+    }
+
+  }
 
   @include breakpoint(xl) {}
 
