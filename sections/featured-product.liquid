@@ -13,46 +13,74 @@
   assign section_product = section.settings.product | defaul: false
   assign section_anchor_id = section.settings.anchor_id | default: ''
 
+  assign section_heading = section_product.title | default: ''
+  assign section_image = section_product.featured_image | default: false
+  assign section_message = section_product.description | default: ''
+
 -%}
 
 {%- style -%}
 
   {%
     render 'element-styles',
-      background: section.settings.background,
-      background_image: section.settings.background_image,
-      background_image_position_desktop: section.settings.background_image_position_desktop,
-      background_image_position_mobile: section.settings.background_image_position_mobile,
-      background_image_repeat: section.settings.background_image_repeat,
-      background_image_size: section.settings.background_image_size,
       border_bottom: section.settings.border_bottom,
       border_top: section.settings.border_top,
-      id: section_id,
-      padding_bottom: section.settings.padding_bottom,
-      padding_top: section.settings.padding_top
+      id: section_id
   %}
 
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  <div class="{{ section_name }}__main" id="{{ aos_id }}">
-    {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
+  <div class="{{ section_name }}__grid grid" id="{{ aos_id }}" role="list">
+    {%- for block in section.blocks -%}
+      <div class="{{ section_name }}__item {{ block.type }}" role="listitem">
+        {%- case block.type -%}
 
-      <div class="{{ section_name }}__main-content">
-        {%- for block in section.blocks -%}
-          {%- case block.type -%}
+          {%- when 'content' -%}
 
-            {%- when 'content' -%}
-              <strong>Content</strong>
+            {%- liquid
+              assign block_id = block.id | prepend: 'block-id--'
+              assign section_heading = block.settings.heading | default: section_heading
+              assign section_message = block.settings.message | default: section_message
+            -%}
 
-            {%- when 'image' -%}
-              <strong>Image</strong>
+            {%
+              render 'element-styles',
+                background: block.settings.background
+                id: block_id
+            %}
 
-          {%- endcase -%}
-        {%- endfor -%}
+            <div class="{{ section_name }}__content" id="{{ block_id }}">
+              {% if section_heading != blank %}
+                <strong>{{ section_heading }}</strong>
+              {% endif %}
+              {% if section_message != blank %}
+                <div>{{ section_message }}</div>
+              {% endif %}
+            </div>
+
+          {%- when 'image' -%}
+
+            {%- liquid
+              assign section_badge = block.settings.badge | default: 'none'
+              assign section_image = block.settings.image | default: section_image
+            -%}
+
+            {% if section_image %}
+              <div class="{{ section_name }}__image">
+                {% render 'lazyload-image', image: section_image %}
+                {% unless 'none' == section_badge %}
+                  <div class="{{ section_name }}__image-badge">
+                    {% capture badge_type %}badge.{{ section_badge }}{% endcapture %}
+                    {% render 'svg', type: badge_type %}
+                  </div>
+                {% endunless %}
+              </div>
+            {% endif %}
+
+        {%- endcase -%}
       </div>
-
-    {% render 'bs-container', state: 'closed', container: container %}
+    {%- endfor -%}
   </div>
 </div>
 
@@ -87,80 +115,6 @@
       "id": "anchor_id"
     },
     {
-      "label": "Background",
-      "type": "select",
-      "options": [
-        { "label": "Image", "value": "image" },
-        { "label": "Lemon", "value": "lemon" },
-        { "label": "Lime", "value": "lime" },
-        { "label": "Mango", "value": "mango" },
-        { "label": "None", "value": "none" },
-        { "label": "Orange", "value": "orange" },
-        { "label": "Strawberry", "value": "strawberry" }
-      ],
-      "default": "none",
-      "id": "background"
-    },
-    {
-      "label": "Background Image",
-      "type": "image_picker",
-      "id": "background_image"
-    },
-    {
-      "label": "Background Image Position (Mobile)",
-      "type": "select",
-      "options": [
-        { "label": "Top Left", "value": "top left" },
-        { "label": "Top Center", "value": "top center" },
-        { "label": "Top Right", "value": "top right" },
-        { "label": "Center Left", "value": "center left" },
-        { "label": "Center Center", "value": "center center" },
-        { "label": "Center Right", "value": "center right" },
-        { "label": "Bottom Left", "value": "bottom left" },
-        { "label": "Bottom Center", "value": "bottom center" },
-        { "label": "Bottom Right", "value": "bottom right" }
-      ],
-      "default": "center center",
-      "id": "background_image_position_mobile"
-    },
-    {
-      "label": "Background Image Position (Desktop)",
-      "type": "select",
-      "options": [
-        { "label": "Top Left", "value": "top left" },
-        { "label": "Top Center", "value": "top center" },
-        { "label": "Top Right", "value": "top right" },
-        { "label": "Center Left", "value": "center left" },
-        { "label": "Center Center", "value": "center center" },
-        { "label": "Center Right", "value": "center right" },
-        { "label": "Bottom Left", "value": "bottom left" },
-        { "label": "Bottom Center", "value": "bottom center" },
-        { "label": "Bottom Right", "value": "bottom right" }
-      ],
-      "default": "center center",
-      "id": "background_image_position_desktop"
-    },
-    {
-      "label": "Background Image Repeat",
-      "type": "select",
-      "options": [
-        { "label": "No Repeat", "value": "no-repeat" },
-        { "label": "Repeat", "value": "repeat" }
-      ],
-      "default": "repeat",
-      "id": "background_image_repeat"
-    },
-    {
-      "label": "Background Image Size",
-      "type": "select",
-      "options": [
-        { "label": "Contain", "value": "contain" },
-        { "label": "Cover", "value": "cover" }
-      ],
-      "default": "cover",
-      "id": "background_image_size"
-    },
-    {
       "content": "Border",
       "type": "header"
     },
@@ -177,21 +131,6 @@
       "id": "border_bottom"
     },
     {
-      "content": "Container",
-      "type": "header"
-    },
-    {
-      "label": "Container",
-      "type": "select",
-      "options": [
-        { "label": "Static", "value": "container" },
-        { "label": "Fluid", "value": "container-fluid" },
-        { "label": "Full Width", "value": "full-width" }
-      ],
-      "default": "container",
-      "id": "container"
-    },
-    {
       "content": "Layout",
       "type": "header"
     },
@@ -204,31 +143,8 @@
       ],
       "default": "image-left",
       "id": "layout"
-    },
-    {
-      "content": "Padding",
-      "type": "header"
-    },
-    {
-      "label": "Top Padding",
-      "type": "range",
-      "min": 0,
-      "max": 200,
-      "step": 4,
-      "unit": "px",
-      "default": 36,
-      "id": "padding_top"
-    },
-    {
-      "label": "Bottom Padding",
-      "type": "range",
-      "min": 0,
-      "max": 200,
-      "step": 4,
-      "unit": "px",
-      "default": 36,
-      "id": "padding_bottom"
     }
+
   ],
   "blocks": [
     {
@@ -236,6 +152,10 @@
       "type": "content",
       "limit": 1,
       "settings": [
+        {
+          "content": "Content",
+          "type": "header"
+        },
         {
           "label": "Heading",
           "type": "text",
@@ -245,6 +165,24 @@
           "label": "Message",
           "type": "richtext",
           "id": "message"
+        },
+        {
+          "content": "Settings",
+          "type": "header"
+        },
+        {
+          "label": "Background",
+          "type": "select",
+          "options": [
+            { "label": "Lemon", "value": "lemon" },
+            { "label": "Lime", "value": "lime" },
+            { "label": "Mango", "value": "mango" },
+            { "label": "None", "value": "none" },
+            { "label": "Orange", "value": "orange" },
+            { "label": "Strawberry", "value": "strawberry" }
+          ],
+          "default": "none",
+          "id": "background"
         }
       ]
     },
@@ -253,6 +191,10 @@
       "type": "image",
       "limit": 1,
       "settings": [
+        {
+          "content": "Content",
+          "type": "header"
+        },
         {
           "label": "Image",
           "type": "image_picker",
