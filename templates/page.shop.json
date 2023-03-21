@@ -69,7 +69,7 @@
         "26b6d891-74d6-4dda-84c3-d00b5affe165": {
           "type": "content",
           "settings": {
-            "heading": "",
+            "heading": "Kinder Planet Hoodie",
             "message": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.<\/p>",
             "background": "orange"
           }
@@ -83,8 +83,7 @@
         "product": "bt-hoodie",
         "anchor_id": "",
         "border_top": false,
-        "border_bottom": true,
-        "layout": "image-left"
+        "border_bottom": true
       }
     },
     "56703be2-9a9c-4831-a04f-c53f74bca64d": {
@@ -113,8 +112,7 @@
         "product": "bt-crewneck",
         "anchor_id": "",
         "border_top": false,
-        "border_bottom": false,
-        "layout": "image-right"
+        "border_bottom": false
       }
     }
   },
