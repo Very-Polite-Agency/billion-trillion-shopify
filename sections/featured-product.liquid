@@ -99,6 +99,10 @@
       "content": "Content",
       "type": "header"
     },
+     {
+      "content": "By default, the heading, image and body copy will automatically be pulled from the selected product. To customize, and override this automation, update the corresponding fields within this section's blocks.",
+      "type": "paragraph"
+    },
     {
       "label": "Product",
       "type": "product",
@@ -162,11 +166,13 @@
         },
         {
           "label": "Heading",
+          "info": "Optionally override the product title",
           "type": "text",
           "id": "heading"
         },
         {
           "label": "Message",
+          "info": "Optionally override the product description",
           "type": "richtext",
           "id": "message"
         },
@@ -201,6 +207,7 @@
         },
         {
           "label": "Image",
+          "info": "Optionally override the product's featured image",
           "type": "image_picker",
           "id": "image"
         },
