@@ -1,0 +1,16 @@
+@use "../utils/mixins/border" as *;
+@use "../utils/mixins/breakpoint" as *;
+
+.sub-navigation {
+
+  &__main {
+    &-navigation {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: baseline;
+      flex-flow: row wrap;
+    }
+  }
+
+}
