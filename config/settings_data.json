@@ -29,6 +29,7 @@
         "type": "footer",
         "settings": {
           "menu": "footer",
+          "tagline_media_mobile": "shopify:\/\/shop_images\/footer--tagline-media.mobile_3x_993140ec-719d-4661-b15f-188bd6785d8a.png",
           "anchor_id": "",
           "background": "lime",
           "background_image_position_mobile": "center center",
