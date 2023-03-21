@@ -6,8 +6,7 @@
   @extend %ui-transition;
 
   &-disabled {
-    opacity: var(--theme-transition--opacity);
-    pointer-events: none;
+    @extend %ui-disabled;
   }
 
 }

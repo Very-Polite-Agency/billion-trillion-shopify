@@ -11,11 +11,15 @@
   svg {
     fill: currentColor;
   }
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 %ui-disabled {
   opacity: var(--theme-transition--opacity);
   cursor: no-drop;
+  pointer-events: none;
   &:focus,
   &:hover {
     background: initial;
