@@ -11,12 +11,84 @@
     @include sorry-sans( 700 );
     background: var(--theme-colour--lemon);
     color: var(--theme-colour--black);
+    &-content {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 11px;
+      padding: 12px 0;
+    }
+    &-instagram {
+      display: inline-flex;
+      width: auto;
+      &-cta {
+        display: none;
+      }
+    }
   }
 
   &__main {
-    @include sorry-sans( 700 );
+    @include hobeaux( 700 );
     background: var(--theme-colour--black);
     color: var(--theme-colour--lemon);
+    &-content {
+      padding: var(--theme-layout--gutter) 0;
+    }
+    &-media {
+      width: 100%;
+      aspect-ratio: 375/317;
+      height: auto;
+    }
+    &-navigation {
+      font-size: 28px;
+      display: inline-grid;
+      gap: 18px;
+      grid-template-columns: repeat( 1, 1fr );
+      width: 100%;
+      &-item,
+      &-link {
+        line-height: 1;
+      }
+      &-link {
+        width: auto;
+        &.active,
+        &:hover {
+          opacity: var(--theme-transition--opacity);
+          color: inherit;
+        }
+      }
+    }
+    &-tagline {
+      font-size: 17vw;
+      line-height: 1;
+    }
   }
+
+  @include breakpoint(sm) {
+
+    &__main {
+      &-media {
+        aspect-ratio: 375/250;
+      }
+    }
+
+  }
+
+  @include breakpoint(md) {
+
+    &__main {
+      &-media {
+        aspect-ratio: 375/200;
+      }
+    }
+
+  }
+
+  @include breakpoint(lg) {}
+
+  @include breakpoint(xl) {}
+
+  @include breakpoint(xxl) {}
 
 }
