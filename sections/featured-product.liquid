@@ -44,19 +44,23 @@
               assign section_message = block.settings.message | default: section_message
             -%}
 
-            {%
-              render 'element-styles',
-                background: block.settings.background
-                id: block_id
-            %}
-
             <div class="{{ section_name }}__content" id="{{ block_id }}">
+
+              {%- style -%}
+                {%
+                  render 'element-styles',
+                    background: block.settings.background
+                    id: block_id
+                %}
+              {%- endstyle -%}
+
               {% if section_heading != blank %}
                 <strong>{{ section_heading }}</strong>
               {% endif %}
               {% if section_message != blank %}
                 <div>{{ section_message }}</div>
               {% endif %}
+
             </div>
 
           {%- when 'image' -%}
