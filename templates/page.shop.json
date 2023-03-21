@@ -53,8 +53,8 @@
         "border_top": false,
         "border_bottom": true,
         "container": "container",
-        "padding_top": 24,
-        "padding_bottom": 24
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     }
   },
