@@ -69,7 +69,7 @@
         "26b6d891-74d6-4dda-84c3-d00b5affe165": {
           "type": "content",
           "settings": {
-            "heading": "Custom Heading",
+            "heading": "",
             "message": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.<\/p>",
             "background": "orange"
           }
