@@ -37,11 +37,26 @@
   <div class="{{ section_name }}__main" id="{{ aos_id }}">
     {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
 
-      <div class="{{ section_name }}__content">
+      <div class="{{ section_name }}__main-content">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
 
             {%- when 'links' -%}
+
+              {%- liquid
+                 assign menu = block.settings.menu | default: ''
+              -%}
+
+              {%- if menu and menu != blank -%}
+                <nav class="{{ section_name }}__main-navigation navigation navigation--main">
+                  {%- for link in linklists[menu].links -%}
+                    <div class="{{ section_name }}__main-navigation-item navigation__item">
+                      {%- capture link_classes -%}{{ section_name }}__main-navigation-link navigation__link link{% if link.active %} active{% endif %}{%- endcapture -%}
+                      {%- render 'link', link_classes: link_classes, link_title: link.title, link_url: link.url -%}
+                    </div>
+                  {%- endfor -%}
+                </nav>
+              {%- endif -%}
 
           {%- endcase -%}
         {%- endfor -%}
@@ -218,8 +233,13 @@
       "limit": 1,
       "settings": [
         {
-          "content": "Content",
+          "content": "Navigation",
           "type": "header"
+        },
+        {
+          "label": "Menu",
+          "type": "link_list",
+          "id": "menu"
         }
       ]
     }
