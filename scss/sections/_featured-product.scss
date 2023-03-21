@@ -9,14 +9,6 @@
     width: 100%;
   }
 
-  &__content {
-    padding-top: calc(1.25 * var(--theme-layout--gutter));
-    padding-bottom: calc(1.25 * var(--theme-layout--gutter));
-    padding-left: var(--theme-layout--gutter);
-    padding-right: var(--theme-layout--gutter);
-
-  }
-
   &__grid {
     background: var(--theme-colour--black);
     row-gap: var(--theme-border--width);
@@ -59,14 +51,6 @@
   }
 
   @include breakpoint(lg) {
-
-    &__content {
-      padding-top: 0;
-      padding-bottom: 0;
-      padding-left: max(var(--theme-layout--gutter), 3.25vw);
-      padding-right: max(var(--theme-layout--gutter), 3.25vw);
-      order: initial;
-    }
 
     &__heading {
       font-weight: 5.25vw;

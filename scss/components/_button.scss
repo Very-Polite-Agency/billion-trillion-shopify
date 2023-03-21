@@ -27,13 +27,13 @@
       }
     }
     @each $name, $value in $theme-button-heights {
-      @if $name == 'base' {
-        height: var(--theme-button-height);
-      } @else {
-        @include breakpoint(#{$name}) {
-          height: var(--theme-button-height--#{$name});
-        }
-      }
+      // @if $name == 'base' {
+      //   height: var(--theme-button-height);
+      // } @else {
+      //   @include breakpoint(#{$name}) {
+      //     height: var(--theme-button-height--#{$name});
+      //   }
+      // }
     }
   }
 

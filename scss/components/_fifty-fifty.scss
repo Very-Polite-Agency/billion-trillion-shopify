@@ -18,13 +18,17 @@
 
   &__content {
     text-transform: uppercase;
+    padding-top: min(75px, 10vw);
+    padding-bottom: min(75px, 10vw);
+    padding-left: var(--theme-layout--gutter);
+    padding-right: var(--theme-layout--gutter);
   }
 
   &__cta {
     &-link{
       display: block;
       width: auto;
-      max-width: 400px;
+      max-width: 480px;
     }
   }
 
@@ -58,8 +62,22 @@
 
     grid-template-columns: repeat( 2, 1fr );
 
+    &__content {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: min(85px, 4vw);
+      padding-right: min(85px, 4vw);
+    }
+
+    &__cta {
+      &-link{
+        max-width: 520px;
+      }
+    }
+
     &__heading {
-      font-size: 5.25vw;
+      font-size: min(90px, 5.15vw);
+      line-height: 1;
     }
 
     &__item {
@@ -70,7 +88,8 @@
     }
 
     &__message {
-      font-size: 3.25vw;
+      font-size: min(38px, 2.15vw);
+      line-height: 1.35;
     }
 
   }
