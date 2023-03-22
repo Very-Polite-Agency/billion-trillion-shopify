@@ -1,0 +1,25 @@
+@use "../utils/mixins/breakpoint" as *;
+
+.grid {
+
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat( 1, 1fr );
+
+  @for $i from 2 through 4 {
+    &--#{$i} {
+      @extend .grid;
+    }
+  }
+
+  @include breakpoint(lg) {
+
+    @for $i from 2 through 4 {
+      &--#{$i} {
+        grid-template-columns: repeat( #{$i}, 1fr );
+      }
+    }
+
+  }
+
+}

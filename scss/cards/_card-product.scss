@@ -11,26 +11,39 @@
   flex-flow: column;
   overflow: hidden;
 
+  &__cta,
+  &__price {
+    padding-top: min(32px, 4.75vw);
+    margin-top: auto;
+  }
+
   &__content {
     @include border-solid( var(--theme-border--width), 'black', 'top' );
-    padding: 32px 7%;
+    padding-top: min(65px, 6.25vw);
+    padding-bottom: min(65px, 6.25vw);
+    padding-left: var(--theme-layout--gutter);
+    padding-right: var(--theme-layout--gutter);
     text-align: center;
     flex: 1;
     display: flex;
     flex-flow: column;
-    font-size: 16px;
     text-transform: uppercase;
-    .unavailable & {
-      background: var(--theme-colour--grey);
-    }
   }
 
   &__cta {
-    padding-top: 20px;
     &-link {
       display: block;
-      margin: 0 auto;
-      max-width: 275px;
+      width: auto;
+      max-width: 440px;
+      margin: auto;
+    }
+  }
+
+  &__heading {
+    font-size: min(52px, 8.5vw);
+    line-height: 1.2;
+    & + .card-product__message {
+      margin-top: min(22px, 2.25vw);
     }
   }
 
@@ -50,51 +63,21 @@
     }
   }
 
-  &__price {
-    font-size: 110%;
-    margin-top: auto;
-    padding-top: 15px;
+  &__message {
+    font-size: min(23px, 3.5vw);
+    line-height: 1.25;
+    margin-bottom: -8px;
   }
 
-  &__title {
-    font-size: 32px;
-    & + .card-product__description {
-      margin-top: 15px;
-    }
+  &__price {
+    font-size: min(26px, 4vw);
   }
 
   @include breakpoint(sm) {
 
     &__content {
-      padding: 36px 10%;
-    }
-
-    &__cta {
-      &-link {
-        max-width: 300px;
-      }
-    }
-
-    &__title {
-      font-size: 34px;
-    }
-
-  }
-
-  @include breakpoint(md) {
-
-    &__content {
-      padding: 38px 12%;
-    }
-
-    &__cta {
-      &-link {
-        max-width: 345px;
-      }
-    }
-
-    &__title {
-      font-size: 38px;
+      padding-left: min(62px, 5.5vw);
+      padding-right: min(62px, 5.5vw);
     }
 
   }

@@ -4,6 +4,11 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
+  line-height: 1;
+
+  &__value {
+    display: block;
+  }
 
   .sale-price {
     text-decoration: line-through;

@@ -11,15 +11,16 @@
   assign section_container = section.settings.container | default: 'container'
   assign section_grid_gutter = section.settings
   assign section_products = section.blocks | where: "type", "product"
+  assign section_products_size = section_products.size | default: 0
 
 -%}
 
-{% if section_products.size > 0 %}
+{% if section_products_size > 0 %}
 
   {%- style -%}
 
-    #{{ snippet_id }} .{{ section_name }}__grid {
-      gap: {{ section.settings.grid_gutter }};
+    #{{ section_id }} .{{ section_name }}__grid {
+      gap: {{ section.settings.grid_gutter }}px;
     }
 
     {%
@@ -41,7 +42,7 @@
 
   <div class="{{ section_classes }}" id="{{ section_id }}">
     {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
-      <div class="{{ section_name }}__grid" role="list">
+      <div class="{{ section_name }}__grid grid--{{ section_products_size }}" role="list">
         {%- for item in section_products -%}
           {% render 'card-product', card_background: item.settings.background, card_item: item.settings.product %}
         {%- endfor -%}

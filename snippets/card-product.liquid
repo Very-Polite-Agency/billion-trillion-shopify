@@ -32,14 +32,16 @@
     assign title = card_item.title | default: ''
     assign url = card_item.url | default: ''
 
+    unless available
+      assign background = 'grey'
+    endunless
+
   -%}
 
   {%- style -%}
-    {%
-      render 'element-styles',
-        background: background
-        id: snippet_id,
-    %}
+    #{{ snippet_id }} .{{ snippet_name }}__content {
+      background: var(--theme-colour--{{ background }});
+    }
   {%- endstyle -%}
 
   <article class="{{ snippet_classes }}{% unless available %} unavailable{% endunless %}" id="{{ snippet_id }}">
@@ -67,7 +69,7 @@
             endcapture
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
-          <strong class="{{ snippet_name }}__title heading--primary" {{ aos_attrs }}>Shop {{ title }}</strong>
+          <strong class="{{ snippet_name }}__heading heading--primary" {{ aos_attrs }}>Shop {{ title }}</strong>
         {% endif %}
         {% if description != blank %}
           {%- liquid
@@ -76,7 +78,7 @@
             endcapture
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
-          <div class="{{ snippet_name }}__description body-copy--primary" {{ aos_attrs }}>{{ description }}</div>
+          <div class="{{ snippet_name }}__message body-copy--primary" {{ aos_attrs }}>{{ description }}</div>
         {% endif %}
 
         {% if url != blank %}
