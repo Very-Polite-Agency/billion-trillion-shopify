@@ -92,16 +92,22 @@
         "template--15945343860920__44c8f33b-dd4c-4a93-8504-00e816276dae-1679511108db08b46c-0": {
           "type": "product",
           "settings": {
+            "product": "bt-hoodie",
+            "background": "lemon"
           }
         },
         "template--15945343860920__44c8f33b-dd4c-4a93-8504-00e816276dae-1679511108db08b46c-1": {
           "type": "product",
           "settings": {
+            "product": "bt-hat",
+            "background": "lemon"
           }
         },
         "cd034021-4ff1-4047-a541-3ac37fad2b0e": {
           "type": "product",
           "settings": {
+            "product": "bt-tote",
+            "background": "lemon"
           }
         }
       },
@@ -132,11 +138,15 @@
         "template--15945343860920__0a99d343-f6f5-40f0-9150-2ed780e4123b-1679511108db08b46c-0": {
           "type": "product",
           "settings": {
+            "product": "bt-shirt",
+            "background": "lemon"
           }
         },
         "template--15945343860920__0a99d343-f6f5-40f0-9150-2ed780e4123b-1679511108db08b46c-1": {
           "type": "product",
           "settings": {
+            "product": "bt-patch",
+            "background": "lemon"
           }
         }
       },
@@ -166,16 +176,22 @@
         "template--15945343860920__65407ddc-d32b-4880-aa05-6b81caa131d4-1679511108db08b46c-0": {
           "type": "product",
           "settings": {
+            "product": "bt-tote",
+            "background": "lemon"
           }
         },
         "template--15945343860920__65407ddc-d32b-4880-aa05-6b81caa131d4-1679511108db08b46c-1": {
           "type": "product",
           "settings": {
+            "product": "bt-hoodie",
+            "background": "lemon"
           }
         },
         "5ed50218-20a9-4184-9484-7b327dca9801": {
           "type": "product",
           "settings": {
+            "product": "bt-hat",
+            "background": "lemon"
           }
         }
       },
