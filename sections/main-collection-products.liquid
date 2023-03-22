@@ -4,16 +4,14 @@
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
-  assign aos_id = section_id | append: '--aos'
-  assign aos_delay = 250
-  assign aos_delay_increment = 250
-
   assign collection_sort_by = collection.sort_by | default: collection.default_sort_by
   assign container = section.settings.container | default: 'container'
   assign products_per_page = section.settings.products_per_page | default: 12
   assign product_image_aspect_ratio_desktop = section.settings.product_image_aspect_ratio_desktop | default: ''
   assign product_image_aspect_ratio_mobile = section.settings.product_image_aspect_ratio_mobile | default: ''
   assign section_anchor_id = section.settings.anchor_id | default: ''
+  assign section_grid_columns = section.settings.grid_columns | default: '2'
+  assign section_grid_gap = section.settings.grid_gap | default: '20'
 
 -%}
 
@@ -27,22 +25,16 @@
   {% endif %}
 
   #{{ section_id }} .{{ section_name }}__grid {
-    gap: {{ section.settings.grid_gap }}px;
+    gap: {{ section_grid_gap }}px;
   }
 
   @media screen and (min-width: 992px) {
-
     {% if product_image_aspect_ratio_desktop and product_image_aspect_ratio_desktop != blank %}
       #{{ section_id }} .card-product__image,
       #{{ section_id }} .card-product__image-link {
         aspect-ratio: {{ product_image_aspect_ratio_desktop }};
       }
     {% endif %}
-
-    #{{ section_id }} .{{ section_name }}__grid {
-      grid-template-columns: repeat( {{ section.settings.grid_columns }}, 1fr );
-    }
-
   }
 
   {%
@@ -77,7 +69,7 @@
         </select>
       </div>
 
-      <div class="{{ section_name }}__grid grid--3" id="{{ aos_id }}" role="list">
+      <div class="{{ section_name }}__grid grid--{{ section_grid_columns }}" role="list">
         {%- for item in collection.products -%}
           {% render 'card-product', card_aria_role: 'listitem', card_item: item %}
         {%- endfor -%}
@@ -269,7 +261,7 @@
       "min": 10,
       "max": 50,
       "step": 1,
-      "default": 10,
+      "default": 20,
       "id": "grid_gap"
     },
     {

@@ -4,18 +4,16 @@
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
-  assign aos_id = section_id | append: '--aos'
-  assign aos_delay = 250
-  assign aos_delay_increment = 250
-
   assign section_container = section.settings.container | default: 'container'
-  assign section_grid_gutter = section.settings
   assign section_products = section.blocks | where: "type", "product"
   assign section_products_size = section_products.size | default: 0
 
+  assign section_grid_columns = section_products_size.size | default: '2'
+  assign section_grid_gap = section.settings.grid_gap | default: '20'
+
 -%}
 
-{% if section_products_size > 0 %}
+{% if section_products_size > 1 %}
 
   {%- style -%}
 
@@ -27,7 +25,7 @@
     {% endif %}
 
     #{{ section_id }} .{{ section_name }}__grid {
-      gap: {{ section.settings.grid_gutter }}px;
+      gap: {{ section_grid_gap }}px;
     }
 
     @media screen and (min-width: 992px) {
@@ -205,14 +203,14 @@
       "type": "header"
     },
     {
-      "label": "Grid Gutter",
+      "label": "Grid Gap",
       "type": "range",
       "min": 0,
       "max": 60,
       "step": 1,
       "unit": "px",
       "default": 20,
-      "id": "grid_gutter"
+      "id": "grid_gap"
     },
     {
       "content": "Padding",
