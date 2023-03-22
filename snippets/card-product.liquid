@@ -49,7 +49,7 @@
   <article class="{{ snippet_classes }}" id="{{ snippet_id }}" {% if snippet_aria_role != blank %}role="{{ snippet_aria_role }}"{% endif %}>
 
     {% unless card_item.available %}
-      <div class="{{ section_name }}__badge">{% render 'svg', type: 'badge.sold-out' %}</div>
+      <div class="{{ snippet_name }}__badge">{% render 'svg', type: 'badge.sold-out' %}</div>
     {% endunless %}
 
     {% if featured_image %}
