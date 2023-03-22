@@ -138,14 +138,14 @@
         "template--15945343860920__0a99d343-f6f5-40f0-9150-2ed780e4123b-1679511108db08b46c-0": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "bt-shirt",
             "background": "lemon"
           }
         },
         "template--15945343860920__0a99d343-f6f5-40f0-9150-2ed780e4123b-1679511108db08b46c-1": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "bt-patch",
             "background": "lemon"
           }
         }
