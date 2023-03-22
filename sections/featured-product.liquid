@@ -12,12 +12,12 @@
   assign section_product = section.settings.product | defaul: false
 
   assign section_content_background = section.settings.background | default: 'orange'
-  assign section_content_heading = section.settings.heading | default: section_product.title | default: ''
+  assign section_content_heading = section.settings.heading | default: section_product.title
   assign section_content_link = section_product.url | default: ''
-  assign section_content_message = section.settings.message | default: section_product.description | default: ''
+  assign section_content_message = section.settings.message | default: section_product.description
 
   assign section_media_badge = section.settings.badge | default: 'none'
-  assign section_media_image = section.settings.image | default: section_product.featured_image | default: false
+  assign section_media_image = section.settings.image | default: section_product.featured_image
   assign section_media_order = 1
 
   if 'content' == section.blocks.first.type
@@ -51,11 +51,12 @@
 <div class="{{ section_classes }}" id="{{ section_id }}">
 
   {% capture snippet_classes %}{{ section_name }}__main fifty-fifty{% endcapture %}
+  {% capture snippet_id %}{{ section_id }}--fify-fifty{% endcapture %}
   {%
     render 'fifty-fifty',
       classes: snippet_classes
       heading: section_content_heading,
-      id: section_id | append: '--fify-fifty',
+      id: snippet_id,
       image: section_media_image,
       message: section_content_message,
       link: section_content_link
