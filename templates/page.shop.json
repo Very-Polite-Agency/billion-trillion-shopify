@@ -51,7 +51,7 @@
         "background_image_repeat": "repeat",
         "background_image_size": "cover",
         "border_top": false,
-        "border_bottom": true,
+        "border_bottom": false,
         "container": "container",
         "padding_top": 32,
         "padding_bottom": 32
@@ -82,27 +82,27 @@
         "message": "",
         "anchor_id": "",
         "background": "orange",
-        "border_top": false,
+        "border_top": true,
         "border_bottom": false
       }
     },
     "5bba2e3d-44be-466b-9ef0-ba4672b58bb9": {
       "type": "featured-product",
       "blocks": {
-        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-0": {
-          "type": "media",
+        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-1": {
+          "type": "content",
           "settings": {
           }
         },
-        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-1": {
-          "type": "content",
+        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-0": {
+          "type": "media",
           "settings": {
           }
         }
       },
       "block_order": [
-        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-0",
-        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-1"
+        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-1",
+        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-0"
       ],
       "settings": {
         "product": "bt-crewneck",
@@ -111,7 +111,7 @@
         "message": "",
         "anchor_id": "",
         "background": "lemon",
-        "border_top": false,
+        "border_top": true,
         "border_bottom": false
       }
     }
