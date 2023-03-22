@@ -222,7 +222,26 @@
       "name": "Product",
       "type": "product",
       "limit": 3,
-      "settings": []
+      "settings": [
+        {
+          "label": "Product",
+          "type": "product",
+          "id": "product"
+        },
+        {
+          "label": "Background",
+          "type": "select",
+          "options": [
+            { "label": "Lemon", "value": "lemon" },
+            { "label": "Lime", "value": "lime" },
+            { "label": "Mango", "value": "mango" },
+            { "label": "Orange", "value": "orange" },
+            { "label": "Strawberry", "value": "strawberry" }
+          ],
+          "default": "lemon",
+          "id": "background"
+        }
+      ]
     }
   ],
   "presets": [
