@@ -9,6 +9,7 @@
   assign aos_delay_increment = 250
 
   assign section_container = section.settings.container | default: 'container'
+  assign section_grid_gutter = section.settings
   assign section_products = section.blocks | where: "type", "product"
 
 -%}
@@ -16,6 +17,10 @@
 {% if section_products.size > 0 %}
 
   {%- style -%}
+
+    #{{ snippet_id }} .{{ section_name }}__grid {
+      gap: {{ section.settings.grid_gutter }};
+    }
 
     {%
       render 'element-styles',
@@ -38,7 +43,7 @@
     {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
       <div class="{{ section_name }}__grid" role="list">
         {%- for item in section_products -%}
-          {% render 'card-product', card_background: card_item: item.settings.background, card_item: item.settings.product %}
+          {% render 'card-product', card_background: item.settings.background, card_item: item.settings.product %}
         {%- endfor -%}
       </div>
     {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}
@@ -175,6 +180,20 @@
       ],
       "default": "container",
       "id": "container"
+    },
+    {
+      "content": "Grid",
+      "type": "header"
+    },
+    {
+      "label": "Grid Gutter",
+      "type": "range",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 20,
+      "id": "grid_gutter"
     },
     {
       "content": "Padding",

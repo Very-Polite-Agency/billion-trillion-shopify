@@ -24,6 +24,7 @@
     assign aos_delay_increment = 250
 
     assign available = card_item.available | default: false
+    assign background = card_background | default: 'lemon'
     assign description = card_item.description | default: ''
     assign featured_image = card_item.featured_image | default: false
     assign price = card_item.price
@@ -32,6 +33,14 @@
     assign url = card_item.url | default: ''
 
   -%}
+
+  {%- style -%}
+    {%
+      render 'element-styles',
+        background: background
+        id: snippet_id,
+    %}
+  {%- endstyle -%}
 
   <article class="{{ snippet_classes }}{% unless available %} unavailable{% endunless %}" id="{{ snippet_id }}">
 
