@@ -43,11 +43,26 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  <div class="{{ section_name }}__grid grid" id="{{ aos_id }}" role="list">
+  <div class="{{ section_name }}__list" id="{{ aos_id }}" role="list">
     {%- for item in collections -%}
-      <div class="{{ section_name }}__item" role="listitem">
-        {% render 'card-collection', card_item: item %}
-      </div>
+      {%- liquid
+        assign description = item.description | default: ''
+        assign featured_image = item.featured_image | default: false
+        assign id = item.id | prepend: 'collection--' | default: ''
+        assign title = item.title | prepend: 'Shop ' | default: ''
+        assign url = item.url | default: ''
+      %}
+      {% capture snippet_classes %}{{ section_name }}__item fifty-fifty{% endcapture %}
+      {%
+        render 'fifty-fifty',
+          aria_role: 'listitem',
+          classes: snippet_classes
+          heading: title,
+          id: id,
+          image: featured_image,
+          message: description,
+          link: url
+      %}
     {%- endfor -%}
   </div>
 </div>

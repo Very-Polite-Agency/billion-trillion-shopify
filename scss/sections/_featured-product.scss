@@ -18,6 +18,7 @@
     position: relative;
     order: 1;
     &-badge {
+      transition: transform var(--theme-transition--duration);
       position: absolute;
       top: 7.5vw;
       right: 7.5vw;
@@ -26,6 +27,16 @@
         display: block;
         height: 100%;
         width: auto;
+      }
+    }
+  }
+
+  &__image-link {
+    &:hover {
+      .featured-product__image {
+        &-badge {
+          transform: scale( 1.1, 1.1 );
+        }
       }
     }
   }

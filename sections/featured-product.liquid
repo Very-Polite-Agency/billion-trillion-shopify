@@ -32,7 +32,7 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  <div class="{{ section_name }}__grid fifty-fifty" id="{{ aos_id }}" role="list">
+  <div class="fifty-fifty">
     {%- for block in section.blocks -%}
 
       {%- assign block_id = block.id | prepend: 'block-id--' -%}
@@ -85,7 +85,7 @@
 
             {% if section_image %}
               <div class="{{ section_name }}__image fifty-fifty__image">
-                {% if section_link != blank %}<a href="{{ section_link }}" target="_self" title="{{ section_heading }}">{% endif %}
+                {% if section_link != blank %}<a class="{{ section_name }}__image-link fifty-fifty__image-link link" href="{{ section_link }}" target="_self" title="{{ section_heading }}">{% endif %}
                   {% render 'lazyload-image', image: section_image %}
                   {% unless 'none' == section_badge %}
                     <div class="{{ section_name }}__image-badge">

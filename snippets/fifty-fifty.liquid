@@ -1,0 +1,92 @@
+{%- liquid
+
+  assign snippet_name = 'fifty-fifty'
+  assign snippet_classes = classes | default: snippet_name
+  assign snippet_id = id | default: snippet_name
+
+  assign snippet_aria_role = aria_role | default: ''
+  assign snippet_badge = badge | default: 'none'
+  assign snippet_heading = heading | defualt: ''
+  assign snippet_image = image | default: false
+  assign snippet_message = message | default: ''
+  assign snippet_link = link | default: ''
+  assign snippet_link_target = '_self'
+
+  if snippet_link contains 'http'
+    assign snippet_link_target = '_blank'
+  endif
+
+  assign aos_id = snippet_id | append: '--aos'
+  assign aos_delay = 250
+  assign aos_delay_increment = 250
+
+-%}
+
+<div class="{{ snippet_classes }}" id="{{ snippet_id }}" {% if snippet_aria_role != blank %}role="{{ snippet_aria_role }}"{% endif %}>
+
+  <div class="{{ snippet_name }}__item media">
+    {% if snippet_image %}
+      {%- liquid
+        capture aos_attrs
+          render 'aos-attributes', anchor: snippet_id, delay: aos_delay, transition: 'fade-up'
+        endcapture
+        assign aos_delay = aos_delay | plus: aos_delay_increment
+      -%}
+      <div class="{{ snippet_name }}__image" {{ aos_attrs }}>
+        {% if snippet_link != blank %}
+          <a class="{{ snippet_name }}__image-link link" href="{{ snippet_link }}" target="{{ snippet_link_target }}" title="{{ snippet_heading }}">
+        {% endif %}
+          {% render 'lazyload-image', image: snippet_image %}
+          {% unless 'none' == snippet_badge %}
+            <div class="{{ snippet_name }}__badge">
+              {% capture badge_type %}badge.{{ snippet_badge }}{% endcapture %}
+              {% render 'svg', type: badge_type %}
+            </div>
+          {% endunless %}
+        {% if snippet_link != blank %}
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="{{ snippet_name }}__item content">
+    <div class="{{ snippet_name }}__content">
+      {% if snippet_heading != blank %}
+        {%- liquid
+          capture aos_attrs
+            render 'aos-attributes', anchor: snippet_id, delay: aos_delay, transition: 'fade-left'
+          endcapture
+          assign aos_delay = aos_delay | plus: aos_delay_increment
+        -%}
+        <strong class="{{ snippet_name }}__heading" {{ aos_attrs }}>{{ snippet_heading }}</strong>
+      {% endif %}
+
+      {% if snippet_message != blank %}
+        {%- liquid
+          capture aos_attrs
+            render 'aos-attributes', anchor: snippet_id, delay: aos_delay, transition: 'fade-left'
+          endcapture
+          assign aos_delay = aos_delay | plus: aos_delay_increment
+        -%}
+        <div class="{{ snippet_name }}__message" {{ aos_attrs }}>{{ snippet_message }}</div>
+      {% endif %}
+
+      {% if snippet_link != blank %}
+        {%- liquid
+          capture aos_attrs
+            render 'aos-attributes', anchor: snippet_id, delay: aos_delay, transition: 'fade-right'
+          endcapture
+          assign aos_delay = aos_delay | plus: aos_delay_increment
+        -%}
+        <div class="{{ snippet_name }}__cta" {{ aos_attrs }}>
+          <a class="{{ snippet_name }}__cta-link link" href="{{ snippet_link }}" target="{{ snippet_link_target }}" title="{{ snippet_heading }}">
+            <div class="button--svg d-lg-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
+            <div class="button--svg d-none d-lg-block">{% render 'svg', type: 'button.shop-now.md' %}</div>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>

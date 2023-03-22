@@ -3,73 +3,77 @@
 
 .list-collections {
 
-  &__item {
+    .fifty-fifty {
+
     &:nth-child(4n+1) {
-      .card-collection {
-        &__content {
-          background: var(--theme-colour--orange);
+      .fifty-fifty {
+        &__item {
+          &.content {
+            background: var(--theme-colour--orange);
+          }
         }
       }
     }
+
     &:nth-child(4n+2) {
-      .card-collection {
-        &__content {
-          background: var(--theme-colour--mango);
+      .fifty-fifty {
+        &__item {
+          &.content {
+            background: var(--theme-colour--mango);
+          }
         }
       }
     }
+
     &:nth-child(4n+3) {
-      .card-collection {
-        &__content {
-          background: var(--theme-colour--lemon);
+      .fifty-fifty {
+        &__item {
+          &.content {
+            background: var(--theme-colour--lemon);
+          }
         }
       }
     }
+
     &:nth-child(4n+4) {
-      .card-collection {
-        &__content {
-          background: var(--theme-colour--lime);
+      .fifty-fifty {
+        &__item {
+          &.content {
+            background: var(--theme-colour--lime);
+          }
         }
       }
     }
-    & + .list-collections__item {
+
+    & + .fifty-fifty {
       @include border-solid( var(--theme-border--width), 'black', 'top' );
     }
+
   }
 
-  @include breakpoint(sm) {}
+  &__list {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+  }
 
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
 
-    &__item {
-      &:nth-child(odd) {
-        .card-collection {
-          &__content {
-            order: 2;
-          }
-          &__image {
-            order: 1;
-          }
-        }
-      }
+    .fifty-fifty {
       &:nth-child(even) {
-        .card-collection {
-          &__content {
-            order: 1;
-          }
-          &__image {
-            order: 2;
+        .fifty-fifty {
+          &__item {
+            &.content {
+              order: 1;
+            }
+            &.media {
+              order: 2;
+            }
           }
         }
       }
     }
 
   }
-
-  @include breakpoint(lg) {}
-
-  @include breakpoint(xl) {}
-
-  @include breakpoint(xxl) {}
 
 }

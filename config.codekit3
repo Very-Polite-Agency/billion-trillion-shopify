@@ -2680,14 +2680,6 @@
       "oAP" : "\/snippets\/card-article.liquid",
       "oF" : 0
     },
-    "\/snippets\/card-collection copy.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/card-collection copy.liquid",
-      "oF" : 0
-    },
     "\/snippets\/card-collection.liquid" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2742,6 +2734,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/snippets\/facets.liquid",
+      "oF" : 0
+    },
+    "\/snippets\/fifty-fifty.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/snippets\/fifty-fifty.liquid",
       "oF" : 0
     },
     "\/snippets\/form-error.liquid" : {
