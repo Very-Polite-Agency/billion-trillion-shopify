@@ -8,19 +8,45 @@
   assign aos_delay = 250
   assign aos_delay_increment = 250
 
-  assign container = section.settings.container | default: 'container'
-
+  assign section_container = section.settings.container | default: 'container'
   assign section_product = section.settings.product | defaul: false
-  assign section_anchor_id = section.settings.anchor_id | default: ''
 
-  assign section_heading = section_product.title | default: ''
-  assign section_image = section_product.featured_image | default: false
-  assign section_message = section_product.description | default: ''
-  assign section_link = section_product.url | default: ''
+  assign section_content_background = 'orange'
+  assign section_content_heading = section_product.title | default: ''
+  assign section_content_link = section_product.url | default: ''
+  assign section_content_message = section_product.description | default: ''
+
+  assign section_media_badge = 'none'
+  assign section_media_image = section_product.featured_image | default: false
+  assign section_media_order = 1
+
+  if 'content' == section.blocks.first.type
+    assign section_media_order = 2
+  endif
+
+  assign block_media = section.blocks | where: "type", "media"
+  assign block_content = section.blocks | where: "type", "content"
+
+  assign section_media_badge = block_media.settings.badge | default: section_media_badge
+  assign section_media_image = block_media.settings.image | default: section_media_image
+  assign section_content_heading = block_content.settings.heading | default: section_content_heading
+  assign section_content_message = block_content.settings.message | default: section_content_message
+  assign section_content_background = block_content.settings.background | default: section_content_background
 
 -%}
 
 {%- style -%}
+
+  {% if section_image_order != 1 %}
+    @media screen and (min-width: 992px) {
+      #{{ section_id }} .fifty-fifty__item.content {
+        order: 1;
+      }
+      #{{ section_id }} .fifty-fifty__item.media {
+        order: 2;
+      }
+    }
+  {% endif %}
 
   {%
     render 'element-styles',
@@ -53,17 +79,46 @@
   "class": "section section--featured-product",
   "settings": [
     {
-      "content": "Content",
+      "content": "Product",
       "type": "header"
-    },
-     {
-      "content": "By default, the heading, image and body copy will automatically be pulled from the selected product. To customize, and override this automation, update the corresponding fields within this section's blocks.",
-      "type": "paragraph"
     },
     {
       "label": "Product",
       "type": "product",
       "id": "product"
+    },
+    {
+      "content": "By default, the heading, image and body copy will automatically be pulled from the selected product. To customize, and override this automation, update the corresponding fields below.",
+      "type": "paragraph"
+    },
+    {
+      "label": "Badge",
+      "info": "Optionally select a badge to pair with the product image.",
+      "type": "select",
+      "options": [
+        { "label": "Hot", "value": "hot" },
+        { "label": "None", "value": "none" }
+      ],
+      "default": "none",
+      "id": "badge"
+    },
+    {
+      "label": "Heading",
+      "info": "Optionally override the product title.",
+      "type": "text",
+      "id": "heading"
+    },
+    {
+      "label": "Image",
+      "info": "Optionally override the product's featured image.",
+      "type": "image_picker",
+      "id": "image"
+    },
+    {
+      "label": "Message",
+      "info": "Optionally override the product description.",
+      "type": "richtext",
+      "id": "message"
     },
     {
       "content": "Settings",
@@ -78,6 +133,20 @@
       "info": "Optionally include a unique ID so that sections within the page can be linked to. Anchor IDs must be all lowercase, unique and replaced empty spaces with hyphens. For example: my-great-section-anchor",
       "type": "text",
       "id": "anchor_id"
+    },
+    {
+      "label": "Background",
+      "type": "select",
+      "options": [
+        { "label": "Lemon", "value": "lemon" },
+        { "label": "Lime", "value": "lime" },
+        { "label": "Mango", "value": "mango" },
+        { "label": "None", "value": "none" },
+        { "label": "Orange", "value": "orange" },
+        { "label": "Strawberry", "value": "strawberry" }
+      ],
+      "default": "orange",
+      "id": "background"
     },
     {
       "content": "Border",
@@ -101,76 +170,20 @@
       "name": "Content",
       "type": "content",
       "limit": 1,
-      "settings": [
-        {
-          "content": "Content",
-          "type": "header"
-        },
-        {
-          "label": "Heading",
-          "info": "Optionally override the product title",
-          "type": "text",
-          "id": "heading"
-        },
-        {
-          "label": "Message",
-          "info": "Optionally override the product description",
-          "type": "richtext",
-          "id": "message"
-        },
-        {
-          "content": "Settings",
-          "type": "header"
-        },
-        {
-          "label": "Background",
-          "type": "select",
-          "options": [
-            { "label": "Lemon", "value": "lemon" },
-            { "label": "Lime", "value": "lime" },
-            { "label": "Mango", "value": "mango" },
-            { "label": "None", "value": "none" },
-            { "label": "Orange", "value": "orange" },
-            { "label": "Strawberry", "value": "strawberry" }
-          ],
-          "default": "none",
-          "id": "background"
-        }
-      ]
+      "settings": []
     },
     {
-      "name": "Image",
-      "type": "image",
+      "name": "Media",
+      "type": "media",
       "limit": 1,
-      "settings": [
-        {
-          "content": "Content",
-          "type": "header"
-        },
-        {
-          "label": "Image",
-          "info": "Optionally override the product's featured image",
-          "type": "image_picker",
-          "id": "image"
-        },
-        {
-          "label": "Badge",
-          "type": "select",
-          "options": [
-            { "label": "Hot", "value": "hot" },
-            { "label": "None", "value": "none" }
-          ],
-          "default": "none",
-          "id": "badge"
-        }
-      ]
+      "settings": []
     }
   ],
   "presets": [
     {
       "name": "Featured Product",
       "blocks": [
-        { "type": "image" },
+        { "type": "media" },
         { "type": "content" }
       ]
     }

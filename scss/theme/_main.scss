@@ -1,23 +1,5 @@
 main {
-
-  padding: 68px 0;
-
-  @include breakpoint(sm) {} // min width sm
-
-  @include breakpoint(md) {} // min width md
-
-  @include breakpoint(lg) {
-
-    padding: 24px 0;
-
-    &.page--thank-you {
-      padding-bottom: 0
-    }
-
-  } // min width lg
-
-  @include breakpoint(xl) {} // min width xl
-
-  @include breakpoint(xxl) {} // min width xxl
-
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(1, 1fr);
 }
