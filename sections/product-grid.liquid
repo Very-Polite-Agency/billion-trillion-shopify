@@ -5,11 +5,11 @@
   assign section_id = section_name | append: '--' | append: section.id
 
   assign section_container = section.settings.container | default: 'container'
+  assign section_grid_gap = section.settings.grid_gap | default: '20'
+  assign section_product_image_aspect_ratio_desktop = section.settings.product_image_aspect_ratio_desktop | default: ''
+  assign section_product_image_aspect_ratio_mobile = section.settings.product_image_aspect_ratio_mobile | default: ''
   assign section_products = section.blocks | where: "type", "product"
   assign section_products_size = section_products.size | default: 0
-
-  assign section_grid_columns = section_products_size.size | default: '2'
-  assign section_grid_gap = section.settings.grid_gap | default: '20'
 
 -%}
 
@@ -17,10 +17,10 @@
 
   {%- style -%}
 
-    {% if product_image_aspect_ratio_mobile and product_image_aspect_ratio_mobile != blank %}
+    {% if section_product_image_aspect_ratio_mobile and section_product_image_aspect_ratio_mobile != blank %}
       #{{ section_id }} .card-product__image,
       #{{ section_id }} .card-product__image-link {
-        aspect-ratio: {{ product_image_aspect_ratio_mobile }};
+        aspect-ratio: {{ section_product_image_aspect_ratio_mobile }};
       }
     {% endif %}
 
@@ -30,10 +30,10 @@
 
     @media screen and (min-width: 992px) {
 
-      {% if product_image_aspect_ratio_desktop and product_image_aspect_ratio_desktop != blank %}
+      {% if section_product_image_aspect_ratio_desktop and section_product_image_aspect_ratio_desktop != blank %}
         #{{ section_id }} .card-product__image,
         #{{ section_id }} .card-product__image-link {
-          aspect-ratio: {{ product_image_aspect_ratio_desktop }};
+          aspect-ratio: {{ section_product_image_aspect_ratio_desktop }};
         }
       {% endif %}
 
