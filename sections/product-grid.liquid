@@ -1,78 +1,57 @@
 {%- liquid
 
-  assign section_name = 'list-collections'
+  assign section_name = 'product-grid'
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
-  assign section_anchor_id = section.settings.anchor_id | default: ''
+  assign aos_id = section_id | append: '--aos'
+  assign aos_delay = 250
+  assign aos_delay_increment = 250
 
-  case section.settings.sort
-    when 'products_high' or 'products_low'
-      assign collections = collections | sort: 'all_products_count'
-    when 'date' or 'date_reversed'
-      assign collections = collections | sort: 'published_at'
-  endcase
-
-  if section.settings.sort == 'products_high' or section.settings.sort == 'date_reversed' or section.settings.sort == 'alphabetical_reversed'
-    assign collections = collections | reverse
-  endif
+  assign section_container = section.settings.container | default: 'container'
+  assign section_products = section.blocks | where: "type", "product"
 
 -%}
 
-{%- style -%}
+{% if section_products.size > 0 %}
 
-  {%
-    render 'element-styles',
-      background: section.settings.background,
-      background_image: section.settings.background_image,
-      background_image_position_desktop: section.settings.background_image_position_desktop,
-      background_image_position_mobile: section.settings.background_image_position_mobile,
-      background_image_repeat: section.settings.background_image_repeat,
-      background_image_size: section.settings.background_image_size,
-      border_bottom: section.settings.border_bottom,
-      border_top: section.settings.border_top,
-      id: section_id,
-      padding_bottom: section.settings.padding_bottom,
-      padding_top: section.settings.padding_top
-  %}
+  {%- style -%}
 
-{%- endstyle -%}
+    {%
+      render 'element-styles',
+        background: section.settings.background,
+        background_image: section.settings.background_image,
+        background_image_position_desktop: section.settings.background_image_position_desktop,
+        background_image_position_mobile: section.settings.background_image_position_mobile,
+        background_image_repeat: section.settings.background_image_repeat,
+        background_image_size: section.settings.background_image_size,
+        border_bottom: section.settings.border_bottom,
+        border_top: section.settings.border_top,
+        id: section_id,
+        padding_bottom: section.settings.padding_bottom,
+        padding_top: section.settings.padding_top
+    %}
 
-<div class="{{ section_classes }}" id="{{ section_id }}">
-  <div class="{{ section_name }}__list" role="list">
-    {%- for item in collections -%}
-      {%- liquid
-        assign description = item.description | default: ''
-        assign featured_image = item.featured_image | default: false
-        assign id = item.id | prepend: 'collection--' | default: ''
-        assign title = item.title | prepend: 'Shop ' | default: ''
-        assign url = item.url | default: ''
-      %}
-      {% capture snippet_classes %}{{ section_name }}__item fifty-fifty{% endcapture %}
-      {%
-        render 'fifty-fifty',
-          aria_role: 'listitem',
-          classes: snippet_classes
-          heading: title,
-          id: id,
-          image: featured_image,
-          message: description,
-          link: url
-      %}
-    {%- endfor -%}
+  {%- endstyle -%}
+
+  <div class="{{ section_classes }}" id="{{ section_id }}">
+    {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
+      <div class="{{ section_name }}__grid" role="list">
+        {%- for item in section_products -%}
+          {% render 'card-product', card_item: item %}
+        {%- endfor -%}
+      </div>
+    {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}
   </div>
-</div>
+
+{% endif %}
 
 {% schema %}
 {
-  "name": "List Collections",
+  "name": "Product Grid",
   "tag": "section",
-  "class": "section section--list-collections",
+  "class": "section section--product-grid",
   "settings": [
-    {
-      "content": "Settings",
-      "type": "header"
-    },
     {
       "content": "Anchor",
       "type": "header"
@@ -104,23 +83,6 @@
       "id": "background_image"
     },
     {
-      "label": "Background Image Position (Desktop)",
-      "type": "select",
-      "options": [
-        { "label": "Top Left", "value": "top left" },
-        { "label": "Top Center", "value": "top center" },
-        { "label": "Top Right", "value": "top right" },
-        { "label": "Center Left", "value": "center left" },
-        { "label": "Center Center", "value": "center center" },
-        { "label": "Center Right", "value": "center right" },
-        { "label": "Bottom Left", "value": "bottom left" },
-        { "label": "Bottom Center", "value": "bottom center" },
-        { "label": "Bottom Right", "value": "bottom right" }
-      ],
-      "default": "center center",
-      "id": "background_image_position_desktop"
-    },
-    {
       "label": "Background Image Position (Mobile)",
       "type": "select",
       "options": [
@@ -136,6 +98,23 @@
       ],
       "default": "center center",
       "id": "background_image_position_mobile"
+    },
+    {
+      "label": "Background Image Position (Desktop)",
+      "type": "select",
+      "options": [
+        { "label": "Top Left", "value": "top left" },
+        { "label": "Top Center", "value": "top center" },
+        { "label": "Top Right", "value": "top right" },
+        { "label": "Center Left", "value": "center left" },
+        { "label": "Center Center", "value": "center center" },
+        { "label": "Center Right", "value": "center right" },
+        { "label": "Bottom Left", "value": "bottom left" },
+        { "label": "Bottom Center", "value": "bottom center" },
+        { "label": "Bottom Right", "value": "bottom right" }
+      ],
+      "default": "center center",
+      "id": "background_image_position_desktop"
     },
     {
       "label": "Background Image Repeat",
@@ -222,40 +201,37 @@
       "id": "padding_bottom"
     },
     {
-      "content": "Sorting",
+      "content": "Product",
       "type": "header"
     },
     {
-      "label": "Sort",
-      "type": "select",
-      "options": [
-        {
-          "label": "Alphabetically, A-Z",
-          "value": "alphabetical"
-        },
-        {
-          "label": "Alphabetically, Z-A",
-          "value": "alphabetical_reversed"
-        },
-        {
-          "label": "Date, new to old",
-          "value": "date_reversed"
-        },
-        {
-          "label": "Date, old to new",
-          "value": "date"
-        },
-        {
-          "label": "Product count, high to low",
-          "value": "products_high"
-        },
-        {
-          "label": "Product count, low to high",
-          "value": "products_low"
-        }
-      ],
-      "default": "alphabetical",
-      "id": "sort"
+      "label": "Image Aspect Ratio (Mobile)",
+      "info": "Optionally include an aspect ratio for the product images for consistent user experience on smaller devices.",
+      "type": "text",
+      "id": "product_image_aspect_ratio_mobile"
+    },
+    {
+      "label": "Image Aspect Ratio (Desktop)",
+      "info": "Optionally include an aspect ratio for the product images for consistent user experience on larger devices.",
+      "type": "text",
+      "id": "product_image_aspect_ratio_desktop"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Product",
+      "type": "product",
+      "limit": 3,
+      "settings": []
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Grid",
+      "blocks": [
+        { "type": "product" },
+        { "type": "product" }
+      ]
     }
   ]
 }
