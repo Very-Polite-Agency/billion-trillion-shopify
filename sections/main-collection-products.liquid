@@ -5,22 +5,23 @@
   assign section_id = section_name | append: '--' | append: section.id
 
   assign collection_sort_by = collection.sort_by | default: collection.default_sort_by
-  assign container = section.settings.container | default: 'container'
-  assign products_per_page = section.settings.products_per_page | default: 12
-  assign product_image_aspect_ratio_desktop = section.settings.product_image_aspect_ratio_desktop | default: ''
-  assign product_image_aspect_ratio_mobile = section.settings.product_image_aspect_ratio_mobile | default: ''
+
   assign section_anchor_id = section.settings.anchor_id | default: ''
+  assign section_container = section.settings.container | default: 'container'
   assign section_grid_columns = section.settings.grid_columns | default: '2'
   assign section_grid_gap = section.settings.grid_gap | default: '20'
+  assign section_product_image_aspect_ratio_desktop = section.settings.product_image_aspect_ratio_desktop | default: ''
+  assign section_product_image_aspect_ratio_mobile = section.settings.product_image_aspect_ratio_mobile | default: ''
+  assign section_products_per_page = section.settings.products_per_page | default: 12
 
 -%}
 
 {%- style -%}
 
-  {% if product_image_aspect_ratio_mobile and product_image_aspect_ratio_mobile != blank %}
+  {% if section_product_image_aspect_ratio_mobile and section_product_image_aspect_ratio_mobile != blank %}
     #{{ section_id }} .card-product__image,
     #{{ section_id }} .card-product__image-link {
-      aspect-ratio: {{ product_image_aspect_ratio_mobile }};
+      aspect-ratio: {{ section_product_image_aspect_ratio_mobile }};
     }
   {% endif %}
 
@@ -29,10 +30,10 @@
   }
 
   @media screen and (min-width: 992px) {
-    {% if product_image_aspect_ratio_desktop and product_image_aspect_ratio_desktop != blank %}
+    {% if section_product_image_aspect_ratio_desktop and section_product_image_aspect_ratio_desktop != blank %}
       #{{ section_id }} .card-product__image,
       #{{ section_id }} .card-product__image-link {
-        aspect-ratio: {{ product_image_aspect_ratio_desktop }};
+        aspect-ratio: {{ section_product_image_aspect_ratio_desktop }};
       }
     {% endif %}
   }
@@ -55,8 +56,8 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  {% paginate collection.products by products_per_page %}
-    {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
+  {% paginate collection.products by section_products_per_page %}
+    {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
 
       <div class="{{ section_name }}__sort-filter">
         <label class="{{ section_name }}__sort-filter-label">Sort by</label>
@@ -78,7 +79,7 @@
       {% capture snippet_classes %}{{ section_name }}__pagination pagination{% endcapture %}
       {% render 'pagination', classes: snippet_classes, paginate: paginate %}
 
-    {% render 'bs-container', state: 'closed', col: 'col-12', container: container %}
+    {% render 'bs-container', state: 'closed', col: 'col-12', container: section_container %}
   {% endpaginate %}
 </div>
 
