@@ -32,75 +32,18 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  <div class="fifty-fifty">
-    {%- for block in section.blocks -%}
 
-      {%- assign block_id = block.id | prepend: 'block-id--' -%}
+  {% capture snippet_classes %}{{ section_name }}__main fifty-fifty{% endcapture %}
+  {%
+    render 'fifty-fifty',
+      classes: snippet_classes
+      heading: section_heading,
+      id: section_id | append: '--fify-fifty',
+      image: section_image,
+      message: section_message,
+      link: section_link
+  %}
 
-      <div class="{{ section_name }}__item fifty-fifty__item {{ block.type }}" role="listitem" id="{{ block_id }}">
-        {%- case block.type -%}
-
-          {%- when 'content' -%}
-
-            {%- liquid
-              assign block_id = block.id | prepend: 'block-id--'
-              assign section_heading = block.settings.heading | default: section_heading
-              assign section_message = block.settings.message | default: section_message
-            -%}
-
-            <div class="{{ section_name }}__content fifty-fifty__content">
-
-              {%- style -%}
-                {%
-                  render 'element-styles',
-                    background: block.settings.background
-                    id: block_id
-                %}
-              {%- endstyle -%}
-
-              {% if section_heading != blank %}
-                <strong class="{{ section_name }}__heading fifty-fifty__heading">{{ section_heading }}</strong>
-              {% endif %}
-              {% if section_message != blank %}
-                <div class="{{ section_name }}__message fifty-fifty__message">{{ section_message }}</div>
-              {% endif %}
-
-              {% if section_link != blank %}
-                <div class="{{ section_name }}__cta fifty-fifty__cta">
-                  <a class="{{ section_name }}__cta-link fifty-fifty__cta-link link" href="{{ section_link }}" target="_self" title="Shop {{ section_heading }}">
-                    <div class="button--svg d-lg-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
-                    <div class="button--svg d-none d-lg-block">{% render 'svg', type: 'button.shop-now.md' %}</div>
-                  </a>
-                </div>
-              {% endif %}
-
-            </div>
-
-          {%- when 'image' -%}
-
-            {%- liquid
-              assign section_badge = block.settings.badge | default: 'none'
-              assign section_image = block.settings.image | default: section_image
-            -%}
-
-            {% if section_image %}
-              <div class="{{ section_name }}__image fifty-fifty__image">
-                {% if section_link != blank %}<a class="{{ section_name }}__image-link fifty-fifty__image-link link" href="{{ section_link }}" target="_self" title="{{ section_heading }}">{% endif %}
-                  {% render 'lazyload-image', image: section_image %}
-                  {% unless 'none' == section_badge %}
-                    <div class="{{ section_name }}__image-badge">
-                      {% capture badge_type %}badge.{{ section_badge }}{% endcapture %}
-                      {% render 'svg', type: badge_type %}
-                    </div>
-                  {% endunless %}
-                {% if section_link != blank %}</a>{% endif %}
-              </div>
-            {% endif %}
-
-        {%- endcase -%}
-      </div>
-    {%- endfor -%}
-  </div>
 </div>
 
 {% schema %}
@@ -225,7 +168,11 @@
   ],
   "presets": [
     {
-      "name": "Featured Product"
+      "name": "Featured Product",
+      "blocks": [
+        { "type": "image" },
+        { "type": "content" }
+      ]
     }
   ]
 }
