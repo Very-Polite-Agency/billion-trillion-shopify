@@ -38,7 +38,7 @@
     {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
       <div class="{{ section_name }}__grid" role="list">
         {%- for item in section_products -%}
-          {% render 'card-product', card_item: item %}
+          {% render 'card-product', card_background: card_item: item.settings.background, card_item: item.settings.product %}
         {%- endfor -%}
       </div>
     {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}
