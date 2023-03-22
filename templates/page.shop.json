@@ -50,7 +50,7 @@
         "background_image_position_desktop": "center center",
         "background_image_repeat": "repeat",
         "background_image_size": "cover",
-        "border_top": false,
+        "border_top": true,
         "border_bottom": false,
         "container": "container",
         "padding_top": 32,
@@ -83,7 +83,7 @@
         "anchor_id": "",
         "background": "orange",
         "border_top": true,
-        "border_bottom": false
+        "border_bottom": true
       }
     },
     "44c8f33b-dd4c-4a93-8504-00e816276dae": {
@@ -126,6 +126,7 @@
         "border_top": false,
         "border_bottom": false,
         "container": "container-fluid",
+        "grid_gutter": 20,
         "padding_top": 72,
         "padding_bottom": 0,
         "product_image_aspect_ratio_mobile": "",
@@ -164,6 +165,7 @@
         "border_top": false,
         "border_bottom": false,
         "container": "container-fluid",
+        "grid_gutter": 20,
         "padding_top": 72,
         "padding_bottom": 0,
         "product_image_aspect_ratio_mobile": "",
@@ -210,6 +212,7 @@
         "border_top": false,
         "border_bottom": false,
         "container": "container-fluid",
+        "grid_gutter": 20,
         "padding_top": 72,
         "padding_bottom": 0,
         "product_image_aspect_ratio_mobile": "",
