@@ -120,6 +120,40 @@
         "product_image_aspect_ratio_desktop": ""
       }
     },
+    "0a99d343-f6f5-40f0-9150-2ed780e4123b": {
+      "type": "product-grid",
+      "blocks": {
+        "template--15945343860920__0a99d343-f6f5-40f0-9150-2ed780e4123b-1679511108db08b46c-0": {
+          "type": "product",
+          "settings": {
+          }
+        },
+        "template--15945343860920__0a99d343-f6f5-40f0-9150-2ed780e4123b-1679511108db08b46c-1": {
+          "type": "product",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343860920__0a99d343-f6f5-40f0-9150-2ed780e4123b-1679511108db08b46c-0",
+        "template--15945343860920__0a99d343-f6f5-40f0-9150-2ed780e4123b-1679511108db08b46c-1"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "container": "container",
+        "padding_top": 72,
+        "padding_bottom": 0,
+        "product_image_aspect_ratio_mobile": "",
+        "product_image_aspect_ratio_desktop": ""
+      }
+    },
     "5bba2e3d-44be-466b-9ef0-ba4672b58bb9": {
       "type": "featured-product",
       "blocks": {
@@ -155,6 +189,7 @@
     "b9f650f4-d31f-457d-bc75-531177888a36",
     "3f80dfbd-b202-4f99-af6c-e0cd159dfa6a",
     "44c8f33b-dd4c-4a93-8504-00e816276dae",
+    "0a99d343-f6f5-40f0-9150-2ed780e4123b",
     "5bba2e3d-44be-466b-9ef0-ba4672b58bb9"
   ]
 }
