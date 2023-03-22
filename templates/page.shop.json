@@ -85,11 +85,41 @@
         "border_top": false,
         "border_bottom": false
       }
+    },
+    "5bba2e3d-44be-466b-9ef0-ba4672b58bb9": {
+      "type": "featured-product",
+      "blocks": {
+        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-0": {
+          "type": "media",
+          "settings": {
+          }
+        },
+        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-1": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-0",
+        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-1"
+      ],
+      "settings": {
+        "product": "bt-crewneck",
+        "badge": "none",
+        "heading": "",
+        "message": "",
+        "anchor_id": "",
+        "background": "lemon",
+        "border_top": false,
+        "border_bottom": false
+      }
     }
   },
   "order": [
     "hero",
     "b9f650f4-d31f-457d-bc75-531177888a36",
-    "3f80dfbd-b202-4f99-af6c-e0cd159dfa6a"
+    "3f80dfbd-b202-4f99-af6c-e0cd159dfa6a",
+    "5bba2e3d-44be-466b-9ef0-ba4672b58bb9"
   ]
 }
