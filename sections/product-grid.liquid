@@ -19,8 +19,26 @@
 
   {%- style -%}
 
+    {% if product_image_aspect_ratio_mobile and product_image_aspect_ratio_mobile != blank %}
+      #{{ section_id }} .card-product__image,
+      #{{ section_id }} .card-product__image-link {
+        aspect-ratio: {{ product_image_aspect_ratio_mobile }};
+      }
+    {% endif %}
+
     #{{ section_id }} .{{ section_name }}__grid {
       gap: {{ section.settings.grid_gutter }}px;
+    }
+
+    @media screen and (min-width: 992px) {
+
+      {% if product_image_aspect_ratio_desktop and product_image_aspect_ratio_desktop != blank %}
+        #{{ section_id }} .card-product__image,
+        #{{ section_id }} .card-product__image-link {
+          aspect-ratio: {{ product_image_aspect_ratio_desktop }};
+        }
+      {% endif %}
+
     }
 
     {%
@@ -44,7 +62,7 @@
     {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
       <div class="{{ section_name }}__grid grid--{{ section_products_size }}" role="list">
         {%- for item in section_products -%}
-          {% render 'card-product', card_background: item.settings.background, card_item: item.settings.product %}
+          {%- render 'card-product', card_aria_role: 'listitem', card_background: item.settings.background, card_item: item.settings.product -%}
         {%- endfor -%}
       </div>
     {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}

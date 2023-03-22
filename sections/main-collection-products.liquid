@@ -77,14 +77,9 @@
         </select>
       </div>
 
-      <div class="{{ section_name }}__grid grid" id="{{ aos_id }}" role="list">
+      <div class="{{ section_name }}__grid grid--3" id="{{ aos_id }}" role="list">
         {%- for item in collection.products -%}
-          <div class="{{ section_name }}__item" role="listitem">
-            {% unless item.available %}
-              <div class="{{ section_name }}__badge">{% render 'svg', type: 'badge.sold-out' %}</div>
-            {% endunless %}
-            {% render 'card-product', card_item: item %}
-          </div>
+          {% render 'card-product', card_aria_role: 'listitem', card_item: item %}
         {%- endfor -%}
       </div>
 

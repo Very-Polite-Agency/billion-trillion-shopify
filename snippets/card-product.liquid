@@ -18,6 +18,7 @@
     assign snippet_name = 'card-product'
     assign snippet_classes = snippet_name
     assign snippet_id = snippet_name | append: '--' | append: card_item.id
+    assign snippet_aria_role = card_aria_role | default: ''
 
     assign aos_id = snippet_id
     assign aos_delay = 250
@@ -34,6 +35,7 @@
 
     unless available
       assign background = 'grey'
+      assign snippet_classes = snippet_classes | append: ' unavailable'
     endunless
 
   -%}
@@ -44,7 +46,11 @@
     }
   {%- endstyle -%}
 
-  <article class="{{ snippet_classes }}{% unless available %} unavailable{% endunless %}" id="{{ snippet_id }}">
+  <article class="{{ snippet_classes }}" id="{{ snippet_id }}" {% if snippet_aria_role != blank %}role="{{ snippet_aria_role }}"{% endif %}>
+
+    {% unless card_item.available %}
+      <div class="{{ section_name }}__badge">{% render 'svg', type: 'badge.sold-out' %}</div>
+    {% endunless %}
 
     {% if featured_image %}
       {%- liquid
@@ -65,7 +71,7 @@
         {% if title != blank %}
           {%- liquid
             capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
             endcapture
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
@@ -74,7 +80,7 @@
         {% if description != blank %}
           {%- liquid
             capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
             endcapture
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
@@ -84,7 +90,7 @@
         {% if url != blank %}
           {%- liquid
             capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
             endcapture
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
@@ -100,7 +106,7 @@
 
           {%- liquid
             capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-up'
+              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
             endcapture
           -%}
           <div class="{{ snippet_name }}__cta" {{ aos_attrs }}>
