@@ -20,7 +20,6 @@
     assign snippet_id = snippet_name | append: '--' | append: card_item.id
     assign snippet_aria_role = card_aria_role | default: ''
 
-    assign aos_id = snippet_id
     assign aos_delay = 250
     assign aos_delay_increment = 250
 
@@ -49,13 +48,19 @@
   <article class="{{ snippet_classes }}" id="{{ snippet_id }}" {% if snippet_aria_role != blank %}role="{{ snippet_aria_role }}"{% endif %}>
 
     {% unless card_item.available %}
-      <div class="{{ snippet_name }}__badge">{% render 'svg', type: 'badge.sold-out' %}</div>
+      {%- liquid
+        capture aos_attrs
+          render 'aos-attributes', anchor: snippet_id, delay: 400, transition: 'fade-down'
+        endcapture
+        assign aos_delay = aos_delay | plus: aos_delay_increment
+      -%}
+      <div class="{{ snippet_name }}__badge" {{ aos_attrs }}>{% render 'svg', type: 'badge.sold-out' %}</div>
     {% endunless %}
 
     {% if featured_image %}
       {%- liquid
         capture aos_attrs
-          render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+          render 'aos-attributes', anchor: snippet_id, delay: aos_delay, transition: 'fade-left'
         endcapture
         assign aos_delay = aos_delay | plus: aos_delay_increment
       -%}
@@ -71,7 +76,7 @@
         {% if title != blank %}
           {%- liquid
             capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
+              render 'aos-attributes', anchor: snippet_id, delay: aos_delay, transition: 'fade-right'
             endcapture
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
@@ -80,7 +85,7 @@
         {% if description != blank %}
           {%- liquid
             capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
+              render 'aos-attributes', anchor: snippet_id, delay: aos_delay, transition: 'fade-right'
             endcapture
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
@@ -90,7 +95,7 @@
         {% if url != blank %}
           {%- liquid
             capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
+              render 'aos-attributes', anchor: snippet_id, delay: aos_delay, transition: 'fade-right'
             endcapture
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
@@ -98,7 +103,7 @@
           {% capture snippet_classes %}{{ snippet_name }}__price price{% endcapture %}
           {%- liquid
             capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+              render 'aos-attributes', anchor: snippet_id, delay: aos_delay, transition: 'fade-left'
             endcapture
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
@@ -106,7 +111,7 @@
 
           {%- liquid
             capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+              render 'aos-attributes', anchor: snippet_id, delay: aos_delay, transition: 'fade-left'
             endcapture
           -%}
           <div class="{{ snippet_name }}__cta" {{ aos_attrs }}>
