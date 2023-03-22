@@ -11,27 +11,18 @@
   assign section_container = section.settings.container | default: 'container'
   assign section_product = section.settings.product | defaul: false
 
-  assign section_content_background = 'orange'
-  assign section_content_heading = section_product.title | default: ''
+  assign section_content_background = section.settings.background | default: 'orange'
+  assign section_content_heading = section.settings.heading | default: section_product.title | default: ''
   assign section_content_link = section_product.url | default: ''
-  assign section_content_message = section_product.description | default: ''
+  assign section_content_message = section.settings.message | default: section_product.description | default: ''
 
-  assign section_media_badge = 'none'
-  assign section_media_image = section_product.featured_image | default: false
+  assign section_media_badge = section.settings.badge | default: 'none'
+  assign section_media_image = section.settings.image | default: section_product.featured_image | default: false
   assign section_media_order = 1
 
   if 'content' == section.blocks.first.type
     assign section_media_order = 2
   endif
-
-  assign block_media = section.blocks | where: "type", "media"
-  assign block_content = section.blocks | where: "type", "content"
-
-  assign section_media_badge = block_media.settings.badge | default: section_media_badge
-  assign section_media_image = block_media.settings.image | default: section_media_image
-  assign section_content_heading = block_content.settings.heading | default: section_content_heading
-  assign section_content_message = block_content.settings.message | default: section_content_message
-  assign section_content_background = block_content.settings.background | default: section_content_background
 
 -%}
 
@@ -63,11 +54,11 @@
   {%
     render 'fifty-fifty',
       classes: snippet_classes
-      heading: section_heading,
+      heading: section_content_heading,
       id: section_id | append: '--fify-fifty',
-      image: section_image,
-      message: section_message,
-      link: section_link
+      image: section_media_image,
+      message: section_content_message,
+      link: section_content_link
   %}
 
 </div>
