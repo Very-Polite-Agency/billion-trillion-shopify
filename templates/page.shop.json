@@ -56,70 +56,10 @@
         "padding_top": 32,
         "padding_bottom": 32
       }
-    },
-    "218f4656-4db6-4291-8774-68b0e842c91b": {
-      "type": "featured-product",
-      "blocks": {
-        "7d404726-c0da-47bb-83ce-4795775b10e3": {
-          "type": "image",
-          "settings": {
-            "badge": "hot"
-          }
-        },
-        "26b6d891-74d6-4dda-84c3-d00b5affe165": {
-          "type": "content",
-          "settings": {
-            "heading": "Kinder Planet Hoodie",
-            "message": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.<\/p>",
-            "background": "orange"
-          }
-        }
-      },
-      "block_order": [
-        "7d404726-c0da-47bb-83ce-4795775b10e3",
-        "26b6d891-74d6-4dda-84c3-d00b5affe165"
-      ],
-      "settings": {
-        "product": "bt-hoodie",
-        "anchor_id": "",
-        "border_top": false,
-        "border_bottom": true
-      }
-    },
-    "56703be2-9a9c-4831-a04f-c53f74bca64d": {
-      "type": "featured-product",
-      "blocks": {
-        "b7f28b5a-781e-4cd2-bd81-c68f86f2706b": {
-          "type": "content",
-          "settings": {
-            "heading": "BT Crewneck",
-            "message": "",
-            "background": "lime"
-          }
-        },
-        "2b61a864-6eb7-4f12-8a34-88473bd9a11d": {
-          "type": "image",
-          "settings": {
-            "badge": "hot"
-          }
-        }
-      },
-      "block_order": [
-        "b7f28b5a-781e-4cd2-bd81-c68f86f2706b",
-        "2b61a864-6eb7-4f12-8a34-88473bd9a11d"
-      ],
-      "settings": {
-        "product": "bt-crewneck",
-        "anchor_id": "",
-        "border_top": false,
-        "border_bottom": false
-      }
     }
   },
   "order": [
     "hero",
-    "b9f650f4-d31f-457d-bc75-531177888a36",
-    "218f4656-4db6-4291-8774-68b0e842c91b",
-    "56703be2-9a9c-4831-a04f-c53f74bca64d"
+    "b9f650f4-d31f-457d-bc75-531177888a36"
   ]
 }
