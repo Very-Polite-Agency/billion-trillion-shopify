@@ -6,9 +6,7 @@
 
   assign section_product = section.settings.product | defaul: false
   assign section_background = section.settings.background | defaul: 'lemon'
-  assign section_style = section.settings.style | defaul: 'merch'
 
-  assign section_content_extras = ''
   assign section_content_heading = section.settings.heading | default: section_product.title
   assign section_content_link = section.settings.cta_link | default: section_product.url
   assign section_content_message = section.settings.message | default: section_product.description
@@ -23,14 +21,9 @@
     assign section_media_order = 2
   endif
 
-  if 'yuzu-sake-fizz' == section_style
-    assign pairings = section_product.metafields.sake_fizz.pairings | default: ''
-    assign tasing_notes = section_product.metafields.sake_fizz.tasting_notes | default: ''
-  endif
-
 -%}
 
-{% capture snippet_classes %}{{ section_name }}__main fifty-fifty {{ section_style }}{% endcapture %}
+{% capture snippet_classes %}{{ section_name }}__main fifty-fifty{% endcapture %}
 {% capture snippet_id %}{{ section_id }}--fify-fifty{% endcapture %}
 
 {%- style -%}
@@ -59,28 +52,10 @@
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
 
-  {% if pairings != blank or tasing_notes != blank %}
-    {% capture section_content_extras %}
-			{% if tasting_notes != blank %}
-        <div class="fifty-fifty__extras-tasting-notes">
-          <strong class="fifty-fifty__extras-tasting-notes-heading">Tasting Notes:</strong>
-          <div class="fifty-fifty__extras-tasting-notes-content">{{ tasting_notes }}</div>
-        </div>
-      {% endif %}
-      {% if pairings != blank %}
-        <div class="fifty-fifty__extras-pairings">
-          <strong class="fifty-fifty__extras-pairings-heading">Pairings:</strong>
-          <div class="fifty-fifty__extras-pairings-content">{{ pairings }}</div>
-        </div>
-      {% endif %}
-		{% endcapture %}
-  {% endif %}
-
   {%
     render 'fifty-fifty',
       aria_role: '',
       classes: snippet_classes,
-      content_extras: section_content_extras,
       content_heading: section_content_heading,
       content_link: section_content_link,
       content_message: section_content_message,
@@ -190,20 +165,6 @@
       "type": "checkbox",
       "default": false,
       "id": "border_bottom"
-    },
-    {
-      "content": "Style",
-      "type": "header"
-    },
-    {
-      "label": "Style",
-      "type": "select",
-      "options": [
-        { "label": "Merch", "value": "merch" },
-        { "label": "Yuzu Sake Fizz", "value": "yuzu-sake-fizz" }
-      ],
-      "default": "merch",
-      "id": "style"
     }
   ],
   "blocks": [

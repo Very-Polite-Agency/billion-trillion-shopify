@@ -11,93 +11,95 @@
   background: var(--theme-colour--black);
   gap: var(--theme-border--width);
 
-  &__heading,
-  &__message {
-    & + .fifty-fifty__cta {
-      margin-top: min(32px, 10vw);
-    }
-  }
-
-  &__content {
-    text-transform: uppercase;
-    .merch & {
-      padding-top: min(75px, 10vw);
-      padding-bottom: min(75px, 10vw);
-      padding-left: var(--theme-layout--gutter);
-      padding-right: var(--theme-layout--gutter);
-    }
-  }
-
-  &__cta {
-    &-link{
-      display: block;
-      width: auto;
-      max-width: 480px;
-    }
-  }
-
-  &__heading {
-    font-size: min(58px, 9.5vw);
-    line-height: 1.2;
-    & + .fifty-fifty__message {
-      margin-top: min(20px, 2vw);
-    }
-  }
-
-  &__item {
+  &__content,
+  &__media {
     width: 100%;
     height: 100%;
     display: inline-flex;
     flex-flow: column;
     justify-content: center;
-    flex: 1 1 auto;
-    &.content {
-      order: 2;
-    }
-    &.image {
-      order: 1;
-    }
+    // flex: 1 1 auto;
   }
 
+  &__heading,
   &__message {
-    font-size: min(30px, 5.15vw);
-    line-height: 1.5;
+
+    & + .fifty-fifty__cta {
+      margin-top: min(32px, 10vw);
+    }
+
+  }
+
+  &__content {
+
+    order: 2;
+    text-transform: uppercase;
+    padding-top: min(75px, 10vw);
+    padding-bottom: min(75px, 10vw);
+    padding-left: var(--theme-layout--gutter);
+    padding-right: var(--theme-layout--gutter);
+
+    &-heading,
+    &-message {
+      & + .fifty-fifty__content-cta {
+        margin-top: min(32px, 10vw);
+      }
+    }
+
+    &-cta {
+      &-link{
+        display: block;
+        width: auto;
+        max-width: 480px;
+      }
+    }
+
+    &-heading {
+      font-size: min(58px, 9.5vw);
+      line-height: 1.2;
+      & + .fifty-fifty__content-message {
+        margin-top: min(20px, 2vw);
+      }
+    }
+
+    &-message {
+      font-size: min(30px, 5.15vw);
+      line-height: 1.5;
+    }
+
+  }
+
+  &__media {
+    order: 1;
   }
 
   @include breakpoint(lg) {
 
     grid-template-columns: repeat( 2, 1fr );
 
+    &__content,
+    &__media {
+      order: initial;
+    }
+
     &__content {
-      .merch & {
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: min(85px, 4vw);
-        padding-right: min(85px, 4vw);
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: min(85px, 4vw);
+      padding-right: min(85px, 4vw);
+      &-cta {
+        &-link{
+          max-width: 520px;
+        }
       }
-    }
-
-    &__cta {
-      &-link{
-        max-width: 520px;
+      &-heading {
+        font-size: min(90px, 5.15vw);
+        line-height: 1;
       }
-    }
-
-    &__heading {
-      font-size: min(90px, 5.15vw);
-      line-height: 1;
-    }
-
-    &__item {
-      &.content,
-      &.image {
-        order: initial;
+      &-message {
+        font-size: min(38px, 2.15vw);
+        line-height: 1.35;
       }
-    }
-
-    &__message {
-      font-size: min(38px, 2.15vw);
-      line-height: 1.35;
     }
 
   }
