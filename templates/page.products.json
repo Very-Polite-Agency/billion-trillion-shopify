@@ -60,90 +60,60 @@
         "border_bottom": false
       }
     },
-    "16e83883-5696-43eb-9dd4-20bd409bcf0c": {
-      "type": "featured-product",
+    "09131720-14df-4df1-ac1e-0371decf65f9": {
+      "type": "featured-yuzu-sake-fizz",
       "blocks": {
-        "template--15945343828152__16e83883-5696-43eb-9dd4-20bd409bcf0c-167953088115984e7d-0": {
-          "type": "media",
-          "settings": {
-          }
-        },
-        "template--15945343828152__16e83883-5696-43eb-9dd4-20bd409bcf0c-167953088115984e7d-1": {
-          "type": "content",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "template--15945343828152__16e83883-5696-43eb-9dd4-20bd409bcf0c-167953088115984e7d-0",
-        "template--15945343828152__16e83883-5696-43eb-9dd4-20bd409bcf0c-167953088115984e7d-1"
-      ],
-      "settings": {
-        "product": "lemon-yuzu-sake-fizz",
-        "badge": "none",
-        "heading": "",
-        "message": "",
-        "cta_link": "shopify:\/\/pages\/stockists",
-        "anchor_id": "",
-        "background": "lemon",
-        "border_top": false,
-        "border_bottom": false
-      }
-    },
-    "50567988-2a4c-4570-ad1d-06d904c3a686": {
-      "type": "featured-product",
-      "blocks": {
-        "template--15945343828152__50567988-2a4c-4570-ad1d-06d904c3a686-167953088115984e7d-1": {
+        "template--15945343828152__09131720-14df-4df1-ac1e-0371decf65f9-16795921749afa8730-1": {
           "type": "content",
           "settings": {
           }
         },
-        "template--15945343828152__50567988-2a4c-4570-ad1d-06d904c3a686-167953088115984e7d-0": {
+        "template--15945343828152__09131720-14df-4df1-ac1e-0371decf65f9-16795921749afa8730-0": {
           "type": "media",
           "settings": {
           }
         }
       },
       "block_order": [
-        "template--15945343828152__50567988-2a4c-4570-ad1d-06d904c3a686-167953088115984e7d-1",
-        "template--15945343828152__50567988-2a4c-4570-ad1d-06d904c3a686-167953088115984e7d-0"
+        "template--15945343828152__09131720-14df-4df1-ac1e-0371decf65f9-16795921749afa8730-1",
+        "template--15945343828152__09131720-14df-4df1-ac1e-0371decf65f9-16795921749afa8730-0"
       ],
       "settings": {
         "product": "mandarin-yuzu-sake-fizz",
         "badge": "none",
         "heading": "",
         "message": "",
-        "cta_link": "shopify:\/\/pages\/stockists",
+        "cta_link": "",
         "anchor_id": "",
         "background": "orange",
         "border_top": false,
         "border_bottom": false
       }
     },
-    "16e578c7-a0cf-4dd1-9b29-b7684845773b": {
-      "type": "featured-product",
+    "70335492-fd4d-4659-9732-251f92f1fb4e": {
+      "type": "featured-yuzu-sake-fizz",
       "blocks": {
-        "template--15945343828152__16e578c7-a0cf-4dd1-9b29-b7684845773b-167953088115984e7d-0": {
+        "template--15945343828152__70335492-fd4d-4659-9732-251f92f1fb4e-16795921749afa8730-0": {
           "type": "media",
           "settings": {
           }
         },
-        "template--15945343828152__16e578c7-a0cf-4dd1-9b29-b7684845773b-167953088115984e7d-1": {
+        "template--15945343828152__70335492-fd4d-4659-9732-251f92f1fb4e-16795921749afa8730-1": {
           "type": "content",
           "settings": {
           }
         }
       },
       "block_order": [
-        "template--15945343828152__16e578c7-a0cf-4dd1-9b29-b7684845773b-167953088115984e7d-0",
-        "template--15945343828152__16e578c7-a0cf-4dd1-9b29-b7684845773b-167953088115984e7d-1"
+        "template--15945343828152__70335492-fd4d-4659-9732-251f92f1fb4e-16795921749afa8730-0",
+        "template--15945343828152__70335492-fd4d-4659-9732-251f92f1fb4e-16795921749afa8730-1"
       ],
       "settings": {
         "product": "mango-yuzu-sake-fizz",
         "badge": "none",
         "heading": "",
         "message": "",
-        "cta_link": "shopify:\/\/pages\/stockists",
+        "cta_link": "",
         "anchor_id": "",
         "background": "mango",
         "border_top": false,
@@ -154,8 +124,7 @@
   "order": [
     "hero",
     "135d0766-81be-4efe-8f77-d729ee784962",
-    "16e83883-5696-43eb-9dd4-20bd409bcf0c",
-    "50567988-2a4c-4570-ad1d-06d904c3a686",
-    "16e578c7-a0cf-4dd1-9b29-b7684845773b"
+    "09131720-14df-4df1-ac1e-0371decf65f9",
+    "70335492-fd4d-4659-9732-251f92f1fb4e"
   ]
 }
