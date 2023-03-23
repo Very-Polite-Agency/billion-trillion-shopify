@@ -11,7 +11,19 @@
 
   @include breakpoint(lg) {
 
-    font-size: min( 110px, 13.5vw );
+    font-size: 90px;
+
+  }
+
+  @include breakpoint(xl) {
+
+    font-size: 100px;
+
+  }
+
+  @include breakpoint(xxl) {
+
+    font-size: 110px;
 
   }
 
