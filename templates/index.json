@@ -60,10 +60,42 @@
         "border_bottom": false,
         "style": "merch"
       }
+    },
+    "8acda55d-54a6-4314-94c1-ebf201ca4773": {
+      "type": "featured-product",
+      "blocks": {
+        "template--15941099487416__8acda55d-54a6-4314-94c1-ebf201ca4773-16795957155fcf20df-0": {
+          "type": "media",
+          "settings": {
+          }
+        },
+        "template--15941099487416__8acda55d-54a6-4314-94c1-ebf201ca4773-16795957155fcf20df-1": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--15941099487416__8acda55d-54a6-4314-94c1-ebf201ca4773-16795957155fcf20df-0",
+        "template--15941099487416__8acda55d-54a6-4314-94c1-ebf201ca4773-16795957155fcf20df-1"
+      ],
+      "settings": {
+        "product": "lemon-yuzu-sake-fizz",
+        "badge": "none",
+        "heading": "",
+        "message": "",
+        "cta_link": "",
+        "anchor_id": "",
+        "background": "orange",
+        "border_top": false,
+        "border_bottom": false,
+        "style": "yuzu-sake-fizz"
+      }
     }
   },
   "order": [
     "dd61d2a0-89a4-4ba3-9fe1-89c5f3486acc",
-    "df4491fe-c9fc-4ae0-aea2-27b78b1f5a56"
+    "df4491fe-c9fc-4ae0-aea2-27b78b1f5a56",
+    "8acda55d-54a6-4314-94c1-ebf201ca4773"
   ]
 }
