@@ -2468,22 +2468,6 @@
       "oAP" : "\/sections\/featured-collection.liquid",
       "oF" : 0
     },
-    "\/sections\/featured-product.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/sections\/featured-product.liquid",
-      "oF" : 0
-    },
-    "\/sections\/featured-yuzu-sake-fizz.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/sections\/featured-yuzu-sake-fizz.liquid",
-      "oF" : 0
-    },
     "\/sections\/footer.liquid" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2690,14 +2674,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/sections\/predictive-search.liquid",
-      "oF" : 0
-    },
-    "\/sections\/product-fifty-fifty.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/sections\/product-fifty-fifty.liquid",
       "oF" : 0
     },
     "\/sections\/product-grid.liquid" : {
