@@ -1,15 +1,5 @@
 {
   "sections": {
-    "1653600291e275fea1": {
-      "type": "hype-builder",
-      "settings": {
-        "newsletter_message": "<p>Keep up to date, space and time with all things Billion Trillion!<\/p>",
-        "image": "shopify:\/\/shop_images\/hype-feature-image_3x_3e9c0452-2d12-4e42-b901-89fff3b51a37.png",
-        "image_caption": "There’s a whole lot of nothing out there. Take a sip of something real.",
-        "cta_link": "https:\/\/www.craftco.ca\/product-category\/cocktails\/billion-trillion\/",
-        "wholesale_link": "mailto:hi@billion-trillion.com"
-      }
-    },
     "3af2cb45-85d6-431f-8041-707f5b749fbc": {
       "type": "featured-yuzu-sake-fizz",
       "blocks": {
@@ -72,7 +62,6 @@
     }
   },
   "order": [
-    "1653600291e275fea1",
     "3af2cb45-85d6-431f-8041-707f5b749fbc",
     "f5dcd8f8-e257-4bc5-b061-31242e729b26"
   ]
