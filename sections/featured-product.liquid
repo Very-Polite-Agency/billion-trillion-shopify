@@ -5,16 +5,33 @@
   assign section_id = section_name | append: '--' | append: section.id
 
   assign section_product = section.settings.product | defaul: false
-  assign section_content_background = 'lemon'
-  assign section_content_order = '2'
-  assign section_media_order = '1'
+  assign section_background = section.settings.background | defaul: 'lemon'
+  assign section_style = section.settings.style | defaul: 'merch'
+
+  assign section_content_extras = ''
+  assign section_content_heading = section.settings.heading | default: section_product.title
+  assign section_content_link = section.settings.cta_link | default: section_product.url
+  assign section_content_message = section.settings.message | default: section_product.description
+  assign section_content_order = 2
+
+  assign section_media_badge = section.settings.badge | default: 'none'
+  assign section_media_image = section.settings.image | default: section_product.featured_image
+  assign section_media_order = 1
+
+  if 'content' == section.blocks.first.type
+    assign section_content_order = 1
+    assign section_media_order = 2
+  endif
 
 -%}
+
+{% capture snippet_classes %}{{ section_name }}__main fifty-fifty {{ section_style }}{% endcapture %}
+{% capture snippet_id %}{{ section_id }}--fify-fifty{% endcapture %}
 
 {%- style -%}
 
   #{{ section_id }} .fifty-fifty__item.content {
-    background: var(--theme-colour--{{ section_content_background }});
+    background: var(--theme-colour--{{ section_background }});
   }
 
   @media screen and (min-width: 992px) {
@@ -36,12 +53,18 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-
-  {% render 'debug-this', item: section.settings %}
-
-  <strong>{{ section_product.title }}</strong>
-  <div>{{ section_product.description }}</div>
-
+  {%
+    render 'fifty-fifty',
+      aria_role: '',
+      classes: snippet_classes,
+      content_extras: section_content_extras,
+      content_heading: section_content_heading,
+      content_link: section_content_link,
+      content_message: section_content_message,
+      media_badge: section_media_badge,
+      media_image: section_media_image,
+      id: snippet_id,
+  %}
 </div>
 
 {% schema %}
@@ -144,6 +167,10 @@
       "type": "checkbox",
       "default": false,
       "id": "border_bottom"
+    },
+    {
+      "content": "Style",
+      "type": "header"
     },
     {
       "label": "Style",
