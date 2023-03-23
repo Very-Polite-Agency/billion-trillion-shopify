@@ -57,7 +57,7 @@
         "cta_link": "",
         "anchor_id": "",
         "background": "lemon",
-        "border_top": false,
+        "border_top": true,
         "border_bottom": false
       }
     },
@@ -88,7 +88,7 @@
         "cta_link": "",
         "anchor_id": "",
         "background": "orange",
-        "border_top": false,
+        "border_top": true,
         "border_bottom": false
       }
     },
@@ -119,7 +119,7 @@
         "cta_link": "",
         "anchor_id": "",
         "background": "mango",
-        "border_top": false,
+        "border_top": true,
         "border_bottom": false
       }
     }
