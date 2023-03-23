@@ -36,7 +36,7 @@
       -%}
       <div class="{{ snippet_name }}__media-image" {{ aos_attrs }}>
         {% if content_link != blank %}
-          <a class="{{ snippet_name }}__media-image-link link" href="{{ content_link }}" target="{{ content_link_target }}" title="{{ content_heading }}">
+          <a class="{{ snippet_name }}__media-link link" href="{{ content_link }}" target="{{ content_link_target }}" title="{{ content_heading }}">
         {% endif %}
           {% render 'lazyload-image', image: media_image %}
           {% unless 'none' == media_badge %}

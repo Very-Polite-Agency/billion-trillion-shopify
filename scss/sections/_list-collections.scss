@@ -7,40 +7,32 @@
 
     &:nth-child(4n+1) {
       .fifty-fifty {
-        &__item {
-          &.content {
-            background: var(--theme-colour--orange);
-          }
+        &__content {
+          background: var(--theme-colour--orange);
         }
       }
     }
 
     &:nth-child(4n+2) {
       .fifty-fifty {
-        &__item {
-          &.content {
-            background: var(--theme-colour--mango);
-          }
+        &__content {
+          background: var(--theme-colour--mango);
         }
       }
     }
 
     &:nth-child(4n+3) {
       .fifty-fifty {
-        &__item {
-          &.content {
-            background: var(--theme-colour--lemon);
-          }
+        &__content {
+          background: var(--theme-colour--lemon);
         }
       }
     }
 
     &:nth-child(4n+4) {
       .fifty-fifty {
-        &__item {
-          &.content {
-            background: var(--theme-colour--lime);
-          }
+        &__content {
+          background: var(--theme-colour--lime);
         }
       }
     }
@@ -62,13 +54,11 @@
     .fifty-fifty {
       &:nth-child(even) {
         .fifty-fifty {
-          &__item {
-            &.content {
-              order: 1;
-            }
-            &.media {
-              order: 2;
-            }
+          &__content {
+            order: 1;
+          }
+          &__media {
+            order: 2;
           }
         }
       }

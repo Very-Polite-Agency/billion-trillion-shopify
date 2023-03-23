@@ -29,19 +29,19 @@
 -%}
 
 {% capture snippet_classes %}{{ section_name }}__main fifty-fifty{% endcapture %}
-{% capture snippet_id %}{{ section_id }}--fify-fifty{% endcapture %}
+{% capture snippet_id %}{{ section_id }}--fifty-fifty{% endcapture %}
 
 {%- style -%}
 
-  #{{ section_id }} .fifty-fifty__item.content {
+  #{{ section_id }} .fifty-fifty__content {
     background: var(--theme-colour--{{ section_background }});
   }
 
   @media screen and (min-width: 992px) {
-    #{{ section_id }} .fifty-fifty__item.content {
+    #{{ section_id }} .fifty-fifty__content {
       order: {{ section_content_order }};
     }
-    #{{ section_id }} .fifty-fifty__item.media {
+    #{{ section_id }} .fifty-fifty__media {
       order: {{ section_media_order }};
     }
   }

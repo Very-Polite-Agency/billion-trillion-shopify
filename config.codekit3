@@ -1751,6 +1751,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/scss\/sections\/_featured-yuzu-sake-fizz.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/_featured-yuzu-sake-fizz.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/scss\/sections\/_index.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1776,21 +1791,6 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/assets\/_list-collections.css",
-      "oF" : 0,
-      "oS" : 3,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/scss\/sections\/_product-fifty-fifty.scss" : {
-      "aP" : 1,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/assets\/_product-fifty-fifty.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,
