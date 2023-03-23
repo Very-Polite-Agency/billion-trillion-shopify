@@ -89,11 +89,42 @@
         "border_top": false,
         "border_bottom": false
       }
+    },
+    "362d7fe8-395e-4aa0-b7bb-43cb9d110f9d": {
+      "type": "featured-yuzu-sake-fizz",
+      "blocks": {
+        "template--15941099487416__362d7fe8-395e-4aa0-b7bb-43cb9d110f9d-1679595322849449c8-0": {
+          "type": "media",
+          "settings": {
+          }
+        },
+        "template--15941099487416__362d7fe8-395e-4aa0-b7bb-43cb9d110f9d-1679595322849449c8-1": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--15941099487416__362d7fe8-395e-4aa0-b7bb-43cb9d110f9d-1679595322849449c8-0",
+        "template--15941099487416__362d7fe8-395e-4aa0-b7bb-43cb9d110f9d-1679595322849449c8-1"
+      ],
+      "settings": {
+        "product": "bt-hat",
+        "badge": "none",
+        "heading": "",
+        "message": "",
+        "cta_link": "",
+        "anchor_id": "",
+        "background": "orange",
+        "border_top": false,
+        "border_bottom": false
+      }
     }
   },
   "order": [
     "dd61d2a0-89a4-4ba3-9fe1-89c5f3486acc",
     "3af2cb45-85d6-431f-8041-707f5b749fbc",
-    "f5dcd8f8-e257-4bc5-b061-31242e729b26"
+    "f5dcd8f8-e257-4bc5-b061-31242e729b26",
+    "362d7fe8-395e-4aa0-b7bb-43cb9d110f9d"
   ]
 }
