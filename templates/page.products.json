@@ -30,107 +30,101 @@
         "padding_bottom": 36
       }
     },
-    "cf09e0e1-015a-4620-ba1c-b81af31f7cfa": {
-      "type": "featured-product",
+    "873e2b69-6dd5-470a-8eeb-dc35f4b6f808": {
+      "type": "featured-yuzu-sake-fizz",
       "blocks": {
-        "template--15945343828152__cf09e0e1-015a-4620-ba1c-b81af31f7cfa-16795984345868def9-0": {
+        "template--15945343828152__873e2b69-6dd5-470a-8eeb-dc35f4b6f808-16796069829fed2a66-0": {
           "type": "media",
           "settings": {
           }
         },
-        "template--15945343828152__cf09e0e1-015a-4620-ba1c-b81af31f7cfa-16795984345868def9-1": {
+        "template--15945343828152__873e2b69-6dd5-470a-8eeb-dc35f4b6f808-16796069829fed2a66-1": {
           "type": "content",
           "settings": {
           }
         }
       },
       "block_order": [
-        "template--15945343828152__cf09e0e1-015a-4620-ba1c-b81af31f7cfa-16795984345868def9-0",
-        "template--15945343828152__cf09e0e1-015a-4620-ba1c-b81af31f7cfa-16795984345868def9-1"
+        "template--15945343828152__873e2b69-6dd5-470a-8eeb-dc35f4b6f808-16796069829fed2a66-0",
+        "template--15945343828152__873e2b69-6dd5-470a-8eeb-dc35f4b6f808-16796069829fed2a66-1"
       ],
       "settings": {
         "product": "lemon-yuzu-sake-fizz",
         "badge": "none",
         "heading": "",
-        "image": "shopify:\/\/shop_images\/products--featured-product-lemon.desktop_2x_29bf6e6f-2d40-4a51-a7e2-8511d2b01610.png",
         "message": "",
         "cta_link": "",
         "anchor_id": "",
-        "background": "lemon",
-        "border_top": true,
-        "border_bottom": false,
-        "style": "yuzu-sake-fizz"
+        "background": "orange",
+        "border_top": false,
+        "border_bottom": false
       }
     },
-    "da9af05a-9aa6-4919-b3ac-99b68d7ff8ca": {
-      "type": "featured-product",
+    "9f653b28-56ca-40f9-bc3b-fd5f9efc992e": {
+      "type": "featured-yuzu-sake-fizz",
       "blocks": {
-        "template--15945343828152__da9af05a-9aa6-4919-b3ac-99b68d7ff8ca-16795984345868def9-1": {
-          "type": "content",
+        "template--15945343828152__9f653b28-56ca-40f9-bc3b-fd5f9efc992e-16796069829fed2a66-0": {
+          "type": "media",
           "settings": {
           }
         },
-        "template--15945343828152__da9af05a-9aa6-4919-b3ac-99b68d7ff8ca-16795984345868def9-0": {
-          "type": "media",
+        "template--15945343828152__9f653b28-56ca-40f9-bc3b-fd5f9efc992e-16796069829fed2a66-1": {
+          "type": "content",
           "settings": {
           }
         }
       },
       "block_order": [
-        "template--15945343828152__da9af05a-9aa6-4919-b3ac-99b68d7ff8ca-16795984345868def9-1",
-        "template--15945343828152__da9af05a-9aa6-4919-b3ac-99b68d7ff8ca-16795984345868def9-0"
+        "template--15945343828152__9f653b28-56ca-40f9-bc3b-fd5f9efc992e-16796069829fed2a66-0",
+        "template--15945343828152__9f653b28-56ca-40f9-bc3b-fd5f9efc992e-16796069829fed2a66-1"
       ],
       "settings": {
         "product": "mandarin-yuzu-sake-fizz",
         "badge": "none",
         "heading": "",
-        "image": "shopify:\/\/shop_images\/products--featured-product-mandarin.desktop_2x_f5c9b2c6-9ff9-4be5-8326-a2c738238186.png",
         "message": "",
         "cta_link": "",
         "anchor_id": "",
         "background": "orange",
-        "border_top": true,
-        "border_bottom": false,
-        "style": "yuzu-sake-fizz"
+        "border_top": false,
+        "border_bottom": false
       }
     },
-    "3237e4ab-bde4-44ca-8c2e-ce3cf2d979b0": {
-      "type": "featured-product",
+    "411b7388-d5bb-4034-8a25-531562e0b7cf": {
+      "type": "featured-yuzu-sake-fizz",
       "blocks": {
-        "template--15945343828152__3237e4ab-bde4-44ca-8c2e-ce3cf2d979b0-16795984345868def9-0": {
+        "template--15945343828152__411b7388-d5bb-4034-8a25-531562e0b7cf-16796069829fed2a66-0": {
           "type": "media",
           "settings": {
           }
         },
-        "template--15945343828152__3237e4ab-bde4-44ca-8c2e-ce3cf2d979b0-16795984345868def9-1": {
+        "template--15945343828152__411b7388-d5bb-4034-8a25-531562e0b7cf-16796069829fed2a66-1": {
           "type": "content",
           "settings": {
           }
         }
       },
       "block_order": [
-        "template--15945343828152__3237e4ab-bde4-44ca-8c2e-ce3cf2d979b0-16795984345868def9-0",
-        "template--15945343828152__3237e4ab-bde4-44ca-8c2e-ce3cf2d979b0-16795984345868def9-1"
+        "template--15945343828152__411b7388-d5bb-4034-8a25-531562e0b7cf-16796069829fed2a66-0",
+        "template--15945343828152__411b7388-d5bb-4034-8a25-531562e0b7cf-16796069829fed2a66-1"
       ],
       "settings": {
-        "product": "mango-yuzu-sake-fizz",
+        "product": "",
         "badge": "none",
         "heading": "",
-        "image": "shopify:\/\/shop_images\/products--featured-product-mango-temp.desktop_2x_1c12a8b0-7150-48c5-afb6-9065cfcf474b.png",
         "message": "",
         "cta_link": "",
         "anchor_id": "",
-        "background": "mango",
-        "border_top": true,
-        "border_bottom": false,
-        "style": "yuzu-sake-fizz"
+        "background": "orange",
+        "border_top": false,
+        "border_bottom": false
       }
     }
   },
   "order": [
     "hero",
-    "cf09e0e1-015a-4620-ba1c-b81af31f7cfa",
-    "da9af05a-9aa6-4919-b3ac-99b68d7ff8ca",
-    "3237e4ab-bde4-44ca-8c2e-ce3cf2d979b0"
+    "873e2b69-6dd5-470a-8eeb-dc35f4b6f808",
+    "9f653b28-56ca-40f9-bc3b-fd5f9efc992e",
+    "411b7388-d5bb-4034-8a25-531562e0b7cf"
   ]
 }
