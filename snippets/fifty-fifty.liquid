@@ -53,24 +53,29 @@
 
   <div class="{{ snippet_name }}__item content">
     <div class="{{ snippet_name }}__content">
-      {% if content_heading != blank %}
-        {%- liquid
-          capture aos_attrs
-            render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
-          endcapture
-          assign aos_delay = aos_delay | plus: aos_delay_increment
-        -%}
-        <strong class="{{ snippet_name }}__heading" {{ aos_attrs }}>{{ content_heading }}</strong>
-      {% endif %}
 
-      {% if content_message != blank %}
-        {%- liquid
-          capture aos_attrs
-            render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
-          endcapture
-          assign aos_delay = aos_delay | plus: aos_delay_increment
-        -%}
-        <div class="{{ snippet_name }}__message" {{ aos_attrs }}>{{ content_message }}</div>
+      {% if content_heading != blank or content_message != blank %}
+        <div class="{{ snippet_name }}__content-main">
+          {% if content_heading != blank %}
+            {%- liquid
+              capture aos_attrs
+                render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+              endcapture
+              assign aos_delay = aos_delay | plus: aos_delay_increment
+            -%}
+            <strong class="{{ snippet_name }}__heading" {{ aos_attrs }}>{{ content_heading }}</strong>
+          {% endif %}
+
+          {% if content_message != blank %}
+            {%- liquid
+              capture aos_attrs
+                render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+              endcapture
+              assign aos_delay = aos_delay | plus: aos_delay_increment
+            -%}
+            <div class="{{ snippet_name }}__message" {{ aos_attrs }}>{{ content_message }}</div>
+          {% endif %}
+        </div>
       {% endif %}
 
       {% if content_extras != blank %}

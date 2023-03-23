@@ -24,8 +24,8 @@
   endif
 
   if 'yuzu-sake-fizz' == section_style
-    assign pairings = product.metafields.sake_fizz.pairings | default: ''
-    assign tasing_notes = product.metafields.sake_fizz.tasting_notes | default: ''
+    assign pairings = section_product.metafields.sake_fizz.pairings | default: ''
+    assign tasing_notes = section_product.metafields.sake_fizz.tasting_notes | default: ''
   endif
 
 -%}
@@ -59,8 +59,22 @@
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
 
-  {{ pairings }}
-  {{ tasing_notes }}
+  {% if pairings != blank or tasing_notes != blank %}
+    {% capture section_content_extras %}
+			{% if tasting_notes != blank %}
+        <div class="fifty-fifty__extras-tasting-notes">
+          <strong class="fifty-fifty__extras-tasting-notes-heading">Tasting Notes:</strong>
+          <div class="fifty-fifty__extras-tasting-notes-content">{{ tasting_notes }}</div>
+        </div>
+      {% endif %}
+      {% if pairings != blank %}
+        <div class="fifty-fifty__extras-pairings">
+          <strong class="fifty-fifty__extras-pairings-heading">Pairings:</strong>
+          <div class="fifty-fifty__extras-pairings-content">{{ pairings }}</div>
+        </div>
+      {% endif %}
+		{% endcapture %}
+  {% endif %}
 
   {%
     render 'fifty-fifty',

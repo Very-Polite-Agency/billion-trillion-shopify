@@ -20,10 +20,12 @@
 
   &__content {
     text-transform: uppercase;
-    padding-top: min(75px, 10vw);
-    padding-bottom: min(75px, 10vw);
-    padding-left: var(--theme-layout--gutter);
-    padding-right: var(--theme-layout--gutter);
+    .merch & {
+      padding-top: min(75px, 10vw);
+      padding-bottom: min(75px, 10vw);
+      padding-left: var(--theme-layout--gutter);
+      padding-right: var(--theme-layout--gutter);
+    }
   }
 
   &__cta {
@@ -67,10 +69,12 @@
     grid-template-columns: repeat( 2, 1fr );
 
     &__content {
-      padding-top: 0;
-      padding-bottom: 0;
-      padding-left: min(85px, 4vw);
-      padding-right: min(85px, 4vw);
+      .merch & {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: min(85px, 4vw);
+        padding-right: min(85px, 4vw);
+      }
     }
 
     &__cta {
