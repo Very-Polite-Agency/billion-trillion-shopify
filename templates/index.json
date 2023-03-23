@@ -1,5 +1,35 @@
 {
   "sections": {
+    "dd61d2a0-89a4-4ba3-9fe1-89c5f3486acc": {
+      "type": "hero",
+      "blocks": {
+        "template--15941099487416__dd61d2a0-89a4-4ba3-9fe1-89c5f3486acc-16795942068db54609-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Home",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--15941099487416__dd61d2a0-89a4-4ba3-9fe1-89c5f3486acc-16795942068db54609-0"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "mango",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "container": "container",
+        "height_mobile": "auto",
+        "height_desktop": "auto",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "3af2cb45-85d6-431f-8041-707f5b749fbc": {
       "type": "featured-yuzu-sake-fizz",
       "blocks": {
@@ -62,6 +92,7 @@
     }
   },
   "order": [
+    "dd61d2a0-89a4-4ba3-9fe1-89c5f3486acc",
     "3af2cb45-85d6-431f-8041-707f5b749fbc",
     "f5dcd8f8-e257-4bc5-b061-31242e729b26"
   ]
