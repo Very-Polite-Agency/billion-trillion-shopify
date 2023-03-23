@@ -1,0 +1,18 @@
+@use '../utils/mixins/breakpoint' as *;
+
+.hero {
+
+  text-align: center;
+  font-size: min( 80px, 13.5vw );
+
+  &__heading {
+    font-size: inherit;
+  }
+
+  @include breakpoint(lg) {
+
+    font-size: min( 110px, 13.5vw );
+
+  }
+
+}
