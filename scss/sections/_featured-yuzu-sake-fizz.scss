@@ -1,5 +1,3 @@
-.featured-yuzu-sake-fizz {
+@use "../utils/mixins/breakpoint" as *;
 
-  border: 10px solid black;
-
-}
+.featured-yuzu-sake-fizz {}

@@ -17,7 +17,7 @@
     assign section_content_link_target = '_blank'
   endif
 
-  assign section_section_media_badge = section.settings.badge | default: 'none'
+  assign section_media_badge = section.settings.badge | default: 'none'
   assign section_media_image = section.settings.image | default: section_product.featured_image
   assign section_media_order = 1
 
@@ -64,7 +64,7 @@
       -%}
       <div class="{{ section_name }}__media-image fifty-fifty__media-image" {{ aos_attrs }}>
         {% if section_content_link != blank %}
-          <a class="{{ section_name }}__media-link fifty-fifty__media-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ content_heading }}">
+          <a class="{{ section_name }}__media-link fifty-fifty__media-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
         {% endif %}
           {% render 'lazyload-image', image: section_media_image %}
           {% unless 'none' == section_media_badge %}
@@ -81,27 +81,27 @@
   </div>
   <div class="{{ section_name }}__content fifty-fifty__content">
 
-    {% if content_heading != blank %}
+    {% if section_content_heading != blank %}
       {%- liquid
         capture aos_attrs
           render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
         endcapture
         assign aos_delay = aos_delay | plus: aos_delay_increment
       -%}
-      <strong class="{{ section_name }}__content-heading fifty-fifty__content-heading" {{ aos_attrs }}>{{ content_heading }}</strong>
+      <strong class="{{ section_name }}__content-heading fifty-fifty__content-heading" {{ aos_attrs }}>{{ section_content_heading }}</strong>
     {% endif %}
 
-    {% if content_message != blank %}
+    {% if section_content_message != blank %}
       {%- liquid
         capture aos_attrs
           render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
         endcapture
         assign aos_delay = aos_delay | plus: aos_delay_increment
       -%}
-      <div class="{{ section_name }}__content-message fifty-fifty__content-message" {{ aos_attrs }}>{{ content_message }}</div>
+      <div class="{{ section_name }}__content-message fifty-fifty__content-message" {{ aos_attrs }}>{{ section_content_message }}</div>
     {% endif %}
 
-    {% if content_link != blank %}
+    {% if section_content_link != blank %}
       {%- liquid
         capture aos_attrs
           render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
@@ -109,7 +109,7 @@
         assign aos_delay = aos_delay | plus: aos_delay_increment
       -%}
       <div class="{{ section_name }}__content-cta fifty-fifty__content-cta" {{ aos_attrs }}>
-        <a class="{{ section_name }}__cta-link fifty-fifty__content-cta-link link" href="{{ content_link }}" target="{{ content_link_target }}" title="{{ content_heading }}">
+        <a class="{{ section_name }}__cta-link fifty-fifty__content-cta-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
           <div class="button--svg d-lg-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
           <div class="button--svg d-none d-lg-block">{% render 'svg', type: 'button.shop-now.md' %}</div>
         </a>
