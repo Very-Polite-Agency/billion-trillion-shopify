@@ -219,6 +219,36 @@
         "product_image_aspect_ratio_mobile": "1\/1.25",
         "product_image_aspect_ratio_desktop": "2.75\/3"
       }
+    },
+    "01e00acc-5a61-4766-b90a-53b68f0e9e1c": {
+      "type": "featured-product",
+      "blocks": {
+        "template--15945343860920__01e00acc-5a61-4766-b90a-53b68f0e9e1c-1679604756893bd431-1": {
+          "type": "content",
+          "settings": {
+          }
+        },
+        "template--15945343860920__01e00acc-5a61-4766-b90a-53b68f0e9e1c-1679604756893bd431-0": {
+          "type": "media",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343860920__01e00acc-5a61-4766-b90a-53b68f0e9e1c-1679604756893bd431-1",
+        "template--15945343860920__01e00acc-5a61-4766-b90a-53b68f0e9e1c-1679604756893bd431-0"
+      ],
+      "settings": {
+        "product": "bt-crewneck",
+        "badge": "none",
+        "heading": "",
+        "message": "",
+        "cta_link": "",
+        "anchor_id": "",
+        "background": "lime",
+        "border_top": true,
+        "border_bottom": false
+      }
     }
   },
   "order": [
@@ -227,6 +257,7 @@
     "18040a76-69e0-486d-9ed4-0c4ea2e6a9f6",
     "44c8f33b-dd4c-4a93-8504-00e816276dae",
     "0a99d343-f6f5-40f0-9150-2ed780e4123b",
-    "65407ddc-d32b-4880-aa05-6b81caa131d4"
+    "65407ddc-d32b-4880-aa05-6b81caa131d4",
+    "01e00acc-5a61-4766-b90a-53b68f0e9e1c"
   ]
 }
