@@ -57,6 +57,35 @@
         "padding_bottom": 32
       }
     },
+    "01eeb212-b67d-43c1-90b8-8885bb63aba3": {
+      "type": "product-fifty-fifty",
+      "blocks": {
+        "template--15945343860920__01eeb212-b67d-43c1-90b8-8885bb63aba3-16795303798bcf819e-0": {
+          "type": "media",
+          "settings": {
+          }
+        },
+        "template--15945343860920__01eeb212-b67d-43c1-90b8-8885bb63aba3-16795303798bcf819e-1": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343860920__01eeb212-b67d-43c1-90b8-8885bb63aba3-16795303798bcf819e-0",
+        "template--15945343860920__01eeb212-b67d-43c1-90b8-8885bb63aba3-16795303798bcf819e-1"
+      ],
+      "settings": {
+        "product": "bt-hoodie",
+        "badge": "hot",
+        "heading": "",
+        "message": "",
+        "anchor_id": "",
+        "background": "orange",
+        "border_top": false,
+        "border_bottom": false
+      }
+    },
     "3f80dfbd-b202-4f99-af6c-e0cd159dfa6a": {
       "type": "featured-product",
       "blocks": {
@@ -252,6 +281,7 @@
   "order": [
     "hero",
     "b9f650f4-d31f-457d-bc75-531177888a36",
+    "01eeb212-b67d-43c1-90b8-8885bb63aba3",
     "3f80dfbd-b202-4f99-af6c-e0cd159dfa6a",
     "44c8f33b-dd4c-4a93-8504-00e816276dae",
     "0a99d343-f6f5-40f0-9150-2ed780e4123b",
