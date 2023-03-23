@@ -5,22 +5,9 @@
   assign section_id = section_name | append: '--' | append: section.id
 
   assign section_product = section.settings.product | defaul: false
-
-  assign section_content_background = section.settings.background | default: 'orange'
-  assign section_content_heading = section.settings.heading | default: all_products[section_product].title
-  assign section_content_link = section.settings.cta_link | default: all_products[section_product].url
-  assign section_content_message = section.settings.message | default: all_products[section_product].description
-
-  assign section_media_badge = section.settings.badge | default: 'none'
-  assign section_media_image = section.settings.image | default: all_products[section_product].featured_image
-
-  if 'media' == section.blocks.first.type
-    assign section_content_order = 2
-    assign section_media_order = 1
-  else
-    assign section_content_order = 1
-    assign section_media_order = 2
-  endif
+  assign section_content_background = 'lemon'
+  assign section_content_order = '2'
+  assign section_media_order = '1'
 
 -%}
 
@@ -52,20 +39,8 @@
 
   {% render 'debug-this', item: section.settings %}
 
-  <h1>Featured Yuzu Sake Fizz</h1>
-  <h2>{{ all_products[section_product].title }}</h2>
-
-  {% capture snippet_classes %}{{ section_name }}__main fifty-fifty{% endcapture %}
-  {% capture snippet_id %}{{ section_id }}--fify-fifty{% endcapture %}
-  {%
-    render 'fifty-fifty',
-      classes: snippet_classes
-      heading: section_content_heading,
-      id: snippet_id,
-      image: section_media_image,
-      message: section_content_message,
-      link: section_content_link
-  %}
+  <strong>{{ section_product.title }}</strong>
+  <div>{{ section_product.description }}</div>
 
 </div>
 
