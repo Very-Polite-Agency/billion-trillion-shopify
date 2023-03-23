@@ -4,6 +4,10 @@
   assign section_classes = section_name | append: ' fifty-fifty'
   assign section_id = section_name | append: '--' | append: section.id
 
+  assign aos_id = snippet_id
+  assign aos_delay = 250
+  assign aos_delay_increment = 250
+
   assign section_product = section.settings.product | defaul: false
   assign section_background = section.settings.background | defaul: 'lemon'
 
@@ -128,13 +132,25 @@
     {% if section_content_pairings != blank or section_content_tasting_notes != blank %}
       <div class="{{ section_name }}__content-extras">
         {% if section_content_tasting_notes != blank %}
-          <div class="{{ section_name }}__content-extras-block">
+          {%- liquid
+            capture aos_attrs
+              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+            endcapture
+            assign aos_delay = aos_delay | plus: aos_delay_increment
+          -%}
+          <div class="{{ section_name }}__content-extras-block" {{ aos_attrs }}>
             <strong class="{{ section_name }}__content-extras-heading">Tasting Notes:</strong>
             <div class="{{ section_name }}__content-extras-main">{{ section_content_tasting_notes }}</div>
           </div>
         {% endif %}
         {% if section_content_pairings != blank %}
-          <div class="{{ section_name }}__content-extras-block">
+          {%- liquid
+            capture aos_attrs
+              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+            endcapture
+            assign aos_delay = aos_delay | plus: aos_delay_increment
+          -%}
+          <div class="{{ section_name }}__content-extras-block" {{ aos_attrs }}>
             <strong class="{{ section_name }}__content-extras-heading">Pairings:</strong>
             <div class="{{ section_name }}__content-extras-main">{{ section_content_pairings }}</div>
           </div>
@@ -145,7 +161,7 @@
     {% if section_content_link != blank %}
       {%- liquid
         capture aos_attrs
-          render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
+          render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
         endcapture
         assign aos_delay = aos_delay | plus: aos_delay_increment
       -%}
