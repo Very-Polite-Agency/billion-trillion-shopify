@@ -7,12 +7,12 @@
   assign section_product = section.settings.product | defaul: false
 
   assign section_content_background = section.settings.background | default: 'orange'
-  assign section_content_heading = section.settings.heading | default: section_product.title
-  assign section_content_link = section.settings.cta_link | default: section_product.url
-  assign section_content_message = section.settings.message | default: section_product.description
+  assign section_content_heading = section.settings.heading | default: all_products[section_product].title
+  assign section_content_link = section.settings.cta_link | default: all_products[section_product].url
+  assign section_content_message = section.settings.message | default: all_products[section_product].description
 
   assign section_media_badge = section.settings.badge | default: 'none'
-  assign section_media_image = section.settings.image | default: section_product.featured_image
+  assign section_media_image = section.settings.image | default: all_products[section_product].featured_image
 
   if 'media' == section.blocks.first.type
     assign section_content_order = 2
@@ -50,10 +50,10 @@
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
 
-  {% render 'debug-this', item: section_product %}
+  {% render 'debug-this', item: section.settings %}
 
   <h1>Featured Yuzu Sake Fizz</h1>
-  <h2>{{  section_product.title }}</h2>
+  <h2>{{ all_products[section_product].title }}</h2>
 
   {% capture snippet_classes %}{{ section_name }}__main fifty-fifty{% endcapture %}
   {% capture snippet_id %}{{ section_id }}--fify-fifty{% endcapture %}
