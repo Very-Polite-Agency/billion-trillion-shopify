@@ -4,10 +4,6 @@
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
-  assign aos_id = section_id | append: '--aos'
-  assign aos_delay = 250
-  assign aos_delay_increment = 250
-
   assign section_product = section.settings.product | defaul: false
 
   assign section_content_background = section.settings.background | default: 'orange'
@@ -54,7 +50,10 @@
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
 
-  <h1>Featured Product</h1>
+  {% render 'debug-this', item: section_product %}
+
+  <h1>Featured Yuzu Sake Fizz</h1>
+  <h2>{{  section_product.title }}</h2>
 
   {% capture snippet_classes %}{{ section_name }}__main fifty-fifty{% endcapture %}
   {% capture snippet_id %}{{ section_id }}--fify-fifty{% endcapture %}
