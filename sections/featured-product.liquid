@@ -12,7 +12,7 @@
 
   assign section_content_background = section.settings.background | default: 'orange'
   assign section_content_heading = section.settings.heading | default: section_product.title
-  assign section_content_link = section_product.url | default: ''
+  assign section_content_link = section.settings.cta_link | default: section_product.url
   assign section_content_message = section.settings.message | default: section_product.description
 
   assign section_media_badge = section.settings.badge | default: 'none'
