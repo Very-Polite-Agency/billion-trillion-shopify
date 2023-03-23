@@ -77,15 +77,14 @@
       ],
       "settings": {
         "product": "bt-hoodie",
-        "badge": "none",
+        "badge": "hot",
         "heading": "",
         "message": "",
         "cta_link": "",
         "anchor_id": "",
         "background": "orange",
         "border_top": true,
-        "border_bottom": true,
-        "style": "merch"
+        "border_bottom": true
       }
     },
     "44c8f33b-dd4c-4a93-8504-00e816276dae": {
