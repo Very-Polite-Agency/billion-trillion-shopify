@@ -28,8 +28,6 @@
 
 -%}
 
-{% capture snippet_classes %}{{ section_name }}__main fifty-fifty{% endcapture %}
-{% capture snippet_id %}{{ section_id }}--fifty-fifty{% endcapture %}
 
 {%- style -%}
 
@@ -56,7 +54,7 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  <div class="{{ snippet_name }}__media fifty-fifty__media">
+  <div class="{{ section_name }}__media fifty-fifty__media">
     {% if section_media_image %}
       {%- liquid
         capture aos_attrs
@@ -64,13 +62,13 @@
         endcapture
         assign aos_delay = aos_delay | plus: aos_delay_increment
       -%}
-      <div class="{{ snippet_name }}__media-image fifty-fifty__media-image" {{ aos_attrs }}>
+      <div class="{{ section_name }}__media-image fifty-fifty__media-image" {{ aos_attrs }}>
         {% if section_content_link != blank %}
-          <a class="{{ snippet_name }}__media-image-link fifty-fifty__media-image-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ content_heading }}">
+          <a class="{{ section_name }}__media-link fifty-fifty__media-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ content_heading }}">
         {% endif %}
           {% render 'lazyload-image', image: section_media_image %}
           {% unless 'none' == section_media_badge %}
-            <div class="{{ snippet_name }}__media-badge fifty-fifty__media-badge">
+            <div class="{{ section_name }}__media-badge fifty-fifty__media-badge">
               {% capture badge_type %}badge.{{ section_media_badge }}{% endcapture %}
               {% render 'svg', type: badge_type %}
             </div>
@@ -81,7 +79,7 @@
       </div>
     {% endif %}
   </div>
-  <div class="{{ snippet_name }}__content fifty-fifty__content">
+  <div class="{{ section_name }}__content fifty-fifty__content">
 
     {% if content_heading != blank %}
       {%- liquid
@@ -90,7 +88,7 @@
         endcapture
         assign aos_delay = aos_delay | plus: aos_delay_increment
       -%}
-      <strong class="{{ snippet_name }}__content-heading fifty-fifty__content-heading" {{ aos_attrs }}>{{ content_heading }}</strong>
+      <strong class="{{ section_name }}__content-heading fifty-fifty__content-heading" {{ aos_attrs }}>{{ content_heading }}</strong>
     {% endif %}
 
     {% if content_message != blank %}
@@ -100,7 +98,7 @@
         endcapture
         assign aos_delay = aos_delay | plus: aos_delay_increment
       -%}
-      <div class="{{ snippet_name }}__content-message fifty-fifty__content-message" {{ aos_attrs }}>{{ content_message }}</div>
+      <div class="{{ section_name }}__content-message fifty-fifty__content-message" {{ aos_attrs }}>{{ content_message }}</div>
     {% endif %}
 
     {% if content_link != blank %}
@@ -110,8 +108,8 @@
         endcapture
         assign aos_delay = aos_delay | plus: aos_delay_increment
       -%}
-      <div class="{{ snippet_name }}__content-cta fifty-fifty__content-cta" {{ aos_attrs }}>
-        <a class="{{ snippet_name }}__cta-link fifty-fifty__content-cta-link link" href="{{ content_link }}" target="{{ content_link_target }}" title="{{ content_heading }}">
+      <div class="{{ section_name }}__content-cta fifty-fifty__content-cta" {{ aos_attrs }}>
+        <a class="{{ section_name }}__cta-link fifty-fifty__content-cta-link link" href="{{ content_link }}" target="{{ content_link_target }}" title="{{ content_heading }}">
           <div class="button--svg d-lg-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
           <div class="button--svg d-none d-lg-block">{% render 'svg', type: 'button.shop-now.md' %}</div>
         </a>
