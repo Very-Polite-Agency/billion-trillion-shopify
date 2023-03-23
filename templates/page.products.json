@@ -63,20 +63,20 @@
     "50567988-2a4c-4570-ad1d-06d904c3a686": {
       "type": "featured-product",
       "blocks": {
-        "template--15945343828152__50567988-2a4c-4570-ad1d-06d904c3a686-167953088115984e7d-0": {
-          "type": "media",
+        "template--15945343828152__50567988-2a4c-4570-ad1d-06d904c3a686-167953088115984e7d-1": {
+          "type": "content",
           "settings": {
           }
         },
-        "template--15945343828152__50567988-2a4c-4570-ad1d-06d904c3a686-167953088115984e7d-1": {
-          "type": "content",
+        "template--15945343828152__50567988-2a4c-4570-ad1d-06d904c3a686-167953088115984e7d-0": {
+          "type": "media",
           "settings": {
           }
         }
       },
       "block_order": [
-        "template--15945343828152__50567988-2a4c-4570-ad1d-06d904c3a686-167953088115984e7d-0",
-        "template--15945343828152__50567988-2a4c-4570-ad1d-06d904c3a686-167953088115984e7d-1"
+        "template--15945343828152__50567988-2a4c-4570-ad1d-06d904c3a686-167953088115984e7d-1",
+        "template--15945343828152__50567988-2a4c-4570-ad1d-06d904c3a686-167953088115984e7d-0"
       ],
       "settings": {
         "product": "mandarin-yuzu-sake-fizz",
@@ -109,7 +109,7 @@
         "template--15945343828152__16e578c7-a0cf-4dd1-9b29-b7684845773b-167953088115984e7d-1"
       ],
       "settings": {
-        "product": "",
+        "product": "mango-yuzu-sake-fizz",
         "badge": "none",
         "heading": "",
         "message": "",
