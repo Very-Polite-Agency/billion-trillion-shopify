@@ -56,8 +56,8 @@
           "401bbdc5-b947-4876-88f4-f9107d73dcc9"
         ],
         "settings": {
-          "enable": true,
-          "sticky": true
+          "enable": false,
+          "sticky": false
         }
       }
     },
