@@ -55,7 +55,7 @@
         "message": "",
         "cta_link": "",
         "anchor_id": "",
-        "background": "orange",
+        "background": "lemon",
         "border_top": false,
         "border_bottom": false,
         "style": "yuzu-sake-fizz"
@@ -80,7 +80,7 @@
         "template--15945343828152__da9af05a-9aa6-4919-b3ac-99b68d7ff8ca-16795984345868def9-0"
       ],
       "settings": {
-        "product": "lime-yuzu-sake-fizz",
+        "product": "mango-yuzu-sake-fizz",
         "badge": "none",
         "heading": "",
         "message": "",
@@ -111,7 +111,7 @@
         "template--15945343828152__3237e4ab-bde4-44ca-8c2e-ce3cf2d979b0-16795984345868def9-1"
       ],
       "settings": {
-        "product": "",
+        "product": "mango-yuzu-sake-fizz",
         "badge": "none",
         "heading": "",
         "message": "",
