@@ -64,20 +64,20 @@
     "8acda55d-54a6-4314-94c1-ebf201ca4773": {
       "type": "featured-product",
       "blocks": {
-        "template--15941099487416__8acda55d-54a6-4314-94c1-ebf201ca4773-16795957155fcf20df-0": {
-          "type": "media",
+        "template--15941099487416__8acda55d-54a6-4314-94c1-ebf201ca4773-16795957155fcf20df-1": {
+          "type": "content",
           "settings": {
           }
         },
-        "template--15941099487416__8acda55d-54a6-4314-94c1-ebf201ca4773-16795957155fcf20df-1": {
-          "type": "content",
+        "template--15941099487416__8acda55d-54a6-4314-94c1-ebf201ca4773-16795957155fcf20df-0": {
+          "type": "media",
           "settings": {
           }
         }
       },
       "block_order": [
-        "template--15941099487416__8acda55d-54a6-4314-94c1-ebf201ca4773-16795957155fcf20df-0",
-        "template--15941099487416__8acda55d-54a6-4314-94c1-ebf201ca4773-16795957155fcf20df-1"
+        "template--15941099487416__8acda55d-54a6-4314-94c1-ebf201ca4773-16795957155fcf20df-1",
+        "template--15941099487416__8acda55d-54a6-4314-94c1-ebf201ca4773-16795957155fcf20df-0"
       ],
       "settings": {
         "product": "lemon-yuzu-sake-fizz",
