@@ -82,8 +82,8 @@
         "message": "",
         "anchor_id": "",
         "background": "orange",
-        "border_top": false,
-        "border_bottom": false
+        "border_top": true,
+        "border_bottom": true
       }
     },
     "44c8f33b-dd4c-4a93-8504-00e816276dae": {
@@ -219,35 +219,6 @@
         "product_image_aspect_ratio_desktop": "2.75\/3"
       }
     },
-    "5bba2e3d-44be-466b-9ef0-ba4672b58bb9": {
-      "type": "featured-product",
-      "blocks": {
-        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-1": {
-          "type": "content",
-          "settings": {
-          }
-        },
-        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-0": {
-          "type": "media",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-1",
-        "template--15945343860920__5bba2e3d-44be-466b-9ef0-ba4672b58bb9-167950966496f4bc79-0"
-      ],
-      "settings": {
-        "product": "bt-crewneck",
-        "badge": "none",
-        "heading": "",
-        "message": "",
-        "anchor_id": "",
-        "background": "lemon",
-        "border_top": true,
-        "border_bottom": false
-      }
-    },
     "32d47ef7-0e1f-4ab2-b896-5a1d44c394d4": {
       "type": "product-fifty-fifty",
       "blocks": {
@@ -285,7 +256,6 @@
     "44c8f33b-dd4c-4a93-8504-00e816276dae",
     "0a99d343-f6f5-40f0-9150-2ed780e4123b",
     "65407ddc-d32b-4880-aa05-6b81caa131d4",
-    "5bba2e3d-44be-466b-9ef0-ba4672b58bb9",
     "32d47ef7-0e1f-4ab2-b896-5a1d44c394d4"
   ]
 }
