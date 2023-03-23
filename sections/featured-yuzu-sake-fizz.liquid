@@ -1,6 +1,6 @@
 {%- liquid
 
-  assign section_name = 'featured-product'
+  assign section_name = 'featured-yuzu-sake-fizz'
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
@@ -72,9 +72,9 @@
 
 {% schema %}
 {
-  "name": "Featured Product",
+  "name": "Featured Yuzu Sake Fizz",
   "tag": "section",
-  "class": "section section--featured-product",
+  "class": "section section--featured-yuzu-sake-fizz",
   "settings": [
     {
       "content": "Product",
@@ -86,7 +86,7 @@
       "id": "product"
     },
     {
-      "content": "By default, the heading, image, link and body copy will automatically be pulled from the selected product. To customize, and override this automation, update the corresponding fields below.",
+      "content": "By default, the section will automatically pulled details from the selected product. To customize, and override this automation, update the corresponding fields below.",
       "type": "paragraph"
     },
     {
@@ -188,7 +188,7 @@
   ],
   "presets": [
     {
-      "name": "Featured Product",
+      "name": "Featured Yuzu Sake Fizz",
       "blocks": [
         { "type": "media" },
         { "type": "content" }
