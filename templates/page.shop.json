@@ -57,35 +57,6 @@
         "padding_bottom": 32
       }
     },
-    "01eeb212-b67d-43c1-90b8-8885bb63aba3": {
-      "type": "product-fifty-fifty",
-      "blocks": {
-        "template--15945343860920__01eeb212-b67d-43c1-90b8-8885bb63aba3-16795303798bcf819e-0": {
-          "type": "media",
-          "settings": {
-          }
-        },
-        "template--15945343860920__01eeb212-b67d-43c1-90b8-8885bb63aba3-16795303798bcf819e-1": {
-          "type": "content",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "template--15945343860920__01eeb212-b67d-43c1-90b8-8885bb63aba3-16795303798bcf819e-0",
-        "template--15945343860920__01eeb212-b67d-43c1-90b8-8885bb63aba3-16795303798bcf819e-1"
-      ],
-      "settings": {
-        "product": "bt-hoodie",
-        "badge": "hot",
-        "heading": "",
-        "message": "",
-        "anchor_id": "",
-        "background": "orange",
-        "border_top": true,
-        "border_bottom": true
-      }
-    },
     "44c8f33b-dd4c-4a93-8504-00e816276dae": {
       "type": "product-grid",
       "blocks": {
@@ -218,44 +189,13 @@
         "product_image_aspect_ratio_mobile": "1\/1.25",
         "product_image_aspect_ratio_desktop": "2.75\/3"
       }
-    },
-    "32d47ef7-0e1f-4ab2-b896-5a1d44c394d4": {
-      "type": "product-fifty-fifty",
-      "blocks": {
-        "template--15945343860920__32d47ef7-0e1f-4ab2-b896-5a1d44c394d4-16795303798bcf819e-0": {
-          "type": "media",
-          "settings": {
-          }
-        },
-        "template--15945343860920__32d47ef7-0e1f-4ab2-b896-5a1d44c394d4-16795303798bcf819e-1": {
-          "type": "content",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "template--15945343860920__32d47ef7-0e1f-4ab2-b896-5a1d44c394d4-16795303798bcf819e-0",
-        "template--15945343860920__32d47ef7-0e1f-4ab2-b896-5a1d44c394d4-16795303798bcf819e-1"
-      ],
-      "settings": {
-        "product": "bt-crewneck",
-        "badge": "hot",
-        "heading": "",
-        "message": "",
-        "anchor_id": "",
-        "background": "lemon",
-        "border_top": true,
-        "border_bottom": false
-      }
     }
   },
   "order": [
     "hero",
     "b9f650f4-d31f-457d-bc75-531177888a36",
-    "01eeb212-b67d-43c1-90b8-8885bb63aba3",
     "44c8f33b-dd4c-4a93-8504-00e816276dae",
     "0a99d343-f6f5-40f0-9150-2ed780e4123b",
-    "65407ddc-d32b-4880-aa05-6b81caa131d4",
-    "32d47ef7-0e1f-4ab2-b896-5a1d44c394d4"
+    "65407ddc-d32b-4880-aa05-6b81caa131d4"
   ]
 }
