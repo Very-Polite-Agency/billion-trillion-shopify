@@ -244,7 +244,7 @@
         "message": "",
         "anchor_id": "",
         "background": "lemon",
-        "border_top": false,
+        "border_top": true,
         "border_bottom": false
       }
     }
