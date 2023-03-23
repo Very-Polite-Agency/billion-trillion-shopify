@@ -29,9 +29,73 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "cf09e0e1-015a-4620-ba1c-b81af31f7cfa": {
+      "type": "featured-product",
+      "blocks": {
+        "template--15945343828152__cf09e0e1-015a-4620-ba1c-b81af31f7cfa-16795984345868def9-0": {
+          "type": "media",
+          "settings": {
+          }
+        },
+        "template--15945343828152__cf09e0e1-015a-4620-ba1c-b81af31f7cfa-16795984345868def9-1": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343828152__cf09e0e1-015a-4620-ba1c-b81af31f7cfa-16795984345868def9-0",
+        "template--15945343828152__cf09e0e1-015a-4620-ba1c-b81af31f7cfa-16795984345868def9-1"
+      ],
+      "settings": {
+        "product": "lemon-yuzu-sake-fizz",
+        "badge": "none",
+        "heading": "",
+        "message": "",
+        "cta_link": "",
+        "anchor_id": "",
+        "background": "orange",
+        "border_top": false,
+        "border_bottom": false,
+        "style": "yuzu-sake-fizz"
+      }
+    },
+    "da9af05a-9aa6-4919-b3ac-99b68d7ff8ca": {
+      "type": "featured-product",
+      "blocks": {
+        "template--15945343828152__da9af05a-9aa6-4919-b3ac-99b68d7ff8ca-16795984345868def9-0": {
+          "type": "media",
+          "settings": {
+          }
+        },
+        "template--15945343828152__da9af05a-9aa6-4919-b3ac-99b68d7ff8ca-16795984345868def9-1": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343828152__da9af05a-9aa6-4919-b3ac-99b68d7ff8ca-16795984345868def9-0",
+        "template--15945343828152__da9af05a-9aa6-4919-b3ac-99b68d7ff8ca-16795984345868def9-1"
+      ],
+      "settings": {
+        "product": "lime-yuzu-sake-fizz",
+        "badge": "none",
+        "heading": "",
+        "message": "",
+        "cta_link": "",
+        "anchor_id": "",
+        "background": "orange",
+        "border_top": false,
+        "border_bottom": false,
+        "style": "yuzu-sake-fizz"
+      }
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "cf09e0e1-015a-4620-ba1c-b81af31f7cfa",
+    "da9af05a-9aa6-4919-b3ac-99b68d7ff8ca"
   ]
 }
