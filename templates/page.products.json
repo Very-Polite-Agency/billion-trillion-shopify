@@ -30,6 +30,36 @@
         "padding_bottom": 36
       }
     },
+    "135d0766-81be-4efe-8f77-d729ee784962": {
+      "type": "featured-yuzu-sake-fizz",
+      "blocks": {
+        "template--15945343828152__135d0766-81be-4efe-8f77-d729ee784962-16795921749afa8730-0": {
+          "type": "media",
+          "settings": {
+          }
+        },
+        "template--15945343828152__135d0766-81be-4efe-8f77-d729ee784962-16795921749afa8730-1": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343828152__135d0766-81be-4efe-8f77-d729ee784962-16795921749afa8730-0",
+        "template--15945343828152__135d0766-81be-4efe-8f77-d729ee784962-16795921749afa8730-1"
+      ],
+      "settings": {
+        "product": "lemon-yuzu-sake-fizz",
+        "badge": "none",
+        "heading": "",
+        "message": "",
+        "cta_link": "",
+        "anchor_id": "",
+        "background": "lemon",
+        "border_top": false,
+        "border_bottom": false
+      }
+    },
     "16e83883-5696-43eb-9dd4-20bd409bcf0c": {
       "type": "featured-product",
       "blocks": {
@@ -123,6 +153,7 @@
   },
   "order": [
     "hero",
+    "135d0766-81be-4efe-8f77-d729ee784962",
     "16e83883-5696-43eb-9dd4-20bd409bcf0c",
     "50567988-2a4c-4570-ad1d-06d904c3a686",
     "16e578c7-a0cf-4dd1-9b29-b7684845773b"
