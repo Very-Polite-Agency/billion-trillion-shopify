@@ -1,3 +1,28 @@
+@use "../utils/mixins/border" as *;
 @use "../utils/mixins/breakpoint" as *;
 
-.featured-yuzu-sake-fizz {}
+.featured-yuzu-sake-fizz {
+
+  &__content {
+    padding: 0;
+    &-extras {
+      @include border-solid( var(--theme-border--width), 'black', 'top' );
+      display: inline-flex;
+      flex-flow: row wrap;
+      &-block {
+        padding: var(--theme-layout--gutter);
+        width: 100%;
+        & + .featured-yuzu-sake-fizz__content-extras-block {
+          @include border-solid( var(--theme-border--width), 'black', 'top' );
+        }
+      }
+    }
+    &-main {
+      padding-top: min(58px, 10vw);
+      padding-bottom: min(58px, 10vw);
+      padding-left: var(--theme-layout--gutter);
+      padding-right: var(--theme-layout--gutter);
+    }
+  }
+
+}
