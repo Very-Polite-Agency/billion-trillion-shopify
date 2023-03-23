@@ -23,6 +23,11 @@
     assign section_media_order = 2
   endif
 
+  if 'yuzu-sake-fizz' == section_style
+    assign pairings = product.metafields.sake_fizz.pairings | default: ''
+    assign tasing_notes = product.metafields.sake_fizz.tasting_notes | default: ''
+  endif
+
 -%}
 
 {% capture snippet_classes %}{{ section_name }}__main fifty-fifty {{ section_style }}{% endcapture %}
@@ -53,6 +58,10 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
+
+  {{ pairings }}
+  {{ tasing_notes }}
+
   {%
     render 'fifty-fifty',
       aria_role: '',
