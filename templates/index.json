@@ -9,9 +9,40 @@
         "cta_link": "https:\/\/www.craftco.ca\/product-category\/cocktails\/billion-trillion\/",
         "wholesale_link": "mailto:hi@billion-trillion.com"
       }
+    },
+    "3af2cb45-85d6-431f-8041-707f5b749fbc": {
+      "type": "featured-yuzu-sake-fizz",
+      "blocks": {
+        "template--15941099487416__3af2cb45-85d6-431f-8041-707f5b749fbc-1679593809cf649c6e-0": {
+          "type": "media",
+          "settings": {
+          }
+        },
+        "template--15941099487416__3af2cb45-85d6-431f-8041-707f5b749fbc-1679593809cf649c6e-1": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--15941099487416__3af2cb45-85d6-431f-8041-707f5b749fbc-1679593809cf649c6e-0",
+        "template--15941099487416__3af2cb45-85d6-431f-8041-707f5b749fbc-1679593809cf649c6e-1"
+      ],
+      "settings": {
+        "product": "lemon-yuzu-sake-fizz",
+        "badge": "none",
+        "heading": "",
+        "message": "",
+        "cta_link": "",
+        "anchor_id": "",
+        "background": "lemon",
+        "border_top": false,
+        "border_bottom": false
+      }
     }
   },
   "order": [
-    "1653600291e275fea1"
+    "1653600291e275fea1",
+    "3af2cb45-85d6-431f-8041-707f5b749fbc"
   ]
 }
