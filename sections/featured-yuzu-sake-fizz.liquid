@@ -140,7 +140,7 @@
           -%}
           <div class="{{ section_name }}__content-extras-block" {{ aos_attrs }}>
             <strong class="{{ section_name }}__content-extras-heading heading--primary">Tasting Notes:</strong>
-            <div class="{{ section_name }}__content-extras-main">{{ section_content_tasting_notes }}</div>
+            <div class="{{ section_name }}__content-extras-message">{{ section_content_tasting_notes }}</div>
           </div>
         {% endif %}
         {% if section_content_pairings != blank %}
@@ -152,7 +152,7 @@
           -%}
           <div class="{{ section_name }}__content-extras-block" {{ aos_attrs }}>
             <strong class="{{ section_name }}__content-extras-heading heading--primary">Pairings:</strong>
-            <div class="{{ section_name }}__content-extras-main">{{ section_content_pairings }}</div>
+            <div class="{{ section_name }}__content-extras-message">{{ section_content_pairings }}</div>
           </div>
         {% endif %}
       </div>
