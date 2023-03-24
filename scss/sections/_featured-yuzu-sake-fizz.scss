@@ -1,5 +1,6 @@
 @use "../utils/mixins/border" as *;
 @use "../utils/mixins/breakpoint" as *;
+@use "../utils/mixins/font" as *;
 
 .featured-yuzu-sake-fizz {
 
@@ -17,6 +18,17 @@
           @include border-solid( var(--theme-border--width), 'black', 'top' );
         }
       }
+      &-heading {
+        font-size: min(45px, 7vw);
+        & + .featured-yuzu-sake-fizz__content-extras-main {
+          margin-top: min(26px, 1.85vw);
+        }
+      }
+      &-main {
+        @include sorry-sans( 700 );
+        font-size: min(24px, 4.25vw);
+        line-height: 1.18;
+      }
     }
     &-main {
       padding-top: min(56px, 8.5vw);
@@ -31,10 +43,47 @@
         line-height: 1;
       }
       &-message {
+        font-size: min(32px, 5.25vw);
         line-height: 1.29;
-        font-size: min(28px, 4vw);
       }
     }
+  }
+
+  @include breakpoint(md) {
+
+    &__content {
+      &-cta {
+        @include border-solid( var(--theme-border--width), 'black', 'top' );
+        padding: var(--theme-layout--gutter);
+        &-link {
+          margin: auto;
+          max-width: 400px;
+        }
+      }
+      &-extras {
+        @include border-solid( var(--theme-border--width), 'black', 'top' );
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        &-block {
+          padding: var(--theme-layout--gutter);
+          width: calc( (100% - var(--theme-border--width)) * 0.5 );
+          & + .featured-yuzu-sake-fizz__content-extras-block {
+            @include border-solid( var(--theme-border--width), 'black', 'left' );
+            border-top: none;
+          }
+        }
+        &-heading {
+          font-size: min(36px, 4.25vw);
+          & + .featured-yuzu-sake-fizz__content-extras-main {
+            margin-top: min(24px,1.8vw);
+          }
+        }
+        &-main {
+          font-size: min(22px,2.5vw)
+        }
+      }
+    }
+
   }
 
   @include breakpoint(lg) {

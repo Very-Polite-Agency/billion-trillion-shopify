@@ -118,7 +118,7 @@
             endcapture
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
-          <div class="{{ section_name }}__content-main-cta fifty-fifty__content-cta d-lg-none" {{ aos_attrs }}>
+          <div class="{{ section_name }}__content-main-cta fifty-fifty__content-cta d-md-none" {{ aos_attrs }}>
             <a class="{{ section_name }}__content-main-cta-link fifty-fifty__content-cta-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
               <div class="button--svg d-lg-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
               <div class="button--svg d-none d-lg-block">{% render 'svg', type: 'button.shop-now.md' %}</div>
@@ -165,7 +165,7 @@
         endcapture
         assign aos_delay = aos_delay | plus: aos_delay_increment
       -%}
-      <div class="{{ section_name }}__content-cta fifty-fifty__content-cta d-none d-lg-block" {{ aos_attrs }}>
+      <div class="{{ section_name }}__content-cta fifty-fifty__content-cta d-none d-md-block" {{ aos_attrs }}>
         <a class="{{ section_name }}__content-cta-link fifty-fifty__content-cta-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
           <div class="button--svg d-lg-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
           <div class="button--svg d-none d-lg-block">{% render 'svg', type: 'button.shop-now.md' %}</div>
