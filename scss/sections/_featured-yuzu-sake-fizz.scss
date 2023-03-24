@@ -88,22 +88,19 @@
 
   @include breakpoint(lg) {
 
+    $padding-x: min(3600px, 2.35vw);
+
     &__content {
       &-cta {
         @include border-solid( var(--theme-border--width), 'black', 'top' );
-        padding: var(--theme-layout--gutter);
+        padding: $padding-x;
       }
       &-extras {
         @include border-solid( var(--theme-border--width), 'black', 'top' );
         flex-flow: row nowrap;
         justify-content: space-evenly;
         &-block {
-          padding: var(--theme-layout--gutter);
-          width: calc( (100% - var(--theme-border--width)) * 0.5 );
-          & + .featured-yuzu-sake-fizz__content-extras-block {
-            @include border-solid( var(--theme-border--width), 'black', 'left' );
-            border-top: none;
-          }
+          padding: $padding-x;
         }
         &-heading {
           font-size: min(38px, 2.25vw);
@@ -116,10 +113,10 @@
         }
       }
       &-main {
-        padding-top: min(36px, 8.5vw);
-        padding-bottom: min(36px, 8.5vw);
-        padding-left: var(--theme-layout--gutter);
-        padding-right: var(--theme-layout--gutter);
+        padding-top: min(3600px, 3.2vw);
+        padding-bottom: min(3600px, 3.2vw);
+        padding-left: $padding-x;
+        padding-right: $padding-x;
         &-heading {
           font-size: min(102px, 5.35vw);
         }
