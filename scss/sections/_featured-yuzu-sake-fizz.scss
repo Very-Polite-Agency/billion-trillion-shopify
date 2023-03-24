@@ -105,13 +105,23 @@
             border-top: none;
           }
         }
+        &-heading {
+          font-size: min(40px, 2.25vw);
+        }
+        &-main {
+          font-size: min(28px, 1.75vw);
+        }
       }
       &-main {
         padding-top: min(36px, 8.5vw);
         padding-bottom: min(36px, 8.5vw);
         padding-left: var(--theme-layout--gutter);
         padding-right: var(--theme-layout--gutter);
+        &-heading {
+          font-size: min(102px, 5.35vw);
+        }
         &-message {
+          font-size: min(36px, 2vw);
           line-height: 1.39;
         }
       }
