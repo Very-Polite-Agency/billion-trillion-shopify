@@ -71,7 +71,7 @@
         endcapture
         assign aos_delay = aos_delay | plus: aos_delay_increment
       -%}
-      <div class="{{ snippet_name }}__content-message" {{ aos_attrs }}>{{ content_message }}</div>
+      <div class="{{ snippet_name }}__content-message body-copy--secondary" {{ aos_attrs }}>{{ content_message }}</div>
     {% endif %}
 
     {% if content_link != blank %}

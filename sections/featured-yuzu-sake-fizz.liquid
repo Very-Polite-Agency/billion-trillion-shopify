@@ -108,7 +108,7 @@
             endcapture
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
-          <div class="{{ section_name }}__content-main-message fifty-fifty__content-message" {{ aos_attrs }}>{{ section_content_message }}</div>
+          <div class="{{ section_name }}__content-main-message fifty-fifty__content-message body-copy--secondary" {{ aos_attrs }}>{{ section_content_message }}</div>
         {% endif %}
 
         {% if section_content_link != blank %}
@@ -118,8 +118,8 @@
             endcapture
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
-          <div class="{{ section_name }}__content-main-cta d-lg-none" {{ aos_attrs }}>
-            <a class="{{ section_name }}__content-main-cta-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
+          <div class="{{ section_name }}__content-main-cta fifty-fifty__content-cta d-lg-none" {{ aos_attrs }}>
+            <a class="{{ section_name }}__content-main-cta-link fifty-fifty__content-cta-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
               <div class="button--svg d-lg-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
               <div class="button--svg d-none d-lg-block">{% render 'svg', type: 'button.shop-now.md' %}</div>
             </a>
@@ -139,7 +139,7 @@
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
           <div class="{{ section_name }}__content-extras-block" {{ aos_attrs }}>
-            <strong class="{{ section_name }}__content-extras-heading">Tasting Notes:</strong>
+            <strong class="{{ section_name }}__content-extras-heading heading--primary">Tasting Notes:</strong>
             <div class="{{ section_name }}__content-extras-main">{{ section_content_tasting_notes }}</div>
           </div>
         {% endif %}
@@ -151,7 +151,7 @@
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
           <div class="{{ section_name }}__content-extras-block" {{ aos_attrs }}>
-            <strong class="{{ section_name }}__content-extras-heading">Pairings:</strong>
+            <strong class="{{ section_name }}__content-extras-heading heading--primary">Pairings:</strong>
             <div class="{{ section_name }}__content-extras-main">{{ section_content_pairings }}</div>
           </div>
         {% endif %}
@@ -165,8 +165,8 @@
         endcapture
         assign aos_delay = aos_delay | plus: aos_delay_increment
       -%}
-      <div class="{{ section_name }}__content-cta d-none d-lg-block" {{ aos_attrs }}>
-        <a class="{{ section_name }}__content-cta-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
+      <div class="{{ section_name }}__content-cta fifty-fifty__content-cta d-none d-lg-block" {{ aos_attrs }}>
+        <a class="{{ section_name }}__content-cta-link fifty-fifty__content-cta-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
           <div class="button--svg d-lg-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
           <div class="button--svg d-none d-lg-block">{% render 'svg', type: 'button.shop-now.md' %}</div>
         </a>
