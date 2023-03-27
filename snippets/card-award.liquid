@@ -24,7 +24,7 @@
     assign details = card_item.settings.details | default: ''
     assign footnote = card_item.settings.footnote | default: ''
     assign icon = card_item.settings.icon | default: false
-    assign name = card_item.settings.name | default: ''
+    assign title = card_item.settings.title | default: ''
 
   -%}
 
@@ -41,7 +41,7 @@
     {% endif %}
 
     <div class="{{ snippet_name }}__content">
-      <strong class="{{ snippet_name }}__name">{{ name }}</strong>
+      <strong class="{{ snippet_name }}__name">{{ title }}</strong>
       <div class="{{ snippet_name }}__details">{{ details }}</div>
     </div>
 

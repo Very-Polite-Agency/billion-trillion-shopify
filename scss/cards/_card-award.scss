@@ -1,9 +1,82 @@
 @use "../utils/mixins/border" as *;
 @use "../utils/mixins/breakpoint" as *;
+@use "../utils/mixins/font" as *;
 
 .card-award {
 
+  @include hobeaux( 700 );
   @include border-solid( var(--theme-border--width), 'black' );
   border-radius: var(--theme-border--radius);
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-align: center;
+
+  &__content {
+    padding: var(--theme-layout--gutter);
+  }
+
+  &__details {
+    @include sorry-sans( 700 );
+  }
+
+  &__footnote {
+    background: var(--theme-colour--black);
+    color: var(--theme-colour--white);
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
+    line-height: 1;
+    padding: 10px;
+    letter-spacing: 0.02em;
+  }
+
+  &__icon {
+    width: auto;
+    height: 130px;
+    margin: var(--theme-layout--gutter) auto auto;
+    a, img, svg {
+      display: block;
+      width: auto;
+      height: 100%;
+    }
+    .container-fluid & {
+      height: 5vw;
+    }
+  }
+
+  @include breakpoint(sm) {}
+
+  @include breakpoint(md) {}
+
+  @include breakpoint(lg) {
+
+    &__icon {
+      height: 130px;
+      .container-fluid & {
+        height: 5vw;
+      }
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+    &__icon {
+      height: 160px;
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__icon {
+      height: 190px;
+    }
+
+  }
 
 }
