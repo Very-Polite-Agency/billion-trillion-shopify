@@ -79,7 +79,7 @@
         "border_top": true,
         "border_bottom": false,
         "card_aspect_ratio_mobile": "292\/303",
-        "card_aspect_ratio_desktop": "292\/303",
+        "card_aspect_ratio_desktop": "2.9\/3.3",
         "container": "container-fluid",
         "grid_gap": 20,
         "padding_top": 44,
