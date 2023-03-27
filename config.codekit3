@@ -2435,6 +2435,14 @@
       "oAP" : "\/sections\/apps.liquid",
       "oF" : 0
     },
+    "\/sections\/awards.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sections\/awards.liquid",
+      "oF" : 0
+    },
     "\/sections\/collection-list.liquid" : {
       "cB" : 0,
       "ft" : 8192,

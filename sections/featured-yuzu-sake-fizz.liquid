@@ -8,8 +8,8 @@
   assign aos_delay = 250
   assign aos_delay_increment = 250
 
-  assign section_product = section.settings.product | defaul: false
-  assign section_background = section.settings.background | defaul: 'lemon'
+  assign section_product = section.settings.product | default: false
+  assign section_background = section.settings.background | default: 'lemon'
 
   assign section_content_heading = section.settings.heading | default: section_product.title
   assign section_content_link = section.settings.cta_link | default: section_product.url
