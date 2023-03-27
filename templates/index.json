@@ -29,9 +29,60 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "054245ba-4ed7-4220-bd3b-8e55198d24b0": {
+      "type": "awards",
+      "blocks": {
+        "template--15941099487416__054245ba-4ed7-4220-bd3b-8e55198d24b0-1679950234f2023cc4-0": {
+          "type": "award",
+          "settings": {
+            "name": "Goldar",
+            "details": "<p>At the Galactic Choice Awards<\/p>",
+            "footnote": "on Nabmzu-8 in the  Snow-cone Galaxy",
+            "background": "lemon"
+          }
+        },
+        "template--15941099487416__054245ba-4ed7-4220-bd3b-8e55198d24b0-1679950234f2023cc4-1": {
+          "type": "award",
+          "settings": {
+            "name": "Best in Show",
+            "details": "<p>At the Intergalactic TV Awards<\/p>",
+            "footnote": "on GN-z11 in the TarAR-ead Galaxy",
+            "background": "orange"
+          }
+        },
+        "template--15941099487416__054245ba-4ed7-4220-bd3b-8e55198d24b0-1679950234f2023cc4-2": {
+          "type": "award",
+          "settings": {
+            "name": "3 Beaks",
+            "details": "<p>At the Cephalo Grip on the Grub Awards<\/p>",
+            "footnote": "on Illex-90 in the 5s5-POD Taningia Galaxy",
+            "background": "mango"
+          }
+        }
+      },
+      "block_order": [
+        "template--15941099487416__054245ba-4ed7-4220-bd3b-8e55198d24b0-1679950234f2023cc4-0",
+        "template--15941099487416__054245ba-4ed7-4220-bd3b-8e55198d24b0-1679950234f2023cc4-1",
+        "template--15941099487416__054245ba-4ed7-4220-bd3b-8e55198d24b0-1679950234f2023cc4-2"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "container": "container",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "dd61d2a0-89a4-4ba3-9fe1-89c5f3486acc"
+    "dd61d2a0-89a4-4ba3-9fe1-89c5f3486acc",
+    "054245ba-4ed7-4220-bd3b-8e55198d24b0"
   ]
 }
