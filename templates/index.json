@@ -37,8 +37,8 @@
           "type": "award",
           "settings": {
             "name": "Goldar",
-            "details": "",
-            "footnote": "",
+            "details": "<p>At the Galactic Choice Awards<\/p>",
+            "footnote": "on Nabmzu-8 in the  Snow-cone Galaxy",
             "background": "lemon"
           }
         },
@@ -57,7 +57,7 @@
             "name": "3 Beaks",
             "details": "<p>At the Cephalo Grip on the Grub Awards<\/p>",
             "footnote": "on Illex-90 in the 5s5-POD Taningia Galaxy",
-            "background": "lemon"
+            "background": "mango"
           }
         }
       },
