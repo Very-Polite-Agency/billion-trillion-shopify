@@ -51,9 +51,11 @@
             assign footnote = item.settings.footnote | default: ''
           -%}
 
-          {% if name != blank and details != blank and icon %}
+          {% if name != blank and details != blank %}
             <div class="{{ section_name }}__item" role="listitem">
-              <div class="{{ section_name }}__item-icon">{% render 'lazyload-image', image: icon %}</div>
+              {% if icon %}
+                <div class="{{ section_name }}__item-icon">{% render 'lazyload-image', image: icon %}</div>
+              {% endif %}
               <strong class="{{ section_name }}__item-name">{{ name }}</strong>
               <div class="{{ section_name }}__item-details">{{ details }}</div>
               {% if footnote != blank %}
