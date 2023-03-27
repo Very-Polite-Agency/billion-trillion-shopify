@@ -36,7 +36,9 @@
         "template--15941099487416__054245ba-4ed7-4220-bd3b-8e55198d24b0-1679950234f2023cc4-0": {
           "type": "award",
           "settings": {
-            "name": "Goldar",
+            "icon": "shopify:\/\/shop_images\/awards.01_3x_c9bfacc9-389d-4cb7-999e-7f7246363916.png",
+            "title": "Goldar",
+            "name": "",
             "details": "<p>At the Galactic Choice Awards<\/p>",
             "footnote": "on Nabmzu-8 in the  Snow-cone Galaxy",
             "background": "lemon"
@@ -45,7 +47,9 @@
         "template--15941099487416__054245ba-4ed7-4220-bd3b-8e55198d24b0-1679950234f2023cc4-1": {
           "type": "award",
           "settings": {
-            "name": "Best in Show",
+            "icon": "shopify:\/\/shop_images\/awards.02_3x_5f73153b-b102-4b48-9b08-2281654e9a2f.png",
+            "title": "Best in Show",
+            "name": "",
             "details": "<p>At the Intergalactic TV Awards<\/p>",
             "footnote": "on GN-z11 in the TarAR-ead Galaxy",
             "background": "orange"
@@ -54,7 +58,9 @@
         "template--15941099487416__054245ba-4ed7-4220-bd3b-8e55198d24b0-1679950234f2023cc4-2": {
           "type": "award",
           "settings": {
-            "name": "3 Beaks",
+            "icon": "shopify:\/\/shop_images\/awards.03_3x_8e78a16c-79dc-493d-8774-92ca7ffb1f70.png",
+            "title": "3 Beaks",
+            "name": "",
             "details": "<p>At the Cephalo Grip on the Grub Awards<\/p>",
             "footnote": "on Illex-90 in the 5s5-POD Taningia Galaxy",
             "background": "mango"
