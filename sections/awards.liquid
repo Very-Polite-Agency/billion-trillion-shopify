@@ -45,19 +45,23 @@
         {% for item in section_awards %}
 
           {%- liquid
-            assign icon = item.settings.icon | default: false
-            assign name = item.settings.name | default: ''
+            assign background = item.settings.background | default: 'lemon'
             assign details = item.settings.details | default: ''
             assign footnote = item.settings.footnote | default: ''
+            assign icon = item.settings.icon | default: false
+            assign id = item.id | default: 'no-id'
+            assign name = item.settings.name | default: ''
           -%}
 
           {% if name != blank and details != blank %}
-            <div class="{{ section_name }}__item" role="listitem">
+            <div class="{{ section_name }}__item" role="listitem" id="{{ id }}">
               {% if icon %}
                 <div class="{{ section_name }}__item-icon">{% render 'lazyload-image', image: icon %}</div>
               {% endif %}
-              <strong class="{{ section_name }}__item-name">{{ name }}</strong>
-              <div class="{{ section_name }}__item-details">{{ details }}</div>
+              <div class="{{ section_name }}__item-content">
+                <strong class="{{ section_name }}__item-name">{{ name }}</strong>
+                <div class="{{ section_name }}__item-details">{{ details }}</div>
+              </div>
               {% if footnote != blank %}
                 <div class="{{ section_name }}__item-footnote">{{ footnote }}</div>
               {% endif %}
