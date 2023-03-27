@@ -10,12 +10,33 @@
 
   assign section_awards = section.blocks | where: 'type', "award"
   assign section_container = section.settings.container | default: 'container'
+  assign section_grid_gap = section.settings.grid_gap | default: '20'
+  assign section_card_aspect_ratio_desktop = section.settings.card_aspect_ratio_desktop | default: ''
+  assign section_card_aspect_ratio_mobile = section.settings.card_aspect_ratio_mobile | default: ''
 
 -%}
 
 {% if section_awards.size > 0 %}
 
   {%- style -%}
+
+    {% if card_aspect_ratio_mobile and card_aspect_ratio_mobile != blank %}
+      #{{ section_id }} .{{ section_name }}__item {
+          aspect-ratio: {{ card_aspect_ratio_mobile }};
+        }
+    {% endif %}
+
+    #{{ section_id }} .{{ section_name }}__grid {
+      gap: {{ section_grid_gap }}px;
+    }
+
+    @media screen and (min-width: 992px) {
+      {% if section_card_aspect_ratio_desktop and section_card_aspect_ratio_desktop != blank %}
+        #{{ section_id }} .{{ section_name }}__item {
+          aspect-ratio: {{ section_card_aspect_ratio_desktop }};
+        }
+      {% endif %}
+    }
 
     {%
       render 'element-styles',
@@ -41,7 +62,7 @@
         {% render 'svg', type: 'heading.awards' %}
       </div>
 
-      <div class="{{ section_name }}__list" role="list">
+      <div class="{{ section_name }}__grid" role="list">
         {% for item in section_awards %}
 
           {%- liquid
@@ -55,6 +76,15 @@
 
           {% if name != blank and details != blank %}
             <div class="{{ section_name }}__item" role="listitem" id="{{ id }}">
+
+              {%- style -%}
+                {%
+                  render 'element-styles',
+                    background: background,
+                    id: id,
+                %}
+              {%- endstyle -%}
+
               {% if icon %}
                 <div class="{{ section_name }}__item-icon">{% render 'lazyload-image', image: icon %}</div>
               {% endif %}
@@ -187,6 +217,22 @@
       "id": "border_bottom"
     },
     {
+      "content": "Card",
+      "type": "header"
+    },
+    {
+      "label": "Card Aspect Ratio (Mobile)",
+      "info": "Optionally include an aspect ratio for the card's dimensions for consistent user experience on smaller devices.",
+      "type": "text",
+      "id": "card_aspect_ratio_mobile"
+    },
+    {
+      "label": "Card Aspect Ratio (Desktop)",
+      "info": "Optionally include an aspect ratio for the card's dimensions for consistent user experience on larger devices.",
+      "type": "text",
+      "id": "card_aspect_ratio_desktop"
+    },
+    {
       "content": "Container",
       "type": "header"
     },
@@ -202,8 +248,18 @@
       "id": "container"
     },
     {
-      "content": "Height",
+      "content": "Grid",
       "type": "header"
+    },
+    {
+      "label": "Grid Gap",
+      "type": "range",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "default": 20,
+      "id": "grid_gap"
     },
     {
       "content": "Padding",
