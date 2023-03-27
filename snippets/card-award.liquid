@@ -1,0 +1,54 @@
+{%- if card_item and card_item != blank -%}
+
+  {% comment %}
+      Renders an award card
+
+      Accepts:
+      - card_item: {Object} Block object
+
+      Usage:
+      {% render 'card-award', card_item: item %}
+  {% endcomment %}
+
+  {%- liquid
+
+    assign snippet_name = 'card-award'
+    assign snippet_classes = classes | default: snippet_name
+    assign snippet_id = snippet_name | append: '--' | append: card_item.id
+    assign snippet_aria_role = card_aria_role | default: ''
+
+    assign aos_delay = 250
+    assign aos_delay_increment = 250
+
+    assign background = card_item.background | default: 'lemon'
+    assign details = card_item.details | default: ''
+    assign footnote = card_item.footnote | default: ''
+    assign icon = card_item.icon | default: false
+    assign name = card_item.name | default: ''
+
+  -%}
+
+  {%- style -%}
+    #{{ snippet_id }} {
+      background: var(--theme-colour--{{ background }});
+    }
+  {%- endstyle -%}
+
+  <article class="{{ snippet_classes }}" id="{{ snippet_id }}" {% if snippet_aria_role != blank %}role="{{ snippet_aria_role }}"{% endif %}>
+
+    {% if icon %}
+      <div class="{{ snippet_name }}__icon">{% render 'lazyload-image', image: icon %}</div>
+    {% endif %}
+
+    <div class="{{ snippet_name }}__content">
+      <strong class="{{ snippet_name }}__name">{{ name }}</strong>
+      <div class="{{ snippet_name }}__details">{{ details }}</div>
+    </div>
+
+    {% if footnote != blank %}
+      <div class="{{ snippet_name }}__footnote">{{ footnote }}</div>
+    {% endif %}
+
+  </article>
+
+{% endif %}

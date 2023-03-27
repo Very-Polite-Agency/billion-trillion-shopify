@@ -1,0 +1,9 @@
+@use "../utils/mixins/border" as *;
+@use "../utils/mixins/breakpoint" as *;
+
+.card-award {
+
+  @include border-solid( var(--theme-border--width), 'black' );
+  border-radius: var(--theme-border--radius);
+
+}

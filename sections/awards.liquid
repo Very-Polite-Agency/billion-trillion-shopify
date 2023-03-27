@@ -62,7 +62,9 @@
         {% render 'svg', type: 'heading.awards' %}
       </div>
 
-      <div class="{{ section_name }}__grid" role="list">
+      <div class="{{ section_name }}__glide"></div>
+
+      <div class="{{ section_name }}__grid grid--3" role="list">
         {% for item in section_awards %}
 
           {%- liquid
