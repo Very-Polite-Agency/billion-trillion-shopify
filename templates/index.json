@@ -46,9 +46,9 @@
           "type": "award",
           "settings": {
             "name": "Best in Show",
-            "details": "",
-            "footnote": "",
-            "background": "lemon"
+            "details": "<p>At the Intergalactic TV Awards<\/p>",
+            "footnote": "on GN-z11 in the TarAR-ead Galaxy",
+            "background": "orange"
           }
         },
         "template--15941099487416__054245ba-4ed7-4220-bd3b-8e55198d24b0-1679950234f2023cc4-2": {
