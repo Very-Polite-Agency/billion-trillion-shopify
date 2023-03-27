@@ -62,44 +62,28 @@
         {% render 'svg', type: 'heading.awards' %}
       </div>
 
-      <div class="{{ section_name }}__glide"></div>
+      <div
+        class="{{ section_name }}__glide glide js--glide d-lg-none"
+        data-glide-animation-duration="500"
+        data-glide-autoplay="3500"
+        data-glide-gap="{{ section_grid_gap }}"
+        data-glide-style="{{ section_name }}"
+      >
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            {% for item in section_awards %}
+              <li class="glide__slide">
+                {% render 'card-award', card_item: item %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
 
-      <div class="{{ section_name }}__grid grid--3" role="list">
+      <div class="{{ section_name }}__grid grid--3 d-none d-lg-grid" role="list">
         {% for item in section_awards %}
-
-          {%- liquid
-            assign background = item.settings.background | default: 'lemon'
-            assign details = item.settings.details | default: ''
-            assign footnote = item.settings.footnote | default: ''
-            assign icon = item.settings.icon | default: false
-            assign id = item.id | default: 'no-id'
-            assign name = item.settings.name | default: ''
-          -%}
-
-          {% if name != blank and details != blank %}
-            <div class="{{ section_name }}__item" role="listitem" id="{{ id }}">
-
-              {%- style -%}
-                {%
-                  render 'element-styles',
-                    background: background,
-                    id: id,
-                %}
-              {%- endstyle -%}
-
-              {% if icon %}
-                <div class="{{ section_name }}__item-icon">{% render 'lazyload-image', image: icon %}</div>
-              {% endif %}
-              <div class="{{ section_name }}__item-content">
-                <strong class="{{ section_name }}__item-name">{{ name }}</strong>
-                <div class="{{ section_name }}__item-details">{{ details }}</div>
-              </div>
-              {% if footnote != blank %}
-                <div class="{{ section_name }}__item-footnote">{{ footnote }}</div>
-              {% endif %}
-            </div>
-          {% endif %}
-
+          {% capture snippet_classes %}{{ section_name }}__item card-award{% endcapture %}
+          {% render 'card-award', card_aria_role: 'lisitem', card_item: item, classes: snippet_classes %}
         {% endfor %}
       </div>
 
@@ -302,6 +286,11 @@
           "label": "Icon",
           "type": "image_picker",
           "id": "icon"
+        },
+        {
+          "label": "Title",
+          "type": "text",
+          "id": "title"
         },
         {
           "label": "Name",

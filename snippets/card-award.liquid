@@ -20,21 +20,21 @@
     assign aos_delay = 250
     assign aos_delay_increment = 250
 
-    assign background = card_item.background | default: 'lemon'
-    assign details = card_item.details | default: ''
-    assign footnote = card_item.footnote | default: ''
-    assign icon = card_item.icon | default: false
-    assign name = card_item.name | default: ''
+    assign background = card_item.settings.background | default: 'lemon'
+    assign details = card_item.settings.details | default: ''
+    assign footnote = card_item.settings.footnote | default: ''
+    assign icon = card_item.settings.icon | default: false
+    assign name = card_item.settings.name | default: ''
 
   -%}
 
-  {%- style -%}
-    #{{ snippet_id }} {
-      background: var(--theme-colour--{{ background }});
-    }
-  {%- endstyle -%}
-
   <article class="{{ snippet_classes }}" id="{{ snippet_id }}" {% if snippet_aria_role != blank %}role="{{ snippet_aria_role }}"{% endif %}>
+
+    {%- style -%}
+      #{{ snippet_id }} {
+        background: var(--theme-colour--{{ background }});
+      }
+    {%- endstyle -%}
 
     {% if icon %}
       <div class="{{ snippet_name }}__icon">{% render 'lazyload-image', image: icon %}</div>

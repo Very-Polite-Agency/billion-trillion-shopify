@@ -25,14 +25,18 @@ window.addEventListener( 'load', function (e) {
 });
 
 // ---------------------------------------- On Resize
-window.addEventListener( 'resize', Tools.debounce(() => {}, 300));
+window.addEventListener( 'resize', Tools.debounce(() => {
+
+}, 300));
 
 window.addEventListener( 'resize', Tools.throttle(() => {
   Scrolling.init();
 }, 300));
 
 // ---------------------------------------- On Scroll
-window.addEventListener( 'scroll', Tools.debounce(() => {}, 300));
+window.addEventListener( 'scroll', Tools.debounce(() => {
+
+}, 300));
 
 window.addEventListener( 'scroll', Tools.throttle(() => {
   Scrolling.init();
