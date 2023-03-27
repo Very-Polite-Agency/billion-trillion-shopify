@@ -38,7 +38,6 @@
           "settings": {
             "icon": "shopify:\/\/shop_images\/awards.01_3x_c9bfacc9-389d-4cb7-999e-7f7246363916.png",
             "title": "Goldar",
-            "name": "",
             "details": "<p>At the Galactic Choice Awards<\/p>",
             "footnote": "on Nabmzu-8 in the  Snow-cone Galaxy",
             "background": "lemon"
@@ -49,7 +48,6 @@
           "settings": {
             "icon": "shopify:\/\/shop_images\/awards.02_3x_5f73153b-b102-4b48-9b08-2281654e9a2f.png",
             "title": "Best in Show",
-            "name": "",
             "details": "<p>At the Intergalactic TV Awards<\/p>",
             "footnote": "on GN-z11 in the TarAR-ead Galaxy",
             "background": "orange"
@@ -60,7 +58,6 @@
           "settings": {
             "icon": "shopify:\/\/shop_images\/awards.03_3x_8e78a16c-79dc-493d-8774-92ca7ffb1f70.png",
             "title": "3 Beaks",
-            "name": "",
             "details": "<p>At the Cephalo Grip on the Grub Awards<\/p>",
             "footnote": "on Illex-90 in the 5s5-POD Taningia Galaxy",
             "background": "mango"
@@ -83,7 +80,7 @@
         "border_bottom": false,
         "card_aspect_ratio_mobile": "292\/303",
         "card_aspect_ratio_desktop": "292\/303",
-        "container": "container",
+        "container": "container-fluid",
         "grid_gap": 20,
         "padding_top": 36,
         "padding_bottom": 36
