@@ -41,9 +41,10 @@
         "template--15945343795384__d685fa2e-8822-46df-b523-b7fa76700377-1680033857a28ea71f-0": {
           "type": "award",
           "settings": {
-            "title": "",
-            "details": "",
-            "footnote": "",
+            "icon": "shopify:\/\/shop_images\/awards.01_3x_c9bfacc9-389d-4cb7-999e-7f7246363916.png",
+            "title": "Goldar",
+            "details": "<p>At the Galactic Choice Awards<\/p>",
+            "footnote": "On Nabmzu-8 in the Snow-cone Galaxy",
             "background": "lemon"
           }
         },
