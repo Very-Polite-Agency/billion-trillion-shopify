@@ -29,10 +29,10 @@
 
   {%- style -%}
 
-    {% if card_aspect_ratio_mobile and card_aspect_ratio_mobile != blank %}
+    {% if section_card_aspect_ratio_mobile and section_card_aspect_ratio_mobile != blank %}
       #{{ section_id }} .card-award {
-          aspect-ratio: {{ card_aspect_ratio_mobile }};
-        }
+        aspect-ratio: {{ section_card_aspect_ratio_mobile }};
+      }
     {% endif %}
 
     #{{ section_id }} .{{ section_name }}__grid {

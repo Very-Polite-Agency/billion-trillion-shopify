@@ -3,9 +3,32 @@
 
 .awards {
 
+  &__heading {
+    width: 80%;
+    margin: 0 auto 30px;;
+  }
+
   &__item {
     @include border-solid( var(--theme-border--width), 'black' );
     border-radius: var(--theme-border--radius);
   }
+
+  @include breakpoint(sm) {}
+
+  @include breakpoint(md) {}
+
+  @include breakpoint(lg) {
+
+    .container-fluid & {
+      &__heading {
+        margin-bottom: 2.5vw;
+      }
+    }
+
+  }
+
+  @include breakpoint(xl) {}
+
+  @include breakpoint(xxl) {}
 
 }
