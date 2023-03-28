@@ -36,24 +36,24 @@
         "template--15941099487416__0fa9ba11-804e-4e9d-a953-63efbbdfa40b-16800369909b7b4bad-0": {
           "type": "review",
           "settings": {
-            "subheading": "",
-            "review": "",
+            "subheading": "Translated from Maamic to English:",
+            "review": "<p>With a fizz as sparkly as our exoplanets surface– what’s not to love?!<\/p>",
             "background": "lemon"
           }
         },
         "template--15941099487416__0fa9ba11-804e-4e9d-a953-63efbbdfa40b-16800369909b7b4bad-1": {
           "type": "review",
           "settings": {
-            "subheading": "",
-            "review": "",
+            "subheading": "Translated from Wookie to English:",
+            "review": "<p>Aliquam vel imperdiet nunc, eu maximus nisi. Suspendisse lobortis dolor ut.<\/p>",
             "background": "lemon"
           }
         },
         "template--15941099487416__0fa9ba11-804e-4e9d-a953-63efbbdfa40b-16800369909b7b4bad-2": {
           "type": "review",
           "settings": {
-            "subheading": "",
-            "review": "",
+            "subheading": "Translated from Klingon to English:",
+            "review": "<p>Nulla consequat dolor vel tincidunt lacinia. Aliquam ut erat ut tortor vel.<\/p>",
             "background": "lemon"
           }
         }
@@ -64,6 +64,7 @@
         "template--15941099487416__0fa9ba11-804e-4e9d-a953-63efbbdfa40b-16800369909b7b4bad-2"
       ],
       "settings": {
+        "heading": "Reviews",
         "anchor_id": "",
         "background": "image",
         "background_image": "shopify:\/\/shop_images\/tile-background_2x_8633724c-832c-4866-82a3-a03b9bfd94de.png",
@@ -73,15 +74,12 @@
         "background_image_size": "400px",
         "border_top": false,
         "border_bottom": false,
-        "card_aspect_ratio_mobile": "",
-        "card_aspect_ratio_desktop": "",
-        "carousel_pagination": false,
+        "carousel_pagination": true,
         "carousel_autoplay": 3000,
         "carousel_animation_duration": 450,
         "carousel_gap": 20,
-        "grid_gap": 20,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 52,
+        "padding_bottom": 48
       }
     },
     "054245ba-4ed7-4220-bd3b-8e55198d24b0": {
