@@ -2841,6 +2841,14 @@
       "oAP" : "\/snippets\/card-product.liquid",
       "oF" : 0
     },
+    "\/snippets\/card-review.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/snippets\/card-review.liquid",
+      "oF" : 0
+    },
     "\/snippets\/debug-this.liquid" : {
       "cB" : 0,
       "ft" : 8192,

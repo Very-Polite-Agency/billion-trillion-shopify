@@ -1,0 +1,50 @@
+{%- if card_item and card_item != blank -%}
+
+  {%- comment  -%}
+      Renders an award card
+
+      Accepts:
+      - card_item: {Object} Block object
+
+      Usage:
+      {%- render 'card-award', card_item: item  -%}
+  {%- endcomment  -%}
+
+  {%- liquid
+
+    assign snippet_name = 'card-review'
+    assign snippet_classes = classes | default: snippet_name
+    assign snippet_id = snippet_name | append: '--' | append: card_item.id
+    assign snippet_aria_role = card_aria_role | default: ''
+
+    assign aos_delay = 250
+    assign aos_delay_increment = 250
+
+    assign background = card_item.settings.background | default: 'lemon'
+    assign badge = card_item.settings.badge | default: false
+    assign image_desktop = card_item.settings.image_desktop | default: false
+    assign image_mobile = card_item.settings.image_mobile | default: false
+    assign subheading = card_item.settings.subheading | default: ''
+    assign review = card_item.settings.review | default: ''
+
+  -%}
+
+  <article class="{{ snippet_classes }}" id="{{ snippet_id }}" {%- if snippet_aria_role != blank -%}role="{{ snippet_aria_role }}"{%- endif -%}>
+
+    {%- style -%}
+      #{{ snippet_id }} {
+        background: var(--theme-colour--{{ background }});
+      }
+    {%- endstyle -%}
+
+    {%- if subheading and subheading != blank -%}
+      <strong class="{{ snippet_name }}__subheading body-copy--primary">{{ subheading }}</strong>
+    {%- endif -%}
+
+    {%- if review and review != blank -%}
+      <div class="{{ snippet_name }}__review body-copy--secondary">{{ review }}</div>
+    {%- endif -%}
+
+  </article>
+
+{%- endif -%}
