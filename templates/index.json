@@ -52,8 +52,8 @@
         "template--15941099487416__0fa9ba11-804e-4e9d-a953-63efbbdfa40b-16800369909b7b4bad-2": {
           "type": "review",
           "settings": {
-            "subheading": "",
-            "review": "",
+            "subheading": "Translated from Klingon to English:",
+            "review": "<p>Nulla consequat dolor vel tincidunt lacinia. Aliquam ut erat ut tortor vel.<\/p>",
             "background": "lemon"
           }
         }
