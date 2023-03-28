@@ -1,6 +1,6 @@
 {%- liquid
 
-  assign section_name = 'awards'
+  assign section_name = 'reviews'
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
@@ -8,9 +8,7 @@
   assign aos_delay = 250
   assign aos_delay_increment = 250
 
-  assign section_awards = section.blocks | where: 'type', "award"
-  assign section_card_aspect_ratio_desktop = section.settings.card_aspect_ratio_desktop | default: ''
-  assign section_card_aspect_ratio_mobile = section.settings.card_aspect_ratio_mobile | default: ''
+  assign section_reviews = section.blocks | where: 'type', "review"
 
   assign section_carousel_animation_duration = section.settings.carousel_animation_duration | default: 450
   assign section_carousel_autoplay = section.settings.carousel_autoplay | default: 3500
@@ -19,33 +17,11 @@
   assign section_carousel_pagination = section.settings.carousel_pagination | default: false
   assign section_carousel_style = section_name
 
-  assign section_glider_id = section_id | append: '--glider'
-  assign section_grid_gap = section.settings.grid_gap | default: '20'
-
 -%}
 
-{%- if section_awards.size > 0 -%}
+{%- if section_reviews.size > 0 -%}
 
   {%- style -%}
-
-    {%- if section_card_aspect_ratio_mobile and section_card_aspect_ratio_mobile != blank -%}
-      #{{ section_id }} .card-award {
-        aspect-ratio: {{ section_card_aspect_ratio_mobile }};
-      }
-    {%- endif -%}
-
-    #{{ section_id }} .{{ section_name }}__grid {
-      gap: {{ section_grid_gap }}px;
-    }
-
-    @media screen and (min-width: 992px) {
-      {%- if section_card_aspect_ratio_desktop and section_card_aspect_ratio_desktop != blank -%}
-        #{{ section_id }} .card-award {
-          aspect-ratio: {{ section_card_aspect_ratio_desktop }};
-        }
-      {%- endif -%}
-    }
-
     {%
       render 'element-styles',
         background: section.settings.background,
@@ -60,21 +36,10 @@
         padding_bottom: section.settings.padding_bottom,
         padding_top: section.settings.padding_top
     -%}
-
   {%- endstyle -%}
 
   <div class="{{ section_classes }}" id="{{ section_id }}">
     <div class="{{ section_name }}__main">
-
-      {%- liquid
-        capture aos_attrs
-          render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
-        endcapture
-        assign aos_delay = aos_delay | plus: aos_delay_increment
-      -%}
-      <div class="{{ section_name }}__heading" {{ aos_attrs }}>
-        {%- render 'svg', type: 'heading.awards' -%}
-      </div>
 
       <div
         class="{{ section_name }}__glide glide js--glide d-lg-none"
@@ -87,9 +52,9 @@
 
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            {%- for item in section_awards -%}
+            {%- for item in section_reviews -%}
               <li class="glide__slide">
-                {%- render 'card-award', card_item: item -%}
+                {%- render 'card-review', card_item: item -%}
               </li>
             {%- endfor -%}
           </ul>
@@ -97,7 +62,7 @@
 
         {%- if section_carousel_pagination -%}
           <div class="glide__bullets" data-glide-el="controls[nav]">
-            {%- for item in section_awards -%}
+            {%- for item in section_reviews -%}
               <button class="glide__bullet button" type="button" data-glide-dir="={{ forloop.index0 }}">
                 {%- render 'svg', type: 'icon.pagination' -%}
               </button>
@@ -107,13 +72,6 @@
 
       </div>
 
-      <div class="{{ section_name }}__grid grid--3 d-none d-lg-grid" role="list">
-        {%- for item in section_awards -%}
-          {%- capture snippet_classes -%}{{ section_name }}__item card-award{%- endcapture -%}
-          {%- render 'card-award', card_aria_role: 'lisitem', card_item: item, classes: snippet_classes -%}
-        {%- endfor -%}
-      </div>
-
     </div>
   </div>
 
@@ -121,9 +79,9 @@
 
 {%- schema -%}
 {
-  "name": "Awards",
+  "name": "Reviews",
   "tag": "section",
-  "class": "section section--awards",
+  "class": "section section--reviews",
   "settings": [
     {
       "content": "Settings",
@@ -381,7 +339,7 @@
   ],
   "presets": [
     {
-      "name": "Awards",
+      "name": "Reviews",
       "blocks": [
         { "type": "award" },
         { "type": "award" },
