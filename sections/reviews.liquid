@@ -17,7 +17,13 @@
   assign section_carousel_pagination = section.settings.carousel_pagination | default: false
   assign section_carousel_style = section_name
 
+  assign section_is_carousel = false
+
   assign section_reviews = section.blocks | where: 'type', "review"
+
+  if section_reviews.size > 1
+    assign section_is_carousel = true
+  endif
 
 -%}
 
@@ -43,30 +49,38 @@
   <div class="{{ section_classes }}" id="{{ section_id }}">
     <div class="{{ section_name }}__main">
 
-      {% if section_heading != blank %}
-        <h2 class="{{ section_name }}__heading">{{ section_heading }}</h2>
-      {% endif %}
+      {%- if section_heading != blank -%}
+        {%- liquid
+          capture aos_attrs
+            render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+          endcapture
+          assign aos_delay = aos_delay | plus: aos_delay_increment
+        -%}
+        <h2 class="{{ section_name }}__heading heading--primary" {{ aos_attrs }}>{{ section_heading }}</h2>
+      {%- endif -%}
 
-      <div
-        class="{{ section_name }}__glide glide js--glide d-lg-none"
-        data-glide-animation-duration="{{ section_carousel_animation_duration }}"
-        data-glide-autoplay="{{ section_carousel_autoplay }}"
-        data-glide-gap="{{ section_carousel_gap }}"
-        data-glide-style="{{ section_carousel_style }}"
-        id="{{ section_carousel_id }}"
-      >
+      {%- if section_is_carousel -%}
+        <div
+          class="{{ section_name }}__glide glide js--glide d-lg-none"
+          data-glide-animation-duration="{{ section_carousel_animation_duration }}"
+          data-glide-autoplay="{{ section_carousel_autoplay }}"
+          data-glide-gap="{{ section_carousel_gap }}"
+          data-glide-style="{{ section_carousel_style }}"
+          id="{{ section_carousel_id }}"
+        >
+      {%- endif -%}
 
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
+        {%- if section_is_carousel -%}<div class="glide__track" data-glide-el="track">{%- endif -%}
+          {%- if section_is_carousel -%}<ul class="glide__slides">{%- endif -%}
             {%- for item in section_reviews -%}
-              <li class="glide__slide">
+              {%- if section_is_carousel -%}<li class="glide__slide">{%- endif -%}
                 {%- render 'card-review', card_item: item -%}
-              </li>
+              {%- if section_is_carousel -%}</li>{%- endif -%}
             {%- endfor -%}
-          </ul>
-        </div>
+          {%- if section_is_carousel -%}</ul>{%- endif -%}
+        {%- if section_is_carousel -%}</div>{%- endif -%}
 
-        {%- if section_carousel_pagination -%}
+        {%- if section_is_carousel and section_carousel_pagination -%}
           <div class="glide__bullets" data-glide-el="controls[nav]">
             {%- for item in section_reviews -%}
               <button class="glide__bullet button" type="button" data-glide-dir="={{ forloop.index0 }}">
@@ -76,7 +90,9 @@
           </div>
         {%- endif -%}
 
-      </div>
+      {%- if section_heading != blank -%}
+        </div>
+      {%- endif -%}
 
     </div>
   </div>
