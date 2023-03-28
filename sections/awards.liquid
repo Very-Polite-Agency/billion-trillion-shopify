@@ -30,7 +30,7 @@
   {%- style -%}
 
     {% if card_aspect_ratio_mobile and card_aspect_ratio_mobile != blank %}
-      #{{ section_id }} .{{ section_name }}__item {
+      #{{ section_id }} .card-award {
           aspect-ratio: {{ card_aspect_ratio_mobile }};
         }
     {% endif %}
@@ -41,7 +41,7 @@
 
     @media screen and (min-width: 992px) {
       {% if section_card_aspect_ratio_desktop and section_card_aspect_ratio_desktop != blank %}
-        #{{ section_id }} .{{ section_name }}__item {
+        #{{ section_id }} .card-award {
           aspect-ratio: {{ section_card_aspect_ratio_desktop }};
         }
       {% endif %}
