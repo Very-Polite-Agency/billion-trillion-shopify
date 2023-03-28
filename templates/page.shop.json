@@ -119,7 +119,8 @@
       ],
       "settings": {
         "anchor_id": "",
-        "background": "none",
+        "background": "image",
+        "background_image": "shopify:\/\/shop_images\/tile-background_2x_8633724c-832c-4866-82a3-a03b9bfd94de.png",
         "background_image_position_mobile": "center center",
         "background_image_position_desktop": "center center",
         "background_image_repeat": "repeat",
