@@ -44,8 +44,8 @@
         "template--15941099487416__0fa9ba11-804e-4e9d-a953-63efbbdfa40b-16800369909b7b4bad-1": {
           "type": "review",
           "settings": {
-            "subheading": "",
-            "review": "",
+            "subheading": "Translated from Wookie to English:",
+            "review": "<p>Aliquam vel imperdiet nunc, eu maximus nisi. Suspendisse lobortis dolor ut.<\/p>",
             "background": "lemon"
           }
         },
