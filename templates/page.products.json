@@ -141,7 +141,7 @@
           "type": "award",
           "settings": {
             "icon": "shopify:\/\/shop_images\/awards.02_3x_5f73153b-b102-4b48-9b08-2281654e9a2f.png",
-            "title": "",
+            "title": "Best in Show",
             "details": "",
             "footnote": "",
             "background": "orange"
@@ -151,7 +151,7 @@
           "type": "award",
           "settings": {
             "icon": "shopify:\/\/shop_images\/awards.03_3x_8e78a16c-79dc-493d-8774-92ca7ffb1f70.png",
-            "title": "",
+            "title": "3 Beaks",
             "details": "",
             "footnote": "",
             "background": "mango"
