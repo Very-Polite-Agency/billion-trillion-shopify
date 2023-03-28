@@ -51,19 +51,21 @@
         "template--15945343795384__d685fa2e-8822-46df-b523-b7fa76700377-1680033857a28ea71f-1": {
           "type": "award",
           "settings": {
-            "title": "",
-            "details": "",
-            "footnote": "",
-            "background": "lemon"
+            "icon": "shopify:\/\/shop_images\/awards.02_3x_5f73153b-b102-4b48-9b08-2281654e9a2f.png",
+            "title": "Best in Show",
+            "details": "<p>At the Intergalactic TV Awards<\/p>",
+            "footnote": "on GN-z11 in the TarAR-ead Galaxy",
+            "background": "orange"
           }
         },
         "template--15945343795384__d685fa2e-8822-46df-b523-b7fa76700377-1680033857a28ea71f-2": {
           "type": "award",
           "settings": {
+            "icon": "shopify:\/\/shop_images\/awards.03_3x_8e78a16c-79dc-493d-8774-92ca7ffb1f70.png",
             "title": "",
             "details": "",
             "footnote": "",
-            "background": "lemon"
+            "background": "mango"
           }
         }
       },
