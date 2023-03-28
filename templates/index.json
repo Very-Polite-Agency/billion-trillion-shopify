@@ -76,7 +76,7 @@
         "background_image_position_mobile": "center center",
         "background_image_position_desktop": "center center",
         "background_image_repeat": "repeat",
-        "background_image_size": "contain",
+        "background_image_size": "400px",
         "border_top": true,
         "border_bottom": false,
         "card_aspect_ratio_mobile": "2.9\/3.3",
