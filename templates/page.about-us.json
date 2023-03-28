@@ -1,6 +1,7 @@
 {
   "order": [
-    "hero"
+    "hero",
+    "d685fa2e-8822-46df-b523-b7fa76700377"
   ],
   "sections": {
     "hero": {
@@ -32,6 +33,63 @@
         "height_desktop": "auto",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "d685fa2e-8822-46df-b523-b7fa76700377": {
+      "type": "awards",
+      "blocks": {
+        "template--15945343795384__d685fa2e-8822-46df-b523-b7fa76700377-1680033857a28ea71f-0": {
+          "type": "award",
+          "settings": {
+            "title": "",
+            "details": "",
+            "footnote": "",
+            "background": "lemon"
+          }
+        },
+        "template--15945343795384__d685fa2e-8822-46df-b523-b7fa76700377-1680033857a28ea71f-1": {
+          "type": "award",
+          "settings": {
+            "title": "",
+            "details": "",
+            "footnote": "",
+            "background": "lemon"
+          }
+        },
+        "template--15945343795384__d685fa2e-8822-46df-b523-b7fa76700377-1680033857a28ea71f-2": {
+          "type": "award",
+          "settings": {
+            "title": "",
+            "details": "",
+            "footnote": "",
+            "background": "lemon"
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343795384__d685fa2e-8822-46df-b523-b7fa76700377-1680033857a28ea71f-0",
+        "template--15945343795384__d685fa2e-8822-46df-b523-b7fa76700377-1680033857a28ea71f-1",
+        "template--15945343795384__d685fa2e-8822-46df-b523-b7fa76700377-1680033857a28ea71f-2"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "image",
+        "background_image": "shopify:\/\/shop_images\/tile-background_2x_8633724c-832c-4866-82a3-a03b9bfd94de.png",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "400px",
+        "border_top": false,
+        "border_bottom": false,
+        "card_aspect_ratio_mobile": "",
+        "card_aspect_ratio_desktop": "",
+        "carousel_pagination": true,
+        "carousel_autoplay": 2750,
+        "carousel_animation_duration": 400,
+        "carousel_gap": 20,
+        "grid_gap": 20,
+        "padding_top": 48,
+        "padding_bottom": 84
       }
     }
   }
