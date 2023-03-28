@@ -1,14 +1,14 @@
 {%- if card_item and card_item != blank -%}
 
-  {% comment %}
+  {%- comment  -%}
       Renders an award card
 
       Accepts:
       - card_item: {Object} Block object
 
       Usage:
-      {% render 'card-award', card_item: item %}
-  {% endcomment %}
+      {%- render 'card-award', card_item: item  -%}
+  {%- endcomment  -%}
 
   {%- liquid
 
@@ -28,7 +28,7 @@
 
   -%}
 
-  <article class="{{ snippet_classes }}" id="{{ snippet_id }}" {% if snippet_aria_role != blank %}role="{{ snippet_aria_role }}"{% endif %}>
+  <article class="{{ snippet_classes }}" id="{{ snippet_id }}" {%- if snippet_aria_role != blank -%}role="{{ snippet_aria_role }}"{%- endif -%}>
 
     {%- style -%}
       #{{ snippet_id }} {
@@ -36,19 +36,22 @@
       }
     {%- endstyle -%}
 
-    {% if icon %}
-      <div class="{{ snippet_name }}__icon">{% render 'lazyload-image', image: icon %}</div>
-    {% endif %}
+    {%- if icon -%}
+      <div class="{{ snippet_name }}__icon">{%- render 'lazyload-image', image: icon  -%}</div>
+    {%- endif -%}
 
-    <div class="{{ snippet_name }}__content">
-      <strong class="{{ snippet_name }}__name">{{ title }}</strong>
-      <div class="{{ snippet_name }}__details">{{ details }}</div>
-    </div>
+    {%- if title and title != blank -%}
+      <strong class="{{ snippet_name }}__title">{{ title }}</strong>
+    {%- endif -%}
 
-    {% if footnote != blank %}
+    {%- if details and details != blank -%}
+      <div class="{{ snippet_name }}__details body-copy--secondary">{{ details }}</div>
+    {%- endif -%}
+
+    {%- if footnote != blank -%}
       <div class="{{ snippet_name }}__footnote">{{ footnote }}</div>
-    {% endif %}
+    {%- endif -%}
 
   </article>
 
-{% endif %}
+{%- endif -%}

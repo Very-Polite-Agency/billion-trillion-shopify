@@ -1,7 +1,8 @@
 import Glide from "@glidejs/glide";
 
-const config = { debug: true, name: 'gliders.js', version: '1.0' };
+const config = { debug: false, name: 'gliders.js', version: '1.0' };
 const events = [ "build.after", "run.after" ];
+const elements = document.querySelectorAll( '.js--glide' ) || [];
 const gliders = {};
 
 const createGliderFromElement = ( element = {} ) => {
@@ -14,75 +15,49 @@ const createGliderFromElement = ( element = {} ) => {
   let options = getOptions({ animationDuration, autoplay, gap });
 
   switch ( style ) {
-    case 'instagram-feed' : {
-      options.breakpoints = {
-        // up to 9999
-        9999: {
-          gap: gap,
-          peek: { before: 0, after: 175 },
-          perView: 3
-        },
-        // up to 1400
-        1399: {
-          gap: gap,
-          peek: { before: 0, after: 175 },
-          perView: 2
-        },
-        // up to 1200
-        1199: {
-          gap: gap,
-          peek: { before: 0, after: 175 },
-          perView: 2
-        },
-        // up to 992
-        991: {
-          gap: gap,
-          peek: { before: 0, after: 100 },
-          perView: 2
-        },
-        // up to 768
-        767: {
-          gap: gap,
-          peek: { before: 0, after: 150 },
-          perView: 1
-        },
-        // up to 576
-        575: {
-          gap: gap,
-          peek: { before: 0, after: 100 },
-          perView: 1
-        }
-      };
+    case 'media-grid': {
+      break;
+    }
+    case 'showcase': {
       break;
     }
   }
 
-  let glide = new Glide( "#" + element_id, options );
+  if ( element_id ) {
 
-  glide.on( events, event => {
-    setTimeout(() => {
-      updateGlideTrackHeight( element );
-    }, 100 );
-  });
+    let glide = new Glide( `#${element_id}`, options );
 
-  ( document.querySelectorAll('[data-glide-navigation="#' + element_id + '"].next' ) || [] ).forEach( button => {
-    button.addEventListener("click", function () {
-      glide.go(">");
+    glide.on( events, event => {
+
+      switch ( style ) {
+        default: {
+          setTimeout( () => updateGlideTrackHeight( element ), 100 );
+          break;
+        }
+      }
+
     });
-  });
 
-  ( document.querySelectorAll( '[data-glide-navigation="#' + element_id + '"].prev' ) || [] ).forEach( button => {
-    button.addEventListener("click", function () {
-      glide.go("<");
+    ( document.querySelectorAll( `[data-glide-navigation="#${element_id}"].next, [data-target="#${element_id}"].next`  ) || [] ).forEach( button => {
+      button.addEventListener("click", function () {
+        glide.go(">");
+      });
     });
-  });
 
-  glide.mount();
+    ( document.querySelectorAll( `[data-glide-navigation="#${element_id}"].prev, [data-target="#${element_id}"].prev` ) || [] ).forEach( button => {
+      button.addEventListener("click", function () {
+        glide.go("<");
+      });
+    });
 
-  // FIX for when single slide doesn't fill 100% of Glider
-  setTimeout( () => { glide.update() }, 250 );
+    glide.mount();
 
-  gliders[element_id] = { element_id, glide };
+    // FIX for when single slide does not fill 100% of glider
+    setTimeout( () => { glide.update() }, 500 );
+
+    gliders[element_id] = { element_id, glide };
+
+  }
 
 };
 
@@ -90,16 +65,17 @@ const getOptions = ( custom = {} ) => {
 
   let standard = {
     animationTimingFunc: "ease-in-out",
-    animationDuration: 450,
+    animationDuration: 350,
     autoHeight: true,
-    autoplay: 3250,
-    dragThreshold: 20,
+    autoplay: 5000,
+    dragThreshold: 35,
+    hoverpause: false,
     perView: 1,
-    swipeThreshold: 20,
+    swipeThreshold: 35,
     type: "carousel",
     rewind: true,
     throttle: 50,
-    gap: 20,
+    gap: 0,
   };
 
   return { ...standard, ...custom };
@@ -108,39 +84,20 @@ const getOptions = ( custom = {} ) => {
 
 const updateGlideTrackHeight = ( element = false ) => {
   if ( element ) {
-
     let active_slide = element.querySelector( '.glide__slide--active' ) || false;
     let glide_track = element.querySelector( '.glide__track' ) || false;
-
     if ( active_slide && glide_track ) {
-
       let active_slide_height = active_slide.offsetHeight;
       let glide_track_height = glide_track.offsetHeight;
-
-      if ( glide_track_height != active_slide_height ) {
-        // glide_track.style.height = active_slide_height + 'px';
-      }
-
+      if ( glide_track_height != active_slide_height ) glide_track.style.height = active_slide_height + 'px';
+      AOS.refresh();
     }
-
   }
-};
-
-const updateGliders = () => {
-
-  console.log( gliders );
-
-  for ( const id in gliders ) {
-    console.log(`${id}: ${gliders[id]}`);
-  }
-
 };
 
 const init = () => {
   if ( config.debug ) console.log(`[ ${config.name} v.${config.version} initialized ]`);
-    ( document.querySelectorAll( '.js--glide' ) || [] ).forEach( element => {
-      createGliderFromElement( element );
-    });
+    elements.forEach( element => createGliderFromElement( element ) );
   if ( config.debug ) console.log(`[ ${config.name} v.${config.version} complete ]`);
 };
 
@@ -148,6 +105,5 @@ export default {
   createGliderFromElement,
   getOptions,
   gliders,
-  init,
-  updateGliders
+  init
 };

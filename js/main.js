@@ -1,4 +1,3 @@
-import AgeGate from './modules/ageGate';
 import Credits from './modules/credits';
 import Forms from './modules/forms';
 import Gliders from './modules/gliders';
@@ -7,7 +6,6 @@ import Tools from './modules/tools';
 
 Credits.init();
 Forms.init();
-Gliders.init();
 Scrolling.init();
 
 AOS.init({
