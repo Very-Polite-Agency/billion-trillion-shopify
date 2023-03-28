@@ -62,9 +62,9 @@
           "type": "award",
           "settings": {
             "icon": "shopify:\/\/shop_images\/awards.03_3x_8e78a16c-79dc-493d-8774-92ca7ffb1f70.png",
-            "title": "",
-            "details": "",
-            "footnote": "",
+            "title": "3 Beaks",
+            "details": "<p>At the Cephalo Grip on the Grub Awards<\/p>",
+            "footnote": "on Illex-90 in the 5s5-POD Taningia Galaxy",
             "background": "mango"
           }
         }
