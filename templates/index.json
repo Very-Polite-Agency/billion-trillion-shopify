@@ -80,7 +80,7 @@
         "border_bottom": false,
         "card_aspect_ratio_mobile": "2.9\/3.3",
         "card_aspect_ratio_desktop": "2.9\/3.3",
-        "carousel_pagination": false,
+        "carousel_pagination": true,
         "carousel_autoplay": 3000,
         "carousel_animation_duration": 450,
         "carousel_gap": 20,
