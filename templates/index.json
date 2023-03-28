@@ -72,10 +72,11 @@
       "settings": {
         "anchor_id": "",
         "background": "none",
+        "background_image": "shopify:\/\/shop_images\/tile-background_2x_8633724c-832c-4866-82a3-a03b9bfd94de.png",
         "background_image_position_mobile": "center center",
         "background_image_position_desktop": "center center",
         "background_image_repeat": "repeat",
-        "background_image_size": "cover",
+        "background_image_size": "contain",
         "border_top": true,
         "border_bottom": false,
         "card_aspect_ratio_mobile": "2.9\/3.3",
@@ -84,7 +85,6 @@
         "carousel_autoplay": 3000,
         "carousel_animation_duration": 450,
         "carousel_gap": 20,
-        "container": "container-fluid",
         "grid_gap": 20,
         "padding_top": 44,
         "padding_bottom": 72
