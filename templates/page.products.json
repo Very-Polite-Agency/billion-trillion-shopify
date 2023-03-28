@@ -132,8 +132,8 @@
           "settings": {
             "icon": "shopify:\/\/shop_images\/awards.01_3x_c9bfacc9-389d-4cb7-999e-7f7246363916.png",
             "title": "Goldar",
-            "details": "",
-            "footnote": "",
+            "details": "<p>At the Galactic Choice Awards<\/p>",
+            "footnote": "On Nabmzu-8 in the Snow-cone Galaxy",
             "background": "lemon"
           }
         },
@@ -142,7 +142,7 @@
           "settings": {
             "icon": "shopify:\/\/shop_images\/awards.02_3x_5f73153b-b102-4b48-9b08-2281654e9a2f.png",
             "title": "Best in Show",
-            "details": "",
+            "details": "<p>At the Intergalactic TV Awards<\/p>",
             "footnote": "",
             "background": "orange"
           }
