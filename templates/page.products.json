@@ -127,10 +127,11 @@
     "047c5130-bbb8-44c6-97ca-d6314188243a": {
       "type": "awards",
       "blocks": {
-        "template--15945343828152__047c5130-bbb8-44c6-97ca-d6314188243a-1680033857a28ea71f-0": {
+        "template--15945343828152__047c5130-bbb8-44c6-97ca-d6314188243a-1680033857a28ea71f-2": {
           "type": "award",
           "settings": {
-            "title": "",
+            "icon": "shopify:\/\/shop_images\/awards.01_3x_c9bfacc9-389d-4cb7-999e-7f7246363916.png",
+            "title": "Goldar",
             "details": "",
             "footnote": "",
             "background": "lemon"
@@ -139,26 +140,28 @@
         "template--15945343828152__047c5130-bbb8-44c6-97ca-d6314188243a-1680033857a28ea71f-1": {
           "type": "award",
           "settings": {
+            "icon": "shopify:\/\/shop_images\/awards.02_3x_5f73153b-b102-4b48-9b08-2281654e9a2f.png",
             "title": "",
             "details": "",
             "footnote": "",
-            "background": "lemon"
+            "background": "orange"
           }
         },
-        "template--15945343828152__047c5130-bbb8-44c6-97ca-d6314188243a-1680033857a28ea71f-2": {
+        "template--15945343828152__047c5130-bbb8-44c6-97ca-d6314188243a-1680033857a28ea71f-0": {
           "type": "award",
           "settings": {
+            "icon": "shopify:\/\/shop_images\/awards.03_3x_8e78a16c-79dc-493d-8774-92ca7ffb1f70.png",
             "title": "",
             "details": "",
             "footnote": "",
-            "background": "lemon"
+            "background": "mango"
           }
         }
       },
       "block_order": [
-        "template--15945343828152__047c5130-bbb8-44c6-97ca-d6314188243a-1680033857a28ea71f-0",
+        "template--15945343828152__047c5130-bbb8-44c6-97ca-d6314188243a-1680033857a28ea71f-2",
         "template--15945343828152__047c5130-bbb8-44c6-97ca-d6314188243a-1680033857a28ea71f-1",
-        "template--15945343828152__047c5130-bbb8-44c6-97ca-d6314188243a-1680033857a28ea71f-2"
+        "template--15945343828152__047c5130-bbb8-44c6-97ca-d6314188243a-1680033857a28ea71f-0"
       ],
       "settings": {
         "anchor_id": "",
