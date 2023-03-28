@@ -289,8 +289,8 @@
   ],
   "blocks": [
     {
-      "name": "Award",
-      "type": "award",
+      "name": "Review",
+      "type": "review",
       "limit": 9,
       "settings": [
         {
@@ -298,24 +298,31 @@
           "type": "header"
         },
         {
-          "label": "Icon",
+          "label": "Badge",
           "type": "image_picker",
-          "id": "icon"
+          "id": "badge"
         },
         {
-          "label": "Title",
+          "label": "Image (Mobile)",
+          "info": "For optimal results, select an image whose native aspect ratio is considerably more landscape (wide) than portrait (tall).",
+          "type": "image_picker",
+          "id": "image_mobile"
+        },
+        {
+          "label": "Image (Desktop)",
+          "info": "For optimal results, select an image whose native aspect ratio is considerably more portrait (tall) than portrait (wide).",
+          "type": "image_picker",
+          "id": "image_desktop"
+        },
+        {
+          "label": "Subheading",
           "type": "text",
-          "id": "title"
+          "id": "subheading"
         },
         {
-          "label": "Details",
+          "label": "Review",
           "type": "richtext",
-          "id": "details"
-        },
-        {
-          "label": "Footnote",
-          "type": "text",
-          "id": "footnote"
+          "id": "review"
         },
         {
           "content": "Settings",
@@ -341,9 +348,9 @@
     {
       "name": "Reviews",
       "blocks": [
-        { "type": "award" },
-        { "type": "award" },
-        { "type": "award" }
+        { "type": "review" },
+        { "type": "review" },
+        { "type": "review" }
       ]
     }
   ]
