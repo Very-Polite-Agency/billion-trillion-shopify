@@ -8,7 +8,7 @@
   assign aos_delay = 250
   assign aos_delay_increment = 250
 
-  assign section_reviews = section.blocks | where: 'type', "review"
+  assign section_heading = section.settings.heading | default: ''
 
   assign section_carousel_animation_duration = section.settings.carousel_animation_duration | default: 450
   assign section_carousel_autoplay = section.settings.carousel_autoplay | default: 3500
@@ -16,6 +16,8 @@
   assign section_carousel_id = section_id | append: '--glide'
   assign section_carousel_pagination = section.settings.carousel_pagination | default: false
   assign section_carousel_style = section_name
+
+  assign section_reviews = section.blocks | where: 'type', "review"
 
 -%}
 
@@ -40,6 +42,10 @@
 
   <div class="{{ section_classes }}" id="{{ section_id }}">
     <div class="{{ section_name }}__main">
+
+      {% if section_heading != blank %}
+        <h2 class="{{ section_name }}__heading">{{ section_heading }}</h2>
+      {% endif %}
 
       <div
         class="{{ section_name }}__glide glide js--glide d-lg-none"
