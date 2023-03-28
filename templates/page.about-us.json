@@ -5,7 +5,32 @@
   "sections": {
     "hero": {
       "type": "hero",
+      "blocks": {
+        "58f1a769-c6c7-4df1-a4b2-4baa197a187a": {
+          "type": "heading",
+          "settings": {
+            "heading": "There’s a whole lot of nothing out there–take a sip of something real.",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "58f1a769-c6c7-4df1-a4b2-4baa197a187a"
+      ],
       "settings": {
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "container": "container",
+        "height_mobile": "auto",
+        "height_desktop": "auto",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   }
