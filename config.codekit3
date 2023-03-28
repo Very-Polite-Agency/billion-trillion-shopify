@@ -1166,6 +1166,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/scss\/cards\/_card-review.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/_card-review.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/scss\/cards\/_index.scss" : {
       "aP" : 1,
       "bl" : 0,

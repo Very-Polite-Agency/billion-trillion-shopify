@@ -1,0 +1,23 @@
+@use "../utils/mixins/border" as *;
+@use "../utils/mixins/breakpoint" as *;
+@use "../utils/mixins/font" as *;
+
+.card-review {
+
+  @include hobeaux( 700 );
+  @include border-solid( var(--theme-border--width), 'black' );
+  border-radius: var(--theme-border--radius);
+  text-transform: uppercase;
+
+  &__review {
+    font-size: 26px;
+    line-height: 1.15;
+  }
+
+  &__subheading {
+    font-size: 14px;
+    line-height: 1.21;
+  }
+
+
+}
