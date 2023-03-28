@@ -3,9 +3,15 @@
 
 .awards {
 
+  .glide {
+    &__bullets {
+      padding-top: 20px;
+    }
+  }
+
   &__heading {
     width: 80%;
-    margin: 0 auto 30px;;
+    margin: 0 auto 30px;
   }
 
   &__item {
@@ -13,22 +19,70 @@
     border-radius: var(--theme-border--radius);
   }
 
-  @include breakpoint(sm) {}
+  &__main {
+    padding-left: var(--theme-layout--container-padding);
+    padding-right: var(--theme-layout--container-padding);
+  }
 
-  @include breakpoint(md) {}
+  @include breakpoint(sm) {
 
-  @include breakpoint(lg) {
+    &__heading {
+      margin-bottom: 40px;
+    }
 
-    .container-fluid & {
-      &__heading {
-        margin-bottom: 2.5vw;
-      }
+    &__main {
+      padding-right: 0;
     }
 
   }
 
-  @include breakpoint(xl) {}
+  @include breakpoint(md) {
 
-  @include breakpoint(xxl) {}
+    &__heading {
+      margin-bottom: 45px;
+    }
+
+  }
+
+  @include breakpoint(lg) {
+
+    &__heading {
+      width: 100%;
+      margin: 0 auto 30px;
+    }
+
+    &__main {
+      padding: 0;
+      width: 100%;
+      max-width: var(--theme-container--lg);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+    &__heading {
+      margin: 0 auto 32px;
+    }
+
+    &__main {
+      max-width: var(--theme-container--xl);
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__heading {
+      margin: 0 auto 34px;
+    }
+
+    &__main {
+      max-width: var(--theme-container--xxl);
+    }
+
+  }
 
 }

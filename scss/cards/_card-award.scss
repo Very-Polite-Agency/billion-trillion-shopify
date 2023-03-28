@@ -24,6 +24,9 @@
   &__details {
     @include sorry-sans( 700 );
     line-height: 1.2;
+    margin: auto auto 30px;
+    width: 75%;
+    font-size: 16px;
   }
 
   &__footnote {
@@ -39,8 +42,8 @@
 
   &__icon {
     width: auto;
-    height: 130px;
-    margin: var(--theme-layout--gutter) auto auto;
+    height: 40vw;
+    margin: var(--theme-layout--gutter) auto 0;
     a, img, svg {
       display: block;
       width: auto;
@@ -48,7 +51,31 @@
     }
   }
 
-  @include breakpoint(sm) {}
+  &__title {
+    font-size: 36px;
+    margin-top: 10px;
+  }
+
+  @include breakpoint(sm) {
+
+    &__details {
+      font-size: 18px;
+    }
+
+    &__footnote {
+      font-size: 14px;
+    }
+
+    &__icon {
+      height: 32vw;
+    }
+
+    &__title {
+      font-size: 40px;
+      margin-top: 24px;
+    }
+
+  }
 
   @include breakpoint(md) {}
 
@@ -71,7 +98,7 @@
     .container-fluid & {
       &__details {
         font-size: 1.7vw;
-        margin: auto auto 1.5vw;
+        margin-bottom: 1.5vw;
       }
       &__footnote {
         font-size: 1.2vw;

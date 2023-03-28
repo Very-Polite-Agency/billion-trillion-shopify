@@ -15,10 +15,26 @@ const createGliderFromElement = ( element = {} ) => {
   let options = getOptions({ animationDuration, autoplay, gap });
 
   switch ( style ) {
-    case 'media-grid': {
-      break;
-    }
-    case 'showcase': {
+    case 'awards': {
+      options = getOptions({
+        animationDuration,
+        autoplay,
+        breakpoints: {
+          991: {
+            peek: { before: 0, after: 150 },
+            perView: 2
+          },
+          767: {
+            peek: { before: 0, after: 150 },
+            perView: 1
+          },
+          575: {
+            peek: { before: 0, after: 0 },
+            perView: 1
+          }
+        },
+        gap,
+      });
       break;
     }
   }

@@ -25,26 +25,26 @@
 
 -%}
 
-{% if section_awards.size > 0 %}
+{%- if section_awards.size > 0 -%}
 
   {%- style -%}
 
-    {% if section_card_aspect_ratio_mobile and section_card_aspect_ratio_mobile != blank %}
+    {%- if section_card_aspect_ratio_mobile and section_card_aspect_ratio_mobile != blank -%}
       #{{ section_id }} .card-award {
         aspect-ratio: {{ section_card_aspect_ratio_mobile }};
       }
-    {% endif %}
+    {%- endif -%}
 
     #{{ section_id }} .{{ section_name }}__grid {
       gap: {{ section_grid_gap }}px;
     }
 
     @media screen and (min-width: 992px) {
-      {% if section_card_aspect_ratio_desktop and section_card_aspect_ratio_desktop != blank %}
+      {%- if section_card_aspect_ratio_desktop and section_card_aspect_ratio_desktop != blank -%}
         #{{ section_id }} .card-award {
           aspect-ratio: {{ section_card_aspect_ratio_desktop }};
         }
-      {% endif %}
+      {%- endif -%}
     }
 
     {%
@@ -60,15 +60,15 @@
         id: section_id,
         padding_bottom: section.settings.padding_bottom,
         padding_top: section.settings.padding_top
-    %}
+    -%}
 
   {%- endstyle -%}
 
   <div class="{{ section_classes }}" id="{{ section_id }}">
-    {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
+    <div class="{{ section_name }}__main">
 
       <div class="{{ section_name }}__heading">
-        {% render 'svg', type: 'heading.awards' %}
+        {%- render 'svg', type: 'heading.awards' -%}
       </div>
 
       <div
@@ -82,19 +82,19 @@
 
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
-            {% for item in section_awards %}
+            {%- for item in section_awards -%}
               <li class="glide__slide">
-                {% render 'card-award', card_item: item %}
+                {%- render 'card-award', card_item: item -%}
               </li>
-            {% endfor %}
+            {%- endfor -%}
           </ul>
         </div>
 
-        {% if section_carousel_pagination %}
+        {%- if section_carousel_pagination -%}
           <div class="glide__bullets" data-glide-el="controls[nav]">
-            {% for item in section_awards %}
+            {%- for item in section_awards -%}
               <button class="glide__bullet button" type="button" data-glide-dir="={{ forloop.index0 }}">
-                {% render 'svg', type: 'icon.pagination' %}
+                {%- render 'svg', type: 'icon.pagination' -%}
               </button>
             {%- endfor -%}
           </div>
@@ -103,18 +103,18 @@
       </div>
 
       <div class="{{ section_name }}__grid grid--3 d-none d-lg-grid" role="list">
-        {% for item in section_awards %}
-          {% capture snippet_classes %}{{ section_name }}__item card-award{% endcapture %}
-          {% render 'card-award', card_aria_role: 'lisitem', card_item: item, classes: snippet_classes %}
-        {% endfor %}
+        {%- for item in section_awards -%}
+          {%- capture snippet_classes -%}{{ section_name }}__item card-award{%- endcapture -%}
+          {%- render 'card-award', card_aria_role: 'lisitem', card_item: item, classes: snippet_classes -%}
+        {%- endfor -%}
       </div>
 
-    {% render 'bs-container', state: 'closed', col: 'col-12', container: section_container %}
+    </div>
   </div>
 
-{% endif %}
+{%- endif -%}
 
-{% schema %}
+{%- schema -%}
 {
   "name": "Awards",
   "tag": "section",
@@ -280,21 +280,6 @@
       "id": "carousel_gap"
     },
     {
-      "content": "Container",
-      "type": "header"
-    },
-    {
-      "label": "Container",
-      "type": "select",
-      "options": [
-        { "label": "Static", "value": "container" },
-        { "label": "Fluid", "value": "container-fluid" },
-        { "label": "Full Width", "value": "full-width" }
-      ],
-      "default": "container",
-      "id": "container"
-    },
-    {
       "content": "Grid",
       "type": "header"
     },
@@ -394,4 +379,4 @@
     }
   ]
 }
-{% endschema %}
+{%- endschema -%}
