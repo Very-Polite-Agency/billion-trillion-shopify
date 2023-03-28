@@ -47,8 +47,10 @@
   @include breakpoint(lg) {
 
     &__heading {
-      width: 100%;
+      width: 102.5%;
       margin: 0 auto 30px;
+      position: relative;
+      left: -1.25%;
     }
 
     &__main {

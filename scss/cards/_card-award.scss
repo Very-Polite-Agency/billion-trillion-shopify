@@ -24,9 +24,10 @@
   &__details {
     @include sorry-sans( 700 );
     line-height: 1.2;
-    margin: auto auto 30px;
+    margin: auto auto 8.5vw;
     width: 75%;
     font-size: 16px;
+    font-size: 4vw;
   }
 
   &__footnote {
@@ -53,13 +54,82 @@
 
   &__title {
     font-size: 36px;
+    font-size: 10.5vw;
     margin-top: 10px;
+    margin-top: 5.5vw;
   }
 
   @include breakpoint(sm) {
 
     &__details {
-      font-size: 18px;
+      font-size: 3.5vw;
+      margin-bottom: 7vw;
+    }
+
+    &__footnote {
+      font-size: 2.5vw;
+    }
+
+    &__icon {
+      height: 30vw;
+    }
+
+    &__title {
+      font-size: 8vw;
+      margin-top: 6vw;
+    }
+
+  }
+
+  @include breakpoint(md) {
+
+    &__details {
+      font-size: 2vw;
+      margin-bottom: 3vw;
+    }
+
+    &__footnote {
+      font-size: 1.4vw;
+    }
+
+    &__icon {
+      height: 15.5vw;
+    }
+
+    &__title {
+      font-size: 4.5vw;
+      margin-top: 2.5vw;
+    }
+
+  }
+
+  @include breakpoint(lg) {
+
+    &__details {
+      font-size: 16px;
+      width: 75%;
+      margin-bottom: 32px;
+    }
+
+    &__footnote {
+      font-size: 12px;
+    }
+
+    &__icon {
+      height: 128px;
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+    &__details {
+      font-size: 20px;
+      margin-bottom: 36px;
     }
 
     &__footnote {
@@ -67,66 +137,36 @@
     }
 
     &__icon {
-      height: 32vw;
+      height: 162px;
+      margin-top: 30px;
     }
 
     &__title {
-      font-size: 40px;
-      margin-top: 24px;
-    }
-
-  }
-
-  @include breakpoint(md) {}
-
-  @include breakpoint(lg) {
-
-    &__details {
-      font-size: 16px;
-      width: 75%;
-      margin: auto;
-    }
-
-    &__icon {
-      height: 130px;
-    }
-
-    &__title {
-      font-size: 36px;
-    }
-
-    .container-fluid & {
-      &__details {
-        font-size: 1.7vw;
-        margin-bottom: 1.5vw;
-      }
-      &__footnote {
-        font-size: 1.2vw;
-        padding: 1vw;
-      }
-      &__icon {
-        height: 13vw;
-        margin-top: 1.5vw;
-      }
-      &__title {
-        font-size: 3.7vw;
-      }
-    }
-
-  }
-
-  @include breakpoint(xl) {
-
-    &__icon {
-      height: 160px;
+      font-size: 42px;
+      margin-top: 38px;
     }
 
   }
 
   @include breakpoint(xxl) {
 
+    &__details {
+      font-size: 24px;
+      margin-bottom: 44px;
+    }
+
+    &__footnote {
+      font-size: 16px;
+    }
+
     &__icon {
-      height: 190px;
+      height: 192px;
+      margin-top: 34px;
+    }
+
+    &__title {
+      font-size: 54px;
+      margin-top: 44px;
     }
 
   }

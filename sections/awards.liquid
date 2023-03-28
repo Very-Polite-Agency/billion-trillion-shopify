@@ -67,7 +67,13 @@
   <div class="{{ section_classes }}" id="{{ section_id }}">
     <div class="{{ section_name }}__main">
 
-      <div class="{{ section_name }}__heading">
+      {%- liquid
+        capture aos_attrs
+          render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+        endcapture
+        assign aos_delay = aos_delay | plus: aos_delay_increment
+      -%}
+      <div class="{{ section_name }}__heading" {{ aos_attrs }}>
         {%- render 'svg', type: 'heading.awards' -%}
       </div>
 
