@@ -84,7 +84,7 @@
         "border_top": true,
         "border_bottom": false,
         "carousel_pagination": true,
-        "carousel_autoplay": 3000,
+        "carousel_autoplay": 0,
         "carousel_animation_duration": 450,
         "carousel_gap": 20,
         "padding_top": 52,
