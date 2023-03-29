@@ -76,6 +76,30 @@ $theme-font-sizes-button: (
 
 // ---------------------------------------- Font Sizes | Heading
 $theme-font-sizes-heading: (
+  '1': (
+    'base': 48px,
+    'sm': 58px,
+    'md': 70px,
+    'lg': 82px,
+    'xl': 100px,
+    'xxl': 115px
+  ),
+  '2': (
+    'base': 32px,
+    'sm': 38px,
+    'md': 46px,
+    'lg': 55px,
+    'xl': 66px,
+    'xxl': 80px
+  ),
+  '3': (
+    'base': 28px,
+    'sm': 34px,
+    'md': 40px,
+    'lg': 48px,
+    'xl': 58px,
+    'xxl': 70px
+  ),
   'base': 36px,
   'sm': 36px,
   'md': 46px,

@@ -37,13 +37,26 @@
       }
     {%- endstyle -%}
 
-    {%- if subheading and subheading != blank -%}
-      <strong class="{{ snippet_name }}__subheading body-copy--primary">{{ subheading }}</strong>
-    {%- endif -%}
+    <div class="{{ snippet_name }}__content">
+      {%- if subheading and subheading != blank -%}
+        <strong class="{{ snippet_name }}__subheading body-copy--primary">{{ subheading }}</strong>
+      {%- endif -%}
+      {%- if review and review != blank -%}
+        <div class="{{ snippet_name }}__review body-copy--secondary">&ldquo;{{ review | strip_html }}&rdquo;</div>
+      {%- endif -%}
+    </div>
 
-    {%- if review and review != blank -%}
-      <div class="{{ snippet_name }}__review body-copy--secondary">&ldquo;{{ review }}&rdquo;</div>
-    {%- endif -%}
+    <div class="{{ snippet_name }}__media">
+      {% if image_mobile %}
+        <div class="{{ snippet_name }}__media-image d-lg-none">{% render 'lazyload-item', image: image_mobile %}</div>
+      {% endif %}
+      {% if image_desktop %}
+        <div class="{{ snippet_name }}__media-image d-none d-lg-block">{% render 'lazyload-item', image: image_desktop %}</div>
+      {% endif %}
+      {% if badge %}
+        <div class="{{ snippet_name }}__media-badge">{% render 'lazyload-item', image: badge %}</div>
+      {% endif %}
+    </div>
 
   </article>
 
