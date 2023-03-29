@@ -36,6 +36,9 @@
         "template--15941099487416__0fa9ba11-804e-4e9d-a953-63efbbdfa40b-16800369909b7b4bad-0": {
           "type": "review",
           "settings": {
+            "badge": "shopify:\/\/shop_images\/review--card-review-badge-lemon_3x_a992f33d-9da7-4992-88ad-f6646e7b1582.png",
+            "image_mobile": "shopify:\/\/shop_images\/review--card-review-mobile.png",
+            "image_desktop": "shopify:\/\/shop_images\/review--card-review-desktop_3x_6fee1edb-d21f-410e-9d39-004426ceff17.png",
             "subheading": "Translated from Maamic to English:",
             "review": "<p>With a fizz as sparkly as our exoplanets surface– what’s not to love?!<\/p>",
             "background": "mango"
