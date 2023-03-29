@@ -1,6 +1,7 @@
 {
   "order": [
     "hero",
+    "2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4",
     "d685fa2e-8822-46df-b523-b7fa76700377"
   ],
   "sections": {
@@ -31,6 +32,58 @@
         "container": "container",
         "height_mobile": "auto",
         "height_desktop": "auto",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4": {
+      "type": "reviews",
+      "blocks": {
+        "template--15945343795384__2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4-1680123219b6bb14da-0": {
+          "type": "review",
+          "settings": {
+            "subheading": "Translated from Maamic to English:",
+            "review": "<p>With a fizz as sparkly as our exoplanets surface– what’s not to love?!<\/p>",
+            "background": "mango"
+          }
+        },
+        "template--15945343795384__2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4-1680123219b6bb14da-1": {
+          "type": "review",
+          "settings": {
+            "subheading": "Translated from Wookie to English:",
+            "review": "<p>Aliquam vel imperdiet nunc, eu maximus nisi. Suspendisse lobortis dolor ut.<\/p>",
+            "background": "orange"
+          }
+        },
+        "template--15945343795384__2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4-1680123219b6bb14da-2": {
+          "type": "review",
+          "settings": {
+            "subheading": "Translated from Klingon to English:",
+            "review": "<p>Nulla consequat dolor vel tincidunt lacinia. Aliquam ut erat ut tortor vel.<\/p>",
+            "background": "lemon"
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343795384__2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4-1680123219b6bb14da-0",
+        "template--15945343795384__2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4-1680123219b6bb14da-1",
+        "template--15945343795384__2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4-1680123219b6bb14da-2"
+      ],
+      "settings": {
+        "heading": "Reviews",
+        "anchor_id": "",
+        "background": "image",
+        "background_image": "shopify:\/\/shop_images\/reviews--background_3x_00acdb92-0d12-4dd0-9777-bc9d041e0ba8.png",
+        "background_image_position_mobile": "bottom center",
+        "background_image_position_desktop": "center right",
+        "background_image_repeat": "no-repeat",
+        "background_image_size": "cover",
+        "border_top": true,
+        "border_bottom": false,
+        "carousel_pagination": false,
+        "carousel_autoplay": 3000,
+        "carousel_animation_duration": 450,
+        "carousel_gap": 20,
         "padding_top": 36,
         "padding_bottom": 36
       }
