@@ -46,17 +46,19 @@
       {%- endif -%}
     </div>
 
-    <div class="{{ snippet_name }}__media">
-      {% if image_mobile %}
-        <div class="{{ snippet_name }}__media-image d-lg-none">{% render 'lazyload-item', image: image_mobile %}</div>
-      {% endif %}
-      {% if image_desktop %}
-        <div class="{{ snippet_name }}__media-image d-none d-lg-block">{% render 'lazyload-item', image: image_desktop %}</div>
-      {% endif %}
-      {% if badge %}
-        <div class="{{ snippet_name }}__media-badge">{% render 'lazyload-item', image: badge %}</div>
-      {% endif %}
-    </div>
+    {% if image_mobile and image_desktop %}
+      <div class="{{ snippet_name }}__media">
+        {% if image_mobile %}
+          <div class="{{ snippet_name }}__media-image d-lg-none">{% render 'lazyload-image', image: image_mobile %}</div>
+        {% endif %}
+        {% if image_desktop %}
+          <div class="{{ snippet_name }}__media-image d-none d-lg-block">{% render 'lazyload-image', image: image_desktop %}</div>
+        {% endif %}
+        {% if badge %}
+          <div class="{{ snippet_name }}__media-badge">{% render 'lazyload-image', image: badge %}</div>
+        {% endif %}
+      </div>
+    {% endif %}
 
   </article>
 

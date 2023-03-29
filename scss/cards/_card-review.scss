@@ -4,10 +4,42 @@
 
 .card-review {
 
+  $offset: 20px;
+
   @include hobeaux( 700 );
-  @include border-solid( var(--theme-border--width), 'black' );
+  margin: 0 $offset;
   border-radius: var(--theme-border--radius);
   text-transform: uppercase;
+  overflow: visible;
+  display: flex;
+  flex-flow: column wrap;
+
+  &__content {
+    @include border-solid( var(--theme-border--width), 'black' );
+    padding: 30px var(--theme-layout--gutter);
+    border-top-left-radius: var(--theme-border--radius);
+    border-top-right-radius: var(--theme-border--radius);
+  }
+
+  &__media {
+    @include border-solid( var(--theme-border--width), 'black' );
+    border-bottom-left-radius: var(--theme-border--radius);
+    border-bottom-right-radius: var(--theme-border--radius);
+    border-top: none;
+    position: relative;
+    &-badge {
+      top: $offset;
+      left: -$offset;
+      position: absolute;
+      width: 100px;
+      height: auto;
+      a, img, svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
 
   &__review {
     font-size: 26px;
@@ -17,7 +49,178 @@
   &__subheading {
     font-size: 14px;
     line-height: 1.21;
+    & + .card-review__review {
+      margin-top: 8px;
+    }
   }
 
+  @include breakpoint(sm) {
+
+    $offset: 24px;
+
+    margin: 0 $offset;
+
+    &__content {
+      padding: 38px 30px;
+    }
+
+    &__media {
+      &-badge {
+        top: $offset;
+        left: -$offset;
+        width: 140px;
+      }
+    }
+
+    &__review {
+      font-size: 30px;
+    }
+
+    &__subheading {
+      font-size: 16px;
+      & + .card-review__review {
+        margin-top: 10px;
+      }
+    }
+
+  }
+
+  @include breakpoint(md) {
+
+    $offset: 28px;
+
+    margin: 0 $offset;
+
+    &__content {
+      padding: 44px 34px;
+    }
+
+    &__media {
+      &-badge {
+        top: $offset;
+        left: -$offset;
+        width: 180px;
+      }
+    }
+
+    &__review {
+      font-size: 36px;
+    }
+
+    &__subheading {
+      font-size: 18px;
+      & + .card-review__review {
+        margin-top: 12px;
+      }
+    }
+
+  }
+
+  @include breakpoint(lg) {
+
+    flex-flow: row nowrap;
+
+    &__content,
+    &__media {
+      border-radius: 0;
+    }
+
+    &__content {
+      @include border-solid( var(--theme-border--width), 'black' );
+      border-top-left-radius: var(--theme-border--radius);
+      border-bottom-left-radius: var(--theme-border--radius);
+      padding: 30px var(--theme-layout--gutter);
+      width: 66.6666%;
+      padding-right: 60px;
+      display: inline-flex;
+      flex-flow: column wrap;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    &__media {
+      @include border-solid( var(--theme-border--width), 'black' );
+      border-top-right-radius: var(--theme-border--radius);
+      border-bottom-right-radius: var(--theme-border--radius);
+      border-left: none;
+      flex: 1;
+      &-badge {
+        width: 120px;
+        top: 28%;
+        left: -60px;
+      }
+      &-image {
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &__review {
+      font-size: 42px;
+    }
+
+    &__subheading {
+      font-size: 16px;
+      & + .card-review__review {
+        margin-top: 10px;
+      }
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+    &__content {
+      padding: 38px 30px;
+      padding-right: 70px;
+    }
+
+    &__media {
+      &-badge {
+        width: 140px;
+        left: -70px;
+      }
+    }
+
+    &__review {
+      font-size: 54px;
+    }
+
+    &__subheading {
+      font-size: 18px;
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__content {
+      padding: 44px 34px;
+      padding-right: 80px;
+    }
+
+    &__media {
+      &-badge {
+        width: 160px;
+        left: -80px;
+      }
+    }
+
+    &__review {
+      font-size: 64px;
+    }
+
+    &__subheading {
+      font-size: 20px;
+      & + .card-review__review {
+        margin-top: 12px;
+      }
+    }
+
+  }
 
 }

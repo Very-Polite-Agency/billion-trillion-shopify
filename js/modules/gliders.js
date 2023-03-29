@@ -35,6 +35,15 @@ const createGliderFromElement = ( element = {} ) => {
       });
       break;
     }
+    case 'reviews': {
+      options = getOptions({
+        animationDuration,
+        autoplay,
+        //peek: { before: 20, after: 20 },
+        gap,
+      });
+      break;
+    }
   }
 
   if ( element_id ) {
