@@ -35,15 +35,6 @@ const createGliderFromElement = ( element = {} ) => {
       });
       break;
     }
-    case 'reviews': {
-      options = getOptions({
-        animationDuration,
-        autoplay,
-        //peek: { before: 20, after: 20 },
-        gap,
-      });
-      break;
-    }
   }
 
   if ( element_id ) {
@@ -76,7 +67,7 @@ const createGliderFromElement = ( element = {} ) => {
     glide.mount();
 
     // FIX for when single slide does not fill 100% of glider
-    setTimeout( () => { glide.update() }, 500 );
+    setTimeout( () => { glide.update() }, 300 );
 
     gliders[element_id] = { element_id, glide };
 
