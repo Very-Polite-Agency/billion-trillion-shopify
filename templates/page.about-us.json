@@ -42,24 +42,24 @@
         "template--15945343795384__2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4-1680123219b6bb14da-0": {
           "type": "review",
           "settings": {
-            "subheading": "",
-            "review": "",
+            "subheading": "Translated from Maamic to English:",
+            "review": "<p>With a fizz as sparkly as our exoplanets surface– what’s not to love?!<\/p>",
             "background": "lemon"
           }
         },
         "template--15945343795384__2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4-1680123219b6bb14da-1": {
           "type": "review",
           "settings": {
-            "subheading": "",
-            "review": "",
+            "subheading": "Translated from Wookie to English:",
+            "review": "<p>Aliquam vel imperdiet nunc, eu maximus nisi. Suspendisse lobortis dolor ut.<\/p>",
             "background": "lemon"
           }
         },
         "template--15945343795384__2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4-1680123219b6bb14da-2": {
           "type": "review",
           "settings": {
-            "subheading": "",
-            "review": "",
+            "subheading": "Translated from Klingon to English:",
+            "review": "<p>Nulla consequat dolor vel tincidunt lacinia. Aliquam ut erat ut tortor vel.<\/p>",
             "background": "lemon"
           }
         }
