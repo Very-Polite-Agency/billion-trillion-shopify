@@ -1,8 +1,6 @@
-import Glide from "@glidejs/glide";
-
 const config = { debug: false, name: 'gliders.js', version: '1.0' };
-const events = [ "build.after", "run.after" ];
 const elements = document.querySelectorAll( '.js--glide' ) || [];
+const events = [ "build.after", "run.after" ];
 const gliders = {};
 
 const createGliderFromElement = ( element = {} ) => {
