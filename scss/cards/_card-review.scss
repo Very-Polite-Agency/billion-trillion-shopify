@@ -14,6 +14,11 @@
   display: flex;
   flex-flow: column wrap;
 
+  &__content,
+  &__media {
+    display: block;
+  }
+
   &__content {
     @include border-solid( var(--theme-border--width), 'black' );
     padding: 30px var(--theme-layout--gutter);
@@ -22,10 +27,6 @@
   }
 
   &__media {
-    @include border-solid( var(--theme-border--width), 'black' );
-    border-bottom-left-radius: var(--theme-border--radius);
-    border-bottom-right-radius: var(--theme-border--radius);
-    border-top: none;
     position: relative;
     &-badge {
       top: $offset;
@@ -38,6 +39,13 @@
         width: 100%;
         height: auto;
       }
+    }
+    &-image {
+      @include border-solid( var(--theme-border--width), 'black' );
+      border-bottom-left-radius: var(--theme-border--radius);
+      border-bottom-right-radius: var(--theme-border--radius);
+      border-top: none;
+      overflow: hidden;
     }
   }
 
@@ -139,10 +147,6 @@
     }
 
     &__media {
-      @include border-solid( var(--theme-border--width), 'black' );
-      border-top-right-radius: var(--theme-border--radius);
-      border-bottom-right-radius: var(--theme-border--radius);
-      border-left: none;
       flex: 1;
       &-badge {
         width: 120px;
@@ -150,6 +154,11 @@
         left: -60px;
       }
       &-image {
+        @include border-solid( var(--theme-border--width), 'black' );
+        border-top-right-radius: var(--theme-border--radius);
+        border-bottom-right-radius: var(--theme-border--radius);
+        border-left: none;
+        height: 100%;
         img {
           display: block;
           width: 100%;

@@ -14,6 +14,7 @@
   assign section_carousel_autoplay = section.settings.carousel_autoplay | default: 3500
   assign section_carousel_gap = section.settings.carousel_gap | default: 28
   assign section_carousel_id = section_id | append: '--glide'
+  assign section_carousel_navigation = section.settings.carousel_navigation | default: false
   assign section_carousel_pagination = section.settings.carousel_pagination | default: false
   assign section_carousel_style = section_name
 
@@ -90,7 +91,12 @@
           </div>
         {%- endif -%}
 
-      {%- if section_heading != blank -%}
+        {%- if section_is_carousel and section_carousel_navigation -%}
+          <button class="glide__nav prev" data-glide-navigation="#{{ section_carousel_id }}" type="button">Prev</button>
+          <button class="glide__nav next" data-glide-navigation="#{{ section_carousel_id }}" type="button">Next</button>
+        {%- endif -%}
+
+      {%- if section_is_carousel -%}
         </div>
       {%- endif -%}
 
@@ -233,6 +239,12 @@
       "type": "checkbox",
       "default": false,
       "id": "carousel_pagination"
+    },
+    {
+      "label": "Enable Navigation",
+      "type": "checkbox",
+      "default": false,
+      "id": "carousel_navigation"
     },
     {
       "label": "Carousel Autoplay",
