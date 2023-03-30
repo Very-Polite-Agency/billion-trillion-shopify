@@ -92,8 +92,12 @@
         {%- endif -%}
 
         {%- if section_is_carousel and section_carousel_navigation -%}
-          <button class="glide__nav prev" data-glide-navigation="#{{ section_carousel_id }}" type="button">Prev</button>
-          <button class="glide__nav next" data-glide-navigation="#{{ section_carousel_id }}" type="button">Next</button>
+          <button class="glide__nav button prev" data-glide-navigation="#{{ section_carousel_id }}" type="button">
+            {% render 'svg', type: 'icon.navigation' %}
+          </button>
+          <button class="glide__nav button next" data-glide-navigation="#{{ section_carousel_id }}" type="button">
+            {% render 'svg', type: 'icon.navigation' %}
+          </button>
         {%- endif -%}
 
       {%- if section_is_carousel -%}

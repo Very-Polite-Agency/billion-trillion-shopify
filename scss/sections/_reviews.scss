@@ -15,6 +15,28 @@
       padding: 0;
       margin-top: 20px;
     }
+    &__nav {
+      color: var(--theme-colour--lemon);
+      height: 40px;
+      position: absolute;
+      width: auto;
+      top: 50%;
+      img, svg {
+        display: block;
+        height: 100%;
+        width: auto;
+      }
+      &.next {
+        right: 0;
+      }
+      &.prev {
+        transform: rotate(180deg);
+        left: 0;
+      }
+      &:hover {
+        opacity: var(--theme-transition--opacity);
+      }
+    }
   }
 
   &__heading {
