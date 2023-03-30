@@ -48,7 +48,7 @@
             "product": "mango-yuzu-sake-fizz",
             "note": "Well Balanced!",
             "title": "Mango Yuzu",
-            "colour": "lemon"
+            "colour": "mango"
           }
         },
         "template--15941099487416__bf312ebe-28f5-487a-9b2b-c0e3ef23e8e7-168021708583269ab0-2": {
@@ -65,8 +65,8 @@
           "settings": {
             "product": "lime-yuzu-sake-fizz",
             "note": "Tangy And Sour",
-            "title": "",
-            "colour": "lemon"
+            "title": "Lime Yuzu",
+            "colour": "lime"
           }
         }
       },
