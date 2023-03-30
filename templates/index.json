@@ -37,6 +37,8 @@
           "type": "product",
           "settings": {
             "product": "mandarin-yuzu-sake-fizz",
+            "note": "Sake Smooth!",
+            "title": "",
             "colour": "lemon"
           }
         },
@@ -44,6 +46,8 @@
           "type": "product",
           "settings": {
             "product": "mango-yuzu-sake-fizz",
+            "note": "Well Balanced!",
+            "title": "",
             "colour": "lemon"
           }
         },
@@ -51,6 +55,8 @@
           "type": "product",
           "settings": {
             "product": "lemon-yuzu-sake-fizz",
+            "note": "",
+            "title": "",
             "colour": "lemon"
           }
         },
@@ -58,6 +64,8 @@
           "type": "product",
           "settings": {
             "product": "lime-yuzu-sake-fizz",
+            "note": "",
+            "title": "",
             "colour": "lemon"
           }
         }
@@ -79,6 +87,9 @@
         "background_image_size": "400px",
         "border_top": true,
         "border_bottom": false,
+        "carousel_autoplay": 3000,
+        "carousel_animation_duration": 450,
+        "carousel_gap": 20,
         "padding_top": 44,
         "padding_bottom": 100,
         "product_image_aspect_ratio_mobile": "2.58\/3.29",
