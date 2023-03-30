@@ -60,7 +60,7 @@
     {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
       <div class="{{ section_name }}__grid grid--{{ section_products_size }}" role="list">
         {%- for item in section_products -%}
-          {%- render 'card-product', card_aria_role: 'listitem', card_background: item.settings.background, card_item: item.settings.product -%}
+          {%- render 'card-product', card_aria_role: 'listitem', card_background: item.settings.background, card_item: item.settings.product, card_style: section_name -%}
         {%- endfor -%}
       </div>
     {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}

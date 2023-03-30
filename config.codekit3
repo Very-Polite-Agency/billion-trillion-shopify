@@ -2775,6 +2775,14 @@
       "oAP" : "\/sections\/predictive-search.liquid",
       "oF" : 0
     },
+    "\/sections\/product-carousel.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sections\/product-carousel.liquid",
+      "oF" : 0
+    },
     "\/sections\/product-grid.liquid" : {
       "cB" : 0,
       "ft" : 8192,

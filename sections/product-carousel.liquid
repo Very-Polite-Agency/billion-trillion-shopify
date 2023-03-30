@@ -1,36 +1,51 @@
 {%- liquid
 
-  assign section_name = 'reviews'
+  assign section_name = 'product-carousel'
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
-  assign aos_id = snippet_id
-  assign aos_delay = 250
-  assign aos_delay_increment = 250
-
   assign section_carousel_animation_duration = section.settings.carousel_animation_duration | default: 450
   assign section_carousel_autoplay = section.settings.carousel_autoplay | default: 3500
+  assign section_carousel_enabled = false
   assign section_carousel_gap = section.settings.carousel_gap | default: 28
   assign section_carousel_id = section_id | append: '--glide'
-  assign section_carousel_navigation = section.settings.carousel_navigation | default: false
-  assign section_carousel_pagination = section.settings.carousel_pagination | default: false
+  assign section_carousel_navigation = false
+  assign section_carousel_pagination = false
   assign section_carousel_style = section_name
-
-  assign section_is_carousel = false
 
   assign section_heading = section.settings.heading | default: ''
 
-  assign section_reviews = section.blocks | where: 'type', "review"
+  assign section_product_image_aspect_ratio_desktop = section.settings.product_image_aspect_ratio_desktop | default: ''
+  assign section_product_image_aspect_ratio_mobile = section.settings.product_image_aspect_ratio_mobile | default: ''
+  assign section_products = section.blocks | where: "type", "product"
+  assign section_products_size = section_products.size | default: 0
 
-  if section_reviews.size > 1
-    assign section_is_carousel = true
+  if section_products_size > 1
+    assign section_carousel_enabled = true
   endif
 
 -%}
 
-{%- if section_reviews.size > 0 -%}
+{% if section_products_size > 1 %}
 
   {%- style -%}
+
+    {% if section_product_image_aspect_ratio_mobile and section_product_image_aspect_ratio_mobile != blank %}
+      #{{ section_id }} .card-product__image,
+      #{{ section_id }} .card-product__image-link {
+        aspect-ratio: {{ section_product_image_aspect_ratio_mobile }};
+      }
+    {% endif %}
+
+    @media screen and (min-width: 992px) {
+      {% if section_product_image_aspect_ratio_desktop and section_product_image_aspect_ratio_desktop != blank %}
+        #{{ section_id }} .card-product__image,
+        #{{ section_id }} .card-product__image-link {
+          aspect-ratio: {{ section_product_image_aspect_ratio_desktop }};
+        }
+      {% endif %}
+    }
+
     {%
       render 'element-styles',
         background: section.settings.background,
@@ -41,10 +56,13 @@
         background_image_size: section.settings.background_image_size,
         border_bottom: section.settings.border_bottom,
         border_top: section.settings.border_top,
+        height_desktop: section.settings.height_desktop,
+        height_mobile: section.settings.height_mobile,
         id: section_id,
         padding_bottom: section.settings.padding_bottom,
         padding_top: section.settings.padding_top
-    -%}
+    %}
+
   {%- endstyle -%}
 
   <div class="{{ section_classes }}" id="{{ section_id }}">
@@ -60,60 +78,20 @@
         <h2 class="{{ section_name }}__heading heading--primary heading--1" {{ aos_attrs }}>{{ section_heading }}</h2>
       {%- endif -%}
 
-      {%- if section_is_carousel -%}
-        <div
-          class="{{ section_name }}__glide glide js--glide"
-          data-glide-animation-duration="{{ section_carousel_animation_duration }}"
-          data-glide-autoplay="{{ section_carousel_autoplay }}"
-          data-glide-gap="{{ section_carousel_gap }}"
-          data-glide-style="{{ section_carousel_style }}"
-          id="{{ section_carousel_id }}"
-        >
-      {%- endif -%}
-
-        {%- if section_is_carousel -%}<div class="glide__track" data-glide-el="track">{%- endif -%}
-          {%- if section_is_carousel -%}<ul class="glide__slides">{%- endif -%}
-            {%- for item in section_reviews -%}
-              {%- if section_is_carousel -%}<li class="glide__slide">{%- endif -%}
-                {%- render 'card-review', card_item: item -%}
-              {%- if section_is_carousel -%}</li>{%- endif -%}
-            {%- endfor -%}
-          {%- if section_is_carousel -%}</ul>{%- endif -%}
-        {%- if section_is_carousel -%}</div>{%- endif -%}
-
-        {%- if section_is_carousel and section_carousel_pagination -%}
-          <div class="glide__bullets" data-glide-el="controls[nav]">
-            {%- for item in section_reviews -%}
-              <button class="glide__bullet button" type="button" data-glide-dir="={{ forloop.index0 }}">
-                {%- render 'svg', type: 'icon.pagination' -%}
-              </button>
-            {%- endfor -%}
-          </div>
-        {%- endif -%}
-
-        {%- if section_is_carousel and section_carousel_navigation -%}
-          <button class="glide__nav button prev" data-glide-navigation="#{{ section_carousel_id }}" type="button">
-            {% render 'svg', type: 'icon.navigation' %}
-          </button>
-          <button class="glide__nav button next" data-glide-navigation="#{{ section_carousel_id }}" type="button">
-            {% render 'svg', type: 'icon.navigation' %}
-          </button>
-        {%- endif -%}
-
-      {%- if section_is_carousel -%}
-        </div>
-      {%- endif -%}
+      {%- for item in section_products -%}
+        {%- render 'card-product', card_background: item.settings.background, card_item: item.settings.product, card_style: section_name -%}
+      {%- endfor -%}
 
     </div>
   </div>
 
-{%- endif -%}
+{% endif %}
 
-{%- schema -%}
+{% schema %}
 {
-  "name": "Reviews",
+  "name": "Product Carousel",
   "tag": "section",
-  "class": "section section--reviews",
+  "class": "section section--product-carousel",
   "settings": [
     {
       "content": "Content",
@@ -235,49 +213,8 @@
       "id": "border_bottom"
     },
     {
-      "content": "Carousel",
+      "content": "Container",
       "type": "header"
-    },
-    {
-      "label": "Enable Pagination",
-      "type": "checkbox",
-      "default": false,
-      "id": "carousel_pagination"
-    },
-    {
-      "label": "Enable Navigation",
-      "type": "checkbox",
-      "default": false,
-      "id": "carousel_navigation"
-    },
-    {
-      "label": "Carousel Autoplay",
-      "info": "Time in milliseconds before a slide changes. Set to '0' to disable autoplay.",
-      "type": "range",
-      "min": 0,
-      "max": 8000,
-      "step": 250,
-      "default": 3000,
-      "id": "carousel_autoplay"
-    },
-    {
-      "label": "Carousel Animation Duration",
-      "info": "Duration of the slide transition animation in milliseconds.",
-      "type": "range",
-      "min": 250,
-      "max": 3500,
-      "step": 50,
-      "default": 450,
-      "id": "carousel_animation_duration"
-    },
-    {
-      "label": "Carousel Slide Gap",
-      "type": "range",
-      "min": 0,
-      "max": 100,
-      "step": 2,
-      "default": 20,
-      "id": "carousel_gap"
     },
     {
       "content": "Padding",
@@ -302,52 +239,51 @@
       "unit": "px",
       "default": 36,
       "id": "padding_bottom"
+    },
+    {
+      "content": "Product",
+      "type": "header"
+    },
+    {
+      "label": "Image Aspect Ratio (Mobile)",
+      "info": "Optionally include an aspect ratio for the product images for consistent user experience on smaller devices.",
+      "type": "text",
+      "id": "product_image_aspect_ratio_mobile"
+    },
+    {
+      "label": "Image Aspect Ratio (Desktop)",
+      "info": "Optionally include an aspect ratio for the product images for consistent user experience on larger devices.",
+      "type": "text",
+      "id": "product_image_aspect_ratio_desktop"
     }
   ],
   "blocks": [
     {
-      "name": "Review",
-      "type": "review",
+      "name": "Product",
+      "type": "product",
       "limit": 9,
       "settings": [
         {
-          "content": "Content",
+          "content": "Product",
           "type": "header"
         },
         {
-          "label": "Badge",
+          "label": "Product",
+          "type": "product",
+          "id": "product"
+        },
+        {
+          "label": "Product Image",
+          "info": "Optionally choose a custom featured image.",
           "type": "image_picker",
-          "id": "badge"
-        },
-        {
-          "label": "Image (Mobile)",
-          "info": "For optimal results, select an image whose native aspect ratio is 4.0/2.75 (wide) with a target file size of 200kb.",
-          "type": "image_picker",
-          "id": "image_mobile"
-        },
-        {
-          "label": "Image (Desktop)",
-          "info": "For optimal results, select an image whose native aspect ratio is 2.5/3.4 (tall) with a target file size of 250kb.",
-          "type": "image_picker",
-          "id": "image_desktop"
-        },
-        {
-          "label": "Subheading",
-          "type": "text",
-          "id": "subheading"
-        },
-        {
-          "label": "Review",
-          "info": "For optimal results, keep review around 75 characters or less.",
-          "type": "richtext",
-          "id": "review"
+          "id": "product_image"
         },
         {
           "content": "Settings",
           "type": "header"
         },
         {
-          "label": "Background",
+          "label": "Colour",
           "type": "select",
           "options": [
             { "label": "Lemon", "value": "lemon" },
@@ -357,20 +293,20 @@
             { "label": "Strawberry", "value": "strawberry" }
           ],
           "default": "lemon",
-          "id": "background"
+          "id": "colour"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Reviews",
+      "name": "Product Carousel",
       "blocks": [
-        { "type": "review" },
-        { "type": "review" },
-        { "type": "review" }
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" }
       ]
     }
   ]
 }
-{%- endschema -%}
+{% endschema %}
