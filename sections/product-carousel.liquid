@@ -21,13 +21,13 @@
 
   assign section_product_blocks_size = section_product_blocks.size | default: 0
 
-  if section_product_blocks > 1
+  if section_product_blocks_size > 1
     assign section_carousel_enabled = true
   endif
 
 -%}
 
-{% if section_product_blocks > 0 %}
+{% if section_product_blocks_size > 0 %}
 
   {%- style -%}
 
