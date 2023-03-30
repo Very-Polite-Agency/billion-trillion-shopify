@@ -15,18 +15,19 @@
 
   assign section_heading = section.settings.heading | default: ''
 
+  assign section_product_blocks = section.blocks | where: "type", "product"
   assign section_product_image_aspect_ratio_desktop = section.settings.product_image_aspect_ratio_desktop | default: ''
   assign section_product_image_aspect_ratio_mobile = section.settings.product_image_aspect_ratio_mobile | default: ''
-  assign section_products = section.blocks | where: "type", "product"
-  assign section_products_size = section_products.size | default: 0
 
-  if section_products_size > 1
+  assign section_product_blocks_size = section_product_blocks.size | default: 0
+
+  if section_product_blocks > 1
     assign section_carousel_enabled = true
   endif
 
 -%}
 
-{% if section_products_size > 1 %}
+{% if section_product_blocks > 0 %}
 
   {%- style -%}
 
@@ -78,8 +79,15 @@
         <h2 class="{{ section_name }}__heading heading--primary heading--1" {{ aos_attrs }}>{{ section_heading }}</h2>
       {%- endif -%}
 
-      {%- for item in section_products -%}
-        {%- render 'card-product-carousel', card_colour: item.settings.colour, card_featured_image: item.settings.featured_image, card_item: item.settings.product -%}
+      {%- for block in section_product_blocks -%}
+        {%-
+          render 'card-product-carousel',
+            card_colour: block.settings.colour,
+            card_featured_image: block.settings.featured_image,
+            card_note: block.settings.note,
+            card_product: block.settings.product
+            card_title: block.settings.title
+        -%}
       {%- endfor -%}
 
     </div>
@@ -302,8 +310,23 @@
           "id": "product"
         },
         {
+          "label": "Note",
+          "type": "text",
+          "id": "note"
+        },
+        {
+          "content": "By default, the section will automatically pull details from the selected product. To customize, and override this automation, update the corresponding fields below.",
+          "type": "paragraph"
+        },
+        {
+          "label": "Title",
+          "info": "Optionally override the product title.",
+          "type": "text",
+          "id": "title"
+        },
+        {
           "label": "Featured Image",
-          "info": "Optionally choose a custom featured image.",
+          "info": "Optionally override the product's featured image.",
           "type": "image_picker",
           "id": "featured_image"
         },
