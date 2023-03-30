@@ -79,7 +79,7 @@
       {%- endif -%}
 
       {%- for item in section_products -%}
-        {%- render 'card-product', card_background: item.settings.background, card_item: item.settings.product, card_style: section_name -%}
+        {%- render 'card-product-carousel', card_colour: item.settings.colour, card_featured_image: item.settings.featured_image, card_item: item.settings.product -%}
       {%- endfor -%}
 
     </div>
@@ -302,10 +302,10 @@
           "id": "product"
         },
         {
-          "label": "Product Image",
+          "label": "Featured Image",
           "info": "Optionally choose a custom featured image.",
           "type": "image_picker",
-          "id": "product_image"
+          "id": "featured_image"
         },
         {
           "content": "Settings",

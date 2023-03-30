@@ -72,7 +72,7 @@
 
       <div class="{{ section_name }}__grid grid--{{ section_grid_columns }}" role="list">
         {%- for item in collection.products -%}
-          {% render 'card-product', card_aria_role: 'listitem', card_item: item %}
+          {% render 'card-product-grid', card_aria_role: 'listitem', card_item: item %}
         {%- endfor -%}
       </div>
 

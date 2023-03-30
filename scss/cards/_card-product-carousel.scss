@@ -1,7 +1,7 @@
 @use "../utils/mixins/border" as *;
 @use "../utils/mixins/breakpoint" as *;
 
-.card-product {
+.card-product-carousel {
 
   min-height: 100%;
   display: flex;
@@ -55,7 +55,7 @@
   &__heading {
     font-size: min(52px, 8.5vw);
     line-height: 1.2;
-    & + .card-product__message {
+    & + .card-product-carousel__message {
       margin-top: min(22px, 2.25vw);
     }
   }
@@ -90,7 +90,7 @@
 
   &__price {
     font-size: min(26px, 3vw);
-    & + .card-product__cta {
+    & + .card-product-carousel__cta {
       margin-top: initial;
     }
   }
