@@ -168,12 +168,13 @@
         "background_image_size": "cover",
         "border_top": true,
         "border_bottom": false,
-        "carousel_pagination": false,
+        "carousel_pagination": true,
+        "carousel_navigation": true,
         "carousel_autoplay": 3000,
         "carousel_animation_duration": 450,
         "carousel_gap": 20,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 44,
+        "padding_bottom": 100
       }
     },
     "047c5130-bbb8-44c6-97ca-d6314188243a": {
