@@ -81,11 +81,12 @@
         "border_top": true,
         "border_bottom": false,
         "carousel_pagination": false,
+        "carousel_navigation": false,
         "carousel_autoplay": 3000,
         "carousel_animation_duration": 450,
         "carousel_gap": 20,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 44,
+        "padding_bottom": 100
       }
     },
     "d685fa2e-8822-46df-b523-b7fa76700377": {
