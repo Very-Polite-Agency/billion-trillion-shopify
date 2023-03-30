@@ -152,6 +152,9 @@
         "template--15945343828152__ec9b35e3-d24d-4147-bf50-34d0820fc54a-1680123219b6bb14da-2": {
           "type": "review",
           "settings": {
+            "badge": "shopify:\/\/shop_images\/review--card-review-badge-lemon_3x_a992f33d-9da7-4992-88ad-f6646e7b1582.png",
+            "image_mobile": "shopify:\/\/shop_images\/review--card-review-mobile_3x_f92a326a-391b-4ef4-a334-6c00d7de466d.png",
+            "image_desktop": "shopify:\/\/shop_images\/review--card-review-desktop_3x_4a451388-7152-4c24-8426-ad76283b59d2.png",
             "subheading": "Translated from Klingon to English:",
             "review": "<p>Nulla consequat dolor vel tincidunt lacinia. Aliquam ut erat ut tortor vel.<\/p>",
             "background": "lemon"
