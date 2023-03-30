@@ -3,6 +3,19 @@
 
 .reviews {
 
+  $card-offset: 20px;
+  $glide-btn-width: 12px;
+
+  .card-review {
+    margin: 0 ($card-offset + 8px);
+    &__media {
+      &-badge {
+        top: $card-offset;
+        left: -$card-offset;
+      }
+    }
+  }
+
   .glide {
     &__bullet {
       color: var(--theme-colour--lemon);
@@ -14,24 +27,30 @@
     &__bullets {
       padding: 0;
       margin-top: 20px;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      left: 0;
     }
     &__nav {
       color: var(--theme-colour--lemon);
-      height: 40px;
       position: absolute;
-      width: auto;
-      top: 50%;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      height: auto;
+      width: $glide-btn-width;
       img, svg {
         display: block;
-        height: 100%;
-        width: auto;
+        height: auto;
+        width: 100%;
       }
       &.next {
-        right: 0;
+        right: -$glide-btn-width;
       }
       &.prev {
         transform: rotate(180deg);
-        left: 0;
+        left: -$glide-btn-width;
       }
       &:hover {
         opacity: var(--theme-transition--opacity);
@@ -49,9 +68,61 @@
     padding-right: var(--theme-layout--container-padding);
   }
 
-  @include breakpoint(sm) {}
+  @include breakpoint(sm) {
+
+    $card-offset: 24px;
+    $glide-btn-width: 14px;
+
+    .card-review {
+      margin: 0 ($card-offset + 10px);
+      &__media {
+        &-badge {
+          top: $card-offset;
+          left: -$card-offset;
+        }
+      }
+    }
+
+    .glide {
+      &__nav {
+        width: $glide-btn-width;
+        &.next {
+          right: -$glide-btn-width;
+        }
+        &.prev {
+          left: -$glide-btn-width;
+        }
+      }
+    }
+
+  }
 
   @include breakpoint(md) {
+
+    $card-offset: 28px;
+    $glide-btn-width: 16px;
+
+    .card-review {
+      margin: 0 ($card-offset + 15px);
+      &__media {
+        &-badge {
+          top: $card-offset;
+          left: -$card-offset;
+        }
+      }
+    }
+
+    .glide {
+      &__nav {
+        width: $glide-btn-width;
+        &.next {
+          right: -$glide-btn-width;
+        }
+        &.prev {
+          left: -$glide-btn-width;
+        }
+      }
+    }
 
     &__heading {
       margin-bottom: 32px;
@@ -61,9 +132,30 @@
 
   @include breakpoint(lg) {
 
+    $glide-btn-width: 18px;
+
+    .card-review {
+      margin: 0;
+      &__media {
+        &-badge {
+          top: 28%;
+          left: -60px;
+        }
+      }
+    }
+
     .glide {
       padding-left: 7.5%;
       padding-right: 7.5%;
+      &__nav {
+        width: $glide-btn-width;
+        &.next {
+          right: 0;
+        }
+        &.prev {
+          left: 0;
+        }
+      }
     }
 
     &__heading {
@@ -82,6 +174,23 @@
 
   @include breakpoint(xl) {
 
+    $glide-btn-width: 20px;
+
+    .card-review {
+      &__media {
+        &-badge {
+          width: 140px;
+          left: -70px;
+        }
+      }
+    }
+
+    .glide {
+      &__nav {
+        width: $glide-btn-width;
+      }
+    }
+
     &__main {
       max-width: var(--theme-container--xl);
     }
@@ -89,6 +198,23 @@
   }
 
   @include breakpoint(xxl) {
+
+    $glide-btn-width: 22px;
+
+    .card-review {
+      &__media {
+        &-badge {
+          width: 160px;
+          left: -80px;
+        }
+      }
+    }
+
+    .glide {
+      &__nav {
+        width: $glide-btn-width;
+      }
+    }
 
     &__heading {
       margin-bottom: 42px;

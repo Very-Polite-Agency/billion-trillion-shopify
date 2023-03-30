@@ -4,10 +4,7 @@
 
 .card-review {
 
-  $offset: 20px;
-
   @include hobeaux( 700 );
-  margin: 0 $offset;
   border-radius: var(--theme-border--radius);
   text-transform: uppercase;
   overflow: visible;
@@ -29,8 +26,6 @@
   &__media {
     position: relative;
     &-badge {
-      top: $offset;
-      left: -$offset;
       position: absolute;
       width: 100px;
       height: auto;
@@ -73,18 +68,12 @@
 
   @include breakpoint(sm) {
 
-    $offset: 24px;
-
-    margin: 0 $offset;
-
     &__content {
       padding: 38px 30px;
     }
 
     &__media {
       &-badge {
-        top: $offset;
-        left: -$offset;
         width: 140px;
       }
     }
@@ -104,18 +93,12 @@
 
   @include breakpoint(md) {
 
-    $offset: 28px;
-
-    margin: 0 $offset;
-
     &__content {
       padding: 44px 34px;
     }
 
     &__media {
       &-badge {
-        top: $offset;
-        left: -$offset;
         width: 180px;
       }
     }
@@ -159,8 +142,6 @@
       flex: 1;
       &-badge {
         width: 120px;
-        top: 28%;
-        left: -60px;
       }
       &-image {
         @include border-solid( var(--theme-border--width), 'black' );
@@ -199,13 +180,6 @@
       padding-right: 70px;
     }
 
-    &__media {
-      &-badge {
-        width: 140px;
-        left: -70px;
-      }
-    }
-
     &__review {
       font-size: 54px;
     }
@@ -221,13 +195,6 @@
     &__content {
       padding: 44px 34px;
       padding-right: 80px;
-    }
-
-    &__media {
-      &-badge {
-        width: 160px;
-        left: -80px;
-      }
     }
 
     &__review {
