@@ -133,10 +133,50 @@
             "title": "6% Alcohol",
             "background": "lemon"
           }
+        },
+        "52906eed-f38b-489b-982d-f61153686a14": {
+          "type": "text",
+          "settings": {
+            "title": "Natural",
+            "background": "grey"
+          }
+        },
+        "b51bd4d3-b88d-4cae-b430-5ac75c5c430c": {
+          "type": "text",
+          "settings": {
+            "title": "Vegan",
+            "background": "lime"
+          }
+        },
+        "c431d653-f5b7-4ab6-a5fc-4c7b006e497f": {
+          "type": "text",
+          "settings": {
+            "title": "Gluten Free",
+            "background": "mango"
+          }
+        },
+        "80d0e1d7-25ee-4df6-a85d-835da1e75b81": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "background": "none"
+          }
+        },
+        "57171f4d-f687-4004-9b9b-a090e5bf12e4": {
+          "type": "text",
+          "settings": {
+            "title": "",
+            "background": "none"
+          }
         }
       },
       "block_order": [
-        "398a7a2c-6aaf-487f-b2ec-09beca8897aa"
+        "398a7a2c-6aaf-487f-b2ec-09beca8897aa",
+        "52906eed-f38b-489b-982d-f61153686a14",
+        "b51bd4d3-b88d-4cae-b430-5ac75c5c430c",
+        "c431d653-f5b7-4ab6-a5fc-4c7b006e497f",
+        "80d0e1d7-25ee-4df6-a85d-835da1e75b81",
+        "57171f4d-f687-4004-9b9b-a090e5bf12e4"
       ],
       "settings": {
         "anchor_id": "",
