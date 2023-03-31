@@ -16,10 +16,9 @@
   assign section_heading = section.settings.heading | default: ''
 
   assign section_product_blocks = section.blocks | where: "type", "product"
+  assign section_product_blocks_size = section_product_blocks.size | default: 0
   assign section_product_image_aspect_ratio_desktop = section.settings.product_image_aspect_ratio_desktop | default: ''
   assign section_product_image_aspect_ratio_mobile = section.settings.product_image_aspect_ratio_mobile | default: ''
-
-  assign section_product_blocks_size = section_product_blocks.size | default: 0
 
   if section_product_blocks_size > 1
     assign section_carousel_enabled = true
@@ -57,8 +56,6 @@
         background_image_size: section.settings.background_image_size,
         border_bottom: section.settings.border_bottom,
         border_top: section.settings.border_top,
-        height_desktop: section.settings.height_desktop,
-        height_mobile: section.settings.height_mobile,
         id: section_id,
         padding_bottom: section.settings.padding_bottom,
         padding_top: section.settings.padding_top

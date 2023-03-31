@@ -1,57 +1,94 @@
-{%- if card_item and card_item != blank -%}
+{% comment %}
+  Renders an award card
 
-  {%- comment  -%}
-      Renders an award card
+  Accepts:
+  - card_aria_role: {String} Optionally include aria role
+  - card_background: {Object} Optionally include background colour
+  - card_classes: {String} Optionally include custom classes
+  - card_details: {String} Award snippet_details
+  - card_footnote: {String} Award snippet_footnote
+  - card_icon: {Object} Award snippet_icon
+  - card_id: {String} Optionally include a unique id
+  - card_title: {String} Award snippet_title
 
-      Accepts:
-      - card_item: {Object} Block object
-
-      Usage:
-      {%- render 'card-award', card_item: item  -%}
-  {%- endcomment  -%}
-
-  {%- liquid
-
-    assign snippet_name = 'card-award'
-    assign snippet_classes = classes | default: snippet_name
-    assign snippet_id = snippet_name | append: '--' | append: card_item.id
-    assign snippet_aria_role = card_aria_role | default: ''
-
-    assign aos_delay = 250
-    assign aos_delay_increment = 250
-
-    assign background = card_item.settings.background | default: 'lemon'
-    assign details = card_item.settings.details | default: ''
-    assign footnote = card_item.settings.footnote | default: ''
-    assign icon = card_item.settings.icon | default: false
-    assign title = card_item.settings.title | default: ''
-
+  Usage:
+  {%-
+    render 'card-award',
+      card_aria_role: 'lisitem'
+      card_background: block.settings.background,
+      card_classes: snippet_classes,
+      card_details: block.settings.details,
+      card_footnote: block.settings.footnote,
+      card_icon: block.settings.icon,
+      card_id: block.id,
+      card_title: block.settings.title,
   -%}
+{% endcomment %}
 
-  <article class="{{ snippet_classes }}" id="{{ snippet_id }}" {%- if snippet_aria_role != blank -%}role="{{ snippet_aria_role }}"{%- endif -%}>
+{%- liquid
 
-    {%- style -%}
-      #{{ snippet_id }} {
-        background: var(--theme-colour--{{ background }});
-      }
-    {%- endstyle -%}
+  assign snippet_name = 'card-award'
+  assign snippet_classes = classes | default: snippet_name
+  assign snippet_id = card_id | default: snippet_name
+  assign snippet_aria_role = card_aria_role | default: ''
 
-    {%- if icon -%}
-      <div class="{{ snippet_name }}__icon">{%- render 'lazyload-image', image: icon  -%}</div>
-    {%- endif -%}
+  assign aos_delay = 250
+  assign aos_delay_increment = 250
+  assign aos_id = snippet_id
 
-    {%- if title and title != blank -%}
-      <strong class="{{ snippet_name }}__title">{{ title }}</strong>
-    {%- endif -%}
+  assign snippet_background = card_background | default: 'lemon'
+  assign snippet_details = card_details | default: ''
+  assign snippet_footnote = card_footnote | default: ''
+  assign snippet_icon = card_icon | default: false
+  assign snippet_title = card_title | default: ''
 
-    {%- if details and details != blank -%}
-      <div class="{{ snippet_name }}__details body-copy--secondary">{{ details }}</div>
-    {%- endif -%}
+-%}
 
-    {%- if footnote != blank -%}
-      <div class="{{ snippet_name }}__footnote">{{ footnote }}</div>
-    {%- endif -%}
+<article class="{{ snippet_classes }}" id="{{ snippet_id }}" {%- if snippet_aria_role != blank -%}role="{{ snippet_aria_role }}"{%- endif -%}>
 
-  </article>
+  {%- style -%}
+    #{{ snippet_id }} {
+      background: var(--theme-colour--{{ snippet_background }});
+    }
+  {%- endstyle -%}
 
-{%- endif -%}
+  {%- if snippet_icon -%}
+    {%- liquid
+      capture aos_attrs
+        render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+      endcapture
+      assign aos_delay = aos_delay | plus: aos_delay_increment
+    -%}
+    <div class="{{ snippet_name }}__icon" {{ aos_attrs }}>{%- render 'lazyload-image', image: snippet_icon -%}</div>
+  {%- endif -%}
+
+  {%- if snippet_title and snippet_title != blank -%}
+    {%- liquid
+      capture aos_attrs
+        render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
+      endcapture
+      assign aos_delay = aos_delay | plus: aos_delay_increment
+    -%}
+    <strong class="{{ snippet_name }}__title" {{ aos_attrs }}>{{ snippet_title }}</strong>
+  {%- endif -%}
+
+  {%- if snippet_details and snippet_details != blank -%}
+    {%- liquid
+      capture aos_attrs
+        render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
+      endcapture
+      assign aos_delay = aos_delay | plus: aos_delay_increment
+    -%}
+    <div class="{{ snippet_name }}__details body-copy--secondary" {{ aos_attrs }}>{{ snippet_details }}</div>
+  {%- endif -%}
+
+  {%- if snippet_footnote != blank -%}
+    {%- liquid
+      capture aos_attrs
+        render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-up'
+      endcapture
+    -%}
+    <div class="{{ snippet_name }}__footnote" {{ aos_attrs }}>{{ snippet_footnote }}</div>
+  {%- endif -%}
+
+</article>

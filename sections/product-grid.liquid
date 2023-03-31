@@ -6,14 +6,14 @@
 
   assign section_container = section.settings.container | default: 'container'
   assign section_grid_gap = section.settings.grid_gap | default: '20'
+  assign section_product_blocks = section.blocks | where: "type", "product"
+  assign section_product_blocks_size = section_product_blocks.size | default: 0
   assign section_product_image_aspect_ratio_desktop = section.settings.product_image_aspect_ratio_desktop | default: ''
   assign section_product_image_aspect_ratio_mobile = section.settings.product_image_aspect_ratio_mobile | default: ''
-  assign section_products = section.blocks | where: "type", "product"
-  assign section_products_size = section_products.size | default: 0
 
 -%}
 
-{% if section_products_size > 1 %}
+{% if section_product_blocks_size > 1 %}
 
   {%- style -%}
 
@@ -58,9 +58,14 @@
 
   <div class="{{ section_classes }}" id="{{ section_id }}">
     {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
-      <div class="{{ section_name }}__grid grid--{{ section_products_size }}" role="list">
-        {%- for item in section_products -%}
-          {%- render 'card-product-grid', card_aria_role: 'listitem', card_background: item.settings.background, card_item: item.settings.producte -%}
+      <div class="{{ section_name }}__grid grid--{{ section_product_blocks_size }}" role="list">
+        {%- for block in section_product_blocks -%}
+          {%-
+            render 'card-product-grid',
+              card_aria_role: 'listitem'
+              card_background: block.settings.background
+              card_product: block.settings.product
+          -%}
         {%- endfor -%}
       </div>
     {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}
