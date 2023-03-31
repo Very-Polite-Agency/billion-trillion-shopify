@@ -165,7 +165,7 @@
         "marquee_item_padding_y": 10,
         "marquee_reverse": false,
         "text_colour": "dark",
-        "text_size": 26,
+        "text_size": 14,
         "text_style": "secondary"
       }
     },
