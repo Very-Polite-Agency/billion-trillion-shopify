@@ -103,7 +103,7 @@
           "type": "text",
           "settings": {
             "title": "6% Alcohol",
-            "background": "none"
+            "background": "lemon"
           }
         },
         "b8388440-4dc7-4d6f-9d18-2c60d51dd406": {
@@ -117,28 +117,28 @@
           "type": "text",
           "settings": {
             "title": "Vegan",
-            "background": "none"
+            "background": "lime"
           }
         },
         "5586daf8-3972-44c6-87d8-998e742c1db0": {
           "type": "text",
           "settings": {
             "title": "Gluten Free",
-            "background": "none"
+            "background": "mango"
           }
         },
         "0762636f-cea5-4f21-a309-6db888436855": {
           "type": "text",
           "settings": {
             "title": "100 Calories",
-            "background": "none"
+            "background": "orange"
           }
         },
         "981d35c3-f0df-4b01-b3bf-baea2cba8d18": {
           "type": "text",
           "settings": {
             "title": "No Sugar Added",
-            "background": "none"
+            "background": "strawberry"
           }
         }
       },
@@ -152,21 +152,21 @@
       ],
       "settings": {
         "anchor_id": "",
-        "background": "none",
+        "background": "strawberry",
         "background_image_position_mobile": "center center",
         "background_image_position_desktop": "center center",
         "background_image_repeat": "repeat",
         "background_image_size": "cover",
         "border_top": true,
         "border_bottom": false,
-        "marquee_duration": 75,
-        "marquee_gap": 2,
+        "marquee_duration": 65,
+        "marquee_gap": 10,
         "marquee_reverse": false,
-        "padding_top": 36,
-        "padding_bottom": 36,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "text_colour": "dark",
         "text_size": 20,
-        "text_style": "primary"
+        "text_style": "secondary"
       }
     },
     "0fa9ba11-804e-4e9d-a953-63efbbdfa40b": {
