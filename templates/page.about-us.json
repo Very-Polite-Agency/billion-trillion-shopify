@@ -2,6 +2,7 @@
   "order": [
     "hero",
     "c5ddd571-40a7-4e5a-b116-59f35896c18d",
+    "ca510ddb-3352-4969-ab45-d406db839a98",
     "2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4",
     "d685fa2e-8822-46df-b523-b7fa76700377"
   ],
@@ -90,6 +91,79 @@
         "a89c1cd3-a667-4361-b38a-ce9d6b535e75",
         "5a3ef531-9693-4bed-8a37-d1c1fe08a590",
         "57e3cef6-8024-4008-b684-7248d544eff5"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "black",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "marquee_duration": 90,
+        "marquee_gap": 20,
+        "marquee_item_padding_x": 10,
+        "marquee_item_padding_y": 20,
+        "marquee_reverse": false,
+        "text_colour": "light",
+        "text_size": 36,
+        "text_style": "primary"
+      }
+    },
+    "ca510ddb-3352-4969-ab45-d406db839a98": {
+      "type": "marquee",
+      "blocks": {
+        "997fbb3a-9fba-4201-a204-56a3154d80f5": {
+          "type": "text",
+          "settings": {
+            "title": "6% Alcohol",
+            "background": "lemon"
+          }
+        },
+        "10873fb1-2a19-406e-88ef-a2832661a7f1": {
+          "type": "text",
+          "settings": {
+            "title": "Natural",
+            "background": "grey"
+          }
+        },
+        "58eb592c-c61a-45cb-82d0-da0c40bb6954": {
+          "type": "text",
+          "settings": {
+            "title": "Vegan",
+            "background": "lime"
+          }
+        },
+        "708167a7-6a5d-48d1-a14a-78457b123c57": {
+          "type": "text",
+          "settings": {
+            "title": "Gluten Free",
+            "background": "mango"
+          }
+        },
+        "ac1d78d3-9d96-4153-8c4c-96cf0d50539c": {
+          "type": "text",
+          "settings": {
+            "title": "100 Calories",
+            "background": "orange"
+          }
+        },
+        "e32b73ec-ff5f-4b0b-945b-c183c58acef5": {
+          "type": "text",
+          "settings": {
+            "title": "No Sugar Added",
+            "background": "strawberry"
+          }
+        }
+      },
+      "block_order": [
+        "997fbb3a-9fba-4201-a204-56a3154d80f5",
+        "10873fb1-2a19-406e-88ef-a2832661a7f1",
+        "58eb592c-c61a-45cb-82d0-da0c40bb6954",
+        "708167a7-6a5d-48d1-a14a-78457b123c57",
+        "ac1d78d3-9d96-4153-8c4c-96cf0d50539c",
+        "e32b73ec-ff5f-4b0b-945b-c183c58acef5"
       ],
       "settings": {
         "anchor_id": "",
