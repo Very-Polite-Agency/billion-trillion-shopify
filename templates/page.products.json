@@ -131,42 +131,42 @@
           "type": "text",
           "settings": {
             "title": "6% Alcohol",
-            "background": "lemon"
+            "background": "none"
           }
         },
         "52906eed-f38b-489b-982d-f61153686a14": {
           "type": "text",
           "settings": {
             "title": "Natural",
-            "background": "grey"
+            "background": "none"
           }
         },
         "b51bd4d3-b88d-4cae-b430-5ac75c5c430c": {
           "type": "text",
           "settings": {
             "title": "Vegan",
-            "background": "lime"
+            "background": "none"
           }
         },
         "c431d653-f5b7-4ab6-a5fc-4c7b006e497f": {
           "type": "text",
           "settings": {
             "title": "Gluten Free",
-            "background": "mango"
+            "background": "none"
           }
         },
         "80d0e1d7-25ee-4df6-a85d-835da1e75b81": {
           "type": "text",
           "settings": {
             "title": "100 Calories",
-            "background": "orange"
+            "background": "none"
           }
         },
         "57171f4d-f687-4004-9b9b-a090e5bf12e4": {
           "type": "text",
           "settings": {
             "title": "No Sugar Added",
-            "background": "strawberry"
+            "background": "none"
           }
         }
       },
@@ -177,6 +177,79 @@
         "c431d653-f5b7-4ab6-a5fc-4c7b006e497f",
         "80d0e1d7-25ee-4df6-a85d-835da1e75b81",
         "57171f4d-f687-4004-9b9b-a090e5bf12e4"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "black",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": true,
+        "border_bottom": false,
+        "marquee_duration": 90,
+        "marquee_gap": 20,
+        "marquee_item_padding_x": 10,
+        "marquee_item_padding_y": 20,
+        "marquee_reverse": false,
+        "text_colour": "light",
+        "text_size": 36,
+        "text_style": "primary"
+      }
+    },
+    "0bf825b5-7d2e-408b-b69f-346f09093b5b": {
+      "type": "marquee",
+      "blocks": {
+        "218c29e7-f45d-4c2a-ad0b-7a828f544b11": {
+          "type": "text",
+          "settings": {
+            "title": "6% Alcohol",
+            "background": "lemon"
+          }
+        },
+        "df254244-4c45-4507-96da-34e5b1a0e050": {
+          "type": "text",
+          "settings": {
+            "title": "Natural",
+            "background": "grey"
+          }
+        },
+        "b00fd988-9214-491d-bc9c-b6a9f3c32df0": {
+          "type": "text",
+          "settings": {
+            "title": "Vegan",
+            "background": "lime"
+          }
+        },
+        "3047f797-d696-4a88-8ff5-e3268bcd44a3": {
+          "type": "text",
+          "settings": {
+            "title": "Gluten Free",
+            "background": "mango"
+          }
+        },
+        "e68a901b-205d-4a98-8e25-b5f80c04a0fa": {
+          "type": "text",
+          "settings": {
+            "title": "100 Calories",
+            "background": "orange"
+          }
+        },
+        "079a615b-fd3a-4578-bc32-c6435e171101": {
+          "type": "text",
+          "settings": {
+            "title": "No Sugar Added",
+            "background": "strawberry"
+          }
+        }
+      },
+      "block_order": [
+        "218c29e7-f45d-4c2a-ad0b-7a828f544b11",
+        "df254244-4c45-4507-96da-34e5b1a0e050",
+        "b00fd988-9214-491d-bc9c-b6a9f3c32df0",
+        "3047f797-d696-4a88-8ff5-e3268bcd44a3",
+        "e68a901b-205d-4a98-8e25-b5f80c04a0fa",
+        "079a615b-fd3a-4578-bc32-c6435e171101"
       ],
       "settings": {
         "anchor_id": "",
@@ -326,6 +399,7 @@
     "9f653b28-56ca-40f9-bc3b-fd5f9efc992e",
     "411b7388-d5bb-4034-8a25-531562e0b7cf",
     "3636dc4f-5ce2-4420-a74f-ec12697d370f",
+    "0bf825b5-7d2e-408b-b69f-346f09093b5b",
     "ec9b35e3-d24d-4147-bf50-34d0820fc54a",
     "047c5130-bbb8-44c6-97ca-d6314188243a"
   ]
