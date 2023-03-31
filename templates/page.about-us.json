@@ -2,6 +2,7 @@
   "order": [
     "hero",
     "2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4",
+    "c5ddd571-40a7-4e5a-b116-59f35896c18d",
     "d685fa2e-8822-46df-b523-b7fa76700377"
   ],
   "sections": {
@@ -96,6 +97,27 @@
         "carousel_gap": 20,
         "padding_top": 44,
         "padding_bottom": 100
+      }
+    },
+    "c5ddd571-40a7-4e5a-b116-59f35896c18d": {
+      "type": "marquee",
+      "settings": {
+        "anchor_id": "",
+        "background": "black",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": true,
+        "border_bottom": false,
+        "marquee_duration": 75,
+        "marquee_gap": 3,
+        "marquee_item_padding_x": 15,
+        "marquee_item_padding_y": 10,
+        "marquee_reverse": false,
+        "text_colour": "dark",
+        "text_size": 14,
+        "text_style": "secondary"
       }
     },
     "d685fa2e-8822-46df-b523-b7fa76700377": {
