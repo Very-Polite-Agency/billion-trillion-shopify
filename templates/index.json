@@ -96,6 +96,39 @@
         "product_image_aspect_ratio_desktop": "2.58\/3.29"
       }
     },
+    "1051164b-db1e-44a5-be1e-5cb0043989d3": {
+      "type": "marquee",
+      "blocks": {
+        "271b056d-5050-433b-bf22-a8e81b805b95": {
+          "type": "text",
+          "settings": {
+            "title": "6% Alcohol",
+            "background": "none"
+          }
+        }
+      },
+      "block_order": [
+        "271b056d-5050-433b-bf22-a8e81b805b95"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "marquee_duration": 75,
+        "marquee_gap": 20,
+        "marquee_reverse": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "text_colour": "dark",
+        "text_size": 20,
+        "text_style": "primary"
+      }
+    },
     "0fa9ba11-804e-4e9d-a953-63efbbdfa40b": {
       "type": "reviews",
       "blocks": {
@@ -222,6 +255,7 @@
   "order": [
     "dd61d2a0-89a4-4ba3-9fe1-89c5f3486acc",
     "bf312ebe-28f5-487a-9b2b-c0e3ef23e8e7",
+    "1051164b-db1e-44a5-be1e-5cb0043989d3",
     "0fa9ba11-804e-4e9d-a953-63efbbdfa40b",
     "054245ba-4ed7-4220-bd3b-8e55198d24b0"
   ]
