@@ -122,12 +122,20 @@
             "title": "Vegan",
             "background": "lime"
           }
+        },
+        "a89c1cd3-a667-4361-b38a-ce9d6b535e75": {
+          "type": "text",
+          "settings": {
+            "title": "Gluten Free",
+            "background": "mango"
+          }
         }
       },
       "block_order": [
         "d887ca62-5fba-4730-998f-6cb231113c77",
         "40d4560b-0d16-475c-94f3-29b46a715dd1",
-        "1e84f8d4-ff4a-4193-a22f-817b9a0d464f"
+        "1e84f8d4-ff4a-4193-a22f-817b9a0d464f",
+        "a89c1cd3-a667-4361-b38a-ce9d6b535e75"
       ],
       "settings": {
         "anchor_id": "",
