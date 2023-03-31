@@ -159,7 +159,7 @@
         "background_image_size": "cover",
         "border_top": true,
         "border_bottom": false,
-        "marquee_duration": 75,
+        "marquee_duration": 65,
         "marquee_gap": 2,
         "marquee_reverse": false,
         "padding_top": 0,
