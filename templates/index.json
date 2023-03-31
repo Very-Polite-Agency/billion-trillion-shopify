@@ -110,7 +110,7 @@
           "type": "text",
           "settings": {
             "title": "Natural",
-            "background": "none"
+            "background": "grey"
           }
         },
         "b8dcd774-5618-4c92-a713-74680b792429": {
@@ -152,7 +152,7 @@
       ],
       "settings": {
         "anchor_id": "",
-        "background": "strawberry",
+        "background": "black",
         "background_image_position_mobile": "center center",
         "background_image_position_desktop": "center center",
         "background_image_repeat": "repeat",
@@ -160,10 +160,10 @@
         "border_top": true,
         "border_bottom": false,
         "marquee_duration": 65,
-        "marquee_gap": 10,
+        "marquee_gap": 4,
+        "marquee_item_padding_x": 22,
+        "marquee_item_padding_y": 22,
         "marquee_reverse": false,
-        "padding_top": 0,
-        "padding_bottom": 0,
         "text_colour": "dark",
         "text_size": 20,
         "text_style": "secondary"
