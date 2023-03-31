@@ -119,12 +119,44 @@
             "title": "100 Calories",
             "background": "none"
           }
+        },
+        "bab7a83d-c6e1-481e-9584-c301043ba2b7": {
+          "type": "text",
+          "settings": {
+            "title": "Vegan",
+            "background": "none"
+          }
+        },
+        "d8bffcb1-cf06-46eb-993d-4b7db2cd375f": {
+          "type": "text",
+          "settings": {
+            "title": "Gluten Free",
+            "background": "none"
+          }
+        },
+        "45962353-ce29-4fa9-b84b-61a8dd1e357e": {
+          "type": "text",
+          "settings": {
+            "title": "100 Calories",
+            "background": "none"
+          }
+        },
+        "31de5e4e-d985-4b6b-a211-bfe72f513499": {
+          "type": "text",
+          "settings": {
+            "title": "No Sugar Added",
+            "background": "none"
+          }
         }
       },
       "block_order": [
         "0e5a17f5-6ca7-4886-9236-df7c9415b730",
         "0fac6811-4d3e-4bad-99ff-bbd57e5727f5",
-        "db80e9ff-d617-4348-9650-808e58a8ad38"
+        "db80e9ff-d617-4348-9650-808e58a8ad38",
+        "bab7a83d-c6e1-481e-9584-c301043ba2b7",
+        "d8bffcb1-cf06-46eb-993d-4b7db2cd375f",
+        "45962353-ce29-4fa9-b84b-61a8dd1e357e",
+        "31de5e4e-d985-4b6b-a211-bfe72f513499"
       ],
       "settings": {
         "anchor_id": "",
