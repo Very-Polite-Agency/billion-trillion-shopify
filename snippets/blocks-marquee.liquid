@@ -1,9 +1,12 @@
 {% if items and items != blank %}
   {% for item in items %}
+
     {%- liquid
       assign item_type = item.type | default: 'no-type'
+      assign item_title = item.settings.title | default: ''
     -%}
-    <span {% if hidden %}aria-hidden="true"{% endif %}>{{ item_type }}</span>
+
+    <span {% if hidden %}aria-hidden="true"{% endif %} data-count="{{ forloop.index }}">{{ item_title }}</span>
   {% endfor %}
 {% endif %}
 
