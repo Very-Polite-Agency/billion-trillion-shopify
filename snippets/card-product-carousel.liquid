@@ -58,18 +58,18 @@
     {% endif %}
 
     {% if snippet_title != blank %}
-      <div class="{{ snippet_name }}__content">
+      <div class="{{ snippet_name }}__content text--uppercase">
 
-        <strong class="{{ snippet_name }}__title heading--primary">{{ snippet_title }}</strong>
+        <strong class="{{ snippet_name }}__title heading--primary heading--2">{{ snippet_title }}</strong>
 
         {% if snippet_note != blank %}
-          <div class="{{ snippet_name }}__note body-copy--primary">{{ snippet_note }}</div>
+          <div class="{{ snippet_name }}__note body-copy--secondary">{{ snippet_note }}</div>
         {% endif %}
 
         {% if snippet_url != blank %}
           <div class="{{ snippet_name }}__cta" {{ aos_attrs }}>
             <a class="{{ snippet_name }}__cta-link link" href="{{ snippet_url }}" target="_self" title="{{ snippet_title }}">
-              <div class="button--svg">{% render 'svg', type: 'button.learn-more' %}</div>
+              <div class="button--svg button--svg-fill-{{ snippet_colour }}">{% render 'svg', type: 'button.learn-more' %}</div>
             </a>
           </div>
         {% endif %}

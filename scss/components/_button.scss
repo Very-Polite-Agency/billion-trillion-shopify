@@ -12,29 +12,39 @@
   }
 
   &--svg {
+
     path {
       transition: fill var(--theme-transition--duration);
     }
+
     .button-outline {
       fill: var(--theme-colour--black);
     }
+
     .button-fill {
       fill: var(--theme-colour--white);
     }
+
     &:hover {
       .button-fill {
         fill: var(--theme-colour--orange);
       }
     }
-    @each $name, $value in $theme-button-heights {
-      // @if $name == 'base' {
-      //   height: var(--theme-button-height);
-      // } @else {
-      //   @include breakpoint(#{$name}) {
-      //     height: var(--theme-button-height--#{$name});
-      //   }
-      // }
+
+    @each $name, $value in $theme-colours {
+      &-fill-#{$name} {
+        .button-fill {
+          fill: var(--theme-colour--#{$name});
+        }
+        &:hover {
+          opacity: var(--theme-transition--opacity);
+          .button-fill {
+            fill: var(--theme-colour--#{$name});
+          }
+        }
+      }
     }
+
   }
 
   &[disabled],

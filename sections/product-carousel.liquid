@@ -79,16 +79,37 @@
         <h2 class="{{ section_name }}__heading heading--primary heading--1" {{ aos_attrs }}>{{ section_heading }}</h2>
       {%- endif -%}
 
-      {%- for block in section_product_blocks -%}
-        {%-
-          render 'card-product-carousel',
-            card_colour: block.settings.colour,
-            card_featured_image: block.settings.featured_image,
-            card_note: block.settings.note,
-            card_product: block.settings.product
-            card_title: block.settings.title
-        -%}
-      {%- endfor -%}
+
+      {%- if section_carousel_enabled -%}
+        <div
+          class="{{ section_name }}__glide glide js--glide"
+          data-glide-animation-duration="{{ section_carousel_animation_duration }}"
+          data-glide-autoplay="{{ section_carousel_autoplay }}"
+          data-glide-gap="{{ section_carousel_gap }}"
+          data-glide-style="{{ section_carousel_style }}"
+          id="{{ section_carousel_id }}"
+        >
+      {%- endif -%}
+
+        {%- if section_carousel_enabled -%}<div class="glide__track" data-glide-el="track">{%- endif -%}
+          {%- if section_carousel_enabled -%}<ul class="glide__slides">{%- endif -%}
+
+            {%- for block in section_product_blocks -%}
+              {%- if section_carousel_enabled -%}<li class="glide__slide">{%- endif -%}
+                {%-
+                  render 'card-product-carousel',
+                    card_colour: block.settings.colour,
+                    card_featured_image: block.settings.featured_image,
+                    card_note: block.settings.note,
+                    card_product: block.settings.product
+                    card_title: block.settings.title
+                -%}
+              {%- if section_carousel_enabled -%}</li>{%- endif -%}
+            {%- endfor -%}
+
+          {%- if section_carousel_enabled -%}</ul>{%- endif -%}
+        {%- if section_carousel_enabled -%}</div>{%- endif -%}
+      {%- if section_carousel_enabled -%}</div>{%- endif -%}
 
     </div>
   </div>

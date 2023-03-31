@@ -35,6 +35,45 @@ const createGliderFromElement = ( element = {} ) => {
       });
       break;
     }
+    case 'product-carousel': {
+       options = getOptions({
+        animationDuration,
+        autoplay,
+        breakpoints: {
+          9999: {
+            peek: { before: 0, after: 160 },
+            perView: 5
+          },
+          1799: {
+            peek: { before: 0, after: 160 },
+            perView: 4
+          },
+          1399: {
+            peek: { before: 0, after: 160 },
+            perView: 3
+          },
+          1199: {
+            peek: { before: 0, after: 160 },
+            perView: 3
+          },
+          991: {
+            peek: { before: 0, after: 160 },
+            perView: 2
+          },
+          767: {
+            peek: { before: 0, after: 160 },
+            perView: 1
+          },
+          575: {
+            peek: { before: 0, after: 80 },
+            perView: 1
+          }
+        },
+        gap,
+        hoverpause: true,
+      });
+      break;
+    }
   }
 
   if ( element_id ) {
