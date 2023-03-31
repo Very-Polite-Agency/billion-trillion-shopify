@@ -23,6 +23,10 @@
   assign section_text_size = section.settings.text_size | default: 20
   assign section_text_style = section.settings.text_style | default: 'primary'
 
+  if section_marquee_reverse
+    assign section_classes = section_classes | append: ' marquee--reverse'
+  endif
+
 -%}
 
 {% if section_product_blocks_size > 0 %}
