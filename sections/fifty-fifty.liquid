@@ -1,6 +1,6 @@
 {%- liquid
 
-  assign section_name = 'page'
+  assign section_name = 'fifty-fifty'
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
@@ -40,10 +40,10 @@
 
 {% schema %}
 {
-  "name": "Page",
+  "name": "Fifty-Fifty",
   "tag": "section",
-  "class": "section section--page",
-  "templates": [ "page" ],
+  "class": "section section--fifty-fifty",
+  "max_blocks": 2,
   "settings": [
     {
       "content": "Settings",
@@ -178,6 +178,37 @@
       "unit": "px",
       "default": 36,
       "id": "padding_bottom"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Image",
+      "type": "image",
+      "settings": [
+        {
+          "content": "Settings",
+          "type": "header"
+        }
+      ]
+    },
+    {
+      "name": "Text",
+      "type": "text",
+      "settings": [
+        {
+          "content": "Settings",
+          "type": "header"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fifty-Fifty",
+      "blocks": [
+        { "type": "image" },
+        { "type": "text" }
+      ]
     }
   ]
 }

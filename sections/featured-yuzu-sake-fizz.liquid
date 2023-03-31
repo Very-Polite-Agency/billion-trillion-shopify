@@ -4,9 +4,9 @@
   assign section_classes = section_name | append: ' fifty-fifty'
   assign section_id = section_name | append: '--' | append: section.id
 
-  assign aos_id = snippet_id
   assign aos_delay = 250
   assign aos_delay_increment = 250
+  assign aos_id = section_id
 
   assign section_product = section.settings.product | default: false
   assign section_background = section.settings.background | default: 'lemon'

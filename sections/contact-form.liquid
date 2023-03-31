@@ -1,6 +1,6 @@
 {%- liquid
 
-  assign section_name = 'page'
+  assign section_name = 'contact-form'
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
@@ -10,10 +10,13 @@
 
   assign section_anchor = section.settings.anchor_id | default: ''
   assign section_container = section.settings.container | default: 'container'
+  assign section_custom_liquid = section.settings.custom_liquid | default: ''
+  assign section_form_id = section_id | append: '--form'
 
 -%}
 
 {%- style -%}
+
   {%
     render 'element-styles',
       background: section.settings.background,
@@ -28,22 +31,24 @@
       padding_bottom: section.settings.padding_bottom,
       padding_top: section.settings.padding_top
   -%}
+
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
   {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
     <div class="{{ section_name }}__main">
-      <!-- Section content here... -->
+      {%- for block in section.blocks -%}
+
+      {%- endfor -%}
     </div>
   {% render 'bs-container', state: 'closed', col: 'col-12', container: container %}
 </div>
 
 {% schema %}
 {
-  "name": "Page",
+  "name": "Contact Form",
   "tag": "section",
-  "class": "section section--page",
-  "templates": [ "page" ],
+  "class": "section section--contact-form",
   "settings": [
     {
       "content": "Settings",
@@ -178,6 +183,75 @@
       "unit": "px",
       "default": 36,
       "id": "padding_bottom"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Image",
+      "type": "image",
+      "limit": 1,
+      "settings": [
+        {
+          "content": "Content",
+          "type": "header"
+        },
+        {
+          "content": "Image",
+          "type": "paragraph"
+        },
+        {
+          "label": "Enable Image Border",
+          "type": "checkbox",
+          "default": false,
+          "id": "image_enable_border"
+        },
+        {
+          "label": "Image",
+          "type": "image_picker",
+          "id": "image"
+        }
+      ]
+    },
+    {
+      "name": "Form",
+      "type": "form",
+      "limit": 1,
+      "settings": [
+        {
+          "content": "Content",
+          "type": "header"
+        },
+        {
+          "content": "Heading",
+          "type": "paragraph"
+        },
+        {
+          "label": "Heading",
+          "type": "textarea",
+          "id": "heading"
+        },
+        {
+          "label": "Heading Size",
+          "type": "select",
+          "options": [
+             { "label": "Large", "value": "lg" },
+            { "label": "Medium", "value": "md" },
+            { "label": "Small", "value": "sm" },
+            { "label": "Tiny", "value": "xs" }
+          ],
+          "default": "md",
+          "id": "heading_size"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact form",
+      "blocks": [
+        { "type": "form" },
+        { "type": "image" }
+      ]
     }
   ]
 }

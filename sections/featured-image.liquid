@@ -1,6 +1,6 @@
 {%- liquid
 
-  assign section_name = 'page'
+  assign section_name = 'featured-image'
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
@@ -10,6 +10,7 @@
 
   assign section_anchor = section.settings.anchor_id | default: ''
   assign section_container = section.settings.container | default: 'container'
+  assign section_image = section.settings.image | default: false
 
 -%}
 
@@ -38,13 +39,21 @@
   {% render 'bs-container', state: 'closed', col: 'col-12', container: container %}
 </div>
 
-{% schema %}
+{%- schema -%}
 {
-  "name": "Page",
+  "name": "Featured Image",
   "tag": "section",
-  "class": "section section--page",
-  "templates": [ "page" ],
+  "class": "section section--featured-image",
   "settings": [
+    {
+      "content": "Content",
+      "type": "header"
+    },
+    {
+      "label": "Image",
+      "type": "image_picker",
+      "id": "image"
+    },
     {
       "content": "Settings",
       "type": "header"
@@ -179,6 +188,13 @@
       "default": 36,
       "id": "padding_bottom"
     }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Featured Image",
+      "blocks": []
+    }
   ]
 }
-{% endschema %}
+{%- endschema -%}

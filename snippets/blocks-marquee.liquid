@@ -1,0 +1,9 @@
+{% if items and items != blank %}
+  {% for item in items %}
+    {%- liquid
+      assign item_type = item.type | default: 'no-type'
+    -%}
+    <span {% if hidden %}aria-hidden="true"{% endif %}>{{ item_type }}</span>
+  {% endfor %}
+{% endif %}
+

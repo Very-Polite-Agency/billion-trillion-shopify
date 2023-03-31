@@ -1,6 +1,6 @@
 {%- liquid
 
-  assign section_name = 'page'
+  assign section_name = 'faqs'
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
@@ -40,10 +40,9 @@
 
 {% schema %}
 {
-  "name": "Page",
+  "name": "FAQs",
   "tag": "section",
-  "class": "section section--page",
-  "templates": [ "page" ],
+  "class": "section section--faqs",
   "settings": [
     {
       "content": "Settings",
@@ -178,6 +177,11 @@
       "unit": "px",
       "default": 36,
       "id": "padding_bottom"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQs"
     }
   ]
 }

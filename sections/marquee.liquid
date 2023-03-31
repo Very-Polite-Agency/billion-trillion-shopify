@@ -1,6 +1,6 @@
 {%- liquid
 
-  assign section_name = 'reviews'
+  assign section_name = 'marquee'
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
@@ -8,29 +8,37 @@
   assign aos_delay_increment = 250
   assign aos_id = section_id
 
-  assign section_carousel_animation_duration = section.settings.carousel_animation_duration | default: 450
-  assign section_carousel_autoplay = section.settings.carousel_autoplay | default: 3500
-  assign section_carousel_gap = section.settings.carousel_gap | default: 28
-  assign section_carousel_id = section_id | append: '--glide'
-  assign section_carousel_navigation = section.settings.carousel_navigation | default: false
-  assign section_carousel_pagination = section.settings.carousel_pagination | default: false
-  assign section_carousel_style = section_name
+  assign section_anchor = section.settings.anchor_id | default: ''
+  assign section_container = section.settings.container | default: 'container'
 
-  assign section_is_carousel = false
+  assign section_marquee_blocks = section.blocks | default: false
+  assign section_product_blocks_size = section_marquee_blocks.size | default: 0
+  assign section_marquee_duration = section.settings.marquee_duration | default: 75
+  assign section_marquee_gap = section.settings.marquee_gap | default: 20
+  assign section_marquee_reverse = section.settings.marquee_reverse | default: false
 
-  assign section_heading = section.settings.heading | default: ''
-
-  assign section_reviews = section.blocks | where: 'type', "review"
-
-  if section_reviews.size > 1
-    assign section_is_carousel = true
-  endif
+  assign section_text_colour = section.settings.text_colour | default: 'dark'
+  assign section_text_size = section.settings.text_size | default: 20
+  assign section_text_style = section.settings.text_style | default: 'primary'
 
 -%}
 
-{%- if section_reviews.size > 0 -%}
+{% if section_product_blocks_size > 0 %}
 
   {%- style -%}
+
+    #{{ section_id }} {
+      --marquee-duration: {{ marquee_duration }}s;
+      --marquee-gap: {{ marquee_gap }}px;
+      font-size: {{ section_text_size }}px;
+    }
+
+    @media screen and (min-width: 992px) {
+      #{{ marquee_id }} {
+        font-size: calc({{ section_text_size }}px * 1.125);
+      }
+    }
+
     {%
       render 'element-styles',
         background: section.settings.background,
@@ -45,85 +53,36 @@
         padding_bottom: section.settings.padding_bottom,
         padding_top: section.settings.padding_top
     -%}
+
   {%- endstyle -%}
 
   <div class="{{ section_classes }}" id="{{ section_id }}">
-    <div class="{{ section_name }}__main">
-
-      {%- if section_heading != blank -%}
-        {%- liquid
-          capture aos_attrs
-            render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
-          endcapture
-          assign aos_delay = aos_delay | plus: aos_delay_increment
-        -%}
-        <h2 class="{{ section_name }}__heading heading--primary heading--1" {{ aos_attrs }}>{{ section_heading }}</h2>
-      {%- endif -%}
-
-      {%- if section_is_carousel -%}
-        <div
-          class="{{ section_name }}__glide glide js--glide"
-          data-glide-animation-duration="{{ section_carousel_animation_duration }}"
-          data-glide-autoplay="{{ section_carousel_autoplay }}"
-          data-glide-gap="{{ section_carousel_gap }}"
-          data-glide-style="{{ section_carousel_style }}"
-          id="{{ section_carousel_id }}"
-        >
-      {%- endif -%}
-
-        {%- if section_is_carousel -%}<div class="glide__track" data-glide-el="track">{%- endif -%}
-          {%- if section_is_carousel -%}<ul class="glide__slides">{%- endif -%}
-            {%- for item in section_reviews -%}
-              {%- if section_is_carousel -%}<li class="glide__slide">{%- endif -%}
-                {%- render 'card-review', card_item: item -%}
-              {%- if section_is_carousel -%}</li>{%- endif -%}
-            {%- endfor -%}
-          {%- if section_is_carousel -%}</ul>{%- endif -%}
-        {%- if section_is_carousel -%}</div>{%- endif -%}
-
-        {%- if section_is_carousel and section_carousel_pagination -%}
-          <div class="glide__bullets" data-glide-el="controls[nav]">
-            {%- for item in section_reviews -%}
-              <button class="glide__bullet button" type="button" data-glide-dir="={{ forloop.index0 }}">
-                {%- render 'svg', type: 'icon.pagination' -%}
-              </button>
-            {%- endfor -%}
-          </div>
-        {%- endif -%}
-
-        {%- if section_is_carousel and section_carousel_navigation -%}
-          <button class="glide__nav button prev" data-glide-navigation="#{{ section_carousel_id }}" type="button">
-            {% render 'svg', type: 'icon.navigation' %}
-          </button>
-          <button class="glide__nav button next" data-glide-navigation="#{{ section_carousel_id }}" type="button">
-            {% render 'svg', type: 'icon.navigation' %}
-          </button>
-        {%- endif -%}
-
-      {%- if section_is_carousel -%}
-        </div>
-      {%- endif -%}
-
+    <div class="{{ section_name }}__main text-colour--{{ section_text_colour }} text-style--{{ section_text_colour }}">
+      <div class="{{ snippet_name }}__group">
+        {% for i in (1..10) %}
+          {% if i == 1 %}
+            {% render 'blocks-marquee', items: section_marquee_blocks %}
+          {% else %}
+            {% render 'blocks-marquee', hidden: true, items: section_marquee_blocks %}
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="{{ snippet_name }}__group" aria-hidden="true">
+        {% for i in (1..10) %}
+          {% render 'blocks-marquee', items: section_marquee_blocks %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 
-{%- endif -%}
+{% endif %}
 
-{%- schema -%}
+{% schema %}
 {
-  "name": "Reviews",
+  "name": "Marquee",
   "tag": "section",
-  "class": "section section--reviews",
+  "class": "section section--marquee",
   "settings": [
-    {
-      "content": "Content",
-      "type": "header"
-    },
-    {
-      "label": "Heading",
-      "type": "text",
-      "id": "heading"
-    },
     {
       "content": "Settings",
       "type": "header"
@@ -235,49 +194,35 @@
       "id": "border_bottom"
     },
     {
-      "content": "Carousel",
+      "content": "Marquee",
       "type": "header"
     },
     {
-      "label": "Enable Pagination",
-      "type": "checkbox",
-      "default": false,
-      "id": "carousel_pagination"
-    },
-    {
-      "label": "Enable Navigation",
-      "type": "checkbox",
-      "default": false,
-      "id": "carousel_navigation"
-    },
-    {
-      "label": "Carousel Autoplay",
-      "info": "Time in milliseconds before a slide changes. Set to '0' to disable autoplay.",
+      "label": "Marquee Duration",
+      "info": "Duration, in seconds, that it takes for the marquee to complete a loop. The smaller the number, the faster it goes.",
       "type": "range",
-      "min": 0,
-      "max": 8000,
-      "step": 250,
-      "default": 3000,
-      "id": "carousel_autoplay"
-    },
-    {
-      "label": "Carousel Animation Duration",
-      "info": "Duration of the slide transition animation in milliseconds.",
-      "type": "range",
-      "min": 250,
-      "max": 3500,
-      "step": 50,
-      "default": 450,
-      "id": "carousel_animation_duration"
-    },
-    {
-      "label": "Carousel Slide Gap",
-      "type": "range",
-      "min": 0,
+      "min": 1,
       "max": 100,
-      "step": 2,
+      "step": 1,
+      "default": 75,
+      "id": "marquee_duration"
+    },
+    {
+      "label": "Marquee Gap",
+      "info": "Gap between items, in pixels.",
+      "type": "range",
+      "min": 1,
+      "max": 100,
+      "step": 1,
       "default": 20,
-      "id": "carousel_gap"
+      "id": "marquee_gap"
+    },
+    {
+      "label": "Reverse Marquee",
+      "info": "If checked, marquee will run in reverse.",
+      "type": "checkbox",
+      "default": false,
+      "id": "marquee_reverse"
     },
     {
       "content": "Padding",
@@ -302,45 +247,54 @@
       "unit": "px",
       "default": 36,
       "id": "padding_bottom"
+    },
+    {
+      "content": "Text",
+      "type": "header"
+    },
+    {
+      "label": "Text Colour",
+      "type": "select",
+      "options": [
+        { "label": "Dark", "value": "dark" },
+        { "label": "Light", "value": "light" }
+      ],
+      "default": "dark",
+      "id": "text_colour"
+    },
+    {
+      "label": "Text Size",
+      "type": "range",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "default": 20,
+      "id": "text_size"
+    },
+    {
+      "label": "Text Style",
+      "type": "select",
+      "options": [
+        { "label": "Primary (Hobeaux)", "value": "primary" },
+        { "label": "Secondary (Sorry Sans)", "value": "secondary" }
+      ],
+      "default": "primary",
+      "id": "text_style"
     }
   ],
   "blocks": [
     {
-      "name": "Review",
-      "type": "review",
-      "limit": 9,
+      "name": "Image",
+      "type": "image",
       "settings": [
         {
           "content": "Content",
           "type": "header"
         },
         {
-          "label": "Badge",
+          "label": "Image",
           "type": "image_picker",
-          "id": "badge"
-        },
-        {
-          "label": "Image (Mobile)",
-          "info": "For optimal results, select an image whose native aspect ratio is 4.0/2.75 (wide) with a target file size of 200kb.",
-          "type": "image_picker",
-          "id": "image_mobile"
-        },
-        {
-          "label": "Image (Desktop)",
-          "info": "For optimal results, select an image whose native aspect ratio is 2.5/3.4 (tall) with a target file size of 250kb.",
-          "type": "image_picker",
-          "id": "image_desktop"
-        },
-        {
-          "label": "Subheading",
-          "type": "text",
-          "id": "subheading"
-        },
-        {
-          "label": "Review",
-          "info": "For optimal results, keep review around 75 characters or less.",
-          "type": "richtext",
-          "id": "review"
+          "id": "image"
         },
         {
           "content": "Settings",
@@ -353,10 +307,44 @@
             { "label": "Lemon", "value": "lemon" },
             { "label": "Lime", "value": "lime" },
             { "label": "Mango", "value": "mango" },
+            { "label": "None", "value": "none" },
             { "label": "Orange", "value": "orange" },
             { "label": "Strawberry", "value": "strawberry" }
           ],
-          "default": "lemon",
+          "default": "none",
+          "id": "background"
+        }
+      ]
+    },
+    {
+      "name": "Text",
+      "type": "text",
+      "settings": [
+        {
+          "content": "Content",
+          "type": "header"
+        },
+        {
+          "label": "Title",
+          "type": "text",
+          "id": "title"
+        },
+        {
+          "content": "Settings",
+          "type": "header"
+        },
+        {
+          "label": "Background",
+          "type": "select",
+          "options": [
+            { "label": "Lemon", "value": "lemon" },
+            { "label": "Lime", "value": "lime" },
+            { "label": "Mango", "value": "mango" },
+            { "label": "None", "value": "none" },
+            { "label": "Orange", "value": "orange" },
+            { "label": "Strawberry", "value": "strawberry" }
+          ],
+          "default": "none",
           "id": "background"
         }
       ]
@@ -364,13 +352,8 @@
   ],
   "presets": [
     {
-      "name": "Reviews",
-      "blocks": [
-        { "type": "review" },
-        { "type": "review" },
-        { "type": "review" }
-      ]
+      "name": "Marquee"
     }
   ]
 }
-{%- endschema -%}
+{% endschema %}
