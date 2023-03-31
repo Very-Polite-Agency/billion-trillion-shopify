@@ -50,7 +50,7 @@
           </div>
           {% if snippet_hover_image %}
             <div class="{{ snippet_name }}__media-image-hover">
-              {% render 'lazyload-image', alt_text: snippet_title, image: snippet_featured_image %}
+              {% render 'lazyload-image', alt_text: snippet_title, image: snippet_hover_image %}
             </div>
           {% endif %}
         {% if snippet_url != blank %}</a>{% endif %}
