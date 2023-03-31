@@ -112,11 +112,19 @@
             "title": "6% Alcohol",
             "background": "none"
           }
+        },
+        "db80e9ff-d617-4348-9650-808e58a8ad38": {
+          "type": "text",
+          "settings": {
+            "title": "100 Calories",
+            "background": "none"
+          }
         }
       },
       "block_order": [
         "0e5a17f5-6ca7-4886-9236-df7c9415b730",
-        "0fac6811-4d3e-4bad-99ff-bbd57e5727f5"
+        "0fac6811-4d3e-4bad-99ff-bbd57e5727f5",
+        "db80e9ff-d617-4348-9650-808e58a8ad38"
       ],
       "settings": {
         "anchor_id": "",
