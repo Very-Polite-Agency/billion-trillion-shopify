@@ -96,6 +96,47 @@
         "product_image_aspect_ratio_desktop": "2.58\/3.29"
       }
     },
+    "53ee118d-c91a-440a-86a3-a59143afe47d": {
+      "type": "marquee",
+      "blocks": {
+        "0e5a17f5-6ca7-4886-9236-df7c9415b730": {
+          "type": "text",
+          "settings": {
+            "title": "No Sugar Added",
+            "background": "none"
+          }
+        },
+        "0fac6811-4d3e-4bad-99ff-bbd57e5727f5": {
+          "type": "text",
+          "settings": {
+            "title": "6% Alcohol",
+            "background": "none"
+          }
+        }
+      },
+      "block_order": [
+        "0e5a17f5-6ca7-4886-9236-df7c9415b730",
+        "0fac6811-4d3e-4bad-99ff-bbd57e5727f5"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "marquee_duration": 75,
+        "marquee_gap": 20,
+        "marquee_item_padding_x": 10,
+        "marquee_item_padding_y": 10,
+        "marquee_reverse": false,
+        "text_colour": "dark",
+        "text_size": 20,
+        "text_style": "primary"
+      }
+    },
     "1051164b-db1e-44a5-be1e-5cb0043989d3": {
       "type": "marquee",
       "blocks": {
@@ -295,6 +336,7 @@
   "order": [
     "dd61d2a0-89a4-4ba3-9fe1-89c5f3486acc",
     "bf312ebe-28f5-487a-9b2b-c0e3ef23e8e7",
+    "53ee118d-c91a-440a-86a3-a59143afe47d",
     "1051164b-db1e-44a5-be1e-5cb0043989d3",
     "0fa9ba11-804e-4e9d-a953-63efbbdfa40b",
     "054245ba-4ed7-4220-bd3b-8e55198d24b0"
