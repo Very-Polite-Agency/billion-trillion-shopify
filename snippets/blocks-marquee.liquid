@@ -2,11 +2,15 @@
   {% for item in items %}
 
     {%- liquid
+      assign item_background = item.settings.background | default: ''
       assign item_type = item.type | default: 'no-type'
       assign item_title = item.settings.title | default: ''
     -%}
 
-    <span {% if hidden %}aria-hidden="true"{% endif %} data-count="{{ forloop.index }}">{{ item_title }}</span>
+    <span
+      {% if hidden %}aria-hidden="true"{% endif %}
+      {% if item_background != blank and 'none' != item_background %}style="background: var(--theme-colour--{{ item_background }});"{% endif %}
+    >{{ item_title }}</span>
   {% endfor %}
 {% endif %}
 
