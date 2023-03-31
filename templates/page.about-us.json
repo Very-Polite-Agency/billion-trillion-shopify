@@ -104,7 +104,7 @@
         "marquee_gap": 3,
         "marquee_item_padding_x": 15,
         "marquee_item_padding_y": 10,
-        "marquee_reverse": false,
+        "marquee_reverse": true,
         "text_colour": "dark",
         "text_size": 14,
         "text_style": "secondary"
