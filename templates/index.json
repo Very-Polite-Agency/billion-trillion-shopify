@@ -119,12 +119,20 @@
             "title": "Vegan",
             "background": "none"
           }
+        },
+        "5586daf8-3972-44c6-87d8-998e742c1db0": {
+          "type": "text",
+          "settings": {
+            "title": "Gluten Free",
+            "background": "none"
+          }
         }
       },
       "block_order": [
         "271b056d-5050-433b-bf22-a8e81b805b95",
         "b8388440-4dc7-4d6f-9d18-2c60d51dd406",
-        "b8dcd774-5618-4c92-a713-74680b792429"
+        "b8dcd774-5618-4c92-a713-74680b792429",
+        "5586daf8-3972-44c6-87d8-998e742c1db0"
       ],
       "settings": {
         "anchor_id": "",
