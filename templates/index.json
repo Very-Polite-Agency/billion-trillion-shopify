@@ -126,13 +126,29 @@
             "title": "Gluten Free",
             "background": "none"
           }
+        },
+        "0762636f-cea5-4f21-a309-6db888436855": {
+          "type": "text",
+          "settings": {
+            "title": "100 Calories",
+            "background": "none"
+          }
+        },
+        "981d35c3-f0df-4b01-b3bf-baea2cba8d18": {
+          "type": "text",
+          "settings": {
+            "title": "No Sugar Added",
+            "background": "none"
+          }
         }
       },
       "block_order": [
         "271b056d-5050-433b-bf22-a8e81b805b95",
         "b8388440-4dc7-4d6f-9d18-2c60d51dd406",
         "b8dcd774-5618-4c92-a713-74680b792429",
-        "5586daf8-3972-44c6-87d8-998e742c1db0"
+        "5586daf8-3972-44c6-87d8-998e742c1db0",
+        "0762636f-cea5-4f21-a309-6db888436855",
+        "981d35c3-f0df-4b01-b3bf-baea2cba8d18"
       ],
       "settings": {
         "anchor_id": "",
