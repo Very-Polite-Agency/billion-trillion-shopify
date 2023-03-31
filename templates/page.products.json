@@ -158,15 +158,15 @@
         "80d0e1d7-25ee-4df6-a85d-835da1e75b81": {
           "type": "text",
           "settings": {
-            "title": "",
-            "background": "none"
+            "title": "100 Calories",
+            "background": "orange"
           }
         },
         "57171f4d-f687-4004-9b9b-a090e5bf12e4": {
           "type": "text",
           "settings": {
-            "title": "",
-            "background": "none"
+            "title": "No Sugar Added",
+            "background": "strawberry"
           }
         }
       },
