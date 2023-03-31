@@ -124,6 +124,27 @@
         "border_bottom": false
       }
     },
+    "3636dc4f-5ce2-4420-a74f-ec12697d370f": {
+      "type": "marquee",
+      "settings": {
+        "anchor_id": "",
+        "background": "black",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": true,
+        "border_bottom": false,
+        "marquee_duration": 75,
+        "marquee_gap": 3,
+        "marquee_item_padding_x": 15,
+        "marquee_item_padding_y": 10,
+        "marquee_reverse": false,
+        "text_colour": "dark",
+        "text_size": 14,
+        "text_style": "secondary"
+      }
+    },
     "ec9b35e3-d24d-4147-bf50-34d0820fc54a": {
       "type": "reviews",
       "blocks": {
@@ -252,6 +273,7 @@
     "873e2b69-6dd5-470a-8eeb-dc35f4b6f808",
     "9f653b28-56ca-40f9-bc3b-fd5f9efc992e",
     "411b7388-d5bb-4034-8a25-531562e0b7cf",
+    "3636dc4f-5ce2-4420-a74f-ec12697d370f",
     "ec9b35e3-d24d-4147-bf50-34d0820fc54a",
     "047c5130-bbb8-44c6-97ca-d6314188243a"
   ]
