@@ -126,6 +126,18 @@
     },
     "3636dc4f-5ce2-4420-a74f-ec12697d370f": {
       "type": "marquee",
+      "blocks": {
+        "398a7a2c-6aaf-487f-b2ec-09beca8897aa": {
+          "type": "text",
+          "settings": {
+            "title": "6% Alcohol",
+            "background": "lemon"
+          }
+        }
+      },
+      "block_order": [
+        "398a7a2c-6aaf-487f-b2ec-09beca8897aa"
+      ],
       "settings": {
         "anchor_id": "",
         "background": "black",
