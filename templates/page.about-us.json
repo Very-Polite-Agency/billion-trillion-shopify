@@ -1,8 +1,8 @@
 {
   "order": [
     "hero",
-    "2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4",
     "c5ddd571-40a7-4e5a-b116-59f35896c18d",
+    "2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4",
     "d685fa2e-8822-46df-b523-b7fa76700377"
   ],
   "sections": {
@@ -35,6 +35,79 @@
         "height_desktop": "auto",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "c5ddd571-40a7-4e5a-b116-59f35896c18d": {
+      "type": "marquee",
+      "blocks": {
+        "d887ca62-5fba-4730-998f-6cb231113c77": {
+          "type": "text",
+          "settings": {
+            "title": "6% Alcohol",
+            "background": "lemon"
+          }
+        },
+        "40d4560b-0d16-475c-94f3-29b46a715dd1": {
+          "type": "text",
+          "settings": {
+            "title": "Natural",
+            "background": "grey"
+          }
+        },
+        "1e84f8d4-ff4a-4193-a22f-817b9a0d464f": {
+          "type": "text",
+          "settings": {
+            "title": "Vegan",
+            "background": "lime"
+          }
+        },
+        "a89c1cd3-a667-4361-b38a-ce9d6b535e75": {
+          "type": "text",
+          "settings": {
+            "title": "Gluten Free",
+            "background": "mango"
+          }
+        },
+        "5a3ef531-9693-4bed-8a37-d1c1fe08a590": {
+          "type": "text",
+          "settings": {
+            "title": "100 Calories",
+            "background": "orange"
+          }
+        },
+        "57e3cef6-8024-4008-b684-7248d544eff5": {
+          "type": "text",
+          "settings": {
+            "title": "No Sugar Added",
+            "background": "strawberry"
+          }
+        }
+      },
+      "block_order": [
+        "d887ca62-5fba-4730-998f-6cb231113c77",
+        "40d4560b-0d16-475c-94f3-29b46a715dd1",
+        "1e84f8d4-ff4a-4193-a22f-817b9a0d464f",
+        "a89c1cd3-a667-4361-b38a-ce9d6b535e75",
+        "5a3ef531-9693-4bed-8a37-d1c1fe08a590",
+        "57e3cef6-8024-4008-b684-7248d544eff5"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "black",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": true,
+        "border_bottom": false,
+        "marquee_duration": 75,
+        "marquee_gap": 3,
+        "marquee_item_padding_x": 15,
+        "marquee_item_padding_y": 10,
+        "marquee_reverse": false,
+        "text_colour": "dark",
+        "text_size": 14,
+        "text_style": "secondary"
       }
     },
     "2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4": {
@@ -97,71 +170,6 @@
         "carousel_gap": 20,
         "padding_top": 44,
         "padding_bottom": 100
-      }
-    },
-    "c5ddd571-40a7-4e5a-b116-59f35896c18d": {
-      "type": "marquee",
-      "blocks": {
-        "d887ca62-5fba-4730-998f-6cb231113c77": {
-          "type": "text",
-          "settings": {
-            "title": "6% Alcohol",
-            "background": "lemon"
-          }
-        },
-        "40d4560b-0d16-475c-94f3-29b46a715dd1": {
-          "type": "text",
-          "settings": {
-            "title": "Natural",
-            "background": "grey"
-          }
-        },
-        "1e84f8d4-ff4a-4193-a22f-817b9a0d464f": {
-          "type": "text",
-          "settings": {
-            "title": "Vegan",
-            "background": "lime"
-          }
-        },
-        "a89c1cd3-a667-4361-b38a-ce9d6b535e75": {
-          "type": "text",
-          "settings": {
-            "title": "Gluten Free",
-            "background": "mango"
-          }
-        },
-        "5a3ef531-9693-4bed-8a37-d1c1fe08a590": {
-          "type": "text",
-          "settings": {
-            "title": "100 Calories",
-            "background": "orange"
-          }
-        }
-      },
-      "block_order": [
-        "d887ca62-5fba-4730-998f-6cb231113c77",
-        "40d4560b-0d16-475c-94f3-29b46a715dd1",
-        "1e84f8d4-ff4a-4193-a22f-817b9a0d464f",
-        "a89c1cd3-a667-4361-b38a-ce9d6b535e75",
-        "5a3ef531-9693-4bed-8a37-d1c1fe08a590"
-      ],
-      "settings": {
-        "anchor_id": "",
-        "background": "black",
-        "background_image_position_mobile": "center center",
-        "background_image_position_desktop": "center center",
-        "background_image_repeat": "repeat",
-        "background_image_size": "cover",
-        "border_top": true,
-        "border_bottom": false,
-        "marquee_duration": 75,
-        "marquee_gap": 3,
-        "marquee_item_padding_x": 15,
-        "marquee_item_padding_y": 10,
-        "marquee_reverse": false,
-        "text_colour": "dark",
-        "text_size": 14,
-        "text_style": "secondary"
       }
     },
     "d685fa2e-8822-46df-b523-b7fa76700377": {
