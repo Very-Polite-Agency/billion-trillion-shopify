@@ -115,11 +115,19 @@
             "title": "Natural",
             "background": "grey"
           }
+        },
+        "1e84f8d4-ff4a-4193-a22f-817b9a0d464f": {
+          "type": "text",
+          "settings": {
+            "title": "Vegan",
+            "background": "lime"
+          }
         }
       },
       "block_order": [
         "d887ca62-5fba-4730-998f-6cb231113c77",
-        "40d4560b-0d16-475c-94f3-29b46a715dd1"
+        "40d4560b-0d16-475c-94f3-29b46a715dd1",
+        "1e84f8d4-ff4a-4193-a22f-817b9a0d464f"
       ],
       "settings": {
         "anchor_id": "",
