@@ -152,7 +152,7 @@
       ],
       "settings": {
         "anchor_id": "",
-        "background": "none",
+        "background": "strawberry",
         "background_image_position_mobile": "center center",
         "background_image_position_desktop": "center center",
         "background_image_repeat": "repeat",
@@ -160,13 +160,13 @@
         "border_top": true,
         "border_bottom": false,
         "marquee_duration": 65,
-        "marquee_gap": 2,
+        "marquee_gap": 10,
         "marquee_reverse": false,
         "padding_top": 0,
         "padding_bottom": 0,
         "text_colour": "dark",
         "text_size": 20,
-        "text_style": "primary"
+        "text_style": "secondary"
       }
     },
     "0fa9ba11-804e-4e9d-a953-63efbbdfa40b": {
