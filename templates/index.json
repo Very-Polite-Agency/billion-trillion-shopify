@@ -105,10 +105,26 @@
             "title": "6% Alcohol",
             "background": "none"
           }
+        },
+        "b8388440-4dc7-4d6f-9d18-2c60d51dd406": {
+          "type": "text",
+          "settings": {
+            "title": "Natural",
+            "background": "none"
+          }
+        },
+        "b8dcd774-5618-4c92-a713-74680b792429": {
+          "type": "text",
+          "settings": {
+            "title": "Vegan",
+            "background": "none"
+          }
         }
       },
       "block_order": [
-        "271b056d-5050-433b-bf22-a8e81b805b95"
+        "271b056d-5050-433b-bf22-a8e81b805b95",
+        "b8388440-4dc7-4d6f-9d18-2c60d51dd406",
+        "b8dcd774-5618-4c92-a713-74680b792429"
       ],
       "settings": {
         "anchor_id": "",
