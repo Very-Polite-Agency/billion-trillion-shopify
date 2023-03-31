@@ -1,3 +1,20 @@
+{% comment %}
+  Renders a fifty-fifty layout
+
+  Accepts:
+  - card_aria_role: {String} Optionally include aria role
+  - card_background: {Object} Optionally include background colour
+  - card_product: {Object} Product object
+
+  Usage:
+  {%-
+    render 'fifty-fifty',
+      card_aria_role: 'listitem',
+      card_background: 'mango'
+      card_product: block.settings.product
+  -%}
+{% endcomment %}
+
 {%- liquid
 
   assign snippet_name = 'fifty-fifty'

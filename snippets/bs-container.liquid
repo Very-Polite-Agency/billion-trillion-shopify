@@ -1,19 +1,25 @@
-{% comment -%}
+{% comment %}
+  Renders Bootstrap container, row and column elements
 
-  Use snippet like so...
+  Accepts:
+  - col: {String} Optionally include column classes
+  - container: {String} Optionally include container classes
+  - state: {String} Open or closed
 
-  {%
-    render 'layout--container',
-    state: 'open',
-    col: 'col-12',
-    container: 'container-fluid'
+  Usage:
+  {%-
+    render 'bs-container',
+      col: 'col-12'
+      container: 'container-fluid',
+      state: 'open',
   -%}
+{% endcomment %}
 
-{% endcomment -%}
-
-{% assign state = state | default: 'open' -%}
-{% assign container = container | default: 'container' -%}
-{% assign col = col | default: 'col-12' -%}
+{%- liquid
+  assign col = col | default: 'col-12'
+  assign container = container | default: 'container'
+  assign state = state | default: 'open'
+-%}
 
 {%- unless 'full-width' == container -%}
   {%- if state == 'open' -%}
@@ -21,4 +27,4 @@
   {%- else -%}
     </div></div></div>
   {%- endif -%}
-{%- endunless  -%}
+{%- endunless -%}

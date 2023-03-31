@@ -3,6 +3,40 @@
 ## Shopify Site URL
 https://billion-trillion.myshopify.com
 
+### Snippets
+- [x] aos-attributes.liquid
+- [x] bs-container.liquid
+- [x] card-award.liquid
+- [x] card-collection.liquid
+- [x] card-product-carousel.liquid
+- [x] card-product-grid.liquid
+- [-] card-review.liquid
+- [x] debug-this.liquid
+- [x] element-styles.liquid
+- [x] fifty-fifty.liquid
+- [x] input.liquid
+- [x] json-ld.liquid
+- [x] label.liquid
+- [x] lazyload-image.liquid
+- [-] legacy.liquid
+- [x] link.liquid
+- [x] pagination.liquid
+- [x] policy-content.liquid
+- [x] price.liquid
+- [x] product-actions.liquid
+- [x] product-description.liquid
+- [x] product-options.liquid
+- [x] sort-option-name.liquid
+- [x] stepper.liquid
+- [x] svg.liquid
+- [x] textarea.liquid
+- [x] theme--classes.liquid
+- [x] theme--external-javascript.liquid
+- [x] theme--google-analytics.liquid
+- [x] theme--meta-tags.liquid
+- [x] theme--preconnect-resources.liquid
+- [x] theme--preload-fonts.liquid
+
 ### Sections
 - [ ] age-gate.liquid
 - [ ] announcements.liquid

@@ -2548,44 +2548,12 @@
       "oAP" : "\/sections\/awards.liquid",
       "oF" : 0
     },
-    "\/sections\/collection-list.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/sections\/collection-list.liquid",
-      "oF" : 0
-    },
-    "\/sections\/contact-form.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/sections\/contact-form.liquid",
-      "oF" : 0
-    },
     "\/sections\/custom-liquid.liquid" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/sections\/custom-liquid.liquid",
-      "oF" : 0
-    },
-    "\/sections\/email-signup-banner.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/sections\/email-signup-banner.liquid",
-      "oF" : 0
-    },
-    "\/sections\/featured-blog.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/sections\/featured-blog.liquid",
       "oF" : 0
     },
     "\/sections\/featured-collection.liquid" : {
@@ -2892,14 +2860,6 @@
       "oAP" : "\/snippets\/bs-container.liquid",
       "oF" : 0
     },
-    "\/snippets\/card-article.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/card-article.liquid",
-      "oF" : 0
-    },
     "\/snippets\/card-award.liquid" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2956,52 +2916,12 @@
       "oAP" : "\/snippets\/element-styles.liquid",
       "oF" : 0
     },
-    "\/snippets\/email-signup-banner-background-mobile.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/email-signup-banner-background-mobile.liquid",
-      "oF" : 0
-    },
-    "\/snippets\/email-signup-banner-background.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/email-signup-banner-background.liquid",
-      "oF" : 0
-    },
-    "\/snippets\/facets.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/facets.liquid",
-      "oF" : 0
-    },
     "\/snippets\/fifty-fifty.liquid" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/snippets\/fifty-fifty.liquid",
-      "oF" : 0
-    },
-    "\/snippets\/form-error.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/form-error.liquid",
-      "oF" : 0
-    },
-    "\/snippets\/form-newsletter-signup.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/form-newsletter-signup.liquid",
       "oF" : 0
     },
     "\/snippets\/input.liquid" : {
@@ -3052,22 +2972,6 @@
       "oAP" : "\/snippets\/link.liquid",
       "oF" : 0
     },
-    "\/snippets\/navigation.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/navigation.liquid",
-      "oF" : 0
-    },
-    "\/snippets\/notification-cart.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/notification-cart.liquid",
-      "oF" : 0
-    },
     "\/snippets\/pagination.liquid" : {
       "cB" : 0,
       "ft" : 8192,
@@ -3108,52 +3012,12 @@
       "oAP" : "\/snippets\/product-description.liquid",
       "oF" : 0
     },
-    "\/snippets\/product-media.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/product-media.liquid",
-      "oF" : 0
-    },
     "\/snippets\/product-options.liquid" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/snippets\/product-options.liquid",
-      "oF" : 0
-    },
-    "\/snippets\/product-thumbnail.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/product-thumbnail.liquid",
-      "oF" : 0
-    },
-    "\/snippets\/redirect.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/redirect.liquid",
-      "oF" : 0
-    },
-    "\/snippets\/share-this 2.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/share-this 2.liquid",
-      "oF" : 0
-    },
-    "\/snippets\/share-this.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/share-this.liquid",
       "oF" : 0
     },
     "\/snippets\/sort-option-name.liquid" : {
@@ -3180,14 +3044,6 @@
       "oAP" : "\/snippets\/svg.liquid",
       "oF" : 0
     },
-    "\/snippets\/tags.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/tags.liquid",
-      "oF" : 0
-    },
     "\/snippets\/textarea.liquid" : {
       "cB" : 0,
       "ft" : 8192,
@@ -3202,14 +3058,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/snippets\/theme--classes.liquid",
-      "oF" : 0
-    },
-    "\/snippets\/theme--css-variables.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/theme--css-variables.liquid",
       "oF" : 0
     },
     "\/snippets\/theme--external-javascript.liquid" : {
