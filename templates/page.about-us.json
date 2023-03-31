@@ -101,6 +101,26 @@
     },
     "c5ddd571-40a7-4e5a-b116-59f35896c18d": {
       "type": "marquee",
+      "blocks": {
+        "d887ca62-5fba-4730-998f-6cb231113c77": {
+          "type": "text",
+          "settings": {
+            "title": "6% Alcohol",
+            "background": "lemon"
+          }
+        },
+        "40d4560b-0d16-475c-94f3-29b46a715dd1": {
+          "type": "text",
+          "settings": {
+            "title": "Natural",
+            "background": "grey"
+          }
+        }
+      },
+      "block_order": [
+        "d887ca62-5fba-4730-998f-6cb231113c77",
+        "40d4560b-0d16-475c-94f3-29b46a715dd1"
+      ],
       "settings": {
         "anchor_id": "",
         "background": "black",
