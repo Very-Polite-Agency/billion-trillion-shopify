@@ -162,8 +162,8 @@
         "marquee_duration": 75,
         "marquee_gap": 2,
         "marquee_reverse": false,
-        "padding_top": 36,
-        "padding_bottom": 36,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "text_colour": "dark",
         "text_size": 20,
         "text_style": "primary"
