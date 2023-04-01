@@ -3,14 +3,23 @@
 
     {%- liquid
       assign item_background = item.settings.background | default: ''
+      assign item_image = item.settings.image | default: ''
       assign item_type = item.type | default: 'no-type'
       assign item_title = item.settings.title | default: ''
     -%}
 
-    <span
-      {% if hidden %}aria-hidden="true"{% endif %}
-      {% if item_background != blank and 'none' != item_background %}style="background: var(--theme-colour--{{ item_background }});"{% endif %}
-    >{{ item_title }}</span>
+      <span
+        {% if hidden %}aria-hidden="true"{% endif %}
+        {% if item_background != blank and 'none' != item_background %}style="background: var(--theme-colour--{{ item_background }});"{% endif %}
+      >
+        {% case item_type %}
+          {% when 'image' %}
+            {% render 'lazyload-image', image: item_image %}
+          {% when 'text' %}
+            {{ item_title }}
+        {% endcase %}
+      </span>
+
   {% endfor %}
 {% endif %}
 
