@@ -113,6 +113,13 @@
             "background": "none"
           }
         },
+        "c25b211a-6faf-497d-a3a0-6082938aff2a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/marquee-image.lemon_3x_5cc134c4-7f7d-49dc-bcb6-ec32bf3282e3.png",
+            "background": "none"
+          }
+        },
         "db80e9ff-d617-4348-9650-808e58a8ad38": {
           "type": "text",
           "settings": {
@@ -134,6 +141,12 @@
             "background": "none"
           }
         },
+        "a87604b8-20e9-4d18-b4fd-c44b675c5939": {
+          "type": "image",
+          "settings": {
+            "background": "none"
+          }
+        },
         "45962353-ce29-4fa9-b84b-61a8dd1e357e": {
           "type": "text",
           "settings": {
@@ -147,16 +160,25 @@
             "title": "No Sugar Added",
             "background": "none"
           }
+        },
+        "1a94e9db-df55-4475-b515-7a24b8a99121": {
+          "type": "image",
+          "settings": {
+            "background": "none"
+          }
         }
       },
       "block_order": [
         "0e5a17f5-6ca7-4886-9236-df7c9415b730",
         "0fac6811-4d3e-4bad-99ff-bbd57e5727f5",
+        "c25b211a-6faf-497d-a3a0-6082938aff2a",
         "db80e9ff-d617-4348-9650-808e58a8ad38",
         "bab7a83d-c6e1-481e-9584-c301043ba2b7",
         "d8bffcb1-cf06-46eb-993d-4b7db2cd375f",
+        "a87604b8-20e9-4d18-b4fd-c44b675c5939",
         "45962353-ce29-4fa9-b84b-61a8dd1e357e",
-        "31de5e4e-d985-4b6b-a211-bfe72f513499"
+        "31de5e4e-d985-4b6b-a211-bfe72f513499",
+        "1a94e9db-df55-4475-b515-7a24b8a99121"
       ],
       "settings": {
         "anchor_id": "",
