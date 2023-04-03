@@ -50,7 +50,7 @@ https://billion-trillion.myshopify.com
 - [ ] featured-collection.liquid
 - [ ] featured-image.liquid
 - [x] featured-product.liquid
-- [ ] featured-text.liquid
+- [x] featured-text.liquid
 - [ ] featured-video.liquid
 - [x] featured-yuzu-sake-fizz.liquid
 - [ ] fifty-fifty.liquid

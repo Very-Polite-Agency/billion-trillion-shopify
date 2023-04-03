@@ -10,6 +10,7 @@
 
   assign section_anchor = section.settings.anchor_id | default: ''
   assign section_container = section.settings.container | default: 'container'
+  assign section_text_colour = section.settings.text_colour | default: 'dark'
 
 -%}
 
@@ -32,7 +33,7 @@
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
   {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
-    <div class="{{ section_name }}__main text--align-center">
+    <div class="{{ section_name }}__main text--align-center text--{{ section_text_colour }}">
 
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -90,6 +91,20 @@
   "tag": "section",
   "class": "section section--featured-text",
   "settings": [
+    {
+      "content": "Text",
+      "type": "header"
+    },
+    {
+      "label": "Text Colour",
+      "type": "select",
+      "options": [
+        { "label": "Dark", "value": "dark" },
+        { "label": "Light", "value": "light" }
+      ],
+      "default": "dark",
+      "id": "text_colour"
+    },
     {
       "content": "Settings",
       "type": "header"
