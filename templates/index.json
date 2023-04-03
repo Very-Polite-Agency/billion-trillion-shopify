@@ -191,7 +191,7 @@
         "marquee_image_width": 180,
         "marquee_image_height": 68,
         "marquee_text_colour": "light",
-        "marquee_text_size": 20,
+        "marquee_text_size": 50,
         "marquee_text_style": "primary",
         "anchor_id": "",
         "background": "black",
