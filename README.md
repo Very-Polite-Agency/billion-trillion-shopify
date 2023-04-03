@@ -78,7 +78,7 @@ https://billion-trillion.myshopify.com
 - [x] product-carousel.liquid
 - [x] product-grid.liquid
 - [x] reviews.liquid
-- [ ] stockist.liquid
+- [ ] stockists.liquid
 - [x] sub-navigation.liquid
 - [ ] thank-you.liquid
 

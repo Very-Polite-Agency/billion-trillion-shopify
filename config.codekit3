@@ -2872,6 +2872,14 @@
       "oAP" : "\/sections\/reviews.liquid",
       "oF" : 0
     },
+    "\/sections\/stockists.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sections\/stockists.liquid",
+      "oF" : 0
+    },
     "\/sections\/sub-navigation.liquid" : {
       "cB" : 0,
       "ft" : 8192,
