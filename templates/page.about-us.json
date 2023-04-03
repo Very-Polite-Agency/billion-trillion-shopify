@@ -290,21 +290,21 @@
         "cfbe600b-4f29-4c57-9de0-db5bf30a5e4c": {
           "type": "faq",
           "settings": {
-            "question": "WTF is Yuzu?",
+            "title": "WTF is Yuzu?",
             "answer": ""
           }
         },
         "d385fa13-7eb9-43cc-b513-c26a53768708": {
           "type": "faq",
           "settings": {
-            "question": "WTF is KOJI?",
+            "title": "",
             "answer": ""
           }
         },
         "314659d8-ae51-4428-9bd4-6c6fe805a85e": {
           "type": "faq",
           "settings": {
-            "question": "",
+            "title": "",
             "answer": ""
           }
         }
