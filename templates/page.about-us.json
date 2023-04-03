@@ -55,6 +55,7 @@
         "template--15945343795384__72081baf-4665-403a-b951-d8b6e7fb0752-1680541664323c9062-0"
       ],
       "settings": {
+        "text_colour": "dark",
         "anchor_id": "",
         "background": "orange",
         "background_image_position_mobile": "center center",
@@ -95,6 +96,7 @@
         "59997170-3c8a-495f-a415-29ba0ea3b745"
       ],
       "settings": {
+        "text_colour": "dark",
         "anchor_id": "",
         "background": "image",
         "background_image": "shopify:\/\/shop_images\/about-us--featured-text-02.png",
@@ -284,6 +286,34 @@
     },
     "4a04cf78-19f2-4bc7-8a49-3cd31f694544": {
       "type": "faqs",
+      "blocks": {
+        "cfbe600b-4f29-4c57-9de0-db5bf30a5e4c": {
+          "type": "faq",
+          "settings": {
+            "question": "WTF is Yuzu?",
+            "answer": ""
+          }
+        },
+        "d385fa13-7eb9-43cc-b513-c26a53768708": {
+          "type": "faq",
+          "settings": {
+            "question": "WTF is KOJI?",
+            "answer": ""
+          }
+        },
+        "314659d8-ae51-4428-9bd4-6c6fe805a85e": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "cfbe600b-4f29-4c57-9de0-db5bf30a5e4c",
+        "d385fa13-7eb9-43cc-b513-c26a53768708",
+        "314659d8-ae51-4428-9bd4-6c6fe805a85e"
+      ],
       "settings": {
         "anchor_id": "",
         "background": "lemon",
