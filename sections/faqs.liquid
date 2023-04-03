@@ -69,31 +69,25 @@
           <div class="{{ section_name }}__media">
             {%- for block in section_media_blocks -%}
               {%- liquid
+                assign media_aspect_ratio = block.settings.media_aspect_ratio | default: ''
                 assign media_image = block.settings.image | default: false
                 assign media_type = block.settings.media_type | default: 'image'
                 assign media_video = block.settings.video | default: false
               -%}
-              {% render 'debug-this', item: media_video %}
               {%- if media_image or media_video -%}
                 <div class="{{ section_name }}__media-{{ media_type }}">
-
-                  {%- style -%}
-                    #{{ section_id }} .{{ section_name }}__media-{{ media_type }} {
-                      aspect-ratio: {{ media_aspect_ratio_mobile }};
-                    }
-
-                    @media screen and (min-width: 992px) {
+                  {% if media_aspect_ratio != blank %}
+                    {%- style -%}
                       #{{ section_id }} .{{ section_name }}__media-{{ media_type }} {
-                        aspect-ratio: {{ media_aspect_ratio_desktop }};
+                        aspect-ratio: {{ media_aspect_ratio }};
                       }
-                    }
-                  {%- endstyle -%}
-
+                    {%- endstyle -%}
+                  {%- endif -%}
                   {%- case media_type -%}
                     {%- when 'image' -%}
                       {%- render 'lazyload-image', image: media_image -%}
                     {%- when 'video' %}
-                      {%- render 'lazyload-embed', video_host: 'vimeo', video_id: '783455338', video_inline: false -%}
+                      {%- render 'lazyload-embed', video_host: media_video.type, video_id: media_video.id, video_inline: false -%}
                   {%- endcase -%}
                 </div>
               {%- endif -%}
@@ -323,6 +317,11 @@
         {
           "content": "Settings",
           "type": "header"
+        },
+        {
+          "label": "Media Ratio",
+          "type": "text",
+          "id": "media_aspect_ratio"
         },
         {
           "label": "Media Ratio (Mobile)",
