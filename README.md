@@ -20,6 +20,7 @@ https://billion-trillion.myshopify.com
 - [x] lazyload-image.liquid
 - [ ] lazyload-embed.liquid
 - [x] link.liquid
+- [x] marquee-items.liquid
 - [x] pagination.liquid
 - [x] policy-content.liquid
 - [x] price.liquid
@@ -53,7 +54,7 @@ https://billion-trillion.myshopify.com
 - [ ] featured-video.liquid
 - [x] featured-yuzu-sake-fizz.liquid
 - [ ] fifty-fifty.liquid
-- [ ] footer.liquid
+- [r] footer.liquid
 - [ ] header.liquid
 - [x] hero.liquid
 - [ ] image-with-text.liquid
@@ -67,7 +68,7 @@ https://billion-trillion.myshopify.com
 - [ ] main-page.liquid
 - [ ] main-password.liquid
 - [r] main-product.liquid
-- [ ] marquee.liquid
+- [x] marquee.liquid
 - [ ] mobile-menu.liquid
 - [ ] policy-privacy.liquid
 - [ ] policy-refund.liquid
