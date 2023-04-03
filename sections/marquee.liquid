@@ -20,9 +20,9 @@
   assign section_marquee_item_padding_x = section.settings.marquee_item_padding_x | default: '10px'
   assign section_marquee_item_padding_y = section.settings.marquee_item_padding_y | default: '10px'
   assign section_marquee_reverse = section.settings.marquee_reverse | default: false
-  assign section_marquee_text_colour = section.settings.text_colour | default: 'dark'
-  assign section_marquee_text_size = section.settings.text_size | default: 20
-  assign section_marquee_text_style = section.settings.text_style | default: 'primary'
+  assign section_marquee_text_colour = section.settings.marquee_text_colour | default: 'dark'
+  assign section_marquee_text_size = section.settings.marquee_text_size | default: 20
+  assign section_marquee_text_style = section.settings.marquee_text_style | default: 'primary'
 
   if section_marquee_reverse
     assign section_classes = section_classes | append: ' marquee--reverse'
@@ -40,13 +40,13 @@
       font-size: {{ section_marquee_text_size }}px;
     }
 
-    #{{ section_id }} span {
+    #{{ section_id }} .image,
+    #{{ section_id }} .text {
       padding: {{ section_marquee_item_padding_y }}px {{ section_marquee_item_padding_x }}px;
     }
 
     #{{ section_id }} .image,
     #{{ section_id }} .image img {
-      display: block;
       height: {{ section_marquee_image_height }}px;
       width: {{ section_marquee_image_width }}px;
     }
