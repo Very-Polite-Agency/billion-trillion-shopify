@@ -40,6 +40,7 @@
         {% for block in section_region_blocks %}
 
           {%- liquid
+            assign region_coordinates = block.settings.coordinates | default: ''
             assign region_country = block.settings.country | default: ''
             assign region_id = block.id | prepend: 'stockists-region--'
             assign region_image = block.settings.image | default: false
@@ -55,7 +56,7 @@
             <div class="{{ section_name }}__region-hero text--light">
               <div class="{{ section_name }}__region-hero-image">
                 {% render 'lazyload-image', image: region_image %}
-                <div class="{{ section_name }}__region-hero-content">
+                <div class="{{ section_name }}__region-hero-content text--align-center">
                   <strong class="{{ section_name }}__region-title text--primary">{{ region_title }}</strong>
                   <div class="{{ section_name }}__region-country body-copy--3 text--secondary">{{ region_country }}, Earth</div>
                 </div>
@@ -63,23 +64,23 @@
             </div>
 
             <div class="{{ section_name }}__region-stats text--primary">
-              <div class="{{ section_name }}__region-stats-row">
+              <div class="{{ section_name }}__region-stats-grid">
                 <div class="{{ section_name }}__region-stats-column">
                   <span class="{{ section_name }}__region-stats-label text--secondary">Population</span>
                   <span class="{{ section_name }}__region-stats-value">{{ region_population }}</span>
                 </div>
               </div>
-              <div class="{{ section_name }}__region-stats-row">
+              <div class="{{ section_name }}__region-stats-grid two-column">
                 <div class="{{ section_name }}__region-stats-column">
                   <span class="{{ section_name }}__region-stats-label text--secondary">Total Area</span>
                   <span class="{{ section_name }}__region-stats-value">{{ region_total_area }} KM&sup2;</span>
                 </div>
                 <div class="{{ section_name }}__region-stats-column">
                   <span class="{{ section_name }}__region-stats-label text--secondary">Coordinates</span>
-                  <span class="{{ section_name }}__region-stats-value">{{ region_smells_like }}</span>
+                  <span class="{{ section_name }}__region-stats-value">{{ region_coordinates }}</span>
                 </div>
               </div>
-              <div class="{{ section_name }}__region-stats-row">
+              <div class="{{ section_name }}__region-stats-grid">
                 <div class="{{ section_name }}__region-stats-column">
                   <span class="{{ section_name }}__region-stats-label text--secondary">Smells Like</span>
                   <span class="{{ section_name }}__region-stats-value">{{ region_smells_like }}</span>
@@ -268,14 +269,19 @@
           "id": "country"
         },
         {
+          "label": "Population",
+          "type": "text",
+          "id": "population"
+        },
+        {
           "label": "Total Area",
           "type": "text",
           "id": "total_area"
         },
         {
-          "label": "Population",
+          "label": "Coordinates",
           "type": "text",
-          "id": "population"
+          "id": "coordinates"
         },
         {
           "label": "Smells Like",

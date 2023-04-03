@@ -24,6 +24,7 @@
     }
     &-hero {
       &-content {
+        padding: 0 var(--theme-layout--container-padding);
         position: absolute;
         top: 0;
         left: 0;
@@ -40,19 +41,36 @@
       }
     }
     &-stats {
-      background: var(--theme-colour--lemon);
+      @include border-solid( var(--theme-border--width), 'black', 'top' );
+      background: var(--theme-colour--black);
+      gap: var(--theme-border--width);
       font-size: 21px;
       line-height: 1;
+      display: inline-grid;
+      width: 100%;
       &-label,
       &-value {
         display: block;
       }
+      &-column {
+        background: var(--theme-colour--lemon);
+        padding: 14px var(--theme-layout--container-padding);
+      }
+      &-grid {
+        width: 100%;
+        display: grid;
+        &.two-column {
+          grid-template-columns: repeat( 2, 1fr );
+          gap: var(--theme-border--width);
+        }
+      }
       &-label {
         font-size: 12px;
+        margin-bottom: 6px;
       }
     }
     &-title {
-      font-size: 52px;
+      font-size: 40px;
     }
   }
 
