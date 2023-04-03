@@ -16,6 +16,14 @@
     &.button {
       padding: 20px 0;
     }
+    &.collapsed {
+      .accordion__trigger-icon {
+        &:before,
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
     &-icon {
       width: $trigger-icon-size;
       height: $trigger-icon-size;
@@ -25,16 +33,19 @@
       position: relative;
       &:before,
       &:after {
+        transition: opacity var(--theme-transition--opacity);
         position: absolute;
         background: currentcolor;
         content: '';
         display: block;
       }
       &:before {
+        opacity: 1;
         height: var(--theme-border--width);
         width: 100%;
       }
       &:after {
+        opacity: 0;
         width: var(--theme-border--width);
         height: 100%;
       }

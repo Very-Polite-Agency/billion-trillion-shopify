@@ -44,6 +44,7 @@
         {%- if section_media_blocks_size > 0 -%}
           <div class="{{ section_name }}__media">
             {%- for block in section_media_blocks -%}
+              {% render 'debug-this', item: block.settings %}
               {%- liquid
                 assign media_aspect_ratio = block.settings.media_aspect_ratio | default: ''
                 assign media_image = block.settings.image | default: false
@@ -75,15 +76,19 @@
           {%- for block in section_faq_blocks -%}
             {%- liquid
               assign faq_answer = block.settings.answer | default: ''
+              assign faq_open = false
               assign faq_title = block.settings.title | default: ''
               assign faq_id = block.id | prepend: 'faqs__accordion-'
               capture aos_attrs
                 render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
               endcapture
               assign aos_delay = aos_delay | plus: aos_delay_increment
+              if forloop.first
+                assign faq_open = true
+              endif
             -%}
             <div class="{{ section_name }}__item accordion" role="listitem" {{ accordion_aos }}>
-              {% render 'bs-accordion', accordion_content: faq_answer, accordion_id: faq_id, accordion_title: faq_title %}
+              {% render 'bs-accordion', accordion_content: faq_answer, accordion_id: faq_id, accordion_open: faq_open, accordion_title: faq_title %}
             </div>
           {%- endfor -%}
         </div>
@@ -297,6 +302,7 @@
         {
           "label": "Media Ratio",
           "type": "text",
+          "default": "16/9",
           "id": "media_aspect_ratio"
         },
         {
