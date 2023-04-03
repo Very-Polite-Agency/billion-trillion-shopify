@@ -80,11 +80,18 @@
           "settings": {
             "heading": "Welcome to the good time galaxy"
           }
+        },
+        "59997170-3c8a-495f-a415-29ba0ea3b745": {
+          "type": "message",
+          "settings": {
+            "message": "<p>Nulla ullamcorper porta lectus sit amet efficitur. Sed vel ipsum sit amet augue auctor ornare sodales nec lectus. Mauris ornare dignissim dolor, in accumsan felis ullamcorper in. Fusce eget tortor placerat, rhoncus diam et, mollis massa. Mauris quis felis sed ex ornare euismod vitae egestas metus. Quisque venenatis neque quis neque consectetur auctor. Curabitur pretium ipsum tellus, a vestibulum libero tempor sed.<\/p>"
+          }
         }
       },
       "block_order": [
         "df55f493-4f0f-42c5-9648-9d0b855e8373",
-        "template--15945343795384__8c71606e-b66e-4609-a3c4-2319d29cc4d1-1680541664323c9062-0"
+        "template--15945343795384__8c71606e-b66e-4609-a3c4-2319d29cc4d1-1680541664323c9062-0",
+        "59997170-3c8a-495f-a415-29ba0ea3b745"
       ],
       "settings": {
         "anchor_id": "",
@@ -96,8 +103,8 @@
         "background_image_size": "cover",
         "border_top": true,
         "border_bottom": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 200,
+        "padding_bottom": 200
       }
     },
     "c5ddd571-40a7-4e5a-b116-59f35896c18d": {
