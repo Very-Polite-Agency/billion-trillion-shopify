@@ -183,6 +183,16 @@
         "1a94e9db-df55-4475-b515-7a24b8a99121"
       ],
       "settings": {
+        "marquee_duration": 90,
+        "marquee_gap": 20,
+        "marquee_item_padding_x": 10,
+        "marquee_item_padding_y": 20,
+        "marquee_reverse": false,
+        "marquee_image_width": 180,
+        "marquee_image_height": 78,
+        "marquee_text_colour": "dark",
+        "marquee_text_size": 20,
+        "marquee_text_style": "primary",
         "anchor_id": "",
         "background": "black",
         "background_image_position_mobile": "center center",
@@ -190,15 +200,7 @@
         "background_image_repeat": "repeat",
         "background_image_size": "cover",
         "border_top": false,
-        "border_bottom": false,
-        "marquee_duration": 90,
-        "marquee_gap": 20,
-        "marquee_item_padding_x": 10,
-        "marquee_item_padding_y": 20,
-        "marquee_reverse": false,
-        "text_colour": "light",
-        "text_size": 36,
-        "text_style": "primary"
+        "border_bottom": false
       }
     },
     "1051164b-db1e-44a5-be1e-5cb0043989d3": {
@@ -256,6 +258,16 @@
         "981d35c3-f0df-4b01-b3bf-baea2cba8d18"
       ],
       "settings": {
+        "marquee_duration": 80,
+        "marquee_gap": 3,
+        "marquee_item_padding_x": 15,
+        "marquee_item_padding_y": 10,
+        "marquee_reverse": true,
+        "marquee_image_width": 100,
+        "marquee_image_height": 100,
+        "marquee_text_colour": "dark",
+        "marquee_text_size": 20,
+        "marquee_text_style": "secondary",
         "anchor_id": "",
         "background": "black",
         "background_image_position_mobile": "center center",
@@ -263,15 +275,7 @@
         "background_image_repeat": "repeat",
         "background_image_size": "cover",
         "border_top": true,
-        "border_bottom": false,
-        "marquee_duration": 80,
-        "marquee_gap": 3,
-        "marquee_item_padding_x": 15,
-        "marquee_item_padding_y": 10,
-        "marquee_reverse": true,
-        "text_colour": "dark",
-        "text_size": 14,
-        "text_style": "secondary"
+        "border_bottom": false
       }
     },
     "0fa9ba11-804e-4e9d-a953-63efbbdfa40b": {
