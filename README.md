@@ -46,7 +46,7 @@ https://billion-trillion.myshopify.com
 - [ ] contact-form.liquid
 - [x] custom-liquid.liquid
 - [ ] drawer-cart.liquid
-- [ ] faqs.liquid
+- [x] faqs.liquid
 - [ ] featured-collection.liquid
 - [ ] featured-image.liquid
 - [x] featured-product.liquid

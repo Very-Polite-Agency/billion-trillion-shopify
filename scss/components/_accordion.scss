@@ -33,7 +33,7 @@
       position: relative;
       &:before,
       &:after {
-        transition: opacity var(--theme-transition--opacity);
+        transition: opacity var(--theme-transition--duration);
         position: absolute;
         background: currentcolor;
         content: '';
