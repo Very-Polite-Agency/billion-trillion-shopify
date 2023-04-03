@@ -10,16 +10,18 @@
   }
 
   &__region {
+    @include border-solid( var(--theme-border--width), 'black', 'top' );
     display: flex;
     width: 100%;
     flex-flow: column;
     &-country,
     &-title {
       display: block;
-      line-height: .95;
+      line-height: 0.95;
     }
-    &-country {}
-    &-title {}
+    &-country {
+      margin-top: 10px;
+    }
     &-hero {
       &-content {
         position: absolute;
@@ -36,6 +38,21 @@
       &-image {
         position: relative;
       }
+    }
+    &-stats {
+      background: var(--theme-colour--lemon);
+      font-size: 21px;
+      line-height: 1;
+      &-label,
+      &-value {
+        display: block;
+      }
+      &-label {
+        font-size: 12px;
+      }
+    }
+    &-title {
+      font-size: 52px;
     }
   }
 
