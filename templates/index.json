@@ -183,15 +183,15 @@
         "1a94e9db-df55-4475-b515-7a24b8a99121"
       ],
       "settings": {
-        "marquee_duration": 90,
-        "marquee_gap": 20,
+        "marquee_duration": 100,
+        "marquee_gap": 15,
         "marquee_item_padding_x": 10,
         "marquee_item_padding_y": 20,
         "marquee_reverse": false,
         "marquee_image_width": 180,
         "marquee_image_height": 68,
         "marquee_text_colour": "light",
-        "marquee_text_size": 50,
+        "marquee_text_size": 53,
         "marquee_text_style": "primary",
         "anchor_id": "",
         "background": "black",
