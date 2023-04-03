@@ -17,12 +17,12 @@
     -%}
   {% endcomment %}
 
-  <button class="accordion__trigger" type="button" data-bs-toggle="collapse" data-bs-target="#{{ accordion_id }}" aria-expanded="false" aria-controls="{{ accordion_id }}">
-    <span class="accordion__trigger-title">{{ accordion_title }}</span>
+  <button class="accordion__trigger button button--accordion" type="button" data-bs-toggle="collapse" data-bs-target="#{{ accordion_id }}" aria-expanded="false" aria-controls="{{ accordion_id }}">
+    <span class="accordion__trigger-title text--align-left text--primary text--uppercase">{{ accordion_title }}</span>
     <span class="accordion__trigger-icon"></span>
   </button>
   <div class="accordion__main collapse" id="{{ accordion_id }}">
-    <div class="accordion__main__content">
+    <div class="accordion__main-content text--secondary text--uppercase body-copy--3">
       {{ accordion_content }}
     </div>
   </div>

@@ -1,0 +1,75 @@
+@use '../utils/mixins/border' as *;
+@use '../utils/mixins/breakpoint' as *;
+
+.accordion {
+
+  $trigger-icon-size: 22px;
+
+  @include border-solid( var(--theme-border--width), 'black', 'bottom' );
+
+  &__trigger {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    &.button {
+      padding: 20px 0;
+    }
+    &-icon {
+      width: $trigger-icon-size;
+      height: $trigger-icon-size;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      &:before,
+      &:after {
+        position: absolute;
+        background: currentcolor;
+        content: '';
+        display: block;
+      }
+      &:before {
+        height: var(--theme-border--width);
+        width: 100%;
+      }
+      &:after {
+        width: var(--theme-border--width);
+        height: 100%;
+      }
+    }
+    &-title {
+      font-size: 24px;
+      line-height: 1;
+      flex: 1;
+    }
+  }
+
+  &__main {
+    &-content {
+      padding-bottom: 30px;
+    }
+  }
+
+  @include breakpoint(lg) {
+
+    $trigger-icon-size: 24px;
+
+    &__trigger {
+      gap: 20px;
+      &.button {
+        padding: 32px 0;
+      }
+      &-icon {
+        width: $trigger-icon-size;
+        height: $trigger-icon-size;
+      }
+      &-title {
+        font-size: 24px;
+      }
+    }
+
+  }
+
+}

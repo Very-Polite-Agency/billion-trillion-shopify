@@ -12,6 +12,8 @@
   assign section_container = section.settings.container | default: 'container'
   assign section_faq_blocks = section.blocks | where: 'type', 'faq'
   assign section_faq_blocks_size = section_faq_blocks.size | default: 0
+  assign section_media_blocks = section.blocks | where: 'type', 'media'
+  assign section_media_blocks_size = section_media_blocks.size | default: 0
 
 -%}
 
@@ -38,12 +40,37 @@
     {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
       <div class="{{ section_name }}__main">
 
+        {%- if section_media_blocks_size > 0 -%}
+          <div class="{{ section_name }}__media">
+            {%- for block in section_media_blocks -%}
+              {%- liquid
+                assign media_aspect_ratio_desktop = block.settings.media_aspect_ratio_desktop | default: ''
+                assign media_aspect_ratio_mobile = block.settings.media_aspect_ratio_mobile | default: ''
+                assign media_image = block.settings.image | default: false
+                assign media_type = block.settings.media_type | default: 'image'
+                assign media_video = block.settings.video | default: false
+              -%}
+              {% render 'debug-this', item: media_video %}
+              {%- if media_image or media_video -%}
+                <div class="{{ section_name }}__media-{{ media_type }}">
+                  {%- case media_type -%}
+                    {%- when 'image' -%}
+                      {%- render 'lazyload-image', image: media_image -%}
+                    {%- when 'video' %}
+                      {%- render 'lazyload-embed', video_id: '' -%}
+                  {%- endcase -%}
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
         <div class="{{ section_name }}__list" role="list">
           {%- for block in section_faq_blocks -%}
             {%- liquid
               assign faq_answer = block.settings.answer | default: ''
               assign faq_title = block.settings.title | default: ''
-              assign faq_id = block.settings.id | prepend: 'faqs__accordion-'
+              assign faq_id = block.id | prepend: 'faqs__accordion-'
             -%}
             <div class="{{ section_name }}__item accordion" role="listitem">
               {% render 'bs-accordion', accordion_content: faq_answer, accordion_id: faq_id, accordion_title: faq_title %}

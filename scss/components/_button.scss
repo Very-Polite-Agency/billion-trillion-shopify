@@ -7,10 +7,17 @@
   @extend %ui-base;
   @extend %ui-transition;
 
+  &--accordion,
   &--svg {
     @extend .button;
   }
 
+  // ---------------------------------------- Accordion Button
+  &--accordion {
+
+  }
+
+  // ---------------------------------------- SVG Button
   &--svg {
 
     path {
