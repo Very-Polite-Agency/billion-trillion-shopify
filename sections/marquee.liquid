@@ -77,15 +77,15 @@
       <div class="{{ section_name }}__group">
         {% for i in (1..10) %}
           {% if i == 1 %}
-            {% render 'blocks-marquee', items: section_marquee_blocks %}
+            {% render 'marquee-items', items: section_marquee_blocks %}
           {% else %}
-            {% render 'blocks-marquee', hidden: true, items: section_marquee_blocks %}
+            {% render 'marquee-items', hidden: true, items: section_marquee_blocks %}
           {% endif %}
         {% endfor %}
       </div>
       <div class="{{ section_name }}__group" aria-hidden="true">
         {% for i in (1..10) %}
-          {% render 'blocks-marquee', items: section_marquee_blocks %}
+          {% render 'marquee-items', items: section_marquee_blocks %}
         {% endfor %}
       </div>
     </div>
