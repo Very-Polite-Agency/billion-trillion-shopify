@@ -2,11 +2,93 @@
   "sections": {
     "hero": {
       "type": "hero",
+      "blocks": {
+        "b75fc7a8-1af0-4cd9-81c6-1f60bf55cf89": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "b75fc7a8-1af0-4cd9-81c6-1f60bf55cf89"
+      ],
       "settings": {
+        "anchor_id": "",
+        "background": "image",
+        "background_image": "shopify:\/\/shop_images\/tile-background_2x_8633724c-832c-4866-82a3-a03b9bfd94de.png",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "400px",
+        "border_top": false,
+        "border_bottom": false,
+        "container": "container",
+        "height_mobile": "auto",
+        "height_desktop": "auto",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "b72adf5f-b6a8-4ece-aa2d-99b4a0444c12": {
+      "type": "stockists",
+      "blocks": {
+        "template--15945343893688__b72adf5f-b6a8-4ece-aa2d-99b4a0444c12-168056025736f01098-0": {
+          "type": "region",
+          "settings": {
+            "title": "British Columbia",
+            "country": "Canada",
+            "total_area": "944,735",
+            "population": "5.419",
+            "smells_like": "Exoplanet NX-09-e2",
+            "background": "orange"
+          }
+        },
+        "ead8acec-eb00-4a00-b8ef-4bdc90a1ba70": {
+          "type": "region",
+          "settings": {
+            "title": "Alberta",
+            "country": "Canada",
+            "total_area": "",
+            "population": "",
+            "smells_like": "",
+            "background": "orange"
+          }
+        },
+        "30030d60-12ee-434a-886d-d344f72ae585": {
+          "type": "region",
+          "settings": {
+            "title": "Saskatchewan",
+            "country": "Canada",
+            "total_area": "",
+            "population": "",
+            "smells_like": "",
+            "background": "orange"
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343893688__b72adf5f-b6a8-4ece-aa2d-99b4a0444c12-168056025736f01098-0",
+        "ead8acec-eb00-4a00-b8ef-4bdc90a1ba70",
+        "30030d60-12ee-434a-886d-d344f72ae585"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "b72adf5f-b6a8-4ece-aa2d-99b4a0444c12"
   ]
 }
