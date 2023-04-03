@@ -89,10 +89,11 @@
       "settings": {
         "anchor_id": "",
         "background": "image",
+        "background_image": "shopify:\/\/shop_images\/about-us--featured-text-02.png",
         "background_image_position_mobile": "center center",
         "background_image_position_desktop": "center center",
-        "background_image_repeat": "repeat",
-        "background_image_size": "contain",
+        "background_image_repeat": "no-repeat",
+        "background_image_size": "cover",
         "border_top": true,
         "border_bottom": false,
         "padding_top": 36,
