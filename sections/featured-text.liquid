@@ -32,7 +32,7 @@
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
   {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
-    <div class="{{ section_name }}__main">
+    <div class="{{ section_name }}__main text--align-center">
 
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -47,7 +47,7 @@
             -%}
 
             {% if heading != blank %}
-              <strong class="{{ section_name }}__heading" {{ aos_attrs }}>{{ heading | escape }}</strong>
+              <strong class="{{ section_name }}__heading heading--1 text--uppercase text--primary" {{ aos_attrs }}>{{ heading | escape }}</strong>
             {% endif %}
 
           {%- when 'message' -%}
@@ -61,7 +61,7 @@
             -%}
 
             {% if message != blank %}
-              <div class="{{ section_name }}__message body-copy--1" {{ aos_attrs }}>{{ message }}</div>
+              <div class="{{ section_name }}__message body-copy--1 text--uppercase text--secondary" {{ aos_attrs }}>{{ message }}</div>
             {% endif %}
 
           {%- when 'subheading' -%}
@@ -75,7 +75,7 @@
             -%}
 
             {% if subheading != blank %}
-              <strong class="{{ section_name }}__subheading" {{ aos_attrs }}>{{ subheading | escape }}</strong>
+              <strong class="{{ section_name }}__subheading body-copy--3 text--uppercase text--secondary" {{ aos_attrs }}>{{ subheading | escape }}</strong>
             {% endif %}
 
         {%- endcase -%}

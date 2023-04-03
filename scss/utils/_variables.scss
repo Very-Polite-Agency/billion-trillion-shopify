@@ -75,6 +75,42 @@ $theme-font-sizes-button: (
 );
 
 // ---------------------------------------- Font Sizes | Heading
+$theme-font-sizes-body-copy: (
+  '1': (
+    'base': 18px,
+    'sm': 18px,
+    'md': 20px,
+    'lg': 22px,
+    'xl': 24px,
+    'xxl': 26px
+  ),
+  '2': (
+    'base': 14px,
+    'sm': 14px,
+    'md': 16px,
+    'lg': 18px,
+    'xl': 20px,
+    'xxl': 22px
+  ),
+  '3': (
+    'base': 14px,
+    'sm': 14px,
+    'md': 14px,
+    'lg': 16px,
+    'xl': 18px,
+    'xxl': 20px
+  ),
+  '4': (
+    'base': 14px,
+    'sm': 14px,
+    'md': 14px,
+    'lg': 14px,
+    'xl': 16px,
+    'xxl': 18px
+  )
+);
+
+// ---------------------------------------- Font Sizes | Heading
 $theme-font-sizes-heading: (
   '1': (
     'base': 48px,
