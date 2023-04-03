@@ -141,6 +141,13 @@
             "background": "none"
           }
         },
+        "009d627e-7ba1-4a41-92b4-1e2717793e97": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/marquee-image.mango_3x_2d85967b-1ce0-4f37-b099-64250f96725e.png",
+            "background": "none"
+          }
+        },
         "b51bd4d3-b88d-4cae-b430-5ac75c5c430c": {
           "type": "text",
           "settings": {
@@ -152,6 +159,13 @@
           "type": "text",
           "settings": {
             "title": "Gluten Free",
+            "background": "none"
+          }
+        },
+        "feb74c1d-14b7-4154-b1f5-78e8522a583d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/marquee-image.mandarin_3x_bcf23160-5260-405b-bce7-ee77bc3303c3.png",
             "background": "none"
           }
         },
@@ -168,17 +182,37 @@
             "title": "No Sugar Added",
             "background": "none"
           }
+        },
+        "b351e503-b2b6-4d72-a7f0-5184ad15e6e5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/marquee-image.lemon_3x_5cc134c4-7f7d-49dc-bcb6-ec32bf3282e3.png",
+            "background": "none"
+          }
         }
       },
       "block_order": [
         "398a7a2c-6aaf-487f-b2ec-09beca8897aa",
         "52906eed-f38b-489b-982d-f61153686a14",
+        "009d627e-7ba1-4a41-92b4-1e2717793e97",
         "b51bd4d3-b88d-4cae-b430-5ac75c5c430c",
         "c431d653-f5b7-4ab6-a5fc-4c7b006e497f",
+        "feb74c1d-14b7-4154-b1f5-78e8522a583d",
         "80d0e1d7-25ee-4df6-a85d-835da1e75b81",
-        "57171f4d-f687-4004-9b9b-a090e5bf12e4"
+        "57171f4d-f687-4004-9b9b-a090e5bf12e4",
+        "b351e503-b2b6-4d72-a7f0-5184ad15e6e5"
       ],
       "settings": {
+        "marquee_duration": 90,
+        "marquee_gap": 20,
+        "marquee_item_padding_x": 10,
+        "marquee_item_padding_y": 20,
+        "marquee_reverse": false,
+        "marquee_image_width": 180,
+        "marquee_image_height": 68,
+        "marquee_text_colour": "dark",
+        "marquee_text_size": 20,
+        "marquee_text_style": "primary",
         "anchor_id": "",
         "background": "black",
         "background_image_position_mobile": "center center",
@@ -186,15 +220,7 @@
         "background_image_repeat": "repeat",
         "background_image_size": "cover",
         "border_top": true,
-        "border_bottom": false,
-        "marquee_duration": 90,
-        "marquee_gap": 20,
-        "marquee_item_padding_x": 10,
-        "marquee_item_padding_y": 20,
-        "marquee_reverse": false,
-        "text_colour": "light",
-        "text_size": 36,
-        "text_style": "primary"
+        "border_bottom": false
       }
     },
     "0bf825b5-7d2e-408b-b69f-346f09093b5b": {
@@ -252,6 +278,16 @@
         "079a615b-fd3a-4578-bc32-c6435e171101"
       ],
       "settings": {
+        "marquee_duration": 75,
+        "marquee_gap": 3,
+        "marquee_item_padding_x": 15,
+        "marquee_item_padding_y": 10,
+        "marquee_reverse": true,
+        "marquee_image_width": 100,
+        "marquee_image_height": 100,
+        "marquee_text_colour": "dark",
+        "marquee_text_size": 20,
+        "marquee_text_style": "primary",
         "anchor_id": "",
         "background": "black",
         "background_image_position_mobile": "center center",
@@ -259,15 +295,7 @@
         "background_image_repeat": "repeat",
         "background_image_size": "cover",
         "border_top": true,
-        "border_bottom": false,
-        "marquee_duration": 75,
-        "marquee_gap": 3,
-        "marquee_item_padding_x": 15,
-        "marquee_item_padding_y": 10,
-        "marquee_reverse": true,
-        "text_colour": "dark",
-        "text_size": 14,
-        "text_style": "secondary"
+        "border_bottom": false
       }
     },
     "ec9b35e3-d24d-4147-bf50-34d0820fc54a": {
