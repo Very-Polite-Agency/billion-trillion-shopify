@@ -30,9 +30,41 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "b72adf5f-b6a8-4ece-aa2d-99b4a0444c12": {
+      "type": "stockists",
+      "blocks": {
+        "template--15945343893688__b72adf5f-b6a8-4ece-aa2d-99b4a0444c12-168056025736f01098-0": {
+          "type": "region",
+          "settings": {
+            "title": "British Columbia",
+            "country": "Canada",
+            "total_area": "944,735",
+            "population": "5.419",
+            "smells_like": "Exoplanet NX-09-e2",
+            "background": "orange"
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343893688__b72adf5f-b6a8-4ece-aa2d-99b4a0444c12-168056025736f01098-0"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "b72adf5f-b6a8-4ece-aa2d-99b4a0444c12"
   ]
 }
