@@ -312,8 +312,8 @@
           "type": "media",
           "settings": {
             "video": "https:\/\/vimeo.com\/783455338",
-            "media_aspect_ratio_mobile": "",
-            "media_aspect_ratio_desktop": "",
+            "media_aspect_ratio_mobile": "3.15\/3.64",
+            "media_aspect_ratio_desktop": "3.337\/5.01",
             "media_type": "video"
           }
         }
