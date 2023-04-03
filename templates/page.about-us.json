@@ -297,14 +297,14 @@
         "d385fa13-7eb9-43cc-b513-c26a53768708": {
           "type": "faq",
           "settings": {
-            "title": "",
+            "title": "WTF is Koji?",
             "answer": ""
           }
         },
         "314659d8-ae51-4428-9bd4-6c6fe805a85e": {
           "type": "faq",
           "settings": {
-            "title": "",
+            "title": "WTF is Fizz?",
             "answer": ""
           }
         }
