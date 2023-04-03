@@ -2,7 +2,32 @@
   "sections": {
     "hero": {
       "type": "hero",
+      "blocks": {
+        "b75fc7a8-1af0-4cd9-81c6-1f60bf55cf89": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "b75fc7a8-1af0-4cd9-81c6-1f60bf55cf89"
+      ],
       "settings": {
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "container": "container",
+        "height_mobile": "auto",
+        "height_desktop": "auto",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
