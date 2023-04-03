@@ -307,12 +307,21 @@
             "title": "WTF is Fizz?",
             "answer": "<p>Sed sit amet lacus vel nibh volutpat dictum. Suspendisse eu magna mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum nec eros nec dignissim. Donec varius leo quis elementum pulvinar. Phasellus vulputate nibh id lectus volutpat malesuada. Quisque nec consectetur tellus, a porttitor ex. Cras et mi urna. Nullam mollis risus vitae mi auctor fringilla. Nulla fringilla pellentesque mi, eget maximus ipsum ultrices tristique. Maecenas maximus tellus non purus efficitur, ut rhoncus nisl placerat.<\/p>"
           }
+        },
+        "f3138294-9f66-4333-b59c-bcdb8cebe0ee": {
+          "type": "media",
+          "settings": {
+            "video": "",
+            "media_aspect_ratio": "315\/364",
+            "media_type": "image"
+          }
         }
       },
       "block_order": [
         "cfbe600b-4f29-4c57-9de0-db5bf30a5e4c",
         "d385fa13-7eb9-43cc-b513-c26a53768708",
-        "314659d8-ae51-4428-9bd4-6c6fe805a85e"
+        "314659d8-ae51-4428-9bd4-6c6fe805a85e",
+        "f3138294-9f66-4333-b59c-bcdb8cebe0ee"
       ],
       "settings": {
         "anchor_id": "",
