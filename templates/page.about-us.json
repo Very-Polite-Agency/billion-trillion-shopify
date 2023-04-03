@@ -311,8 +311,10 @@
         "f3138294-9f66-4333-b59c-bcdb8cebe0ee": {
           "type": "media",
           "settings": {
-            "video": "",
-            "media_type": "image"
+            "video": "https:\/\/vimeo.com\/783455338",
+            "media_aspect_ratio_mobile": "",
+            "media_aspect_ratio_desktop": "",
+            "media_type": "video"
           }
         }
       },
