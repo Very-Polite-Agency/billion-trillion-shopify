@@ -312,7 +312,6 @@
           "type": "media",
           "settings": {
             "video": "",
-            "media_aspect_ratio": "315\/364",
             "media_type": "image"
           }
         }
