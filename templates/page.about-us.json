@@ -55,6 +55,13 @@
             "background": "none"
           }
         },
+        "54e18c33-9880-47c2-b8a9-ce2912c101cc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/marquee-image.mango_3x_2d85967b-1ce0-4f37-b099-64250f96725e.png",
+            "background": "none"
+          }
+        },
         "1e84f8d4-ff4a-4193-a22f-817b9a0d464f": {
           "type": "text",
           "settings": {
@@ -66,6 +73,13 @@
           "type": "text",
           "settings": {
             "title": "Gluten Free",
+            "background": "none"
+          }
+        },
+        "f371ec38-1660-456b-9c18-1cc9ea72e9da": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/marquee-image.mandarin_3x_bcf23160-5260-405b-bce7-ee77bc3303c3.png",
             "background": "none"
           }
         },
@@ -82,15 +96,25 @@
             "title": "No Sugar Added",
             "background": "none"
           }
+        },
+        "be337148-fe10-49a9-a8f2-8b049c84a5f2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/marquee-image.lemon_3x_5cc134c4-7f7d-49dc-bcb6-ec32bf3282e3.png",
+            "background": "none"
+          }
         }
       },
       "block_order": [
         "d887ca62-5fba-4730-998f-6cb231113c77",
         "40d4560b-0d16-475c-94f3-29b46a715dd1",
+        "54e18c33-9880-47c2-b8a9-ce2912c101cc",
         "1e84f8d4-ff4a-4193-a22f-817b9a0d464f",
         "a89c1cd3-a667-4361-b38a-ce9d6b535e75",
+        "f371ec38-1660-456b-9c18-1cc9ea72e9da",
         "5a3ef531-9693-4bed-8a37-d1c1fe08a590",
-        "57e3cef6-8024-4008-b684-7248d544eff5"
+        "57e3cef6-8024-4008-b684-7248d544eff5",
+        "be337148-fe10-49a9-a8f2-8b049c84a5f2"
       ],
       "settings": {
         "marquee_duration": 90,
