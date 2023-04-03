@@ -2,6 +2,7 @@
   "order": [
     "hero",
     "72081baf-4665-403a-b951-d8b6e7fb0752",
+    "8c71606e-b66e-4609-a3c4-2319d29cc4d1",
     "c5ddd571-40a7-4e5a-b116-59f35896c18d",
     "ca510ddb-3352-4969-ab45-d406db839a98",
     "2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4",
@@ -63,6 +64,39 @@
         "border_bottom": false,
         "padding_top": 120,
         "padding_bottom": 120
+      }
+    },
+    "8c71606e-b66e-4609-a3c4-2319d29cc4d1": {
+      "type": "featured-text",
+      "blocks": {
+        "df55f493-4f0f-42c5-9648-9d0b855e8373": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Billion Trillion is the number one ready to drink beverage in the universe!"
+          }
+        },
+        "template--15945343795384__8c71606e-b66e-4609-a3c4-2319d29cc4d1-1680541664323c9062-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Welcome to the good time galaxy"
+          }
+        }
+      },
+      "block_order": [
+        "df55f493-4f0f-42c5-9648-9d0b855e8373",
+        "template--15945343795384__8c71606e-b66e-4609-a3c4-2319d29cc4d1-1680541664323c9062-0"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": true,
+        "border_bottom": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "c5ddd571-40a7-4e5a-b116-59f35896c18d": {
