@@ -5,6 +5,7 @@
     "8c71606e-b66e-4609-a3c4-2319d29cc4d1",
     "c5ddd571-40a7-4e5a-b116-59f35896c18d",
     "ca510ddb-3352-4969-ab45-d406db839a98",
+    "4a04cf78-19f2-4bc7-8a49-3cd31f694544",
     "2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4",
     "d685fa2e-8822-46df-b523-b7fa76700377"
   ],
@@ -279,6 +280,21 @@
         "background_image_size": "cover",
         "border_top": true,
         "border_bottom": false
+      }
+    },
+    "4a04cf78-19f2-4bc7-8a49-3cd31f694544": {
+      "type": "faqs",
+      "settings": {
+        "anchor_id": "",
+        "background": "lemon",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": true,
+        "border_bottom": false,
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4": {
