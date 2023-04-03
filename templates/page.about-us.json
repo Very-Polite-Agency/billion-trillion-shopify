@@ -189,7 +189,7 @@
         "be337148-fe10-49a9-a8f2-8b049c84a5f2"
       ],
       "settings": {
-        "marquee_duration": 90,
+        "marquee_duration": 540,
         "marquee_gap": 20,
         "marquee_item_padding_x": 10,
         "marquee_item_padding_y": 20,
@@ -264,7 +264,7 @@
         "e32b73ec-ff5f-4b0b-945b-c183c58acef5"
       ],
       "settings": {
-        "marquee_duration": 130,
+        "marquee_duration": 150,
         "marquee_gap": 3,
         "marquee_item_padding_x": 15,
         "marquee_item_padding_y": 10,
