@@ -2866,6 +2866,14 @@
       "oAP" : "\/snippets\/aos-attributes.liquid",
       "oF" : 0
     },
+    "\/snippets\/bs-accordion.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/snippets\/bs-accordion.liquid",
+      "oF" : 0
+    },
     "\/snippets\/bs-container.liquid" : {
       "cB" : 0,
       "ft" : 8192,
