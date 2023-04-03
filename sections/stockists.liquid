@@ -9,7 +9,7 @@
   assign aos_id = snippet_id
 
   assign section_anchor = section.settings.anchor_id | default: ''
-  assign section_container = section.settings.container | default: 'container'
+  assign section_container = section.settings.container | default: 'full-width'
   assign section_region_blocks = section.blocks | where: 'type', 'region'
   assign section_region_blocks_size = section_region_blocks.size | default: 0
 
@@ -35,7 +35,7 @@
   {%- endstyle -%}
 
   <div class="{{ section_classes }}" id="{{ section_id }}">
-    {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
+    {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
       <div class="{{ section_name }}__list" role="list">
         {% for block in section_region_blocks %}
 
@@ -51,12 +51,12 @@
 
           <div class="{{ section_name }}__region" role="listitem">
 
-            <div class="{{ section_name }}__region-hero">
+            <div class="{{ section_name }}__region-hero text--light text--uppercase">
               <div class="{{ section_name }}__region-hero-image">
                 {% render 'lazyload-image', image: region_image %}
                 <div class="{{ section_name }}__region-hero-content">
-                  <strong>{{ region_title }}</strong>
-                  <div>{{ region_country }}, Earth</div>
+                  <strong class="{{ section_name }}__region-title heading--2 text--primary">{{ region_title }}</strong>
+                  <div class="{{ section_name }}__region-country body-copy--3 text--secondary">{{ region_country }}, Earth</div>
                 </div>
               </div>
             </div>
@@ -92,9 +92,9 @@
 
           </div>
 
-        {% endif %}
+        {% endfor %}
       </div>
-    {% render 'bs-container', state: 'closed', col: 'col-12', container: container %}
+    {% render 'bs-container', state: 'closed', col: 'col-12', container: section_container %}
   </div>
 
 {%- endif -%}

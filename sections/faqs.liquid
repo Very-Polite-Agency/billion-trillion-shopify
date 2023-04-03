@@ -44,7 +44,6 @@
         {%- if section_media_blocks_size > 0 -%}
           <div class="{{ section_name }}__media">
             {%- for block in section_media_blocks -%}
-              {% render 'debug-this', item: block.settings %}
               {%- liquid
                 assign media_aspect_ratio = block.settings.media_aspect_ratio | default: ''
                 assign media_image = block.settings.image | default: false
