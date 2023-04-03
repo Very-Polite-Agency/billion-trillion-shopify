@@ -312,6 +312,7 @@
           "type": "media",
           "settings": {
             "video": "https:\/\/vimeo.com\/783455773",
+            "media_aspect_ratio": "16\/9",
             "media_aspect_ratio_mobile": "",
             "media_aspect_ratio_desktop": "",
             "media_type": "video"
