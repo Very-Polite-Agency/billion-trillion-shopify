@@ -9,6 +9,7 @@
     -%}
 
       <span
+        class="{{ item_type }}"
         {% if hidden %}aria-hidden="true"{% endif %}
         {% if item_background != blank and 'none' != item_background %}style="background: var(--theme-colour--{{ item_background }});"{% endif %}
       >
