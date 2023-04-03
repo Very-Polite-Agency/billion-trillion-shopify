@@ -179,9 +179,77 @@
       "id": "padding_bottom"
     }
   ],
+  "blocks": [
+    {
+      "name": "FAQ",
+      "type": "faq",
+      "settings": [
+        {
+          "content": "Content",
+          "type": "header"
+        },
+        {
+          "label": "Question",
+          "type": "text",
+          "id": "question"
+        },
+        {
+          "label": "Answer",
+          "type": "richtext",
+          "id": "answer"
+        }
+      ]
+    },
+    {
+      "name": "Media",
+      "type": "media",
+      "limit": 1,
+      "settings": [
+        {
+          "content": "Content",
+          "type": "header"
+        },
+        {
+          "label": "Image",
+          "type": "image_picker",
+          "id": "image"
+        },
+        {
+          "label": "Video",
+          "type": "video_url",
+          "accept": [ "vimeo" ],
+          "id": "video"
+        },
+        {
+          "content": "Settings",
+          "type": "header"
+        },
+        {
+          "label": "Media Ratio",
+          "type": "text",
+          "id": "media_aspect_ratio"
+        },
+        {
+          "label": "Media Type",
+          "type": "select",
+          "options": [
+            { "label": "Image", "value": "image" },
+            { "label": "Video", "value": "video" }
+          ],
+          "default": "image",
+          "id": "media_type"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "FAQs"
+      "name": "FAQs",
+      "blocks": [
+        { "type": "faq" },
+        { "type": "faq" },
+        { "type": "faq" }
+      ]
     }
   ]
 }
