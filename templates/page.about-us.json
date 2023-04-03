@@ -1,6 +1,7 @@
 {
   "order": [
     "hero",
+    "72081baf-4665-403a-b951-d8b6e7fb0752",
     "c5ddd571-40a7-4e5a-b116-59f35896c18d",
     "ca510ddb-3352-4969-ab45-d406db839a98",
     "2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4",
@@ -36,6 +37,39 @@
         "height_desktop": "auto",
         "padding_top": 80,
         "padding_bottom": 80
+      }
+    },
+    "72081baf-4665-403a-b951-d8b6e7fb0752": {
+      "type": "featured-text",
+      "blocks": {
+        "template--15945343795384__72081baf-4665-403a-b951-d8b6e7fb0752-1680541664323c9062-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "What does your Earth body's microbiome have to do with the immense greatness of space you ask?"
+          }
+        },
+        "template--15945343795384__72081baf-4665-403a-b951-d8b6e7fb0752-1680541664323c9062-1": {
+          "type": "message",
+          "settings": {
+            "message": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343795384__72081baf-4665-403a-b951-d8b6e7fb0752-1680541664323c9062-0",
+        "template--15945343795384__72081baf-4665-403a-b951-d8b6e7fb0752-1680541664323c9062-1"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "orange",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "c5ddd571-40a7-4e5a-b116-59f35896c18d": {
