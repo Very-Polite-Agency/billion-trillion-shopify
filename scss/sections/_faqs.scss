@@ -1,6 +1,15 @@
+@use "../utils/mixins/border" as *;
 @use "../utils/mixins/breakpoint" as *;
 
 .faqs {
+
+  .accordion {
+    &:first-child {
+      .accordion__trigger.button {
+        padding-top: 0;
+      }
+    }
+  }
 
   &__list,
   &__media {
@@ -12,6 +21,28 @@
     display: flex;
     width: 100%;
     flex-flow: column;
+    & > * {
+      & + * {
+        margin-top: 38px;
+      }
+    }
+  }
+
+  &__media {
+    @include border-solid( var(--theme-border--width), 'black' );
+    border-radius: var(--theme-border--radius);
+    overflow: hidden;
+    &-image,
+    &-video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    img, iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   @include breakpoint(lg) {
@@ -30,7 +61,12 @@
       flex-flow: row nowrap;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 50;
+      gap: 50px;
+      & > * {
+        & + * {
+          margin-top: 0;
+        }
+      }
     }
 
     &__media {

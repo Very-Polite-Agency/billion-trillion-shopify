@@ -20,6 +20,30 @@
 {% if section_faq_blocks_size > 0 %}
 
   {%- style -%}
+
+    #{{ section_id }} {
+      --marquee-duration: {{ section_marquee_duration }}s;
+      --marquee-gap: {{ section_marquee_gap }}px;
+      font-size: {{ section_marquee_text_size }}px;
+    }
+
+    #{{ section_id }} .image,
+    #{{ section_id }} .text {
+      padding: {{ section_marquee_item_padding_y }}px {{ section_marquee_item_padding_x }}px;
+    }
+
+    #{{ section_id }} .image,
+    #{{ section_id }} .image img {
+      height: {{ section_marquee_image_height }}px;
+      width: {{ section_marquee_image_width }}px;
+    }
+
+    @media screen and (min-width: 992px) {
+      #{{ section_id }} {
+        font-size: calc({{ section_marquee_text_size }}px * 1.125);
+      }
+    }
+
     {%
       render 'element-styles',
         background: section.settings.background,
@@ -34,6 +58,7 @@
         padding_bottom: section.settings.padding_bottom,
         padding_top: section.settings.padding_top
     -%}
+
   {%- endstyle -%}
 
   <div class="{{ section_classes }}" id="{{ section_id }}">
@@ -44,8 +69,6 @@
           <div class="{{ section_name }}__media">
             {%- for block in section_media_blocks -%}
               {%- liquid
-                assign media_aspect_ratio_desktop = block.settings.media_aspect_ratio_desktop | default: ''
-                assign media_aspect_ratio_mobile = block.settings.media_aspect_ratio_mobile | default: ''
                 assign media_image = block.settings.image | default: false
                 assign media_type = block.settings.media_type | default: 'image'
                 assign media_video = block.settings.video | default: false
@@ -53,11 +76,24 @@
               {% render 'debug-this', item: media_video %}
               {%- if media_image or media_video -%}
                 <div class="{{ section_name }}__media-{{ media_type }}">
+
+                  {%- style -%}
+                    #{{ section_id }} .{{ section_name }}__media-{{ media_type }} {
+                      aspect-ratio: {{ media_aspect_ratio_mobile }};
+                    }
+
+                    @media screen and (min-width: 992px) {
+                      #{{ section_id }} .{{ section_name }}__media-{{ media_type }} {
+                        aspect-ratio: {{ media_aspect_ratio_desktop }};
+                      }
+                    }
+                  {%- endstyle -%}
+
                   {%- case media_type -%}
                     {%- when 'image' -%}
                       {%- render 'lazyload-image', image: media_image -%}
                     {%- when 'video' %}
-                      {%- render 'lazyload-embed', video_id: '' -%}
+                      {%- render 'lazyload-embed', video_host: 'vimeo', video_id: '783455338', video_inline: false -%}
                   {%- endcase -%}
                 </div>
               {%- endif -%}
@@ -71,8 +107,12 @@
               assign faq_answer = block.settings.answer | default: ''
               assign faq_title = block.settings.title | default: ''
               assign faq_id = block.id | prepend: 'faqs__accordion-'
+              capture aos_attrs
+                render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+              endcapture
+              assign aos_delay = aos_delay | plus: aos_delay_increment
             -%}
-            <div class="{{ section_name }}__item accordion" role="listitem">
+            <div class="{{ section_name }}__item accordion" role="listitem" {{ accordion_aos }}>
               {% render 'bs-accordion', accordion_content: faq_answer, accordion_id: faq_id, accordion_title: faq_title %}
             </div>
           {%- endfor -%}

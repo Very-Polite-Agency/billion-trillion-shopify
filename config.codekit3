@@ -3000,6 +3000,14 @@
       "oAP" : "\/snippets\/label.liquid",
       "oF" : 0
     },
+    "\/snippets\/lazyload-embed.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/snippets\/lazyload-embed.liquid",
+      "oF" : 0
+    },
     "\/snippets\/lazyload-image.liquid" : {
       "cB" : 0,
       "ft" : 8192,
