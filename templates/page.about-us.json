@@ -37,8 +37,8 @@
         "container": "container",
         "height_mobile": "auto",
         "height_desktop": "auto",
-        "padding_top": 80,
-        "padding_bottom": 80
+        "padding_top": 88,
+        "padding_bottom": 88
       }
     },
     "72081baf-4665-403a-b951-d8b6e7fb0752": {
@@ -311,8 +311,8 @@
         "f3138294-9f66-4333-b59c-bcdb8cebe0ee": {
           "type": "media",
           "settings": {
-            "video": "https:\/\/vimeo.com\/783455773",
-            "media_aspect_ratio": "16\/9",
+            "video": "https:\/\/vimeo.com\/807038595",
+            "media_aspect_ratio": "304\/540",
             "media_aspect_ratio_mobile": "",
             "media_aspect_ratio_desktop": "",
             "media_type": "video"
