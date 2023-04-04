@@ -14,7 +14,7 @@
     padding: 14px var(--theme-layout--container-padding);
     display: block;
     line-height: 1;
-    font-size: 35px;
+    font-size: min(50px, 8vw);
     margin: 0;
   }
 
@@ -44,6 +44,7 @@
 
     &-address {
       font-size: 20px * 0.7;
+      font-size: min(18px, 3.75vw);
       line-height: 1.21;
       span {
         display: block;
@@ -59,6 +60,7 @@
 
     &-name {
       font-size: 20px;
+      font-size: min(25px, 5.3vw);
       line-height: 1;
       & + .stockists__location-address {
         margin-top: 12px;
@@ -81,6 +83,8 @@
     }
 
     &-country {
+      font-size: 14px;
+      font-size: min(22px, 3vw);
       margin-top: 10px;
     }
 
@@ -112,7 +116,6 @@
       @include border-solid( var(--theme-border--width), 'black', 'top' );
       background: var(--theme-colour--black);
       gap: var(--theme-border--width);
-      font-size: 21px;
       line-height: 1;
       display: inline-grid;
       width: 100%;
@@ -134,12 +137,18 @@
       }
       &-label {
         font-size: 12px;
+        font-size: min(20px, 3.4vw);
         margin-bottom: 6px;
+      }
+      &-value {
+        font-size: 21px;
+        font-size: min(32px, 5.4vw);
       }
     }
 
     &-title {
       font-size: 40px;
+      font-size: min(90px, 10.5vw);
       margin: 0;
       padding: 0;
     }
@@ -148,45 +157,20 @@
 
   @include breakpoint(sm) {
 
-    &__city {
-      font-size: 38px;
-    }
-
-    &__location {
-      &-address {
-        font-size: 20px * 0.7;
-      }
-      &-name {
-        font-size: 20px;
-      }
-    }
-
     &__region {
       &-country {
         margin-top: 12px;
       }
       &-stats {
-        font-size: 24px;
         &-column {
           padding: 16px var(--theme-layout--container-padding);
         }
-        &-label {
-          font-size: 14px;
-          margin-bottom: 8px;
-        }
-      }
-      &-title {
-        font-size: 62px;
       }
     }
 
   }
 
   @include breakpoint(md) {
-
-    &__city {
-      font-size: 42px;
-    }
 
     &__listing {
       grid-template-columns: repeat( 2, 1fr );
@@ -197,17 +181,9 @@
         margin-top: 14px;
       }
       &-stats {
-        font-size: 30px;
         &-column {
           padding: 18px var(--theme-layout--container-padding);
         }
-        &-label {
-          font-size: 16px;
-          margin-bottom: 10px;
-        }
-      }
-      &-title {
-        font-size: 82px;
       }
     }
 

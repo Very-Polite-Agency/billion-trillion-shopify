@@ -321,6 +321,17 @@
       "sC" : 3,
       "tS" : 1
     },
+    "\/assets\/regions.min.js" : {
+      "bF" : 3,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/assets\/regions.min.min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 1
+    },
     "\/assets\/screenshot.png" : {
       "ft" : 32768,
       "iS" : 203621,
