@@ -44,6 +44,13 @@ const getTimeStamp = () => {
   return d.getTime();
 }
 
+const localStorageAvailable = () => {
+  if (typeof(Storage) !== "undefined") {
+    return true;
+  }
+  return false;
+}
+
 const removeClass = ( $class = '', $elements = [] ) => {
   if ( $class && $elements.length ) {
     for( let i = 0; i < $elements.length; i++ ) {
@@ -115,6 +122,7 @@ export default {
   getElementHeightByTag,
   getLocalStorageValueByKey,
   getTimeStamp,
+  localStorageAvailable,
   removeClass,
   removeClassesFromElements,
   setCSSVariable,

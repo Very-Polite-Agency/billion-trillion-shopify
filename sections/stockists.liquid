@@ -40,9 +40,10 @@
         {% for block in section_region_blocks %}
 
           {%- liquid
+            assign region_background = block.settings.background | default: 'lemon'
             assign region_coordinates = block.settings.coordinates | default: ''
             assign region_country = block.settings.country | default: ''
-            assign region_id = block.id | prepend: 'stockists-region--'
+            assign region_id = 'stockists-region--' | append: block.id
             assign region_image = block.settings.image | default: false
             assign region_population = block.settings.population | default: 0
             assign region_population_int = region_population | plus: 0
@@ -51,13 +52,21 @@
             assign region_total_area = block.settings.total_area | default: ''
           -%}
 
-          <div class="{{ section_name }}__region text--dark text--uppercase" role="listitem">
+          <div class="{{ section_name }}__region text--dark text--uppercase" data-region="{{ region_title | handle }}" id="{{ region_id }}" role="listitem">
+
+            {%- style -%}
+              {%
+                render 'element-styles',
+                  background: region_background,
+                  id: region_id,
+              -%}
+            {%- endstyle -%}
 
             <div class="{{ section_name }}__region-hero text--light">
               <div class="{{ section_name }}__region-hero-image">
                 {% render 'lazyload-image', image: region_image %}
                 <div class="{{ section_name }}__region-hero-content text--align-center">
-                  <strong class="{{ section_name }}__region-title text--primary">{{ region_title }}</strong>
+                  <h2 class="{{ section_name }}__region-title text--primary">{{ region_title }}</h2>
                   <div class="{{ section_name }}__region-country body-copy--3 text--secondary">{{ region_country }}, Earth</div>
                 </div>
               </div>
@@ -88,7 +97,7 @@
               </div>
             </div>
 
-            <div class="{{ section_name }}__region-body js--stockist-region" id="{{ region_title | handle }}">
+            <div class="{{ section_name }}__region-locations text--primary js--stockist-region" data-region-title="{{ region_title  }}">
               <!-- Inject JavaScript Here... -->
             </div>
 

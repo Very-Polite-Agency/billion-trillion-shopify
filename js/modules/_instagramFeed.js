@@ -1,166 +1,99 @@
-//////////////////////////////////////////////////////////
-////  Instagram Feed
-//////////////////////////////////////////////////////////
+import Render from 'render';
+import Tools from 'tools';
 
-// https://developers.facebook.com/docs/instagram-basic-display-api/guides/getting-profiles-and-media
+const MAX_MINUTES = 300;
+const config = { debug: false, name: 'instagramFeed.js', version: '1.0' };
+const feed = {
+  account: '',
+  block_name: 'instagram-feed',
+  element: false,
+  glider_id: '',
+  glider: {},
+  item_count: 0,
+  items: [],
+  interval: null,
+  limit: 0,
+  local_storage: {
+    data: {},
+    data: 0,
+    name: 'very-polite-instagram-feed',
+  },
+};
 
-const InstagramFeed = (() => {
+const asyncGetMedia = async ( token = '' ) => {
 
-  let debug = false;
-  let info = { name : 'Instagram Feed', version : '1.0' };
+  return await fetch( `https://graph.instagram.com/me/media?fields=id,media_type,media_url,permalink&access_token=${token}`, { method: 'GET' } )
+  .then((response) => {
+    return response.json();
+  })
+  .catch((error) => {
+    console.log('[ asyncGetMedia() ] :: Error', error );
+  });
 
-  let tools = new Tools();
+};
 
-  let targetElementElement = '.js--instagram-feed';
-  let feeds = {};
+const asyncGetToken = async ( account = '' ) => {
 
-  //////////////////////////////////////////////////////////
-  ////  Print Media
-  //////////////////////////////////////////////////////////
+  return await fetch( `https://very-polite-instagram-feed.herokuapp.com/token?userAccount=${account}`, { method: 'GET' } )
+  .then((response) => {
+    return response.json();
+  })
+  .catch((error) => {
+    console.log('[ asyncGetToken() ] :: Error', error );
+  });
 
-  const printMedia = ( $media = [], $account = '' ) => {
+};
 
-    if ( debug ) console.log( '[ printMedia() ] Start' );
+const localStorageNotExpired = ( data = '' ) => {
 
-    if ( $media.length && $account ) {
+  let local_storage_data = JSON.parse( data );
+  let local_storage_date = local_storage_data?.date || 0;
+  let time_difference_milliseconds = Date.now() - local_storage_date;
+  let time_difference_minutes = ( time_difference_milliseconds / 60000 ).toFixed(2);
 
-      let elements = document.querySelectorAll(`[data-instagram-feed-account-name='${$account}']`);
+  if ( time_difference_minutes > MAX_MINUTES ) {
+    return false;
+  }
 
-      for ( let i = 0; i < elements.length; i++ ) {
-        let count = 1;
-        for ( let j = 0; j < $media.length; j++ ) {
-          let item = $media[j];
-          if ( debug ) console.log(item);
-          let isImage = ('IMAGE' == item.media_type) ? true : false;
-          let notAboveLimit = (count <= feeds[$account].limit ) ? true : false;
-          if ( notAboveLimit && isImage ) {
-            elements[i].querySelector(`[data-count='${count}'] .instagram-feed__link`).setAttribute( 'href', item.permalink );
-            elements[i].querySelector(`[data-count='${count}'] .instagram-feed__image`).setAttribute( 'data-bg', item.media_url );
-            elements[i].querySelector(`[data-count='${count}'] .instagram-feed__image`).classList.add( 'lazyload', 'lazypreload' );
-            count++;
-          }
-        }
-      }
+  return true;
 
-    }
+}
 
-    if ( debug ) console.log( '[ printMedia() ] End' );
+const init = () => {
+  if ( config.debug ) console.log(`[ ${config.name} v.${config.version} initialized ]`);
 
-  };
+    ( document.querySelectorAll( '.js--instagram-feed' ) || [] ).forEach( element => {
 
-  //////////////////////////////////////////////////////////
-  ////  Get Media
-  //////////////////////////////////////////////////////////
+      feed.account = element.dataset?.feedAccount || '';
+      feed.element = element;
+      feed.id = element?.id || '';
+      feed.limit = element.dataset?.feedLimit || 3;
+      feed.local_storage.name += `--${feed.account}`;
+      feed.local_storage.data = Tools.getLocalStorageDataByKey( feed.local_storage.name ) || false;
 
-  const getMedia = ( $account, $token ) => {
+      if ( feed.account ) {
+        if ( feed.local_storage.data && localStorageNotExpired( feed.local_storage.data ) ) {
 
-    let getURL = 'https://graph.instagram.com/me/media?fields=id,media_type,media_url,permalink&access_token=' + $token;
+          let data = JSON.parse( feed.local_storage.data );
+          feed.items = data.items;
+          Render.instagramFeed( feed );
 
-    fetch( getURL )
-    .then(res => res.json())
-    .then(json => {
-
-      if ( debug ) console.log('getMedia:', json );
-
-      let localData = {
-        account: $account,
-        date: Date.now(),
-        data: json.data
-      };
-
-      tools.setLocalStorage( `very-polite-instagram-feed--${$account}`, JSON.stringify(localData) );
-
-      printMedia( json.data, $account );
-
-    })
-    .catch(err => console.log( 'getMedia( $account, $token ) Error', err ));
-
-  };
-
-  //////////////////////////////////////////////////////////
-  ////  Get Token
-  //////////////////////////////////////////////////////////
-
-  const getToken = ( $account ) => {
-
-    fetch( 'https://very-polite-instagram-feed.herokuapp.com/token?userAccount=' + $account )
-    .then(res => res.json())
-    .then(json => {
-      if ( debug ) console.log('getToken( $account ) fired!', json );
-      getMedia( $account, json.token );
-    })
-    .catch(err => console.log(err));
-
-  };
-
-  //////////////////////////////////////////////////////////
-  ////  Get Feeds
-  //////////////////////////////////////////////////////////
-
-  const getFeeds = () => {
-
-    let elements = document.getElementsByClassName('js--instagram-feed');
-
-    for ( let i = 0; i < elements.length; i++ ) {
-      let limit = parseInt( elements[i].getAttribute('data-instagram-feed-post-limit') ) || 6;
-      let account = elements[i].getAttribute('data-instagram-feed-account-name') || false;
-      if ( account && limit ) {
-        feeds[account] = { element: elements[i], limit: limit };
-      }
-    }
-
-    if ( debug ) console.log( 'getFeeds() complete', feeds );
-
-  };
-
-  //////////////////////////////////////////////////////////
-  ////  Main
-  //////////////////////////////////////////////////////////
-
-  const main = () => {
-
-    getFeeds();
-
-    for ( const account in feeds ) {
-
-      if ( tools.getLocalStorageValueByKey(`very-polite-instagram-feed--${account}`)) {
-
-        let feedData = JSON.parse( tools.getLocalStorageValueByKey(`very-polite-instagram-feed--${account}`) );
-        let millisecondsDifference = Date.now() - feedData.date;
-        let minutesDifference = ( millisecondsDifference / 60000 ).toFixed(2);
-
-        if ( minutesDifference > 30 ) {
-          getToken( account );
         } else {
-          if ( debug ) console.log( 'localStorage fired!' );
-          printMedia( feedData.data, account );
-        }
+          asyncGetToken( feed.account ).then( data => {
+            asyncGetMedia( data.token ).then( result => {
 
-      } else {
-        getToken( account );
+              feed.items = result.data;
+              Tools.setLocalStorageDataByKey( feed.local_storage.name, JSON.stringify({ account: feed.account, date: Date.now(), items: feed.items }) );
+              Render.instagramFeed( feed );
+
+            });
+          });
+        }
       }
 
-    }
+    });
 
-  };
+  if ( config.debug ) console.log(`[ ${config.name} v.${config.version} complete ]`);
+};
 
-  //////////////////////////////////////////////////////////
-  ////  Public Method | Initialize
-  //////////////////////////////////////////////////////////
-
-  const init = () => {
-    if ( debug ) console.log( '[ InstagramFeed.init() ] Start' );
-    main();
-    if ( debug ) console.log( '[ InstagramFeed.init() ] End' );
-  };
-
-  //////////////////////////////////////////////////////////
-  ////  Returned Methods
-  //////////////////////////////////////////////////////////
-
-  return {
-    info,
-    init
-  };
-
-});
+export default { init };

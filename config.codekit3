@@ -310,6 +310,17 @@
       "sC" : 3,
       "tS" : 1
     },
+    "\/assets\/region.min.js" : {
+      "bF" : 3,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/assets\/region.min.min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 1
+    },
     "\/assets\/screenshot.png" : {
       "ft" : 32768,
       "iS" : 203621,
@@ -386,6 +397,17 @@
       "oA" : 0,
       "oAP" : "\/assets\/SorrySans-BoldExtended.woff2",
       "oF" : 0
+    },
+    "\/assets\/stockists.min.js" : {
+      "bF" : 3,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/assets\/stockists.min.min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 1
     },
     "\/assets\/style.css" : {
       "aP" : 1,
@@ -618,6 +640,28 @@
       "sC" : 3,
       "tS" : 1
     },
+    "\/js\/modules\/regions.js" : {
+      "bF" : 3,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/regions.min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 1
+    },
+    "\/js\/modules\/render.js" : {
+      "bF" : 3,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/render.min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 1
+    },
     "\/js\/modules\/scrolling.js" : {
       "bF" : 3,
       "ft" : 64,
@@ -625,6 +669,28 @@
       "mi" : 1,
       "oA" : 1,
       "oAP" : "\/assets\/scrolling.min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 1
+    },
+    "\/js\/modules\/stockists.js" : {
+      "bF" : 3,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/stockists.min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 1
+    },
+    "\/js\/modules\/templates.js" : {
+      "bF" : 3,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/templates.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 1
