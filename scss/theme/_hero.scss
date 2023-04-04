@@ -3,28 +3,10 @@
 .hero {
 
   text-align: center;
-  //font-size: min( 80px, 13.5vw );
+  font-size: min( 115px, 13vw );
 
   &__heading {
-    //font-size: inherit;
-  }
-
-  @include breakpoint(lg) {
-
-    //font-size: 90px;
-
-  }
-
-  @include breakpoint(xl) {
-
-    //font-size: 100px;
-
-  }
-
-  @include breakpoint(xxl) {
-
-    //font-size: 110px;
-
+    font-size: inherit;
   }
 
 }

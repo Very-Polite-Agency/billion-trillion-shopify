@@ -218,7 +218,7 @@
     &__city {
       padding: 18px var(--theme-layout--container-padding);
       font-size: 44px;
-      font-size: min(60px, 3.4vw);
+      font-size: min(55px, 3.4vw);
     }
 
     &__listing {
@@ -228,11 +228,11 @@
     &__location {
       &-address {
         font-size: 21px * 0.7;
-        font-size: min(21px, 1.5vw);
+        font-size: min(18px, 1.5vw);
       }
       &-name {
         font-size: 21px;
-        font-size: min(30px, 2.1vw);
+        font-size: min(28px, 2.1vw);
       }
     }
 
@@ -277,7 +277,7 @@
       }
       &-title {
         font-size: 64px;
-        font-size: 5.5vw;
+        font-size:min( 95px, 5.5vw );
       }
     }
 
