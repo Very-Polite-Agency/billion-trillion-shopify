@@ -312,7 +312,7 @@
           "type": "media",
           "settings": {
             "video": "https:\/\/vimeo.com\/807038595",
-            "media_aspect_ratio": "16\/9",
+            "media_aspect_ratio": "304\/540",
             "media_aspect_ratio_mobile": "",
             "media_aspect_ratio_desktop": "",
             "media_type": "video"
