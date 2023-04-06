@@ -67,6 +67,7 @@
             "title": "Saskatchewan",
             "country": "Canada",
             "population": 1174000,
+            "total_area": 0,
             "coordinates": "54°N -105°W",
             "smells_like": "o123-11029-DF",
             "background": "lime"
@@ -79,6 +80,7 @@
             "title": "California",
             "country": "USA",
             "population": 39185605,
+            "total_area": 423970,
             "coordinates": "37° N, 119° W",
             "smells_like": "Victory",
             "background": "lemon"
