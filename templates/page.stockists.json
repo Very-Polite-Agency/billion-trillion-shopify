@@ -76,7 +76,8 @@
         "de93916c-e59b-4308-97ec-f36509496197": {
           "type": "region",
           "settings": {
-            "title": "Califorina",
+            "image": "shopify:\/\/shop_images\/santa-cruz--cropped.png",
+            "title": "California",
             "country": "USA",
             "population": "39,185 m",
             "total_area": "423,970",
