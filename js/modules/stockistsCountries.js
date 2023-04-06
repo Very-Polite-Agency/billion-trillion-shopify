@@ -24,7 +24,23 @@ const init = () => {
   if ( config.debug ) console.log(`[ ${config.name} v.${config.version} initialized ]`);
     elements.forEach( element => {
 
+      let elementID = element.id || 'not-set';
       let country = element.dataset.regionCountry || '';
+      let population = parseInt(element.dataset.regionPopulation || 0);
+      let total_area = parseInt(element.dataset.regionTotalArea || 0);
+
+      let region_nodes = {
+        population: document.getElementById(`${elementID}--population`) || false,
+        total_area: document.getElementById(`${elementID}--total-area`) || false,
+      };
+
+      if ( region_nodes.population ) {
+        region_nodes.population.innerHTML = `${population.toLocaleString("de-DE").substr(0,5)} m`;
+      }
+
+      if ( region_nodes.total_area ) {
+        region_nodes.total_area.innerHTML = `${total_area.toLocaleString("en-US")/1000}`;
+      }
 
       if ( Tools.localStorageAvailable() ) {
 

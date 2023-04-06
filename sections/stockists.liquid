@@ -46,16 +46,17 @@
             assign region_id = 'stockists-region--' | append: block.id
             assign region_image = block.settings.image | default: false
             assign region_population = block.settings.population | default: 0
-            assign region_population_int = region_population | plus: 0
             assign region_smells_like = block.settings.smells_like | default: ''
             assign region_title = block.settings.title | default: ''
-            assign region_total_area = block.settings.total_area | default: ''
+            assign region_total_area = block.settings.total_area | default: 0
           -%}
 
           <div
             class="{{ section_name }}__region text--dark text--uppercase js--region"
             data-region="{{ region_title }}"
             data-region-country="{{ region_country }}"
+            data-region-population="{{ region_population }}"
+            data-region-total-area="{{ region_total_area }}"
             id="{{ region_id }}"
             role="listitem"
           >
@@ -82,13 +83,17 @@
               <div class="{{ section_name }}__region-stats-grid">
                 <div class="{{ section_name }}__region-stats-column">
                   <span class="{{ section_name }}__region-stats-label text--secondary">Population</span>
-                  <span class="{{ section_name }}__region-stats-value">{{ region_population }}</span>
+                  <span class="{{ section_name }}__region-stats-value" id="{{ region_id }}--population">
+                    <!-- Inject JavaScript Here... -->
+                  </span>
                 </div>
               </div>
               <div class="{{ section_name }}__region-stats-grid two-column">
                 <div class="{{ section_name }}__region-stats-column">
                   <span class="{{ section_name }}__region-stats-label text--secondary">Total Area</span>
-                  <span class="{{ section_name }}__region-stats-value">{{ region_total_area }} KM&sup2;</span>
+                  <span class="{{ section_name }}__region-stats-value" id="{{ region_id }}--total-area">
+                    <!-- Inject JavaScript Here... -->
+                  </span>
                 </div>
                 <div class="{{ section_name }}__region-stats-column">
                   <span class="{{ section_name }}__region-stats-label text--secondary">Coordinates</span>
