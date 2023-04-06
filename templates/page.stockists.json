@@ -78,6 +78,7 @@
             "image": "shopify:\/\/shop_images\/santa-cruz--cropped.png",
             "title": "California",
             "country": "USA",
+            "population": 39185605,
             "coordinates": "37° N, 119° W",
             "smells_like": "Victory",
             "background": "lemon"
