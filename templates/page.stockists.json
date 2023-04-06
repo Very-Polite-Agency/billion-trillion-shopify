@@ -72,12 +72,25 @@
             "smells_like": "o123-11029-DF",
             "background": "lime"
           }
+        },
+        "de93916c-e59b-4308-97ec-f36509496197": {
+          "type": "region",
+          "settings": {
+            "title": "Califorina",
+            "country": "USA",
+            "population": "39,185 m",
+            "total_area": "423,970",
+            "coordinates": "",
+            "smells_like": "",
+            "background": "orange"
+          }
         }
       },
       "block_order": [
         "template--15945343893688__b72adf5f-b6a8-4ece-aa2d-99b4a0444c12-168056025736f01098-0",
         "ead8acec-eb00-4a00-b8ef-4bdc90a1ba70",
-        "30030d60-12ee-434a-886d-d344f72ae585"
+        "30030d60-12ee-434a-886d-d344f72ae585",
+        "de93916c-e59b-4308-97ec-f36509496197"
       ],
       "settings": {
         "anchor_id": "",
