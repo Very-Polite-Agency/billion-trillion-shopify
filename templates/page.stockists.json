@@ -40,8 +40,8 @@
             "image": "shopify:\/\/shop_images\/BT--stockists--BC_3x_dfe7204f-8f0f-4558-8660-23079a0561fb.png",
             "title": "British Columbia",
             "country": "Canada",
-            "population": "5.071 m",
-            "total_area": "944,735 ",
+            "population": 5071000,
+            "total_area": 944735,
             "coordinates": "54°N 125°W",
             "smells_like": "Exoplanet NX-09-e2",
             "background": "orange"
@@ -53,8 +53,6 @@
             "image": "shopify:\/\/shop_images\/BT--stockists--AB_3x_7484f1db-9b1f-459f-b5f0-25cea03970cd.png",
             "title": "Alberta",
             "country": "Canada",
-            "population": "4.371 m",
-            "total_area": "661,848",
             "coordinates": "54°N -115°W",
             "smells_like": "02-n2o-Kafta",
             "background": "mango"
@@ -66,8 +64,6 @@
             "image": "shopify:\/\/shop_images\/BT--stockists--SK_3x_68500ac1-7986-425d-b1c5-72ec1309a239.png",
             "title": "Saskatchewan",
             "country": "Canada",
-            "population": "1.174 m",
-            "total_area": "651,900",
             "coordinates": "54°N -105°W",
             "smells_like": "o123-11029-DF",
             "background": "lime"
@@ -79,8 +75,6 @@
             "image": "shopify:\/\/shop_images\/santa-cruz--cropped.png",
             "title": "California",
             "country": "USA",
-            "population": "39,185 m",
-            "total_area": "423,970",
             "coordinates": "37° N, 119° W",
             "smells_like": "Victory",
             "background": "lemon"
