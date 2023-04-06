@@ -8,7 +8,7 @@ const elements = document.querySelectorAll( '.js--region' ) || [];
 const local_storage_key = 'BT--stockist-countries';
 
 const asynGetCountryData = async ( country = '' ) => {
-  return await fetch( `https://api.api-ninjas.com/v1/country?name=${country}&max_population`, {
+  return await fetch( `https://api.api-ninjas.com/v1/country?name=${country}`, {
     method: 'GET',
     headers: { 'X-Api-Key': 'pNhvQLUqaHbTbjh+2kTRxA==eULKvCq9hAj06ceu' }
   })
