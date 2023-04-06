@@ -73,7 +73,6 @@ const getCodeFromName = ( name = '' ) => {
 
   for ( let i = 0; i < regions.length; i++ ) {
     if ( regions[i].name === name ) {
-      console.log( 'getCodeFromName', regions[i].code );
       return regions[i].code;
     }
   }

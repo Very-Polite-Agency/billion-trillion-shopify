@@ -2,13 +2,15 @@ import Credits from './modules/credits';
 import Forms from './modules/forms';
 import Gliders from './modules/gliders';
 import Scrolling from './modules/scrolling';
-import Stockists from './modules/stockists';
+import StockistsCountries from './modules/stockistsCountries';
+import StockistsLocations from './modules/stockistsLocations';
 import Tools from './modules/tools';
 
 Credits.init();
 Forms.init();
 Scrolling.init();
-Stockists.init();
+StockistsCountries.init();
+StockistsLocations.init();
 
 AOS.init({
   offset: 150,                // offset (in px) from the original trigger point

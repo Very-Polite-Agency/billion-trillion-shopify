@@ -52,7 +52,13 @@
             assign region_total_area = block.settings.total_area | default: ''
           -%}
 
-          <div class="{{ section_name }}__region text--dark text--uppercase" data-region="{{ region_title | handle }}" id="{{ region_id }}" role="listitem">
+          <div
+            class="{{ section_name }}__region text--dark text--uppercase js--region"
+            data-region="{{ region_title }}"
+            data-region-country="{{ region_country }}"
+            id="{{ region_id }}"
+            role="listitem"
+          >
 
             {%- style -%}
               {%
@@ -97,7 +103,7 @@
               </div>
             </div>
 
-            <div class="{{ section_name }}__region-locations text--primary js--stockist-region" data-region-title="{{ region_title  }}">
+            <div class="{{ section_name }}__region-locations text--primary js--stockist-region" data-region="{{ region_title  }}">
               <!-- Inject JavaScript Here... -->
             </div>
 

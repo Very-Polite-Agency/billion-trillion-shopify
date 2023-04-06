@@ -684,13 +684,24 @@
       "sC" : 3,
       "tS" : 1
     },
-    "\/js\/modules\/stockists.js" : {
+    "\/js\/modules\/stockistsCountries.js" : {
       "bF" : 3,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 1,
-      "oAP" : "\/assets\/stockists.min.js",
+      "oAP" : "\/assets\/stockistsCountries.min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 1
+    },
+    "\/js\/modules\/stockistsLocations.js" : {
+      "bF" : 3,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/stockistsLocations.min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 1

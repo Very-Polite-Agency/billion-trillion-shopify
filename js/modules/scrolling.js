@@ -1,6 +1,6 @@
 import Tools from 'tools';
 
-const config = { debug: true, name: 'scrolling.js', version: '1.0' };
+const config = { debug: false, name: 'scrolling.js', version: '1.0' };
 const elements = document.querySelectorAll( 'body, footer, header, main' ) || [];
 const classes = {
   atTop: 'scroll-position--at-top',

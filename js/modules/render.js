@@ -3,27 +3,32 @@ import Tools from 'tools';
 
 const config = { debug: false, name: 'render.js', version: '1.0' };
 
-const stockistRegion = ( element = false, stockists = [] ) => {
-  if ( element && stockists.length ) {
+const stockistCountryPopulationGraph = ( element = false, name = '', population = 0 ) => {
+  console.log( 'stockistCountryPopulationGraph() ', element, name, population );
+};
+
+const stockistLocationByRegion = ( element = false, stockist_locations = [] ) => {
+
+  if ( element && stockist_locations.length ) {
 
     let block_name = 'stockists';
-    let region = element.dataset.regionTitle || '';
-    let stores_by_region = stockists.filter( store => ( store.region === region ) );
-    let cities_by_region = [...new Set(stores_by_region.map(({ city }) => city))].sort();
+    let region = element.dataset.region || '';
+    let locations_by_region = stockist_locations.filter( location => location.region === region && location.hidden !== 'TRUE' );
+    let cities_by_region = [...new Set(locations_by_region.map(({ city }) => city))].sort();
     let template = '';
 
     if ( cities_by_region.length ) {
       cities_by_region.forEach( city => {
 
-        let stores_by_city = stores_by_region.filter( store => ( store.city === city ) );
-        let stores_by_city_sorted = stores_by_city.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+        let locations_by_city = locations_by_region.filter( location => ( location.city === city ) );
+        let locations_by_city_sorted = locations_by_city.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
 
         template += `<h3 class="${block_name}__city">${city}</h3>`;
 
-        if ( stores_by_city_sorted.length ) {
+        if ( locations_by_city_sorted.length ) {
           template += `<div class="${block_name}__listing">`;
-            for ( let j = 0; j < stores_by_city_sorted.length; j++ ) {
-              template += Templates.stockistLocation( stores_by_city_sorted[j] );
+            for ( let j = 0; j < locations_by_city_sorted.length; j++ ) {
+              template += Templates.stockistLocation( locations_by_city_sorted[j] );
             }
           template += `</div>`;
         }
@@ -42,4 +47,4 @@ const stockistRegion = ( element = false, stockists = [] ) => {
   }
 };
 
-export default { stockistRegion };
+export default { stockistCountryPopulationGraph, stockistLocationByRegion };
