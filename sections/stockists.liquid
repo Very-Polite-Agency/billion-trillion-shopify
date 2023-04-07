@@ -80,10 +80,15 @@
             </div>
 
             <div class="{{ section_name }}__region-stats text--primary">
-              <div class="{{ section_name }}__region-stats-grid">
-                <div class="{{ section_name }}__region-stats-column">
+              <div class="{{ section_name }}__region-stats-grid two-column--flex">
+                <div class="{{ section_name }}__region-stats-column width-auto">
                   <span class="{{ section_name }}__region-stats-label text--secondary">Population</span>
                   <span class="{{ section_name }}__region-stats-value" id="{{ region_id }}--population">
+                    <!-- Inject JavaScript Here... -->
+                  </span>
+                </div>
+                <div class="{{ section_name }}__region-stats-column width-flex-grow">
+                  <span class="{{ section_name }}__region-stats-scale" id="{{ region_id }}--scale">
                     <!-- Inject JavaScript Here... -->
                   </span>
                 </div>

@@ -39,7 +39,7 @@ const init = () => {
       }
 
       if ( region_nodes.total_area ) {
-        region_nodes.total_area.innerHTML = `${total_area.toLocaleString("en-US")/1000}`;
+        region_nodes.total_area.innerHTML = `${total_area.toLocaleString("en-US")} KM&sup2;`;
       }
 
       if ( Tools.localStorageAvailable() ) {

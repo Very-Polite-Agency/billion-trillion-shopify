@@ -126,6 +126,13 @@
       &-column {
         background: var(--theme-colour--lemon);
         padding: 14px var(--theme-layout--container-padding);
+        &.width-auto {
+          width: auto;
+        }
+        &.width-flex-grow {
+          flex: 1;
+          padding-left: 5%;
+        }
       }
       &-grid {
         width: 100%;
@@ -134,11 +141,32 @@
           grid-template-columns: repeat( 2, 1fr );
           gap: var(--theme-border--width);
         }
+        &.two-column--flex {
+          display: flex;
+          width: 100%;
+        }
       }
       &-label {
         font-size: 12px;
         font-size: min(20px, 3.4vw);
         margin-bottom: 6px;
+      }
+      &-scale {
+        display: inline-flex;
+        gap: 4px;
+        width: 100%;
+        flex: 1;
+        height: 100%;
+        align-items: center;
+        &-item {
+          background: black;
+          opacity: 0.3333;
+          height: 8vw;
+          flex-grow: 1;
+          &.active {
+            opacity: 1;
+          }
+        }
       }
       &-value {
         font-size: 21px;
@@ -164,6 +192,15 @@
       &-stats {
         &-column {
           padding: 16px var(--theme-layout--container-padding);
+          &.width-flex-grow {
+            padding-left: 7.5%;
+          }
+        }
+        &-scale {
+          gap: 6px;
+          &-item {
+            height: 8.5vw;
+          }
         }
       }
     }
@@ -183,6 +220,15 @@
       &-stats {
         &-column {
           padding: 18px var(--theme-layout--container-padding);
+          &.width-flex-grow {
+            padding-left: 10%;
+          }
+        }
+        &-scale {
+          gap: 8px;
+          &-item {
+            height: 9vw;
+          }
         }
       }
     }
@@ -223,6 +269,15 @@
           flex-flow: column;
           justify-content: center;
           align-items: flex-start;
+          &.width-flex-grow {
+            padding-left: 10%;
+          }
+        }
+        &-scale {
+          gap: 6px;
+          &-item {
+            height: 4.5vw;
+          }
         }
       }
       &-country {

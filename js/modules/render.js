@@ -4,7 +4,27 @@ import Tools from 'tools';
 const config = { debug: false, name: 'render.js', version: '1.0' };
 
 const stockistCountryPopulationGraph = ( element = false, name = '', population = 0 ) => {
-  console.log( 'stockistCountryPopulationGraph() ', element, name, population );
+
+  let countryPopulation = population * 1000;
+  let regionID = element.id || 'not-set';
+  let region = element.dataset.region || '';
+  let regionPopulation = parseInt(element.dataset.regionPopulation || 0);
+  let regionPopulationPercent = (regionPopulation/countryPopulation).toFixed(2)
+  let regionScaleElement = document.getElementById(`${regionID}--scale`) || false;
+  let scalelimit = 13;
+  let scalePercent = Math.ceil(scalelimit * regionPopulationPercent);
+  let template = '';
+
+  for ( let i = 0; i < scalelimit; i++ ) {
+    template += `<div class="stockists__region-stats-scale-item${ i < scalePercent ? " active" : "" }"></div>`;
+  }
+
+  regionScaleElement.innerHTML = template;
+
+  if ( regionScaleElement ) {
+    console.log({ region, regionPopulation, regionPopulationPercent, countryPopulation, scalelimit, scalePercent });
+  }
+
 };
 
 const stockistLocationByRegion = ( element = false, locations = [] ) => {
