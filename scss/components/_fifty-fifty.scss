@@ -1,3 +1,4 @@
+@use "../utils/mixins/border" as *;
 @use "../utils/mixins/breakpoint" as *;
 @use "../utils/mixins/font" as *;
 
@@ -18,6 +19,26 @@
     overflow: hidden;
   }
 
+  &__heading {
+    &.lg {
+
+    }
+    &.mg {
+
+    }
+    &.sm {
+
+    }
+  }
+
+  &__image {
+    &.with-border {
+      @include border-solid(var(--theme-border--width), 'black' );
+      border-radius: var(--theme-border--radius);
+      overflow: hidden;
+    }
+  }
+
   &__item {
     width: 100%;
     height: 100%;
@@ -27,6 +48,9 @@
     &.image {
       order: 1;
     }
+    &.text {
+      order: 2;
+    }
   }
 
   @include breakpoint(sm) {}
@@ -34,6 +58,18 @@
   @include breakpoint(md) {}
 
   @include breakpoint(lg) {
+
+    &__heading {
+      &.lg {
+        font-size: min(58px, 9.5vw);
+      }
+      &.mg {
+        font-size: min(58px, 9.5vw);
+      }
+      &.sm {
+        font-size: min(58px, 9.5vw);
+      }
+    }
 
     &__item {
       &.image,

@@ -29,23 +29,33 @@
     {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
       <div class="{{ section_name }}__main text--uppercase">
         {%- for block in section_blocks -%}
-          <div class="{{ section_name }}__item {{ block.type }}" id="{{ block.id }}">
 
-            {%- style -%}
-              #{{ block.id }} .{{ section_name }}__content {
-                width: {{  block.settings.width }}%;
+          {% assign block_id = 'block--' | append: block.id %}
+          {%- style -%}
+            #{{ block_id }} .{{ section_name }}__content {
+              text-align: {{ block.settings.text_align_mobile | default: 'initial' }};
+              width: {{ block.settings.width }}%;
+            }
+            @media screen and (min-width: 992px) {
+              #{{ block_id }} .{{ section_name }}__content {
+                text-align: {{ block.settings.text_align_desktop | default: 'initial' }};
               }
-              {%-
-                render 'element-styles',
-                  background: block.settings.background,
-                  background_image: block.settings.background_image,
-                  background_image_repeat: block.settings.background_image_repeat,
-                  background_image_size: block.settings.background_image_size,
-                  id: block.id,
-                  padding_bottom: block.settings.padding_bottom,
-                  padding_top: block.settings.padding_top
-              -%}
-            {%- endstyle -%}
+            }
+            {%-
+              render 'element-styles',
+                background: block.settings.background,
+                background_image: block.settings.background_image,
+                background_image_position_desktop: block.settings.background_image_position_desktop,
+                background_image_position_mobile: block.settings.background_image_position_mobile,
+                background_image_repeat: block.settings.background_image_repeat,
+                background_image_size: block.settings.background_image_size,
+                id: block_id,
+                padding_bottom: block.settings.padding_bottom,
+                padding_top: block.settings.padding_top
+            -%}
+          {%- endstyle -%}
+
+          <div class="{{ section_name }}__item {{ block.type }}" id="{{ block_id }}">
 
             <div class="{{ section_name }}__content">
               {% case block.type %}
@@ -61,15 +71,13 @@
 
                   {%- liquid
                     assign heading = block.settings.heading | default: ''
+                    assign heading_size = block.settings.heading_size | default: 'md'
                     assign message = block.settings.message | default: ''
                     assign message_size = block.settings.message_size | default: 'sm'
                     assign subheading = block.settings.subheading | default: ''
                   -%}
                   {% if heading != blank %}
-                    <h2 class="{{ section_name }}__heading text--primary">{{ heading }}</h2>
-                  {% endif %}
-                  {% if subheading != blank %}
-                    <strong class="{{ section_name }}__subheading text--primary">{{ subheading }}</strong>
+                    <h2 class="{{ section_name }}__heading text--primary heading--{{ heading_size }}-fluid">{{ heading }}</h2>
                   {% endif %}
                   {% if message != blank %}
                     <div class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}">{{ message }}</div>
@@ -284,9 +292,15 @@
           "id": "heading"
         },
         {
-          "label": "Subheading",
-          "type": "text",
-          "id": "subheading"
+          "label": "Heading Size",
+          "type": "select",
+          "options": [
+            { "label": "Large", "value": "lg" },
+            { "label": "Medium", "value": "md" },
+            { "label": "Small", "value": "sm" }
+          ],
+          "default": "sm",
+          "id": "heading_size"
         },
         {
           "label": "Message",
