@@ -152,8 +152,8 @@
           "settings": {
             "heading": "",
             "subheading": "",
-            "message": "",
-            "message_size": "sm",
+            "message": "<p>That’s why sake is the perfect base for Billion Trillion Sake Fizz. The use of koji in sake provides probiotics that benefit that galaxy of you!<\/p>",
+            "message_size": "md",
             "background": "lemon",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
