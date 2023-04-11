@@ -66,7 +66,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/BT--product-image--hoodie_3x_f7492b06-d478-4ecd-a9c1-ff29c29ed56f.png",
             "image_border": false,
-            "image_badge": "none",
+            "image_badge": "hot",
             "background": "none",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
@@ -86,6 +86,7 @@
             "message_size": "sm",
             "cta_link": "shopify:\/\/products\/bt-hoodie",
             "cta_type": "shop-now",
+            "cta_colour": "white",
             "background": "orange",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
