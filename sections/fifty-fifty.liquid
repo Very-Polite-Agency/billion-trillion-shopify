@@ -77,7 +77,7 @@
                     assign subheading = block.settings.subheading | default: ''
                   -%}
                   {% if heading != blank %}
-                    <h2 class="{{ section_name }}__heading text--primary heading--{{ heading_size }}-fluid">{{ heading }}</h2>
+                    <h2 class="{{ section_name }}__heading heading--primary heading--{{ heading_size }}-fluid">{{ heading }}</h2>
                   {% endif %}
                   {% if message != blank %}
                     <div class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}">{{ message }}</div>
@@ -250,7 +250,7 @@
           "max": 200,
           "step": 4,
           "unit": "px",
-          "default": 36,
+          "default": 0,
           "id": "padding_top"
         },
         {
@@ -260,7 +260,7 @@
           "max": 200,
           "step": 4,
           "unit": "px",
-          "default": 36,
+          "default": 0,
           "id": "padding_bottom"
         },
         {
@@ -412,7 +412,7 @@
           "max": 200,
           "step": 4,
           "unit": "px",
-          "default": 36,
+          "default": 56,
           "id": "padding_top"
         },
         {
@@ -422,7 +422,7 @@
           "max": 200,
           "step": 4,
           "unit": "px",
-          "default": 36,
+          "default": 56,
           "id": "padding_bottom"
         },
         {
