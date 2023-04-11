@@ -92,20 +92,24 @@
     "411b7388-d5bb-4034-8a25-531562e0b7cf": {
       "type": "featured-yuzu-sake-fizz",
       "blocks": {
-        "template--15945343828152__411b7388-d5bb-4034-8a25-531562e0b7cf-16796069829fed2a66-0": {
-          "type": "media",
+        "50208635-a829-434f-af68-fe75b0020ded": {
+          "type": "image",
           "settings": {
           }
         },
-        "template--15945343828152__411b7388-d5bb-4034-8a25-531562e0b7cf-16796069829fed2a66-1": {
-          "type": "content",
+        "d7c5692d-167e-46fb-8f7b-29e8867a03db": {
+          "type": "text",
           "settings": {
+            "heading": "{{ section.settings.product.title }}",
+            "heading_size": "sm",
+            "message": "<p>Mango ultrices ornare orci ac malesuada. Phasellus fringilla magna at nisi tincidunt, sed fermentum elit pulvinar. Sed elementum, mi sit amet vulputate dignissim, lacus lacus porta dui, sed fermentum ex dui eu <br\/>massa. Cras ut aliquet nisi. Quisque ut.<\/p>",
+            "message_size": "sm"
           }
         }
       },
       "block_order": [
-        "template--15945343828152__411b7388-d5bb-4034-8a25-531562e0b7cf-16796069829fed2a66-0",
-        "template--15945343828152__411b7388-d5bb-4034-8a25-531562e0b7cf-16796069829fed2a66-1"
+        "50208635-a829-434f-af68-fe75b0020ded",
+        "d7c5692d-167e-46fb-8f7b-29e8867a03db"
       ],
       "settings": {
         "product": "mango-yuzu-sake-fizz",
