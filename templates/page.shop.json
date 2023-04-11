@@ -64,6 +64,7 @@
         "template--15945343860920__094a4c9d-c840-465f-b6c9-cdb38c8fc116-1681251514c35eb61d-0": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/BT--product-image--hoodie_3x_f7492b06-d478-4ecd-a9c1-ff29c29ed56f.png",
             "image_border": false,
             "image_badge": "none",
             "background": "none",
@@ -83,8 +84,8 @@
             "heading_size": "sm",
             "message": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy <\/p>",
             "message_size": "sm",
-            "cta_link": "",
-            "cta_type": "learn-more",
+            "cta_link": "shopify:\/\/products\/bt-hoodie",
+            "cta_type": "shop-now",
             "background": "orange",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
