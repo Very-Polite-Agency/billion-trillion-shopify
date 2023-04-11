@@ -54,13 +54,15 @@
             "heading_size": "sm",
             "message": "<p>The body contains trillions of microorganisms — so many they outnumber an Earth person's cells by 10 to 1. Scientist have discovered the largest alien festival is in the gut. And although you might be concerned by the alien takeover, the trillions of novel bacteria and genes in your microbiome are the body's greatest source of health. This isn't Body Snatchers.<\/p>",
             "message_size": "sm",
+            "cta_link": "",
+            "cta_type": "learn-more",
             "background": "lime",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
             "background_image_repeat": "no-repeat",
             "background_image_size": "cover",
-            "padding_top": 52,
-            "padding_bottom": 52,
+            "padding_top": 56,
+            "padding_bottom": 56,
             "text_align_mobile": "center",
             "text_align_desktop": "center",
             "width": 85
@@ -70,7 +72,9 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/fifty-fifty-image_2x_69c4abf3-f3af-44b0-ac8f-b7256d419019.png",
-            "background": "orange",
+            "image_border": false,
+            "image_badge": "none",
+            "background": "none",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
             "background_image_repeat": "repeat",
@@ -87,6 +91,7 @@
         "template--15945343795384__176d8bdf-4176-44de-9bea-5ba964d51b3a-1681230579fd43286a-0"
       ],
       "settings": {
+        "product": "",
         "anchor_id": "",
         "border_top": true,
         "border_bottom": false
@@ -130,6 +135,8 @@
             "heading_size": "sm",
             "message": "<p>There are around 200 billion trillion stars in the universe (that you've found anyways), but that impressive number is comparable to the number of microbial genes in the Earth body (way to go human.) That's right, you've got a whole working universe gut!<\/p>",
             "message_size": "sm",
+            "cta_link": "",
+            "cta_type": "learn-more",
             "background": "image",
             "background_image": "shopify:\/\/shop_images\/tile-background_2x_8633724c-832c-4866-82a3-a03b9bfd94de.png",
             "background_image_position_mobile": "center center",
@@ -150,6 +157,8 @@
             "heading_size": "sm",
             "message": "<p>That’s why sake is the perfect base for Billion Trillion Sake Fizz. The use of koji in sake provides probiotics that benefit that galaxy of you!<\/p>",
             "message_size": "lg",
+            "cta_link": "",
+            "cta_type": "learn-more",
             "background": "lemon",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
@@ -168,6 +177,7 @@
         "88d808d5-c00e-44c4-b532-de94314978f3"
       ],
       "settings": {
+        "product": "",
         "anchor_id": "",
         "border_top": true,
         "border_bottom": false
@@ -180,6 +190,8 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/fifty-fifty-image-02B_2x_504edd0d-9345-4be6-b484-db792251ebaa.png",
+            "image_border": false,
+            "image_badge": "none",
             "background": "image",
             "background_image": "shopify:\/\/shop_images\/fifty-fifty-image-02A_2x_e44d07c9-c8e0-4b56-a812-59b503bd04af.png",
             "background_image_position_mobile": "center center",
@@ -199,6 +211,8 @@
             "heading_size": "sm",
             "message": "<p>There are around 200 billion trillion stars in the universe (that you've found anyways), but that impressive number is comparable to the number of microbial genes in the Earth body (way to go human.) That's right, you've got a whole working universe gut!<\/p>",
             "message_size": "sm",
+            "cta_link": "",
+            "cta_type": "learn-more",
             "background": "mango",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
@@ -217,6 +231,7 @@
         "template--15945343795384__e13ccefb-aaa8-42d1-9707-bd577fb79dd4-1681230579fd43286a-1"
       ],
       "settings": {
+        "product": "",
         "anchor_id": "",
         "border_top": true,
         "border_bottom": false
