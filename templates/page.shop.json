@@ -294,7 +294,7 @@
       ],
       "settings": {
         "anchor_id": "",
-        "border_top": false,
+        "border_top": true,
         "border_bottom": false
       }
     }
