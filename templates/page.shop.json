@@ -254,7 +254,7 @@
           "settings": {
             "heading": "Billy Trilly Crew",
             "heading_size": "sm",
-            "message": "",
+            "message": "<p>Ut nec aliquam nibh. Suspendisse ultricies dui eget nisl pellentesque, ut tincidunt nisi molestie. Aenean lobortis porttitor sem, vel egestas mauris.<\/p>",
             "message_size": "sm",
             "cta_link": "shopify:\/\/products\/bt-crewneck",
             "cta_type": "learn-more",
