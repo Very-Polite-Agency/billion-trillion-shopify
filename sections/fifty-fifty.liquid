@@ -61,15 +61,19 @@
               {% case block.type %}
                 {% when 'image' %}
 
-                  {% if block.settings.image %}
+                  {%- liquid
+                    assign image = block.settings.image | default: false
+                    assign image_border = block.settings.image_border | default: false
+                  -%}
+                  {% if image %}
                     {%- liquid
                       capture aos_attrs
                         render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-up'
                       endcapture
                       assign aos_delay = aos_delay | plus: aos_delay_increment
                     -%}
-                    <div class="{{ section_name }}__image{% if block.settings.border_enable %} with-border{% endif %}" {{ aos_attrs }}>
-                      {% render 'lazyload-image', image: block.settings.image %}
+                    <div class="{{ section_name }}__image{% if image_border %} with-border{% endif %}" {{ aos_attrs }}>
+                      {% render 'lazyload-image', image: image %}
                     </div>
                   {% endif %}
 
@@ -120,7 +124,12 @@
   "max_blocks": 2,
   "settings": [
     {
+      "content": "Context",
+      "type": "header"
+    },
+    {
       "label": "Product",
+      "info": "Select a product to narrow the context of the dynamically populated content.",
       "type": "product",
       "id": "product"
     },
@@ -170,6 +179,22 @@
           "id": "image"
         },
         {
+          "label": "Image Border",
+          "type": "checkbox",
+          "default": false,
+          "id": "image_border"
+        },
+        {
+          "label": "Image Badge",
+          "type": "select",
+          "options": [
+            { "label": "Hot", "value": "hot" },
+            { "label": "None", "value": "none" }
+          ],
+          "default": "none",
+          "id": "image_badge"
+        },
+        {
           "content": "Settings",
           "type": "header"
         },
@@ -181,10 +206,11 @@
             { "label": "Lemon", "value": "lemon" },
             { "label": "Lime", "value": "lime" },
             { "label": "Mango", "value": "mango" },
+            { "label": "None", "value": "none" },
             { "label": "Orange", "value": "orange" },
             { "label": "Strawberry", "value": "strawberry" }
           ],
-          "default": "orange",
+          "default": "none",
           "id": "background"
         },
         {
@@ -233,7 +259,7 @@
             { "label": "No Repeat", "value": "no-repeat" },
             { "label": "Repeat", "value": "repeat" }
           ],
-          "default": "repeat",
+          "default": "no-repeat",
           "id": "background_image_repeat"
         },
         {
@@ -342,6 +368,26 @@
           "id": "message_size"
         },
         {
+          "content": "Call to Action",
+          "type": "header"
+        },
+        {
+          "label": "CTA Link",
+          "type": "url",
+          "id": "cta_link"
+        },
+        {
+          "label": "CTA Type",
+          "type": "select",
+          "options": [
+            { "label": "Buy Now", "value": "buy-now" },
+            { "label": "Shop Now", "value": "shop-now" },
+            { "label": "Learn More", "value": "learn-more" }
+          ],
+          "default": "learn-more",
+          "id": "cta_type"
+        },
+        {
           "content": "Settings",
           "type": "header"
         },
@@ -405,7 +451,7 @@
             { "label": "No Repeat", "value": "no-repeat" },
             { "label": "Repeat", "value": "repeat" }
           ],
-          "default": "repeat",
+          "default": "no-repeat",
           "id": "background_image_repeat"
         },
         {
