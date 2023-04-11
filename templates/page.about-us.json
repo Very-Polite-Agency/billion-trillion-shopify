@@ -1,6 +1,7 @@
 {
   "order": [
     "hero",
+    "176d8bdf-4176-44de-9bea-5ba964d51b3a",
     "72081baf-4665-403a-b951-d8b6e7fb0752",
     "e13ccefb-aaa8-42d1-9707-bd577fb79dd4",
     "8c71606e-b66e-4609-a3c4-2319d29cc4d1",
@@ -40,6 +41,37 @@
         "height_desktop": "auto",
         "padding_top": 88,
         "padding_bottom": 88
+      }
+    },
+    "176d8bdf-4176-44de-9bea-5ba964d51b3a": {
+      "type": "fifty-fifty",
+      "blocks": {
+        "template--15945343795384__176d8bdf-4176-44de-9bea-5ba964d51b3a-1681230579fd43286a-1": {
+          "type": "text",
+          "settings": {
+          }
+        },
+        "template--15945343795384__176d8bdf-4176-44de-9bea-5ba964d51b3a-1681230579fd43286a-0": {
+          "type": "image",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343795384__176d8bdf-4176-44de-9bea-5ba964d51b3a-1681230579fd43286a-1",
+        "template--15945343795384__176d8bdf-4176-44de-9bea-5ba964d51b3a-1681230579fd43286a-0"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "72081baf-4665-403a-b951-d8b6e7fb0752": {
