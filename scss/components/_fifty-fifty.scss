@@ -6,9 +6,29 @@
 
   background: var(--theme-colour--black);
 
+  &__heading,
+  &__message {
+    & + .fifty-fifty__cta {
+      margin-top: min(32px, 10vw);
+    }
+  }
+
   &__content {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  &__cta {
+    &-button {
+      display: inline-flex;
+      width: auto;
+      height: min(78px, 11vw); // 50px;
+      img, svg {
+        display: block;
+        height: 100%;
+        width: auto;
+      }
+    }
   }
 
   &__main {
@@ -26,6 +46,18 @@
   }
 
   &__image {
+    &-badge {
+      transition: transform var(--theme-transition--duration);
+      position: absolute;
+      top: 7.5vw;
+      right: 7.5vw;
+      height: 95px;
+      img, svg {
+        display: block;
+        height: 100%;
+        width: auto;
+      }
+    }
     &.with-border {
       @include border-solid(var(--theme-border--width), 'black' );
       border-radius: var(--theme-border--radius);
@@ -47,15 +79,45 @@
     }
   }
 
-  @include breakpoint(sm) {}
+  @include breakpoint(sm) {
 
-  @include breakpoint(md) {}
+    &__image {
+      &-badge {
+        height: 115px;
+      }
+    }
+
+  }
+
+  @include breakpoint(md) {
+
+    &__image {
+      &-badge {
+        height: 135px;
+      }
+    }
+
+  }
 
   @include breakpoint(lg) {
+
+    &__cta {
+      &-button {
+        height: min(82px, 5.5vw);
+      }
+    }
 
     &__heading {
       & + .fifty-fifty__message {
         margin-top: 22px;
+      }
+    }
+
+    &__image {
+      &-badge {
+        top: 4.5vw;
+        right: 4.5vw;
+        height: 110px;
       }
     }
 
@@ -72,8 +134,24 @@
 
   }
 
-  @include breakpoint(xl) {}
+  @include breakpoint(xl) {
 
-  @include breakpoint(xxl) {}
+    &__image {
+      &-badge {
+        height: 135px;
+      }
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__image {
+      &-badge {
+        height: 155px;
+      }
+    }
+
+  }
 
 }

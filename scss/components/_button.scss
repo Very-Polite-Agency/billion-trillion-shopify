@@ -1,3 +1,5 @@
+@use 'sass:color';
+@use 'sass:map';
 @use '../utils/mixins/breakpoint' as *;
 @use '../utils/mixins/ui' as *;
 @use '../utils/variables' as *;
@@ -39,9 +41,9 @@
           fill: var(--theme-colour--#{$name});
         }
         &:hover {
-          opacity: var(--theme-transition--opacity);
+          opacity: 1;
           .button-fill {
-            fill: var(--theme-colour--#{$name});
+            fill: color.scale( $value, $lightness: -15%);
           }
         }
       }

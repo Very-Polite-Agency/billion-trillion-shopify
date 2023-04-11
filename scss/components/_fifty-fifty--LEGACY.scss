@@ -29,21 +29,6 @@
     padding-left: var(--theme-layout--gutter);
     padding-right: var(--theme-layout--gutter);
 
-    &-heading,
-    &-message {
-      & + .fifty-fifty__content-cta {
-        margin-top: min(32px, 10vw);
-      }
-    }
-
-    &-cta {
-      &-link{
-        display: block;
-        width: auto;
-        max-width: 450px;
-      }
-    }
-
     &-heading {
       font-size: min(58px, 9.5vw);
       line-height: 1.2;
@@ -63,16 +48,7 @@
     order: 1;
     position: relative;
     &-badge {
-      transition: transform var(--theme-transition--duration);
-      position: absolute;
-      top: 7.5vw;
-      right: 7.5vw;
-      height: 95px;
-      img, svg {
-        display: block;
-        height: 100%;
-        width: auto;
-      }
+
     }
     &-link {
       &:hover {
@@ -85,26 +61,6 @@
         }
       }
     }
-  }
-
-  @include breakpoint(sm) {
-
-    &__media {
-      &-badge {
-        height: 115px;
-      }
-    }
-
-  }
-
-  @include breakpoint(md) {
-
-    &__media {
-      &-badge {
-        height: 135px;
-      }
-    }
-
   }
 
   @include breakpoint(lg) {
