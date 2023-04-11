@@ -145,9 +145,9 @@
         "template--15945343795384__e13ccefb-aaa8-42d1-9707-bd577fb79dd4-1681230579fd43286a-1": {
           "type": "text",
           "settings": {
-            "heading": "",
+            "heading": "The Universal Recipe",
             "subheading": "",
-            "message": "",
+            "message": "<p>There are around 200 billion trillion stars in the universe (that you've found anyways), but that impressive number is comparable to the number of microbial genes in the Earth body (way to go human.) That's right, you've got a whole working universe gut!<\/p>",
             "message_size": "sm",
             "background": "lemon",
             "background_image_position_mobile": "center center",
