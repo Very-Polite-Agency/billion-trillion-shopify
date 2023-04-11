@@ -34,21 +34,40 @@
   {%- endstyle -%}
 
   <div class="{{ section_classes }}" id="{{ section_id }}">
-    {%- render 'bs-container', state: 'open', col: 'col-12', container: container -%}
+    {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
       <div class="{{ section_name }}__main">
         {%- for block in section_blocks -%}
+          <div class="{{ section_name }}__item {{ block.type }}" id="{{ block.id }}">
 
-          {%- liquid
-            assign block_id = block.id
-            assign block_type = block.type
-          -%}
-          <div class="{{ section_name }}__item {{ block_type }}" id="{{ block_id }}">
-            <h1>{{ block_type }}</h1>
+            {%- style -%}
+              {%
+                render 'element-styles',
+                  background: block.settings.background,
+                  background_image: block.settings.background_image,
+                  background_image_repeat: block.settings.background_image_repeat,
+                  background_image_size: block.settings.background_image_size,
+                  id: block.id,
+                  padding_bottom: block.settings.padding_bottom,
+                  padding_top: block.settings.padding_top
+              -%}
+            {%- endstyle -%}
+
+            <div class="{{ section_name }}__item-content {{ block.type }}">
+
+              {% case block.type %}
+                {% when 'image' %}
+
+
+
+                {% when 'text' %}
+              {% endcase %}
+
+            </div>
+
           </div>
-
         {%- endfor -%}
       </div>
-    {%- render 'bs-container', state: 'closed', col: 'col-12', container: container -%}
+    {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}
   </div>
 
 {%- endif -%}
@@ -169,30 +188,6 @@
       "type": "checkbox",
       "default": false,
       "id": "border_bottom"
-    },
-    {
-      "content": "Padding",
-      "type": "header"
-    },
-    {
-      "label": "Top Padding",
-      "type": "range",
-      "min": 0,
-      "max": 200,
-      "step": 4,
-      "unit": "px",
-      "default": 36,
-      "id": "padding_top"
-    },
-    {
-      "label": "Bottom Padding",
-      "type": "range",
-      "min": 0,
-      "max": 200,
-      "step": 4,
-      "unit": "px",
-      "default": 36,
-      "id": "padding_bottom"
     }
   ],
   "blocks": [
@@ -201,8 +196,143 @@
       "type": "image",
       "settings": [
         {
+          "content": "Content",
+          "type": "header"
+        },
+        {
+          "label": "Image",
+          "type": "image_picker",
+          "id": "image"
+        },
+        {
           "content": "Settings",
           "type": "header"
+        },
+        {
+          "label": "Background",
+          "type": "select",
+          "options": [
+            { "label": "Image", "value": "image" },
+            { "label": "Lemon", "value": "lemon" },
+            { "label": "Lime", "value": "lime" },
+            { "label": "Mango", "value": "mango" },
+            { "label": "Orange", "value": "orange" },
+            { "label": "Strawberry", "value": "strawberry" }
+          ],
+          "default": "orange",
+          "id": "background"
+        },
+        {
+          "label": "Background Image",
+          "type": "image_picker",
+          "id": "background_image"
+        },
+        {
+          "label": "Background Image Position (Mobile)",
+          "type": "select",
+          "options": [
+            { "label": "Top Left", "value": "top left" },
+            { "label": "Top Center", "value": "top center" },
+            { "label": "Top Right", "value": "top right" },
+            { "label": "Center Left", "value": "center left" },
+            { "label": "Center Center", "value": "center center" },
+            { "label": "Center Right", "value": "center right" },
+            { "label": "Bottom Left", "value": "bottom left" },
+            { "label": "Bottom Center", "value": "bottom center" },
+            { "label": "Bottom Right", "value": "bottom right" }
+          ],
+          "default": "center center",
+          "id": "background_image_position_mobile"
+        },
+        {
+          "label": "Background Image Position (Desktop)",
+          "type": "select",
+          "options": [
+            { "label": "Top Left", "value": "top left" },
+            { "label": "Top Center", "value": "top center" },
+            { "label": "Top Right", "value": "top right" },
+            { "label": "Center Left", "value": "center left" },
+            { "label": "Center Center", "value": "center center" },
+            { "label": "Center Right", "value": "center right" },
+            { "label": "Bottom Left", "value": "bottom left" },
+            { "label": "Bottom Center", "value": "bottom center" },
+            { "label": "Bottom Right", "value": "bottom right" }
+          ],
+          "default": "center center",
+          "id": "background_image_position_desktop"
+        },
+        {
+          "label": "Background Image Repeat",
+          "type": "select",
+          "options": [
+            { "label": "No Repeat", "value": "no-repeat" },
+            { "label": "Repeat", "value": "repeat" }
+          ],
+          "default": "repeat",
+          "id": "background_image_repeat"
+        },
+        {
+          "label": "Background Image Size",
+          "type": "select",
+          "options": [
+            { "label": "100px", "value": "100px" },
+            { "label": "200px", "value": "200px" },
+            { "label": "300px", "value": "300px" },
+            { "label": "400px", "value": "400px" },
+            { "label": "500px", "value": "500px" },
+            { "label": "Auto", "value": "auto" },
+            { "label": "Contain", "value": "contain" },
+            { "label": "Cover", "value": "cover" }
+          ],
+          "default": "cover",
+          "id": "background_image_size"
+        },
+        {
+          "content": "Border",
+          "type": "header"
+        },
+        {
+          "label": "Enable Border",
+          "type": "checkbox",
+          "default": false,
+          "id": "border_enable"
+        },
+        {
+          "content": "Padding",
+          "type": "header"
+        },
+        {
+          "label": "Top Padding",
+          "type": "range",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 36,
+          "id": "padding_top"
+        },
+        {
+          "label": "Bottom Padding",
+          "type": "range",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 36,
+          "id": "padding_bottom"
+        },
+        {
+          "content": "Width",
+          "type": "header"
+        },
+        {
+          "label": "Width",
+          "type": "range",
+          "min": 50,
+          "max": 100,
+          "step": 1,
+          "default": 100,
+          "id": "width"
         }
       ]
     },
@@ -211,8 +341,143 @@
       "type": "text",
       "settings": [
         {
+          "content": "Content",
+          "type": "header"
+        },
+        {
+          "label": "Heading",
+          "type": "text",
+          "id": "heading"
+        },
+        {
+          "label": "Subheading",
+          "type": "text",
+          "id": "subheading"
+        },
+        {
+          "label": "Message",
+          "type": "richtext",
+          "id": "message"
+        },
+        {
           "content": "Settings",
           "type": "header"
+        },
+        {
+          "label": "Background",
+          "type": "select",
+          "options": [
+            { "label": "Image", "value": "image" },
+            { "label": "Lemon", "value": "lemon" },
+            { "label": "Lime", "value": "lime" },
+            { "label": "Mango", "value": "mango" },
+            { "label": "Orange", "value": "orange" },
+            { "label": "Strawberry", "value": "strawberry" }
+          ],
+          "default": "lemon",
+          "id": "background"
+        },
+        {
+          "label": "Background Image",
+          "type": "image_picker",
+          "id": "background_image"
+        },
+        {
+          "label": "Background Image Position (Mobile)",
+          "type": "select",
+          "options": [
+            { "label": "Top Left", "value": "top left" },
+            { "label": "Top Center", "value": "top center" },
+            { "label": "Top Right", "value": "top right" },
+            { "label": "Center Left", "value": "center left" },
+            { "label": "Center Center", "value": "center center" },
+            { "label": "Center Right", "value": "center right" },
+            { "label": "Bottom Left", "value": "bottom left" },
+            { "label": "Bottom Center", "value": "bottom center" },
+            { "label": "Bottom Right", "value": "bottom right" }
+          ],
+          "default": "center center",
+          "id": "background_image_position_mobile"
+        },
+        {
+          "label": "Background Image Position (Desktop)",
+          "type": "select",
+          "options": [
+            { "label": "Top Left", "value": "top left" },
+            { "label": "Top Center", "value": "top center" },
+            { "label": "Top Right", "value": "top right" },
+            { "label": "Center Left", "value": "center left" },
+            { "label": "Center Center", "value": "center center" },
+            { "label": "Center Right", "value": "center right" },
+            { "label": "Bottom Left", "value": "bottom left" },
+            { "label": "Bottom Center", "value": "bottom center" },
+            { "label": "Bottom Right", "value": "bottom right" }
+          ],
+          "default": "center center",
+          "id": "background_image_position_desktop"
+        },
+        {
+          "label": "Background Image Repeat",
+          "type": "select",
+          "options": [
+            { "label": "No Repeat", "value": "no-repeat" },
+            { "label": "Repeat", "value": "repeat" }
+          ],
+          "default": "repeat",
+          "id": "background_image_repeat"
+        },
+        {
+          "label": "Background Image Size",
+          "type": "select",
+          "options": [
+            { "label": "100px", "value": "100px" },
+            { "label": "200px", "value": "200px" },
+            { "label": "300px", "value": "300px" },
+            { "label": "400px", "value": "400px" },
+            { "label": "500px", "value": "500px" },
+            { "label": "Auto", "value": "auto" },
+            { "label": "Contain", "value": "contain" },
+            { "label": "Cover", "value": "cover" }
+          ],
+          "default": "cover",
+          "id": "background_image_size"
+        },
+        {
+          "content": "Padding",
+          "type": "header"
+        },
+        {
+          "label": "Top Padding",
+          "type": "range",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 36,
+          "id": "padding_top"
+        },
+        {
+          "label": "Bottom Padding",
+          "type": "range",
+          "min": 0,
+          "max": 200,
+          "step": 4,
+          "unit": "px",
+          "default": 36,
+          "id": "padding_bottom"
+        },
+        {
+          "content": "Width",
+          "type": "header"
+        },
+        {
+          "label": "Width",
+          "type": "range",
+          "min": 50,
+          "max": 100,
+          "step": 1,
+          "default": 100,
+          "id": "width"
         }
       ]
     }
