@@ -39,8 +39,18 @@
             assign block_type = block.type
           -%}
 
-          <div class="{{ section_name }}__item {{ block_type }}" id="{{ block_id }}">
-            <div class="{{ section_name }}__content">
+          {% if 'text' == block_type %}
+            {%- style -%}
+              {%-
+                render 'element-styles',
+                  background: block.settings.background,
+                  id: block_id
+              -%}
+            {%- endstyle -%}
+          {%- endif -%}
+
+          <div class="fifty-fifty__item {{ block_type }}" id="{{ block_id }}">
+            <div class="fifty-fifty__content">
 
               {% case block_type %}
                 {% when 'image' %}
@@ -48,35 +58,35 @@
                   {%- liquid
                     assign image = block.settings.image | default: section.settings.product.featured_image
                   -%}
-                  {% if image %}
+                  {%- if image -%}
                     {%- liquid
                       capture aos_attrs
                         render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-up'
                       endcapture
                       assign aos_delay = aos_delay | plus: aos_delay_increment
                     -%}
-                    <div class="{{ section_name }}__image" {{ aos_attrs }}>
+                    <div class="fifty-fifty__image" {{ aos_attrs }}>
                       {% render 'lazyload-image', image: image %}
                     </div>
-                  {% endif %}
+                  {%- endif -%}
 
                 {% when 'text' %}
 
                   {%- liquid
 
                     assign cta_colour = block.settings.cta_colour | default: 'white'
-                    assign cta_link = block.settings.cta_link | default: ''
+                    assign cta_link = block.settings.cta_link | default: section_product.url
                     assign cta_link_target = '_self'
                     assign cta_type = block.settings.cta_type | default: 'learn-more'
 
-                    assign heading = block.settings.heading | default: ''
+                    assign heading = block.settings.heading | default: section_product.title
                     assign heading_size = block.settings.heading_size | default: 'md'
 
                     assign message = block.settings.message | default: ''
                     assign message_size = block.settings.message_size | default: 'sm'
 
-                    assign pairings = block.settings.pairings | default: ''
-                    assign tasting_notes = block.settings.tasting_notes | default: ''
+                    assign pairings = block.settings.pairings | default: section_product.metafields.sake_fizz.pairings
+                    assign tasting_notes = block.settings.tasting_notes | default: section_product.metafields.sake_fizz.tasting_notes
 
                     if cta_link contains 'http'
                       assign cta_link_target = '_blank'
@@ -91,7 +101,7 @@
                     endif
 
                   -%}
-                  {% if heading != blank %}
+                  {% if heading and heading != blank %}
                     {%- liquid
                       capture aos_attrs
                         render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
@@ -142,6 +152,10 @@
       "type": "header"
     },
     {
+      "content": "This section will automatically try and reference as much content as possible from the selected product except for the 'Message' field.",
+      "type": "paragraph"
+    },
+    {
       "label": "Product",
       "type": "product",
       "id": "product"
@@ -185,6 +199,7 @@
       "settings": [
         {
           "label": "Image",
+          "info": "Optionally override the selected product's featured image.",
           "type": "image_picker",
           "id": "image"
         }
@@ -201,6 +216,7 @@
         },
         {
           "label": "Heading",
+          "info": "Optionally override the selected product's tile.",
           "type": "text",
           "id": "heading"
         },
@@ -233,11 +249,13 @@
         },
         {
           "label": "Tasting Notes",
+          "info": "Optionally override the selected product's tasting notes.",
           "type": "richtext",
           "id": "tasting_notes"
         },
         {
           "label": "Pairings",
+          "info": "Optionally override the selected product's pairings.",
           "type": "richtext",
           "id": "pairings"
         },
@@ -247,6 +265,7 @@
         },
         {
           "label": "CTA Link",
+          "info": "Optionally override the link to the selected product.",
           "type": "url",
           "id": "cta_link"
         },
