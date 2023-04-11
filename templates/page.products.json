@@ -47,23 +47,11 @@
             "message": "<p>The smooth familiarity of sake with a refreshing citrus twist. This beverage refines the classic flavours of lemon and sake with the off-beat punch of yuzu with a light carbonation.<\/p>",
             "message_size": "sm"
           }
-        },
-        "template--15945343828152__873e2b69-6dd5-470a-8eeb-dc35f4b6f808-16796069829fed2a66-0": {
-          "type": "media",
-          "settings": {
-          }
-        },
-        "template--15945343828152__873e2b69-6dd5-470a-8eeb-dc35f4b6f808-16796069829fed2a66-1": {
-          "type": "content",
-          "settings": {
-          }
         }
       },
       "block_order": [
         "49ade3f1-36c5-4c79-9b8b-eeb0556a7dff",
-        "fc70f5a5-fa65-4094-8bc7-88382d6c01bf",
-        "template--15945343828152__873e2b69-6dd5-470a-8eeb-dc35f4b6f808-16796069829fed2a66-0",
-        "template--15945343828152__873e2b69-6dd5-470a-8eeb-dc35f4b6f808-16796069829fed2a66-1"
+        "fc70f5a5-fa65-4094-8bc7-88382d6c01bf"
       ],
       "settings": {
         "product": "lemon-yuzu-sake-fizz",
@@ -75,20 +63,24 @@
     "9f653b28-56ca-40f9-bc3b-fd5f9efc992e": {
       "type": "featured-yuzu-sake-fizz",
       "blocks": {
-        "template--15945343828152__9f653b28-56ca-40f9-bc3b-fd5f9efc992e-16796069829fed2a66-1": {
-          "type": "content",
+        "a4408d82-c390-4f4d-98bb-c9dbef16b0c0": {
+          "type": "text",
           "settings": {
+            "heading": "{{ section.settings.product.title }}",
+            "heading_size": "sm",
+            "message": "<p>Mandarin nulla ultrices mauris erat, nec efficitur dui finibus vitae. <br\/>Proin elementum ipsum at elit pellentesque, ut tincidunt magna <br\/>fringilla. Duis consequat dignissim metus, ut tincidunt ante feugiat eu.<br\/> Quisque feugiat pellentesque nisi at posuere laoreet.<\/p>",
+            "message_size": "sm"
           }
         },
-        "template--15945343828152__9f653b28-56ca-40f9-bc3b-fd5f9efc992e-16796069829fed2a66-0": {
-          "type": "media",
+        "455efc36-85f6-47eb-9728-a8a03e06a3f7": {
+          "type": "image",
           "settings": {
           }
         }
       },
       "block_order": [
-        "template--15945343828152__9f653b28-56ca-40f9-bc3b-fd5f9efc992e-16796069829fed2a66-1",
-        "template--15945343828152__9f653b28-56ca-40f9-bc3b-fd5f9efc992e-16796069829fed2a66-0"
+        "a4408d82-c390-4f4d-98bb-c9dbef16b0c0",
+        "455efc36-85f6-47eb-9728-a8a03e06a3f7"
       ],
       "settings": {
         "product": "mandarin-yuzu-sake-fizz",
