@@ -34,30 +34,28 @@
     "873e2b69-6dd5-470a-8eeb-dc35f4b6f808": {
       "type": "featured-yuzu-sake-fizz",
       "blocks": {
-        "template--15945343828152__873e2b69-6dd5-470a-8eeb-dc35f4b6f808-16796069829fed2a66-0": {
-          "type": "media",
+        "49ade3f1-36c5-4c79-9b8b-eeb0556a7dff": {
+          "type": "image",
           "settings": {
           }
         },
-        "template--15945343828152__873e2b69-6dd5-470a-8eeb-dc35f4b6f808-16796069829fed2a66-1": {
-          "type": "content",
+        "fc70f5a5-fa65-4094-8bc7-88382d6c01bf": {
+          "type": "text",
           "settings": {
+            "heading": "{{ section.settings.product.title }}",
+            "heading_size": "sm",
+            "message": "<p>The smooth familiarity of sake with a refreshing citrus twist. This beverage refines the classic flavours of lemon and sake with the off-beat punch of yuzu with a light carbonation.<\/p>",
+            "message_size": "sm"
           }
         }
       },
       "block_order": [
-        "template--15945343828152__873e2b69-6dd5-470a-8eeb-dc35f4b6f808-16796069829fed2a66-0",
-        "template--15945343828152__873e2b69-6dd5-470a-8eeb-dc35f4b6f808-16796069829fed2a66-1"
+        "49ade3f1-36c5-4c79-9b8b-eeb0556a7dff",
+        "fc70f5a5-fa65-4094-8bc7-88382d6c01bf"
       ],
       "settings": {
         "product": "lemon-yuzu-sake-fizz",
-        "badge": "none",
-        "heading": "",
-        "image": "shopify:\/\/shop_images\/products--featured-product-lemon.desktop_2x_3bf84d71-cfe2-4984-be3a-724798cf162b.png",
-        "message": "",
-        "cta_link": "",
         "anchor_id": "",
-        "background": "lemon",
         "border_top": true,
         "border_bottom": false
       }
@@ -65,30 +63,28 @@
     "9f653b28-56ca-40f9-bc3b-fd5f9efc992e": {
       "type": "featured-yuzu-sake-fizz",
       "blocks": {
-        "template--15945343828152__9f653b28-56ca-40f9-bc3b-fd5f9efc992e-16796069829fed2a66-1": {
-          "type": "content",
+        "a4408d82-c390-4f4d-98bb-c9dbef16b0c0": {
+          "type": "text",
           "settings": {
+            "heading": "{{ section.settings.product.title }}",
+            "heading_size": "sm",
+            "message": "<p>Mandarin nulla ultrices mauris erat, nec efficitur dui finibus vitae. <br\/>Proin elementum ipsum at elit pellentesque, ut tincidunt magna <br\/>fringilla. Duis consequat dignissim metus, ut tincidunt ante feugiat eu.<br\/> Quisque feugiat pellentesque nisi at posuere laoreet.<\/p>",
+            "message_size": "sm"
           }
         },
-        "template--15945343828152__9f653b28-56ca-40f9-bc3b-fd5f9efc992e-16796069829fed2a66-0": {
-          "type": "media",
+        "455efc36-85f6-47eb-9728-a8a03e06a3f7": {
+          "type": "image",
           "settings": {
           }
         }
       },
       "block_order": [
-        "template--15945343828152__9f653b28-56ca-40f9-bc3b-fd5f9efc992e-16796069829fed2a66-1",
-        "template--15945343828152__9f653b28-56ca-40f9-bc3b-fd5f9efc992e-16796069829fed2a66-0"
+        "a4408d82-c390-4f4d-98bb-c9dbef16b0c0",
+        "455efc36-85f6-47eb-9728-a8a03e06a3f7"
       ],
       "settings": {
         "product": "mandarin-yuzu-sake-fizz",
-        "badge": "none",
-        "heading": "",
-        "image": "shopify:\/\/shop_images\/products--featured-product-mandarin.desktop_2x_a46581ae-4e5e-412d-a51d-0b9c7149eef6.png",
-        "message": "",
-        "cta_link": "",
         "anchor_id": "",
-        "background": "orange",
         "border_top": true,
         "border_bottom": false
       }
@@ -96,30 +92,28 @@
     "411b7388-d5bb-4034-8a25-531562e0b7cf": {
       "type": "featured-yuzu-sake-fizz",
       "blocks": {
-        "template--15945343828152__411b7388-d5bb-4034-8a25-531562e0b7cf-16796069829fed2a66-0": {
-          "type": "media",
+        "50208635-a829-434f-af68-fe75b0020ded": {
+          "type": "image",
           "settings": {
           }
         },
-        "template--15945343828152__411b7388-d5bb-4034-8a25-531562e0b7cf-16796069829fed2a66-1": {
-          "type": "content",
+        "d7c5692d-167e-46fb-8f7b-29e8867a03db": {
+          "type": "text",
           "settings": {
+            "heading": "{{ section.settings.product.title }}",
+            "heading_size": "sm",
+            "message": "<p>Mango ultrices ornare orci ac malesuada. Phasellus fringilla magna at nisi tincidunt, sed fermentum elit pulvinar. Sed elementum, mi sit amet vulputate dignissim, lacus lacus porta dui, sed fermentum ex dui eu <br\/>massa. Cras ut aliquet nisi. Quisque ut.<\/p>",
+            "message_size": "sm"
           }
         }
       },
       "block_order": [
-        "template--15945343828152__411b7388-d5bb-4034-8a25-531562e0b7cf-16796069829fed2a66-0",
-        "template--15945343828152__411b7388-d5bb-4034-8a25-531562e0b7cf-16796069829fed2a66-1"
+        "50208635-a829-434f-af68-fe75b0020ded",
+        "d7c5692d-167e-46fb-8f7b-29e8867a03db"
       ],
       "settings": {
         "product": "mango-yuzu-sake-fizz",
-        "badge": "none",
-        "heading": "",
-        "image": "shopify:\/\/shop_images\/products--featured-product-mango-temp.desktop_2x_06f49ccf-8109-40e0-9496-a709920b0aad.png",
-        "message": "",
-        "cta_link": "",
         "anchor_id": "",
-        "background": "mango",
         "border_top": true,
         "border_bottom": false
       }
