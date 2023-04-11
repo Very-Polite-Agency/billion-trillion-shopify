@@ -129,15 +129,17 @@
         "template--15945343795384__e13ccefb-aaa8-42d1-9707-bd577fb79dd4-1681230579fd43286a-0": {
           "type": "image",
           "settings": {
-            "background": "orange",
+            "image": "shopify:\/\/shop_images\/fifty-fifty-image-02B_2x_504edd0d-9345-4be6-b484-db792251ebaa.png",
+            "background": "image",
+            "background_image": "shopify:\/\/shop_images\/fifty-fifty-image-02A_2x_e44d07c9-c8e0-4b56-a812-59b503bd04af.png",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
             "background_image_repeat": "repeat",
             "background_image_size": "cover",
-            "border_enable": false,
-            "padding_top": 36,
-            "padding_bottom": 36,
-            "width": 100
+            "border_enable": true,
+            "padding_top": 52,
+            "padding_bottom": 52,
+            "width": 80
           }
         },
         "template--15945343795384__e13ccefb-aaa8-42d1-9707-bd577fb79dd4-1681230579fd43286a-1": {
