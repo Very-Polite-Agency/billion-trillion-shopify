@@ -51,7 +51,6 @@
           "type": "text",
           "settings": {
             "heading": "The Alien is You",
-            "subheading": "",
             "message": "<p>The body contains trillions of microorganisms — so many they outnumber an Earth person's cells by 10 to 1. Scientist have discovered the largest alien festival is in the gut. And although you might be concerned by the alien takeover, the trillions of novel bacteria and genes in your microbiome are the body's greatest source of health. This isn't Body Snatchers.<\/p>",
             "message_size": "sm",
             "background": "lime",
@@ -88,11 +87,6 @@
       ],
       "settings": {
         "anchor_id": "",
-        "background": "none",
-        "background_image_position_mobile": "center center",
-        "background_image_position_desktop": "center center",
-        "background_image_repeat": "repeat",
-        "background_image_size": "cover",
         "border_top": true,
         "border_bottom": false
       }
@@ -131,7 +125,6 @@
           "type": "text",
           "settings": {
             "heading": "",
-            "subheading": "",
             "message": "<p>There are around 200 billion trillion stars in the universe (that you've found anyways), but that impressive number is comparable to the number of microbial genes in the Earth body (way to go human.) That's right, you've got a whole working universe gut!<\/p>",
             "message_size": "sm",
             "background": "image",
@@ -151,9 +144,8 @@
           "type": "text",
           "settings": {
             "heading": "",
-            "subheading": "",
             "message": "<p>That’s why sake is the perfect base for Billion Trillion Sake Fizz. The use of koji in sake provides probiotics that benefit that galaxy of you!<\/p>",
-            "message_size": "md",
+            "message_size": "lg",
             "background": "lemon",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
@@ -173,11 +165,6 @@
       ],
       "settings": {
         "anchor_id": "",
-        "background": "none",
-        "background_image_position_mobile": "center center",
-        "background_image_position_desktop": "center center",
-        "background_image_repeat": "repeat",
-        "background_image_size": "cover",
         "border_top": true,
         "border_bottom": false
       }
@@ -205,7 +192,6 @@
           "type": "text",
           "settings": {
             "heading": "The Universal Recipe",
-            "subheading": "",
             "message": "<p>There are around 200 billion trillion stars in the universe (that you've found anyways), but that impressive number is comparable to the number of microbial genes in the Earth body (way to go human.) That's right, you've got a whole working universe gut!<\/p>",
             "message_size": "sm",
             "background": "mango",
@@ -227,11 +213,6 @@
       ],
       "settings": {
         "anchor_id": "",
-        "background": "none",
-        "background_image_position_mobile": "center center",
-        "background_image_position_desktop": "center center",
-        "background_image_repeat": "repeat",
-        "background_image_size": "cover",
         "border_top": true,
         "border_bottom": false
       }
