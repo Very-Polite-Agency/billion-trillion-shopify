@@ -79,22 +79,22 @@
         "template--15945343860920__094a4c9d-c840-465f-b6c9-cdb38c8fc116-1681251514c35eb61d-1": {
           "type": "text",
           "settings": {
-            "heading": "",
+            "heading": "{{ section.settings.product.title }}",
             "heading_size": "sm",
-            "message": "",
+            "message": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy <\/p>",
             "message_size": "sm",
             "cta_link": "",
             "cta_type": "learn-more",
-            "background": "lemon",
+            "background": "orange",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
             "background_image_repeat": "no-repeat",
             "background_image_size": "cover",
             "padding_top": 56,
             "padding_bottom": 56,
-            "text_align_mobile": "center",
-            "text_align_desktop": "center",
-            "width": 100
+            "text_align_mobile": "left",
+            "text_align_desktop": "left",
+            "width": 85
           }
         }
       },
