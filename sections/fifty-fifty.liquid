@@ -63,6 +63,7 @@
 
                   {%- liquid
                     assign image = block.settings.image | default: false
+                    assign image_badge = block.settings.image_badge | default: 'none'
                     assign image_border = block.settings.image_border | default: false
                   -%}
                   {% if image %}
@@ -74,17 +75,42 @@
                     -%}
                     <div class="{{ section_name }}__image{% if image_border %} with-border{% endif %}" {{ aos_attrs }}>
                       {% render 'lazyload-image', image: image %}
+                      {% unless 'none' == image_badge %}
+                        <div class="{{ section_name }}__image-badge">
+                          {% capture badge_type %}badge.{{ image_badge }}{% endcapture %}
+                          {% render 'svg', type: badge_type %}
+                        </div>
+                      {% endunless %}
                     </div>
                   {% endif %}
 
                 {% when 'text' %}
 
                   {%- liquid
+
+                    assign cta_colour = block.settings.cta_colour | default: 'white'
+                    assign cta_link = block.settings.cta_link | default: ''
+                    assign cta_link_target = '_self'
+                    assign cta_type = block.settings.cta_type | default: 'learn-more'
+
                     assign heading = block.settings.heading | default: ''
                     assign heading_size = block.settings.heading_size | default: 'md'
+
                     assign message = block.settings.message | default: ''
                     assign message_size = block.settings.message_size | default: 'sm'
-                    assign subheading = block.settings.subheading | default: ''
+
+                    if cta_link contains 'http'
+                      assign cta_link_target = '_blank'
+                    endif
+
+                    if 'buy-now' == cta_type
+                      assign cta_link_title = 'Buy Now'
+                    elsif 'shop-now' == cta_type
+                      assign cta_link_title = 'Shop Now'
+                    else
+                      assign cta_link_title = 'Learn More'
+                    endif
+
                   -%}
                   {% if heading != blank %}
                     {%- liquid
@@ -103,6 +129,14 @@
                       assign aos_delay = aos_delay | plus: aos_delay_increment
                     -%}
                     <div class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ message }}</div>
+                  {% endif %}
+                  {% if cta_link != blank %}
+                    {% capture button_type %}button.{{ cta_type }}{% endcapture %}
+                    <div class="{{ section_name }}__cta" {{ aos_attrs }}>
+                      <a class="{{ section_name }}__cta-button button button--svg button--svg-fill-{{ cta_colour }}" href="{{ cta_link }}" target="{{ cta_link_target }}" title="{{ cta_link_title }}">
+                        {% render 'svg', type: button_type %}
+                      </a>
+                    </div>
                   {% endif %}
 
               {% endcase %}
@@ -366,6 +400,20 @@
           ],
           "default": "learn-more",
           "id": "cta_type"
+        },
+        {
+          "label": "CTA Colour",
+          "type": "select",
+          "options": [
+            { "label": "Lemon", "value": "lemon" },
+            { "label": "Lime", "value": "lime" },
+            { "label": "Mango", "value": "mango" },
+            { "label": "Orange", "value": "orange" },
+            { "label": "Strawberry", "value": "strawberry" },
+            { "label": "White", "value": "white" }
+          ],
+          "default": "white",
+          "id": "cta_colour"
         },
         {
           "content": "Settings",
