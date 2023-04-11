@@ -249,22 +249,6 @@
     "41b0e346-b19d-4a15-a4ff-59a85bbb5533": {
       "type": "fifty-fifty",
       "blocks": {
-        "template--15945343860920__41b0e346-b19d-4a15-a4ff-59a85bbb5533-1681254466f5d382ad-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/BT--product-image--crewneck_3x_9aa3896a-7b97-46d1-b6da-f102b95e74e5.png",
-            "image_border": false,
-            "image_badge": "hot",
-            "background": "none",
-            "background_image_position_mobile": "center center",
-            "background_image_position_desktop": "center center",
-            "background_image_repeat": "no-repeat",
-            "background_image_size": "cover",
-            "padding_top": 0,
-            "padding_bottom": 0,
-            "width": 100
-          }
-        },
         "template--15945343860920__41b0e346-b19d-4a15-a4ff-59a85bbb5533-1681254466f5d382ad-1": {
           "type": "text",
           "settings": {
@@ -286,11 +270,27 @@
             "text_align_desktop": "left",
             "width": 85
           }
+        },
+        "template--15945343860920__41b0e346-b19d-4a15-a4ff-59a85bbb5533-1681254466f5d382ad-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BT--product-image--crewneck_3x_9aa3896a-7b97-46d1-b6da-f102b95e74e5.png",
+            "image_border": false,
+            "image_badge": "hot",
+            "background": "none",
+            "background_image_position_mobile": "center center",
+            "background_image_position_desktop": "center center",
+            "background_image_repeat": "no-repeat",
+            "background_image_size": "cover",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "width": 100
+          }
         }
       },
       "block_order": [
-        "template--15945343860920__41b0e346-b19d-4a15-a4ff-59a85bbb5533-1681254466f5d382ad-0",
-        "template--15945343860920__41b0e346-b19d-4a15-a4ff-59a85bbb5533-1681254466f5d382ad-1"
+        "template--15945343860920__41b0e346-b19d-4a15-a4ff-59a85bbb5533-1681254466f5d382ad-1",
+        "template--15945343860920__41b0e346-b19d-4a15-a4ff-59a85bbb5533-1681254466f5d382ad-0"
       ],
       "settings": {
         "anchor_id": "",
