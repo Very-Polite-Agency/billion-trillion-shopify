@@ -285,10 +285,12 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/home--fifty-fifty-image-01_2x_655bceaf-f168-46b9-a6fa-f60e2f671c40.png",
-            "background": "orange",
+            "image_border": false,
+            "image_badge": "none",
+            "background": "none",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
-            "background_image_repeat": "repeat",
+            "background_image_repeat": "no-repeat",
             "background_image_size": "cover",
             "border_enable": false,
             "padding_top": 0,
@@ -303,6 +305,8 @@
             "heading_size": "lg",
             "message": "<p>Billion Trillion has delivered our award-winning Sake Fizz to the Milky Way Galaxy! It's been a long time coming, but we now carry this out-of-this-world (literally) beverage across the whole universe!<\/p>",
             "message_size": "md",
+            "cta_link": "",
+            "cta_type": "learn-more",
             "background": "orange",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
@@ -321,6 +325,7 @@
         "template--15941099487416__a0a053a4-4efa-42b2-b23f-43d8d768dac4-1681242526c2d201a0-1"
       ],
       "settings": {
+        "product": "",
         "anchor_id": "",
         "border_top": true,
         "border_bottom": false
