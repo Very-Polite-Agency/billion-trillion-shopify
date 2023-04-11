@@ -17,7 +17,7 @@
 {%- if section_blocks.size > 0 -%}
 
   {%- style -%}
-    {%
+    {%-
       render 'element-styles',
         border_bottom: section.settings.border_bottom,
         border_top: section.settings.border_top,
@@ -30,7 +30,11 @@
       <div class="{{ section_name }}__main text--uppercase">
         {%- for block in section_blocks -%}
 
-          {% assign block_id = 'block--' | append: block.id %}
+          {%- liquid
+            assign block_id = 'block--' | append: block.id
+            assign block_type = block_type
+          -%}
+
           {%- style -%}
             #{{ block_id }} .{{ section_name }}__content {
               text-align: {{ block.settings.text_align_mobile | default: 'initial' }};
@@ -55,10 +59,10 @@
             -%}
           {%- endstyle -%}
 
-          <div class="{{ section_name }}__item {{ block.type }}" id="{{ block_id }}">
+          <div class="{{ section_name }}__item {{ block_type }}" id="{{ block_id }}">
 
             <div class="{{ section_name }}__content">
-              {% case block.type %}
+              {% case block_type %}
                 {% when 'image' %}
 
                   {%- liquid
