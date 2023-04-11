@@ -1,13 +1,14 @@
 {%- liquid
 
   assign section_name = 'featured-product'
-  assign section_classes = section_name
+  assign section_classes = section_name | append: ' fifty-fifty'
   assign section_id = section_name | append: '--' | append: section.id
 
   assign section_product = section.settings.product | defaul: false
   assign section_background = section.settings.background | defaul: 'lemon'
 
   assign section_content_heading = section.settings.heading | default: section_product.title
+  assign section_content_heading_size = section.settings.heading_size | default: 'md'
   assign section_content_link = section.settings.cta_link | default: section_product.url
   assign section_content_message = section.settings.message | default: section_product.description
   assign section_content_order = 2
@@ -51,17 +52,62 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  {%
-    render 'fifty-fifty',
-      aria_role: '',
-      classes: snippet_classes,
-      content_heading: section_content_heading,
-      content_link: section_content_link,
-      content_message: section_content_message,
-      media_badge: section_media_badge,
-      media_image: section_media_image,
-      id: snippet_id,
-  %}
+  <div class="fifty-fifty__main">
+
+  <div class="fifty-fifty__item image">
+    <div class="fifty-fifty__content">
+      {% if section_media_image %}
+        {%- liquid
+          capture aos_attrs
+            render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-up'
+          endcapture
+          assign aos_delay = aos_delay | plus: aos_delay_increment
+        -%}
+        <div class="fifty-fifty__image" {{ aos_attrs }}>
+          {% if section_content_link != blank %}
+            <a class="fifty-fifty__image-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
+          {% endif %}
+            {% render 'lazyload-image', image: section_media_image %}
+            {% unless 'none' == section_media_badge %}
+              <div class="fifty-fifty__image-badge">
+                {% capture badge_type %}badge.{{ section_media_badge }}{% endcapture %}
+                {% render 'svg', type: badge_type %}
+              </div>
+            {% endunless %}
+          {% if section_content_link != blank %}
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="fifty-fifty__item text">
+    <div class="fifty-fifty__content">
+
+      {% if section_content_heading != blank %}
+        {%- liquid
+          capture aos_attrs
+            render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
+          endcapture
+          assign aos_delay = aos_delay | plus: aos_delay_increment
+        -%}
+        <h2 class="heading--primary heading--{{ section_content_heading_size }}-fluid" {{ aos_attrs }}>{{ section_content_heading }}</h2>
+      {% endif %}
+      {% if section_content_message != blank %}
+        {%- liquid
+          capture aos_attrs
+            render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
+          endcapture
+          assign aos_delay = aos_delay | plus: aos_delay_increment
+        -%}
+        <div class="body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ section_content_message }}</div>
+      {% endif %}
+
+    </div>
+  </div>
+
+  </div>
 </div>
 
 {% schema %}
@@ -111,6 +157,17 @@
       "info": "Optionally override the product description.",
       "type": "richtext",
       "id": "message"
+    },
+    {
+      "label": "Message Size",
+      "type": "select",
+      "options": [
+        { "label": "Large", "value": "lg" },
+        { "label": "Medium", "value": "md" },
+        { "label": "Small", "value": "sm" }
+      ],
+      "default": "sm",
+      "id": "message_size"
     },
     {
       "content": "Call to Action",
