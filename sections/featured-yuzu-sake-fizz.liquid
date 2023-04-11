@@ -199,49 +199,6 @@
       "id": "product"
     },
     {
-      "content": "By default, the section will automatically pull details from the selected product. To customize, and override this automation, update the corresponding fields below.",
-      "type": "paragraph"
-    },
-    {
-      "label": "Badge",
-      "info": "Optionally select a badge to pair with the product image.",
-      "type": "select",
-      "options": [
-        { "label": "Hot", "value": "hot" },
-        { "label": "None", "value": "none" }
-      ],
-      "default": "none",
-      "id": "badge"
-    },
-    {
-      "label": "Heading",
-      "info": "Optionally override the product title.",
-      "type": "text",
-      "id": "heading"
-    },
-    {
-      "label": "Image",
-      "info": "Optionally override the product's featured image.",
-      "type": "image_picker",
-      "id": "image"
-    },
-    {
-      "label": "Message",
-      "info": "Optionally override the product description.",
-      "type": "richtext",
-      "id": "message"
-    },
-    {
-      "content": "Call to Action",
-      "type": "header"
-    },
-    {
-      "label": "Link",
-      "info": "Optionally override the link to the product.",
-      "type": "url",
-      "id": "cta_link"
-    },
-    {
       "content": "Settings",
       "type": "header"
     },
@@ -254,19 +211,6 @@
       "info": "Optionally include a unique ID so that sections within the page can be linked to. Anchor IDs must be all lowercase, unique and replaced empty spaces with hyphens. For example: my-great-section-anchor",
       "type": "text",
       "id": "anchor_id"
-    },
-    {
-      "label": "Background",
-      "type": "select",
-      "options": [
-        { "label": "Lemon", "value": "lemon" },
-        { "label": "Lime", "value": "lime" },
-        { "label": "Mango", "value": "mango" },
-        { "label": "Orange", "value": "orange" },
-        { "label": "Strawberry", "value": "strawberry" }
-      ],
-      "default": "orange",
-      "id": "background"
     },
     {
       "content": "Border",
@@ -293,6 +237,61 @@
       "settings": []
     },
     {
+      "name": "Image",
+      "type": "image",
+      "limit": 1,
+      "settings": [
+        {
+          "label": "Image",
+          "type": "image_picker",
+          "id": "image"
+        }
+      ]
+    },
+     {
+      "name": "Text",
+      "type": "text",
+      "limit": 1,
+      "settings": [
+        {
+          "content": "Content",
+          "type": "header"
+        },
+        {
+          "label": "Heading",
+          "type": "text",
+          "id": "heading"
+        },
+        {
+          "label": "Heading Size",
+          "type": "select",
+          "options": [
+            { "label": "Large", "value": "lg" },
+            { "label": "Medium", "value": "md" },
+            { "label": "Small", "value": "sm" }
+          ],
+          "default": "sm",
+          "id": "heading_size"
+        },
+        {
+          "label": "Message",
+          "type": "richtext",
+          "id": "message"
+        },
+        {
+          "label": "Message Size",
+          "type": "select",
+          "options": [
+            { "label": "Large", "value": "lg" },
+            { "label": "Medium", "value": "md" },
+            { "label": "Small", "value": "sm" }
+          ],
+          "default": "sm",
+          "id": "message_size"
+        }
+      ]
+    },
+    {
       "name": "Media",
       "type": "media",
       "limit": 1,
@@ -303,8 +302,8 @@
     {
       "name": "Featured Yuzu Sake Fizz",
       "blocks": [
-        { "type": "media" },
-        { "type": "content" }
+        { "type": "image" },
+        { "type": "text" }
       ]
     }
   ]

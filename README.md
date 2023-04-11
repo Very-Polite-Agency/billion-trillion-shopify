@@ -3,7 +3,7 @@
 ## Shopify Site URL
 https://billion-trillion.myshopify.com
 
-### Snippets (30/32 Complete)
+### Snippets (31/32 Complete)
 - [x] aos-attributes.liquid
 - [x] bs-container.liquid
 - [x] card-award.liquid
@@ -18,7 +18,7 @@ https://billion-trillion.myshopify.com
 - [x] json-ld.liquid
 - [x] label.liquid
 - [x] lazyload-image.liquid
-- [ ] lazyload-embed.liquid
+- [x] lazyload-embed.liquid
 - [x] link.liquid
 - [x] marquee-items.liquid
 - [x] pagination.liquid
@@ -49,11 +49,10 @@ https://billion-trillion.myshopify.com
 - [x] faqs.liquid
 - [ ] featured-collection.liquid
 - [ ] featured-image.liquid
-- [x] featured-product.liquid
 - [x] featured-text.liquid
 - [ ] featured-video.liquid
 - [x] featured-yuzu-sake-fizz.liquid
-- [ ] fifty-fifty.liquid
+- [x] fifty-fifty.liquid
 - [r] footer.liquid
 - [ ] header.liquid
 - [x] hero.liquid
