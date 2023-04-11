@@ -33,7 +33,7 @@
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
   {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
-    <div class="{{ section_name }}__main text--align-center text--{{ section_text_colour }}">
+    <div class="{{ section_name }}__main text--align-center text--uppercase text--{{ section_text_colour }}">
 
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -41,6 +41,7 @@
 
             {%- liquid
               assign heading = block.settings.heading | default: ''
+              assign heading_size = block.settings.heading_size | default: 'md'
               capture aos_attrs
                 render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
               endcapture
@@ -48,13 +49,14 @@
             -%}
 
             {% if heading != blank %}
-              <strong class="{{ section_name }}__heading heading--1 text--uppercase text--primary" {{ aos_attrs }}>{{ heading | escape }}</strong>
+              <h2 class="{{ section_name }}__heading heading--primary heading--{{ heading_size }}-fluid" {{ aos_attrs }}>{{ heading | escape }}</h2>
             {% endif %}
 
           {%- when 'message' -%}
 
             {%- liquid
               assign message = block.settings.message | default: ''
+              assign message_size = block.settings.message_size | default: 'sm'
               capture aos_attrs
                 render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
               endcapture
@@ -62,13 +64,14 @@
             -%}
 
             {% if message != blank %}
-              <div class="{{ section_name }}__message body-copy--1 text--uppercase text--secondary" {{ aos_attrs }}>{{ message }}</div>
+              <div class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ message }}</div>
             {% endif %}
 
           {%- when 'subheading' -%}
 
             {%- liquid
               assign subheading = block.settings.subheading | default: ''
+              assign subheading_size = block.settings.subheading_size | default: 'sm'
               capture aos_attrs
                 render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
               endcapture
@@ -76,7 +79,7 @@
             -%}
 
             {% if subheading != blank %}
-              <strong class="{{ section_name }}__subheading body-copy--3 text--uppercase text--secondary" {{ aos_attrs }}>{{ subheading | escape }}</strong>
+              <strong class="{{ section_name }}__subheading body-copy--primary body-copy--{{ subheading_size }}-fluid" {{ aos_attrs }}>{{ subheading | escape }}</strong>
             {% endif %}
 
         {%- endcase -%}
@@ -254,6 +257,17 @@
           "label": "Heading",
           "type": "text",
           "id": "heading"
+        },
+        {
+          "label": "Heading Size",
+          "type": "select",
+          "options": [
+            { "label": "Large", "value": "lg" },
+            { "label": "Medium", "value": "md" },
+            { "label": "Small", "value": "sm" }
+          ],
+          "default": "sm",
+          "id": "heading_size"
         }
       ]
     },
@@ -270,6 +284,17 @@
           "label": "Message",
           "type": "richtext",
           "id": "message"
+        },
+        {
+          "label": "Message Size",
+          "type": "select",
+          "options": [
+            { "label": "Large", "value": "lg" },
+            { "label": "Medium", "value": "md" },
+            { "label": "Small", "value": "sm" }
+          ],
+          "default": "sm",
+          "id": "message_size"
         }
       ]
     },
@@ -286,6 +311,17 @@
           "label": "Subheading",
           "type": "text",
           "id": "subheading"
+        },
+        {
+          "label": "Subheading Size",
+          "type": "select",
+          "options": [
+            { "label": "Large", "value": "lg" },
+            { "label": "Medium", "value": "md" },
+            { "label": "Small", "value": "sm" }
+          ],
+          "default": "sm",
+          "id": "subheading_size"
         }
       ]
     }
