@@ -3,6 +3,7 @@
     "hero",
     "176d8bdf-4176-44de-9bea-5ba964d51b3a",
     "72081baf-4665-403a-b951-d8b6e7fb0752",
+    "a4472b6b-b84a-4ce6-b776-3daa598521e1",
     "e13ccefb-aaa8-42d1-9707-bd577fb79dd4",
     "8c71606e-b66e-4609-a3c4-2319d29cc4d1",
     "c5ddd571-40a7-4e5a-b116-59f35896c18d",
@@ -121,6 +122,64 @@
         "border_bottom": false,
         "padding_top": 120,
         "padding_bottom": 120
+      }
+    },
+    "a4472b6b-b84a-4ce6-b776-3daa598521e1": {
+      "type": "fifty-fifty",
+      "blocks": {
+        "template--15945343795384__a4472b6b-b84a-4ce6-b776-3daa598521e1-1681239845b39b68c8-1": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "subheading": "",
+            "message": "<p>There are around 200 billion trillion stars in the universe (that you've found anyways), but that impressive number is comparable to the number of microbial genes in the Earth body (way to go human.) That's right, you've got a whole working universe gut!<\/p>",
+            "message_size": "sm",
+            "background": "image",
+            "background_image": "shopify:\/\/shop_images\/tile-background_2x_8633724c-832c-4866-82a3-a03b9bfd94de.png",
+            "background_image_position_mobile": "center center",
+            "background_image_position_desktop": "center center",
+            "background_image_repeat": "repeat",
+            "background_image_size": "400px",
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "text_align_mobile": "center",
+            "text_align_desktop": "center",
+            "width": 100
+          }
+        },
+        "88d808d5-c00e-44c4-b532-de94314978f3": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "subheading": "",
+            "message": "",
+            "message_size": "sm",
+            "background": "lemon",
+            "background_image_position_mobile": "center center",
+            "background_image_position_desktop": "center center",
+            "background_image_repeat": "repeat",
+            "background_image_size": "cover",
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "text_align_mobile": "center",
+            "text_align_desktop": "center",
+            "width": 100
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343795384__a4472b6b-b84a-4ce6-b776-3daa598521e1-1681239845b39b68c8-1",
+        "88d808d5-c00e-44c4-b532-de94314978f3"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": true,
+        "border_bottom": false
       }
     },
     "e13ccefb-aaa8-42d1-9707-bd577fb79dd4": {
