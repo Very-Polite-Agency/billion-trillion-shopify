@@ -51,6 +51,7 @@
           "type": "text",
           "settings": {
             "heading": "The Alien is You",
+            "heading_size": "sm",
             "message": "<p>The body contains trillions of microorganisms — so many they outnumber an Earth person's cells by 10 to 1. Scientist have discovered the largest alien festival is in the gut. And although you might be concerned by the alien takeover, the trillions of novel bacteria and genes in your microbiome are the body's greatest source of health. This isn't Body Snatchers.<\/p>",
             "message_size": "sm",
             "background": "lime",
@@ -97,7 +98,8 @@
         "template--15945343795384__72081baf-4665-403a-b951-d8b6e7fb0752-1680541664323c9062-0": {
           "type": "heading",
           "settings": {
-            "heading": "What does your Earth body's microbiome have to do with the immense greatness of space you ask?"
+            "heading": "What does your Earth body's microbiome have to do with the immense greatness of space you ask?",
+            "heading_size": "sm"
           }
         }
       },
@@ -125,6 +127,7 @@
           "type": "text",
           "settings": {
             "heading": "",
+            "heading_size": "sm",
             "message": "<p>There are around 200 billion trillion stars in the universe (that you've found anyways), but that impressive number is comparable to the number of microbial genes in the Earth body (way to go human.) That's right, you've got a whole working universe gut!<\/p>",
             "message_size": "sm",
             "background": "image",
@@ -144,6 +147,7 @@
           "type": "text",
           "settings": {
             "heading": "",
+            "heading_size": "sm",
             "message": "<p>That’s why sake is the perfect base for Billion Trillion Sake Fizz. The use of koji in sake provides probiotics that benefit that galaxy of you!<\/p>",
             "message_size": "lg",
             "background": "lemon",
@@ -192,6 +196,7 @@
           "type": "text",
           "settings": {
             "heading": "The Universal Recipe",
+            "heading_size": "sm",
             "message": "<p>There are around 200 billion trillion stars in the universe (that you've found anyways), but that impressive number is comparable to the number of microbial genes in the Earth body (way to go human.) That's right, you've got a whole working universe gut!<\/p>",
             "message_size": "sm",
             "background": "mango",
@@ -223,26 +228,21 @@
         "df55f493-4f0f-42c5-9648-9d0b855e8373": {
           "type": "subheading",
           "settings": {
-            "subheading": "Billion Trillion is the number one ready to drink beverage in the universe!"
+            "subheading": "Billion Trillion is the number one ready to drink beverage in the universe!",
+            "subheading_size": "sm"
           }
         },
         "template--15945343795384__8c71606e-b66e-4609-a3c4-2319d29cc4d1-1680541664323c9062-0": {
           "type": "heading",
           "settings": {
-            "heading": "Welcome to the good time galaxy"
-          }
-        },
-        "59997170-3c8a-495f-a415-29ba0ea3b745": {
-          "type": "message",
-          "settings": {
-            "message": "<p>Nulla ullamcorper porta lectus sit amet efficitur. Sed vel ipsum sit amet augue auctor ornare sodales nec lectus. Mauris ornare dignissim dolor, in accumsan felis ullamcorper in. Fusce eget tortor placerat, rhoncus diam et, mollis massa. Mauris quis felis sed ex ornare euismod vitae egestas metus. Quisque venenatis neque quis neque consectetur auctor. Curabitur pretium ipsum tellus, a vestibulum libero tempor sed.<\/p>"
+            "heading": "Welcome to the good time galaxy",
+            "heading_size": "lg"
           }
         }
       },
       "block_order": [
         "df55f493-4f0f-42c5-9648-9d0b855e8373",
-        "template--15945343795384__8c71606e-b66e-4609-a3c4-2319d29cc4d1-1680541664323c9062-0",
-        "59997170-3c8a-495f-a415-29ba0ea3b745"
+        "template--15945343795384__8c71606e-b66e-4609-a3c4-2319d29cc4d1-1680541664323c9062-0"
       ],
       "settings": {
         "text_colour": "dark",
