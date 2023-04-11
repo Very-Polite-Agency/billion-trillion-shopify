@@ -62,7 +62,13 @@
                 {% when 'image' %}
 
                   {% if block.settings.image %}
-                    <div class="{{ section_name }}__image{% if block.settings.border_enable %} with-border{% endif %}">
+                    {%- liquid
+                      capture aos_attrs
+                        render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-up'
+                      endcapture
+                      assign aos_delay = aos_delay | plus: aos_delay_increment
+                    -%}
+                    <div class="{{ section_name }}__image{% if block.settings.border_enable %} with-border{% endif %}" {{ aos_attrs }}>
                       {% render 'lazyload-image', image: block.settings.image %}
                     </div>
                   {% endif %}
@@ -77,10 +83,22 @@
                     assign subheading = block.settings.subheading | default: ''
                   -%}
                   {% if heading != blank %}
-                    <h2 class="{{ section_name }}__heading heading--primary heading--{{ heading_size }}-fluid">{{ heading }}</h2>
+                    {%- liquid
+                      capture aos_attrs
+                        render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
+                      endcapture
+                      assign aos_delay = aos_delay | plus: aos_delay_increment
+                    -%}
+                    <h2 class="{{ section_name }}__heading heading--primary heading--{{ heading_size }}-fluid" {{ aos_attrs }}>{{ heading }}</h2>
                   {% endif %}
                   {% if message != blank %}
-                    <div class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}-fluid">{{ message }}</div>
+                    {%- liquid
+                      capture aos_attrs
+                        render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
+                      endcapture
+                      assign aos_delay = aos_delay | plus: aos_delay_increment
+                    -%}
+                    <div class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ message }}</div>
                   {% endif %}
 
               {% endcase %}
