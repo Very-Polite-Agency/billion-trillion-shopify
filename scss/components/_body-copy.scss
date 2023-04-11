@@ -1,4 +1,5 @@
 @use '../utils/mixins/body-copy' as *;
+@use '../utils/mixins/breakpoint' as *;
 
 .body-copy {
 
@@ -32,6 +33,22 @@
   &--4 {
     @include body-copy-size('4');
     line-height: 1.4343;
+  }
+
+  @include breakpoint(lg) {
+
+    &--lg-fluid {
+      font-size: min(32px, 2vw);
+    }
+
+    &--md-fluid {
+      font-size: min(28px, 1.75vw);
+    }
+
+    &--sm-fluid {
+      font-size: min(24px, 1.45vw); // 14px
+    }
+
   }
 
 }
