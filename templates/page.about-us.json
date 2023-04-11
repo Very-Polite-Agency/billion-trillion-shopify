@@ -214,10 +214,10 @@
             "background": "mango",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
-            "background_image_repeat": "repeat",
+            "background_image_repeat": "no-repeat",
             "background_image_size": "cover",
-            "padding_top": 52,
-            "padding_bottom": 52,
+            "padding_top": 56,
+            "padding_bottom": 56,
             "text_align_mobile": "center",
             "text_align_desktop": "center",
             "width": 85
