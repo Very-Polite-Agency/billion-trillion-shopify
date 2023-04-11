@@ -35,12 +35,12 @@
 
   <div class="{{ section_classes }}" id="{{ section_id }}">
     {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
-      <div class="{{ section_name }}__main">
+      <div class="{{ section_name }}__main text--uppercase">
         {%- for block in section_blocks -%}
           <div class="{{ section_name }}__item {{ block.type }}" id="{{ block.id }}">
 
             {%- style -%}
-              #{{ block.id }} .{{ section_name }}__item-content {
+              #{{ block.id }} .{{ section_name }}__content {
                 width: {{  block.settings.width }}%;
               }
               {%-
@@ -55,13 +55,12 @@
               -%}
             {%- endstyle -%}
 
-            <div class="{{ section_name }}__item-content">
-
+            <div class="{{ section_name }}__content">
               {% case block.type %}
                 {% when 'image' %}
 
                   {% if block.settings.image %}
-                    <div class="{{ section_name }}__item-image{% if block.settings.border_enable %} with-border{% endif %}">
+                    <div class="{{ section_name }}__image{% if block.settings.border_enable %} with-border{% endif %}">
                       {% render 'lazyload-image', image: block.settings.image %}
                     </div>
                   {% endif %}
@@ -71,20 +70,20 @@
                   {%- liquid
                     assign heading = block.settings.heading | default: ''
                     assign message = block.settings.message | default: ''
+                    assign message_size = block.settings.message_size | default: 'sm'
                     assign subheading = block.settings.subheading | default: ''
                   -%}
                   {% if heading != blank %}
-                    <h2 class="{{ section_name }}__item-heading">{{ heading }}</h2>
+                    <h2 class="{{ section_name }}__heading text--primary">{{ heading }}</h2>
                   {% endif %}
                   {% if subheading != blank %}
-                    <strong class="{{ section_name }}__item-subheading">{{ subheading }}</strong>
+                    <strong class="{{ section_name }}__subheading text--primary">{{ subheading }}</strong>
                   {% endif %}
                   {% if message != blank %}
-                    <div class="{{ section_name }}__item-message">{{ message }}</div>
+                    <div class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}">{{ message }}</div>
                   {% endif %}
 
               {% endcase %}
-
             </div>
 
           </div>
@@ -383,6 +382,17 @@
           "id": "message"
         },
         {
+          "label": "Message Size",
+          "type": "select",
+          "options": [
+            { "label": "Large", "value": "lg" },
+            { "label": "Medium", "value": "md" },
+            { "label": "Small", "value": "sm" }
+          ],
+          "default": "sm",
+          "id": "message_size"
+        },
+        {
           "content": "Settings",
           "type": "header"
         },
@@ -488,6 +498,32 @@
           "unit": "px",
           "default": 36,
           "id": "padding_bottom"
+        },
+        {
+          "content": "Text",
+          "type": "header"
+        },
+        {
+          "label": "Text Alignment (Mobile)",
+          "type": "select",
+          "options": [
+            { "label": "Left", "value": "left" },
+            { "label": "Center", "value": "center" },
+            { "label": "Right", "value": "right" }
+          ],
+          "default": "center",
+          "id": "text_align_mobile"
+        },
+        {
+          "label": "Text Alignment (Desktop)",
+          "type": "select",
+          "options": [
+            { "label": "Left", "value": "left" },
+            { "label": "Center", "value": "center" },
+            { "label": "Right", "value": "right" }
+          ],
+          "default": "center",
+          "id": "text_align_desktop"
         },
         {
           "content": "Width",

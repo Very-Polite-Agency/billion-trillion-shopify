@@ -1,0 +1,169 @@
+@use "../utils/mixins/breakpoint" as *;
+@use "../utils/mixins/font" as *;
+
+.fifty-fifty {
+
+  @include hobeaux( 700 );
+  display: inline-grid;
+  width: 100%;
+  grid-template-columns: repeat( 1, 1fr );
+  overflow: hidden;
+  background: var(--theme-colour--black);
+  gap: var(--theme-border--width);
+
+  &__content,
+  &__media {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  &__content {
+
+    order: 2;
+    text-transform: uppercase;
+    padding-top: min(75px, 10vw);
+    padding-bottom: min(75px, 10vw);
+    padding-left: var(--theme-layout--gutter);
+    padding-right: var(--theme-layout--gutter);
+
+    &-heading,
+    &-message {
+      & + .fifty-fifty__content-cta {
+        margin-top: min(32px, 10vw);
+      }
+    }
+
+    &-cta {
+      &-link{
+        display: block;
+        width: auto;
+        max-width: 450px;
+      }
+    }
+
+    &-heading {
+      font-size: min(58px, 9.5vw);
+      line-height: 1.2;
+      & + .fifty-fifty__content-message {
+        margin-top: min(22px, 4vw);
+      }
+    }
+
+    &-message {
+      font-size: min(30px, 5.15vw);
+      line-height: 1.5;
+    }
+
+  }
+
+  &__media {
+    order: 1;
+    position: relative;
+    &-badge {
+      transition: transform var(--theme-transition--duration);
+      position: absolute;
+      top: 7.5vw;
+      right: 7.5vw;
+      height: 95px;
+      img, svg {
+        display: block;
+        height: 100%;
+        width: auto;
+      }
+    }
+    &-link {
+      &:hover {
+        .fifty-fifty {
+          &__media {
+            &-badge {
+              transform: scale( 1.1, 1.1 );
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint(sm) {
+
+    &__media {
+      &-badge {
+        height: 115px;
+      }
+    }
+
+  }
+
+  @include breakpoint(md) {
+
+    &__media {
+      &-badge {
+        height: 135px;
+      }
+    }
+
+  }
+
+  @include breakpoint(lg) {
+
+    grid-template-columns: repeat( 2, 1fr );
+
+    &__content,
+    &__media {
+      order: initial;
+    }
+
+    &__content {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: min(85px, 4vw);
+      padding-right: min(85px, 4vw);
+      &-cta {
+        &-link{
+          max-width: 520px;
+        }
+      }
+      &-heading {
+        font-size: min(90px, 5.15vw);
+        line-height: 1;
+      }
+      &-message {
+        font-size: min(38px, 2.15vw);
+        line-height: 1.35;
+      }
+    }
+
+    &__media {
+      &-badge {
+        top: 4.5vw;
+        right: 4.5vw;
+        height: 110px;
+      }
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+     &__media {
+      &-badge {
+        height: 135px;
+      }
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__media {
+      &-badge {
+        height: 155px;
+      }
+    }
+
+  }
+
+}

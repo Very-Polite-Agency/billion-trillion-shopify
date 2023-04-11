@@ -10,21 +10,25 @@
     @include body-copy-style( 2 );
   }
 
+  &--xl,
   &--1 {
     @include body-copy-size('1');
     line-height: 1.1818;
   }
 
+  &--lg,
   &--2 {
     @include body-copy-size('2');
     line-height: 1.2222;
   }
 
+  &--md,
   &--3 {
     @include body-copy-size('3');
     line-height: 1.1875;
   }
 
+  &--sm,
   &--4 {
     @include body-copy-size('4');
     line-height: 1.4343;

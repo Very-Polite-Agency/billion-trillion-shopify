@@ -41,10 +41,10 @@
   }
 
   @media screen and (min-width: 992px) {
-    #{{ section_id }} .fifty-fifty__content {
+    #{{ section_id }} .fifty-fifty__text {
       order: {{ section_content_order }};
     }
-    #{{ section_id }} .fifty-fifty__media {
+    #{{ section_id }} .fifty-fifty__image {
       order: {{ section_media_order }};
     }
   }
@@ -59,67 +59,118 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
+  <div class="fifty-fifty__main">
 
-  <div class="{{ section_name }}__media fifty-fifty__media">
-    {% if section_media_image %}
-      {%- liquid
-        capture aos_attrs
-          render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-up'
-        endcapture
-        assign aos_delay = aos_delay | plus: aos_delay_increment
-      -%}
-      <div class="{{ section_name }}__media-image fifty-fifty__media-image" {{ aos_attrs }}>
-        {% if section_content_link != blank %}
-          <a class="{{ section_name }}__media-link fifty-fifty__media-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
-        {% endif %}
-          {% render 'lazyload-image', image: section_media_image %}
-          {% unless 'none' == section_media_badge %}
-            <div class="{{ section_name }}__media-badge fifty-fifty__media-badge">
-              {% capture badge_type %}badge.{{ section_media_badge }}{% endcapture %}
-              {% render 'svg', type: badge_type %}
-            </div>
-          {% endunless %}
-        {% if section_content_link != blank %}
-          </a>
+    <div class="fifty-fifty__item image">
+      <div class="fifty-fifty__content">
+        {% if section_media_image %}
+          {%- liquid
+            capture aos_attrs
+              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-up'
+            endcapture
+            assign aos_delay = aos_delay | plus: aos_delay_increment
+          -%}
+          <div class="fifty-fifty__image" {{ aos_attrs }}>
+            {% if section_content_link != blank %}
+              <a class="fifty-fifty__image-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
+            {% endif %}
+              {% render 'lazyload-image', image: section_media_image %}
+              {% unless 'none' == section_media_badge %}
+                <div class="fifty-fifty__image-badge">
+                  {% capture badge_type %}badge.{{ section_media_badge }}{% endcapture %}
+                  {% render 'svg', type: badge_type %}
+                </div>
+              {% endunless %}
+            {% if section_content_link != blank %}
+              </a>
+            {% endif %}
+          </div>
         {% endif %}
       </div>
-    {% endif %}
-  </div>
+    </div>
 
-  <div class="{{ section_name }}__content fifty-fifty__content">
+    <div class="fifty-fifty__item text">
+      <div class="fifty-fifty__content">
 
-    {% if section_content_heading != blank or section_content_message != blank %}
-      <div class="{{ section_name }}__content-main">
+        {% if section_content_heading != blank or section_content_message != blank %}
+          <div class="{{ section_name }}__content-main">
 
-        {% if section_content_heading != blank %}
-          {%- liquid
-            capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
-            endcapture
-            assign aos_delay = aos_delay | plus: aos_delay_increment
-          -%}
-          <strong class="{{ section_name }}__content-main-heading fifty-fifty__content-heading" {{ aos_attrs }}>{{ section_content_heading }}</strong>
+            {% if section_content_heading != blank %}
+              {%- liquid
+                capture aos_attrs
+                  render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+                endcapture
+                assign aos_delay = aos_delay | plus: aos_delay_increment
+              -%}
+              <strong class="{{ section_name }}__content-main-heading fifty-fifty__content-heading" {{ aos_attrs }}>{{ section_content_heading }}</strong>
+            {% endif %}
+
+            {% if section_content_message != blank %}
+              {%- liquid
+                capture aos_attrs
+                  render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+                endcapture
+                assign aos_delay = aos_delay | plus: aos_delay_increment
+              -%}
+              <div class="{{ section_name }}__content-main-message fifty-fifty__content-message body-copy--secondary" {{ aos_attrs }}>{{ section_content_message }}</div>
+            {% endif %}
+
+            {% if section_content_link != blank %}
+              {%- liquid
+                capture aos_attrs
+                  render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
+                endcapture
+                assign aos_delay = aos_delay | plus: aos_delay_increment
+              -%}
+              <div class="{{ section_name }}__content-main-cta fifty-fifty__content-cta d-md-none" {{ aos_attrs }}>
+                <a class="{{ section_name }}__content-main-cta-link fifty-fifty__content-cta-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
+                  <div class="button--svg d-lg-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
+                  <div class="button--svg d-none d-lg-block">{% render 'svg', type: 'button.shop-now.md' %}</div>
+                </a>
+              </div>
+            {% endif %}
+
+          </div>
         {% endif %}
 
-        {% if section_content_message != blank %}
-          {%- liquid
-            capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
-            endcapture
-            assign aos_delay = aos_delay | plus: aos_delay_increment
-          -%}
-          <div class="{{ section_name }}__content-main-message fifty-fifty__content-message body-copy--secondary" {{ aos_attrs }}>{{ section_content_message }}</div>
+        {% if section_content_pairings != blank or section_content_tasting_notes != blank %}
+          <div class="{{ section_name }}__content-extras">
+            {% if section_content_tasting_notes != blank %}
+              {%- liquid
+                capture aos_attrs
+                  render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+                endcapture
+                assign aos_delay = aos_delay | plus: aos_delay_increment
+              -%}
+              <div class="{{ section_name }}__content-extras-block" {{ aos_attrs }}>
+                <strong class="{{ section_name }}__content-extras-heading heading--primary">Tasting Notes:</strong>
+                <div class="{{ section_name }}__content-extras-message">{{ section_content_tasting_notes }}</div>
+              </div>
+            {% endif %}
+            {% if section_content_pairings != blank %}
+              {%- liquid
+                capture aos_attrs
+                  render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+                endcapture
+                assign aos_delay = aos_delay | plus: aos_delay_increment
+              -%}
+              <div class="{{ section_name }}__content-extras-block" {{ aos_attrs }}>
+                <strong class="{{ section_name }}__content-extras-heading heading--primary">Pairings:</strong>
+                <div class="{{ section_name }}__content-extras-message">{{ section_content_pairings }}</div>
+              </div>
+            {% endif %}
+          </div>
         {% endif %}
 
         {% if section_content_link != blank %}
           {%- liquid
             capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
+              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
             endcapture
             assign aos_delay = aos_delay | plus: aos_delay_increment
           -%}
-          <div class="{{ section_name }}__content-main-cta fifty-fifty__content-cta d-md-none" {{ aos_attrs }}>
-            <a class="{{ section_name }}__content-main-cta-link fifty-fifty__content-cta-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
+          <div class="{{ section_name }}__content-cta fifty-fifty__content-cta d-none d-md-block" {{ aos_attrs }}>
+            <a class="{{ section_name }}__content-cta-link fifty-fifty__content-cta-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
               <div class="button--svg d-lg-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
               <div class="button--svg d-none d-lg-block">{% render 'svg', type: 'button.shop-now.md' %}</div>
             </a>
@@ -127,51 +178,7 @@
         {% endif %}
 
       </div>
-    {% endif %}
-
-    {% if section_content_pairings != blank or section_content_tasting_notes != blank %}
-      <div class="{{ section_name }}__content-extras">
-        {% if section_content_tasting_notes != blank %}
-          {%- liquid
-            capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
-            endcapture
-            assign aos_delay = aos_delay | plus: aos_delay_increment
-          -%}
-          <div class="{{ section_name }}__content-extras-block" {{ aos_attrs }}>
-            <strong class="{{ section_name }}__content-extras-heading heading--primary">Tasting Notes:</strong>
-            <div class="{{ section_name }}__content-extras-message">{{ section_content_tasting_notes }}</div>
-          </div>
-        {% endif %}
-        {% if section_content_pairings != blank %}
-          {%- liquid
-            capture aos_attrs
-              render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
-            endcapture
-            assign aos_delay = aos_delay | plus: aos_delay_increment
-          -%}
-          <div class="{{ section_name }}__content-extras-block" {{ aos_attrs }}>
-            <strong class="{{ section_name }}__content-extras-heading heading--primary">Pairings:</strong>
-            <div class="{{ section_name }}__content-extras-message">{{ section_content_pairings }}</div>
-          </div>
-        {% endif %}
-      </div>
-    {% endif %}
-
-    {% if section_content_link != blank %}
-      {%- liquid
-        capture aos_attrs
-          render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
-        endcapture
-        assign aos_delay = aos_delay | plus: aos_delay_increment
-      -%}
-      <div class="{{ section_name }}__content-cta fifty-fifty__content-cta d-none d-md-block" {{ aos_attrs }}>
-        <a class="{{ section_name }}__content-cta-link fifty-fifty__content-cta-link link" href="{{ section_content_link }}" target="{{ section_content_link_target }}" title="{{ section_content_heading }}">
-          <div class="button--svg d-lg-none">{% render 'svg', type: 'button.shop-now.sm' %}</div>
-          <div class="button--svg d-none d-lg-block">{% render 'svg', type: 'button.shop-now.md' %}</div>
-        </a>
-      </div>
-    {% endif %}
+    </div>
 
   </div>
 </div>
