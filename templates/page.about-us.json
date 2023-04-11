@@ -52,13 +52,16 @@
             "heading": "The Alien is You",
             "subheading": "",
             "message": "<p>The body contains trillions of microorganisms — so many they outnumber an Earth person's cells by 10 to 1. Scientist have discovered the largest alien festival is in the gut. And although you might be concerned by the alien takeover, the trillions of novel bacteria and genes in your microbiome are the body's greatest source of health. This isn't Body Snatchers.<\/p>",
+            "message_size": "sm",
             "background": "lime",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
             "background_image_repeat": "no-repeat",
             "background_image_size": "cover",
-            "padding_top": 0,
-            "padding_bottom": 0,
+            "padding_top": 52,
+            "padding_bottom": 52,
+            "text_align_mobile": "center",
+            "text_align_desktop": "center",
             "width": 85
           }
         },
@@ -143,6 +146,7 @@
             "heading": "",
             "subheading": "",
             "message": "",
+            "message_size": "sm",
             "background": "lemon",
             "background_image_position_mobile": "center center",
             "background_image_position_desktop": "center center",
@@ -150,6 +154,8 @@
             "background_image_size": "cover",
             "padding_top": 36,
             "padding_bottom": 36,
+            "text_align_mobile": "center",
+            "text_align_desktop": "center",
             "width": 100
           }
         }
