@@ -89,7 +89,7 @@
         "background_image_position_desktop": "center center",
         "background_image_repeat": "repeat",
         "background_image_size": "cover",
-        "border_top": false,
+        "border_top": true,
         "border_bottom": false
       }
     },
