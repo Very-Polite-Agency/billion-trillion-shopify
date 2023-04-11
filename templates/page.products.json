@@ -45,7 +45,13 @@
             "heading": "{{ section.settings.product.title }}",
             "heading_size": "sm",
             "message": "<p>The smooth familiarity of sake with a refreshing citrus twist. This beverage refines the classic flavours of lemon and sake with the off-beat punch of yuzu with a light carbonation.<\/p>",
-            "message_size": "sm"
+            "message_size": "sm",
+            "tasting_notes": "<p>{{ section.settings.product.metafields.sake_fizz.tasting_notes | metafield_tag }}<\/p>",
+            "pairings": "<p>{{ section.settings.product.metafields.sake_fizz.pairings | metafield_tag }}<\/p>",
+            "cta_link": "",
+            "cta_type": "learn-more",
+            "cta_colour": "white",
+            "background": "lemon"
           }
         }
       },
@@ -69,7 +75,13 @@
             "heading": "{{ section.settings.product.title }}",
             "heading_size": "sm",
             "message": "<p>Mandarin nulla ultrices mauris erat, nec efficitur dui finibus vitae. <br\/>Proin elementum ipsum at elit pellentesque, ut tincidunt magna <br\/>fringilla. Duis consequat dignissim metus, ut tincidunt ante feugiat eu.<br\/> Quisque feugiat pellentesque nisi at posuere laoreet.<\/p>",
-            "message_size": "sm"
+            "message_size": "sm",
+            "tasting_notes": "",
+            "pairings": "",
+            "cta_link": "",
+            "cta_type": "learn-more",
+            "cta_colour": "white",
+            "background": "lemon"
           }
         },
         "455efc36-85f6-47eb-9728-a8a03e06a3f7": {
@@ -103,7 +115,13 @@
             "heading": "{{ section.settings.product.title }}",
             "heading_size": "sm",
             "message": "<p>Mango ultrices ornare orci ac malesuada. Phasellus fringilla magna at nisi tincidunt, sed fermentum elit pulvinar. Sed elementum, mi sit amet vulputate dignissim, lacus lacus porta dui, sed fermentum ex dui eu <br\/>massa. Cras ut aliquet nisi. Quisque ut.<\/p>",
-            "message_size": "sm"
+            "message_size": "sm",
+            "tasting_notes": "",
+            "pairings": "",
+            "cta_link": "",
+            "cta_type": "learn-more",
+            "cta_colour": "white",
+            "background": "lemon"
           }
         }
       },
