@@ -9,7 +9,6 @@
   assign aos_id = section_id
 
   assign section_anchor = section.settings.anchor_id | default: ''
-  assign section_container = section.settings.container | default: 'container'
   assign section_text_colour = section.settings.text_colour | default: 'dark'
   assign section_video = section.settings.video | default: 'dark'
   assign section_video_aspect_ratio = section.settings.video_aspect_ratio | default: '16/9'
@@ -38,8 +37,10 @@
       width: auto;
     }
 
+
     #{{ section_id }} .{{ section_name }}__video {
       max-height: {{ section_video_max_height_mobile }};
+      min-height: unset;
     }
 
     @media screen and (min-width: 992px) {
@@ -65,10 +66,61 @@
 
   {%- endstyle -%}
 
-  <div class="{{ section_classes }}" id="{{ section_id }}">
+  <div class="{{ section_classes }} text--align-center text--uppercase text--{{ section_text_colour }}" id="{{ section_id }}">
 
     <div class="{{ section_name }}__video">
       {%- render 'lazyload-embed', video_host: section_video.type, video_id: section_video.id -%}
+      <div class="{{ section_name }}__video-content">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+
+            {%- liquid
+              assign heading = block.settings.heading | default: ''
+              assign heading_size = block.settings.heading_size | default: 'md'
+              capture aos_attrs
+                render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+              endcapture
+              assign aos_delay = aos_delay | plus: aos_delay_increment
+            -%}
+
+            {% if heading != blank %}
+              <h2 class="{{ section_name }}__heading heading--primary heading--{{ heading_size }}-fluid" {{ aos_attrs }}>{{ heading | escape }}</h2>
+            {% endif %}
+
+          {%- when 'message' -%}
+
+            {%- liquid
+              assign message = block.settings.message | default: ''
+              assign message_size = block.settings.message_size | default: 'sm'
+              capture aos_attrs
+                render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+              endcapture
+              assign aos_delay = aos_delay | plus: aos_delay_increment
+            -%}
+
+            {% if message != blank %}
+              <div class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ message }}</div>
+            {% endif %}
+
+          {%- when 'subheading' -%}
+
+            {%- liquid
+              assign subheading = block.settings.subheading | default: ''
+              assign subheading_size = block.settings.subheading_size | default: 'sm'
+              capture aos_attrs
+                render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+              endcapture
+              assign aos_delay = aos_delay | plus: aos_delay_increment
+            -%}
+
+            {% if subheading != blank %}
+              <strong class="{{ section_name }}__subheading body-copy--primary body-copy--{{ subheading_size }}-fluid" {{ aos_attrs }}>{{ subheading | escape }}</strong>
+            {% endif %}
+
+        {%- endcase -%}
+      {%- endfor -%}
+      </div>
     </div>
 
   </div>

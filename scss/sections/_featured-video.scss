@@ -8,13 +8,15 @@
 
   &__video {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid pink;
+    &-content {
+      padding: 24px;
+    }
   }
 
   @include breakpoint(lg) {
