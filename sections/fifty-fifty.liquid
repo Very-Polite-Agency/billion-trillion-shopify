@@ -30,9 +30,11 @@
       <div class="{{ section_name }}__main text--uppercase">
         {%- for block in section_blocks -%}
 
+          {% render 'debug-this', item: block %}
+
           {%- liquid
             assign block_id = 'block--' | append: block.id
-            assign block_type = block_type
+            assign block_type = block.type
           -%}
 
           {%- style -%}

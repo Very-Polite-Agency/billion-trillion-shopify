@@ -27,7 +27,7 @@ const createGliderFromElement = ( element = {} ) => {
             perView: 1
           },
           575: {
-            peek: { before: 0, after: 0 },
+            peek: { before: 0, after: 75 },
             perView: 1
           }
         },

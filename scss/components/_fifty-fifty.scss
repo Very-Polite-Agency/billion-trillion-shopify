@@ -17,6 +17,7 @@
   }
 
   &__content {
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     &-cell {
@@ -80,6 +81,13 @@
 
   &__image {
     width: 100%;
+    display: block;
+    height: auto;
+    img, svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
     &-badge {
       transition: transform var(--theme-transition--duration);
       position: absolute;
@@ -176,6 +184,9 @@
           }
         }
       }
+      .image & {
+        min-height: 100%;
+      }
     }
 
     &__cta {
@@ -191,6 +202,13 @@
     }
 
     &__image {
+      height: 100%;
+      img {
+        .featured-yuzu-sake-fizz & {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
       &-badge {
         top: 4.5vw;
         right: 4.5vw;

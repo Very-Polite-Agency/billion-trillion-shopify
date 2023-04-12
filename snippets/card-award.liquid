@@ -62,25 +62,27 @@
     <div class="{{ snippet_name }}__icon" {{ aos_attrs }}>{%- render 'lazyload-image', image: snippet_icon -%}</div>
   {%- endif -%}
 
-  {%- if snippet_title and snippet_title != blank -%}
-    {%- liquid
-      capture aos_attrs
-        render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
-      endcapture
-      assign aos_delay = aos_delay | plus: aos_delay_increment
-    -%}
-    <strong class="{{ snippet_name }}__title" {{ aos_attrs }}>{{ snippet_title }}</strong>
-  {%- endif -%}
+  <div class="{{ snippet_name }}__main">
+    {%- if snippet_title and snippet_title != blank -%}
+      {%- liquid
+        capture aos_attrs
+          render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
+        endcapture
+        assign aos_delay = aos_delay | plus: aos_delay_increment
+      -%}
+      <strong class="{{ snippet_name }}__title" {{ aos_attrs }}>{{ snippet_title }}</strong>
+    {%- endif -%}
 
-  {%- if snippet_details and snippet_details != blank -%}
-    {%- liquid
-      capture aos_attrs
-        render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
-      endcapture
-      assign aos_delay = aos_delay | plus: aos_delay_increment
-    -%}
-    <div class="{{ snippet_name }}__details body-copy--secondary" {{ aos_attrs }}>{{ snippet_details }}</div>
-  {%- endif -%}
+    {%- if snippet_details and snippet_details != blank -%}
+      {%- liquid
+        capture aos_attrs
+          render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-right'
+        endcapture
+        assign aos_delay = aos_delay | plus: aos_delay_increment
+      -%}
+      <div class="{{ snippet_name }}__details body-copy--secondary" {{ aos_attrs }}>{{ snippet_details }}</div>
+    {%- endif -%}
+  </div>
 
   {%- if snippet_footnote != blank -%}
     {%- liquid

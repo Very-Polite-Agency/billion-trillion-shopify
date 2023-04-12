@@ -7,15 +7,29 @@
   @include hobeaux( 700 );
   @include border-solid( var(--theme-border--width), 'black' );
   border-radius: var(--theme-border--radius);
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr minmax( 20px, 32px );
+  width: 100%;
   text-transform: uppercase;
   overflow: hidden;
   text-align: center;
   width: 100%;
   height: auto;
+
+  &__footnote,
+  &__icon,
+  &__main {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+  }
+
+  &__icon,
+  &__main {
+    height: 100%;
+  }
 
   &__content {
     padding: 0 var(--theme-layout--gutter) var(--theme-layout--gutter);
@@ -24,39 +38,42 @@
   &__details {
     @include sorry-sans( 700 );
     line-height: 1.2;
-    margin: auto auto 8.5vw;
+    margin-right: auto;
+    margin-left: auto;
     width: 75%;
     font-size: 16px;
     font-size: 4vw;
+    margin-top: auto;
   }
 
   &__footnote {
     background: var(--theme-colour--black);
     color: var(--theme-colour--white);
     text-align: center;
-    width: 100%;
     font-size: 12px;
     line-height: 1;
-    padding: 10px;
     letter-spacing: 0.02em;
   }
 
   &__icon {
-    width: auto;
-    height: 40vw;
-    margin: var(--theme-layout--gutter) auto 0;
+    //background: rgba(0,0,0,0.22);
     a, img, svg {
       display: block;
       width: auto;
-      height: 100%;
+      height: 75%;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
+  &__main {
+    //background: rgba(0,0,0,0.44);
+    padding: min(40px,2.5vw) 0 min(100px,8.5vw) 0;
+    align-items: flex-start;
+  }
+
   &__title {
-    font-size: 36px;
-    font-size: 10.5vw;
-    margin-top: 10px;
-    margin-top: 5.5vw;
+    font-size: min(100px, 8.5vw);
     display: block;
     line-height: 1;
   }
@@ -65,20 +82,14 @@
 
     &__details {
       font-size: 3.5vw;
-      margin-bottom: 7vw;
     }
 
     &__footnote {
       font-size: 2.5vw;
     }
 
-    &__icon {
-      height: 30vw;
-    }
-
     &__title {
       font-size: 8vw;
-      margin-top: 6vw;
     }
 
   }
@@ -87,20 +98,18 @@
 
     &__details {
       font-size: 2vw;
-      margin-bottom: 3vw;
     }
 
     &__footnote {
       font-size: 1.4vw;
     }
 
-    &__icon {
-      height: 15.5vw;
+    &__main {
+      padding: min(40px,1.5vw) 0 min(100px,3vw) 0;
     }
 
     &__title {
       font-size: 4.5vw;
-      margin-top: 2.5vw;
     }
 
   }
@@ -110,15 +119,14 @@
     &__details {
       font-size: 16px;
       width: 75%;
-      margin-bottom: 32px;
     }
 
     &__footnote {
       font-size: 12px;
     }
 
-    &__icon {
-      height: 128px;
+    &__main {
+      padding: 12px 0 26px 0;
     }
 
     &__title {
@@ -131,21 +139,18 @@
 
     &__details {
       font-size: 20px;
-      margin-bottom: 36px;
     }
 
     &__footnote {
       font-size: 14px;
     }
 
-    &__icon {
-      height: 162px;
-      margin-top: 30px;
+    &__main {
+      padding: 14px 0 28px 0;
     }
 
     &__title {
       font-size: 42px;
-      margin-top: 38px;
     }
 
   }
@@ -154,21 +159,18 @@
 
     &__details {
       font-size: 24px;
-      margin-bottom: 44px;
     }
 
     &__footnote {
       font-size: 16px;
     }
 
-    &__icon {
-      height: 192px;
-      margin-top: 34px;
+    &__main {
+      padding: 16px 0 30px 0;
     }
 
     &__title {
       font-size: 54px;
-      margin-top: 44px;
     }
 
   }
