@@ -325,6 +325,8 @@
         "anchor_id": "",
         "border_top": true,
         "border_bottom": false,
+        "padding_top": 140,
+        "padding_bottom": 140,
         "text_colour": "dark"
       }
     },
