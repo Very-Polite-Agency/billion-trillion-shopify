@@ -1,0 +1,90 @@
+@use "../utils/mixins/border" as *;
+@use "../utils/mixins/breakpoint" as *;
+@use "../utils/mixins/font" as *;
+
+.image-with-text {
+
+  $content-padding-x: min(40px, 6.25vw);
+  $content-padding-y: min(50px, 7vw);
+
+  padding-left: var(--theme-layout--container-padding);
+  padding-right: var(--theme-layout--container-padding);
+
+  &__heading,
+  &__message {
+    padding: $content-padding-y $content-padding-x;
+  }
+
+  &__heading {
+    & + .image-with-text__message {
+      @include border-solid(var(--theme-border--width), 'black', 'top' );
+    }
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+    img, svg {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__main {
+    @include border-solid(var(--theme-border--width), 'black' );
+    background: var(--theme-colour--black);
+    border-radius: var(--theme-border--radius);
+    gap: var(--theme-border--width);
+    overflow: hidden;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @include breakpoint(lg) {
+
+    $content-padding-x: min(36px, 2.5vw);
+    $content-padding-y: min(48px, 3.25vw);
+
+    padding-left: 0;
+    padding-right: 0;
+
+    &__heading,
+    &__message {
+      padding: $content-padding-y $content-padding-x;
+    }
+
+    &__image {
+      height: 100%;
+      img, svg {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__main {
+      max-width: var(--theme-container--lg);
+      grid-template-columns: 38% auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+    &__main {
+      max-width: var(--theme-container--xl);
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__main {
+      max-width: var(--theme-container--xxl);
+    }
+
+  }
+
+}

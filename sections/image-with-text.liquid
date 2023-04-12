@@ -10,7 +10,6 @@
 
   assign section_anchor = section.settings.anchor_id | default: ''
   assign section_blocks = section.blocks | default: false
-  assign section_container = section.settings.container | default: 'container'
 
 -%}
 
@@ -32,78 +31,92 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
-    <div class="{{ section_name }}__main text--uppercase">
-      {%- for block in section_blocks -%}
+  <div class="{{ section_name }}__main text--uppercase">
+    {%- for block in section_blocks -%}
 
-        {%- liquid
-          assign block_id = 'block--' | append: block.id
-          assign block_type = block.type
-        -%}
+      {%- liquid
+        assign block_id = 'block--' | append: block.id
+        assign block_type = block.type
+      -%}
 
-        <div class="{{ section_name }}__item {{ block_type }}" id="{{ block_id }}">
-          {% case block_type %}
+      <div class="{{ section_name }}__item {{ block_type }}" id="{{ block_id }}">
+        {% case block_type %}
 
-            {% when 'image' %}
+          {% when 'image' %}
+            {%- liquid
+              assign image = block.settings.image | default: false
+              assign image_aspect_ratio_desktop = block.settings.image_aspect_ratio_desktop | default: ''
+              assign image_aspect_ratio_mobile = block.settings.image_aspect_ratio_mobile | default: ''
+            -%}
+
+            {% if image_aspect_ratio_desktop != blank or image_aspect_ratio_mobile != blank %}
+              {%- style -%}
+                {% if image_aspect_ratio_mobile != blank %}
+                  #{{ block_id }} .{{ section_name }}__image {
+                    aspect-ratio: {{ image_aspect_ratio_mobile }};
+                  }
+                {% endif %}
+                @media screen and (min-width: 992px) {
+                  #{{ block_id }} .{{ section_name }}__image {
+                    aspect-ratio: {% if image_aspect_ratio_desktop != blank %}{{ image_aspect_ratio_desktop }}{% else %}initial{% endif %};
+                  }
+                }
+              {%- endstyle -%}
+            {% endif %}
+
+            {% if image %}
               {%- liquid
-                assign image = block.settings.image | default: false
-                assign image_aspect_ratio_desktop = block.settings.image_aspect_ratio_desktop | default: ''
-                assign image_aspect_ratio_mobile = block.settings.image_aspect_ratio_mobile | default: ''
+                capture aos_attrs
+                  render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-up'
+                endcapture
+                assign aos_delay = aos_delay | plus: aos_delay_increment
               -%}
-              {% if image %}
-                {%- liquid
-                  capture aos_attrs
-                    render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-up'
-                  endcapture
-                  assign aos_delay = aos_delay | plus: aos_delay_increment
-                -%}
-                <div class="{{ section_name }}__image" {{ aos_attrs }}>
-                  {% render 'lazyload-image', image: image %}
-                </div>
-              {% endif %}
+              <div class="{{ section_name }}__image" {{ aos_attrs }}>
+                {% render 'lazyload-image', image: image %}
+              </div>
+            {% endif %}
 
-            {% when 'text' %}
-              {%- liquid
-                assign heading = block.settings.heading | default: ''
-                assign heading_background = block.settings.heading_background | default: 'lemon'
-                assign heading_size = block.settings.heading_size | default: 'md'
-                assign message = block.settings.message | default: ''
-                assign message_background = block.settings.message_background | default: 'mango'
-                assign message_size = block.settings.message_size | default: 'sm'
-              -%}
-              {% if heading != blank %}
-                {%- liquid
-                  capture aos_attrs
-                    render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
-                  endcapture
-                  assign aos_delay = aos_delay | plus: aos_delay_increment
-                -%}
-                <strong
-                  class="{{ section_name }}__heading heading--primary heading--{{ heading_size }}-fluid"
-                  style="background: var(--theme-colour--{{ heading_background }});"
-                 {{ aos_attrs }}
-                >{{ heading }}</strong>
-              {% endif %}
-            {% if message != blank %}
+          {% when 'text' %}
+            {%- liquid
+              assign heading = block.settings.heading | default: ''
+              assign heading_background = block.settings.heading_background | default: 'lemon'
+              assign heading_size = block.settings.heading_size | default: 'md'
+              assign message = block.settings.message | default: ''
+              assign message_background = block.settings.message_background | default: 'mango'
+              assign message_size = block.settings.message_size | default: 'sm'
+            -%}
+            {% if heading != blank %}
               {%- liquid
                 capture aos_attrs
                   render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
                 endcapture
                 assign aos_delay = aos_delay | plus: aos_delay_increment
               -%}
-              <div
-                class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}-fluid"
-                style="background: var(--theme-colour--{{ message_background }});"
-                {{ aos_attrs }}
-              >{{ message }}</div>
+              <strong
+                class="{{ section_name }}__heading heading--primary heading--{{ heading_size }}-fluid"
+                style="background: var(--theme-colour--{{ heading_background }});"
+               {{ aos_attrs }}
+              >{{ heading }}</strong>
             {% endif %}
+          {% if message != blank %}
+            {%- liquid
+              capture aos_attrs
+                render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
+              endcapture
+              assign aos_delay = aos_delay | plus: aos_delay_increment
+            -%}
+            <div
+              class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}-fluid"
+              style="background: var(--theme-colour--{{ message_background }});"
+              {{ aos_attrs }}
+            >{{ message }}</div>
+          {% endif %}
 
-          {% endcase %}
-        </div>
+        {% endcase %}
+      </div>
 
-      {%- endfor -%}
-    </div>
-  {% render 'bs-container', state: 'closed', col: 'col-12', container: section_container %}
+    {%- endfor -%}
+  </div>
 </div>
 
 {% schema %}
