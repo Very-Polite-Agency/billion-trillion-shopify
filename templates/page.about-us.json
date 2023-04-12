@@ -7,6 +7,7 @@
     "a4472b6b-b84a-4ce6-b776-3daa598521e1",
     "0e494662-8cf2-4821-a00d-fdd4d8e5c0e0",
     "e13ccefb-aaa8-42d1-9707-bd577fb79dd4",
+    "09e2b196-49a2-433c-8992-7e35aba66af1",
     "8c71606e-b66e-4609-a3c4-2319d29cc4d1",
     "c5ddd571-40a7-4e5a-b116-59f35896c18d",
     "ca510ddb-3352-4969-ab45-d406db839a98",
@@ -53,8 +54,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/about-us--image-with-text-image_2x_a91c1d87-2500-4dbd-b9f1-6318b6a38c8f.png",
-            "image_aspect_ratio_mobile": "3.2\/1.7",
-            "image_aspect_ratio_desktop": ""
+            "image_aspect_ratio_mobile": "3.2\/1.7"
           }
         },
         "template--15945343795384__0ce32a52-5ba4-4540-8ed4-4cf62fb05914-1681327425413fb997-1": {
@@ -296,6 +296,36 @@
         "anchor_id": "",
         "border_top": true,
         "border_bottom": false
+      }
+    },
+    "09e2b196-49a2-433c-8992-7e35aba66af1": {
+      "type": "featured-video",
+      "blocks": {
+        "template--15945343795384__09e2b196-49a2-433c-8992-7e35aba66af1-1681337072e3bc75c2-0": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "",
+            "subheading_size": "sm"
+          }
+        },
+        "template--15945343795384__09e2b196-49a2-433c-8992-7e35aba66af1-1681337072e3bc75c2-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "sm"
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343795384__09e2b196-49a2-433c-8992-7e35aba66af1-1681337072e3bc75c2-0",
+        "template--15945343795384__09e2b196-49a2-433c-8992-7e35aba66af1-1681337072e3bc75c2-1"
+      ],
+      "settings": {
+        "video": "https:\/\/vimeo.com\/807044162",
+        "anchor_id": "",
+        "border_top": true,
+        "border_bottom": false,
+        "text_colour": "dark"
       }
     },
     "8c71606e-b66e-4609-a3c4-2319d29cc4d1": {
