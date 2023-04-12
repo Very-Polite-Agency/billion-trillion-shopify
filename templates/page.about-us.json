@@ -53,7 +53,7 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/about-us--image-with-text-image_2x_a91c1d87-2500-4dbd-b9f1-6318b6a38c8f.png",
-            "image_aspect_ratio_mobile": "1.7\/3.2",
+            "image_aspect_ratio_mobile": "3.2\/1.7",
             "image_aspect_ratio_desktop": ""
           }
         },
