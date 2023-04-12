@@ -322,11 +322,13 @@
       "settings": {
         "video": "https:\/\/vimeo.com\/807044162",
         "video_aspect_ratio": "8.64\/5.4",
+        "video_max_height_mobile": "",
+        "video_max_height_desktop": "",
         "anchor_id": "",
         "border_top": true,
         "border_bottom": false,
-        "padding_top": 140,
-        "padding_bottom": 140,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "text_colour": "dark"
       }
     },
