@@ -49,16 +49,20 @@
               assign image_aspect_ratio_mobile = block.settings.image_aspect_ratio_mobile | default: ''
             -%}
 
-            {% if image_aspect_ratio_desktop != blank or image_aspect_ratio_mobile != blank %}
+            {% if image_aspect_ratio_mobile != blank %}
               {%- style -%}
-                {% if image_aspect_ratio_mobile != blank %}
-                  #{{ block_id }} .{{ section_name }}__image {
-                    aspect-ratio: {{ image_aspect_ratio_mobile }};
-                  }
-                {% endif %}
+                #{{ block_id }} .{{ section_name }}__image {
+                  aspect-ratio: {{ image_aspect_ratio_mobile }};
+                  height: auto;
+                }
+                #{{ block_id }} .{{ section_name }}__image img {
+                  height: 100%;
+                  object-fit: cover;
+                }
                 @media screen and (min-width: 992px) {
                   #{{ block_id }} .{{ section_name }}__image {
-                    aspect-ratio: {% if image_aspect_ratio_desktop != blank %}{{ image_aspect_ratio_desktop }}{% else %}initial{% endif %};
+                    aspect-ratio: initial;
+                    height: 100%;
                   }
                 }
               {%- endstyle -%}
@@ -276,12 +280,6 @@
           "info": "Optionally include an aspect ratio for the product images for consistent user experience on smaller devices.",
           "type": "text",
           "id": "image_aspect_ratio_mobile"
-        },
-        {
-          "label": "Image Aspect Ratio (Desktop)",
-          "info": "Optionally include an aspect ratio for the product images for consistent user experience on larger devices.",
-          "type": "text",
-          "id": "image_aspect_ratio_desktop"
         }
       ]
     },
