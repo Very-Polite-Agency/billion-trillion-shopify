@@ -47,6 +47,8 @@
             {% when 'image' %}
               {%- liquid
                 assign image = block.settings.image | default: false
+                assign image_aspect_ratio_desktop = block.settings.image_aspect_ratio_desktop | default: ''
+                assign image_aspect_ratio_mobile = block.settings.image_aspect_ratio_mobile | default: ''
               -%}
               {% if image %}
                 {%- liquid
@@ -61,7 +63,40 @@
               {% endif %}
 
             {% when 'text' %}
-
+              {%- liquid
+                assign heading = block.settings.heading | default: ''
+                assign heading_background = block.settings.heading_background | default: 'lemon'
+                assign heading_size = block.settings.heading_size | default: 'md'
+                assign message = block.settings.message | default: ''
+                assign message_background = block.settings.message_background | default: 'mango'
+                assign message_size = block.settings.message_size | default: 'sm'
+              -%}
+              {% if heading != blank %}
+                {%- liquid
+                  capture aos_attrs
+                    render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
+                  endcapture
+                  assign aos_delay = aos_delay | plus: aos_delay_increment
+                -%}
+                <strong
+                  class="{{ section_name }}__heading heading--primary heading--{{ heading_size }}-fluid"
+                  style="background: var(--theme-colour--{{ heading_background }});"
+                 {{ aos_attrs }}
+                >{{ heading }}</strong>
+              {% endif %}
+            {% if message != blank %}
+              {%- liquid
+                capture aos_attrs
+                  render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
+                endcapture
+                assign aos_delay = aos_delay | plus: aos_delay_increment
+              -%}
+              <div
+                class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}-fluid"
+                style="background: var(--theme-colour--{{ message_background }});"
+                {{ aos_attrs }}
+              >{{ message }}</div>
+            {% endif %}
 
           {% endcase %}
         </div>
@@ -222,6 +257,18 @@
           "label": "Image",
           "type": "image_picker",
           "id": "image"
+        },
+        {
+          "label": "Image Aspect Ratio (Mobile)",
+          "info": "Optionally include an aspect ratio for the product images for consistent user experience on smaller devices.",
+          "type": "text",
+          "id": "image_aspect_ratio_mobile"
+        },
+        {
+          "label": "Image Aspect Ratio (Desktop)",
+          "info": "Optionally include an aspect ratio for the product images for consistent user experience on larger devices.",
+          "type": "text",
+          "id": "image_aspect_ratio_desktop"
         }
       ]
     },
