@@ -30,6 +30,12 @@
       &.grid {
         display: grid;
         grid-template-columns: repeat( 1, 1fr );
+        .fifty-fifty__content-cell {
+          padding-left: min(40px,6.25vw);
+          padding-right: min(40px,6.25vw);
+          padding-top: min(62px,8vw);
+          padding-bottom: min(70px,10vw);
+        }
       }
     }
   }
@@ -117,6 +123,15 @@
   }
 
   @include breakpoint(lg) {
+
+    &__content {
+      &-row {
+        &.flex { }
+        &.grid {
+          grid-template-columns: repeat( 2, 1fr );
+        }
+      }
+    }
 
     &__cta {
       &-button {

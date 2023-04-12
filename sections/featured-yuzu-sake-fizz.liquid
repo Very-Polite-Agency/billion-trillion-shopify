@@ -119,7 +119,7 @@
                         endcapture
                         assign aos_delay = aos_delay | plus: aos_delay_increment
                       -%}
-                      <div class="fifty-fifty__message body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ message }}</div>
+                      <div class="fifty-fifty__message body-copy--secondary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ message }}</div>
                     {% endif %}
                     {% if cta_link != blank %}
                       {%- liquid
@@ -137,7 +137,7 @@
                     {% endif %}
                   </div>
 
-                  <div class="fifty-fifty__content-row">
+                  <div class="fifty-fifty__content-row grid">
                     {% if tasting_notes and tasting_notes != blank %}
                       {%- liquid
                         capture aos_attrs
@@ -146,8 +146,8 @@
                         assign aos_delay = aos_delay | plus: aos_delay_increment
                       -%}
                       <div class="fifty-fifty__content-cell">
-                        <strong class="fifty-fifty__subheading">Tasting Notes:</strong>
-                        <div class="fifty-fifty__tasting-notes" {{ aos_attrs }}>{{ tasting_notes }}</div>
+                        <strong class="fifty-fifty__subheading heading--primary">Tasting Notes:</strong>
+                        <div class="fifty-fifty__tasting-notes body-copy--primary" {{ aos_attrs }}>{{ tasting_notes }}</div>
                       </div>
                     {% endif %}
                     {% if pairings and pairings != blank %}
@@ -158,8 +158,8 @@
                         assign aos_delay = aos_delay | plus: aos_delay_increment
                       -%}
                       <div class="fifty-fifty__content-cell">
-                        <strong class="fifty-fifty__subheading">Pairings:</strong>
-                        <div class="fifty-fifty__pairings" {{ aos_attrs }}>{{ pairings }}</div>
+                        <strong class="fifty-fifty__subheading heading--primary">Pairings:</strong>
+                        <div class="fifty-fifty__pairings body-copy--primary" {{ aos_attrs }}>{{ pairings }}</div>
                       </div>
                     {% endif %}
                   </div>
