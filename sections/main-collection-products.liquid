@@ -18,24 +18,24 @@
 
 {%- style -%}
 
-  {% if section_product_image_aspect_ratio_mobile and section_product_image_aspect_ratio_mobile != blank %}
+  {%- if section_product_image_aspect_ratio_mobile and section_product_image_aspect_ratio_mobile != blank -%}
     #{{ section_id }} .card-product__image,
     #{{ section_id }} .card-product__image-link {
       aspect-ratio: {{ section_product_image_aspect_ratio_mobile }};
     }
-  {% endif %}
+  {%- endif -%}
 
   #{{ section_id }} .{{ section_name }}__grid {
     gap: {{ section_grid_gap }}px;
   }
 
   @media screen and (min-width: 992px) {
-    {% if section_product_image_aspect_ratio_desktop and section_product_image_aspect_ratio_desktop != blank %}
+    {%- if section_product_image_aspect_ratio_desktop and section_product_image_aspect_ratio_desktop != blank -%}
       #{{ section_id }} .card-product__image,
       #{{ section_id }} .card-product__image-link {
         aspect-ratio: {{ section_product_image_aspect_ratio_desktop }};
       }
-    {% endif %}
+    {%- endif -%}
   }
 
   {%
@@ -51,39 +51,39 @@
       id: section_id,
       padding_bottom: section.settings.padding_bottom,
       padding_top: section.settings.padding_top
-  %}
+  -%}
 
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  {% paginate collection.products by section_products_per_page %}
-    {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
+  {%- paginate collection.products by section_products_per_page -%}
+    {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
 
       <div class="{{ section_name }}__sort-filter">
         <label class="{{ section_name }}__sort-filter-label">Sort by</label>
         <select class="{{ section_name }}__sort-filter-options select--primary" id="sort-by">
-          {% for option in collection.sort_options %}
-            <option value="{{ option.value }}" {% if option.value == collection_sort_by %}selected="selected"{% endif %}>
-              {% render 'sort-option-name', option_value: option.value %}
+          {%- for option in collection.sort_options -%}
+            <option value="{{ option.value }}" {%- if option.value == collection_sort_by -%}selected="selected"{%- endif -%}>
+              {%- render 'sort-option-name', option_value: option.value -%}
             </option>
-          {% endfor %}
+          {%- endfor -%}
         </select>
       </div>
 
       <div class="{{ section_name }}__grid grid--{{ section_grid_columns }}" role="list">
         {%- for item in collection.products -%}
-          {% render 'card-product-grid', card_aria_role: 'listitem', card_item: item %}
+          {%- render 'card-product-grid', card_aria_role: 'listitem', card_product: item -%}
         {%- endfor -%}
       </div>
 
-      {% capture snippet_classes %}{{ section_name }}__pagination pagination{% endcapture %}
-      {% render 'pagination', classes: snippet_classes, paginate: paginate %}
+      {%- capture snippet_classes -%}{{ section_name }}__pagination pagination{%- endcapture -%}
+      {%- render 'pagination', classes: snippet_classes, paginate: paginate -%}
 
-    {% render 'bs-container', state: 'closed', col: 'col-12', container: section_container %}
-  {% endpaginate %}
+    {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}
+  {%- endpaginate -%}
 </div>
 
-{% javascript %}
+{%- javascript -%}
 
   Shopify.queryParams = {};
 
@@ -104,9 +104,9 @@
     location.search = new URLSearchParams(Shopify.queryParams).toString();
   });
 
-{% endjavascript %}
+{%- endjavascript -%}
 
-{% schema %}
+{%- schema -%}
 {
   "name": "Collection Products",
   "tag": "section",
@@ -322,4 +322,4 @@
     }
   ]
 }
-{% endschema %}
+{%- endschema -%}
