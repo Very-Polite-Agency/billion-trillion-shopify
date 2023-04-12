@@ -1,0 +1,11 @@
+@use "../utils/mixins/border" as *;
+
+.featured-image {
+  &__image {
+    &.with-border {
+      @include border-solid(var(--theme-border--width), 'black' );
+      border-radius: var(--theme-border--radius);
+      overflow: hidden;
+    }
+  }
+}
