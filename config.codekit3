@@ -2777,14 +2777,6 @@
       "oAP" : "\/sections\/featured-image.liquid",
       "oF" : 0
     },
-    "\/sections\/featured-product.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/sections\/featured-product.liquid",
-      "oF" : 0
-    },
     "\/sections\/featured-text.liquid" : {
       "cB" : 0,
       "ft" : 8192,

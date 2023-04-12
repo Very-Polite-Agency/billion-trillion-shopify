@@ -101,32 +101,73 @@
                     endif
 
                   -%}
-                  {% if heading and heading != blank %}
-                    {%- liquid
-                      capture aos_attrs
-                        render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
-                      endcapture
-                      assign aos_delay = aos_delay | plus: aos_delay_increment
-                    -%}
-                    <h2 class="{{ section_name }}__heading heading--primary heading--{{ heading_size }}-fluid" {{ aos_attrs }}>{{ heading }}</h2>
-                  {% endif %}
-                  {% if message != blank %}
-                    {%- liquid
-                      capture aos_attrs
-                        render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
-                      endcapture
-                      assign aos_delay = aos_delay | plus: aos_delay_increment
-                    -%}
-                    <div class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ message }}</div>
-                  {% endif %}
-                  {% if cta_link != blank %}
-                    {% capture button_type %}button.{{ cta_type }}{% endcapture %}
-                    <div class="{{ section_name }}__cta" {{ aos_attrs }}>
-                      <a class="{{ section_name }}__cta-button button button--svg button--svg-fill-{{ cta_colour }}" href="{{ cta_link }}" target="{{ cta_link_target }}" title="{{ cta_link_title }}">
-                        {% render 'svg', type: button_type %}
-                      </a>
-                    </div>
-                  {% endif %}
+
+                  <div class="fifty-fifty__content-row">
+                    {% if heading and heading != blank %}
+                      {%- liquid
+                        capture aos_attrs
+                          render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
+                        endcapture
+                        assign aos_delay = aos_delay | plus: aos_delay_increment
+                      -%}
+                      <h2 class="fifty-fifty__heading heading--primary heading--{{ heading_size }}-fluid" {{ aos_attrs }}>{{ heading }}</h2>
+                    {% endif %}
+                    {% if message != blank %}
+                      {%- liquid
+                        capture aos_attrs
+                          render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
+                        endcapture
+                        assign aos_delay = aos_delay | plus: aos_delay_increment
+                      -%}
+                      <div class="fifty-fifty__message body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ message }}</div>
+                    {% endif %}
+                    {% if cta_link != blank %}
+                      {% capture button_type %}button.{{ cta_type }}{% endcapture %}
+                      <div class="fifty-fifty__cta d-lg-none" {{ aos_attrs }}>
+                        <a class="fifty-fifty__cta-button button button--svg button--svg-fill-{{ cta_colour }}" href="{{ cta_link }}" target="{{ cta_link_target }}" title="{{ cta_link_title }}">
+                          {% render 'svg', type: button_type %}
+                        </a>
+                      </div>
+                    {% endif %}
+                  </div>
+
+                  <div class="fifty-fifty__content-row">
+                    {% if tasting_notes and tasting_notes != blank %}
+                      {%- liquid
+                        capture aos_attrs
+                          render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
+                        endcapture
+                        assign aos_delay = aos_delay | plus: aos_delay_increment
+                      -%}
+                      <div class="fifty-fifty__content-cell">
+                        <strong class="fifty-fifty__subheading">Tasting Notes:</strong>
+                        <div class="fifty-fifty__tasting-notes" {{ aos_attrs }}>{{ tasting_notes }}</div>
+                      </div>
+                    {% endif %}
+                    {% if pairings and pairings != blank %}
+                      {%- liquid
+                        capture aos_attrs
+                          render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-left'
+                        endcapture
+                        assign aos_delay = aos_delay | plus: aos_delay_increment
+                      -%}
+                      <div class="fifty-fifty__content-cell">
+                        <strong class="fifty-fifty__subheading">Pairings:</strong>
+                        <div class="fifty-fifty__pairings" {{ aos_attrs }}>{{ pairings }}</div>
+                      </div>
+                    {% endif %}
+                  </div>
+
+                  <div class="fifty-fifty__content-row d-none d-lg-grid">
+                    {% if cta_link != blank %}
+                      {% capture button_type %}button.{{ cta_type }}{% endcapture %}
+                      <div class="{{ section_name }}__cta" {{ aos_attrs }}>
+                        <a class="{{ section_name }}__cta-button button button--svg button--svg-fill-{{ cta_colour }}" href="{{ cta_link }}" target="{{ cta_link_target }}" title="{{ cta_link_title }}">
+                          {% render 'svg', type: button_type %}
+                        </a>
+                      </div>
+                    {% endif %}
+                  </div>
 
               {% endcase %}
 
