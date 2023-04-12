@@ -146,8 +146,8 @@
                         assign aos_delay = aos_delay | plus: aos_delay_increment
                       -%}
                       <div class="fifty-fifty__content-cell">
-                        <strong class="fifty-fifty__subheading heading--primary">Tasting Notes:</strong>
-                        <div class="fifty-fifty__tasting-notes body-copy--primary" {{ aos_attrs }}>{{ tasting_notes }}</div>
+                        <strong class="fifty-fifty__subheading heading--primary body-copy--lg-fluid">Tasting Notes:</strong>
+                        <div class="fifty-fifty__extras body-copy--primary body-copy--sm-fluid" {{ aos_attrs }}>{{ tasting_notes }}</div>
                       </div>
                     {% endif %}
                     {% if pairings and pairings != blank %}
@@ -158,8 +158,8 @@
                         assign aos_delay = aos_delay | plus: aos_delay_increment
                       -%}
                       <div class="fifty-fifty__content-cell">
-                        <strong class="fifty-fifty__subheading heading--primary">Pairings:</strong>
-                        <div class="fifty-fifty__pairings body-copy--primary" {{ aos_attrs }}>{{ pairings }}</div>
+                        <strong class="fifty-fifty__subheading heading--primary body-copy--lg-fluid">Pairings:</strong>
+                        <div class="fifty-fifty__extras body-copy--primary body-copy--sm-fluid" {{ aos_attrs }}>{{ pairings }}</div>
                       </div>
                     {% endif %}
                   </div>
