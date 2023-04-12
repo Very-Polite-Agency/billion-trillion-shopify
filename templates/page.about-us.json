@@ -58,9 +58,9 @@
           "type": "text",
           "settings": {
             "heading": "Billion Trillion is a Sake Fizz beverage made with real ingredients",
-            "heading_size": "sm",
+            "heading_size": "md",
             "heading_background": "lemon",
-            "message": "",
+            "message": "<p>Billion Trillion has delivered our award-winning Sake Fizz to the Milky Way Galaxy! It's been a long time coming, but we now carry this out-of-this-world (literally) beverage across the whole universe!<\/p>",
             "message_size": "sm",
             "message_background": "mango"
           }
