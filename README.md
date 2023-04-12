@@ -48,7 +48,7 @@ https://billion-trillion.myshopify.com
 - [ ] drawer-cart.liquid
 - [x] faqs.liquid
 - [ ] featured-collection.liquid
-- [ ] featured-image.liquid
+- [x] featured-image.liquid
 - [x] featured-text.liquid
 - [ ] featured-video.liquid
 - [x] featured-yuzu-sake-fizz.liquid
@@ -86,7 +86,7 @@ https://billion-trillion.myshopify.com
 - [-] article.json
 - [-] blog.json
 - [ ] cart.json
-- [r] collection.json
+- [x] collection.json
 - [-] gift_card.liquid
 - [ ] index.json
 - [x] list-collections.json

@@ -9,6 +9,7 @@
   assign aos_id = section_id
 
   assign section_anchor = section.settings.anchor_id | default: ''
+  assign section_blocks = section.blocks | default: false
   assign section_container = section.settings.container | default: 'container'
 
 -%}
@@ -31,11 +32,43 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
-    <div class="{{ section_name }}__main">
-      <!-- Section content here... -->
+  {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
+    <div class="{{ section_name }}__main text--uppercase">
+      {%- for block in section_blocks -%}
+
+        {%- liquid
+          assign block_id = 'block--' | append: block.id
+          assign block_type = block.type
+        -%}
+
+        <div class="{{ section_name }}__item {{ block_type }}" id="{{ block_id }}">
+          {% case block_type %}
+
+            {% when 'image' %}
+              {%- liquid
+                assign image = block.settings.image | default: false
+              -%}
+              {% if image %}
+                {%- liquid
+                  capture aos_attrs
+                    render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-up'
+                  endcapture
+                  assign aos_delay = aos_delay | plus: aos_delay_increment
+                -%}
+                <div class="{{ section_name }}__image" {{ aos_attrs }}>
+                  {% render 'lazyload-image', image: image %}
+                </div>
+              {% endif %}
+
+            {% when 'text' %}
+
+
+          {% endcase %}
+        </div>
+
+      {%- endfor -%}
     </div>
-  {% render 'bs-container', state: 'closed', col: 'col-12', container: container %}
+  {% render 'bs-container', state: 'closed', col: 'col-12', container: section_container %}
 </div>
 
 {% schema %}
@@ -186,8 +219,9 @@
       "type": "image",
       "settings": [
         {
-          "content": "Settings",
-          "type": "header"
+          "label": "Image",
+          "type": "image_picker",
+          "id": "image"
         }
       ]
     },
@@ -196,15 +230,73 @@
       "type": "text",
       "settings": [
         {
-          "content": "Settings",
-          "type": "header"
+          "label": "Heading",
+          "type": "text",
+          "id": "heading"
+        },
+        {
+          "label": "Heading Size",
+          "type": "select",
+          "options": [
+            { "label": "Large", "value": "lg" },
+            { "label": "Medium", "value": "md" },
+            { "label": "Small", "value": "sm" }
+          ],
+          "default": "sm",
+          "id": "heading_size"
+        },
+        {
+          "label": "Heading Background",
+          "type": "select",
+          "options": [
+            { "label": "Lemon", "value": "lemon" },
+            { "label": "Lime", "value": "lime" },
+            { "label": "Mango", "value": "mango" },
+            { "label": "Orange", "value": "orange" },
+            { "label": "Strawberry", "value": "strawberry" }
+          ],
+          "default": "lemon",
+          "id": "heading_background"
+        },
+        {
+          "label": "Message",
+          "type": "richtext",
+          "id": "message"
+        },
+        {
+          "label": "Message Size",
+          "type": "select",
+          "options": [
+            { "label": "Large", "value": "lg" },
+            { "label": "Medium", "value": "md" },
+            { "label": "Small", "value": "sm" }
+          ],
+          "default": "sm",
+          "id": "message_size"
+        },
+        {
+          "label": "Message Background",
+          "type": "select",
+          "options": [
+            { "label": "Lemon", "value": "lemon" },
+            { "label": "Lime", "value": "lime" },
+            { "label": "Mango", "value": "mango" },
+            { "label": "Orange", "value": "orange" },
+            { "label": "Strawberry", "value": "strawberry" }
+          ],
+          "default": "mango",
+          "id": "message_background"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Image with Text"
+      "name": "Image with Text",
+      "blocks": [
+        { "type": "image" },
+        { "type": "text" }
+      ]
     }
   ]
 }
