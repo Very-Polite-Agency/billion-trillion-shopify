@@ -4,6 +4,9 @@
 
 .fifty-fifty {
 
+  $content-padding-x: min(40px, 6.25vw);
+  $content-padding-y: min(50px, 7vw);
+
   background: var(--theme-colour--black);
 
   &__heading,
@@ -24,10 +27,10 @@
     &-row {
       width: 100%;
       &.flex {
-        padding-left: min(40px,6.25vw);
-        padding-right: min(40px,6.25vw);
-        padding-top: min(62px,8vw);
-        padding-bottom: min(62px,8vw);
+        padding-left: $content-padding-x;
+        padding-right: $content-padding-x;
+        padding-top: $content-padding-y;
+        padding-bottom: $content-padding-y;
         display: flex;
         flex-flow: column;
         align-items: flex-start;
@@ -36,10 +39,10 @@
         display: grid;
         grid-template-columns: repeat( 1, 1fr );
         .fifty-fifty__content-cell {
-          padding-left: min(40px,6.25vw);
-          padding-right: min(40px,6.25vw);
-          padding-top: min(62px,8vw);
-          padding-bottom: min(70px,10vw);
+          padding-left: $content-padding-x;
+          padding-right: $content-padding-x;
+          padding-top: $content-padding-y;
+          padding-bottom: $content-padding-y;
         }
       }
       & + .fifty-fifty__content-row {
@@ -129,6 +132,20 @@
 
   @include breakpoint(md) {
 
+    &__content {
+      &-cell {
+        & + .fifty-fifty__content-cell {
+          @include border-solid(var(--theme-border--width), 'black', 'left' );
+          border-top: none;
+        }
+      }
+      &-row {
+        &.grid {
+          grid-template-columns: repeat( 2, 1fr );
+        }
+      }
+    }
+
     &__image {
       &-badge {
         height: 135px;
@@ -139,11 +156,24 @@
 
   @include breakpoint(lg) {
 
+    $content-padding-x: min(36px, 2.5vw);
+    $content-padding-y: min(48px, 3.25vw);
+
     &__content {
       &-row {
-        &.flex { }
+        &.flex {
+          padding-left: $content-padding-x;
+          padding-right: $content-padding-x;
+          padding-top: $content-padding-y;
+          padding-bottom: $content-padding-y;
+        }
         &.grid {
-          grid-template-columns: repeat( 2, 1fr );
+          .fifty-fifty__content-cell {
+            padding-left: $content-padding-x;
+            padding-right: $content-padding-x;
+            padding-top: $content-padding-y;
+            padding-bottom: $content-padding-y;
+          }
         }
       }
     }
