@@ -321,6 +321,7 @@
       ],
       "settings": {
         "video": "https:\/\/vimeo.com\/807044162",
+        "video_aspect_ratio": "8.64\/5.4",
         "anchor_id": "",
         "border_top": true,
         "border_bottom": false,
