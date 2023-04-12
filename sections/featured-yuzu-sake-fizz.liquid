@@ -102,7 +102,7 @@
 
                   -%}
 
-                  <div class="fifty-fifty__content-row">
+                  <div class="fifty-fifty__content-row flex">
                     {% if heading and heading != blank %}
                       {%- liquid
                         capture aos_attrs
@@ -122,6 +122,12 @@
                       <div class="fifty-fifty__message body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ message }}</div>
                     {% endif %}
                     {% if cta_link != blank %}
+                      {%- liquid
+                        capture aos_attrs
+                          render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-right'
+                        endcapture
+                        assign aos_delay = aos_delay | plus: aos_delay_increment
+                      -%}
                       {% capture button_type %}button.{{ cta_type }}{% endcapture %}
                       <div class="fifty-fifty__cta d-lg-none" {{ aos_attrs }}>
                         <a class="fifty-fifty__cta-button button button--svg button--svg-fill-{{ cta_colour }}" href="{{ cta_link }}" target="{{ cta_link_target }}" title="{{ cta_link_title }}">
