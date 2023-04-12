@@ -43,7 +43,7 @@
           "type": "text",
           "settings": {
             "heading": "",
-            "heading_size": "sm",
+            "heading_size": "md",
             "message": "<p>The smooth familiarity of sake with a refreshing citrus twist. This beverage refines the classic flavours of lemon and sake with the off-beat punch of yuzu with a light carbonation.<\/p>",
             "message_size": "sm",
             "tasting_notes": "",
@@ -73,7 +73,7 @@
           "type": "text",
           "settings": {
             "heading": "{{ section.settings.product.title }}",
-            "heading_size": "sm",
+            "heading_size": "md",
             "message": "<p>Mandarin nulla ultrices mauris erat, nec efficitur dui finibus vitae. <br\/>Proin elementum ipsum at elit pellentesque, ut tincidunt magna <br\/>fringilla. Duis consequat dignissim metus, ut tincidunt ante feugiat eu.<br\/> Quisque feugiat pellentesque nisi at posuere laoreet.<\/p>",
             "message_size": "sm",
             "tasting_notes": "",
@@ -113,7 +113,7 @@
           "type": "text",
           "settings": {
             "heading": "{{ section.settings.product.title }}",
-            "heading_size": "sm",
+            "heading_size": "md",
             "message": "<p>Mango ultrices ornare orci ac malesuada. Phasellus fringilla magna at nisi tincidunt, sed fermentum elit pulvinar. Sed elementum, mi sit amet vulputate dignissim, lacus lacus porta dui, sed fermentum ex dui eu <br\/>massa. Cras ut aliquet nisi. Quisque ut.<\/p>",
             "message_size": "sm",
             "tasting_notes": "",
