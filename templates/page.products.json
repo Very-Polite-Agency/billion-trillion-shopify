@@ -74,7 +74,7 @@
           "settings": {
             "heading": "{{ section.settings.product.title }}",
             "heading_size": "md",
-            "message": "<p>Mandarin nulla ultrices mauris erat, nec efficitur dui finibus vitae. <br\/>Proin elementum ipsum at elit pellentesque, ut tincidunt magna <br\/>fringilla. Duis consequat dignissim metus, ut tincidunt ante feugiat eu.<br\/> Quisque feugiat pellentesque nisi at posuere laoreet.<\/p>",
+            "message": "<p>Mandarin nulla ultrices mauris erat, nec efficitur dui finibus vitae. Proin elementum ipsum at elit pellentesque, ut tincidunt magna fringilla. Duis consequat dignissim metus, ut tincidunt ante feugiat eu. Quisque feugiat pellentesque nisi at posuere laoreet.<\/p>",
             "message_size": "sm",
             "tasting_notes": "",
             "pairings": "",
@@ -114,7 +114,7 @@
           "settings": {
             "heading": "{{ section.settings.product.title }}",
             "heading_size": "md",
-            "message": "<p>Mango ultrices ornare orci ac malesuada. Phasellus fringilla magna at nisi tincidunt, sed fermentum elit pulvinar. Sed elementum, mi sit amet vulputate dignissim, lacus lacus porta dui, sed fermentum ex dui eu <br\/>massa. Cras ut aliquet nisi. Quisque ut.<\/p>",
+            "message": "<p>Mango ultrices ornare orci ac malesuada. Phasellus fringilla magna at nisi tincidunt, sed fermentum elit pulvinar. Sed elementum, mi sit amet vulputate dignissim, lacus lacus porta dui, sed fermentum ex dui eu massa. Cras ut aliquet nisi. Quisque ut.<\/p>",
             "message_size": "sm",
             "tasting_notes": "",
             "pairings": "",
