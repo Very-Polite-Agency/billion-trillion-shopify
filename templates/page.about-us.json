@@ -304,15 +304,15 @@
         "template--15945343795384__09e2b196-49a2-433c-8992-7e35aba66af1-1681337072e3bc75c2-0": {
           "type": "subheading",
           "settings": {
-            "subheading": "",
+            "subheading": "Billion Trillion is the number one ready to drink beverage in the universe!",
             "subheading_size": "sm"
           }
         },
         "template--15945343795384__09e2b196-49a2-433c-8992-7e35aba66af1-1681337072e3bc75c2-1": {
           "type": "heading",
           "settings": {
-            "heading": "",
-            "heading_size": "sm"
+            "heading": "Welcome to the good time galaxy",
+            "heading_size": "md"
           }
         }
       },
