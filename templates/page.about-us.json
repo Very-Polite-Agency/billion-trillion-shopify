@@ -72,15 +72,16 @@
       ],
       "settings": {
         "anchor_id": "",
-        "background": "none",
+        "background": "image",
+        "background_image": "shopify:\/\/shop_images\/about-us--image-with-text-01_2x_104bad2d-3413-49ba-8d50-997bd1686a80.png",
         "background_image_position_mobile": "center center",
         "background_image_position_desktop": "center center",
         "background_image_repeat": "repeat",
         "background_image_size": "cover",
-        "border_top": false,
+        "border_top": true,
         "border_bottom": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 88,
+        "padding_bottom": 88
       }
     },
     "176d8bdf-4176-44de-9bea-5ba964d51b3a": {
