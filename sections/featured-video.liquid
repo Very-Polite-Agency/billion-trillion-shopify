@@ -13,6 +13,16 @@
   assign section_text_colour = section.settings.text_colour | default: 'dark'
   assign section_video = section.settings.video | default: 'dark'
   assign section_video_aspect_ratio = section.settings.video_aspect_ratio | default: '16/9'
+  assign section_video_max_height_desktop = section.settings.video_max_height_desktop | default: ''
+  assign section_video_max_height_mobile = section.settings.video_max_height_mobile | default: ''
+
+  if section_video_max_height_desktop == blank
+    assign section_video_max_height_desktop = 'none'
+  endif
+
+  if section_video_max_height_mobile == blank
+    assign section_video_max_height_mobile = 'none'
+  endif
 
 -%}
 
@@ -20,19 +30,27 @@
 
   {%- style -%}
 
-    #{{ section_id }} .{{ section_name }}__video {
+    #{{ section_id }} iframe {
       aspect-ratio: {{ section_video_aspect_ratio }};
+      display: block;
       position: absolute;
       height: 100%;
       width: auto;
     }
 
+    #{{ section_id }} .{{ section_name }}__video {
+      max-height: {{ section_video_max_height_mobile }};
+    }
+
     @media screen and (min-width: 992px) {
-      #{{ section_id }},
+      #{{ section_id }} iframe,
       #{{ section_id }} .{{ section_name }}__video {
         aspect-ratio: {{ section_video_aspect_ratio }};
         height: auto;
         width: 100%;
+      }
+      #{{ section_id }} .{{ section_name }}__video {
+        max-height: {{ section_video_max_height_desktop }};
       }
     }
 
@@ -52,62 +70,6 @@
     <div class="{{ section_name }}__video">
       {%- render 'lazyload-embed', video_host: section_video.type, video_id: section_video.id -%}
     </div>
-
-    <div class="{{ section_name }}__main text--align-center text--uppercase text--{{ section_text_colour }}">
-      {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
-
-        {%- for block in section.blocks -%}
-          {%- case block.type -%}
-            {%- when 'heading' -%}
-
-              {%- liquid
-                assign heading = block.settings.heading | default: ''
-                assign heading_size = block.settings.heading_size | default: 'md'
-                capture aos_attrs
-                  render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
-                endcapture
-                assign aos_delay = aos_delay | plus: aos_delay_increment
-              -%}
-
-              {% if heading != blank %}
-                <h2 class="{{ section_name }}__heading heading--primary heading--{{ heading_size }}-fluid" {{ aos_attrs }}>{{ heading | escape }}</h2>
-              {% endif %}
-
-            {%- when 'message' -%}
-
-              {%- liquid
-                assign message = block.settings.message | default: ''
-                assign message_size = block.settings.message_size | default: 'sm'
-                capture aos_attrs
-                  render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
-                endcapture
-                assign aos_delay = aos_delay | plus: aos_delay_increment
-              -%}
-
-              {% if message != blank %}
-                <div class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ message }}</div>
-              {% endif %}
-
-            {%- when 'subheading' -%}
-
-              {%- liquid
-                assign subheading = block.settings.subheading | default: ''
-                assign subheading_size = block.settings.subheading_size | default: 'sm'
-                capture aos_attrs
-                  render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
-                endcapture
-                assign aos_delay = aos_delay | plus: aos_delay_increment
-              -%}
-
-              {% if subheading != blank %}
-                <strong class="{{ section_name }}__subheading body-copy--primary body-copy--{{ subheading_size }}-fluid" {{ aos_attrs }}>{{ subheading | escape }}</strong>
-              {% endif %}
-
-          {%- endcase -%}
-        {%- endfor -%}
-
-        {% render 'bs-container', state: 'closed', col: 'col-12', container: section_container %}
-      </div>
 
   </div>
 
@@ -134,6 +96,16 @@
       "type": "text",
       "default": "16/9",
       "id": "video_aspect_ratio"
+    },
+    {
+      "label": "Video Maximum Height (Mobile)",
+      "type": "text",
+      "id": "video_max_height_mobile"
+    },
+    {
+      "label": "Video Maximum Height (Desktop)",
+      "type": "text",
+      "id": "video_max_height_desktop"
     },
     {
       "content": "Settings",
