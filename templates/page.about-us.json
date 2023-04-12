@@ -1,6 +1,7 @@
 {
   "order": [
     "hero",
+    "0ce32a52-5ba4-4540-8ed4-4cf62fb05914",
     "176d8bdf-4176-44de-9bea-5ba964d51b3a",
     "72081baf-4665-403a-b951-d8b6e7fb0752",
     "a4472b6b-b84a-4ce6-b776-3daa598521e1",
@@ -43,6 +44,43 @@
         "height_desktop": "auto",
         "padding_top": 88,
         "padding_bottom": 88
+      }
+    },
+    "0ce32a52-5ba4-4540-8ed4-4cf62fb05914": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--15945343795384__0ce32a52-5ba4-4540-8ed4-4cf62fb05914-1681327425413fb997-0": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "template--15945343795384__0ce32a52-5ba4-4540-8ed4-4cf62fb05914-1681327425413fb997-1": {
+          "type": "text",
+          "settings": {
+            "heading": "Billion Trillion is a Sake Fizz beverage made with real ingredients",
+            "heading_size": "sm",
+            "heading_background": "lemon",
+            "message": "",
+            "message_size": "sm",
+            "message_background": "mango"
+          }
+        }
+      },
+      "block_order": [
+        "template--15945343795384__0ce32a52-5ba4-4540-8ed4-4cf62fb05914-1681327425413fb997-0",
+        "template--15945343795384__0ce32a52-5ba4-4540-8ed4-4cf62fb05914-1681327425413fb997-1"
+      ],
+      "settings": {
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "176d8bdf-4176-44de-9bea-5ba964d51b3a": {
