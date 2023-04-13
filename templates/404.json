@@ -5,11 +5,46 @@
   "sections": {
     "main": {
       "type": "main-404",
+      "blocks": {
+        "b03c88d6-c5d2-4845-8a0f-a5ef78d61d1d": {
+          "type": "heading",
+          "settings": {
+            "heading": "404"
+          }
+        },
+        "e0ee7356-d20c-49bb-9fd1-7afbfa093821": {
+          "type": "message",
+          "settings": {
+            "message": "",
+            "message_size": "sm"
+          }
+        },
+        "7500c27a-28af-4d56-a45b-a0d0007d9c09": {
+          "type": "button",
+          "settings": {
+            "button_link": "",
+            "button_type": "take-me-home",
+            "button_colour": "white"
+          }
+        }
+      },
+      "block_order": [
+        "b03c88d6-c5d2-4845-8a0f-a5ef78d61d1d",
+        "e0ee7356-d20c-49bb-9fd1-7afbfa093821",
+        "7500c27a-28af-4d56-a45b-a0d0007d9c09"
+      ],
       "settings": {
-        "heading": "404",
-        "message": "<p>Galaxy Not Found<\/p>",
-        "cta_link": "\/",
-        "anchor_id": ""
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "text_colour": "dark"
       }
     }
   }
