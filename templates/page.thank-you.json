@@ -1,1 +1,24 @@
-{"order":["main"],"sections":{"main":{"settings":{"anchor_id":"","cta_link":"\/","heading":"Thank You","message":"<p>We've received <br\/>your signal<\/p>"},"type":"thank-you"}}}
+{
+  "order": [
+    "main"
+  ],
+  "sections": {
+    "main": {
+      "type": "thank-you",
+      "settings": {
+        "anchor_id": "",
+        "background": "image",
+        "background_image": "shopify:\/\/shop_images\/tile-background_2x_8633724c-832c-4866-82a3-a03b9bfd94de.png",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "400px",
+        "border_top": false,
+        "border_bottom": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "text_colour": "dark"
+      }
+    }
+  }
+}
