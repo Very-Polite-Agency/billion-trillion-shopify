@@ -86,13 +86,13 @@
         "type": "policy-privacy",
         "settings": {
           "anchor_id": "",
-          "background": "lime",
+          "background": "orange",
           "background_image_position_mobile": "center center",
           "background_image_position_desktop": "center center",
           "background_image_repeat": "no-repeat",
           "background_image_size": "cover",
-          "padding_top": 140,
-          "padding_bottom": 140,
+          "padding_top": 64,
+          "padding_bottom": 104,
           "text_colour": "light"
         }
       }
