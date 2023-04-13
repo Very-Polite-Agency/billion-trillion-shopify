@@ -2851,14 +2851,6 @@
       "oAP" : "\/sections\/faqs.liquid",
       "oF" : 0
     },
-    "\/sections\/featured-collection.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/sections\/featured-collection.liquid",
-      "oF" : 0
-    },
     "\/sections\/featured-image.liquid" : {
       "cB" : 0,
       "ft" : 8192,

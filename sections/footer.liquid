@@ -8,15 +8,14 @@
   assign aos_delay = 250
   assign aos_delay_increment = 250
 
-  assign container = section.settings.container | default: 'container'
-  assign menu = section.settings.menu | default: ''
-  assign tagline_media_desktop = section.settings.tagline_media_desktop | default: false
-  assign tagline_media_mobile = section.settings.tagline_media_mobile | default: false
+  assign section_container = section.settings.container | default: 'container'
+  assign section_menu_main = section.settings.menu_main | default: false
+  assign section_tagline_media_desktop = section.settings.tagline_media_desktop | default: false
+  assign section_tagline_media_mobile = section.settings.tagline_media_mobile | default: false
 
 -%}
 
 {%- style -%}
-
   {%
     render 'element-styles',
       background: section.settings.background,
@@ -29,16 +28,15 @@
       border_top: section.settings.border_top,
       id: section_id
   %}
-
 {%- endstyle -%}
 
 <div class="{{ section_name }}__main text--uppercase text--primary">
-  {%- render 'bs-container', state: 'open', col: 'col-12', container: container -%}
+  {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
     <div class="{{ section_name }}__main-content">
 
-      {%- if menu and menu != blank -%}
+      {%- if section_menu_main and section_menu_main != blank -%}
         <nav class="{{ section_name }}__main-navigation navigation navigation--main">
-          {%- for link in linklists[menu].links -%}
+          {%- for link in linklists[section_menu_main].links -%}
             <div class="{{ section_name }}__main-navigation-item navigation__item">
               {%- capture link_classes -%}{{ section_name }}__main-navigation-link navigation__link link{% if link.active %} active{% endif %}{%- endcapture -%}
               {%- render 'link', link_classes: link_classes, link_title: link.title, link_url: link.url -%}
@@ -49,20 +47,20 @@
 
       <strong class="{{ section_name }}__main-tagline">
         Welcome to the Good Time Galaxy
-        {% if tagline_media_mobile %}
-          <div class="{{ section_name }}__main-tagline-media d-lg-none">{% render "lazyload-image", image: tagline_media_mobile %}</div>
+        {% if section_tagline_media_mobile %}
+          <div class="{{ section_name }}__main-tagline-media d-lg-none">{% render "lazyload-image", image: section_tagline_media_mobile %}</div>
         {% endif %}
-        {% if tagline_media_desktop %}
-          <div class="{{ section_name }}__main-tagline-media d-none d-lg-block">{% render "lazyload-image", image: tagline_media_desktop %}</div>
+        {% if section_tagline_media_desktop %}
+          <div class="{{ section_name }}__main-tagline-media d-none d-lg-block">{% render "lazyload-image", image: section_tagline_media_desktop %}</div>
         {% endif %}
       </strong>
 
     </div>
-  {%- render 'bs-container', state: 'closed', col: 'col-12', container: container -%}
+  {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}
 </div>
 
 <div class="{{ section_name }}__footnote text--uppercase text--secondary">
-  {%- render 'bs-container', state: 'open', col: 'col-12', container: container -%}
+  {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
     <div class="{{ section_name }}__footnote-content">
       <div class="{{ section_name }}__footnote-instagram">
         <span class="{{ section_name }}__footnote-instagram-cta">Follow Us</span>
@@ -70,7 +68,7 @@
       </div>
       <div class="{{ section_name }}__footnote-legal">&copy; {{ "now" | date: "%Y" }} {{ shop.name }}</div>
     </div>
-  {%- render 'bs-container', state: 'closed', col: 'col-12', container: container -%}
+  {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}
 </div>
 
 {%- schema -%}
@@ -80,17 +78,13 @@
   "class": "footer",
   "settings": [
     {
-      "content": "Content",
-      "type": "header"
-    },
-    {
       "content": "Navigation",
       "type": "header"
     },
     {
-      "label": "Menu",
+      "label": "Main Menu",
       "type": "link_list",
-      "id": "menu"
+      "id": "menu_main"
     },
     {
       "content": "Tagline",
@@ -240,7 +234,6 @@
       "default": "container",
       "id": "container"
     }
-  ],
-  "blocks": []
+  ]
 }
 {%- endschema -%}

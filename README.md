@@ -46,17 +46,17 @@ https://billion-trillion.myshopify.com
 - [ ] contact-form.liquid
 - [x] custom-liquid.liquid
 - [ ] drawer-cart.liquid
+- [x] drawer-mobile-menu.liquid
 - [x] faqs.liquid
-- [ ] featured-collection.liquid
 - [x] featured-image.liquid
 - [x] featured-text.liquid
-- [ ] featured-video.liquid
+- [x] featured-video.liquid
 - [x] featured-yuzu-sake-fizz.liquid
 - [x] fifty-fifty.liquid
-- [r] footer.liquid
-- [ ] header.liquid
+- [x] footer.liquid
+- [x] header.liquid
 - [x] hero.liquid
-- [ ] image-with-text.liquid
+- [x] image-with-text.liquid
 - [ ] main-404.liquid
 - [ ] main-cart-footer.liquid
 - [ ] main-cart-hero.liquid
@@ -68,12 +68,12 @@ https://billion-trillion.myshopify.com
 - [ ] main-password.liquid
 - [r] main-product.liquid
 - [x] marquee.liquid
-- [ ] mobile-menu.liquid
-- [ ] policy-privacy.liquid
-- [ ] policy-refund.liquid
-- [ ] policy-shipping.liquid
-- [ ] policy-subscription.liquid
-- [ ] policy-terms-of-service.liquid
+- [x] mobile-menu.liquid
+- [x] policy-privacy.liquid
+- [x] policy-refund.liquid
+- [x] policy-shipping.liquid
+- [x] policy-subscription.liquid
+- [x] policy-terms-of-service.liquid
 - [x] product-carousel.liquid
 - [x] product-grid.liquid
 - [x] reviews.liquid
@@ -88,10 +88,14 @@ https://billion-trillion.myshopify.com
 - [ ] cart.json
 - [x] collection.json
 - [-] gift_card.liquid
-- [ ] index.json
+- [x] index.json
 - [x] list-collections.json
+- [ ] page.about-us.json
 - [ ] page.contact.json
-- [r] page.json
+- [ ] page.json
+- [ ] page.products.json
+- [ ] page.shop.json
+- [ ] page.stockists.json
 - [ ] page.thank-you.json
 - [ ] password.json
 - [x] product.json
