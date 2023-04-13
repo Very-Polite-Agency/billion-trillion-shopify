@@ -46,8 +46,13 @@
 <div class="{{ section_name }}__main">
 
   {% if menu_main and menu_main != blank %}
-    <nav>
-
+    <nav class="{{ section_name }}__main-navigation navigation navigation--main">
+      {%- for link in linklists[menu_main].links -%}
+        <div class="{{ section_name }}__main-navigation-item navigation__item">
+          {%- capture link_classes -%}{{ section_name }}__main-navigation-link navigation__link link{% if link.active %} active{% endif %}{%- endcapture -%}
+          {%- render 'link', link_classes: link_classes, link_title: link.title, link_url: link.url -%}
+        </div>
+      {%- endfor -%}
     </nav>
   {% endif %}
 
