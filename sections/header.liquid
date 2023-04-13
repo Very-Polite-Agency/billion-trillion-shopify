@@ -12,6 +12,16 @@
 
 {%- style -%}
 
+  #{{ section_id }} {
+    height: {{ section.settings.height_mobile }}px;
+  }
+
+  @media screen and (min-width: 992px) {
+    #{{ section_id }} {
+      height: {{ section.settings.height_desktop }}px;
+    }
+  }
+
   {%
     render 'element-styles',
       background: section.settings.background,
@@ -143,6 +153,28 @@
         "type": "checkbox",
         "default": false,
         "id": "border_bottom"
+      },
+      {
+        "content": "Height",
+        "type": "header"
+      },
+      {
+        "label": "Height (Mobile)",
+        "type": "range",
+        "min": 50,
+        "max": 150,
+        "step": 1,
+        "default": 50,
+        "id": "height_mobile"
+      },
+      {
+        "label": "Height (Desktop)",
+        "type": "range",
+        "min": 50,
+        "max": 150,
+        "step": 1,
+        "default": 50,
+        "id": "height_desktop"
       }
     ],
 	  "blocks": []
