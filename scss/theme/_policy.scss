@@ -1,0 +1,15 @@
+@use '../utils/mixins/breakpoint' as *;
+
+.policy {
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  @include breakpoint(lg) {
+    &__title {
+      margin-bottom: 28px;
+    }
+  }
+
+}
