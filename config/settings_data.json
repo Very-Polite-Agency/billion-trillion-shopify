@@ -1,13 +1,6 @@
 {
   "current": {
     "sections": {
-      "mobile-menu": {
-        "type": "mobile-menu",
-        "settings": {
-          "menu_shopping": "",
-          "menu_main": ""
-        }
-      },
       "age-gate": {
         "type": "age-gate",
         "settings": {
@@ -70,6 +63,22 @@
         "settings": {
           "enable": false,
           "sticky": false
+        }
+      },
+      "drawer-mobile-menu": {
+        "type": "drawer-mobile-menu",
+        "settings": {
+          "menu_main": "main-menu",
+          "background": "lemon",
+          "background_image_position_mobile": "center center",
+          "background_image_position_desktop": "center center",
+          "background_image_repeat": "no-repeat",
+          "background_image_size": "cover"
+        }
+      },
+      "drawer-cart": {
+        "type": "drawer-cart",
+        "settings": {
         }
       }
     },
