@@ -22,7 +22,16 @@
       "header": {
         "type": "header",
         "settings": {
-          "menu_main": ""
+          "menu_main": "",
+          "background": "lemon",
+          "background_image_position_mobile": "center center",
+          "background_image_position_desktop": "center center",
+          "background_image_repeat": "no-repeat",
+          "background_image_size": "cover",
+          "border_top": false,
+          "border_bottom": true,
+          "height_mobile": 60,
+          "height_desktop": 90
         }
       },
       "footer": {
