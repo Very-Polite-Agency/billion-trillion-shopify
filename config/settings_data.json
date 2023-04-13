@@ -86,7 +86,7 @@
         "type": "policy-privacy",
         "settings": {
           "anchor_id": "",
-          "background": "lime",
+          "background": "orange",
           "background_image_position_mobile": "center center",
           "background_image_position_desktop": "center center",
           "background_image_repeat": "no-repeat",
