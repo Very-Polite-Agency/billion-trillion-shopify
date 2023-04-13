@@ -38,7 +38,7 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "menu": "footer",
+          "menu": "main-menu",
           "tagline_media_mobile": "shopify:\/\/shop_images\/footer--tagline-media.mobile_3x_993140ec-719d-4661-b15f-188bd6785d8a.png",
           "tagline_media_desktop": "shopify:\/\/shop_images\/footer--tagline-media.desktop_3x_2178e026-7264-4fe1-81b6-d08a6971d83c.png",
           "anchor_id": "",
