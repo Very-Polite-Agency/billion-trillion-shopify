@@ -29,7 +29,6 @@
     transform: translate3d( -1 * $width, 0, 0 );
     height: calc(100vh - var(--theme-header-height--mobile));
     top: var(--theme-header-height--mobile);
-    background: red;
     left: 0;
 
     &__main {
@@ -48,6 +47,21 @@
           font-size: min( 100px, 13.5vw );
           background: pink;
           padding: 14px var(--theme-layout--container-padding);
+          &:nth-child(4n+1) {
+            background: var(--theme-colour--grey);
+          }
+          &:nth-child(4n+2) {
+            background: var(--theme-colour--orange);
+          }
+          &:nth-child(4n+3) {
+            background: var(--theme-colour--mango);
+          }
+          &:nth-child(4n+4) {
+            background: var(--theme-colour--lemon);
+          }
+          &:nth-child(4n+5) {
+            background: var(--theme-colour--lime);
+          }
         }
         &-link {
           width: auto;
