@@ -22,18 +22,36 @@
       display: inline-flex;
       position: absolute;
       left: 0;
-      height: 12px;
+      height: 14px;
       width: 36px;
       flex-flow: column;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       &:after,
       &:before {
+        transition:
+          bottom var(--theme-transition--duration),
+          top var(--theme-transition--duration);
         background: var(--theme-colour--black);
         height: var(--theme-border--width);
         content: "";
         display: block;
         width: 100%;
+        position: absolute;
+      }
+      &:before {
+        top: 0;
+      }
+      &:after {
+        bottom: 0;
+      }
+      .shopify-section-drawer-mobile-menu--active & {
+        &:before {
+          top: calc( 50% - (var(--theme-border--width) * 0.5) );
+        }
+        &:after {
+          bottom: calc( 50% - (var(--theme-border--width) * 0.5) );
+        }
       }
     }
     &-cart-summary {
