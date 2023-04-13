@@ -18,6 +18,24 @@
     height: 100%;
     justify-content: center;
     align-items: center;
+    &-burger {
+      display: inline-flex;
+      position: absolute;
+      left: 0;
+      height: 12px;
+      width: 36px;
+      flex-flow: column;
+      justify-content: space-between;
+      align-items: center;
+      &:after,
+      &:before {
+        background: var(--theme-colour--black);
+        height: var(--theme-border--width);
+        content: "";
+        display: block;
+        width: 100%;
+      }
+    }
     &-cart-summary {
       position: absolute;
       right: 0;
@@ -84,6 +102,9 @@
   @include breakpoint(lg) {
 
     &__main {
+      &-burger {
+        display: none;
+      }
       &-cart-summary {
         &-icon {
           height: min(32px, 2vw);

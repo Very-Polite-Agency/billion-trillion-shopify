@@ -43,6 +43,8 @@
 
 <div class="{{ section_name }}__main text--uppercase text--primary">
 
+  <button class="{{ section_name }}__main-burger button" type="button"></button>
+
   {%- liquid
     capture aos_attrs
       render 'aos-attributes', anchor: section_id, delay: 1000, transition: 'fade-down'
@@ -65,7 +67,7 @@
     </nav>
   {% endif %}
 
-  <div class="{{ section_name }}__main-cart-summary">
+  <button class="{{ section_name }}__main-cart-summary button" type="button">
     <span class="{{ section_name }}__main-cart-summary-icon">
       {% render 'svg', type: 'icon.cart' %}
     </span>
