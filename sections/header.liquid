@@ -47,7 +47,7 @@
 
   {%- liquid
     capture aos_attrs
-      render 'aos-attributes', anchor: section_id, delay: 1000, transition: 'fade-down'
+      render 'aos-attributes', anchor: aos_id, delay: 1000, transition: 'fade-up'
     endcapture
   -%}
   <div class="{{ section_name }}__main-logo" {{ aos_attrs }}>
@@ -57,7 +57,12 @@
   </div>
 
   {% if section_menu_main and section_menu_main != blank %}
-    <nav class="{{ section_name }}__main-navigation navigation navigation--main">
+    {%- liquid
+      capture aos_attrs
+        render 'aos-attributes', anchor: aos_id, delay: 1250, transition: 'fade-down'
+      endcapture
+    -%}
+    <nav class="{{ section_name }}__main-navigation navigation navigation--main" {{ aos_attrs }}>
       {%- for link in linklists[section_menu_main].links -%}
         <div class="{{ section_name }}__main-navigation-item navigation__item">
           {%- capture link_classes -%}{{ section_name }}__main-navigation-link navigation__link link{% if link.active %} active{% endif %}{%- endcapture -%}
@@ -67,7 +72,13 @@
     </nav>
   {% endif %}
 
-  <button class="{{ section_name }}__main-cart-summary button" type="button">
+
+  {%- liquid
+    capture aos_attrs
+      render 'aos-attributes', anchor: aos_id, delay: 1500, transition: 'fade-left'
+    endcapture
+  -%}
+  <button class="{{ section_name }}__main-cart-summary button" type="button" {{ aos_attrs }}>
     <span class="{{ section_name }}__main-cart-summary-icon">
       {% render 'svg', type: 'icon.cart' %}
     </span>
