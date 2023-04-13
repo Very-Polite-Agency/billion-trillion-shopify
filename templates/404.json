@@ -15,16 +15,16 @@
         "e0ee7356-d20c-49bb-9fd1-7afbfa093821": {
           "type": "message",
           "settings": {
-            "message": "",
-            "message_size": "sm"
+            "message": "<p>Galaxy Not Found<\/p>",
+            "message_size": "lg"
           }
         },
         "7500c27a-28af-4d56-a45b-a0d0007d9c09": {
           "type": "button",
           "settings": {
-            "button_link": "",
+            "button_link": "\/",
             "button_type": "take-me-home",
-            "button_colour": "white"
+            "button_colour": "orange"
           }
         }
       },
