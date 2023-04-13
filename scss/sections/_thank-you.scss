@@ -23,7 +23,7 @@
     &-button {
       display: inline-flex;
       width: auto;
-      height: min(78px, 11vw); // 50px;
+      height: min(76px, 11vw); // 50px;
       img, svg {
         display: block;
         height: 100%;
@@ -40,16 +40,6 @@
   &__main {
     padding-left: var(--theme-layout--container-padding);
     padding-right: var(--theme-layout--container-padding);
-  }
-
-  @include breakpoint(lg) {
-
-    &__cta {
-      &-button {
-        height: min(82px, 5.5vw);
-      }
-    }
-
   }
 
 }
