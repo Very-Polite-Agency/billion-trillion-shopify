@@ -79,7 +79,7 @@ https://billion-trillion.myshopify.com
 - [x] reviews.liquid
 - [x] stockists.liquid
 - [x] sub-navigation.liquid
-- [ ] thank-you.liquid
+- [x] thank-you.liquid
 
 ### Templates (2/14 Complete)
 - [r] 404.json
