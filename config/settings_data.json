@@ -95,6 +95,20 @@
           "padding_bottom": 104,
           "text_colour": "light"
         }
+      },
+      "policy-shipping": {
+        "type": "policy-shipping",
+        "settings": {
+          "anchor_id": "",
+          "background": "lime",
+          "background_image_position_mobile": "center center",
+          "background_image_position_desktop": "center center",
+          "background_image_repeat": "no-repeat",
+          "background_image_size": "cover",
+          "padding_top": 64,
+          "padding_bottom": 104,
+          "text_colour": "dark"
+        }
       }
     },
     "content_for_index": [
