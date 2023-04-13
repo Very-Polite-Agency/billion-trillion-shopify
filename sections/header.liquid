@@ -8,9 +8,24 @@
   assign aos_delay_increment = 250
   assign aos_id = section_id
 
+  assign height_desktop = section.settings.height_desktop | default: ''
+  assign height_mobile = section.settings.height_mobile | default: ''
+
 -%}
 
 {%- style -%}
+
+  {%- if height_desktop != blank or height_mobile != blank -%}
+    :root {
+      {%- if height_mobile != blank %}
+        --theme-header-height--mobile: {{ height_mobile }}px;
+      {% endif %}
+      {%- if height_desktop != blank %}
+        --theme-header-height--desktop: {{ height_desktop }}px;
+      {% endif %}
+    }
+  {%- endif -%}
+
   {%
     render 'element-styles',
       background: section.settings.background,

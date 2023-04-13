@@ -50,8 +50,8 @@
     assign border_bottom = border_bottom | default: false
     assign border_top = border_top | default: false
 
-    assign height_desktop = height_desktop | default: 'auto'
-    assign height_mobile = height_mobile | default: 'auto'
+    assign height_desktop = height_desktop | default: ''
+    assign height_mobile = height_mobile | default: ''
 
     assign padding_bottom = padding_bottom | default: 0
     assign padding_top = padding_top | default: 0
@@ -65,7 +65,7 @@
   #{{ id }} {
 
     {%- if height_mobile != blank -%}
-      height: {{ height_mobile }};
+      height: {{ height_mobile }}px;
     {%- endif -%}
 
     {%- if background_image_active -%}
@@ -115,7 +115,7 @@
     #{{ id }} {
 
       {%- if height_desktop != blank -%}
-        height: {{ height_desktop }};
+        height: {{ height_desktop }}px;
       {%- endif -%}
 
       {%- if background_image_active -%}
