@@ -30,8 +30,8 @@
           "background_image_size": "cover",
           "border_top": false,
           "border_bottom": true,
-          "height_mobile": 60,
-          "height_desktop": 90
+          "height_mobile": 65,
+          "height_desktop": 95
         }
       },
       "footer": {
