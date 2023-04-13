@@ -65,6 +65,15 @@
     </nav>
   {% endif %}
 
+  <div class="{{ section_name }}__main-cart-summary">
+    <span class="{{ section_name }}__main-cart-summary-icon">
+      {% render 'svg', type: 'icon.cart' %}
+    </span>
+    <span class="{{ section_name }}__main-cart-summary-total js--cart-line-items-total">
+      <!-- JavaScript here... -->
+    </span>
+  </div>
+
 </div>
 
 {% schema %}

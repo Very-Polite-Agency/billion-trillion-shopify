@@ -1,4 +1,5 @@
 import Credits from './modules/credits';
+import Cart from './modules/cart';
 import Forms from './modules/forms';
 import Gliders from './modules/gliders';
 import Scrolling from './modules/scrolling';
@@ -7,6 +8,7 @@ import StockistsLocations from './modules/stockistsLocations';
 import Tools from './modules/tools';
 
 Credits.init();
+Cart.init();
 Forms.init();
 Scrolling.init();
 StockistsCountries.init();

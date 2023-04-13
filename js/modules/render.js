@@ -2,6 +2,28 @@ import Templates from 'templates';
 import Tools from 'tools';
 
 const config = { debug: false, name: 'render.js', version: '1.0' };
+const elements = {
+  cart: document.querySelectorAll( '.js--cart' ) || [],
+  cart_drawer: document.getElementById("drawer-cart__cart-line-items") || false
+};
+
+const cartEmptyMessage = () => {
+  elements.cart.forEach( element => {
+    element.innerHTML = Templates.cartEmptyMessage();
+  });
+};
+
+const cartLineItemsTotal = ( line_items_total = 0 ) => {
+  ( document.querySelectorAll( '.js--cart-line-items-total' ) || [] ).forEach( element => {
+    element.innerHTML = `[${line_items_total}]`;
+  });
+};
+
+const cartSubtotal = ( subtotal = 0 ) => {
+  ( document.querySelectorAll( '.js--cart-subtotal' ) || [] ).forEach( element => {
+    element.innerHTML = Money.format( subtotal );
+  });
+};
 
 const stockistCountryPopulationGraph = ( element = false, name = '', population = 0 ) => {
 
@@ -64,4 +86,10 @@ const stockistLocationByRegion = ( element = false, locations = [] ) => {
   }
 };
 
-export default { stockistCountryPopulationGraph, stockistLocationByRegion };
+export default {
+  cartEmptyMessage,
+  cartLineItemsTotal,
+  cartSubtotal,
+  stockistCountryPopulationGraph,
+  stockistLocationByRegion
+};
