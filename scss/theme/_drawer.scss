@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use '../utils/variables' as *;
+@use '../utils/mixins/border' as *;
 @use '../utils/mixins/breakpoint' as *;
 @use '../utils/mixins/font' as *;
 
@@ -20,14 +21,45 @@
   overflow: hidden;
 
   &-mobile-menu {
+
     transform: translate3d( -1 * $width, 0, 0 );
     height: calc(100vh - var(--theme-header-height--mobile));
     top: var(--theme-header-height--mobile);
     background: red;
     left: 0;
+
+    &__main {
+      &-navigation {
+        @include border-solid( var(--theme-border--width), 'black', 'bottom' );
+        background: var(--theme-colour--black);
+        gap: var(--theme-border--width);
+        display: grid;
+        grid-template-columns: repeat( 1, 1fr );
+        width: 100%;
+        &-item,
+        &-link {
+          line-height: 1;
+        }
+        &-item {
+          font-size: min( 100px, 13.5vw );
+          background: pink;
+          padding: 14px var(--theme-layout--container-padding);
+        }
+        &-link {
+          width: auto;
+          &.active,
+          &:hover {
+            opacity: var(--theme-transition--opacity);
+            color: inherit;
+          }
+        }
+      }
+    }
+
     .shopify-section-drawer-mobile-menu--active & {
       transform: translate3d( 0,0,0 );
     }
+
   }
 
   @include breakpoint(sm) {

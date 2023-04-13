@@ -78,6 +78,13 @@
         height: 100%;
       }
     }
+    &-logo-link {
+      .shopify-section-drawer-cart--active &,
+      .shopify-section-drawer-mobile-menu--active & {
+        transform: translate3d(0, calc(-1 * var(--theme-header-logo-height--mobile)), 0);
+        opacity: 0;
+      }
+    }
     &-navigation {
       display: none;
       &-item,
