@@ -1,0 +1,55 @@
+@use "../utils/mixins/breakpoint" as *;
+
+.thank-you {
+
+  height: 100vh;
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  &__heading,
+  &__message {
+    & + .thank-you__cta {
+      margin-top: min(32px, 10vw);
+    }
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    &-button {
+      display: inline-flex;
+      width: auto;
+      height: min(78px, 11vw); // 50px;
+      img, svg {
+        display: block;
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+
+  &__heading {
+    font-size: min(320px, 21vw);
+    line-height: 0.95;
+  }
+
+  &__main {
+    padding-left: var(--theme-layout--container-padding);
+    padding-right: var(--theme-layout--container-padding);
+  }
+
+  @include breakpoint(lg) {
+
+    &__cta {
+      &-button {
+        height: min(82px, 5.5vw);
+      }
+    }
+
+  }
+
+}
