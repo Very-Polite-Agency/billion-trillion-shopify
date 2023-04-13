@@ -5,6 +5,18 @@
   position: relative;
   width: 100%;
   height: auto;
+  text-align: center;
+  text-transform: uppercase;
+
+  &__heading,
+  &__message,
+  &__subheading {
+    display: block;
+  }
+
+  &__heading {
+    line-height: 1.02;
+  }
 
   &__video {
     position: relative;
@@ -15,14 +27,59 @@
     justify-content: center;
     align-items: center;
     &-content {
-      padding: 24px;
+      padding: var(--theme-layout--container-padding);
+      width: 100%;
+      & > * {
+        & + * {
+          margin-top: 24px;
+        }
+      }
     }
+  }
+
+  @include breakpoint(md) {
+
+    &__subheading {
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
   }
 
   @include breakpoint(lg) {
 
     &__video {
       min-height: initial;
+      &-content {
+        padding: 0;
+        max-width: var(--theme-container--lg);
+        & > * {
+          & + * {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+    &__video {
+      &-content {
+        max-width: var(--theme-container--xl);
+      }
+    }
+
+  }
+
+  @include breakpoint(xxl) {
+
+    &__video {
+      &-content {
+        max-width: var(--theme-container--xxl);
+      }
     }
 
   }

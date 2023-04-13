@@ -37,11 +37,13 @@
       width: auto;
     }
 
-
-    #{{ section_id }} .{{ section_name }}__video {
-      max-height: {{ section_video_max_height_mobile }};
-      min-height: unset;
-    }
+    {% if section_video_max_height_mobile != blank and section_video_max_height_mobile != "none" %}
+      #{{ section_id }} .{{ section_name }}__video {
+        max-height: {{ section_video_max_height_mobile }};
+        min-height: unset;
+        height: 100vh;
+      }
+    {% endif %}
 
     @media screen and (min-width: 992px) {
       #{{ section_id }} iframe,
@@ -66,7 +68,7 @@
 
   {%- endstyle -%}
 
-  <div class="{{ section_classes }} text--align-center text--uppercase text--{{ section_text_colour }}" id="{{ section_id }}">
+  <div class="{{ section_classes }} text--{{ section_text_colour }}" id="{{ section_id }}">
 
     <div class="{{ section_name }}__video">
       {%- render 'lazyload-embed', video_host: section_video.type, video_id: section_video.id -%}

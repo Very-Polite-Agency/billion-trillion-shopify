@@ -1,0 +1,24 @@
+@use '../utils/mixins/border' as *;
+@use '../utils/mixins/breakpoint' as *;
+
+.header {
+
+  position: fixed;
+  width: 100%;
+  height: 50px;
+
+  @include breakpoint(sm) {}
+
+  @include breakpoint(md) {}
+
+  @include breakpoint(lg) {
+
+    height: 80px;
+
+  }
+
+  @include breakpoint(xl) {}
+
+  @include breakpoint(xxl) {}
+
+}
