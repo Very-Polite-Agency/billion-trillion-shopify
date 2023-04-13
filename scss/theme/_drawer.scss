@@ -20,6 +20,10 @@
   text-transform: uppercase;
   overflow: hidden;
 
+  &-cart {
+    display: none;
+  }
+
   &-mobile-menu {
 
     transform: translate3d( -1 * $width, 0, 0 );
