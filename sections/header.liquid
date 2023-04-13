@@ -21,8 +21,8 @@
   :root {
     --theme-header-height--mobile: {{ section_height_mobile }}px;
     --theme-header-height--desktop: {{ section_height_desktop }}px;
-    --theme-header-logo-height--mobile: {{ section_logo_height_desktop }}px;
-    --theme-header-logo-height--desktop: {{ section_logo_height_mobile }}px;
+    --theme-header-logo-height--mobile: {{ section_logo_height_mobile }}px;
+    --theme-header-logo-height--desktop: {{ section_logo_height_desktop }}px;
   }
 
   {%
@@ -45,7 +45,7 @@
 
   {%- liquid
     capture aos_attrs
-      render 'aos-attributes', anchor: section_id, delay: 1000, transition: 'fade-up'
+      render 'aos-attributes', anchor: section_id, delay: 1000, transition: 'fade-down'
     endcapture
   -%}
   <div class="{{ section_name }}__main-logo" {{ aos_attrs }}>
