@@ -1,3 +1,4 @@
+@use '../utils/mixins/breakpoint' as *;
 @use '../utils/mixins/font' as *;
 
 html, body {
@@ -20,11 +21,19 @@ body {
   line-height: 1.3333;
 
   main {
+    padding-top: var(--theme-header-height--mobile);
     flex: 1 0 auto;
+    overflow: hidden;
   }
 
   footer {
     flex-shrink: 0;
+  }
+
+  @include breakpoint(lg) {
+    main {
+      padding-top: var(--theme-header-height--desktop);
+    }
   }
 
 }

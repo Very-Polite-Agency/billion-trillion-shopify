@@ -8,20 +8,21 @@
   assign aos_delay_increment = 250
   assign aos_id = section_id
 
-  assign height_desktop = section.settings.height_desktop | default: ''
-  assign height_mobile = section.settings.height_mobile | default: ''
+  assign section_height_desktop = section.settings.height_desktop | default: ''
+  assign section_height_mobile = section.settings.height_mobile | default: ''
+  assign section_menu_main = section.settings.menu_main | default: false
 
 -%}
 
 {%- style -%}
 
-  {%- if height_desktop != blank or height_mobile != blank -%}
+  {%- if section_height_desktop != blank or section_height_mobile != blank -%}
     :root {
-      {%- if height_mobile != blank %}
-        --theme-header-height--mobile: {{ height_mobile }}px;
+      {%- if section_height_mobile != blank %}
+        --theme-header-height--mobile: {{ section_height_mobile }}px;
       {% endif %}
-      {%- if height_desktop != blank %}
-        --theme-header-height--desktop: {{ height_desktop }}px;
+      {%- if section_height_desktop != blank %}
+        --theme-header-height--desktop: {{ section_height_desktop }}px;
       {% endif %}
     }
   {%- endif -%}
@@ -36,14 +37,19 @@
       background_image_size: section.settings.background_image_size,
       border_bottom: section.settings.border_bottom,
       border_top: section.settings.border_top,
-      height_desktop: section.settings.height_desktop,
-      height_mobile: section.settings.height_mobile,
+      height_desktop: section_height_desktop,
+      height_mobile: section_height_mobile,
       id: section_id
   %}
 {%- endstyle -%}
 
 <div class="{{ section_name }}__main">
 
+  {% if menu_main and menu_main != blank %}
+    <nav>
+
+    </nav>
+  {% endif %}
 
 </div>
 
