@@ -2786,6 +2786,22 @@
       "oAP" : "\/sections\/custom-liquid.liquid",
       "oF" : 0
     },
+    "\/sections\/drawer-cart.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sections\/drawer-cart.liquid",
+      "oF" : 0
+    },
+    "\/sections\/drawer-mobile-menu.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sections\/drawer-mobile-menu.liquid",
+      "oF" : 0
+    },
     "\/sections\/faqs.liquid" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2960,14 +2976,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/sections\/marquee.liquid",
-      "oF" : 0
-    },
-    "\/sections\/mobile-menu.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/sections\/mobile-menu.liquid",
       "oF" : 0
     },
     "\/sections\/policy-privacy.liquid" : {
