@@ -63,7 +63,7 @@
 
   <body class="{% render 'theme--classes' %}">
 
-    {% unless request.path == '/pages/thank-you' %}
+    {% unless request.path == '/pages/thank-you' or template.name == '404' %}
       {% section 'age-gate' %}
       {% section 'announcements' %}
       {% section 'drawer-mobile-menu' %}
@@ -88,7 +88,7 @@
       {% endcase %}
     </main>
 
-    {% unless request.path == '/pages/thank-you' %}
+    {% unless request.path == '/pages/thank-you' or template.name == '404' %}
       {% section 'footer' %}
     {% endunless %}
 
