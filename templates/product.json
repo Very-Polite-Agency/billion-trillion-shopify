@@ -11,7 +11,7 @@
         "background_image_repeat": "repeat",
         "background_image_size": "400px",
         "border_top": true,
-        "border_bottom": true,
+        "border_bottom": false,
         "carousel_pagination": true,
         "carousel_autoplay": 3000,
         "carousel_animation_duration": 450,
