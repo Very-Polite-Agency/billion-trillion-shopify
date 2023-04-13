@@ -32,7 +32,9 @@
           "border_top": false,
           "border_bottom": true,
           "height_mobile": 62,
-          "height_desktop": 98
+          "height_desktop": 80,
+          "logo_height_mobile": 72,
+          "logo_height_desktop": 90
         }
       },
       "footer": {
