@@ -25,7 +25,7 @@
     --theme-header-logo-height--desktop: {{ section_logo_height_desktop }}px;
   }
 
-  {%
+  {%-
     render 'element-styles',
       background: section.settings.background,
       background_image: section.settings.background_image,
@@ -38,12 +38,13 @@
       height_desktop: section_height_desktop,
       height_mobile: section_height_mobile,
       id: section_id
-  %}
+  -%}
+
 {%- endstyle -%}
 
 <div class="{{ section_name }}__main text--uppercase text--primary">
 
-  <button class="{{ section_name }}__main-burger button" type="button"></button>
+  <button class="{{ section_name }}__main-burger button js--open-drawer" data-drawer-id="shopify-section-drawer-mobile-menu" type="button"></button>
 
   {%- liquid
     capture aos_attrs
@@ -78,7 +79,7 @@
       render 'aos-attributes', anchor: aos_id, delay: 1500, transition: 'fade-left'
     endcapture
   -%}
-  <button class="{{ section_name }}__main-cart-summary button" type="button" {{ aos_attrs }}>
+  <button class="{{ section_name }}__main-cart-summary button js--open-drawer" data-drawer-id="shopify-section-drawer-cart" type="button" {{ aos_attrs }}>
     <span class="{{ section_name }}__main-cart-summary-icon">
       {% render 'svg', type: 'icon.cart' %}
     </span>

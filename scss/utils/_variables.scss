@@ -54,6 +54,16 @@ $theme-colours: (
   'white' : #ffffff
 );
 
+// ---------------------------------------- Drawer Widths
+$theme-drawer-widths: (
+  'base': 100%,
+  'sm': 100%,
+  'md': 100%,
+  'lg': 450px,
+  'xl': 550px,
+  'xxl': 650px
+);
+
 // ---------------------------------------- Font Families
 $theme-font-families: (
   'sans-serif': sans-serif,
