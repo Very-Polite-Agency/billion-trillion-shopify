@@ -5,6 +5,27 @@
   "sections": {
     "main": {
       "type": "thank-you",
+      "blocks": {
+        "7a030ea1-6c22-43ad-8da6-09cbf7079a48": {
+          "type": "heading",
+          "settings": {
+            "heading": "Thank You",
+            "heading_size": "lg"
+          }
+        },
+        "5ca184c0-8110-4b33-8a6b-d3c89c090c6a": {
+          "type": "button",
+          "settings": {
+            "button_link": "",
+            "button_type": "take-me-home",
+            "button_colour": "white"
+          }
+        }
+      },
+      "block_order": [
+        "7a030ea1-6c22-43ad-8da6-09cbf7079a48",
+        "5ca184c0-8110-4b33-8a6b-d3c89c090c6a"
+      ],
       "settings": {
         "anchor_id": "",
         "background": "image",
