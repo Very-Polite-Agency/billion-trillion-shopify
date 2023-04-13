@@ -109,6 +109,20 @@
           "padding_bottom": 104,
           "text_colour": "dark"
         }
+      },
+      "policy-terms-of-service": {
+        "type": "policy-terms-of-service",
+        "settings": {
+          "anchor_id": "",
+          "background": "orange",
+          "background_image_position_mobile": "center center",
+          "background_image_position_desktop": "center center",
+          "background_image_repeat": "no-repeat",
+          "background_image_size": "cover",
+          "padding_top": 64,
+          "padding_bottom": 104,
+          "text_colour": "dark"
+        }
       }
     },
     "content_for_index": [
