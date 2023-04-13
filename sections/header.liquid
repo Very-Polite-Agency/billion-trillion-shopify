@@ -8,24 +8,22 @@
   assign aos_delay_increment = 250
   assign aos_id = section_id
 
-  assign section_height_desktop = section.settings.height_desktop | default: ''
-  assign section_height_mobile = section.settings.height_mobile | default: ''
+  assign section_height_desktop = section.settings.height_desktop
+  assign section_height_mobile = section.settings.height_mobile
+  assign section_logo_height_desktop = section.settings.logo_height_desktop
+  assign section_logo_height_mobile = section.settings.logo_height_mobile
   assign section_menu_main = section.settings.menu_main | default: false
 
 -%}
 
 {%- style -%}
 
-  {%- if section_height_desktop != blank or section_height_mobile != blank -%}
-    :root {
-      {%- if section_height_mobile != blank %}
-        --theme-header-height--mobile: {{ section_height_mobile }}px;
-      {% endif %}
-      {%- if section_height_desktop != blank %}
-        --theme-header-height--desktop: {{ section_height_desktop }}px;
-      {% endif %}
-    }
-  {%- endif -%}
+  :root {
+    --theme-header-height--mobile: {{ section_height_mobile }}px;
+    --theme-header-height--desktop: {{ section_height_desktop }}px;
+    --theme-header-logo-height--mobile: {{ section_logo_height_desktop }}px;
+    --theme-header-logo-height--desktop: {{ section_logo_height_mobile }}px;
+  }
 
   {%
     render 'element-styles',
@@ -43,11 +41,22 @@
   %}
 {%- endstyle -%}
 
-<div class="{{ section_name }}__main">
+<div class="{{ section_name }}__main text--uppercase text--primary">
 
-  {% if menu_main and menu_main != blank %}
+  {%- liquid
+    capture aos_attrs
+      render 'aos-attributes', anchor: section_id, delay: 1000, transition: 'fade-up'
+    endcapture
+  -%}
+  <div class="{{ section_name }}__main-logo" {{ aos_attrs }}>
+    <a class="{{ section_name }}__main-logo-link link" href="/" target="_self" title="{{ shop.name }}">
+      {% render 'svg', type: 'logo' %}
+    </a>
+  </div>
+
+  {% if section_menu_main and section_menu_main != blank %}
     <nav class="{{ section_name }}__main-navigation navigation navigation--main">
-      {%- for link in linklists[menu_main].links -%}
+      {%- for link in linklists[section_menu_main].links -%}
         <div class="{{ section_name }}__main-navigation-item navigation__item">
           {%- capture link_classes -%}{{ section_name }}__main-navigation-link navigation__link link{% if link.active %} active{% endif %}{%- endcapture -%}
           {%- render 'link', link_classes: link_classes, link_title: link.title, link_url: link.url -%}
@@ -196,6 +205,30 @@
         "step": 1,
         "default": 50,
         "id": "height_desktop"
+      },
+      {
+        "content": "Logo Height",
+        "type": "header"
+      },
+      {
+        "label": "Logo Height (Mobile)",
+        "type": "range",
+        "unit": "px",
+        "min": 50,
+        "max": 150,
+        "step": 1,
+        "default": 62,
+        "id": "logo_height_mobile"
+      },
+      {
+        "label": "Logo Height (Desktop)",
+        "type": "range",
+        "unit": "px",
+        "min": 50,
+        "max": 150,
+        "step": 1,
+        "default": 82,
+        "id": "logo_height_desktop"
       }
     ],
 	  "blocks": []
