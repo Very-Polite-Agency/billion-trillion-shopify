@@ -17,14 +17,17 @@
   }
 
   &__content {
+
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+
     &-cell {
       & + .fifty-fifty__content-cell {
         @include border-solid(var(--theme-border--width), 'black', 'top' );
       }
     }
+
     &-row {
       width: 100%;
       &.flex {
@@ -50,6 +53,7 @@
         @include border-solid(var(--theme-border--width), 'black', 'top' );
       }
     }
+
   }
 
   &__cta {

@@ -9,6 +9,7 @@
   assign aos_id = section_id
 
   assign section_anchor = section.settings.anchor_id | default: ''
+  assign section_blocks = section.blocks | default: false
   assign section_container = section.settings.container | default: 'container'
   assign section_custom_liquid = section.settings.custom_liquid | default: ''
   assign section_form_id = section_id | append: '--form'
@@ -35,13 +36,41 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  {% render 'bs-container', state: 'open', col: 'col-12', container: container %}
+  {% render 'bs-container', state: 'open', col: 'col-12', container: 'container' %}
     <div class="{{ section_name }}__main">
-      {%- for block in section.blocks -%}
+      {%- for block in section_blocks -%}
+
+        {%- liquid
+          assign block_id = 'block--' | append: block.id
+          assign block_type = block.type
+        -%}
+
+        <div class="{{ section_name }}__item {{ block_type }}" id="{{ block_id }}">
+          <div class="{{ section_name }}__content">
+            {% case block_type %}
+              {% when 'form' %}
+              {% when 'image' %}
+                {%- liquid
+                  assign image = block.settings.image | default: false
+                -%}
+                {% if image %}
+                  {%- liquid
+                    capture aos_attrs
+                      render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-up'
+                    endcapture
+                    assign aos_delay = aos_delay | plus: aos_delay_increment
+                  -%}
+                  <div class="{{ section_name }}__image {{ aos_attrs }}>
+                    {% render 'lazyload-image', image: image %}
+                  </div>
+                {% endif %}
+            {% endcase %}
+          </div>
+        </div>
 
       {%- endfor -%}
     </div>
-  {% render 'bs-container', state: 'closed', col: 'col-12', container: container %}
+  {% render 'bs-container', state: 'closed', col: 'col-12', container: 'container' %}
 </div>
 
 {% schema %}
