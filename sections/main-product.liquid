@@ -16,7 +16,7 @@
   assign carousel_gap = section.settings.carousel_gap | default: 28
   assign carousel_id = section_id | append: '--glide'
   assign carousel_pagination = section.settings.carousel_pagination | default: false
-  assign carousel_style = 'product-carousel'
+  assign carousel_style = 'product-gallery-carousel'
 
   assign product_description = product.description | default: ''
   assign product_images = product.images | default: false
@@ -103,7 +103,7 @@
             {% if carousel and carousel_pagination %}
               <div class="glide__bullets" data-glide-el="controls[nav]">
                 {%- for image in product_images -%}
-                  <button class="glide__bullet button" type="button" data-glide-dir="={{ forloop.index0 }}">
+                  <button class="glide__bullet button" data-glide-dir="={{ forloop.index0 }}" type="button" >
                     {% render 'svg', type: 'icon.pagination' %}
                   </button>
                 {%- endfor -%}
@@ -121,35 +121,41 @@
             </div>
 
             <div class="{{ section_name }}__content-grid-row product-details">
-              {% capture snippet_classes %}{{ section_name }}__price price{% endcapture %}
-              {%- liquid
-                capture aos_attrs
-                  render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
-                endcapture
-                assign aos_delay = aos_delay | plus: aos_delay_increment
-              -%}
-              {% render 'price', aos_attrs: aos_attrs, classes: snippet_classes, product: product %}
+              {% unless "Yuzu Sake Fizz" == product_type %}
+                {% capture snippet_classes %}{{ section_name }}__price price{% endcapture %}
+                {%- liquid
+                  capture aos_attrs
+                    render 'aos-attributes', anchor: aos_id, delay: aos_delay, transition: 'fade-left'
+                  endcapture
+                  assign aos_delay = aos_delay | plus: aos_delay_increment
+                -%}
+                {% render 'price', aos_attrs: aos_attrs, classes: snippet_classes, product: product %}
+              {% endunless %}
               {% render 'product-description', product: product %}
             </div>
 
-            {% unless product.has_only_default_variant %}
-              <div class="{{ section_name }}__content-grid-row product-options">
-                {% render 'product-options', product: product %}
+            {% unless "Yuzu Sake Fizz" == product_type %}
+
+              {% unless product.has_only_default_variant %}
+                <div class="{{ section_name }}__content-grid-row product-options">
+                  {% render 'product-options', product: product %}
+                </div>
+              {% endunless %}
+
+              <div class="{{ section_name }}__content-grid-row product-actions">
+
+                {% capture snippet_classes %}{{ section_name }}__stepper stepper{% endcapture %}
+                {% render 'stepper', classes: snippet_classes %}
+
+                <div class="{{ section_name }}__cta">
+                  <button class="{{ section_name }}__cta-button button--svg button--svg-fill-orange" type="submit">
+                    {% render 'svg', type: 'button.add-to-cart' %}
+                  </button>
+                </div>
+
               </div>
+
             {% endunless %}
-
-            <div class="{{ section_name }}__content-grid-row product-actions">
-
-              {% capture snippet_classes %}{{ section_name }}__stepper stepper{% endcapture %}
-              {% render 'stepper', classes: snippet_classes %}
-
-              <div class="{{ section_name }}__action">
-                <button class="{{ section_name }}__button-add-to-cart button--svg" type="submit">
-                  {% render 'svg', type: 'button.add-to-cart' %}
-                </button>
-              </div>
-
-            </div>
 
         </div>
 
@@ -157,8 +163,6 @@
     {%- render 'bs-container', state: 'closed', col: 'col-12', container: container -%}
   {%- endform -%}
 </div>
-
-{%- render 'json-ld', article: product, type: 'product' -%}
 
 {% schema %}
 {
