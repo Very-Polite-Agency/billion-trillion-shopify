@@ -135,6 +135,12 @@
                     <div class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ message }}</div>
                   {% endif %}
                   {% if cta_link != blank %}
+                    {%- liquid
+                      capture aos_attrs
+                        render 'aos-attributes', anchor: block_id, delay: aos_delay, transition: 'fade-up'
+                      endcapture
+                      assign aos_delay = aos_delay | plus: aos_delay_increment
+                    -%}
                     {% capture button_type %}button.{{ cta_type }}{% endcapture %}
                     <div class="{{ section_name }}__cta" {{ aos_attrs }}>
                       <a class="{{ section_name }}__cta-button button button--svg button--svg-fill-{{ cta_colour }}" href="{{ cta_link }}" target="{{ cta_link_target }}" title="{{ cta_link_title }}">

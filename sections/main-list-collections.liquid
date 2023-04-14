@@ -21,7 +21,7 @@
 
 {%- style -%}
 
-  {%
+  {%-
     render 'element-styles',
       background: section.settings.background,
       background_image: section.settings.background_image,
@@ -34,26 +34,17 @@
       id: section_id,
       padding_bottom: section.settings.padding_bottom,
       padding_top: section.settings.padding_top
-  %}
+  -%}
 
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  <div class="{{ section_name }}__list" role="list">
+  <div class="{{ section_name }}__grid" role="list">
     {%- for item in collections -%}
-      {% capture snippet_classes %}{{ section_name }}__item fifty-fifty{% endcapture %}
-      {% capture snippet_id %}{{ section_id }}--fifty-fifty--{{ item.id }}{% endcapture %}
-      {%
-        render 'fifty-fifty',
-          aria_role: 'listitem',
-          classes: snippet_classes,
-          content_heading: item.title | prepend: 'Shop ' | default: '',
-          content_link: item.url | default: '',
-          content_message: item.description | default: '',
-          media_badge: 'none',
-          media_image: item.featured_image | default: false,
-          id: snippet_id,
-      %}
+      {%- capture card_classes -%}
+        {{ section_name }}__item card-collection fifty-fifty
+      {%- endcapture -%}
+      {%- render 'card-collection', card_aria_role: 'listitem', card_classes: card_classes, card_collection: item -%}
     {%- endfor -%}
   </div>
 </div>
@@ -64,6 +55,32 @@
   "tag": "section",
   "class": "section section--list-collections",
   "settings": [
+    {
+      "content": "Collection",
+      "type": "header"
+    },
+    {
+      "label": "Title Size",
+      "type": "select",
+      "options": [
+        { "label": "Large", "value": "lg" },
+        { "label": "Medium", "value": "md" },
+        { "label": "Small", "value": "sm" }
+      ],
+      "default": "sm",
+      "id": "collection_title_size"
+    },
+    {
+      "label": "Description Size",
+      "type": "select",
+      "options": [
+        { "label": "Large", "value": "lg" },
+        { "label": "Medium", "value": "md" },
+        { "label": "Small", "value": "sm" }
+      ],
+      "default": "sm",
+      "id": "collection_description_size"
+    },
     {
       "content": "Settings",
       "type": "header"
@@ -173,30 +190,6 @@
       "type": "checkbox",
       "default": false,
       "id": "border_bottom"
-    },
-    {
-      "content": "Container",
-      "type": "header"
-    },
-    {
-      "label": "Container",
-      "type": "select",
-      "options": [
-        {
-          "label": "Static",
-          "value": "container"
-        },
-        {
-          "label": "Fluid",
-          "value": "container-fluid"
-        },
-        {
-          "label": "Full Width",
-          "value": "full-width"
-        }
-      ],
-      "default": "container",
-      "id": "container"
     },
     {
       "content": "Padding",

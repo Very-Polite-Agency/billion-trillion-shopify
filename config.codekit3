@@ -2089,21 +2089,6 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/scss\/sections\/_list-collections.scss" : {
-      "aP" : 1,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/assets\/_list-collections.css",
-      "oF" : 0,
-      "oS" : 3,
-      "pg" : 0,
-      "sct" : 0
-    },
     "\/scss\/sections\/_product-carousel.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -2429,6 +2414,21 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/assets\/_index.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/scss\/theme\/_list-collections.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/_list-collections.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,

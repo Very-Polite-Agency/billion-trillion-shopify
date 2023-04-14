@@ -1,0 +1,69 @@
+@use '../utils/mixins/breakpoint' as *;
+
+.list-collections {
+
+  &__grid {
+    background: var(--theme-colour--black);
+    gap: var(--theme-border--width);
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__item {
+    &:nth-child(5n+1) {
+      .fifty-fifty__item.text {
+        background: var(--theme-colour--orange);
+      }
+    }
+
+    &:nth-child(5n+2) {
+      .fifty-fifty__item.text {
+        background: var(--theme-colour--mango);
+      }
+    }
+
+    &:nth-child(5n+3) {
+      .fifty-fifty__item.text {
+        background: var(--theme-colour--lemon);
+      }
+    }
+
+    &:nth-child(5n+4) {
+      .fifty-fifty__item.text {
+        background: var(--theme-colour--lime);
+      }
+    }
+
+    &:nth-child(5n+5) {
+      .fifty-fifty__item.text {
+        background: var(--theme-colour--grey);
+      }
+    }
+
+  }
+
+  @include breakpoint(lg) {
+
+    &__item {
+      &:nth-child(even) {
+        .fifty-fifty__item.image {
+          order: 2;
+        }
+        .fifty-fifty__item.text {
+          order: 1;
+        }
+      }
+      &:nth-child(odd) {
+        .fifty-fifty__item.image {
+          order: 1;
+        }
+        .fifty-fifty__item.text {
+          order: 2;
+        }
+      }
+    }
+
+  }
+
+}
