@@ -74,7 +74,7 @@
               endcapture
               assign aos_delay = aos_delay | plus: aos_delay_increment
             -%}
-            <div class="{{ snippet_name }}__message body-copy--primary body-copy--{{ snippet_message_size }}-fluid" {{ aos_attrs }}>{{ snippet_collection_description }}</div>
+            <div class="{{ snippet_name }}__message fifty-fifty__message body-copy--primary body-copy--{{ snippet_message_size }}-fluid" {{ aos_attrs }}>{{ snippet_collection_description }}</div>
           {% endif %}
           {% if snippet_collection_url != blank %}
             {%- liquid
@@ -83,8 +83,8 @@
               endcapture
               assign aos_delay = aos_delay | plus: aos_delay_increment
             -%}
-            <div class="{{ snippet_name }}__cta" {{ aos_attrs }}>
-              <a class="{{ snippet_name }}__cta-button button button--svg" href="{{ snippet_collection_url }}" target="_self" title="{{ snippet_collection_url_title }}">
+            <div class="{{ snippet_name }}__cta fifty-fifty__cta" {{ aos_attrs }}>
+              <a class="{{ snippet_name }}__cta-button fifty-fifty__cta-button button button--svg" href="{{ snippet_collection_url }}" target="_self" title="{{ snippet_collection_url_title }}">
                 {% render 'svg', type: 'button.shop-now' %}
               </a>
             </div>

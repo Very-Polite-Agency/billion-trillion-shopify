@@ -6,6 +6,8 @@
 
   assign section_anchor_id = section.settings.anchor_id | default: ''
   assign section_collection_sorting = section.settings.collection_sorting
+  assign section_collection_content_padding_bottom = section.settings.collection_content_padding_bottom
+  assign section_collection_content_padding_top = section.settings.collection_content_padding_top
   assign section_collection_content_width = section.settings.collection_content_width
   assign section_collection_title_size = section.settings.collection_title_size
   assign section_collection_description_size = section.settings.collection_description_size
@@ -25,8 +27,26 @@
 
 {%- style -%}
 
-  #{{ section_id }} .fifty-fifty__item.text .{{ section_name }}__content {
+  {%- if section_collection_content_padding_top > 0 or section_collection_content_padding_bottom > 0 -%}
+    #{{ section_id }} .fifty-fifty__item.text {
+      {%- if section_collection_content_padding_top > 0 -%}
+        padding-top: calc({{ section_collection_content_padding_top }}px * 0.75);
+      {%- endif -%}
+      {%- if section_collection_content_padding_bottom > 0 -%}
+        padding-bottom: calc({{ section_collection_content_padding_bottom }}px  * 0.75);
+      {%- endif -%}
+    }
+  {%- endif -%}
+
+  #{{ section_id }} .fifty-fifty__item.text .fifty-fifty__content {
     width: {{ section_collection_content_width }}%;
+  }
+
+  @media screen and (min-width: 992px) {
+    #{{ section_id }} .fifty-fifty__item.text {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 
   {%-
@@ -88,6 +108,26 @@
       ],
       "default": "alphabetical",
       "id": "collection_sorting"
+    },
+    {
+      "label": "Content Top Padding",
+      "type": "range",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 36,
+      "id": "collection_content_padding_top"
+    },
+    {
+      "label": "Content Bottom Padding",
+      "type": "range",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 36,
+      "id": "collection_content_padding_bottom"
     },
     {
       "label": "Content Width",
