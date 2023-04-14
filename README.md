@@ -57,7 +57,7 @@ https://billion-trillion.myshopify.com
 - [x] header.liquid
 - [x] hero.liquid
 - [x] image-with-text.liquid
-- [ ] main-404.liquid
+- [x] main-404.liquid
 - [ ] main-cart-footer.liquid
 - [ ] main-cart-hero.liquid
 - [ ] main-cart-items.liquid
@@ -82,7 +82,7 @@ https://billion-trillion.myshopify.com
 - [x] thank-you.liquid
 
 ### Templates (2/14 Complete)
-- [r] 404.json
+- [x] 404.json
 - [-] article.json
 - [-] blog.json
 - [ ] cart.json
@@ -90,13 +90,13 @@ https://billion-trillion.myshopify.com
 - [-] gift_card.liquid
 - [x] index.json
 - [x] list-collections.json
-- [ ] page.about-us.json
+- [x] page.about-us.json
 - [ ] page.contact.json
 - [ ] page.json
-- [ ] page.products.json
-- [ ] page.shop.json
-- [ ] page.stockists.json
-- [ ] page.thank-you.json
+- [x] page.products.json
+- [x] page.shop.json
+- [x] page.stockists.json
+- [x] page.thank-you.json
 - [ ] password.json
 - [x] product.json
 - [-] search.json
