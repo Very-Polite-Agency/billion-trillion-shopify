@@ -4,7 +4,7 @@
       "type": "main-list-collections",
       "settings": {
         "collection_sorting": "alphabetical",
-        "collection_content_width": 70,
+        "collection_content_width": 85,
         "collection_title_size": "md",
         "collection_description_size": "sm",
         "anchor_id": "",
