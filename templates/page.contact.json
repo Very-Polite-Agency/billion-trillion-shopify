@@ -2,6 +2,25 @@
   "sections": {
     "form": {
       "type": "contact-form",
+      "blocks": {
+        "391513d8-188a-4c52-8d1b-f5a6bedfc90f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BT--contact-us--contact-form-panel-image_3x_f379b459-fca7-4013-970e-cefe0ad842aa.png"
+          }
+        },
+        "1e64b1cd-0c63-46d4-b8c5-42250d005a15": {
+          "type": "form",
+          "settings": {
+            "heading": "",
+            "heading_size": "md"
+          }
+        }
+      },
+      "block_order": [
+        "391513d8-188a-4c52-8d1b-f5a6bedfc90f",
+        "1e64b1cd-0c63-46d4-b8c5-42250d005a15"
+      ],
       "settings": {
         "anchor_id": "",
         "background": "image",
