@@ -45,6 +45,7 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
+  {{ section_collection_content_width }}
   <div class="{{ section_name }}__grid" role="list">
     {%- for item in collections -%}
       {%- capture card_classes -%}
