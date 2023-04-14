@@ -4,6 +4,8 @@
       "type": "main-list-collections",
       "settings": {
         "collection_sorting": "alphabetical",
+        "collection_content_padding_top": 60,
+        "collection_content_padding_bottom": 60,
         "collection_content_width": 85,
         "collection_title_size": "md",
         "collection_description_size": "sm",
