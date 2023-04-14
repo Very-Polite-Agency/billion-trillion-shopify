@@ -5,8 +5,10 @@
   assign section_id = section_name | append: '--' | append: section.id
 
   assign section_anchor_id = section.settings.anchor_id | default: ''
-  assign section_collection_sorting = section.collection_sorting
-  assign section_collection_content_width = section.collection_content_width
+  assign section_collection_sorting = section.settings.collection_sorting
+  assign section_collection_content_width = section.settings.collection_content_width
+  assign section_collection_title_size = section.settings.collection_title_size
+  assign section_collection_description_size = section.settings.collection_description_size
 
   case section_collection_sorting
     when 'products_high' or 'products_low'
@@ -45,13 +47,19 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-  {{ section_collection_content_width }}
   <div class="{{ section_name }}__grid" role="list">
     {%- for item in collections -%}
       {%- capture card_classes -%}
         {{ section_name }}__item card-collection fifty-fifty
       {%- endcapture -%}
-      {%- render 'card-collection', card_aria_role: 'listitem', card_classes: card_classes, card_collection: item -%}
+      {%-
+        render 'card-collection',
+          card_aria_role: 'listitem',
+          card_classes: card_classes,
+          card_collection: item
+          card_heading_size: section_collection_title_size,
+          card_message_size: section_collection_description_size
+      -%}
     {%- endfor -%}
   </div>
 </div>

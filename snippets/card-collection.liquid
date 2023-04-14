@@ -32,6 +32,8 @@
     assign snippet_collection_featured_image = snippet_collection.featured_image | default: false
     assign snippet_collection_title = snippet_collection.title | default: ''
     assign snippet_collection_url = snippet_collection.url | default: ''
+    assign snippet_heading_size = card_heading_size | default: 'md'
+    assign snippet_message_size = card_message_size | default: 'sm'
 
   -%}
 
@@ -63,7 +65,7 @@
               endcapture
               assign aos_delay = aos_delay | plus: aos_delay_increment
             -%}
-            <h2 class="{{ snippet_name }}__heading fifty-fifty__heading heading--primary heading--{{ heading_size }}-fluid" {{ aos_attrs }}>{{ snippet_collection_title }}</h2>
+            <h2 class="{{ snippet_name }}__heading fifty-fifty__heading heading--primary heading--{{ snippet_heading_size }}-fluid" {{ aos_attrs }}>{{ snippet_collection_title }}</h2>
           {% endif %}
           {% if snippet_collection_description != blank %}
             {%- liquid
@@ -72,7 +74,7 @@
               endcapture
               assign aos_delay = aos_delay | plus: aos_delay_increment
             -%}
-            <div class="{{ snippet_name }}__message body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ snippet_collection_description }}</div>
+            <div class="{{ snippet_name }}__message body-copy--primary body-copy--{{ snippet_message_size }}-fluid" {{ aos_attrs }}>{{ snippet_collection_description }}</div>
           {% endif %}
           {% if snippet_collection_url != blank %}
             {%- liquid
