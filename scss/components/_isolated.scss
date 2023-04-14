@@ -1,6 +1,4 @@
-@use "../utils/mixins/breakpoint" as *;
-
-.thank-you {
+.isolated {
 
   height: 100vh;
   display: flex;
@@ -11,7 +9,7 @@
 
   &__heading,
   &__message {
-    & + .thank-you__cta {
+    & + .isolated__cta {
       margin-top: min(32px, 10vw);
     }
   }
@@ -35,6 +33,9 @@
   &__heading {
     font-size: min(320px, 21vw);
     line-height: 0.95;
+    & + .isolated__message {
+      margin-top: min(26px, 7vw);
+    }
   }
 
   &__main {

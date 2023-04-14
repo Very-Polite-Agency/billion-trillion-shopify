@@ -30,8 +30,8 @@
   -%}
 {%- endstyle -%}
 
-<div class="{{ section_classes }}" id="{{ section_id }}">
-  <div class="{{ section_name }}__main text--{{ section_text_colour }} text--align-center">
+<div class="{{ section_classes }} isolated" id="{{ section_id }}">
+  <div class="{{ section_name }}__main isolated__main text--align-center text--uppercase text--{{ section_text_colour }} ">
 
     {%- for block in section.blocks -%}
       {%- case block.type -%}
@@ -69,8 +69,8 @@
               assign aos_delay = aos_delay | plus: aos_delay_increment
             -%}
             {% capture svg_button_type %}button.{{ button_type }}{% endcapture %}
-            <div class="{{ section_name }}__cta" {{ aos_attrs }}>
-              <a class="{{ section_name }}__cta-button button button--svg button--svg-fill-{{ button_colour }}" href="{{ button_link }}" target="{{ button_link_target }}" title="{{ button_link_title }}">
+            <div class="{{ section_name }}__cta isolated__cta" {{ aos_attrs }}>
+              <a class="{{ section_name }}__cta-button isolated__cta-button button--svg button--svg-fill-{{ button_colour }}" href="{{ button_link }}" target="{{ button_link_target }}" title="{{ button_link_title }}">
                 {% render 'svg', type: svg_button_type %}
               </a>
             </div>
@@ -88,7 +88,7 @@
           -%}
 
           {% if heading != blank %}
-            <h1 class="{{ section_name }}__heading heading--primary" {{ aos_attrs }}>{{ heading | escape }}</h1>
+            <h1 class="{{ section_name }}__heading isolated__heading heading--primary" {{ aos_attrs }}>{{ heading | escape }}</h1>
           {% endif %}
 
         {%- when 'message' -%}
@@ -103,7 +103,7 @@
           -%}
 
           {% if message != blank %}
-            <div class="{{ section_name }}__message body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ message }}</div>
+            <div class="{{ section_name }}__message isolated__message body-copy--primary body-copy--{{ message_size }}-fluid" {{ aos_attrs }}>{{ message }}</div>
           {% endif %}
 
       {%- endcase -%}
