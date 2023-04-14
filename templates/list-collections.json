@@ -3,18 +3,19 @@
     "main": {
       "type": "main-list-collections",
       "settings": {
+        "collection_sorting": "alphabetical",
+        "collection_title_size": "sm",
+        "collection_description_size": "sm",
         "anchor_id": "",
         "background": "orange",
         "background_image_position_desktop": "center center",
         "background_image_position_mobile": "center center",
         "background_image_repeat": "repeat",
         "background_image_size": "cover",
-        "border_top": true,
-        "border_bottom": true,
-        "container": "container",
+        "border_top": false,
+        "border_bottom": false,
         "padding_top": 0,
-        "padding_bottom": 0,
-        "sort": "alphabetical"
+        "padding_bottom": 0
       }
     }
   },
