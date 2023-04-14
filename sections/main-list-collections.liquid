@@ -6,6 +6,7 @@
 
   assign section_anchor_id = section.settings.anchor_id | default: ''
   assign section_collection_sorting = section.collection_sorting
+  assign section_collection_content_width = section.collection_content_width
 
   case section_collection_sorting
     when 'products_high' or 'products_low'
@@ -21,6 +22,10 @@
 -%}
 
 {%- style -%}
+
+  #{{ section_id }} .fifty-fifty__item.text .{{ section_name }}__content {
+    width: {{ section_collection_content_width }}%;
+  }
 
   {%-
     render 'element-styles',
@@ -62,7 +67,7 @@
       "type": "header"
     },
     {
-      "label": "Collection Sorting",
+      "label": "Sorting",
       "type": "select",
       "options": [
         { "label": "Alphabetically, A-Z", "value": "alphabetical" },
@@ -74,6 +79,15 @@
       ],
       "default": "alphabetical",
       "id": "collection_sorting"
+    },
+    {
+      "label": "Content Width",
+      "type": "range",
+      "min": 50,
+      "max": 100,
+      "step": 1,
+      "default": 100,
+      "id": "collection_content_width"
     },
     {
       "label": "Title Size",
