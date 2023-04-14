@@ -49,10 +49,10 @@
           <div class="{{ section_name }}__content">
             {% case block_type %}
               {% when 'form' %}
+                {% assign heading = block.settings.heading | default: '' %}
+                {% if heading != blank %}<strong>{{ heading }}</strong>{% endif %}
               {% when 'image' %}
-                {%- liquid
-                  assign image = block.settings.image | default: false
-                -%}
+                {% assign image = block.settings.image | default: false %}
                 {% if image %}
                   {%- liquid
                     capture aos_attrs
@@ -60,7 +60,7 @@
                     endcapture
                     assign aos_delay = aos_delay | plus: aos_delay_increment
                   -%}
-                  <div class="{{ section_name }}__image {{ aos_attrs }}>
+                  <div class="{{ section_name }}__image" {{ aos_attrs }}>
                     {% render 'lazyload-image', image: image %}
                   </div>
                 {% endif %}
