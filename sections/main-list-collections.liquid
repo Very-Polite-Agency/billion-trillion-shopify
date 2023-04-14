@@ -5,15 +5,16 @@
   assign section_id = section_name | append: '--' | append: section.id
 
   assign section_anchor_id = section.settings.anchor_id | default: ''
+  assign section_collection_sorting = section.collection_sorting
 
-  case section.settings.sort
+  case section_collection_sorting
     when 'products_high' or 'products_low'
       assign collections = collections | sort: 'all_products_count'
     when 'date' or 'date_reversed'
       assign collections = collections | sort: 'published_at'
   endcase
 
-  if section.settings.sort == 'products_high' or section.settings.sort == 'date_reversed' or section.settings.sort == 'alphabetical_reversed'
+  if section_collection_sorting == 'products_high' or section_collection_sorting == 'date_reversed' or section_collection_sorting == 'alphabetical_reversed'
     assign collections = collections | reverse
   endif
 
@@ -58,6 +59,20 @@
     {
       "content": "Collection",
       "type": "header"
+    },
+    {
+      "label": "Collection Sorting",
+      "type": "select",
+      "options": [
+        { "label": "Alphabetically, A-Z", "value": "alphabetical" },
+        { "label": "Alphabetically, Z-A", "value": "alphabetical_reversed" },
+        { "label": "Date, new to old", "value": "date_reversed" },
+        { "label": "Date, old to new", "value": "date" },
+        { "label": "Product count, high to low", "value": "products_high" },
+        { "label": "Product count, low to high", "value": "products_low" }
+      ],
+      "default": "alphabetical",
+      "id": "collection_sorting"
     },
     {
       "label": "Title Size",
@@ -214,42 +229,6 @@
       "unit": "px",
       "default": 36,
       "id": "padding_bottom"
-    },
-    {
-      "content": "Sorting",
-      "type": "header"
-    },
-    {
-      "label": "Sort",
-      "type": "select",
-      "options": [
-        {
-          "label": "Alphabetically, A-Z",
-          "value": "alphabetical"
-        },
-        {
-          "label": "Alphabetically, Z-A",
-          "value": "alphabetical_reversed"
-        },
-        {
-          "label": "Date, new to old",
-          "value": "date_reversed"
-        },
-        {
-          "label": "Date, old to new",
-          "value": "date"
-        },
-        {
-          "label": "Product count, high to low",
-          "value": "products_high"
-        },
-        {
-          "label": "Product count, low to high",
-          "value": "products_low"
-        }
-      ],
-      "default": "alphabetical",
-      "id": "sort"
     }
   ]
 }
