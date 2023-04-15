@@ -1,0 +1,8 @@
+{% if message and message != blank %}
+  <div class="form__error-message error-message error-message--{{ position }} body-copy--primary body-copy--xxs">
+    <span class="error-message__icon">
+      {% render 'svg', type: 'icon.error-message-arrow' %}
+    </span>
+    <span class="error-message__content">{{- message -}}</span>
+  </div>
+{% endif %}

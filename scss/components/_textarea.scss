@@ -1,0 +1,16 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins/ui' as *;
+
+.textarea {
+
+  @extend %ui-base;
+  @extend %ui-input;
+  @extend %ui-transition;
+
+  &--primary {
+    @extend .textarea;
+    background: var(--theme-colour--lemon);
+    width: 100%;
+  }
+
+}

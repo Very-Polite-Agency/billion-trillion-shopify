@@ -163,12 +163,7 @@ const submitForm = ( form = false ) => {
     axios.post( action, data )
     .then( data => {
       if ( 200 === data.status ) {
-
         switch ( type ) {
-          case 'brand-me': {
-            if ( redirectUrl ) window.location.replace( redirectUrl );
-            break;
-          }
           case 'lead-generation': {
             setTimeout(() => {
               alert(`Thanks ${dataObject['firstName']}!`);
@@ -177,12 +172,11 @@ const submitForm = ( form = false ) => {
             break;
           }
           default: {
+            if ( redirectUrl ) window.location.replace( redirectUrl );
             break;
           }
         }
-
         document.body.classList.remove('form-posting');
-
       }
     })
     .catch( data => {
