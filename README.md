@@ -43,7 +43,7 @@ https://billion-trillion.myshopify.com
 - [r] announcements.liquid
 - [x] apps.liquid
 - [x] awards.liquid
-- [ ] contact-form.liquid
+- [x] contact-form.liquid
 - [x] custom-liquid.liquid
 - [ ] drawer-cart.liquid
 - [x] drawer-mobile-menu.liquid
@@ -66,7 +66,7 @@ https://billion-trillion.myshopify.com
 - [x] main-list-collections.liquid
 - [ ] main-page.liquid
 - [ ] main-password.liquid
-- [r] main-product.liquid
+- [x] main-product.liquid
 - [x] marquee.liquid
 - [x] mobile-menu.liquid
 - [x] policy-privacy.liquid
@@ -85,18 +85,18 @@ https://billion-trillion.myshopify.com
 - [x] 404.json
 - [-] article.json
 - [-] blog.json
-- [ ] cart.json
+- [-] cart.json
 - [x] collection.json
 - [-] gift_card.liquid
 - [x] index.json
 - [x] list-collections.json
 - [x] page.about-us.json
-- [ ] page.contact.json
+- [x] page.contact.json
 - [ ] page.json
 - [x] page.products.json
 - [x] page.shop.json
 - [x] page.stockists.json
 - [x] page.thank-you.json
-- [ ] password.json
+- [-] password.json
 - [x] product.json
 - [-] search.json

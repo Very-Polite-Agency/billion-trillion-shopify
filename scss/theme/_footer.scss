@@ -27,12 +27,18 @@
       &-cta {
         display: none;
       }
+      &-link {
+        color: inherit;
+        &:hover {
+          color: inherit;
+          opacity: 0.5;
+        }
+      }
     }
   }
 
   &__main {
     @include hobeaux( 700 );
-    background: var(--theme-colour--black);
     color: var(--theme-colour--lemon);
     &-content {
       display: flex;
@@ -119,16 +125,19 @@
       left: 0;
       width: 100%;
       &-content {
-         padding-top: calc( 1.5 * var(--theme-layout--gutter) );
-         padding-bottom: calc( 1.5 * var(--theme-layout--gutter) );
-         justify-content: flex-end;
-         gap: 40px;
-         font-size: 14px;
+        padding-top: calc( 1.5 * var(--theme-layout--gutter) );
+        padding-bottom: calc( 1.5 * var(--theme-layout--gutter) );
+        justify-content: flex-end;
+        gap: 40px;
+        font-size: 14px;
       }
       &-instagram {
         order: 2;
         &-cta {
           display: block;
+        }
+        &-link {
+          margin-left: 5px;
         }
       }
       &-legal {
