@@ -1,24 +1,27 @@
 {%- liquid
-  assign form_classes = form_classes | default: '' | append: ' contact-form form js--validate-me' | strip
+  assign form_classes = form_classes | default: '' | append: ' contact-form form form--primary js--validate-me' | strip
   assign form_id = form_id | default: 'contact-us-form'
 -%}
 
 {%- form 'contact', class: form_classes, data-redirect-url: '/pages/thank-you', id: form_id -%}
 
-  <div class="form__field field field--text">
-    {% render "input", classes: 'input--primary', name: 'contact[name]', placeholder: 'Name*', required: true, type: 'text' %}
-    {% render "error-message", message: 'This cannot be blank.', position: 'right' %}
+  <div class="form__field form-field form-field--text">
+    {% render "input", classes: 'input--primary body-copy--primary body-copy--1', name: 'contact[name]', placeholder: 'Name*', required: true, type: 'text' %}
+    {% render "form-error", message: 'Invalid', position: 'right' %}
   </div>
-  <div class="form__field field field--email">
-    {% render "input", classes: 'input--primary', name: 'contact[email]', placeholder: 'Email*', required: true, type: 'email' %}
-    {% render "error-message", message: 'Scuzi! Please enter a valid email address.', position: 'right' %}
+
+  <div class="form__field form-field form-field--email">
+    {% render "input", classes: 'input--primary body-copy--primary body-copy--1', name: 'contact[email]', placeholder: 'Email*', required: true, type: 'email' %}
+    {% render "form-error", message: 'Invalid', position: 'right' %}
   </div>
-  <div class="form__field field field--tel">
-    {% render "input", classes: 'input--primary', name: 'contact[phone]', placeholder: 'Contact No.', required: false, type: 'tel' %}
+
+  <div class="form__field form-field form-field--tel">
+    {% render "input", classes: 'input--primary body-copy--primary body-copy--1', name: 'contact[phone]', placeholder: 'Contact No.', required: false, type: 'tel' %}
   </div>
-  <div class="form__field field field--textarea">
-    {% render "textarea", classes: 'textarea--primary', name: 'contact[body]', placeholder: 'Message*', required: true %}
-    {% render "error-message", message: 'This cannot be blank.', position: 'right' %}
+
+  <div class="form__field form-field form-field--textarea">
+    {% render "textarea", classes: 'textarea--primary body-copy--primary body-copy--1', name: 'contact[body]', placeholder: 'Message*', required: true %}
+    {% render "form-error", message: 'Invalid', position: 'right' %}
   </div>
 
   <div class="form__action">

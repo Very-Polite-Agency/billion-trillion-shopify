@@ -52,7 +52,7 @@
                   assign heading = block.settings.heading | default: ''
                   assign heading_background = block.settings.heading_background
                 %}
-                {% if heading != blank %}<strong style="background: var(--theme-colour--{{ heading_background }});">{{ heading }}</strong>{% endif %}
+                {% if heading != blank %}<strong class="{{ section_name }}__heading heading--primary heading--2" style="background: var(--theme-colour--{{ heading_background }});">{{ heading }}</strong>{% endif %}
                 {%- capture snippet_classes -%}{{ section_name }}__form{%- endcapture -%}
                 {% render 'form-contact-us', form_classes: snippet_classes, form_id: form_id %}
               {% when 'image' %}

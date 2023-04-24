@@ -1,4 +1,5 @@
 @use '../utils/variables' as *;
+@use '../utils/mixins/breakpoint' as *;
 @use '../utils/mixins/ui' as *;
 
 .textarea {
@@ -9,8 +10,25 @@
 
   &--primary {
     @extend .textarea;
-    background: var(--theme-colour--lemon);
     width: 100%;
+  }
+
+  @include breakpoint(lg) {
+    &--primary {
+      min-height: 200px;
+    }
+  }
+
+  @include breakpoint(xl) {
+    &--primary {
+      min-height: 250px;
+    }
+  }
+
+  @include breakpoint(xxl) {
+    &--primary {
+      min-height: 300px;
+    }
   }
 
 }

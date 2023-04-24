@@ -1,6 +1,36 @@
+@use "../utils/mixins/border" as *;
+
 .form {
 
   position: relative;
   overflow: hidden;
+
+  &--primary {
+
+    @extend .form;
+
+    background: var(--theme-colour--lemon);
+
+    .form {
+      &__action {
+        padding: calc( 0.5 * var(--theme-layout--gutter) );
+      }
+      &__field {
+        & + .form__action,
+        & + .form__field {
+          @include border-solid( var(--theme-border--width), 'black', 'top' );
+        }
+      }
+    }
+
+    .input {
+      padding: 0 calc( 0.5 * var(--theme-layout--gutter) );
+    }
+
+    .textarea {
+      padding: calc( 0.5 * var(--theme-layout--gutter) );
+    }
+
+  }
 
 }

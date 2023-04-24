@@ -1,0 +1,80 @@
+@use "../utils/mixins/border" as *;
+@use "../utils/mixins/breakpoint" as *;
+
+.contact-form {
+
+  &__heading {
+    padding: 20px;
+    text-align: center;
+    & + .contact-form__form {
+      @include border-solid( var(--theme-border--width), 'black', 'top' );
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    img, svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__item {
+    &.form {
+      order: 2;
+    }
+    &.image {
+      order: 1;
+    }
+  }
+
+  &__main {
+    @include border-solid( var(--theme-border--width), 'black' );
+    border-radius: var(--theme-border--radius);
+    background: var(--theme-colour--black);
+    gap: var(--theme-border--width);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    overflow: hidden;
+  }
+
+  @include breakpoint(lg) {
+
+    &__item {
+      &.form,
+      &.image {
+        order: initial;
+      }
+    }
+
+    &__item.image {
+      height: 100%;
+      .contact-form__content {
+        height: 100%;
+        position: relative;
+      }
+      .contact-form__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        img, svg {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &__main {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+  }
+
+}

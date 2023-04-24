@@ -1,18 +1,24 @@
 .form-error {
 
-  font-family: var(--theme-font-family--sans-serif--primary);
   transition:
-    color var(--theme-transition-duration),
-    opacity var(--theme-transition-duration),
-    transform var(--theme-transition-duration);
+    opacity var(--theme-transition--duration),
+    transform var(--theme-transition--duration);
+  background: var(--theme-colour--orange);
+  color: var(--theme-colour--lemon);
   position: absolute;
-  top: calc(100% - 15px);
-  right: 0;
-  color: rgba(var(--theme-colour-orange), 1);
   opacity: 0;
-  transform: translate3d( -5px, 0, 0 );
-  letter-spacing: 0;
-  font-size: 12px;
+  padding: 5px 15px;
+  border-radius: 50px;
+
+  &--left {
+    transform: translate3d( -5px, 0, 0 );
+    left: calc( 0.5 * var(--theme-layout--gutter) );
+  }
+
+  &--right {
+    transform: translate3d( 5px, 0, 0 );
+    right: calc( 0.5 * var(--theme-layout--gutter) );
+  }
 
   .error & {
     opacity: 1;

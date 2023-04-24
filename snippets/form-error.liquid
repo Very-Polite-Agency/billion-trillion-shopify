@@ -1,0 +1,5 @@
+{% if message and message != blank %}
+  <div class="form-error form-error--{{ position }}">
+    <span class="form-error__message body-copy--primary body-copy--3 text--uppercase">{{- message -}}</span>
+  </div>
+{% endif %}

@@ -117,12 +117,12 @@ const onFormFocus = ( form = false ) => {
   if ( form ) {
 
     form.addEventListener( 'focusin', (e) => {
-      let field = e.target.closest('.field') || false;
+      let field = e.target.closest('.form-field') || false;
       if ( field ) field.classList.add('in-focus');
     });
 
     form.addEventListener( 'focusout', (e) => {
-      let field = e.target.closest('.field') || false;
+      let field = e.target.closest('.form-field') || false;
       if ( field && !e.target.value ) {
         isFieldValid( field );
         field.classList.remove('in-focus');
@@ -206,7 +206,7 @@ const testText = ( value = '' ) => {
 // ---------------------------------------- Update Field State
 const updateFieldState = ( input = {}, valid = false ) => {
 
-  let field = input.closest('.field') || false;
+  let field = input.closest('.form-field') || false;
 
   if ( field ) {
     if ( valid ) {
