@@ -8,13 +8,14 @@
   assign aos_delay = 250
   assign aos_delay_increment = 250
 
-  assign cookie_duration = section.settings.cookie_duration | default: 30
-  assign delay = section.settings.delay | default: 4000
-  assign enable = section.settings.enable | default: false
-  assign message = section.settings.message | default: 'Are you of Age?!'
-  assign modal_id = section_name
-  assign redirect_url = section.settings.redirect_url | default: 'https://www.pbs.org'
-  assign success_message = section.settings.success_message | default: 'Welcome to the Pleasuredome'
+  assign section_cookie_duration = section.settings.cookie_duration | default: 30
+  assign section_enable = section.settings.enable | default: false
+
+  assign section_modal_delay = section.settings.modal_delay
+  assign section_modal_id = section_name
+  assign section_modal_message = section.settings.modal_message
+  assign section_modal_redirect_url = section.settings.modal_redirect_url | default: 'https://www.pbs.org'
+  assign section_modal_success_message = section.settings.modal_success_message
 
 -%}
 
@@ -66,6 +67,39 @@
   "class": "section section--age-gate age-gate",
   "settings": [
     {
+      "content": "Modal",
+      "type": "header"
+    },
+    {
+      "label": "Modal Delay",
+      "info": "Length of time (in milliseconds) before modal is shown.",
+      "type": "range",
+      "min": 3000,
+      "max": 8000,
+      "step": 250,
+      "default": 4000,
+      "id": "modal_delay"
+    },
+    {
+      "label": "Modal Redirect URL",
+      "info": "Optionally include an external URL to send people to if they are not of age.",
+      "type": "url",
+      "default": "https://www.pbs.org",
+      "id": "modal_redirect_url"
+    },
+    {
+		  "label": "Modal Message",
+      "type": "richtext",
+      "default": "<p>Are you over 21?</p>",
+      "id": "modal_message"
+    },
+    {
+      "label": "Modal Success Message",
+      "type": "richtext",
+      "default": "<p>Welcome to the Pleasuredome</p>",
+      "id": "modal_success_message"
+    }
+    {
       "content": "Settings",
       "type": "header"
     },
@@ -76,16 +110,6 @@
       "id": "enable"
     },
     {
-      "label": "Delay",
-      "info": "Length of time (in milliseconds) before popup is shown.",
-      "type": "range",
-      "min": 3000,
-      "max": 8000,
-      "step": 250,
-      "default": 4000,
-      "id": "delay"
-    },
-    {
       "label": "Cookie Duration",
       "info": "Length of time (in days) before cookie expires and user is re-prompted. Expiry date is assigned per browser and per device.",
       "type": "range",
@@ -94,28 +118,6 @@
       "step": 5,
       "default": 30,
       "id": "cookie_duration"
-    },
-    {
-      "label": "Redirect URL",
-      "info": "Optionally include an external URL to send people to if they are not of age.",
-      "type": "url",
-      "id": "redirect_url"
-    },
-    {
-      "content": "Content",
-      "type": "header"
-    },
-    {
-		  "label": "Message",
-      "type": "richtext",
-      "default": "<p>Are you over 21?</p>",
-      "id": "message"
-    },
-    {
-      "label": "Success Message",
-      "type": "richtext",
-      "default": "<p>Welcome to the Pleasuredome</p>",
-      "id": "success_message"
     }
   ]
 }
