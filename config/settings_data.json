@@ -4,12 +4,12 @@
       "age-gate": {
         "type": "age-gate",
         "settings": {
-          "enable": false,
-          "delay": 4000,
-          "cookie_duration": 30,
-          "redirect_url": "https:\/\/www.spacejam.com\/1996\/",
-          "message": "<p>Are you of <br\/>legal drinking <br\/>age?<\/p>",
-          "success_message": "<p>Welcome to the Good Time Galaxy<\/p>"
+          "modal_delay": 4000,
+          "modal_redirect_url": "https:\/\/www.spacejam.com\/1996\/",
+          "modal_message": "<p>Are YOU over 21?<\/p>",
+          "modal_success_message": "<p>Welcome to the Pleasuredome<\/p>",
+          "enable": true,
+          "cookie_duration": 30
         }
       },
       "header": {
