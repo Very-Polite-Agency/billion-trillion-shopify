@@ -19,45 +19,34 @@
 
 -%}
 
-{% if enable %}
-
+{% if section_enable %}
   <div
-    class="{{ section_name }}__modal modal fade"
-    id="{{ modal_id }}"
     aria-hidden="true"
+    class="{{ section_name }}__modal modal fade"
     data-bs-backdrop="static"
     data-bs-keyboard="false"
+    data-delay="{{ section_modal_delay }}"
+    data-cookie-duration="{{ section_cookie_duration }}"
+    data-redirect-url="{{ section_modal_redirect_url }}"
+    id="{{ section_name }}"
     tabindex="-1"
-    data-cookie-duration="{{ cookie_duration }}"
-    data-delay="{{ delay }}"
   >
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="{{ section_name }}__modal-main">
 
-          <div class='modal__content-frame'>
-            <div class='modal__content'>
-              <div class='modal__message message body-copy--age-gate'>
-                <div class="modal__message-image">
-                  <img src="{{ 'BILLION--age-gate-stars.svg' | asset_url }}" />
-                </div>
-                {{ message }}
-              </div>
-              <div class='modal__success-message message body-copy--age-gate' id="{{ section_name }}--success-message">
-                {{ success_message }}
-              </div>
-            </div>
-            <div class='modal__actions'>
-              <button class='modal__button button--age-gate no' type='button' data-of-age='no'>No</button>
-              <button class='modal__button button--age-gate yes' type='button' data-of-age='yes'>Yes</button>
-            </div>
-          </div>
-
+        <div class='{{ section_name }}__content'>
+          <div class='{{ section_name }}__message' id="{{ section_name }}--message">{{ section_modal_message }}</div>
+          <div class='{{ section_name }}__success-message' id="{{ section_name }}--success-message">{{ section_modal_success_message }}</div>
         </div>
+
+        <div class='{{ section_name }}__actions'>
+          <button class='{{ section_name }}__button button--age-gate no' aria-label="Not of Age" data-of-age='no' type='button'>No</button>
+          <button class='{{ section_name }}__button button--age-gate yes' aria-label="Of Age" data-of-age='yes' type='button'>Yes</button>
+        </div>
+
       </div>
     </div>
   </div>
-
 {% endif %}
 
 {% schema %}

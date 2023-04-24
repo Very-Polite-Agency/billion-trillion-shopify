@@ -2,52 +2,40 @@ import Cookies from 'cookies';
 
 const config = { debug: true, name: 'ageGate.js', version: '1.0' };
 const modal = {
-  id: 'age-gate',
-  element: () => {
-    return document.getElementById( 'age-gate' ) || false;
-  },
-  delay: () => {
-    return parseInt( this.element.dataset?.delay ?? 4000 );
-  },
-  redirectURL: () => {
-    return this.element.dataset?.redirectUrl ?? 'https://pbskids.org';
-  },
+  element: document.getElementById('age-gate') || false,
   instance: false
 };
 const cookie = {
 	name: 'billion-trillion--age-gate',
-  nalue: 'of-age',
-  duration: () => {
+	value: 'of-age',
+  delay: function() {
+    return parseInt( modal.element.dataset?.delay ?? 4000 );
+  },
+  duration: function() {
     return parseInt( modal.element.dataset?.cookieDuration ?? 30 );
   },
-  expired: () => {
+  expired: function() {
     return Cookies.get( this.name ) ? false : true;
+  },
+  redirect: function() {
+    return modal.element.dataset?.redirectUrl ?? 'https://www.pbs.org';
   }
 };
 
-const gateKeeper = () => {
-  ( document.querySelectorAll( '#' + modal.id + ' .modal__actions button' ) || [] ).forEach( button => {
+const enableGateKeeper = () => {
+
+  showAgeGate( modal.instance, cookie.delay() );
+
+  ( modal.element.querySelectorAll( 'button' ) || [] ).forEach( button => {
     button.addEventListener( 'click', event => {
 
       let choice = button.dataset.ofAge || '';
       let ofAge = {
         'yes': function() {
-          Cookies.set( cookie.name, cookie.value, cookie.duration() );
-          let successMessage = document.getElementById('age-gate--success-message') || false;
-          if ( successMessage ) {
-            successMessage.style.zIndex = "1";
-            successMessage.addEventListener('transitionend', function() {
-              setTimeout(function(){
-                modals.toggleModalVisibility( modal.id, 'close' );
-              }, 1250)
-            });
-            setTimeout(function(){
-              successMessage.classList.add('active');
-            }, 250);
-          }
+          modal.instance.hide();
         },
         'no': function() {
-          document.location.replace( modal.redirectURL() );
+          document.location.replace( cookie.redirect() );
         },
         'default': function () {}
       };
@@ -68,18 +56,18 @@ const showAgeGate = ( modal = false, delay = 0 ) => {
 
 const init = () => {
   if ( config.debug ) console.log(`[ ${config.name} v.${config.version} initialized ]`);
+  if ( modal.element && cookie.expired() ) {
 
-  console.log( modal, cookie );
+    modal.instance = new bootstrap.Modal(modal.element, {}) || false;
+    modal.element.addEventListener( 'hide.bs.modal', function (event) {
+      Cookies.set( cookie.name, cookie.value, cookie.duration() );
+    });
 
-  if ( cookie.expired() && modal.element ) {
-    modal.instance = new bootstrap.Modal ( modal.element, {} ) || false;
-    showAgeGate( modal.instance, modal.delay );
-    gateKeeper();
-    // modal.element.addEventListener( 'hide.bs.modal', function (event) {
-    //   Cookies.set( cookie.name, cookie.value, cookie.duration() );
-    // });
+    enableGateKeeper();
+
   }
   if ( config.debug ) console.log(`[ ${config.name} v.${config.version} complete ]`);
 };
 
 export default { init };
+

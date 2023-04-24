@@ -1,3 +1,4 @@
+import AgeGate from './modules/ageGate';
 import Credits from './modules/credits';
 import Cart from './modules/cart';
 import Drawers from './modules/drawers';
@@ -9,6 +10,7 @@ import StockistsLocations from './modules/stockistsLocations';
 import Tools from './modules/tools';
 
 // ---------------------------------------- Modules
+AgeGate.init();
 Cart.init();
 Credits.init();
 Drawers.init();
