@@ -13,6 +13,7 @@
           "type": "form",
           "settings": {
             "heading": "Make Contact",
+            "heading_background": "lime",
             "heading_size": "md"
           }
         }
@@ -31,8 +32,8 @@
         "background_image_size": "cover",
         "border_top": false,
         "border_bottom": false,
-        "padding_top": 52,
-        "padding_bottom": 52
+        "padding_top": 96,
+        "padding_bottom": 96
       }
     }
   },
