@@ -11,6 +11,9 @@
   &--primary {
     @extend .textarea;
     width: 100%;
+    @include placeholder {
+      text-transform: uppercase;
+    }
   }
 
   @include breakpoint(lg) {

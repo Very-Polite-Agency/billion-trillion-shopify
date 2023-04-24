@@ -25,7 +25,9 @@
   </div>
 
   <div class="form__action">
-    <button class="form__button button--primary text-colour--off-white" type="submit">Submit</button>
+    <button class="form__button button--primary text-colour--off-white" type="submit">
+      {% render 'svg', type: 'button.send-to-space' %}
+    </button>
   </div>
 
 {%- endform -%}
