@@ -17,6 +17,12 @@
   // ---------------------------------------- SVG Button
   &--svg {
 
+    img, svg {
+      display: block;
+      height: 100%;
+      width: auto;
+    }
+
     path {
       transition: fill var(--theme-transition--duration);
     }

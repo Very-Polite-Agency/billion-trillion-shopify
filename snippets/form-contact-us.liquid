@@ -3,7 +3,7 @@
   assign form_id = form_id | default: 'contact-us-form'
 -%}
 
-{%- form 'contact', class: form_classes, data-redirect-url: '/pages/thank-you', id: form_id -%}
+{%- form 'contact', class: form_classes, data-form-type: 'contact-us', data-redirect-url: '/pages/thank-you', id: form_id -%}
 
   <div class="form__field form-field form-field--text">
     {% render "input", classes: 'input--primary body-copy--primary body-copy--1', name: 'contact[name]', placeholder: 'Name*', required: true, type: 'text' %}
@@ -25,7 +25,7 @@
   </div>
 
   <div class="form__action">
-    <button class="form__button button--primary text-colour--off-white" type="submit">
+    <button class="form__button button button--svg button--svg-fill-orange" type="submit">
       {% render 'svg', type: 'button.send-to-space' %}
     </button>
   </div>

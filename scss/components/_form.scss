@@ -1,4 +1,5 @@
 @use "../utils/mixins/border" as *;
+@use "../utils/mixins/breakpoint" as *;
 
 .form {
 
@@ -14,6 +15,14 @@
     .form {
       &__action {
         padding: calc( 0.5 * var(--theme-layout--gutter) );
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      &__button {
+        width: auto;
+        height: min(75px,11vw);
       }
       &__field {
         & + .form__action,
@@ -29,6 +38,23 @@
 
     .textarea {
       padding: calc( 0.5 * var(--theme-layout--gutter) );
+    }
+
+  }
+
+  &.form-posting {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  @include breakpoint(lg) {
+
+    &--primary {
+      .form {
+        &__button {
+          height: min(78px, 5.25vw);
+        }
+      }
     }
 
   }

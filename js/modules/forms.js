@@ -151,7 +151,7 @@ const submitForm = ( form = false ) => {
 
   if ( form ) {
 
-    let redirectUrl = form.dataset.redirectUrl || '';
+    let redirectUrl = form.dataset.redirectUrl || '/';
     let type = form.dataset.formType || 'default';
     let action = form.action || '';
     let data = new FormData( form );
@@ -159,30 +159,25 @@ const submitForm = ( form = false ) => {
 	  let dataJSONString = JSON.stringify( dataObject );
 
     document.body.classList.add('form-posting');
+    form.classList.add('form-posting');
 
     axios.post( action, data )
     .then( data => {
       if ( 200 === data.status ) {
         switch ( type ) {
-          case 'lead-generation': {
-            setTimeout(() => {
-              alert(`Thanks ${dataObject['firstName']}!`);
-              form.reset();
-            }, 750 );
-            break;
-          }
-          default: {
-            if ( redirectUrl ) window.location.replace( redirectUrl );
+          case 'contact-us': {
+            window.location.replace( redirectUrl );
             break;
           }
         }
-        document.body.classList.remove('form-posting');
       }
     })
     .catch( data => {
       console.log('[ submitForm() Error ]', data );
     }).finally( data => {
-      console.log('[ submitForm() Finally ]', data );
+      form.reset();
+      document.body.classList.remove('form-posting');
+      form.classList.remove('form-posting');
     });
 
   }
