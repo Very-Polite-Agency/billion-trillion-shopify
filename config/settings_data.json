@@ -39,7 +39,7 @@
           "anchor_id": "",
           "background": "image",
           "background_image": "shopify:\/\/shop_images\/footer--background--desktop.png",
-          "background_image_position_mobile": "center center",
+          "background_image_position_mobile": "bottom right",
           "background_image_position_desktop": "bottom center",
           "background_image_repeat": "no-repeat",
           "background_image_size": "cover",
