@@ -10,8 +10,17 @@
   @extend %ui-transition;
 
   &--accordion,
+  &--age-gate,
   &--svg {
     @extend .button;
+  }
+
+  &--age-gate {
+    background: var(--theme-colour--white);
+    color: var(--theme-colour--black);
+    &:hover {
+      background: var(--theme-colour--orange);
+    }
   }
 
   // ---------------------------------------- SVG Button

@@ -1,161 +1,147 @@
+@use '../utils/mixins/border' as *;
+@use '../utils/mixins/breakpoint' as *;
+
 .age-gate {
 
+  @keyframes swerve {
+    0% {
+      transform: scale3d( 1, 1, 1 ) rotate(0deg);
+    }
+    100% {
+      transform: scale3d(1.18, 0.95, 1) rotate(-5deg);
+    }
+  }
+
   .modal {
-    &__message,
-    &__success-message {
-      padding: 28px;
-    }
-    &__actions {
-      border-top: 3px solid rgba(var(--theme-colour-black), 1);
+    background: none;
+    &-background {
+      background: var(--theme-colour--orange);
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      &-vr {
-        width: 3px;
-        background: rgba(var(--theme-colour-black), 1);
-        height: 52px;
+      height: 100%;
+      opacity: 0.9;
+    }
+    &-content {
+      @include border-solid(var(--theme-border--width), 'black' );
+      border-radius: 0;
+      max-width: 350px;
+      position: relative;
+      text-align: center;
+      overflow: unset;
+      z-index: 25;
+      &:after,
+      &:before {
+        @include border-solid(var(--theme-border--width), 'black' );
+        background: var(--theme-colour--black);
+        content: "";
         display: block;
+        position: absolute;
+        z-index: -1;
+      }
+      &:after {
+        bottom: -15px;
+        right: 2px;
+        width: 102%;
+        height: 12px;
+        transform: skew(-45deg);
+      }
+      &:before {
+        left: -15px;
+        top: 3px;
+        width: 12px;
+        height: 102%;
+        transform: skewY(-45deg);
       }
     }
-    &__button {
-      font-family: var(--theme-font-family--sans-serif--secondary);
-      color: rgba(var(--theme-colour-black), 1);
-      font-size: 68px;
-      padding: 18px;
-      height: auto;
-      line-height: 0.9;
-      &.no {}
-      &.yes {
-        flex: 1;
-        border-left: 3px solid rgba(var(--theme-colour-black), 1);
-      }
-      &:hover {
-        background: rgba(var(--theme-colour-orange), 1);
-        color: rgba(var(--theme-colour-black), 1);
-      }
-    }
-    &__container {
+    &-dialog {
       width: 100%;
       height: 100%;
       max-width: none;
-      max-height: none;
       margin: 0;
-      padding: 0;
+      padding: var(--theme-layout--gutter);
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    &__content {
+  }
+
+  &__actions {
+    @include border-solid(var(--theme-border--width), 'black', 'top' );
+    background: var(--theme-colour--black);
+    gap: var(--theme-border--width);
+    display: flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__button {
+    font-size: 68px;
+    padding: 18px;
+    height: auto;
+    line-height: 0.9;
+    &.yes {
+      flex: 1;
+    }
+  }
+
+  &__content {
+    position: relative;
+    padding: 28px;
+    overflow: hidden;
+  }
+
+  &__message {
+    font-size: 22px;
+    line-height: 1.23;
+  }
+
+  &__success-message {
+    background: black;
+    color: white;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    z-index: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 28px;
+    font-size: 36px;
+    p {
       margin: 0;
       padding: 0;
-      position: relative;
-      overflow: hidden;
-      &-frame {
-        background: rgba(var(--theme-colour-white),1);
-        color: rgba(var(--theme-colour-black),1);
-        text-align: center;
-        padding: 0;
-        margin: 0 auto;
-        max-width: 350px;
-        position: relative;
-        overflow: unset;
-        border: 3px rgba(var(--theme-colour-black),1) solid;
-        // LEFT & RIGHT
-        &:before,
-        &:after {
-          background: rgba(var(--theme-colour-black),1);
-          border: 3px rgba(var(--theme-colour-black),1) solid;
-          content: '';
-          display: block;
-          position: absolute;
-          z-index: -1;
-        }
-        // LEFT
-        &:before {
-          left: -15px;
-          top: 3px;
-          width: 12px;
-          height: 102%;
-          transform: skewY(-45deg);
-        }
-        // BOTTOM
-        &:after {
-          bottom: -15px;
-          right: 2px;
-          width: 102%;
-          height: 12px;
-          transform: skewX(-45deg);
-        }
-      }
     }
-    &__main {
+  }
+
+  &__svg {
+    width: 60%;
+    margin: 0 auto 10px;
+    img, svg {
+      animation: 1s ease-in infinite alternate swerve;
+      display: block;
       width: 100%;
       height: auto;
     }
-    &__message {
-      &-image {
-        width: 60%;
-        margin: 0 auto 10px;
-        img, svg {
-          display: block;
-          width: 100%;
-          height: auto;
-        }
-      }
+    .svg-fill {
+      fill: var(--theme-colour--orange);
     }
-    &__overlay {
-      background: rgba(var(--theme-colour-orange), 0.9);
-    }
-    &__success-message {
-      transition: opacity 500ms, transform 500ms;
-      font-family: var(--theme-font-family--sans-serif--secondary);
-      color: rgba(var(--theme-colour-black), 1);
-      background: rgba(var(--theme-colour-black), 1);
-      color: rgba(var(--theme-colour-white), 1);
-      font-size: 36px;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: calc( 100% - 24px );
-      width: 100%;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transform: translate3d( 0, 15px, 0);
-      &.active {
-        opacity: 1;
-        transform: translate3d( 0, 0, 0);
-      }
+    .svg-outline {
+      fill: var(--theme-colour--black);
     }
   }
 
   @include breakpoint(sm) {
-
-    .modal {
-      &__success-message {
-        font-size: 40px;
-      }
+    &__success-message {
+      font-size: 46px;
     }
-
-  } // min width sm
-
-  @include breakpoint(md) {} // min width md
-
-  @include breakpoint(lg) {
-
-    .modal {
-      &__content {
-        max-width: 400px;
-      }
-    }
-
-  } // min width lg
-
-  @include breakpoint(xl) {} // min width xl
-
-  @include breakpoint(xxl) {} // min width xxl
+  }
 
 }
