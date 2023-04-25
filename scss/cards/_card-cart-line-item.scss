@@ -8,16 +8,30 @@
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 10px;
+  gap: 18px;
 
-  &__image,
-  &__image-link {
+  &__image {
+    @include border-solid( var(--theme-border--width), 'black' );
+    border-radius: var(--theme-border--radius);
+    overflow: hidden;
     display: block;
+    width: 100px;
+    height: auto;
+    aspect-ratio: 1.5/2;
     img, svg {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+
+  &__image-link {
+    width: 100%;
+    height: 100%;
+    display: block;
+    &:hover {
+      opacity: 0.75;
     }
   }
 
@@ -31,5 +45,23 @@
   & + .card-cart-line-item {
     @include border-solid( var(--theme-border--width), 'black', 'top' );
   }
+
+  @include breakpoint(sm) {
+
+    gap: 20px;
+
+  }
+
+  @include breakpoint(md) {
+
+    gap: 24px;
+
+  }
+
+  @include breakpoint(lg) {}
+
+  @include breakpoint(xl) {}
+
+  @include breakpoint(xxl) {}
 
 }
