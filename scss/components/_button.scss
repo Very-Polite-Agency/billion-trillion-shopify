@@ -9,12 +9,17 @@
   @extend %ui-base;
   @extend %ui-transition;
 
+  path {
+    transition: fill var(--theme-transition--duration);
+  }
+
   &--accordion,
   &--age-gate,
   &--svg {
     @extend .button;
   }
 
+  // ---------------------------------------- Age Gate
   &--age-gate {
     background: var(--theme-colour--white);
     color: var(--theme-colour--black);

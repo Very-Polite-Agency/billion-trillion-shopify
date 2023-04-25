@@ -9,6 +9,25 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 18px;
+  position: relative;
+
+  &__button-remove {
+    top: var(--theme-layout--container-padding);
+    right: var(--theme-layout--container-padding);
+    position: absolute;
+    width: 20px;
+    height: auto;
+    img, svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    &:hover {
+      .svg-outline {
+        fill: var(--theme-colour--orange);
+      }
+    }
+  }
 
   &__image {
     @include border-solid( var(--theme-border--width), 'black' );

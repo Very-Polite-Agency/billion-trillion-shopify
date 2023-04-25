@@ -59,6 +59,7 @@
     </div>
 
     <div class="{{ snippet_name }}__content">
+
       <div class="{{ snippet_name }}__info">
         <strong class="{{ snippet_name }}__product-title">
           <a class="{{ snippet_name }}__title-link link" href="{{ snippet_url }}" title="{{ snippet_title }}" target="_self">{{ snippet_product_title }}</a>
@@ -67,15 +68,17 @@
           <span class="{{ snippet_name }}__variant-title">{{ snippet_variant_title }}</span>
         {% endunless %}
       </div>
+
       <div class="{{ snippet_name }}__price">{{ snippet_final_price | money_with_currency }}</div>
+
       <div class="{{ snippet_name }}__stepper">
         {% render 'stepper', stepper_value: snippet_quantity %}
       </div>
-      <div class="{{ snippet_name }}__action">
-        <button class="{{ snippet_name }}__button-remove button button--remove-cart-line-item js--remove-cart-line-item" type="button">
-          {% render 'svg', type: 'icon.trash' %}
-        </button>
-      </div>
+
+      <button class="{{ snippet_name }}__button-remove button button--remove-cart-line-item js--remove-cart-line-item" type="button">
+        {% render 'svg', type: 'icon.trash' %}
+      </button>
+
     </div>
 
   </div>
