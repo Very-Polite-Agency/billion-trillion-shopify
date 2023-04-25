@@ -37,16 +37,14 @@
 {%- style -%}
 
   {% if product_image_aspect_ratio_mobile and product_image_aspect_ratio_mobile != blank %}
-    #{{ section_id }} .product__image,
-    #{{ section_id }} .product__image-link {
+    #{{ section_id }} .product__image {
       aspect-ratio: {{ product_image_aspect_ratio }};
     }
   {% endif %}
 
   @media screen and (min-width: 992px) {
     {% if product_image_aspect_ratio_desktop and product_image_aspect_ratio_desktop != blank %}
-      #{{ section_id }} .product__image,
-      #{{ section_id }} .product__image-link {
+      #{{ section_id }} .product__image {
         aspect-ratio: {{ product_image_aspect_ratio_desktop }};
       }
     {% endif %}
