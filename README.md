@@ -39,7 +39,7 @@ https://billion-trillion.myshopify.com
 - [x] theme--preload-fonts.liquid
 
 ### Sections (13/42 Complete)
-- [r] age-gate.liquid
+- [x] age-gate.liquid
 - [r] announcements.liquid
 - [x] apps.liquid
 - [x] awards.liquid

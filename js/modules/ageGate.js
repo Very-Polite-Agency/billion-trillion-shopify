@@ -1,6 +1,6 @@
 import Cookies from 'cookies';
 
-const config = { debug: true, name: 'ageGate.js', version: '1.0' };
+const config = { debug: false, name: 'ageGate.js', version: '1.0' };
 const modal = {
   element: document.getElementById('age-gate') || false,
   instance: false
@@ -44,8 +44,8 @@ const enableGateKeeper = () => {
               }
             }).add({
               delay: 500,
-              duration: 1500,
-              endDelay: 500,
+              duration: 700,
+              endDelay: 700,
               top: 0,
               opacity: 1,
             }).play;
@@ -74,17 +74,13 @@ const showAgeGate = ( modal = false, delay = 0 ) => {
 
 const init = () => {
   if ( config.debug ) console.log(`[ ${config.name} v.${config.version} initialized ]`);
-
-  console.log({ modal, cookie });
-
   if ( modal.element && cookie.expired() ) {
     modal.instance = new bootstrap.Modal(modal.element, {}) || false;
     modal.element.addEventListener( 'hide.bs.modal', function (event) {
-      // Cookies.set( cookie.name, cookie.value, cookie.duration() );
+      Cookies.set( cookie.name, cookie.value, cookie.duration() );
     });
     enableGateKeeper();
   }
-
   if ( config.debug ) console.log(`[ ${config.name} v.${config.version} complete ]`);
 };
 
