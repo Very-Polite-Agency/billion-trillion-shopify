@@ -7,10 +7,9 @@
   --theme-button-height: 36px;
 
   padding: var(--theme-layout--container-padding);
-  display: flex;
+  display: grid;
+  grid-template-columns: 100px auto;
   width: 100%;
-  justify-content: space-between;
-  align-items: flex-start;
   gap: 18px;
   position: relative;
 
@@ -47,10 +46,9 @@
   }
 
   &__content {
-    display: flex;
-    flex-flow: column;
-    flex: 1;
     padding-right: 22px;
+    display: flex;
+    flex-direction: column;
   }
 
   &__image {
@@ -58,7 +56,6 @@
     border-radius: var(--theme-border--radius);
     overflow: hidden;
     display: block;
-    width: 100px;
     height: auto;
     aspect-ratio: 1.5/2;
     img, svg {
@@ -132,6 +129,8 @@
   @include breakpoint(lg) {
 
     --theme-button-height--lg: 36px;
+
+    gap: 18px;
 
     .stepper {
       &__input {
