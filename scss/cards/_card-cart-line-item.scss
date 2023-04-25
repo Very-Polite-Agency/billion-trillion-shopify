@@ -8,7 +8,7 @@
 
   padding: var(--theme-layout--container-padding);
   display: grid;
-  grid-template-columns: 100px auto;
+  grid-template-columns: 90px auto;
   width: 100%;
   gap: 18px;
   position: relative;
@@ -82,7 +82,14 @@
   }
 
   &__product-title {
-    font-size: 26px;
+    font-size: 24px;
+    &-link {
+      color: inherit;
+      &:hover {
+        opacity: var(--theme-transition--opacity);
+        color: inherit;
+      }
+    }
   }
 
   &__stepper {
@@ -90,7 +97,7 @@
   }
 
   &__variant-title {
-    font-size: 26px * 0.66;
+    font-size: 24px * 0.66;
     margin-top: 5px;
   }
 
@@ -99,65 +106,23 @@
   }
 
   @include breakpoint(sm) {
-
-    --theme-button-height--sm: 38px;
-
-    gap: 20px;
-
-    .stepper {
-      &__input {
-        font-size: 26px;
-      }
-    }
-
+    --theme-button-height--sm: 36px;
   }
 
   @include breakpoint(md) {
-
-    --theme-button-height--md: 40px;
-
-    gap: 24px;
-
-    .stepper {
-      &__input {
-        font-size: 27px;
-      }
-    }
-
+    --theme-button-height--md: 36px;
   }
 
   @include breakpoint(lg) {
-
     --theme-button-height--lg: 36px;
-
-    gap: 18px;
-
-    .stepper {
-      &__input {
-        font-size: 25px;
-      }
-    }
-
-    &__product-title {
-      font-size: 26px;
-    }
-
-    &__variant-title {
-      font-size: 26px * 0.66;
-    }
-
   }
 
   @include breakpoint(xl) {
-
     --theme-button-height--xl: 36px;
-
   }
 
   @include breakpoint(xxl) {
-
     --theme-button-height--xxl: 36px;
-
   }
 
 }

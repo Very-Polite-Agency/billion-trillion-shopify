@@ -62,7 +62,7 @@
 
       <div class="{{ snippet_name }}__info">
         <strong class="{{ snippet_name }}__product-title">
-          <a class="{{ snippet_name }}__title-link link" href="{{ snippet_url }}" title="{{ snippet_title }}" target="_self">{{ snippet_product_title }}</a>
+          <a class="{{ snippet_name }}__product-title-link link" href="{{ snippet_url }}" title="{{ snippet_title }}" target="_self">{{ snippet_product_title }}</a>
         </strong>
         {% unless 'Default Title' == snippet_variant_title %}
           <span class="{{ snippet_name }}__variant-title">{{ snippet_variant_title }}</span>
@@ -76,7 +76,7 @@
       </div>
 
       <button class="{{ snippet_name }}__button-remove button button--remove-cart-line-item js--remove-cart-line-item" type="button">
-        {% render 'svg', type: 'icon.trash' %}
+        {% render 'svg-icon', type: 'trash' %}
       </button>
 
     </div>

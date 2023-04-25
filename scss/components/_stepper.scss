@@ -23,6 +23,21 @@
     }
   }
 
+  &__button {
+    .svg-fill {
+      fill: var(--theme-colour--white);
+    }
+    .svg-outline {
+      fill: var(--theme-colour--black);
+    }
+    &:hover,
+    &:focus {
+      .svg-fill {
+        fill: var(--theme-colour--orange);
+      }
+    }
+  }
+
   &__input {
     text-align: center;
     font-size: 34px;

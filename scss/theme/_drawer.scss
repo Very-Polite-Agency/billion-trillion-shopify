@@ -35,6 +35,11 @@
     &__cart-subtotal {
       background: var(--theme-colour--lemon);
       padding: calc(0.5 * var(--theme-layout--container-padding)) var(--theme-layout--container-padding);
+      font-size: 24px;
+      line-height: .9;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
     }
     &__footer {
       @include border-solid( var(--theme-border--width), 'black', 'top' );

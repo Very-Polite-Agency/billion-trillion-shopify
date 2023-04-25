@@ -3388,6 +3388,22 @@
       "oAP" : "\/snippets\/stepper.liquid",
       "oF" : 0
     },
+    "\/snippets\/svg-button.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/snippets\/svg-button.liquid",
+      "oF" : 0
+    },
+    "\/snippets\/svg-icon.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/snippets\/svg-icon.liquid",
+      "oF" : 0
+    },
     "\/snippets\/svg.liquid" : {
       "cB" : 0,
       "ft" : 8192,
