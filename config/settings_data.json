@@ -6,7 +6,7 @@
         "settings": {
           "modal_delay": 4000,
           "modal_redirect_url": "https:\/\/www.spacejam.com\/1996\/",
-          "modal_message": "<p>Are YOU over 21?<\/p>",
+          "modal_message": "<p>Are you of legal drinking age?<\/p>",
           "modal_success_message": "<p>Welcome to the Pleasuredome<\/p>",
           "enable": true,
           "cookie_duration": 30
