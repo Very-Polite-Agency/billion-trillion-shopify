@@ -22,7 +22,16 @@
   overflow: hidden;
 
   &-cart {
-    display: none;
+
+    transform: translate3d( $width, 0, 0 );
+    height: 100vh;
+    right: 0;
+    top: 0;
+
+    .shopify-section-drawer-cart--active & {
+      transform: translate3d( 0,0,0 );
+    }
+
   }
 
   &-mobile-menu {
@@ -90,6 +99,10 @@
 
     $width: map.get($theme-drawer-widths, 'sm');
     width: $width;
+
+    &-cart {
+      transform: translate3d( $width, 0, 0 );
+    }
 
     &-mobile-menu {
       transform: translate3d( -1 * $width, 0, 0 );

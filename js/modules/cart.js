@@ -3,6 +3,7 @@ import Render from 'render';
 import Tools from 'tools';
 
 const config = { debug: true, name: 'cart.js', version: '1.0' };
+const DRAWER_CART_CLOSE_DELAY = 3500;
 
 const addToCart = ( id = 0, quantity = 1 ) => {
   if ( id ) {
@@ -221,9 +222,9 @@ const init = () => {
   Render.cartLineItemsTotal( Theme.cart.item_count );
 //   Render.cartSubtotal( Theme.cart.items_subtotal_price );
 //
-//   onClickAddProductToCart();
+  onClickAddProductToCart();
 //   onClickRemoveCartLineItem();
-//   onClickUpdateStepper();
+  onClickUpdateStepper();
 
   if ( config.debug ) console.log(`[ ${config.name} v.${config.version} complete ]`);
 };

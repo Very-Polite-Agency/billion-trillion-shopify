@@ -33,18 +33,18 @@ const stockistCountryPopulationGraph = ( element = false, name = '', population 
   let regionPopulation = parseInt(element.dataset.regionPopulation || 0);
   let regionPopulationPercent = (regionPopulation/countryPopulation).toFixed(2)
   let regionScaleElement = document.getElementById(`${regionID}--scale`) || false;
-  let scalelimit = 13;
-  let scalePercent = Math.ceil(scalelimit * regionPopulationPercent);
+  let scaleLimit = 13;
+  let scalePercent = Math.ceil(scaleLimit * regionPopulationPercent);
   let template = '';
 
-  for ( let i = 0; i < scalelimit; i++ ) {
+  for ( let i = 0; i < scaleLimit; i++ ) {
     template += `<div class="stockists__region-stats-scale-item${ i < scalePercent ? " active" : "" }"></div>`;
   }
 
   regionScaleElement.innerHTML = template;
 
   if ( regionScaleElement ) {
-    console.log({ region, regionPopulation, regionPopulationPercent, countryPopulation, scalelimit, scalePercent });
+    console.log({ region, regionPopulation, regionPopulationPercent, countryPopulation, scaleLimit, scalePercent });
   }
 
 };
