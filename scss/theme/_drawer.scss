@@ -50,6 +50,9 @@
       justify-content: space-between;
       align-items: center;
     }
+    &__heading {
+      font-size: 24px;
+    }
     &__main {
       flex: 1 1 auto;
       overflow-y: auto;

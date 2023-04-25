@@ -49,7 +49,7 @@
 {%- endstyle -%}
 
 <div class="{{ section_name }}__header text--uppercase text--primary">
-  {% if section_heading != blank %}<strong>{{ section_heading }}</strong>{% endif %}
+  {% if section_heading != blank %}<strong class="{{ section_name }}__heading">{{ section_heading }}</strong>{% endif %}
   <button class="{{ section_name }}__button button js--close-drawer" type="button">Close</button>
 </div>
 

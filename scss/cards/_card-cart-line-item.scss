@@ -1,21 +1,38 @@
 @use "../utils/mixins/border" as *;
 @use "../utils/mixins/breakpoint" as *;
+@use "../utils/mixins/font" as *;
 
 .card-cart-line-item {
 
+  --theme-button-height: 36px;
+
   padding: var(--theme-layout--container-padding);
-  display: inline-flex;
+  display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
   gap: 18px;
   position: relative;
 
+  .stepper {
+    &__input {
+      font-size: 25px;
+    }
+  }
+
+  &__info,
+  &__price,
+  &__product-title,
+  &__variant-title {
+    display: block;
+    line-height: 0.9;
+  }
+
   &__button-remove {
     top: var(--theme-layout--container-padding);
     right: var(--theme-layout--container-padding);
     position: absolute;
-    width: 20px;
+    width: 22px;
     height: auto;
     img, svg {
       display: block;
@@ -27,6 +44,13 @@
         fill: var(--theme-colour--orange);
       }
     }
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    padding-right: 22px;
   }
 
   &__image {
@@ -54,11 +78,23 @@
     }
   }
 
-  &__content {
-    flex: 1;
-    display: inline-flex;
-    min-height: 100%;
-    flex-flow: column;
+  &__price {
+    @include sorry-sans(700);
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  &__product-title {
+    font-size: 26px;
+  }
+
+  &__stepper {
+    margin-top: auto;
+  }
+
+  &__variant-title {
+    font-size: 26px * 0.66;
+    margin-top: 5px;
   }
 
   & + .card-cart-line-item {
@@ -67,20 +103,62 @@
 
   @include breakpoint(sm) {
 
+    --theme-button-height--sm: 38px;
+
     gap: 20px;
+
+    .stepper {
+      &__input {
+        font-size: 26px;
+      }
+    }
 
   }
 
   @include breakpoint(md) {
 
+    --theme-button-height--md: 40px;
+
     gap: 24px;
+
+    .stepper {
+      &__input {
+        font-size: 27px;
+      }
+    }
 
   }
 
-  @include breakpoint(lg) {}
+  @include breakpoint(lg) {
 
-  @include breakpoint(xl) {}
+    --theme-button-height--lg: 36px;
 
-  @include breakpoint(xxl) {}
+    .stepper {
+      &__input {
+        font-size: 25px;
+      }
+    }
+
+    &__product-title {
+      font-size: 26px;
+    }
+
+    &__variant-title {
+      font-size: 26px * 0.66;
+    }
+
+  }
+
+  @include breakpoint(xl) {
+
+    --theme-button-height--xl: 36px;
+
+  }
+
+  @include breakpoint(xxl) {
+
+    --theme-button-height--xxl: 36px;
+
+  }
 
 }
