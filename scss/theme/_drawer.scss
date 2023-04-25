@@ -22,11 +22,16 @@
   overflow: hidden;
 
   &-cart {
+    @include border-solid( var(--theme-border--width), 'black', 'left' );
     transform: translate3d( $width, 0, 0 );
     height: 100vh;
     right: 0;
     top: 0;
     z-index: 250;
+    &__footer {
+      @include border-solid( var(--theme-border--width), 'black', 'top' );
+      flex-shrink: 0;
+    }
     &__header {
       @include border-solid( var(--theme-border--width), 'black', 'bottom' );
       height: var(--theme-header-height--mobile);
@@ -36,6 +41,10 @@
       width: 100%;
       justify-content: space-between;
       align-items: center;
+    }
+    &__main {
+      flex: 1 1 auto;
+      overflow-y: auto;
     }
     .shopify-section-drawer-cart--active & {
       transform: translate3d( 0,0,0 );

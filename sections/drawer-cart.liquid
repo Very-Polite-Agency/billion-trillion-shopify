@@ -8,6 +8,10 @@
   assign aos_delay_increment = 250
   assign aos_id = section_id
 
+  assign section_heading = section.settings.heading | default: ''
+  assign section_form_action = routes.cart_url
+  assign section_form_id = section_name | append: '__line-items'
+
 -%}
 
 {%- style -%}
@@ -24,14 +28,33 @@
 {%- endstyle -%}
 
 <div class="{{ section_name }}__header text--uppercase text--primary">
-  <button class="{{ section_name }}__button js--close-drawer">Close</button>
+  {% if section_heading != blank %}<strong>{{ section_heading }}</strong>{% endif %}
+  <button class="{{ section_name }}__button button js--close-drawer" type="button">Close</button>
 </div>
 
 <div class="{{ section_name }}__main text--uppercase text--primary">
-
+  <div class="{{ section_name }}__main-content">
+    <form class="{{ section_form_id }} js--cart" id="{{ section_form_id }}" action="{{ section_form_action }}" method="post">
+      {%- for item in cart.items -%}
+        {%- capture snippet_classes -%}{{ section_name }}__line-item{%- endcapture -%}
+        {%- render 'card-cart-line-item', card_classes: snippet_classes, card_index: forloop.index, card_line_item: item -%}
+      {%- endfor -%}
+    </form>
+  </div>
 </div>
 
 <div class="{{ section_name }}__footer text--uppercase text--primary">
+
+  <div class="{{ section_name }}__cart-subtotal">
+    <div class="{{ section_name }}__cart-subtotal-label">Subtotal</div>
+    <div class="{{ section_name }}__cart-subtotal-value js--cart-subtotal">{{ cart.items_subtotal_price | money_with_currency }}</div>
+  </div>
+
+  <div class="{{ section_name }}__actions">
+    <button class="{{ section_name }}__button-checkout button--svg" form="{{ section_form_id }}" name="checkout" type="submit" value="Checkout">
+      Checkout
+    </button>
+  </div>
 
 </div>
 

@@ -4,7 +4,7 @@ import Tools from 'tools';
 const config = { debug: false, name: 'render.js', version: '1.0' };
 const elements = {
   cart: document.querySelectorAll( '.js--cart' ) || [],
-  cart_drawer: document.getElementById("drawer-cart__cart-line-items") || false
+  cart_drawer: document.getElementById("drawer-cart__line-items") || false
 };
 
 const cartEmptyMessage = () => {
