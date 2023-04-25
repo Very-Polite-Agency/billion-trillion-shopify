@@ -10,6 +10,19 @@
 
 -%}
 
+{%- style -%}
+  {%-
+    render 'element-styles',
+      background: section.settings.background,
+      background_image: section.settings.background_image,
+      background_image_position_desktop: section.settings.background_image_position_desktop,
+      background_image_position_mobile: section.settings.background_image_position_mobile,
+      background_image_repeat: section.settings.background_image_repeat,
+      background_image_size: section.settings.background_image_size,
+      id: section_id
+  -%}
+{%- endstyle -%}
+
 <div class="{{ section_name }}__header text--uppercase text--primary">
 
 </div>
