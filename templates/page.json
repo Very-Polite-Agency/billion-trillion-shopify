@@ -1,11 +1,73 @@
 {
   "order": [
-    "hero"
+    "hero",
+    "0e231f1b-5831-4f6e-a1ac-4f1db34c364d"
   ],
   "sections": {
     "hero": {
       "type": "hero",
+      "blocks": {
+        "bb9d35da-9042-4367-88ad-df3370d31336": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "bb9d35da-9042-4367-88ad-df3370d31336"
+      ],
       "settings": {
+        "anchor_id": "",
+        "background": "none",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "container": "container",
+        "height_mobile": "auto",
+        "height_desktop": "auto",
+        "padding_top": 96,
+        "padding_bottom": 96
+      }
+    },
+    "0e231f1b-5831-4f6e-a1ac-4f1db34c364d": {
+      "type": "featured-text",
+      "blocks": {
+        "template--15941099454648__0e231f1b-5831-4f6e-a1ac-4f1db34c364d-168238168909640ec4-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sample Heading",
+            "heading_size": "md"
+          }
+        },
+        "template--15941099454648__0e231f1b-5831-4f6e-a1ac-4f1db34c364d-168238168909640ec4-1": {
+          "type": "message",
+          "settings": {
+            "message": "<p>Suspendisse congue dui justo, vitae auctor elit tincidunt at. Etiam eget odio nec mauris tristique posuere sit amet quis dolor. Phasellus ac purus a risus porta rhoncus. Quisque nec porta arcu. Vestibulum interdum libero id tortor consequat porttitor. Donec faucibus ex nunc, ornare imperdiet urna ultricies ac. Nulla facilisis tortor libero, quis pellentesque urna convallis nec. Nulla vitae nunc vitae magna imperdiet sodales. Fusce eu lacus in mi venenatis efficitur.<\/p><p><\/p>",
+            "message_size": "sm"
+          }
+        }
+      },
+      "block_order": [
+        "template--15941099454648__0e231f1b-5831-4f6e-a1ac-4f1db34c364d-168238168909640ec4-0",
+        "template--15941099454648__0e231f1b-5831-4f6e-a1ac-4f1db34c364d-168238168909640ec4-1"
+      ],
+      "settings": {
+        "text_colour": "dark",
+        "anchor_id": "",
+        "background": "mango",
+        "background_image_position_mobile": "center center",
+        "background_image_position_desktop": "center center",
+        "background_image_repeat": "repeat",
+        "background_image_size": "cover",
+        "border_top": false,
+        "border_bottom": false,
+        "padding_top": 96,
+        "padding_bottom": 96
       }
     }
   }
