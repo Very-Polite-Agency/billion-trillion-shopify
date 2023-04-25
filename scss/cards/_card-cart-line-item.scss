@@ -1,0 +1,35 @@
+@use "../utils/mixins/border" as *;
+@use "../utils/mixins/breakpoint" as *;
+
+.card-cart-line-item {
+
+  padding: var(--theme-layout--container-padding);
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+
+  &__image,
+  &__image-link {
+    display: block;
+    img, svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    display: inline-flex;
+    min-height: 100%;
+    flex-flow: column;
+  }
+
+  & + .card-cart-line-item {
+    @include border-solid( var(--theme-border--width), 'black', 'top' );
+  }
+
+}

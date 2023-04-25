@@ -9,12 +9,34 @@
   assign aos_id = section_id
 
   assign section_heading = section.settings.heading | default: ''
+
   assign section_form_action = routes.cart_url
   assign section_form_id = section_name | append: '__line-items'
+
+  assign section_product_image_aspect_ratio_desktop = section.settings.product_image_aspect_ratio_desktop | default: ''
+  assign section_product_image_aspect_ratio_mobile = section.settings.product_image_aspect_ratio_mobile | default: ''
 
 -%}
 
 {%- style -%}
+
+    {% if section_product_image_aspect_ratio_mobile and section_product_image_aspect_ratio_mobile != blank %}
+      #{{ section_id }} .card-cart-line-item__image,
+      #{{ section_id }} .card-cart-line-item__image-link {
+        aspect-ratio: {{ section_product_image_aspect_ratio_mobile }};
+      }
+    {% endif %}
+
+    @media screen and (min-width: 992px) {
+      {% if section_product_image_aspect_ratio_desktop and section_product_image_aspect_ratio_desktop != blank %}
+        #{{ section_id }} .card-cart-line-item__image,
+        #{{ section_id }} .card-cart-line-item__image-link {
+          aspect-ratio: {{ section_product_image_aspect_ratio_desktop }};
+        }
+      {% endif %}
+    }
+
+
   {%-
     render 'element-styles',
       background: section.settings.background,
@@ -25,6 +47,8 @@
       background_image_size: section.settings.background_image_size,
       id: section_id
   -%}
+
+
 {%- endstyle -%}
 
 <div class="{{ section_name }}__header text--uppercase text--primary">
@@ -157,6 +181,22 @@
         ],
         "default": "cover",
         "id": "background_image_size"
+      },
+      {
+        "content": "Product",
+        "type": "header"
+      },
+      {
+        "label": "Image Aspect Ratio (Mobile)",
+        "info": "Optionally include an aspect ratio for the product images for consistent user experience on smaller devices.",
+        "type": "text",
+        "id": "product_image_aspect_ratio_mobile"
+      },
+      {
+        "label": "Image Aspect Ratio (Desktop)",
+        "info": "Optionally include an aspect ratio for the product images for consistent user experience on larger devices.",
+        "type": "text",
+        "id": "product_image_aspect_ratio_desktop"
       }
     ],
 	  "blocks": []

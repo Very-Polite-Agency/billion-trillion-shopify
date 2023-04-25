@@ -28,6 +28,14 @@
     right: 0;
     top: 0;
     z-index: 250;
+    &__actions {
+      @include border-solid( var(--theme-border--width), 'black', 'top' );
+      padding: var(--theme-layout--container-padding);
+    }
+    &__cart-subtotal {
+      background: var(--theme-colour--lemon);
+      padding: calc(0.5 * var(--theme-layout--container-padding)) var(--theme-layout--container-padding);
+    }
     &__footer {
       @include border-solid( var(--theme-border--width), 'black', 'top' );
       flex-shrink: 0;
