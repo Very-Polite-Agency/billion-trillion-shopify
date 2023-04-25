@@ -22,16 +22,24 @@
   overflow: hidden;
 
   &-cart {
-
     transform: translate3d( $width, 0, 0 );
     height: 100vh;
     right: 0;
     top: 0;
-
+    z-index: 250;
+    &__header {
+      @include border-solid( var(--theme-border--width), 'black', 'bottom' );
+      height: var(--theme-header-height--mobile);
+      padding-left: var(--theme-layout--container-padding);
+      padding-right: var(--theme-layout--container-padding);
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
     .shopify-section-drawer-cart--active & {
       transform: translate3d( 0,0,0 );
     }
-
   }
 
   &-mobile-menu {
@@ -60,7 +68,6 @@
         }
         &-item {
           font-size: min( 100px, 13.5vw );
-          background: pink;
           padding: 14px var(--theme-layout--container-padding);
           &:nth-child(5n+1) {
             background: var(--theme-colour--grey);
@@ -115,6 +122,10 @@
     $width: map.get($theme-drawer-widths, 'md');
     width: $width;
 
+    &-cart {
+      transform: translate3d( $width, 0, 0 );
+    }
+
     &-mobile-menu {
       transform: translate3d( -1 * $width, 0, 0 );
     }
@@ -122,6 +133,16 @@
   }
 
   @include breakpoint(lg) {
+
+    $width: map.get($theme-drawer-widths, 'lg');
+    width: $width;
+
+    &-cart {
+      transform: translate3d( $width, 0, 0 );
+      &__header {
+        height: var(--theme-header-height--desktop);
+      }
+    }
 
     &-mobile-menu {
       .shopify-section-drawer-mobile-menu--active & {
@@ -133,9 +154,23 @@
 
   @include breakpoint(xl) {
 
+    $width: map.get($theme-drawer-widths, 'lg');
+    width: $width;
+
+    &-cart {
+      transform: translate3d( $width, 0, 0 );
+    }
+
   }
 
   @include breakpoint(xxl) {
+
+    $width: map.get($theme-drawer-widths, 'lg');
+    width: $width;
+
+    &-cart {
+      transform: translate3d( $width, 0, 0 );
+    }
 
   }
 

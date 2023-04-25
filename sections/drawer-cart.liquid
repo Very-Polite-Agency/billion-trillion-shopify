@@ -24,7 +24,7 @@
 {%- endstyle -%}
 
 <div class="{{ section_name }}__header text--uppercase text--primary">
-
+  <button class="{{ section_name }}__button js--close-drawer">Close</button>
 </div>
 
 <div class="{{ section_name }}__main text--uppercase text--primary">
@@ -41,6 +41,16 @@
     "tag": "section",
     "class": "drawer drawer-cart",
     "settings": [
+      {
+        "content": "Content",
+        "type": "header"
+      },
+      {
+        "label": "Heading",
+        "type": "text",
+        "default": "Your Cart",
+        "id": "heading"
+      },
       {
         "content": "Settings",
         "type": "header"
