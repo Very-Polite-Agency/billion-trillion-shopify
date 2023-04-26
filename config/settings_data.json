@@ -8,7 +8,7 @@
           "modal_redirect_url": "https:\/\/www.spacejam.com\/1996\/",
           "modal_message": "<p>Are you of legal drinking age?<\/p>",
           "modal_success_message": "<p>Welcome to the Good Time Galaxy<\/p>",
-          "enable": false,
+          "enable": true,
           "cookie_duration": 30
         }
       },
