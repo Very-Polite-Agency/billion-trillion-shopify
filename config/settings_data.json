@@ -1,7 +1,7 @@
 {
   "current": {
     "cart_heading": "Your Bag",
-    "cart_empty_message": "<p>You're cart's empty!<\/p>",
+    "cart_empty_message": "<p>Your bag is empty! Let' fix that. <a href=\"\/collections\/merch\" title=\"Merch\">Shop our latest<\/a> merch.<\/p>",
     "sections": {
       "age-gate": {
         "type": "age-gate",
@@ -10,7 +10,7 @@
           "modal_redirect_url": "https:\/\/www.spacejam.com\/1996\/",
           "modal_message": "<p>Are you of legal drinking age?<\/p>",
           "modal_success_message": "<p>Welcome to the Good Time Galaxy<\/p>",
-          "enable": true,
+          "enable": false,
           "cookie_duration": 30
         }
       },
