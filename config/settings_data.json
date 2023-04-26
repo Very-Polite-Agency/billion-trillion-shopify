@@ -1,7 +1,7 @@
 {
   "current": {
     "cart_heading": "Your Bag",
-    "cart_empty_message": "<p>You're cart's empty!<\/p>",
+    "cart_empty_message": "<p>Your bag is empty! Let' fix that.<\/p>",
     "sections": {
       "age-gate": {
         "type": "age-gate",
