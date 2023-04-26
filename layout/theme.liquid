@@ -92,6 +92,8 @@
       {% section 'footer' %}
     {% endunless %}
 
+    {% capture abc %}{% render 'svg-button', type: 'stepper.decrease' %}{% endcapture %}
+
     <script>
       var Theme = Theme || {};
       Theme.cart = {{ cart | json }};
@@ -109,6 +111,18 @@
         cart_update_url: '{{ routes.cart_update_url }}',
         predictive_search_url: '{{ routes.predictive_search_url }}'
       };
+      Theme.settings = {{ settings | json }} || {};
+      Theme.svg = {
+        button: {
+          stepper: {
+            decrease: `{% render 'svg-button', type: 'stepper.decrease' %}`,
+            increase: `{% render 'svg-button', type: 'stepper.increase' %}`
+          }
+        },
+        icon: {
+          trash: `{% render 'svg-icon', type: 'trash' %}`,
+        }
+      }
       Theme.tools = {
         imgURLFilter: function(src, size) {
           return src

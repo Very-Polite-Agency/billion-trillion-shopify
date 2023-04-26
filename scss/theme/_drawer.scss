@@ -31,6 +31,42 @@
     &__actions {
       @include border-solid( var(--theme-border--width), 'black', 'top' );
       padding: var(--theme-layout--container-padding);
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+    &__button {
+      &-checkout {
+        height: 52px;
+      }
+      &-close {
+        right: var(--theme-layout--container-padding);
+        display: inline-flex;
+        position: absolute;
+        height: 22px;
+        width: 22px;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        &:after,
+        &:before {
+          transition:
+            bottom var(--theme-transition--duration),
+            top var(--theme-transition--duration);
+          background: var(--theme-colour--black);
+          height: var(--theme-border--width);
+          content: "";
+          display: block;
+          width: 135%;
+          position: absolute;
+        }
+        &:after {
+          transform: rotate(45deg);
+        }
+        &:before {
+          transform: rotate(-45deg);
+        }
+      }
     }
     &__cart-subtotal {
       background: var(--theme-colour--lemon);

@@ -8,7 +8,8 @@
   assign aos_delay_increment = 250
   assign aos_id = section_id
 
-  assign section_heading = section.settings.heading | default: ''
+  assign section_cart_heading = section.cart_heading | default: ''
+  assign section_empty_cart_message = section.cart_empty_message | default: '<p>Oops! Nothing added to your cart yet :(</p>'
 
   assign section_form_action = routes.cart_url
   assign section_form_id = section_name | append: '__line-items'
@@ -21,14 +22,14 @@
 {%- style -%}
 
   {% if section_product_image_aspect_ratio_mobile and section_product_image_aspect_ratio_mobile != blank %}
-    #{{ section_id }} .card-cart-line-item__image {
+    #{{ section_id }} .cart-line-item__image {
       aspect-ratio: {{ section_product_image_aspect_ratio_mobile }};
     }
   {% endif %}
 
   @media screen and (min-width: 992px) {
     {% if section_product_image_aspect_ratio_desktop and section_product_image_aspect_ratio_desktop != blank %}
-      #{{ section_id }} .card-cart-line-item__image {
+      #{{ section_id }} .cart-line-item__image {
         aspect-ratio: {{ section_product_image_aspect_ratio_desktop }};
       }
     {% endif %}
@@ -48,16 +49,20 @@
 {%- endstyle -%}
 
 <div class="{{ section_name }}__header text--uppercase text--primary">
-  {% if section_heading != blank %}<strong class="{{ section_name }}__heading">{{ section_heading }}</strong>{% endif %}
-  <button class="{{ section_name }}__button button js--close-drawer" type="button">Close</button>
+  {% if section_cart_heading != blank %}<strong class="{{ section_name }}__heading">{{ section_cart_heading }}</strong>{% endif %}
+  <button aria-label="Close" class="{{ section_name }}__button-close button js--close-drawer" type="button"></button>
 </div>
 
 <div class="{{ section_name }}__main text--uppercase text--primary">
   <div class="{{ section_name }}__main-content">
     <form class="{{ section_form_id }} js--cart" id="{{ section_form_id }}" action="{{ section_form_action }}" method="post">
       {%- for item in cart.items -%}
-        {%- capture snippet_classes -%}{{ section_name }}__line-item{%- endcapture -%}
-        {%- render 'card-cart-line-item', card_classes: snippet_classes, card_index: forloop.index, card_line_item: item -%}
+        {%- capture snippet_classes -%}{{ section_name }}__item{%- endcapture -%}
+        {%- render 'cart-item', cart_item_classes: snippet_classes, cart_item_index: forloop.index, cart_item: item -%}
+      {%- else -%}
+         <div class='cart-empty-message'>
+          <div class='cart-empty-message__content body-copy--primary body-copy--1'>{{ section_empty_cart_message }}</div>
+        </div>
       {%- endfor -%}
     </form>
   </div>
@@ -71,7 +76,7 @@
   </div>
 
   <div class="{{ section_name }}__actions">
-    <button class="{{ section_name }}__button-checkout button--svg" form="{{ section_form_id }}" name="checkout" type="submit" value="Checkout">{% render 'svg-button', type: 'checkout.md' %}</button>
+    <button class="{{ section_name }}__button-checkout button--svg button--svg-fill-orange" form="{{ section_form_id }}" name="checkout" type="submit" value="Checkout">{% render 'svg-button', type: 'checkout.md' %}</button>
   </div>
 
 </div>

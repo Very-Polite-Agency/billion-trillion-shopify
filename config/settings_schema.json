@@ -8,6 +8,31 @@
     "theme_version": "1.0.0"
   },
   {
+    "name": "Cart",
+    "settings": [
+      {
+        "label": "Heading",
+        "type": "text",
+        "id": "cart_heading"
+      },
+      {
+        "label": "Empyt Cart Message",
+        "type": "richtext",
+        "id": "cart_empty_message"
+      },
+      {
+        "label": "Cart Drawer Close Delay",
+        "info": "Time in milliseconds before the cart drawer automatically closes after a product is added to cart.",
+        "type": "range",
+        "min": 3000,
+        "max": 9000,
+        "step": 250,
+        "default": 3500,
+        "id": "cart_drawer_delay_close"
+      }
+    ]
+  },
+  {
     "name": "Social",
     "settings": [
       {

@@ -14,7 +14,7 @@
 <div class="{{ snippet_classes }}">
 
   <button class="{{ snippet_name }}__button button button--stepper button--svg decrease js--stepper-button" type="button">
-    <span class="{{ snippet_name }}__button-icon button__icon minus">
+    <span class="{{ snippet_name }}__button-icon button__icon">
       {% render 'svg-button', type: 'stepper.decrease' %}
     </span>
   </button>
@@ -22,7 +22,7 @@
   <input class="{{ snippet_name }}__input input--secondary js--stepper-input" type="number" name="quantity" min="1" max="9999" value="{{ stepper_value }}" readonly>
 
   <button class="{{ snippet_name }}__button button button--stepper button--svg increase js--stepper-button" type="button">
-    <span class="{{ snippet_name }}__button-icon button__icon plus">
+    <span class="{{ snippet_name }}__button-icon button__icon">
       {% render 'svg-button', type: 'stepper.increase' %}
     </span>
   </button>

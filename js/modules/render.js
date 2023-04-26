@@ -1,3 +1,4 @@
+import Money from 'money';
 import Templates from 'templates';
 import Tools from 'tools';
 
@@ -13,6 +14,44 @@ const cartEmptyMessage = () => {
   });
 };
 
+const cartLineItemsLinePrice = ( key = '', line_items = [] ) => {
+  if ( line_items.length ) {
+    for ( let i = 0; i < line_items.length; i++ ) {
+      if ( key === line_items[i].key ) {
+        ( document.querySelectorAll( `[data-key="${key}"] .cart-line-item__price` ) || [] ).forEach( element => {
+          element.innerHTML = Money.format( line_items[i].final_line_price );
+        });
+      }
+    }
+  }
+};
+
+const cartLineItemsQuantity = ( key = '', quantity = 1, line_items = [] ) => {
+  if ( line_items.length ) {
+    for ( let i = 0; i < line_items.length; i++ ) {
+      if ( key === line_items[i].key ) {
+        if ( quantity > line_items[i].quantity ) {
+          // show message stating no inventory
+          ( document.querySelectorAll( `[data-key="${key}"] input[name="quantity"]` ) || [] ).forEach( element => {
+            element.value = line_items[i].quantity;
+          });
+        }
+        break;
+      }
+    }
+  }
+};
+
+const cartLineItemsToElement = ( line_items = [], elements = [] ) => {
+  elements.forEach( element => {
+    let template = '';
+    for ( let i = 0; i < line_items.length; i++ ) {
+      template += Templates.cartLineItem( line_items[i] );
+    }
+    element.innerHTML = template;
+  });
+};
+
 const cartLineItemsTotal = ( line_items_total = 0 ) => {
   ( document.querySelectorAll( '.js--cart-line-items-total' ) || [] ).forEach( element => {
     element.innerHTML = `[${line_items_total}]`;
@@ -23,6 +62,25 @@ const cartSubtotal = ( subtotal = 0 ) => {
   ( document.querySelectorAll( '.js--cart-subtotal' ) || [] ).forEach( element => {
     element.innerHTML = Money.format( subtotal );
   });
+};
+
+const removeCartLineItem = ( key = '' ) => {
+  let element = document.getElementById(`cart-line-item--${key}`) || false;
+  if ( element ) {
+    anime.timeline({
+      targets: element,
+      easing: 'easeOutElastic(1, .8)',
+      complete: function(anim) {
+        element.remove();
+      }
+    }).add({
+      delay: 500,
+      duration: 700,
+      endDelay: 700,
+      translateX: 250,
+      opacity: 0,
+    }).play
+  }
 };
 
 const stockistCountryPopulationGraph = ( element = false, name = '', population = 0 ) => {
@@ -88,8 +146,12 @@ const stockistLocationByRegion = ( element = false, locations = [] ) => {
 
 export default {
   cartEmptyMessage,
+  cartLineItemsLinePrice,
+  cartLineItemsQuantity,
+  cartLineItemsToElement,
   cartLineItemsTotal,
   cartSubtotal,
+  removeCartLineItem,
   stockistCountryPopulationGraph,
   stockistLocationByRegion
 };

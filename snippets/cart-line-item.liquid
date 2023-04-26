@@ -1,23 +1,23 @@
-{%- if card_line_item and card_line_item != blank -%}
+{%- if cart_line_item and cart_line_item != blank -%}
 
   {% comment %}
     Renders a line item card
 
     Accepts:
-    - card_classes: {String} Optionally include custom classes
-    - card_line_item: {Object} Line item object
+    - cart_line_item_classes: {String} Optionally include custom classes
+    - cart_line_item: {Object} Line item object
 
     Usage:
     {%-
-      render 'card-cart-line-item',
-        card_classes: 'my-great-custom classes-here',
-        card_line_item: item
+      render 'cart-item',
+        cart_line_item_classes: 'my-great-custom classes-here',
+        cart_line_item: item
     -%}
   {% endcomment %}
 
   {%- liquid
 
-    assign snippet_name = 'card-cart-line-item'
+    assign snippet_name = 'cart-line-item'
     assign snippet_classes = snippet_name
     assign snippet_id = snippet_name | append: '--' | append: card_item.id
 
@@ -25,16 +25,16 @@
     assign aos_delay_increment = 250
     assign aos_id = snippet_id
 
-    assign snippet_final_price = card_line_item.final_line_price | default: ''
-    assign snippet_id = card_line_item.id | default: ''
-    assign snippet_image = card_line_item.image | default: false
-    assign snippet_key = card_line_item.key | default: ''
-    assign snippet_product_title = card_line_item.product.title | default: ''
-    assign snippet_quantity = card_line_item.quantity | default: ''
+    assign snippet_final_price = cart_line_item.final_line_price | default: ''
+    assign snippet_id = cart_line_item.id | default: ''
+    assign snippet_image = cart_line_item.image | default: false
+    assign snippet_key = cart_line_item.key | default: ''
+    assign snippet_product_title = cart_line_item.product.title | default: ''
+    assign snippet_quantity = cart_line_item.quantity | default: ''
     assign snippet_title = snippet_product_title
-    assign snippet_url = card_line_item.url | default: ''
-    assign snippet_url_to_remove = card_line_item.url_to_remove | default: ''
-    assign snippet_variant_title = card_line_item.variant.title | default: ''
+    assign snippet_url = cart_line_item.url | default: ''
+    assign snippet_url_to_remove = cart_line_item.url_to_remove | default: ''
+    assign snippet_variant_title = cart_line_item.variant.title | default: ''
 
     unless 'Default Title' == snippet_variant_title
       assign snippet_title = snippet_title | append: ' ' | append: snippet_variant_title

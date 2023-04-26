@@ -2,7 +2,7 @@
 @use "../utils/mixins/breakpoint" as *;
 @use "../utils/mixins/font" as *;
 
-.card-cart-line-item {
+.cart-line-item {
 
   --theme-button-height: 36px;
 
@@ -82,7 +82,7 @@
   }
 
   &__product-title {
-    font-size: 24px;
+    font-size: 22px;
     &-link {
       color: inherit;
       &:hover {
@@ -97,11 +97,11 @@
   }
 
   &__variant-title {
-    font-size: 24px * 0.66;
+    font-size: 22px * 0.66;
     margin-top: 5px;
   }
 
-  & + .card-cart-line-item {
+  & + .cart-line-item {
     @include border-solid( var(--theme-border--width), 'black', 'top' );
   }
 

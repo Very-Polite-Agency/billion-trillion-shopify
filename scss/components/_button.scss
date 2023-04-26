@@ -41,28 +41,33 @@
       transition: fill var(--theme-transition--duration);
     }
 
-    .button-outline {
+    .button-outline,
+    .svg-outline {
       fill: var(--theme-colour--black);
     }
 
-    .button-fill {
+    .button-fill,
+    .svg-fill {
       fill: var(--theme-colour--white);
     }
 
     &:hover {
-      .button-fill {
+      .button-fill,
+      .svg-fill {
         fill: var(--theme-colour--orange);
       }
     }
 
     @each $name, $value in $theme-colours {
       &-fill-#{$name} {
-        .button-fill {
+        .button-fill,
+        .svg-fill {
           fill: var(--theme-colour--#{$name});
         }
         &:hover {
           opacity: 1;
-          .button-fill {
+          .button-fill,
+          .svg-fill {
             fill: color.scale( $value, $lightness: -15%);
           }
         }
