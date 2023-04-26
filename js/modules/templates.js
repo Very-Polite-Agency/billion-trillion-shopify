@@ -43,7 +43,7 @@ const cartLineItem = ( line_item = {} ) => {
   let price_formatted = Money.format( final_line_price );
 
   return `
-    <div class="${block_name} from-js" id="${block_name}--${key}" data-key="${key}">
+    <div class="${block_name}" id="${block_name}--${key}" data-key="${key}">
       <div class="${block_name}__image">
         <a class="${block_name}__image-link link" href="${url}" title="${product_title}" target="_self">
           <img class="${image.classes}" src="${image.src}" alt="${featured_image.alt}" width="${featured_image.width}" height="${featured_image.height}" />

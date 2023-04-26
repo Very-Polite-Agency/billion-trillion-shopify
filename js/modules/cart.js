@@ -1,4 +1,4 @@
-// import Drawers from 'drawers';
+import Drawers from 'drawers';
 import Render from 'render';
 import Tools from 'tools';
 
@@ -28,8 +28,8 @@ const addToCart = ( id = 0, quantity = 1 ) => {
         Render.cartLineItemsTotal( cart.item_count );
         Render.cartLineItemsToElement( cart.items, elements.cart );
         Render.cartSubtotal( cart.items_subtotal_price );
-        Drawers.openDrawer( 'drawer-cart', 500 );
-        Drawers.closeDrawer( 'drawer-cart', DRAWER_CART_CLOSE_DELAY );
+        Drawers.openDrawerByID( 'shopify-section-drawer-cart', 500 );
+        Drawers.closeDrawerByID( 'shopify-section-drawer-cart', DRAWER_CART_CLOSE_DELAY );
       });
     })
     .catch( error => {
@@ -117,25 +117,32 @@ const onClickUpdateStepper = () => {
       let stepper_input = stepper.querySelector('input[type="number"]') || false;
       let timer = { button: false, delay: 500 };
 
+      console.log( '[ onClickUpdateStepper() ] :: ', button, cart_line_item, cart_line_item_key, stepper );
+
       if ( button && stepper_input ) {
 
         let min = parseInt(stepper_input.min);
         let max = parseInt(stepper_input.max);
-        let quantity = parseInt(stepper_input.value);
+        let quantity = {
+          current: parseInt(stepper_input.value),
+          updated: 0
+        };
 
         if ( button.classList.contains('increase') ) {
-          quantity = ++quantity;
+          quantity.updated = quantity.current + 1;
         } else {
-          if ( quantity > min ) {
-            quantity = --quantity;
+          if ( quantity.updated > min ) {
+            quantity.updated = quantity.current - 1;
           }
         }
 
-        stepper_input.value = quantity;
+        updateStepperButtonStates( quantity.updated, min, max, stepper );
 
-        updateStepperButtonStates( quantity, min, max, stepper );
-
-        if ( cart_line_item ) updateCartLineItemByKey( cart_line_item_key, quantity );
+        if ( cart_line_item ) {
+          updateCartLineItemByKey( cart_line_item_key, quantity.updated, stepper );
+        } else {
+          updateStepperInputQuantity( quantity.updated, stepper );
+        }
 
       }
 
@@ -158,36 +165,50 @@ const toggleCheckoutButtonUsability = ( state = 'enable' ) => {
   });
 };
 
-const updateCartLineItemByKey = ( key = '', quantity = 0 ) => {
+const updateCartLineItemByKey = ( key = '', quantity = 0, stepper = false ) => {
+  console.log( '[ updateCartLineItemByKey() ] :: Initialized' );
   if ( key ) {
     fetch('/cart/change.js', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id: key, quantity: quantity })
     })
     .then( response => {
       return response.json();
     })
     .then( cart => {
-      console.log( '[ updateCartLineItemByKey() ] :: Cart', cart );
+
+      console.log( '[ updateCartLineItemByKey() ] :: cart response', cart, key );
+
       if ( 0 == quantity ) Render.removeCartLineItem( key );
-      if ( cart.items.length ) {
-        toggleCheckoutButtonUsability( 'enable' );
-        Render.cartLineItemsLinePrice( key, cart.items );
-        Render.cartLineItemsQuantity( key, quantity, cart.items );
+
+      if ( cart.status == 422 ) {
+
       } else {
-        toggleCheckoutButtonUsability( 'disable' );
-        Render.cartEmptyMessage();
+        Render.cartLineItemsTotal( cart.item_count );
+        Render.cartSubtotal( cart.items_subtotal_price );
+        if ( cart.items.length ) {
+          toggleCheckoutButtonUsability( 'enable' );
+          Render.cartLineItemsLinePrice( key, cart.items );
+          Render.cartLineItemsQuantity( key, quantity, cart.items );
+        } else {
+          toggleCheckoutButtonUsability( 'disable' );
+          Render.cartEmptyMessage();
+        }
       }
-      Render.cartLineItemsTotal( cart.item_count );
-      Render.cartSubtotal( cart.items_subtotal_price );
+
     })
     .catch( error => {
       console.log('[ updateCartLineItemByKey() ] :: Error', error );
     });
   };
+};
+
+const updateStepperInputQuantity = ( quantity = 0, stepper = false ) => {
+  console.log( '[ updateStepperInputQuantity() ] :: Init', quantity, stepper );
+  // if ( stepper && stepper.querySelector('.stepper__input').length ) {
+  //   stepper.querySelector('.stepper__input').value = quantity;
+  // }
 };
 
 const updateStepperButtonStates = ( quantity = 0, min = 0, max = 99999, stepper = false ) => {
@@ -217,7 +238,7 @@ const init = () => {
     Render.cartLineItemsToElement( Theme.cart.items, elements.cart );
     toggleCheckoutButtonUsability( 'enable' );
   } else {
-    //Render.cartEmptyMessage();
+    Render.cartEmptyMessage();
     toggleCheckoutButtonUsability( 'disable' );
   }
 

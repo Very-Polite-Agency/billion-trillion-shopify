@@ -134,11 +134,9 @@
 
             {% unless "Yuzu Sake Fizz" == product_type %}
 
-              {% unless product.has_only_default_variant %}
-                <div class="{{ section_name }}__content-grid-row product-options">
-                  {% render 'product-options', product: product %}
-                </div>
-              {% endunless %}
+              <div class="{{ section_name }}__content-grid-row product-options {% if product.has_only_default_variant %}d-none{% endif %}">
+                {% render 'product-options', product: product %}
+              </div>
 
               <div class="{{ section_name }}__content-grid-row product-actions">
 

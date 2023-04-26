@@ -11,36 +11,33 @@
 
   -%}
 
-  {% unless product_has_no_options %}
+  <div class="{{ snippet_classes }}">
 
-    <div class="{{ snippet_classes }}">
+    {% unless product_has_no_options %}
+      <strong class="{{ snippet_name }}__heading">Select a Size:</strong>
+    {% endunless %}
 
-      {% unless product_has_no_options %}
-        <strong class="{{ snippet_name }}__heading">Select a Size:</strong>
-      {% endunless %}
+    {% for variant in product.variants %}
+      <label class="{{ snippet_name }}__item">
+        <input
+          class="{{ snippet_name }}__input"
+          type="radio"
+          name="id"
+          value="{{ variant.id }}"
+          data-available="{{ variant.available }}"
+          data-compare-at-price="{{ variant.compare_at_price }}"
+          data-inventory-management="{{ variant.inventory_management }}"
+          data-price="{{ variant.price }}"
+          {% unless variant.available %}disabled{% endunless %}
+          {% if variant.available and product_first_variant_available %}
+            checked
+            {% assign product_first_variant_available = false %}
+          {% endif %}
+        />
+        <span class="{{ snippet_name }}__value">{{ variant.title }}</span>
+      </label>
+    {% endfor %}
 
-      {% for variant in product.variants %}
-        <label class="{{ snippet_name }}__item">
-          <input
-            class="{{ snippet_name }}__input"
-            type="radio"
-            name="id"
-            value="{{ variant.id }}"
-            data-available="{{ variant.available }}"
-            data-compare-at-price="{{ variant.compare_at_price }}"
-            data-inventory-management="{{ variant.inventory_management }}"
-            data-price="{{ variant.price }}"
-            {% unless variant.available %}disabled{% endunless %}
-            {% if variant.available and product_first_variant_available %}
-              checked
-              {% assign product_first_variant_available = false %}
-            {% endif %}
-          />
-          <span class="{{ snippet_name }}__value">{{ variant.title }}</span>
-        </label>
-      {% endfor %}
+  </div>
 
-    </div>
-
-  {%- endunless -%}
 {%- endif -%}
