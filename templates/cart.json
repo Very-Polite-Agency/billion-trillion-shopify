@@ -13,6 +13,8 @@
         "background_image_position_desktop": "center center",
         "background_image_repeat": "repeat",
         "background_image_size": "400px",
+        "border_top": false,
+        "border_bottom": true,
         "container": "container",
         "padding_top": 48,
         "padding_bottom": 48
@@ -27,6 +29,8 @@
         "background_image_position_desktop": "center center",
         "background_image_repeat": "repeat",
         "background_image_size": "400px",
+        "border_top": false,
+        "border_bottom": false,
         "container": "container",
         "padding_top": 120,
         "padding_bottom": 200,
