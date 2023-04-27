@@ -465,18 +465,6 @@
       "oF" : 0,
       "pg" : 0
     },
-    "\/assets\/style.legacy.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 2,
-      "oAP" : "\/assets\/style.legacy.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/assets\/theme-editor.js" : {
       "bF" : 3,
       "ft" : 64,
@@ -1274,21 +1262,6 @@
       "pME" : 1,
       "rFN" : 0,
       "uCM" : 0
-    },
-    "\/scss\/base.scss" : {
-      "aP" : 1,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/base.css",
-      "oF" : 0,
-      "oS" : 3,
-      "pg" : 0,
-      "sct" : 0
     },
     "\/scss\/cards\/_card-award.scss" : {
       "aP" : 1,
@@ -2867,6 +2840,22 @@
       "oAP" : "\/sections\/main-404.liquid",
       "oF" : 0
     },
+    "\/sections\/main-article.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sections\/main-article.liquid",
+      "oF" : 0
+    },
+    "\/sections\/main-blog.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sections\/main-blog.liquid",
+      "oF" : 0
+    },
     "\/sections\/main-cart-footer.liquid" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2937,6 +2926,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/sections\/main-product.liquid",
+      "oF" : 0
+    },
+    "\/sections\/main-search.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sections\/main-search.liquid",
       "oF" : 0
     },
     "\/sections\/marquee.liquid" : {
@@ -3321,14 +3318,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/snippets\/theme--classes.liquid",
-      "oF" : 0
-    },
-    "\/snippets\/theme--external-css.liquid" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/snippets\/theme--external-css.liquid",
       "oF" : 0
     },
     "\/snippets\/theme--external-javascript.liquid" : {

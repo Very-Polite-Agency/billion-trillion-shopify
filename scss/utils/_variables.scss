@@ -188,7 +188,7 @@ $theme-layout-settings: (
   'gutter': 24px,
   'container-padding': 24px,
   'breakpoints': (
-    'base': 0,
+    'xs': 0,
     'sm': 576px,
     'md': 768px,
     'lg': 992px,
@@ -196,7 +196,6 @@ $theme-layout-settings: (
     'xxl': 1400px
   ),
   'containers': (
-    'base': 100%,
     'sm': 540px,
     'md': 740px,
     'lg': 960px,

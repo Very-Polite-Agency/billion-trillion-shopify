@@ -34,7 +34,7 @@ const cartLineItemErrorMessage = ( key = '', message = 'Something went wrong!' )
       opacity: 1,
       translateX: [200, 0]
     }).add({
-      delay: 3800,
+      delay: 3200,
       duration: 550,
       opacity: 0,
       translateX: [0, 200]
