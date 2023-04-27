@@ -54,7 +54,7 @@ const cartLineItemsToElement = ( line_items = [], elements = [] ) => {
 
 const cartLineItemsTotal = ( line_items_total = 0 ) => {
   ( document.querySelectorAll( '.js--cart-line-items-total' ) || [] ).forEach( element => {
-    element.innerHTML = `[${line_items_total}]`;
+    element.innerHTML = `${line_items_total}`;
   });
 };
 

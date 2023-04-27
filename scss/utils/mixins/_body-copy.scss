@@ -84,7 +84,7 @@
     a {
 
       @include border-solid( 2px, 'inherit', 'bottom' );
-      transition: border var(--theme-transition-duration);
+      transition: border var(--theme-transition--duration);
       color: inherit;
       display: inline-block;
       width: auto;

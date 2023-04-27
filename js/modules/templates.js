@@ -12,7 +12,7 @@ const cartEmptyMessage = ( data = {} ) => {
 
   return `
     <div class="${block_name}">
-      <div class="${block_name}__content body-copy--primary body-copy--1">${message}</div>
+      <div class="${block_name}__content body-copy--primary body-copy--2">${message}</div>
     </div>
   `;
 
@@ -71,7 +71,7 @@ const cartLineItem = ( line_item = {} ) => {
 
 const cartLineItemsTotal = ( line_items_total = 0 ) => {
   ( document.querySelectorAll( '.js--cart-line-items-total' ) || [] ).forEach( element => {
-    element.innerHTML = `[${line_items_total}]`;
+    element.innerHTML = `${line_items_total}`;
   });
 };
 
