@@ -30,6 +30,8 @@ https://billion-trillion.myshopify.com
 - [x] sort-option-name.liquid
 - [x] stepper.liquid
 - [x] svg.liquid
+- [x] svg-button.liquid
+- [x] svg-icon.liquid
 - [x] textarea.liquid
 - [x] theme--classes.liquid
 - [x] theme--external-javascript.liquid
@@ -45,7 +47,7 @@ https://billion-trillion.myshopify.com
 - [x] awards.liquid
 - [x] contact-form.liquid
 - [x] custom-liquid.liquid
-- [ ] drawer-cart.liquid
+- [x] drawer-cart.liquid
 - [x] drawer-mobile-menu.liquid
 - [x] faqs.liquid
 - [x] featured-image.liquid
