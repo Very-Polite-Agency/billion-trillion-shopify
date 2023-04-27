@@ -8,17 +8,17 @@
   }
 
   &--1,
-  &-lg {
+  &--lg {
     @include heading-size('1');
   }
 
   &--2,
-  &-md {
+  &--md {
     @include heading-size('2');
   }
 
   &--3,
-  &-sm {
+  &--sm {
     @include heading-size('3');
   }
 

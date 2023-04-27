@@ -1961,6 +1961,36 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/scss\/sections\/_cart-hero.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/_cart-hero.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/scss\/sections\/_cart-line-items.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/_cart-line-items.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/scss\/sections\/_collection-hero.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -2256,6 +2286,21 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/assets\/_body.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/scss\/theme\/_cart.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/_cart.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,
@@ -2864,12 +2909,12 @@
       "oAP" : "\/sections\/main-blog.liquid",
       "oF" : 0
     },
-    "\/sections\/main-cart-header.liquid" : {
+    "\/sections\/main-cart-hero.liquid" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/sections\/main-cart-header.liquid",
+      "oAP" : "\/sections\/main-cart-hero.liquid",
       "oF" : 0
     },
     "\/sections\/main-cart-line-items.liquid" : {

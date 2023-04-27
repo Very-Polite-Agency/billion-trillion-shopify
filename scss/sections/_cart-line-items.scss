@@ -1,0 +1,11 @@
+@use "../utils/mixins/border" as *;
+@use "../utils/mixins/breakpoint" as *;
+
+.cart-line-items {
+  &__main {
+    &-content {
+      @include border-solid(var(--theme-border--width), 'black', 'left');
+      @include border-solid(var(--theme-border--width), 'black', 'right');
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {%- liquid
 
-  assign section_name = 'cart-header'
+  assign section_name = 'cart-hero'
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
@@ -46,9 +46,9 @@
 
 {% schema %}
 {
-  "name": "Cart | Header",
+  "name": "Cart | Hero",
   "tag": "section",
-  "class": "section section--cart-header",
+  "class": "section section--cart-hero",
   "enabled_on": {
     "templates": ["cart"]
   },
