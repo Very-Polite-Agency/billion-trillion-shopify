@@ -1,6 +1,6 @@
 {%- liquid
 
-  assign section_name = 'cart'
+  assign section_name = 'cart-header'
   assign section_classes = section_name
   assign section_id = section_name | append: '--' | append: section.id
 
@@ -8,30 +8,12 @@
   assign aos_delay_increment = 250
   assign aos_id = section_id
 
-  assign section_cart_heading = settings.cart_heading | default: ''
+  assign section_cart_heading = settings.cart_heading | default: 'Cart'
   assign section_container = section.settings.container | default: 'container'
-  assign section_empty_cart_message = settings.cart_empty_message | default: '<p>Oops! Nothing added to your cart yet :(</p>'
-
-  assign section_form_action = routes.cart_url
-  assign section_form_id = section_name | append: '__line-items'
 
 -%}
 
 {%- style -%}
-
-  {% if section_product_image_aspect_ratio_mobile and section_product_image_aspect_ratio_mobile != blank %}
-    #{{ section_id }} .cart-line-item__image {
-      aspect-ratio: {{ section_product_image_aspect_ratio_mobile }};
-    }
-  {% endif %}
-
-  @media screen and (min-width: 992px) {
-    {% if section_product_image_aspect_ratio_desktop and section_product_image_aspect_ratio_desktop != blank %}
-      #{{ section_id }} .cart-line-item__image {
-        aspect-ratio: {{ section_product_image_aspect_ratio_desktop }};
-      }
-    {% endif %}
-  }
 
   {%-
     render 'element-styles',
@@ -49,58 +31,18 @@
 {%- endstyle -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
-
-  {% if section_cart_heading != blank %}
-    <div class="{{ section_name }}__header">
-      {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
-        <div class="{{ section_name }}__header-content">
-          <h1 class="{{ section_name }}__heading heading--primary heading--sm">{{ section_cart_heading }}</h1>
-        </div>
-      {% render 'bs-container', state: 'closed', col: 'col-12', container: section_container %}
+  {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
+    <div class="{{ section_name }}__main">
+      <h1 class="{{ section_name }}__heading heading--primary heading--lg-fluid">{{ section_cart_heading }}</h1>
     </div>
-  {% endif %}
-
-  <div class="{{ section_name }}__main">
-    {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
-      <div class="{{ section_name }}__main-content">
-        <form class="{{ section_form_id }} js--cart" id="{{ section_form_id }}" action="{{ section_form_action }}" method="post">
-          {%- for item in cart.items -%}
-            {%- capture snippet_classes -%}{{ section_name }}__line-item{%- endcapture -%}
-            {%- render 'cart-line-item', cart_line_item_classes: snippet_classes, cart_line_item_index: forloop.index, cart_line_item: item -%}
-          {%- else -%}
-             <div class='cart-empty-message'>
-              <div class='cart-empty-message__content body-copy--primary body-copy--2'>{{ section_empty_cart_message }}</div>
-            </div>
-          {%- endfor -%}
-        </form>
-      </div>
-    {% render 'bs-container', state: 'closed', col: 'col-12', container: section_container %}
-  </div>
-
-  <div class="{{ section_name }}__footer">
-    {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
-      <div class="{{ section_name }}__footer-content">
-
-        <div class="{{ section_name }}__cart-subtotal">
-          <div class="{{ section_name }}__cart-subtotal-label">Subtotal</div>
-          <div class="{{ section_name }}__cart-subtotal-value js--cart-subtotal">{{ cart.items_subtotal_price | money_with_currency }}</div>
-        </div>
-
-        <div class="{{ section_name }}__actions">
-          <button class="{{ section_name }}__button-checkout button--svg button--svg-fill-orange" form="{{ section_form_id }}" name="checkout" type="submit" value="Checkout">{% render 'svg-button', type: 'checkout.md' %}</button>
-        </div>
-
-      </div>
-    {% render 'bs-container', state: 'closed', col: 'col-12', container: section_container %}
-  </div>
-
+  {% render 'bs-container', state: 'closed', col: 'col-12', container: section_container %}
 </div>
 
 {% schema %}
 {
-  "name": "Cart",
+  "name": "Cart | Header",
   "tag": "section",
-  "class": "section section--cart",
+  "class": "section section--cart-header",
   "settings": [
     {
       "content": "Settings",
@@ -240,22 +182,6 @@
       "unit": "px",
       "default": 36,
       "id": "padding_bottom"
-    },
-    {
-      "content": "Product",
-      "type": "header"
-    },
-    {
-      "label": "Image Aspect Ratio (Mobile)",
-      "info": "Optionally include an aspect ratio for the product images for consistent user experience on smaller devices.",
-      "type": "text",
-      "id": "product_image_aspect_ratio_mobile"
-    },
-    {
-      "label": "Image Aspect Ratio (Desktop)",
-      "info": "Optionally include an aspect ratio for the product images for consistent user experience on larger devices.",
-      "type": "text",
-      "id": "product_image_aspect_ratio_desktop"
     }
   ],
   "blocks": []

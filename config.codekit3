@@ -2864,6 +2864,14 @@
       "oAP" : "\/sections\/main-blog.liquid",
       "oF" : 0
     },
+    "\/sections\/main-cart-header.liquid" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sections\/main-cart-header.liquid",
+      "oF" : 0
+    },
     "\/sections\/main-cart.liquid" : {
       "cB" : 0,
       "ft" : 8192,
