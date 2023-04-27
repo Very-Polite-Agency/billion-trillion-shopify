@@ -36,7 +36,7 @@
 <div class="{{ section_classes }}" id="{{ section_id }}">
   {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
     <div class="{{ section_name }}__main">
-      <h1 class="{{ section_name }}__heading heading--primary heading--{{ section_heading_size }}{% unless 'container' == section_container %}-fluid{% endunless %}">{{ section_cart_heading }}</h1>
+      <h1 class="{{ section_name }}__heading heading--primary heading--{{ section_heading_size }}{% unless 'container' == section_container %}-fluid{% endunless %}">{{ section_heading }}</h1>
     </div>
   {% render 'bs-container', state: 'closed', col: 'col-12', container: section_container %}
 </div>
@@ -48,9 +48,8 @@
   "class": "section section--cart-header",
   "settings": [
     {
-      "label": "Heading",
-      "type": "text",
-      "id": "heading"
+      "content": "Heading",
+      "type": "header"
     },
     {
       "label": "Heading Size",
