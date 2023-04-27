@@ -1,13 +1,10 @@
-<<<<<<< HEAD
-{"order":["cart-header","cart-line-items"],"sections":{"cart-header":{"settings":{"background":"image","background_image":"shopify:\/\/shop_images\/tile-background_2x_8633724c-832c-4866-82a3-a03b9bfd94de.png","background_image_position_desktop":"center center","background_image_position_mobile":"center center","background_image_repeat":"repeat","background_image_size":"400px","border_bottom":true,"border_top":false,"container":"container","heading":"","heading_size":"md","padding_bottom":52,"padding_top":52},"type":"main-cart-header"},"cart-line-items":{"settings":{"background":"image","background_image":"shopify:\/\/shop_images\/tile-background_2x_8633724c-832c-4866-82a3-a03b9bfd94de.png","background_image_position_desktop":"center center","background_image_position_mobile":"center center","background_image_repeat":"repeat","background_image_size":"400px","border_bottom":false,"border_top":false,"container":"container","padding_bottom":200,"padding_top":120,"product_image_aspect_ratio_desktop":"1.2\/1.5","product_image_aspect_ratio_mobile":"1.2\/1.5"},"type":"main-cart-line-items"}}}
-=======
 {
   "order": [
-    "header",
-    "main"
+    "cart-header",
+    "cart-line-items"
   ],
   "sections": {
-    "header": {
+    "cart-header": {
       "type": "main-cart-header",
       "settings": {
         "heading_alignment": "left",
@@ -25,8 +22,8 @@
         "padding_bottom": 52
       }
     },
-    "main": {
-      "type": "main-cart",
+    "cart-line-items": {
+      "type": "main-cart-line-items",
       "settings": {
         "background": "image",
         "background_image": "shopify:\/\/shop_images\/tile-background_2x_8633724c-832c-4866-82a3-a03b9bfd94de.png",
@@ -45,4 +42,3 @@
     }
   }
 }
->>>>>>> 9e9689524cd36524672fed1201a5e5dc4769b4be
