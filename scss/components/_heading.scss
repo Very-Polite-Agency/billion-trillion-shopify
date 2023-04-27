@@ -7,15 +7,18 @@
     @include heading-style('1');
   }
 
-  &--1 {
+  &--1,
+  &-lg {
     @include heading-size('1');
   }
 
-  &--2 {
+  &--2,
+  &-md {
     @include heading-size('2');
   }
 
-  &--3 {
+  &--3,
+  &-sm {
     @include heading-size('3');
   }
 
