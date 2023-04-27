@@ -57,8 +57,8 @@
   <div class="{{ section_name }}__main-content">
     <form class="{{ section_form_id }} js--cart" id="{{ section_form_id }}" action="{{ section_form_action }}" method="post">
       {%- for item in cart.items -%}
-        {%- capture snippet_classes -%}{{ section_name }}__item{%- endcapture -%}
-        {%- render 'cart-item', cart_item_classes: snippet_classes, cart_item_index: forloop.index, cart_item: item -%}
+        {%- capture snippet_classes -%}{{ section_name }}__line-item{%- endcapture -%}
+        {%- render 'cart-line-item', cart_line_item_classes: snippet_classes, cart_line_item_index: forloop.index, cart_line_item: item -%}
       {%- else -%}
          <div class='cart-empty-message'>
           <div class='cart-empty-message__content body-copy--primary body-copy--2'>{{ section_empty_cart_message }}</div>
@@ -87,16 +87,6 @@
     "tag": "section",
     "class": "drawer drawer-cart",
     "settings": [
-      {
-        "content": "Content",
-        "type": "header"
-      },
-      {
-        "label": "Heading",
-        "type": "text",
-        "default": "Your Cart",
-        "id": "heading"
-      },
       {
         "content": "Settings",
         "type": "header"

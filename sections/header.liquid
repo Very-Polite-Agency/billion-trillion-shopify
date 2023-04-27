@@ -74,19 +74,21 @@
   {% endif %}
 
 
-  {%- liquid
-    capture aos_attrs
-      render 'aos-attributes', anchor: aos_id, delay: 1000, transition: 'fade-left'
-    endcapture
-  -%}
-  <button class="{{ section_name }}__main-cart-summary button js--open-drawer" data-drawer-id="shopify-section-drawer-cart" type="button" {{ aos_attrs }}>
-    <span class="{{ section_name }}__main-cart-summary-icon">
-      {% render 'svg', type: 'icon.cart' %}
-    </span>
-    <span class="{{ section_name }}__main-cart-summary-total js--cart-line-items-total">
-      <!-- JavaScript here... -->
-    </span>
-  </div>
+  {% unless request.path == '/cart' %}
+    {%- liquid
+      capture aos_attrs
+        render 'aos-attributes', anchor: aos_id, delay: 1000, transition: 'fade-left'
+      endcapture
+    -%}
+    <button class="{{ section_name }}__main-cart-summary button js--open-drawer" data-drawer-id="shopify-section-drawer-cart" type="button" {{ aos_attrs }}>
+      <span class="{{ section_name }}__main-cart-summary-icon">
+        {% render 'svg', type: 'icon.cart' %}
+      </span>
+      <span class="{{ section_name }}__main-cart-summary-total js--cart-line-items-total">
+        <!-- JavaScript here... -->
+      </span>
+    </div>
+  {% endunless %}
 
 </div>
 

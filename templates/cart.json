@@ -1,1 +1,1 @@
-{"order":["cart-items","cart-footer"],"sections":{"cart-footer":{"block_order":["subtotal","buttons"],"blocks":{"buttons":{"settings":{},"type":"buttons"},"subtotal":{"settings":{},"type":"subtotal"}},"settings":{"show_cart_note":false},"type":"main-cart-footer"},"cart-items":{"settings":{"padding_bottom":36,"padding_top":36,"show_vendor":false},"type":"main-cart-items"}}}
+{"order":["main"],"sections":{"main":{"settings":{},"type":"main-cart"}}}
