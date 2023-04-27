@@ -123,25 +123,22 @@ const onClickUpdateStepper = () => {
 
         let min = parseInt(stepper_input.min);
         let max = parseInt(stepper_input.max);
-        let quantity = {
-          current: parseInt(stepper_input.value),
-          updated: 0
-        };
+        let quantity = parseInt(stepper_input.value);
 
         if ( button.classList.contains('increase') ) {
-          quantity.updated = quantity.current + 1;
+          quantity = ++quantity;
         } else {
-          if ( quantity.updated > min ) {
-            quantity.updated = quantity.current - 1;
+          if ( quantity > min ) {
+            quantity = --quantity;
           }
         }
 
-        updateStepperButtonStates( quantity.updated, min, max, stepper );
+        updateStepperButtonStates( quantity, min, max, stepper );
 
         if ( cart_line_item ) {
-          updateCartLineItemByKey( cart_line_item_key, quantity.updated, stepper );
+          updateCartLineItemByKey( cart_line_item_key, quantity, stepper );
         } else {
-          updateStepperInputQuantity( quantity.updated, stepper );
+          updateStepperInputQuantity( quantity, stepper );
         }
 
       }
@@ -178,22 +175,24 @@ const updateCartLineItemByKey = ( key = '', quantity = 0, stepper = false ) => {
     })
     .then( cart => {
 
-      console.log( '[ updateCartLineItemByKey() ] :: cart response', cart, key );
-
-      if ( 0 == quantity ) Render.removeCartLineItem( key );
-
-      if ( cart.status == 422 ) {
-
+      if ( 0 == quantity ) {
+        Render.cartLineItemRemoveByKey( key );
       } else {
-        Render.cartLineItemsTotal( cart.item_count );
-        Render.cartSubtotal( cart.items_subtotal_price );
-        if ( cart.items.length ) {
-          toggleCheckoutButtonUsability( 'enable' );
-          Render.cartLineItemsLinePrice( key, cart.items );
-          Render.cartLineItemsQuantity( key, quantity, cart.items );
+        if ( cart.status == 422 ) {
+          updateStepperInputQuantity( quantity - 1, stepper );
+          Render.cartLineItemErrorMessage( key, cart.message );
         } else {
-          toggleCheckoutButtonUsability( 'disable' );
-          Render.cartEmptyMessage();
+          if ( cart.items.length ) {
+            toggleCheckoutButtonUsability( 'enable' );
+            Render.cartLineItemsLinePrice( key, cart.items );
+            Render.cartLineItemsQuantity( key, quantity, cart.items );
+            updateStepperInputQuantity( quantity, stepper );
+          } else {
+            toggleCheckoutButtonUsability( 'disable' );
+            Render.cartEmptyMessage();
+          }
+          Render.cartLineItemsTotal( cart.item_count );
+          Render.cartSubtotal( cart.items_subtotal_price );
         }
       }
 
@@ -205,18 +204,15 @@ const updateCartLineItemByKey = ( key = '', quantity = 0, stepper = false ) => {
 };
 
 const updateStepperInputQuantity = ( quantity = 0, stepper = false ) => {
-  console.log( '[ updateStepperInputQuantity() ] :: Init', quantity, stepper );
-  // if ( stepper && stepper.querySelector('.stepper__input').length ) {
-  //   stepper.querySelector('.stepper__input').value = quantity;
-  // }
+  if ( stepper.querySelector('input[name="quantity"]') ) {
+    stepper.querySelector('input[name="quantity"]').value = quantity;
+  }
 };
 
 const updateStepperButtonStates = ( quantity = 0, min = 0, max = 99999, stepper = false ) => {
   if ( stepper ) {
-
     let btnDecrease = stepper.querySelector('.stepper__button.decrease') || false;
     let btnIncrease = stepper.querySelector('.stepper__button.increase') || false;
-
     if ( quantity == min ) {
       btnDecrease.disabled = true;
       btnIncrease.disabled = false;
@@ -227,7 +223,6 @@ const updateStepperButtonStates = ( quantity = 0, min = 0, max = 99999, stepper 
       btnDecrease.disabled = false;
       btnIncrease.disabled = true;
     }
-
   }
 };
 
