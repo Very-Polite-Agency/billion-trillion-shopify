@@ -2872,12 +2872,12 @@
       "oAP" : "\/sections\/main-cart-header.liquid",
       "oF" : 0
     },
-    "\/sections\/main-cart.liquid" : {
+    "\/sections\/main-cart-line-items.liquid" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/sections\/main-cart.liquid",
+      "oAP" : "\/sections\/main-cart-line-items.liquid",
       "oF" : 0
     },
     "\/sections\/main-collection-hero.liquid" : {
