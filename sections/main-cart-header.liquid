@@ -9,8 +9,9 @@
   assign aos_id = section_id
 
   assign section_heading = settings.cart_heading | default: 'Cart'
-  assign section_heading_size = section.settings.heading_size | default: 'sm'
-  assign section_container = section.settings.container | default: 'container'
+  assign section_heading_alignment = section.settings.heading_alignment
+  assign section_heading_size = section.settings.heading_size
+  assign section_container = section.settings.container
 
 -%}
 
@@ -36,7 +37,9 @@
 <div class="{{ section_classes }}" id="{{ section_id }}">
   {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
     <div class="{{ section_name }}__main">
-      <h1 class="{{ section_name }}__heading heading--primary heading--{{ section_heading_size }}{% unless 'container' == section_container %}-fluid{% endunless %}">{{ section_heading }}</h1>
+      <h1 class="{{ section_name }}__heading text--align-{{ section_heading_alignment }} heading--primary heading--{{ section_heading_size }}{% unless 'container' == section_container %}-fluid{% endunless %}">
+        {{ section_heading }}
+      </h1>
     </div>
   {% render 'bs-container', state: 'closed', col: 'col-12', container: section_container %}
 </div>
@@ -50,6 +53,17 @@
     {
       "content": "Heading",
       "type": "header"
+    },
+    {
+      "label": "Heading Alignment",
+      "type": "select",
+      "options": [
+        { "label": "Left", "value": "left" },
+        { "label": "Center", "value": "center" },
+        { "label": "Right", "value": "right" }
+      ],
+      "default": "left",
+      "id": "heading_alignment"
     },
     {
       "label": "Heading Size",
