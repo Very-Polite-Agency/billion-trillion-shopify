@@ -14,8 +14,17 @@ const cartEmptyMessage = () => {
   });
 };
 
-const cartLineItemErrorMessage = ( key = '', message = '' ) => {
-  alert(message);
+const cartLineItemErrorMessage = ( key = '', message = 'Something went wrong!' ) => {
+
+    let element = document.createElement("div");
+    let parent = document.querySelector(`.cart-line-item[data-key="${key}"]`) || false;
+
+    if ( parent ) {
+      element.classList.add( 'cart-line-item__error-message', 'body-copy--primary', 'body-copy--3' );
+      element.innerHTML = `<p>${message}</p>`
+      parent.appendChild(element);
+    }
+
 };
 
 const cartLineItemRemoveByKey = ( key = '' ) => {
