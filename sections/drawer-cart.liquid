@@ -8,8 +8,8 @@
   assign aos_delay_increment = 250
   assign aos_id = section_id
 
-  assign section_cart_heading = section.cart_heading | default: ''
-  assign section_empty_cart_message = section.cart_empty_message | default: '<p>Oops! Nothing added to your cart yet :(</p>'
+  assign section_cart_heading = settings.cart_heading | default: ''
+  assign section_empty_cart_message = settings.cart_empty_message | default: '<p>Oops! Nothing added to your cart yet :(</p>'
 
   assign section_form_action = routes.cart_url
   assign section_form_id = section_name | append: '__line-items'
@@ -61,7 +61,7 @@
         {%- render 'cart-item', cart_item_classes: snippet_classes, cart_item_index: forloop.index, cart_item: item -%}
       {%- else -%}
          <div class='cart-empty-message'>
-          <div class='cart-empty-message__content body-copy--primary body-copy--1'>{{ section_empty_cart_message }}</div>
+          <div class='cart-empty-message__content body-copy--primary body-copy--2'>{{ section_empty_cart_message }}</div>
         </div>
       {%- endfor -%}
     </form>

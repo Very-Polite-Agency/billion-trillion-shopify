@@ -48,7 +48,7 @@
 
   {%- liquid
     capture aos_attrs
-      render 'aos-attributes', anchor: aos_id, delay: 1000, transition: 'fade-up'
+      render 'aos-attributes', anchor: aos_id, delay: 750, transition: 'fade-up'
     endcapture
   -%}
   <div class="{{ section_name }}__main-logo" {{ aos_attrs }}>
@@ -60,7 +60,7 @@
   {% if section_menu_main and section_menu_main != blank %}
     {%- liquid
       capture aos_attrs
-        render 'aos-attributes', anchor: aos_id, delay: 1250, transition: 'fade-down'
+        render 'aos-attributes', anchor: aos_id, delay: 500, transition: 'fade-down'
       endcapture
     -%}
     <nav class="{{ section_name }}__main-navigation navigation navigation--main" {{ aos_attrs }}>
@@ -76,7 +76,7 @@
 
   {%- liquid
     capture aos_attrs
-      render 'aos-attributes', anchor: aos_id, delay: 1500, transition: 'fade-left'
+      render 'aos-attributes', anchor: aos_id, delay: 1000, transition: 'fade-left'
     endcapture
   -%}
   <button class="{{ section_name }}__main-cart-summary button js--open-drawer" data-drawer-id="shopify-section-drawer-cart" type="button" {{ aos_attrs }}>

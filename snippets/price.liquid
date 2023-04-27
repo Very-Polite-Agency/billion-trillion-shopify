@@ -3,7 +3,7 @@
   {%- liquid
 
     assign snippet_name = 'price'
-    assign snippet_classes = classes | default: snippet_name
+    assign snippet_classes = classes | default: snippet_name | append: ' body-copy--primary'
 
     assign aos_attrs = aos_attrs | default: ''
     assign price = product.price

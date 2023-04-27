@@ -48,8 +48,9 @@
   		<meta name="robots" content="noindex, nofollow">
     {% endif %}
 
-    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}" media="print" onload="this.media='all'">
-    <noscript>{{ 'style.css' | asset_url | stylesheet_tag }}</noscript>
+    {% render 'theme--external-css' %}
+    <link rel="stylesheet" href="{{ 'base.css' | asset_url }}" media="all" type="text/css">
+    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}" media="all" type="text/css">
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -58,6 +59,7 @@
     </script>
 
     {% render 'theme--external-javascript' %}
+
 
   </head>
 
