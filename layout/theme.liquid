@@ -92,8 +92,6 @@
       {% section 'footer' %}
     {% endunless %}
 
-    {% capture abc %}{% render 'svg-button', type: 'stepper.decrease' %}{% endcapture %}
-
     <script>
       var Theme = Theme || {};
       Theme.cart = {{ cart | json }};

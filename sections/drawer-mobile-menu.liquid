@@ -28,12 +28,7 @@
 <div class="{{ section_name }}__main text--uppercase text--primary">
 
   {% if section_menu_main and section_menu_main != blank %}
-    {%- liquid
-      capture aos_attrs
-        render 'aos-attributes', anchor: aos_id, delay: 1250, transition: 'fade-right'
-      endcapture
-    -%}
-    <nav class="{{ section_name }}__main-navigation navigation navigation--main" {{ aos_attrs }}>
+    <nav class="{{ section_name }}__main-navigation navigation navigation--main">
       {%- for link in linklists[section_menu_main].links -%}
         <div class="{{ section_name }}__main-navigation-item navigation__item">
           {%- capture link_classes -%}{{ section_name }}__main-navigation-link navigation__link link{% if link.active %} active{% endif %}{%- endcapture -%}
