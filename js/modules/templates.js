@@ -34,7 +34,7 @@ const cartLineItem = ( line_item = {} ) => {
           <img class="${image.classes}" src="${image.src}" alt="${featured_image.alt}" width="${featured_image.width}" height="${featured_image.height}" />
         </a>
       </div>
-      <div class="${block_name}__content">
+      <div class="${block_name}__content text--uppercase">
         <div class="${block_name}__info">
           <strong class="${block_name}__product-title">
             <a class="${block_name}__product-title-link link" href="${url}" title="${product_title}" target="_self">${product_title}</a>

@@ -184,6 +184,7 @@ const updateCartLineItemByKey = ( key = '', quantity = 0, stepper = false ) => {
         updateStepperInputQuantity( quantity - 1, stepper );
         Render.cartLineItemErrorMessage( key, cart.message );
       } else {
+
         if ( cart.item_count > 0 ) {
           toggleCheckoutButtonUsability( 'enable' );
           Render.cartLineItemsLinePrice( key, cart.items );
@@ -193,10 +194,11 @@ const updateCartLineItemByKey = ( key = '', quantity = 0, stepper = false ) => {
           toggleCheckoutButtonUsability( 'disable' );
           Render.cartEmptyMessage();
         }
-      }
 
-      Render.cartLineItemsTotal( cart.item_count );
-      Render.cartSubtotal( cart.items_subtotal_price );
+        Render.cartLineItemsTotal( cart.item_count );
+        Render.cartSubtotal( cart.items_subtotal_price );
+
+      }
 
     })
     .catch( error => {
