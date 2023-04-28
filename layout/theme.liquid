@@ -66,7 +66,9 @@
       {% section 'age-gate' %}
       {% section 'announcements' %}
       {% section 'drawer-mobile-menu' %}
-      {% section 'drawer-cart' %}
+      {% unless request.path == '/cart' %}
+        {% section 'drawer-cart' %}
+      {% endunless %}
       {% section 'header' %}
     {% endunless %}
 

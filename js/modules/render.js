@@ -4,13 +4,15 @@ import Tools from 'tools';
 
 const config = { debug: false, name: 'render.js', version: '1.0' };
 const elements = {
-  cart: document.querySelectorAll( '.js--cart' ) || [],
-  cart_drawer: document.getElementById("drawer-cart__line-items") || false
+  cart: document.querySelectorAll('.js--cart') || [],
 };
 
 const cartEmptyMessage = () => {
+  let message = Theme.settings?.cart_empty_message ?? '<p>Oops! Nothing added to your cart yet :(</p>';
   elements.cart.forEach( element => {
-    element.innerHTML = Templates.cartEmptyMessage();
+    element.innerHTML = `
+      <div class="cart-empty-message body-copy--primary body-copy--2">${message}</div>
+    `;
   });
 };
 
@@ -21,7 +23,7 @@ const cartLineItemErrorMessage = ( key = '', message = 'Something went wrong!' )
 
   if ( parent ) {
     element.classList.add( 'cart-line-item__error-message', 'body-copy--primary', 'body-copy--3' );
-    element.innerHTML = `<p>${message}</p>`
+    element.innerHTML = `<p>${message}</p>`;
     parent.appendChild(element);
     anime.timeline({
       targets: element,

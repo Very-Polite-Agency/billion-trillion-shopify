@@ -9,6 +9,7 @@ const elements = {
 const DRAWER_CART_CLOSE_DELAY = Theme.settings?.cart_drawer_delay_close ?? 3000;
 
 const addToCart = ( id = 0, quantity = 1 ) => {
+
   if ( id ) {
     fetch('/cart/add.js', {
       method: 'POST',
@@ -24,18 +25,21 @@ const addToCart = ( id = 0, quantity = 1 ) => {
     })
     .then( data => {
       getCart().then( cart => {
+
         toggleCheckoutButtonUsability( 'enable' );
         Render.cartLineItemsTotal( cart.item_count );
         Render.cartLineItemsToElement( cart.items, elements.cart );
         Render.cartSubtotal( cart.items_subtotal_price );
-        Drawers.openDrawerByID( 'shopify-section-drawer-cart', 500 );
+        Drawers.openDrawerByID( 'shopify-section-drawer-cart', 250 );
         Drawers.closeDrawerByID( 'shopify-section-drawer-cart', DRAWER_CART_CLOSE_DELAY );
+
       });
     })
     .catch( error => {
       console.log('[ addToCart() ] :: Error', error );
     });
   }
+
 };
 
 const emptyCart = () => {
@@ -98,9 +102,8 @@ const onClickRemoveCartLineItem = () => {
       let button = event.target.closest( '.js--remove-cart-line-item' );
       let cart_line_item = button.closest( '.cart-line-item' ) ?? false;
       let cart_line_item_key = cart_line_item.dataset.key || '';
-      let cart_line_item_quantity = 0;
 
-      updateCartLineItemByKey( cart_line_item_key, cart_line_item_quantity );
+      updateCartLineItemByKey( cart_line_item_key, 0 );
 
     }
   });
@@ -175,26 +178,25 @@ const updateCartLineItemByKey = ( key = '', quantity = 0, stepper = false ) => {
     })
     .then( cart => {
 
-      if ( 0 == quantity ) {
-        Render.cartLineItemRemoveByKey( key );
+      if ( 0 == quantity ) Render.cartLineItemRemoveByKey( key );
+
+      if ( cart.status == 422 ) {
+        updateStepperInputQuantity( quantity - 1, stepper );
+        Render.cartLineItemErrorMessage( key, cart.message );
       } else {
-        if ( cart.status == 422 ) {
-          updateStepperInputQuantity( quantity - 1, stepper );
-          Render.cartLineItemErrorMessage( key, cart.message );
+        if ( cart.item_count > 0 ) {
+          toggleCheckoutButtonUsability( 'enable' );
+          Render.cartLineItemsLinePrice( key, cart.items );
+          Render.cartLineItemsQuantity( key, quantity, cart.items );
+          updateStepperInputQuantity( quantity, stepper );
         } else {
-          if ( cart.items.length ) {
-            toggleCheckoutButtonUsability( 'enable' );
-            Render.cartLineItemsLinePrice( key, cart.items );
-            Render.cartLineItemsQuantity( key, quantity, cart.items );
-            updateStepperInputQuantity( quantity, stepper );
-          } else {
-            toggleCheckoutButtonUsability( 'disable' );
-            Render.cartEmptyMessage();
-          }
-          Render.cartLineItemsTotal( cart.item_count );
-          Render.cartSubtotal( cart.items_subtotal_price );
+          toggleCheckoutButtonUsability( 'disable' );
+          Render.cartEmptyMessage();
         }
       }
+
+      Render.cartLineItemsTotal( cart.item_count );
+      Render.cartSubtotal( cart.items_subtotal_price );
 
     })
     .catch( error => {

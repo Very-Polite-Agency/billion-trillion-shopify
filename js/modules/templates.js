@@ -3,21 +3,6 @@ import Regions from 'regions';
 
 const config = { debug: false, name: 'templates.js', version: '1.0' };
 
-const cartEmptyMessage = ( data = {} ) => {
-
-  let {
-    block_name = 'cart-empty-message',
-    message = Theme.settings?.cart_empty_message ?? '<p>Oops! Nothing added to your cart yet :(</p>',
-  } = data;
-
-  return `
-    <div class="${block_name}">
-      <div class="${block_name}__content body-copy--primary body-copy--2">${message}</div>
-    </div>
-  `;
-
-};
-
 const cartLineItem = ( line_item = {} ) => {
 
   let {
@@ -256,7 +241,6 @@ const stockistLocation = ( location = {} ) => {
 };
 
 export default {
-  cartEmptyMessage,
   cartLineItem,
   stockistLocation
 };

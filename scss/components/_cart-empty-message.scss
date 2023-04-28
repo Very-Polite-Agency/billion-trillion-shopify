@@ -1,6 +1,4 @@
 .cart-empty-message {
-  &__content {
-    padding: var(--theme-layout--container-padding);
-    text-align: center;
-  }
+  padding: var(--theme-layout--container-padding);
+  text-align: center;
 }
