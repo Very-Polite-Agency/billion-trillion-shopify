@@ -34,8 +34,8 @@
         "border_top": false,
         "border_bottom": false,
         "container": "container",
-        "line_item_image_aspect_ratio_mobile": "",
-        "line_item_image_aspect_ratio_desktop": "",
+        "line_item_image_aspect_ratio_mobile": "1\/1.75",
+        "line_item_image_aspect_ratio_desktop": "1\/1.35",
         "line_item_padding_top": 36,
         "line_item_padding_bottom": 36
       }
