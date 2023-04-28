@@ -2,10 +2,33 @@
 @use "../utils/mixins/breakpoint" as *;
 
 .cart-line-items {
+
+  &__actions,
+  &__cart-subtotal {
+    padding: var(--theme-layout--container-padding);
+  }
+
+  &__cart-subtotal {
+    @include border-solid(var(--theme-border--width), 'black', 'top' );
+    @include border-solid(var(--theme-border--width), 'black', 'bottom' );
+    background: var(--theme-colour--lemon);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__footer {
+    &-content {
+      @include border-solid(var(--theme-border--width), 'black', 'left');
+      @include border-solid(var(--theme-border--width), 'black', 'right');
+    }
+  }
+
   &__main {
     &-content {
       @include border-solid(var(--theme-border--width), 'black', 'left');
       @include border-solid(var(--theme-border--width), 'black', 'right');
     }
   }
+
 }

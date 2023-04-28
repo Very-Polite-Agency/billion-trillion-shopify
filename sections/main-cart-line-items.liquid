@@ -92,13 +92,16 @@
     {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}
       <div class="{{ section_name }}__footer-content">
 
-        <div class="{{ section_name }}__cart-subtotal">
+        <div class="{{ section_name }}__cart-subtotal body-copy--secondary body-copy--1 text--uppercase">
           <div class="{{ section_name }}__cart-subtotal-label">Subtotal</div>
           <div class="{{ section_name }}__cart-subtotal-value js--cart-subtotal">{{ cart.items_subtotal_price | money_with_currency }}</div>
         </div>
 
         <div class="{{ section_name }}__actions">
-          <button class="{{ section_name }}__button-checkout button--svg button--svg-fill-orange" form="{{ section_form_id }}" name="checkout" type="submit" value="Checkout">{% render 'svg-button', type: 'checkout.md' %}</button>
+          <div class="{{ section_name }}__actions-message">Continue shopping or</div>
+          <button class="{{ section_name }}__button-checkout button--svg button--svg-fill-orange" form="{{ section_form_id }}" name="checkout" type="submit" value="Checkout">
+            {% render 'svg-button', type: 'checkout.md' %}
+          </button>
         </div>
 
       </div>
