@@ -30,46 +30,117 @@
   %}
 {%- endstyle -%}
 
-<div class="{{ section_name }}__main text--uppercase text--primary">
-  {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
-    <div class="{{ section_name }}__main-content">
+{% if request.path contains 'policies' %}
 
-      {%- if section_menu_main and section_menu_main != blank -%}
-        <nav class="{{ section_name }}__main-navigation navigation navigation--main">
-          {%- for link in linklists[section_menu_main].links -%}
-            <div class="{{ section_name }}__main-navigation-item navigation__item">
-              {%- capture link_classes -%}{{ section_name }}__main-navigation-link navigation__link link{% if link.active %} active{% endif %}{%- endcapture -%}
-              {%- render 'link', link_classes: link_classes, link_title: link.title, link_url: link.url -%}
-            </div>
-          {%- endfor -%}
-        </nav>
-      {%- endif -%}
+  <div class="{{ section_name }}__main">
+    <div class="{{ section_name }}__main-policies">
+      {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
+        <div class="{{ section_name }}__main-policies-content">
 
-      <strong class="{{ section_name }}__main-tagline">
-        Welcome to the Good Time Galaxy
-        {% if section_tagline_media_mobile %}
-          <div class="{{ section_name }}__main-tagline-media d-lg-none">{% render "lazyload-image", image: section_tagline_media_mobile %}</div>
-        {% endif %}
-        {% if section_tagline_media_desktop %}
-          <div class="{{ section_name }}__main-tagline-media d-none d-lg-block">{% render "lazyload-image", image: section_tagline_media_desktop %}</div>
-        {% endif %}
-      </strong>
+          {%- liquid
+            capture aos_attrs
+              render 'aos-attributes', anchor: aos_id, delay: 250, transition: 'fade-down', offset: 0
+            endcapture
+          -%}
+          <div class="{{ section_name }}__main-policies-logo" {{ aos_attrs }}>
+            <a class="{{ section_name }}__main-policies-logo-link link" href="/" target="_self" title="{{ shop.name }}">
+              {% render 'svg', type: 'logo' %}
+            </a>
+          </div>
 
+          {%- liquid
+            capture aos_attrs
+              render 'aos-attributes', anchor: aos_id, delay: 500, transition: 'fade-left', offset: 0
+            endcapture
+          -%}
+          <strong class="{{ section_name }}__main-policies-heading heading--primary" {{ aos_attrs }}>Welcome to the good time galaxy</strong>
+
+          {%- liquid
+            capture aos_attrs
+              render 'aos-attributes', anchor: aos_id, delay: 750, transition: 'fade-up', offset: 0
+            endcapture
+          -%}
+          <div class="{{ section_name }}__main-policies-legal body-copy--primary body-copy--5" {{ aos_attrs }}>&copy; {{ "now" | date: "%Y" }} {{ shop.name }}</div>
+
+        </div>
+      {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}
     </div>
-  {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}
-</div>
+  </div>
 
-<div class="{{ section_name }}__footnote text--uppercase text--secondary">
-  {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
-    <div class="{{ section_name }}__footnote-content">
-      <div class="{{ section_name }}__footnote-instagram">
-        <span class="{{ section_name }}__footnote-instagram-cta">Follow Us</span>
-        <a class="{{ section_name }}__footnote-instagram-link link" href="https://www.instagram.com/drinkbilliontrillion/" target="_blank" title="Follow {{ shop.name }}">@drinkbilliontrillion</a>
+  <script>
+
+    var policyElement = document.querySelector('.shopify-section.policy') || false;
+    var policyElementStyles = getComputedStyle(policyElement);
+    var policyElementBackgroundColour = policyElementStyles.getPropertyValue("background-color");
+    var policyElementcolour = policyElementStyles.getPropertyValue("color");
+    var footerElement = document.getElementById(`{{ section_id }}`) || false;
+
+    if ( policyElement && footerElement ) {
+      footerElement.style.backgroundColor = policyElementBackgroundColour;
+      footerElement.style.color = policyElementcolour;
+    }
+
+  </script>
+
+{% else %}
+
+  <div class="{{ section_name }}__main text--uppercase text--primary">
+    {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
+      <div class="{{ section_name }}__main-content">
+
+        {%- if section_menu_main and section_menu_main != blank -%}
+          {%- liquid
+            capture aos_attrs
+              render 'aos-attributes', anchor: aos_id, delay: 250, transition: 'fade-right', offset: 0
+            endcapture
+          -%}
+          <nav class="{{ section_name }}__main-navigation navigation navigation--main" {{ aos_attrs }}>
+            {%- for link in linklists[section_menu_main].links -%}
+              <div class="{{ section_name }}__main-navigation-item navigation__item">
+                {%- capture link_classes -%}{{ section_name }}__main-navigation-link navigation__link link{% if link.active %} active{% endif %}{%- endcapture -%}
+                {%- render 'link', link_classes: link_classes, link_title: link.title, link_url: link.url -%}
+              </div>
+            {%- endfor -%}
+          </nav>
+        {%- endif -%}
+
+        <strong class="{{ section_name }}__main-tagline" {{ aos_attrs }}>
+          {%- liquid
+            capture aos_attrs
+              render 'aos-attributes', anchor: aos_id, delay: 500, transition: 'fade-up', offset: 0
+            endcapture
+          -%}
+          <div {{ aos_attrs }}>Welcome to the Good Time Galaxy</div>
+          {%- liquid
+            capture aos_attrs
+              render 'aos-attributes', anchor: aos_id, delay: 700, transition: 'fade-down', offset: 0
+            endcapture
+          -%}
+          {% if section_tagline_media_mobile %}
+            <div class="{{ section_name }}__main-tagline-media d-lg-none" {{ aos_attrs }}>{% render "lazyload-image", image: section_tagline_media_mobile %}</div>
+          {% endif %}
+          {% if section_tagline_media_desktop %}
+            <div class="{{ section_name }}__main-tagline-media d-none d-lg-block" {{ aos_attrs }}>{% render "lazyload-image", image: section_tagline_media_desktop %}</div>
+          {% endif %}
+        </strong>
+
       </div>
-      <div class="{{ section_name }}__footnote-legal">&copy; {{ "now" | date: "%Y" }} {{ shop.name }}</div>
-    </div>
-  {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}
-</div>
+    {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}
+  </div>
+
+  <div class="{{ section_name }}__footnote text--uppercase text--secondary">
+    {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
+      <div class="{{ section_name }}__footnote-content">
+        <div class="{{ section_name }}__footnote-instagram">
+          <span class="{{ section_name }}__footnote-instagram-cta">Follow Us</span>
+          <a class="{{ section_name }}__footnote-instagram-link link" href="https://www.instagram.com/drinkbilliontrillion/" target="_blank" title="Follow {{ shop.name }}">@drinkbilliontrillion</a>
+        </div>
+        <div class="{{ section_name }}__footnote-legal">&copy; {{ "now" | date: "%Y" }} {{ shop.name }}</div>
+      </div>
+    {%- render 'bs-container', state: 'closed', col: 'col-12', container: section_container -%}
+  </div>
+
+{% endif %}
 
 {%- schema -%}
 {

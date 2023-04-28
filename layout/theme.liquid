@@ -64,7 +64,6 @@
 
     {% unless request.path == '/pages/thank-you' or template.name == '404' %}
       {% section 'age-gate' %}
-      {% section 'announcements' %}
       {% section 'drawer-mobile-menu' %}
       {% unless request.path == '/cart' %}
         {% section 'drawer-cart' %}

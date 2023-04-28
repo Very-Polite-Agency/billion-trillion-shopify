@@ -84,10 +84,12 @@
       height: var(--theme-header-logo-height--mobile);
       top: calc( 100% - (var(--theme-header-logo-height--mobile) * 0.5) );
       position: absolute;
-      .fill {
+      .fill,
+      .svg-fill {
         fill: var(--theme-colour--orange);
       }
-      .outline {
+      .outline,
+      .svg-outline {
         fill: var(--theme-colour--black);
       }
       a, svg {

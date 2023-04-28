@@ -13,6 +13,15 @@
 -%}
 
 {%- style -%}
+
+  #{{ section_id }} {
+    {% if 'dark' == section_text_colour %}
+      color: var(--theme-colour--black);
+    {% else %}
+      color: var(--theme-colour--lemon);
+    {% endif %}
+  }
+
   {%-
     render 'element-styles',
       background: section.settings.background,
@@ -25,9 +34,10 @@
       padding_bottom: section.settings.padding_bottom,
       padding_top: section.settings.padding_top
   -%}
+
 {%- endstyle -%}
 
-<div class="{{ section_name }}__main text--{{ section_text_colour }}">
+<div class="{{ section_name }}__main">
   {% render 'policy-content', policy_container: 'container', policy_content: section_content, policy_title: section_title %}
 </div>
 

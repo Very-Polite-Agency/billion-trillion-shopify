@@ -38,8 +38,10 @@
   }
 
   &__main {
+
     @include hobeaux( 700 );
     color: var(--theme-colour--lemon);
+
     &-content {
       display: flex;
       width: 100%;
@@ -93,6 +95,61 @@
         }
       }
     }
+
+    .policy & {
+
+      border-top-width: var(--theme-border--width);
+      border-top-color: currentcolor;
+      border-top-style: solid;
+      background-color: inherit;
+      color: inherit;
+      text-align: center;
+
+      &-policies-content {
+        padding-top: calc( (0.5 * var(--theme-header-logo-height--mobile)) + var(--theme-layout--container-padding) );
+        padding-bottom: calc(var(--theme-layout--container-padding) * 1.66);
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+      }
+
+      &-policies-heading {
+        font-size: 18px;
+      }
+
+      &-policies-legal {
+        margin-top: 12px;
+      }
+
+      &-policies-logo {
+        height: var(--theme-header-logo-height--mobile);
+        top: calc( -0.5 * var(--theme-header-logo-height--mobile) );
+        width: auto;
+        position: absolute;
+        .fill,
+        .svg-fill {
+          fill: var(--theme-colour--orange);
+        }
+        .outline,
+        .svg-outline {
+          fill: var(--theme-colour--black);
+        }
+        img, svg {
+          display: block;
+          height: 100%;
+          width: auto;
+        }
+        &-link {
+          display: block;
+          width: auto;
+          height: 100%;
+        }
+      }
+
+    }
+
   }
 
   @include breakpoint(sm) {
@@ -146,6 +203,7 @@
     }
 
     &__main {
+
       &-content {
         display: flex;
         flex-flow: row nowrap;
@@ -179,6 +237,25 @@
           }
         }
       }
+
+      .policy & {
+
+        &-policies-content {
+          padding-top: calc( (0.5 * var(--theme-header-logo-height--desktop)) + var(--theme-layout--container-padding) );
+        }
+
+        &-policies-heading {
+          font-size: 24px;
+        }
+
+        &-policies-logo {
+          height: var(--theme-header-logo-height--desktop);
+          top: calc( -0.5 * var(--theme-header-logo-height--desktop) );
+        }
+
+      }
+
+
     }
 
   }
