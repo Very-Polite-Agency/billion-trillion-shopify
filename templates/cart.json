@@ -36,8 +36,8 @@
         "container": "container",
         "padding_top": 0,
         "padding_bottom": 0,
-        "product_image_aspect_ratio_mobile": "1.2\/1.55",
-        "product_image_aspect_ratio_desktop": "1.2\/1.45"
+        "product_image_aspect_ratio_mobile": "1.25\/1.55",
+        "product_image_aspect_ratio_desktop": "4\/1.45"
       }
     }
   }
