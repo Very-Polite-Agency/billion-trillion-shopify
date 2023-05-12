@@ -41,17 +41,6 @@
       "oAP" : "\/.shopifyignore",
       "oF" : 0
     },
-    "\/assets\/ageGate.min.js" : {
-      "bF" : 3,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/assets\/ageGate.min.min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 1
-    },
     "\/assets\/apple-touch-icon.png" : {
       "ft" : 32768,
       "iS" : 8973,
@@ -129,17 +118,6 @@
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
-    },
-    "\/assets\/cart.min.js" : {
-      "bF" : 3,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/assets\/cart.min.min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 1
     },
     "\/assets\/customer.css" : {
       "aP" : 1,
@@ -340,28 +318,6 @@
       "sC" : 3,
       "tS" : 1
     },
-    "\/assets\/region.min.js" : {
-      "bF" : 3,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/assets\/region.min.min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 1
-    },
-    "\/assets\/regions.min.js" : {
-      "bF" : 3,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/assets\/regions.min.min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 1
-    },
     "\/assets\/screenshot.png" : {
       "ft" : 32768,
       "iS" : 203621,
@@ -374,17 +330,6 @@
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
-    },
-    "\/assets\/scrolling.legacy.min.js" : {
-      "bF" : 3,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/assets\/scrolling.legacy.min.min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 1
     },
     "\/assets\/share.js" : {
       "bF" : 3,
@@ -439,28 +384,6 @@
       "oAP" : "\/assets\/SorrySans-BoldExtended.woff2",
       "oF" : 0
     },
-    "\/assets\/stockists.min.js" : {
-      "bF" : 3,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/assets\/stockists.min.min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 1
-    },
-    "\/assets\/stockistsCountries.min.js" : {
-      "bF" : 3,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/assets\/stockistsCountries.min.min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 1
-    },
     "\/assets\/style.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -509,17 +432,6 @@
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
-    },
-    "\/assets\/vendors.min.js" : {
-      "bF" : 3,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/assets\/vendors.min.min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 1
     },
     "\/config\/settings_data.json" : {
       "ft" : 524288,

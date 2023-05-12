@@ -11,7 +11,6 @@
   assign section_anchor = section.settings.anchor_id | default: ''
   assign section_blocks = section.blocks | default: false
   assign section_container = section.settings.container | default: 'container'
-  assign section_custom_liquid = section.settings.custom_liquid | default: ''
   assign section_form_id = section_id | append: '--form'
 
 -%}

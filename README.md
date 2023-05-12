@@ -3,6 +3,9 @@
 ## Shopify Site URL
 https://billion-trillion.myshopify.com
 
+## Run Local Development
+$ shopify theme dev --store=https://billion-trillion.myshopify.com
+
 ### Snippets (31/32 Complete)
 - [x] aos-attributes.liquid
 - [x] bs-container.liquid
