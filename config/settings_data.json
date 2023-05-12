@@ -10,7 +10,7 @@
           "modal_redirect_url": "https:\/\/www.spacejam.com\/1996\/",
           "modal_message": "<p>Are you of legal drinking age?<\/p>",
           "modal_success_message": "<p>Welcome to the Good Time Galaxy<\/p>",
-          "enable": true,
+          "enable": false,
           "cookie_duration": 30
         }
       },
@@ -48,24 +48,6 @@
           "border_top": false,
           "border_bottom": false,
           "container": "container-fluid"
-        }
-      },
-      "announcements": {
-        "type": "announcements",
-        "blocks": {
-          "401bbdc5-b947-4876-88f4-f9107d73dcc9": {
-            "type": "announcement",
-            "settings": {
-              "title": ""
-            }
-          }
-        },
-        "block_order": [
-          "401bbdc5-b947-4876-88f4-f9107d73dcc9"
-        ],
-        "settings": {
-          "enable": false,
-          "sticky": false
         }
       },
       "drawer-mobile-menu": {
