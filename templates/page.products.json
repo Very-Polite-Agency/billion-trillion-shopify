@@ -114,7 +114,7 @@
           "settings": {
             "heading": "{{ section.settings.product.title }}",
             "heading_size": "md",
-            "message": "<p>Mango ultrices ornare orci ac malesuada. Phasellus fringilla magna at nisi tincidunt, sed fermentum elit pulvinar. Sed elementum, mi sit amet vulputate dignissim, lacus lacus porta dui, sed fermentum ex dui eu massa. Cras ut aliquet nisi. Quisque ut.<\/p>",
+            "message": "<p>A juicy, feel-good and fruit-forward take on sake. The bold and tropical flavour of mango takes centre stage while the subtleties of yuzu and sake bring the class. <\/p>",
             "message_size": "md",
             "tasting_notes": "",
             "pairings": "",
