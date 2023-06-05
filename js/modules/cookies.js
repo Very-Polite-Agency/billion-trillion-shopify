@@ -1,4 +1,4 @@
-const config = { debug: true, name: 'cookies.js', version: '1.0' };
+const config = { debug: false, name: 'cookies.js', version: '1.0' };
 
 const set = ( name = '', value = '', expires = 1 ) => {
 

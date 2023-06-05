@@ -3,7 +3,7 @@ import Tools from 'tools';
 
 const MAX_CACHE_MINUTES = 1 * 1440;
 
-const config = { debug: true, name: 'stockistsLocations.js', version: '1.0' };
+const config = { debug: false, name: 'stockistsLocations.js', version: '1.0' };
 const elements = document.querySelectorAll( '.js--stockist-region' ) || [];
 const local_storage_key = 'BT--stockist-regions';
 

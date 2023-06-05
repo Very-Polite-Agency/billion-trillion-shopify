@@ -14,7 +14,7 @@
 {% endcomment %}
 
 {%- liquid
-  assign item = item | default: 'Item not assigned to snippet!'
+  assign item = item
   assign message = message | default: 'Message not assigned to snippet!'
 -%}
 

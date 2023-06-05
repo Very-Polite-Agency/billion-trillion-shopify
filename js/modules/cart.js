@@ -2,7 +2,7 @@ import Drawers from 'drawers';
 import Render from 'render';
 import Tools from 'tools';
 
-const config = { debug: true, name: 'cart.js', version: '1.0' };
+const config = { debug: false, name: 'cart.js', version: '1.0' };
 const elements = {
   cart: document.querySelectorAll('form.js--cart') || []
 };

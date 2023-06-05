@@ -1,6 +1,6 @@
 import Tools from 'tools';
 
-const config = { debug: true, name: 'drawers.js', version: '1.0' };
+const config = { debug: false, name: 'drawers.js', version: '1.0' };
 const elements = document.querySelectorAll( 'body, footer, header, main' ) || [];
 const drawers = [];
 

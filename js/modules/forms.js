@@ -1,4 +1,4 @@
-const config = { debug: true, name: 'forms.js', version: '1.0' };
+const config = { debug: false, name: 'forms.js', version: '1.0' };
 const forms = document.querySelectorAll( 'form.js--validate-me' ) || [];
 const formFiles = [];
 const maxMB = 25.0;
