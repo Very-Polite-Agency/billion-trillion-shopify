@@ -16,7 +16,8 @@
         card_colour: block.settings.colour,
         card_featured_image: block.settings.featured_image,
         card_note: block.settings.note,
-        card_product: block.settings.product
+        card_link: block.settings.link,
+        card_product: block.settings.product,
         card_title: block.settings.title
     -%}
   {% endcomment %}
@@ -37,7 +38,7 @@
     assign snippet_note = card_note | default: ''
     assign snippet_product = card_product | default: false
     assign snippet_title = card_title | default: card_product.title
-    assign snippet_url = card_product.url | default: ''
+    assign snippet_url = card_link | default: card_product.url
 
   -%}
 
