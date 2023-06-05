@@ -8,7 +8,7 @@
   assign aos_delay_increment = 250
   assign aos_id = section_id
 
-  assign section_cart_show_icon = section.settings.cart_show_icon | default: true
+  assign section_cart_show_icon = section.settings.cart_show_icon | default: false
   assign section_height_desktop = section.settings.height_desktop
   assign section_height_mobile = section.settings.height_mobile
   assign section_logo_height_desktop = section.settings.logo_height_desktop
