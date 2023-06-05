@@ -61,7 +61,7 @@
       ],
       "settings": {
         "product": "lemon-yuzu-sake-fizz",
-        "anchor_id": "",
+        "anchor_id": "lemon",
         "border_top": true,
         "border_bottom": false
       }
@@ -96,7 +96,7 @@
       ],
       "settings": {
         "product": "mandarin-yuzu-sake-fizz",
-        "anchor_id": "",
+        "anchor_id": "mandarin",
         "border_top": true,
         "border_bottom": false
       }
@@ -131,7 +131,7 @@
       ],
       "settings": {
         "product": "mango-yuzu-sake-fizz",
-        "anchor_id": "",
+        "anchor_id": "mango",
         "border_top": true,
         "border_bottom": false
       }
