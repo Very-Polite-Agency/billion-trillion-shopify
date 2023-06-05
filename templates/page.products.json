@@ -78,7 +78,7 @@
             "message_size": "md",
             "tasting_notes": "",
             "pairings": "",
-            "cta_link": "",
+            "cta_link": "shopify:\/\/pages\/about-us",
             "cta_type": "learn-more",
             "cta_colour": "white",
             "background": "orange"
@@ -118,7 +118,7 @@
             "message_size": "md",
             "tasting_notes": "",
             "pairings": "",
-            "cta_link": "",
+            "cta_link": "shopify:\/\/pages\/about-us",
             "cta_type": "learn-more",
             "cta_colour": "white",
             "background": "mango"
