@@ -6,6 +6,10 @@ https://billion-trillion.myshopify.com
 ## Run Local Development
 $ shopify theme dev --store=https://billion-trillion.myshopify.com
 
+### General Todos
+- [ ] Add custom link option to the product carousel item/slide
+- [ ] Add custom link option to the Featured Yuzu Sake Fizz block
+
 ### Snippets (31/32 Complete)
 - [x] aos-attributes.liquid
 - [x] bs-container.liquid
