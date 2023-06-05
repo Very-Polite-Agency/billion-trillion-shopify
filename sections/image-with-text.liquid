@@ -8,7 +8,6 @@
   assign aos_delay_increment = 250
   assign aos_id = section_id
 
-  assign section_anchor = section.settings.anchor_id | default: ''
   assign section_blocks = section.blocks | default: false
 
 -%}
@@ -29,6 +28,8 @@
       padding_top: section.settings.padding_top
   -%}
 {%- endstyle -%}
+
+{%- render 'element-anchor', id: section.settings.anchor_id -%}
 
 <div class="{{ section_classes }}" id="{{ section_id }}">
   <div class="{{ section_name }}__main text--uppercase">

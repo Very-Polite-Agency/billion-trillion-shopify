@@ -7,7 +7,8 @@ https://billion-trillion.myshopify.com
 $ shopify theme dev --store=https://billion-trillion.myshopify.com
 
 ### General Todos
-- [ ] Add custom link option to the product carousel item/slide
+- [x] Add custom link option to the product carousel item/slide
+- [x] Add element-anchor.liquid snippet to sections where applicable
 - [ ] Add custom link option to the Featured Yuzu Sake Fizz block
 
 ### Snippets (31/32 Complete)

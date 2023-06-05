@@ -8,7 +8,6 @@
   assign aos_delay_increment = 250
   assign aos_id = snippet_id
 
-  assign section_anchor = section.settings.anchor_id | default: ''
   assign section_container = section.settings.container | default: 'full-width'
   assign section_region_blocks = section.blocks | where: 'type', 'region'
   assign section_region_blocks_size = section_region_blocks.size | default: 0
@@ -33,6 +32,8 @@
         padding_top: section.settings.padding_top
     -%}
   {%- endstyle -%}
+
+  {%- render 'element-anchor', id: section.settings.anchor_id -%}
 
   <div class="{{ section_classes }}" id="{{ section_id }}">
     {% render 'bs-container', state: 'open', col: 'col-12', container: section_container %}

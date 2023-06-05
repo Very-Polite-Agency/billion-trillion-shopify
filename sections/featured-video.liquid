@@ -8,7 +8,6 @@
   assign aos_delay_increment = 250
   assign aos_id = section_id
 
-  assign section_anchor = section.settings.anchor_id | default: ''
   assign section_text_colour = section.settings.text_colour | default: 'dark'
   assign section_video = section.settings.video | default: 'dark'
   assign section_video_aspect_ratio = section.settings.video_aspect_ratio | default: '16/9'
@@ -67,6 +66,8 @@
     -%}
 
   {%- endstyle -%}
+
+  {%- render 'element-anchor', id: section.settings.anchor_id -%}
 
   <div class="{{ section_classes }} text--{{ section_text_colour }}" id="{{ section_id }}">
 

@@ -56,6 +56,8 @@
 
   {%- endstyle -%}
 
+  {%- render 'element-anchor', id: section.settings.anchor_id -%}
+
   <div class="{{ section_classes }}" id="{{ section_id }}">
     {%- render 'bs-container', state: 'open', col: 'col-12', container: section_container -%}
       <div class="{{ section_name }}__grid grid--{{ section_product_blocks_size }}" role="list">
