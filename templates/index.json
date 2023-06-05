@@ -47,6 +47,7 @@
         },
         "946f0ecc-d93f-407c-a066-76c3a7ee98a7": {
           "type": "product",
+          "disabled": true,
           "settings": {
             "product": "lime-yuzu-sake-fizz",
             "note": "Tangy And Sour",
