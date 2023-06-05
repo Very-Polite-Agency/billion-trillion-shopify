@@ -24,7 +24,7 @@
             "product": "mandarin-yuzu-sake-fizz",
             "note": "Sake Smooth!",
             "title": "Mandarin Yuzu",
-            "link": "shopify:\/\/pages\/products",
+            "link": "\/pages\/products#mandarin",
             "colour": "orange"
           }
         },
@@ -34,7 +34,7 @@
             "product": "mango-yuzu-sake-fizz",
             "note": "Well Balanced!",
             "title": "Mango Yuzu",
-            "link": "",
+            "link": "\/pages\/products#mango",
             "colour": "mango"
           }
         },
