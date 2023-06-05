@@ -1,0 +1,16 @@
+@use "../utils/mixins/breakpoint" as *;
+
+.element-anchor {
+
+  position: absolute;
+  top: calc(-1 * var(--theme-header-height--mobile));
+  height: calc(var(--theme-header-height--mobile));
+  width: 100%;
+  z-index: -100;
+
+  @include breakpoint(lg) {
+    top: calc(-1 * var(--theme-header-height--desktop));
+    height: calc(var(--theme-header-height--desktop));
+  }
+
+}
