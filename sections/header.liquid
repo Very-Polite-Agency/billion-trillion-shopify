@@ -75,7 +75,7 @@
   {% endif %}
 
 
-  {% unless request.path == '/cart' or section_cart_show_icon == false %}
+  {% if section_cart_show_icon or request.path != '/cart' %}
     {%- liquid
       capture aos_attrs
         render 'aos-attributes', anchor: aos_id, delay: 1000, transition: 'fade-left'
@@ -89,7 +89,7 @@
         <!-- JavaScript here... -->
       </span>
     </div>
-  {% endunless %}
+  {% endif %}
 
 </div>
 
