@@ -248,7 +248,7 @@
         "981d35c3-f0df-4b01-b3bf-baea2cba8d18"
       ],
       "settings": {
-        "marquee_duration": 50,
+        "marquee_duration": 340,
         "marquee_gap": 3,
         "marquee_item_padding_x": 15,
         "marquee_item_padding_y": 10,
