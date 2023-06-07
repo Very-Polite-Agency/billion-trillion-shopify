@@ -348,12 +348,12 @@
         "template--15941099487416__0fa9ba11-804e-4e9d-a953-63efbbdfa40b-16800369909b7b4bad-2": {
           "type": "review",
           "settings": {
-            "badge": "shopify:\/\/shop_images\/review--card-review-badge-lemon_3x_a992f33d-9da7-4992-88ad-f6646e7b1582.png",
-            "image_mobile": "shopify:\/\/shop_images\/review--card-review-mobile_3x_f92a326a-391b-4ef4-a334-6c00d7de466d.png",
-            "image_desktop": "shopify:\/\/shop_images\/review--card-review-desktop_3x_4a451388-7152-4c24-8426-ad76283b59d2.png",
+            "badge": "shopify:\/\/shop_images\/BT-reviews-bubble-5_80fb5e2a-ab91-4087-8355-b90732ede7a5.png",
+            "image_mobile": "shopify:\/\/shop_images\/BT-reviews-6.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/BT-reviews_3.jpg",
             "subheading": "Translated from Gubble to English:",
             "review": "<p>Put a can of Billion Trillion in front of me and I can't help but gubble it up!<\/p>",
-            "background": "lemon"
+            "background": "orange"
           }
         }
       },
