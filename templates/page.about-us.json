@@ -228,20 +228,20 @@
     "0e494662-8cf2-4821-a00d-fdd4d8e5c0e0": {
       "type": "featured-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/about-us--featured-image_3x_9cb8613a-308c-4172-b0ee-6fdef6e66326.png",
-        "image_border": true,
-        "image_width": 80,
+        "image": "shopify:\/\/shop_images\/Asset_1xo.png",
+        "image_border": false,
+        "image_width": 50,
         "anchor_id": "",
         "background": "image",
-        "background_image": "shopify:\/\/shop_images\/about-us--featured-image_3x_9cb8613a-308c-4172-b0ee-6fdef6e66326.png",
+        "background_image": "shopify:\/\/shop_images\/Mask_group_2x_84f01e52-52e3-4ab9-a94a-80ec6946d778.png",
         "background_image_position_mobile": "center center",
         "background_image_position_desktop": "center center",
         "background_image_repeat": "no-repeat",
         "background_image_size": "cover",
         "border_top": true,
         "border_bottom": false,
-        "padding_top": 88,
-        "padding_bottom": 88
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "e13ccefb-aaa8-42d1-9707-bd577fb79dd4": {
@@ -567,9 +567,9 @@
         "template--15945343795384__2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4-1680123219b6bb14da-0": {
           "type": "review",
           "settings": {
-            "badge": "shopify:\/\/shop_images\/review--card-review-badge-mango_3x_e815d3a1-22d9-4aa9-b50c-da4b00246762.png",
-            "image_mobile": "shopify:\/\/shop_images\/review--card-review-mobile_3x_f92a326a-391b-4ef4-a334-6c00d7de466d.png",
-            "image_desktop": "shopify:\/\/shop_images\/review--card-review-desktop_3x_4a451388-7152-4c24-8426-ad76283b59d2.png",
+            "badge": "shopify:\/\/shop_images\/BT-reviews-bubble-2_7ee526a8-bba3-42e0-a538-24bbff7b150b.png",
+            "image_mobile": "shopify:\/\/shop_images\/BT-reviews-5.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/BT-reviews-10_a378cf43-6fcc-44d6-b69d-7920ce431efc.jpg",
             "subheading": "Translated from Maamic to English:",
             "review": "<p>With a fizz as sparkly as our exoplanets surface– what’s not to love?!<\/p>",
             "background": "mango"
@@ -578,20 +578,20 @@
         "template--15945343795384__2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4-1680123219b6bb14da-1": {
           "type": "review",
           "settings": {
-            "badge": "shopify:\/\/shop_images\/review--card-review-badge-orange_3x_aba41acc-a5f3-45ec-9752-9df73d7ab551.png",
-            "image_mobile": "shopify:\/\/shop_images\/review--card-review-mobile_3x_f92a326a-391b-4ef4-a334-6c00d7de466d.png",
-            "image_desktop": "shopify:\/\/shop_images\/review--card-review-desktop_3x_4a451388-7152-4c24-8426-ad76283b59d2.png",
+            "badge": "shopify:\/\/shop_images\/BT-reviews-bubble-1_d54ffc4a-9d0f-47a9-a436-fa0b3f85d8b7.png",
+            "image_mobile": "shopify:\/\/shop_images\/BT-reviews-4.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/BT-reviews-11.jpg",
             "subheading": "Translated from Octovian to English:",
             "review": "<p>Tastes so good it brought back one of my tentacles.<\/p>",
-            "background": "orange"
+            "background": "lemon"
           }
         },
         "template--15945343795384__2c90a5af-4ae1-4d9f-97a6-78ec5d1269e4-1680123219b6bb14da-2": {
           "type": "review",
           "settings": {
-            "badge": "shopify:\/\/shop_images\/review--card-review-badge-lemon_3x_a992f33d-9da7-4992-88ad-f6646e7b1582.png",
-            "image_mobile": "shopify:\/\/shop_images\/review--card-review-mobile_3x_f92a326a-391b-4ef4-a334-6c00d7de466d.png",
-            "image_desktop": "shopify:\/\/shop_images\/review--card-review-desktop_3x_4a451388-7152-4c24-8426-ad76283b59d2.png",
+            "badge": "shopify:\/\/shop_images\/BT-reviews-bubble-3_b1015f4a-8353-4448-9780-4c21ee8e3b17.png",
+            "image_mobile": "shopify:\/\/shop_images\/BT-reviews-3.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/BT-reviews-12.jpg",
             "subheading": "Translated from Gwarfon to English:",
             "review": "<p>I can destroy a Billion Trillion as fast as Gwarf destroyed Clarv-001! Suck it Clarvians!<\/p>",
             "background": "lemon"
